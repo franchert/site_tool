@@ -1,0 +1,95 @@
+
+.main-nav-container{
+	background: white;
+	display:none;
+	@include breakpoint($tab-large,true){
+		@include floatblock();
+		background:inherit;
+		overflow:visible;
+	}
+	.nav-wrapper{
+		@include floatblock();
+		background: white;
+		border-bottom:1px solid $gold;
+		overflow:visible;
+		@include breakpoint(max-width $tab,true){
+			background:none;
+		}
+		@include breakpoint(max-width $tab-large){
+			position:relative;
+		}
+		.column{
+			position:relative;
+			top:1px;
+			.main-nav{
+				@include floatblock();
+				@include breakpoint($tab-large,true){
+					display:table;
+				}
+				li{
+					@include floatblock();
+					border-bottom:1px solid $blue;
+					@include breakpoint($tab-large,true){
+						display:table-cell;
+						width:auto;
+						float:none;
+						border-top:none;
+						border-bottom:1px solid $gold;
+					}
+					a{
+						@include floatblock();
+						@include f-dm(14px,$blue);
+						text-transform:uppercase;
+						text-align:left;
+						padding: 10px 20px;
+						@include breakpoint($tab,true){
+							/*
+							text-align:center;
+							padding:10px 0;
+							font-size:12px; 
+							*/
+						}
+						@include breakpoint($tab-large,true){
+							text-align:center;
+							padding:10px 5px;
+							font-size:16px;
+						}
+						span{
+							@include floatblock();
+							@include paradoxbold(16px,$white);
+							text-transform:uppercase;
+							font-style:initial;
+						}
+					}
+					&.active,
+					&.h-active,
+					&:hover,
+					&:focus{
+						@include breakpoint($tab,true){
+							border-bottom:1px solid $dk-gray;
+						}
+						a{
+							text-decoration:none;
+							span{
+								color:$gold
+							}
+						}
+					}
+					&:first-child{
+						a{
+							@include breakpoint($tab,true){
+								border-left:1px solid $t-white;
+							}
+						}
+					}
+				}
+			}
+			.menu-toggle{
+				@include floatblock();
+				@include breakpoint($tab,true){
+					display:none;
+				}
+			}
+		}
+	}
+}

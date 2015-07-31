@@ -1,0 +1,40 @@
+a{
+	&.button{
+		@include f-bk(16px,$blue);
+		@include floatblock(left);
+		color:$blue;
+		background:#eee;
+		line-height:22px;
+		padding: 15px 25px;
+		border:1px solid $gray;
+		border-radius:3px;
+		text-transform:uppercase;
+		&.dark{
+			background:$dk-blue;
+			color:$white;
+			font-weight:bold;
+		}
+		&.light{
+			background:$gold;
+			color:$dk-blue;
+			font-weight:bold;
+		}
+	}
+	&.read-more{
+		@include bebas(16px,$dk-blue);
+		@include floatblock(right,auto);
+		@include arrowafter(inherit,inherit,$fa-caret-right);
+		padding-right:20px;
+		z-index:2;
+		padding-bottom:10px;
+		&:after{
+			right:10px;
+		}
+		&.button{
+			color:$white;
+			width:auto;
+			float:left;
+			padding-right:35px;
+		}
+	}
+}

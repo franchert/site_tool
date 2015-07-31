@@ -1,0 +1,182 @@
+@mixin floatblock($dir:left,$width:100%){
+	display:block;
+	float:$dir;
+	width:$width;
+}
+@mixin bebas($size:16px,$color:$c-default){
+	font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+	text-transform:uppercase;
+}
+@mixin f-dm($size:16px,$color:$c-default){
+	font-family: 'ITCFranklinGothicDMCD',sans-serif;
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+	font-weight:bold;
+}
+@mixin f-bk($size:16px,$color:$c-default){
+	font-family: 'ITCFranklinGothicBK';
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+@mixin f-bkcd($size:16px,$color:$c-default){
+	font-family: 'ITCFranklinGothicBKCD';
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+@mixin paradox($size:16px,$color:$c-default){
+	font-family: 'DTLParadoxReg',sans-serif;
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+@mixin paradoxbold($size:16px,$color:$c-default){
+	font-family: 'DTLParadoxBold',sans-serif;
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+
+
+
+
+
+@mixin s-bold($size:16px,$color:$c-default){
+	font-family:'Arial',sans-serif;
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+@mixin s-semi-bold($size:16px,$color:$c-default){
+	font-family:'Arial',sans-serif;
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+@mixin s-text-book($size:16px,$color:$c-default){
+	font-family:'Arial',sans-serif;
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+@mixin s-text-bold($size:16px,$color:$c-default){
+	font-family:'Arial',sans-serif;
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+@mixin s-text-med($size:16px,$color:$c-default){
+	font-family:'Arial',sans-serif;
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+@mixin s-book($size:16px,$color:$c-default){
+	font-family:'Arial',sans-serif;
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+@mixin s-black-italic($size:16px,$color:$c-default){
+	font-family:'Arial',sans-serif;
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+}
+@mixin arrowbefore($color:$t-white,$font-size:14px){
+	position:relative;
+	&:before{
+		content: "\f105";
+		font-family: FontAwesome;
+		font-size: $font-size;
+		position: absolute;
+		left: -10px;
+		color:$color;
+	}
+}
+@mixin arrowafter($color:$t-white,$font-size:14px,$type:"\f105"){
+	position:relative;
+	&:after{
+		content: $type;
+		font-family: FontAwesome;
+		font-size: $font-size;
+		position: absolute;
+		right: -10px;
+		color:$color;
+	}
+}
+@mixin arrowdown($color:inherit,$font-size:12px,$type:"\f105"){
+	position:relative;
+	padding-right:20px;
+	&:after{
+		content: $type;
+		font-family: FontAwesome;
+		font-size: $font-size;
+		position: absolute;
+		padding:0 10px;
+		top:calc(50% - #{$font-size / 2});
+		color:$color;
+		-webkit-transform:rotateZ(90deg);
+		-ms-transform:rotateZ(90deg);
+		transform: rotateZ(90deg);
+		transition:all .2s;
+	}
+}
+@mixin v-gradient(){
+	// needs latest Compass, add '@import "compass"' to your scss
+	@include filter-gradient(#000000, #a60000, vertical); // IE6-8
+	// IE9 SVG, needs conditional override of 'filter' to 'none'
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%));
+}
+@mixin h-gradient-dark($back-color){
+	// needs latest Compass, add '@import "compass"' to your scss
+	@include filter-gradient(#570000, #000000, horizontal); // IE6-8
+	// IE9 SVG, needs conditional override of 'filter' to 'none'
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.7) 5%,rgba(0,0,0,0.55) 23%,rgba(0,0,0,0.33) 77%,rgba(0,0,0,0) 99%));
+	background-color:$back-color
+}
+@mixin h-gradient($back-color){
+	// needs latest Compass, add '@import "compass"' to your scss
+	@include filter-gradient(#570000, #000000, horizontal); // IE6-8
+	// IE9 SVG, needs conditional override of 'filter' to 'none'
+	$experimental-support-for-svg: true;
+	@include background-image(linear-gradient(left, rgba(0,0,0,0.28) 0%,rgba(0,0,0,0.22) 5%,rgba(0,0,0,0.15) 23%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 99%));
+	background-color:$back-color
+}
+@mixin clearfix(){
+	&:after{
+		content:'';
+		display:table;
+		clear:both;
+	}
+}
+@mixin skew($color:$t-white,$deg:-15deg){
+	&:before{
+		content:'';
+		position:absolute;
+		display:block;
+		float:left;
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+		background:$color;
+		-webkit-transform:skew($deg);
+		-ms-transform:skew($deg);
+		transform:skew($deg);
+		z-index:-1;
+	}
+}
+//@include calc(width,"100% - 75px",170px);
+@mixin calc($prop,$value,$fallback){
+	#{$prop}:$fallback;
+	#{$prop}:-webkit-calc(#{$value});
+	#{$prop}:calc(#{$value});
+}

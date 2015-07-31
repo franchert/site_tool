@@ -1,0 +1,139 @@
+.tabs-container{
+	@include floatblock();
+	margin:20px 0;
+	.tabheaders{
+		@include floatblock();
+		@include breakpoint($tab){
+			display:table;
+		}
+		li{
+			@include floatblock();
+			border-bottom:2px solid $white;
+			@include breakpoint($tab){
+				display:table-cell;
+				border:none;
+				width:auto;
+			}
+			a{
+				@include bebas(20px,$dk-blue);
+				line-height:18px;
+				transition:all .5s ease-in-out;
+				height:56px;
+				display:block;
+				text-decoration:none;
+				padding:20px;
+				background:$gold;
+				position:relative;
+				@include breakpoint($tab){
+					background:none;
+					transition:none;
+					background:$gold;
+					border-right: 2px solid $white;
+				}
+				&:hover{
+					text-decoration:underline;
+				}
+				&:after{
+					content:'+';
+					font-family:Times;
+					font-weight:normal;
+					position:absolute;
+					color:$dk-blue;
+					font-weight:bold;
+					right:20px;
+					font-size:18px;
+					transition:all .5s ease-in-out;
+					@include breakpoint($tab){
+						content:'';
+						transition:none;
+					}
+				}
+			}
+			&.open{
+				a{
+					color:$white;
+					background:$dk-blue;
+					@include breakpoint($tab){
+						color:$dk-blue;
+						background:none;
+					}
+				}
+			}
+			&.open-desk{
+				a{
+					@include breakpoint($tab){
+						color:$white;
+						background:$dk-blue;
+					}
+				}
+			}
+		}
+		&.collapsed{
+			li{
+				&.open{
+					a{
+						height:56px;
+						padding:20px;
+						color:$white;
+						@include breakpoint($tab){
+							height:auto;
+							color:$dk-blue;
+							background:$gold;
+						}
+						&:after{
+							@include breakpoint($tab){
+								content:''
+							}
+							color:$white;
+							transform:rotate(45deg);
+						}
+					}
+				}
+				&.open-desk{
+					a{
+						@include breakpoint($tab){
+							color:$white;
+							background:$dk-blue;
+						}
+					}
+				}
+				a{
+					transition:all .5s ease-in-out;
+					height:20px;
+					padding:1px 0px;
+					color:$gold;
+					@include breakpoint($tab){
+						height:auto;
+						padding:20px;
+						transition:none;
+						color:$dk-blue;
+					}
+				}
+			}
+		}
+	}
+	div.contents{
+		display:none;
+		background:$white;
+		&.open{
+			display:block;
+			float:left;
+			width:100%;
+			padding:20px;
+			border: 1px solid $dk-blue;
+			border-top: 0;
+			@include breakpoint($tab){
+				display:none;
+			}
+		}
+		&.open-desk{
+			@include breakpoint($tab){
+				display:block;
+				float:left;
+				width:100%;
+				padding:20px;
+				border:1px solid $dk-blue;
+			}
+		}
+	}
+}

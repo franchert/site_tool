@@ -1,0 +1,39 @@
+#breadcrumb{
+	@include floatblock();
+	padding: 0 20px;
+	@include breakpoint($desk){
+		padding:0;
+	}
+	ul{
+		@include floatblock();
+		padding:10px 0px;
+		li{
+			@include floatblock(left,auto);
+			padding-right:10px;
+			font-size:14px;
+			&:before{
+				content:"\f0da";
+				font-family:FontAwesome;
+				position:relative;
+				font-size:12px;
+				top:0px;
+				padding-right:10px;
+				color:$black;
+			}
+			a{
+				color:$black;
+				border-bottom:1px dotted $gray;
+				font-size:14px;
+				&:hover{
+					text-decoration:none;
+					border-bottom: 1px solid $gray;
+				}
+			}
+			&:first-child{
+				&:before{
+					content:none;
+				}
+			}
+		}
+	}
+}

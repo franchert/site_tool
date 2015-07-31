@@ -1,0 +1,32 @@
+.header-first,
+.l-content-center,
+.l-content-wrapper,
+.l-region{
+	background: #fff;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border: 1px solid #444444;
+	margin-bottom: 10px;
+	width: 100%;
+	float: left;
+}
+.l-region div.promo:nth-child(1){
+	border-top:none;
+}
+
+.flexslider{
+	display:block;
+	float:left;
+	width:100%;
+}
+body .flexslider .slides li{
+	box-sizing: border-box;
+}
+body .flexslider .slides img{
+	width:auto;
+}
+
+
+html{
+	background: #d5d5d5;
+}

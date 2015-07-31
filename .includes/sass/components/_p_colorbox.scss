@@ -1,0 +1,23 @@
+#colorbox{
+	z-index:9999;
+}
+#cboxTitle{
+	bottom:18px;
+}
+.cbox-title{
+	.container{
+		margin-bottom:24px;
+		position:relative;
+		background:$t-blue;
+		h2{
+			@include f-dm(16px,$white);
+			padding:5px 20px;
+			span{
+				color:$gold;
+			}
+		}
+		p{
+			padding:0;
+		}
+	}
+}

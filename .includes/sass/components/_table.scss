@@ -1,0 +1,89 @@
+.table-wrapper{
+	@include floatblock();
+	overflow:auto;
+	@include breakpoint($tab){
+		border:1px solid $dk-blue;
+	}
+	table{
+		width:100%;
+		box-shadow: 0px 0px 1px $t-black;
+		table-layout:fixed;
+		thead{
+			display:none;
+			@include breakpoint($tab){
+				display:table-header-group;
+			}
+			tr{
+				background:$white;
+				border-bottom:1px solid #eee;
+				th{
+					@include f-bk(18px,$white);
+					border-right:1px solid $gray;
+					background:$dk-blue;
+					padding:10px 30px;
+					text-align:left;
+					&:last-child{
+						@include breakpoint($tab){
+							border-right:none;
+						}
+					}
+				}
+			}
+		}
+		tbody{
+			tr{
+				@include floatblock();
+				background:$white;
+				border:1px solid $gray;
+				margin-bottom:10px;
+				@include breakpoint($tab){
+					display:table-row;
+					float:none;
+					width:auto;
+					border:0;
+					border-bottom:1px solid #eee;
+					margin:0;
+					&:last-child{
+						border-bottom:none;
+					}
+				}
+				td{
+					@include floatblock();
+					@include f-bk(18px,$c-default);
+					padding:10px 30px;
+					text-align:left;
+					@include breakpoint($tab){
+						padding:10px 30px;
+						border-right:1px solid $gray;
+						display:table-cell;
+						float:none;
+						&:before{
+							content:'';
+						}
+					}
+					&:before{
+						content:attr(data-label);
+						display:block;
+						float:left;
+						width:100px;
+						@include s-book(16px);
+						text-align:left;
+						font-weight:bold;
+						@include breakpoint($tab){
+							width:150px;
+							display:none;
+						}
+					}
+					&:last-child{
+						@include breakpoint($tab){
+							border-right:none;
+						}
+					}
+				}
+				&.even{
+					background:#eee;
+				}
+			}
+		}
+	}
+}

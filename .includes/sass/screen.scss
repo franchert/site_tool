@@ -1,0 +1,2603 @@
+// Import external libraries.
+@import "compass";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "breakpoint";
+@import "compass/reset";
+@import "variables/**/*";
+@import "base/**/*";
+body{
+	@import "components/**/*";
+}
+*{
+	box-sizing:border-box;
+}
+.back-to-top{
+	display:none;
+	right:20px;
+	bottom:20px;
+	background:$dk-blue;
+	border: 3px solid $gold;
+	@include arrowdown($gold,30px);
+	position:fixed;
+	height:60px;
+	width:60px;
+	border-radius:50%;
+	z-index:9999;
+	transition:box-shadow 0.3s;
+	color:$gold;
+	text-transform:uppercase;
+	font-size:12px;
+	line-height:12px;
+	text-align:center;
+	padding:24px 0 0 0;
+	&:after{
+		-webkit-transform:rotateZ(-90deg);
+		-ms-transform:rotateZ(-90deg);
+		transform: rotateZ(-90deg);
+		padding:0 13px;
+		top:8px;
+		left:7px;
+	}
+	&:hover{
+		text-decoration:none;
+	}
+}
+.wrapper{
+	@include floatblock();
+	position:relative;
+	overflow:hidden;
+	> img{
+		@include floatblock(left,auto);
+		//position:absolute;
+		min-width:100%;
+		z-index:-1;
+		min-height:100%;
+	}
+	&.overlay-cta{
+		overflow:visible;
+	}
+}
+.column{
+	max-width:$maxwidth;
+	margin:auto;
+	@include breakpoint(max-width $tab,true){
+		@include floatblock();
+	}
+	@include breakpoint($desk){
+		position:relative;
+	}
+}
+.twocolumns{
+	@include floatblock(left,50%);
+	padding-right:20px;
+}
+img{
+	display:block;
+	position:relative;
+	&.mobile-image{
+		@include breakpoint($tab){
+			display:none!important;
+		}
+	}
+	&.desk-image{
+		display:none!important;
+		@include breakpoint($tab){
+			display:block!important;
+		}
+	}
+}
+
+h1{
+	@include paradoxbold(36px,$blue);
+	border-bottom:1px solid $gold;
+	@include breakpoint($tab,true){
+		font-size:48px;
+		line-height:54px;
+	}
+}
+h2{
+	@include paradoxbold(26px,$blue);
+}
+h3{
+	@include floatblock();
+	@include paradoxbold(24px,$blue);
+	line-height:24px;
+	border-bottom:1px solid $gold;
+	margin:0 0 20px 0;
+}
+h4{
+	@include floatblock();
+	@include bebas(20px,$dk-blue);
+}
+h5{
+	@include floatblock();
+	@include paradox(16px,$dk-blue);
+	font-weight:bold;
+	padding-top:20px;
+}
+p{
+	@include floatblock(none,100%);
+	@include f-bk(18px,#000);
+	margin:10px 0;
+}
+ul,
+ol{
+	@include floatblock(none,100%);
+	li{
+		@include f-bk(18px,#222);
+	}
+}
+section{
+	@include floatblock();
+	margin:20px 0;
+	max-height:initial;
+	position:relative;
+	@include breakpoint($tab){
+		margin-top:0px;
+	}
+	> h2{
+		border-bottom:1px solid $gold;
+		margin-bottom:20px;
+	}
+	&.short{
+		max-height:300px;
+		overflow:hidden;
+		.view-more{
+			@include bebas(16px,$dk-blue);
+			@include arrowafter($dk-blue,12px,"\f067");
+			position:absolute;
+			background:$white;
+			&:after{
+				right:0;
+			}
+		}
+	}
+	.view-more{
+		@include arrowafter($dk-blue,12px,"\f068");
+		@include bebas(16px,$dk-blue);
+		display:block;
+		bottom:-4px;
+		width:100%;
+		text-align:right;
+		padding-right:12px;
+		&:after{
+			right:0;
+		}
+	}
+}
+form{
+	div{
+		@include floatblock();
+		position:relative;
+		input{
+			@include f-bk(18px,$dk-gray);
+			font-style:italic;
+			line-height:24px;
+			@include floatblock();
+			padding:10px;
+			position:relative;
+			margin:10px 0;
+		}
+		&.required{
+			&:after{
+				content:'*';
+				color: #F00;
+				position: absolute;
+				left: 3px;
+				top: 14px;
+			}
+		}
+		textarea{
+			@include f-bk(18px,$dk-gray);
+			line-height:24px;
+			font-style:italic;
+			@include floatblock();
+			padding:10px;
+			max-width:100%;
+			min-height:200px;
+			margin:10px 0;
+		}
+	}
+	.submit{
+		@include bebas(18px,$white);
+		@include floatblock(left,auto);
+		margin:10px 0;
+		background:$dk-blue;
+		border:1px solid $gray;
+		border-radius:3px;
+		padding:10px 30px;
+		text-transform:uppercase;
+		cursor:pointer;
+		-webkit-appearance: none;
+	}
+}
+iframe{
+	@include floatblock();
+}
+a{
+	@include f-bkcd(16px,$blue);
+	text-decoration:none;
+	&:hover{
+		text-decoration:underline;
+	}
+	&[href="#"]{
+		//outline:dotted 1px red!important;
+	}
+	&[href$=".pdf"]{
+		&:after{
+			content:"\f1c1";
+			font-family:FontAwesome;
+			color:#FF0000;
+			font-size:12px;
+			padding-left:5px;
+			text-shadow: 1px 1px 0px $t-black-light;
+		}
+	}
+	&[href$=".docx"],
+	&[href$=".doc"]{
+		&:after{
+			content:"\f1c2";
+			font-family:FontAwesome;
+			color:#0005FF;
+			font-weight:bold;
+			font-size:12px;
+			padding-left:5px;
+			text-shadow: 1px 1px 0px $t-black-light;
+		}
+	}
+}
+blockquote{
+	@include floatblock();
+	@include bebas(36px,$dk-blue);
+	padding:0 10px;
+	margin-bottom:15px;
+	&:before{
+		content:'\201C';
+		color:$gold;
+		font-size:1.3em;
+		line-height:0.7em;
+		padding-right:5px;
+	}
+	&:after{
+		content:'\201D';
+		color:$gold;
+		font-size:1.3em;
+		line-height:0.7em;
+		padding-left:5px;
+	}
+}
+.caption{
+	max-width:100%;
+	p{
+		color:$blue;
+		font-style:italic;
+		margin:0 0 15px 0;
+		border-bottom:1px solid $gold;
+		padding:10px 0;
+	}
+}
+.l-region{
+	img{
+		max-width:100%;
+	}
+}
+.l-page{
+	@include floatblock();
+	overflow-x:hidden;
+	min-height:100vh;
+	h1{
+		margin:20px;
+	}
+}
+header{
+	@include floatblock();
+	.l-head{
+		@include floatblock();
+		background: $dk-blue;
+		position:relative;
+		z-index:2;
+		.toggle-wrapper{
+			@include floatblock(right,50px);
+			position:absolute;
+			right:0;
+			height:50px;
+			cursor:pointer;
+			background: black;
+			@include breakpoint($desk,true){
+				display:none;
+			}
+			.toggle{
+				@include floatblock(right,auto);
+				position:relative;
+				padding:13px 3px;
+				z-index:10;
+				cursor:pointer;
+				color:$white;
+				-webkit-transition: all 0.5s cubic-bezier(0.5,0.1,0.3,0.5);
+				-moz-transition: all 0.5s cubic-bezier(0.5,0.1,0.3,0.5);
+				-o-transition: all 0.5s cubic-bezier(0.5,0.1,0.3,0.5);
+				transition: all 0.5s cubic-bezier(0.5,0.1,0.3,0.5);
+				.toggle-element{
+					@include floatblock(left,24px);
+					height:4px;
+					margin:10px;
+					background:$white;
+					-webkit-transition: all 0.4s;
+					-moz-transition: all 0.4s;
+					-o-transition: all 0.4s;
+					transition: all 0.4s;
+					padding: 0;
+					box-sizing: initial;
+					&:before{
+						top: -7px;
+						content: '';
+						display: block;
+						width: 24px;
+						height: 4px;
+						background: $white;
+						position: relative;
+						z-index: -1;
+						-webkit-transition: all 0.4s;
+						-moz-transition: all 0.4s;
+						-o-transition: all 0.4s;
+						transition: all 0.4s;
+					}
+					&:after{
+						top: 3px;
+						content: '';
+						display: block;
+						width: 24px;
+						height: 4px;
+						background: $white;
+						position: relative;
+						z-index: -1;
+						-webkit-transition: all 0.4s;
+						-moz-transition: all 0.4s;
+						-o-transition: all 0.4s;
+						transition: all 0.4s;
+					}
+				}
+				&:hover{
+					-webkit-transition: top 0.4s;
+					-moz-transition: top 0.4s;
+					-o-transition: top 0.4s;
+					transition: top 0.4s;
+					.toggle-element{
+						&:before{
+							top:-8px;
+						}
+						&:after{
+							top:4px;
+						}
+					}
+				}
+			}
+		}
+		.utility {
+			@include floatblock(right,100%);
+			background: black;
+			@include breakpoint($desk,true){
+				height:auto;
+				padding-right:0;
+			}
+			.header-left{
+				@include floatblock(left,auto);
+				ul.gateway-menu{
+					width:0;
+					right:0;
+					height:0;
+					overflow:hidden;
+					background:$dk-blue;
+					@include breakpoint($tab){}
+					margin-left:20px;
+					@include breakpoint($desk,true){
+						@include floatblock(right);
+						width:auto;
+						height:auto;
+						overflow:initial;
+						background:inherit;
+						margin-top:10px;
+					}
+					> li{
+						@include floatblock();
+						@include breakpoint($desk,true){
+							padding:0 14px 0 0;
+							width:auto;
+							border:none;
+							background:none;
+							color:inherit;
+						}
+						a {
+							font-size:14px;
+							@include floatblock();
+							padding:5px 15px;
+							color:$white;
+							@include breakpoint($desk,true){
+								padding:0;
+							}
+						}
+					}
+				}
+			}
+			.header-right{
+				position:relative;
+				z-index:1;
+				.search{
+					display:none;
+					width:auto;
+					float:right;
+					background:$lt-blue;
+					height:50px;
+					padding:10px;
+					form{
+						display:block;
+						margin:auto;
+						max-width:$maxwidth;
+						#as_q{
+							height:30px;
+							@include floatblock(left,calc(100% - 50px));
+							@include f-bkcd(16px,$c-default);
+							font-style:italic;
+							border:none;
+							padding-left:5px;
+							&:focus{}
+							&::-webkit-input-placeholder,
+							&:-moz-placeholder,
+							&::-moz-placeholder,
+							&:-ms-input-placeholder {
+								color: $gray;
+								@include breakpoint($tab,true){
+								}
+							}
+						}
+						#site_search_button{
+							@include bebas(20px,$blue);
+							@include floatblock(left,50px);
+							font-size:20px;
+							color:$gold;
+							height:30px;
+							background:none;
+							border:none;
+							cursor:pointer;
+							text-transform:uppercase;
+							&:focus{
+								outline:2px solid $t-white;
+							}
+						}
+						.search-toggle{
+							@include floatblock(left,40px);
+							display:none;
+							height:50px;
+							@include breakpoint($tab,true){
+								display:block;
+							}
+							cursor:pointer;
+							background:none;
+							border:none;
+							color:$t-white;
+							font-size:24px;
+							&:focus{
+								outline:2px solid $t-white;
+							}
+						}
+					}
+				}
+				.search-toggle{
+					cursor:pointer;
+					background:transparent;
+					@include floatblock(right,50px);
+					height:50px;
+					border:none;
+					color:$gold;
+					font-size:18px;
+					position:relative;
+					margin-right:50px;
+					padding:0 10px;
+					@include breakpoint($desk){
+						top:0;
+						height:42px;
+						width:42px;
+					}
+					&:focus{
+						outline:rgb(77,144,254) auto 5px;
+					}
+				}
+				ul.utility-menu{
+					@include floatblock(left,auto);
+					width:0;
+					right:0;
+					height:0;
+					overflow:hidden;
+					background:$dk-blue;
+					display:table;
+					height:42px;
+					float:right;
+					overflow:initial;
+					background:inherit;
+					@include breakpoint($tab,true){
+						padding:0;
+					}
+					> li{
+						display:none;
+						padding:0 7px;
+						vertical-align:middle;
+						@include breakpoint($desk,true){
+							display:table-cell;
+							width:auto;
+							border:none;
+						}
+						position:relative;
+						a {
+							color: $gold;
+							font-size:14px;
+						}
+					}
+				}
+				ul.quick-links{
+					display:table;
+					float:right;
+					width:auto;
+					height:42px;
+					@include breakpoint($tab,true){
+						height:50px;
+					}
+					@include breakpoint($desk,true){
+						height:42px;
+						padding-right:0;
+					}
+					>li{
+						display:table-cell;
+						background:$gold;
+						padding:5px 5px 10px 5px;
+						vertical-align:middle;
+						position:relative;
+						h3{
+							@include f-dm(14px,$white);
+							@include arrowdown($blue,8px);
+							color:$blue;
+							background:none;
+							cursor:pointer;
+							line-height:35px;
+							margin:0;
+							padding:0;
+							text-transform:uppercase;
+							border:none;
+							@include breakpoint($desk,true){
+								line-height:22px;
+								border:none;
+							}
+							&:after{
+								font-size:12px;
+								left:calc(50% - 10px);
+								@include breakpoint($tab,true){
+									top:60%;
+								}
+							}
+						}
+						.utility-sub{
+							position:absolute;
+							width:1000px;
+							max-width:95vw;
+							right:-100px;
+							display:none;
+							top:100%;
+							z-index:1;
+							background:white;
+							padding:10px 20px;
+							box-shadow:1px 4px 5px $t-black;
+							border:5px solid $lt-blue;
+							@include breakpoint($tab){
+								max-width:80vw;
+								right:-54px;
+							}
+							h4{
+								color:#111;
+								margin-top:5px;
+								text-transform:uppercase;
+							}
+							> li {
+								display:block;
+								float:left;
+								padding:10px;
+								width:100%;
+								@include breakpoint($tab-large){
+									width:25%;
+								}
+							}
+							li{
+								line-height:28px;
+								a{}
+							}
+						}
+						&.open{
+							background:$lt-blue;
+							h3{
+								color:$white;
+								&:after{
+									color:$white;
+									-webkit-transform:rotateZ(-90deg);
+									-ms-transform:rotateZ(-90deg);
+									transform:rotateZ(-90deg);
+									left: calc(50% - 12px);
+								}
+							}
+							.utility-sub{
+								display:block;
+								float:left;
+							}
+						}
+					}
+				}
+			}
+		}
+		.site-logo{
+			display:block;
+			width:100%;
+			position:relative;
+			z-index:0;
+			margin:auto;
+			@include breakpoint($tab,true){
+				width:auto;
+				float:left;
+				position:relative;
+				top:0;
+				margin:9px 0;
+			}
+			img{
+				display:block;
+				width: 100%;
+				margin:auto;
+			}
+		}
+	}
+	.alert{
+		@include floatblock();
+		overflow:visible;
+		background:$red;
+		.toggle{
+			height:55px;
+			padding:15px 20px;
+			cursor:pointer;
+			max-width:$maxwidth;
+			margin:auto;
+			h3{
+				@include f-dm(22px,$gold);
+				text-transform:uppercase;
+				@include floatblock(left,calc(100% - 60px));
+				border:none;
+				margin:0;
+			}
+			span{
+				@include paradoxbold(26px,$gold);
+				line-height:26px;
+				text-transform:uppercase;
+				@include floatblock(left,60px);
+				&:after{
+					content:'\f057';
+					font-family:FontAwesome;
+					-webkit-transform:rotateZ(180deg);
+					-ms-transform:rotateZ(180deg);
+					transform:rotateZ(180deg);
+					transition:all .3s;
+					display:block;
+					position:relative;
+					text-align:center;
+					width:26px;
+					height:26px;
+					border-radius:50%;
+					margin:0 auto;
+				}
+			}
+		}
+		.message{
+			background:$red;
+			@include floatblock();
+			position:relative;
+			z-index:11;
+			padding:20px;
+			.column{
+				.message{
+					@include floatblock();
+					padding:0;
+					@include breakpoint($tab){
+						padding:0 20px;
+						width:calc(100% - 200px);
+					}
+					h2{
+						@include floatblock();
+						@include paradox(32px,$white);
+					}
+					p{
+						@include floatblock();
+						@include f-bk(18px,$white);
+						position:relative;
+					}
+				}
+				.contact{
+					@include floatblock();
+					@include breakpoint($tab){
+						width:200px;
+					}
+					h2{
+						@include floatblock();
+						@include paradox(32px,$white);
+					}
+					ul{
+						@include floatblock();
+						li{
+							@include f-bk(18px,$white);
+						}
+					}
+				}
+			}
+			a{
+				@include paradoxbold(16px,$white);
+				@include arrowafter($white);
+				@include floatblock(left,auto);
+				position:relative;
+				padding:10px 0 10px 20px;
+			}
+		}
+		&.closed{
+			.message{
+				display:none;
+			}
+			.toggle{
+				span{
+					&:after{
+					-webkit-transform:rotateZ(45deg);
+					-ms-transform:rotateZ(45deg);
+					transform:rotateZ(45deg);
+					}
+				}
+			}
+		}
+	}
+	&.open{
+		.l-head{
+			.utility{
+				.column{
+					.header-right{
+						.search{
+							@include floatblock();
+							@include breakpoint($desk,true){
+								height:50px;
+								top:42px;
+								position:absolute;
+								width:300px;
+								right:0;
+							}
+						}
+						.search-toggle{
+							background:$lt-blue;
+							color:$white;
+							span.fa-search{
+								&:before{
+									content:"\f00d";
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.mobi-open{
+		.l-head{
+			left: 0;
+			height:100%;
+			z-index:9998;
+			@include breakpoint($tab,true){
+				position:relative;
+			}
+			.toggle-wrapper{
+				.toggle{
+					left:0px;
+					.toggle-element{
+						background:none;
+						&:before{
+							top: 0px;
+							background: $white;
+							-webkit-transform: rotate(-45deg);
+							-ms-transform: rotate(-45deg);
+							transform: rotate(-45deg);
+						}
+						&:after{
+							top: -4px;
+							background: $white;
+							-webkit-transform: rotate(45deg);
+							-ms-transform: rotate(45deg);
+							transform: rotate(45deg);
+						}
+					}
+				}
+			}
+			.site-logo{
+				background:$blue;
+				display:none;
+				@include breakpoint($tab-large,true){
+					display:block;
+					position:relative;
+					top:0;
+					background:none;
+				}
+			}
+			.utility{
+				height:auto;
+				padding-top:50px;
+				@include breakpoint($desk,true){
+					padding:0;
+				}
+				.header-left{
+					width:100%;
+					position:absolute;
+					top:549px;
+					background:black;
+					@include breakpoint($tab-large){
+						position:relative;
+						top:initial;
+						background:none;
+					}
+					@include breakpoint($desk){
+						width:auto;
+					}
+					ul.gateway-menu{
+						@include floatblock(right);
+						height:auto;
+						overflow:initial;
+						background:inherit;
+						@include breakpoint($desk){
+							margin-top:7px;
+						}
+					}
+				}
+				.header-right{
+					width:100%;
+					@include breakpoint($desk){
+						width:auto;
+					}
+					.search-toggle{
+						top:-50px;
+						margin-bottom:-50px;
+						@include breakpoint($tab,true){
+							margin-bottom:0;
+						}
+						@include breakpoint($desk){
+							top:0;
+							margin-bottom:0;
+						}
+					}
+					ul.utility-menu{
+						height:auto;
+						display:block;
+						float:right;
+						width:100%;
+						position:absolute;
+						top:371px;
+						background:black;
+						@include breakpoint($tab-large){
+							position:relative;
+							top:initial;
+							background:none;
+						}
+						@include breakpoint($desk,true){
+							float:right;
+							width:auto;
+							background:none;
+							margin-top:0;
+							height:42px;
+							display:table;
+						}
+						>li{
+							display:table-cell;
+							float:left;
+							width:100%;
+							padding:0;
+							@include breakpoint($desk){
+								width:auto;
+								background:none;
+								color:$gold;
+								padding:0 7px;
+								float:none;
+							}
+							a{
+								@include floatblock();
+								padding:5px 15px;
+								@include breakpoint($desk,true){
+									padding:0;
+								}
+							}
+						}
+					}
+					ul.quick-links{
+						height:auto;
+						position:relative;
+						top:-50px;
+						right:100px;
+						margin-bottom:-49px;
+						@include breakpoint($tab){
+							right:0;
+						}
+						@include breakpoint($tab-large){
+							margin-bottom:0;
+						}
+						@include breakpoint($desk,true){
+							width:auto;
+							background:none;
+							margin-top:0;
+							position:relative;
+							top:0;
+							height:42px;
+						}
+					}
+				}
+			}
+		}
+		.search{
+			display:none;
+			float:left;
+			z-index:1;
+			left:50px;
+			z-index:9999;
+			@include breakpoint ($tab,true){
+				position:absolute;
+				display:none;
+				left:initial;
+				position:relative;
+			}
+		}
+		.main-nav-container{
+			width:100%;
+			float:right;
+			display:block;
+		}
+		&.open{
+			.l-head{
+				.utility{
+					.column{
+						.header-right{
+							.search{
+								display:block;
+								float:left;
+								top:-1px;
+								position:relative;
+								left:0;
+								@include breakpoint($tab,true){
+									left:initial;
+									margin-bottom:-50px;
+									top:-50px;
+								}
+								@include breakpoint($desk,true){
+									top:-50px;
+									position:absolute;
+									left:initial;
+									float:none;
+									top:42px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+body{
+	&.home{
+		h1{
+			border:none;
+		}
+		.program-search{
+			background:#eee;
+			.column{
+				@include breakpoint($tab,true){
+					margin-top:-350px;
+				}
+			}
+		}
+		.factoid{
+			.container{
+				@include breakpoint($tab,true){
+					background:$t-blue;
+				}
+			}
+		}
+	}
+	&.generic_inner{
+		.l-page{
+			.l-featured-header{
+				.featured{
+					max-height:500px;
+				}
+				.column{
+					h2{
+						@include paradox(24px,$white);
+						@include breakpoint($tab){
+							font-size:40px;
+							line-height:50px;
+						}
+						@include breakpoint($tab-large){
+							font-size:80px;
+							line-height:90px;
+						}
+						font-weight:bold;
+						text-shadow:0 0 5px $t-black;
+						position:absolute;
+						top:10%;
+						padding:20px;
+					}
+				}
+			}
+			.l-content-header {
+				@include floatblock();
+				margin-bottom:20px;
+				padding:20px;
+				.wrapper{
+					.column{
+						@include breakpoint($desk){
+							padding:0 20px;
+						}
+					}
+				}
+				.subnav{
+					border-top:none;
+					margin:20px 0;
+				}
+				h1{
+					@include floatblock();
+					margin:0;
+					@include breakpoint($tab-large,true){
+						margin-top:50px;
+					}
+					@include breakpoint($desk,true){
+						padding:10px 0;
+					}
+					.program-tag{
+						@include breakpoint($tab,true){
+							margin:15px 0px 15px 20px;
+						}
+					}
+				}
+				.feature{
+					@include floatblock();
+					padding-bottom:40px;
+					img{
+						max-width:100%;
+					}
+				}
+			}
+			.l-content-center{
+				@include floatblock(none,100%);
+				@include breakpoint($desk,true){
+					padding:20px;
+				}
+				.l-nav-sidebar{
+					@include floatblock();
+					@include breakpoint($tab,true){
+						padding-bottom:40px;
+					}
+					@include breakpoint($desk,true){
+						width:20%;
+						width: -webkit-calc(#{$nav-sidebar-width});
+						width: calc(#{$nav-sidebar-width});
+					}
+					section{
+						padding:0 20px;
+					}
+				}
+				.l-content-featured{
+					@include floatblock();
+					padding:0px 20px 20px 20px;
+					@include breakpoint($desk,true){
+						padding-right:0;
+						width:80%;
+						width:-webkit-calc(100% - #{$nav-sidebar-width});
+						width: calc(100% - #{$nav-sidebar-width});
+					}
+				}
+				.l-content-wrapper{
+					@include floatblock(right);
+					@include breakpoint($desk,true){
+						width:80%;
+						width: -webkit-calc(100% - #{$nav-sidebar-width});
+						width: calc(100% - #{$nav-sidebar-width});
+						padding-bottom:40px;
+					}
+					.l-content {
+						@include floatblock();
+						padding:20px;
+						border-bottom:5px solid $gold;
+						margin:0 0 20px 0;
+						@include breakpoint($tab,true){
+							border-bottom:0;
+							padding:0 20px;
+							margin:0;
+							width:66.6666%;
+							width: -webkit-calc(100% - #{$nav-promo-width});
+							width: calc(100% - #{$nav-promo-width});
+						}
+						img{
+							max-width:100%;
+						}
+						> h2{
+							@include floatblock();
+							border-bottom: 1px solid $gold;
+							margin:0 0 20px 0;
+						}
+						.matrix{
+							border:none;
+						}
+						section{
+							margin:0 0 40px;
+						}
+					}
+					.l-promo-sidebar{
+						@include floatblock();
+						padding:0 20px;
+						@include breakpoint($tab,true){
+							width:33.3333%;
+							width:-webkit-calc(#{$nav-promo-width});
+							width:calc(#{$nav-promo-width});
+						}
+						@include breakpoint($desk){
+							padding-right:0;
+						}
+					}
+					&.full-width{
+						.l-content{
+							width:100%;
+						}
+					}
+				}
+			}
+			.l-content-footer{
+				@include floatblock();
+				section{
+					padding:20px;
+					@include breakpoint($tab){
+						padding:0;
+					}
+				}
+			}
+		}
+	}
+	&.one-column{
+		.l-page{
+			h1{
+				@include floatblock();
+				padding:20px;
+				margin:0;
+				@include breakpoint($tab,true){
+					margin-top:50px;
+				}
+				@include breakpoint($desk,true){
+					padding:10px 0;
+				}
+				.program-tag{
+					@include breakpoint($tab,true){
+						margin:15px 0px 15px 20px;
+					}
+				}
+			}
+			.breadcrumb{}
+		}
+	}
+	&.bio{
+		.l-page{
+			.l-featured-header{
+				.featured{
+					max-height:500px;
+				}
+				.column{
+					h2{
+						@include paradox(20px,$white);
+						line-height:30px;
+						@include breakpoint($tab){
+							font-size:40px;
+							line-height:50px;
+						}
+						@include breakpoint($tab-large){
+							font-size:80px;
+							line-height:90px;
+						}
+						font-weight:bold;
+						text-shadow:0 0 5px $t-black;
+						position:absolute;
+						top:10%;
+						padding:30px;
+					}
+				}
+			}
+			.l-content-header {
+				@include floatblock();
+				@include breakpoint($desk){
+					margin-bottom:40px;
+				}
+				.wrapper{
+					.column{
+						@include breakpoint($desk){
+							padding:0 20px;
+						}
+					}
+				}
+				.subnav{
+					border-top:none;
+					margin:20px 0;
+				}
+				h1{
+					@include floatblock();
+					padding:20px;
+					margin:0;
+					@include breakpoint($tab,true){
+						margin-top:50px;
+					}
+					@include breakpoint($desk,true){
+						padding:10px 0;
+					}
+					.program-tag{
+						@include breakpoint($tab,true){
+							margin:15px 0px 15px 20px;
+						}
+					}
+				}
+				.feature{
+					@include floatblock();
+					padding-bottom:40px;
+					img{
+						max-width:100%;
+					}
+				}
+			}
+			.l-content-center{
+				@include floatblock(none,100%);
+				@include breakpoint($desk,true){
+					padding:20px;
+				}
+				.l-nav-sidebar{
+					@include floatblock();
+					padding:0 20px;
+					@include breakpoint($tab,true){
+						padding:0 20px 40px;
+					}
+					@include breakpoint($desk,true){
+							width:20%;
+							width:-webkit-calc(#{$nav-sidebar-width});
+							width:calc(#{$nav-sidebar-width});
+						padding:0 20px 40px 0;
+					}
+					img{
+						@include floatblock();
+						@include breakpoint($tab){
+							padding:20px;
+							width:30%;
+						}
+						@include breakpoint($desk){
+							width:auto;
+							padding:0;
+						}
+					}
+					.container{
+						@include floatblock();
+						@include breakpoint($tab){
+							width:70%;
+						}
+						@include breakpoint($desk){
+							width:100%;
+						}
+					}
+					section{
+						padding:0 20px;
+					}
+				}
+				.l-content-featured{
+					@include floatblock();
+					padding:0px 20px 20px 20px;
+					@include breakpoint($desk,true){
+						padding-right:0;
+						width:80%;
+						width:-webkit-calc(100% - #{$nav-sidebar-width});
+						width: calc(100% - #{$nav-sidebar-width});
+					}
+				}
+				.l-content-wrapper{
+					@include floatblock(right);
+					@include breakpoint($desk,true){
+						width:80%;
+						width:-webkit-calc(100% - #{$nav-sidebar-width});
+						width: calc(100% - #{$nav-sidebar-width});
+						padding-bottom:40px;
+					}
+					.l-content {
+						@include floatblock();
+						padding:0 20px;
+						@include breakpoint($tab,true){
+							width:66.6666%;
+							width:-webkit-calc(100% - #{$nav-promo-width});
+							width: calc(100% - #{$nav-promo-width});
+						}
+						img{
+							max-width:100%;
+						}
+						> h2{
+							@include floatblock();
+							border-bottom: 1px solid $gold;
+							margin:0 0 20px 0;
+						}
+						.matrix{
+							border:none;
+						}
+					}
+					.l-promo-sidebar{
+						@include floatblock();
+						padding:0 20px;
+						@include breakpoint($tab,true){
+							width:33.3333%;
+							width:-webkit-calc(#{$nav-promo-width});
+							width:calc(#{$nav-promo-width});
+						}
+						@include breakpoint($desk){
+							padding-right:0;
+						}
+					}
+				}
+			}
+			.l-content-footer{
+				@include floatblock();
+				section{
+					padding:20px;
+					@include breakpoint($tab){
+						padding:0;
+					}
+				}
+			}
+		}
+	}
+	&.undergraduate_admissions{
+		.l-page .l-content-center .l-content-wrapper .l-content{
+			@include breakpoint($tab){
+				width:calc(100% - 350px);
+			}
+		}
+		.l-page .l-content-center .l-content-wrapper .l-promo-sidebar{
+			@include breakpoint($tab){
+				width:350px;
+			}
+		}
+	}
+	&.sticky{
+		.l-head{
+			position:fixed;
+			z-index:99999;
+		}
+		.l-page{
+			margin-top:170px;
+		}
+	}
+}
+footer{
+	@include floatblock();
+	background: black;
+	border-top:7px solid rgba(0, 0, 0, 0.15);
+	.column{
+		h3{
+			@include bebas(18px,$gold);
+			padding: 20px;
+			text-align: center;
+			text-transform:uppercase;
+			margin:20px 0 0;
+			@include breakpoint($tab,true){
+				margin:0 0 10px;
+				padding: 0;
+				text-align: left;
+			}
+		}
+		.footer-first {
+			padding-top:20px;
+			@include breakpoint($tab){
+				padding-top:0;
+			}
+			img{
+				margin:auto;
+				max-width:100%;
+			}
+			@include f-bk(15px,$gray);
+			@include floatblock();
+			@include breakpoint($tab,true){
+				width: 25%;
+				padding:30px 0;
+			}
+			a{
+				@include bebas(16px,$lt-blue);
+				@include floatblock();
+				max-width:100%;
+				padding:10px;
+				text-align:center;
+				img{
+					max-width:100%;
+				}
+			}
+			.location{
+				br{
+					display:none;
+					@include breakpoint($tab){
+						display:block;
+					}
+				}
+			}
+		}
+		.footer-second {
+			@include floatblock();
+			@include breakpoint($tab,true){
+				width: 55%;
+				padding:30px 0;
+			}
+			a{
+				@include floatblock(none);
+				margin:auto;
+				h3{
+					border:none;
+					padding:0 20px;
+					@include breakpoint($tab){
+						padding:0;
+					}
+				}
+				img{
+					max-width:100%;
+					margin:auto;
+					@include breakpoint($tab){
+						width:auto;
+					}
+					@include breakpoint($tab-large){}
+				}
+			}
+		}
+		.footer-third{
+			@include floatblock();
+			@include breakpoint($tab,true){
+				width: 20%;
+				padding:30px 0;
+			}
+			div.social{
+				@include floatblock();
+				margin:auto;
+				@include breakpoint($tab,true){}
+				ul{
+					display:table;
+					width:auto;
+					margin:auto;
+					@include breakpoint($tab,true){
+						float:left;
+					}
+					li{
+						display:table-cell;
+						width:auto;
+						padding:10px;
+						@include breakpoint($tab,true){
+							padding:0px 10px 10px 0;
+							@include floatblock(left,auto);
+						}
+						a{
+							span{
+								color:$gray;
+								span{
+									text-indent:-9999px;
+									display:inline-block;
+								}
+							}
+						}
+					}
+				}
+				> a{
+					@include floatblock();
+					@include f-bk(18px,$white);
+					text-align:center;
+					@include breakpoint($tab,true){
+						font-size:10px;
+						line-height:14px;
+						position: absolute;
+						width:auto;
+						margin: 16px 0 0 70px;
+					}
+					@include breakpoint($tab){
+						@include arrowafter($white,14px,"\f101");
+						position:absolute;
+					}
+				}
+				h3{
+					padding:0;
+					border-bottom:0;
+					margin:10px 0 0;
+					@include breakpoint($tab,true){
+						border-bottom: 1px solid $gold;
+					}
+				}
+			}
+			.links-resources {
+				@include floatblock();
+				padding-bottom:100px;
+				@include breakpoint($tab,true){
+					padding:0;
+				}
+				ul{
+					li{
+						@include breakpoint($tab,true){
+							@include floatblock(left);
+						}
+						a{
+							@include floatblock();
+							@include f-bk(14px,$gray);
+							text-align:center;
+							@include breakpoint($tab,true){
+								text-align:left;
+							}
+						}
+						&:last-child{
+							a{
+								border:none;
+							}
+						}
+					}
+					hr{
+						display:block;
+						width:34px;
+						border:none;
+						border-bottom:1px solid $t-white;
+						text-align:center;
+						@include breakpoint($tab,true){
+							display:none;
+						}
+					}
+				}
+				h3{
+					padding:0;
+					border-bottom:0;
+					@include breakpoint($tab,true){
+						border-bottom: 1px solid $gold;
+					}
+				}
+			}
+		}
+	}
+}
+.p-list{
+	&.nodisc{
+		ul{
+			list-style-type:none;
+			padding:0;
+			li{
+				margin:0;
+			}
+		}
+	}
+	&.important-links{
+		ul{
+			list-style-type:none;
+			li{
+				padding:0;
+				margin:0;
+				a{
+					text-decoration:underline;
+				}
+			}
+		}
+	}
+	&.news-listing{
+		ul{
+			li{
+				width:100%;
+				margin:0;
+				border-bottom:1px solid $gray;
+				&:last-child{
+					border:none;
+				}
+			}
+		}
+	}
+	&.blog-listing{
+		ul{
+			li{
+				border-bottom:1px solid $gray;
+				width:100%;
+				&:last-child{
+					border:none;
+				}
+			}
+		}
+	}
+	&.events-listing{
+		ul{
+			padding:0px;
+			li{
+				margin:0;
+				padding:10px 0;
+				width:100%;
+				&:nth-child(5){
+					display:none;
+				}
+				@include breakpoint($tab){
+					&:nth-child(4){
+						display:none;
+					}
+				}
+				@include breakpoint($desk){
+					&:nth-child(3),
+					&:nth-child(4),
+					&:nth-child(5){
+						display:block;
+					}
+				}
+			}
+		}
+	}
+	&.social{
+		ul{
+			list-style-type:none;
+			padding:0;
+			li{
+				@include floatblock(left,auto);
+				margin:0;
+				padding:0 20px 0 0;
+				a{
+					span{
+						font-size:30px;
+					}
+				}
+			}
+		}
+	}
+	&.academic-catalog{
+		> ul > li{
+			list-style-type:none;
+			margin:0;
+			h4{
+				border-bottom:1px solid $gold;
+			}
+		}
+	}
+	&.carot{
+		>ul {
+			> li{
+				list-style-type:none;
+				padding-left:0;
+				&:before{
+					content:"\f054";
+					font-family:FontAwesome;
+					color:$dk-blue;
+					display:inline-block;
+					width:1.2em;
+					margin-left:-1.2em;
+					font-size:12px;
+				}
+			}
+		}
+	}
+}
+.promo-event{
+	&.tall{
+		a{
+			padding:0 20px;
+			@include breakpoint($tab){
+				padding:0;
+			}
+			.date{
+				width:50px;
+				padding-bottom:0;
+				.weekday{
+					width:100%;
+					font-size:18px;
+					line-height:18px;
+				}
+				.month{
+					width:100%;
+					font-size:24px;
+					line-height:24px;
+				}
+				.day{
+					position:relative;
+					width:100%;
+					top:initial;
+					right:initial;
+					font-size:38px;
+					line-height:38px;
+					padding-bottom:5px;
+				}
+			}
+			.info{
+				width:calc(100% - 50px);
+				h3{}
+				p{}
+			}
+		}
+	}
+}
+.ui-tabs{
+	&#tab-1{
+		margin:0;
+		padding:40px 20px;
+		@include breakpoint($tab,true){
+			padding:0;
+		}
+		.ui-tabs-nav{
+			> li{
+				width:25%;
+				a{
+					h3{
+						padding:20px 0;
+					}
+				}
+			}
+		}
+		.ui-tabs-panel{
+			@include floatblock();
+			padding:0px;
+			border:none;
+			iframe{
+				@include floatblock();
+			}
+			&#tabs-4{
+				height:250px;
+				overflow:auto;
+			}
+		}
+	}
+}
+#tab-3{
+	@include floatblock();
+	@include breakpoint($tab){
+		margin:0 0 100px 0;
+	}
+	.ui-tabs-panel{
+		position:relative;
+	}
+}
+.matrix{
+	&.events,
+	&.factoids{
+		@include breakpoint(max-width $tab,true){
+			> div{
+					display:none;
+				&:first-child{
+					display:block;
+					width:100%;
+				}
+			}
+		}
+	}
+	&.overlay-cta{
+		> div{
+			padding:0 20px;
+		}
+	}
+	&.generic-cta{
+		> div{
+			padding:20px 0;
+			@include breakpoint($tab,true){
+				padding:30px 10px;
+				&:first-child{
+					padding:30px 20px 0 0;
+				}
+				&:last-child{
+					padding:30px 0 30px 20px;
+				}
+			}
+		}
+	}
+	&.ug-factoids{
+		border-top:1px solid $gold;
+		border-bottom:1px solid $gold;
+		margin-bottom:30px;
+		&.fourths{
+			> div{
+				@include breakpoint($tab){
+					width:50%;
+				}
+				@include breakpoint($tab-large){
+					width:25%;
+				}
+			}
+		}
+	}
+	&.ug-admissions{
+		@include breakpoint($tab){
+			> div{
+				width:30%;
+				&:first-child{
+					width:50%;
+				}
+				&:last-child{
+					width:20%;
+					padding:0 20px;
+				}
+			}
+		}
+	}
+	&.ug-admissions-featured{
+		> div{
+			@include breakpoint($tab){
+				padding:20px;
+			}
+		}
+	}
+	&.dropdown{
+		> div{
+			padding:10px 0;
+			@include breakpoint($tab,true){
+				padding:10px 2px;
+				&:first-child{
+					padding:10px 4px 0 0;
+				}
+				&:last-child{
+					padding:10px 0 10px 4px;
+				}
+			}
+			.drop-container{
+				width:100%;
+				padding:0;
+				@include breakpoint($tab){
+					padding:0;
+				}
+			}
+		}
+	}
+	&.ug-awards{
+		border-top:1px solid $gold;
+		border-bottom:1px solid $gold;
+		margin-bottom:30px;
+	}
+}
+.addthis_sharing_toolbox{
+	@include floatblock();
+	padding-bottom:10px;
+	@include breakpoint($tab-large){
+	}
+	@include breakpoint($desk){
+		padding:0;
+	}
+}
+.factoid{
+	&.dark{
+		.container{
+			background:$blue;
+		}
+	}
+}
+.drop-container{
+	@include floatblock();
+	padding:20px 0 0 0;
+	position:relative;
+	@include breakpoint($tab,true){
+		padding:0 10px 0 0;
+		width:auto;
+	}
+	ul{
+		display:none;
+		float:left;
+		width:100%;
+		z-index:2;
+		background:$white;
+		border:1px solid $gold;
+		li{
+			@include floatblock();
+			a{
+				@include f-bk(14px,$blue);
+				@include floatblock(left,calc(100% - 20px));
+				padding:10px 5px;
+				margin:0 10px;
+				border-bottom:1px solid $gray;
+			}
+		}
+	}
+	.dropdown{
+		@include bebas(20px);
+		@include floatblock(left);
+		@include arrowdown(inherit,12px,"\f0da");
+		border:1px solid $blue;
+		outline:none;
+		padding:15px 30px 15px 20px;
+		cursor:pointer;
+		text-transform:uppercase;
+		&:after{
+			top: calc(50% - 12px);
+			font-size:16px;
+		}
+	}
+	&.open{
+		.dropdown{
+			&:after{
+				-webkit-transform:rotateZ(-90deg);
+				-ms-transform:rotateZ(-90deg);
+				transform:rotateZ(-90deg);
+			}
+		}
+		ul{
+			display:block;
+			position:relative;
+			top:100%;
+			@include breakpoint($tab,true){
+				position:absolute;
+			}
+		}
+	}
+	&.light{
+		.dropdown{
+			color:$dk-blue;
+			background:#eee;
+			border-color:$dk-blue;
+		}
+	}
+	&.dark{
+		.dropdown{
+			color:$white;
+			background:$dk-blue;
+			border-color:$dk-blue;
+		}
+		&.open{
+			.dropdown{
+				background:$gold;
+				border-color:$gold;
+				color:$dk-blue;
+			}
+		}
+	}
+}
+.text-image-intro{
+	@include floatblock();
+	&.overlay{
+		position:relative;
+		padding:20px 0;
+		@include breakpoint($tab,true){
+			padding: 0;
+		}
+		a{
+			@include floatblock();
+			position:relative;
+			overflow:hidden;
+			@include breakpoint($tab,true){}
+		}
+		img{
+			@include floatblock();
+			position:relative;
+		}
+		.tag{
+			h3{
+				@include bebas(30px,$dk-blue);
+				line-height:48px;
+				position: absolute;
+				background: $gold;
+				width: auto;
+				padding: 0px 20px;
+				text-transform: uppercase;
+				box-shadow:1px 2px 3px rgba(0,0,0,0.5);
+				border:none;
+				margin:20px 0;
+				@include breakpoint($tab){
+					font-size:36px;
+				}
+				&:after{
+					content: '';
+					position: absolute;
+					border: 0px solid $gold;
+					border-right-color: transparent;
+					bottom: 0px;
+					right: -12px;
+					border-width: 24px;
+					border-right-width: 12px;
+					border-left-width: 0;
+				}
+			}
+		}
+		.container{
+			@include floatblock();
+			bottom:0;
+			background:$blue;
+			position:relative;
+			@include breakpoint($tab-large,true){
+				background:$t-blue;
+				position:absolute;
+			}
+			p{
+				@include f-bk(16px,$white);
+				padding:0 20px 20px 20px;
+				height:auto;
+				overflow:hidden;
+				margin:0;
+			}
+			h2{
+				@include paradoxbold(16px,$white);
+				padding:20px 20px 0 20px;
+				margin:0;
+				border-bottom:0;
+			}
+			ul{
+				li{
+					.drop-container{
+						width:100%;
+						.dropdown{
+							@include paradoxbold(22px,$blue);
+							line-height:22px;
+							width:100%;
+							text-align:left;
+							background:$y-gold;
+							border:none;
+							border-radius:0;
+							text-transform:none;
+							@include arrowdown($dk-gray);
+							&:after{
+								content:"\f054";
+								right:5px;
+								top: calc(50% - 9px);
+								font-size:18px;
+							}
+						}
+						ul{
+							width:100%;
+						}
+						&.open{
+							.dropdown{
+								&:after{
+									-webkit-transform:rotateZ(-90deg);
+									-ms-transform:rotateZ(-90deg);
+									transform:rotateZ(-90deg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.spotlight{
+			padding:20px;
+			@include breakpoint($tab,true){
+				padding:0 20px;
+			}
+			.container{
+				h2{
+					font-size:30px;
+					line-height:34px;
+				}
+			}
+		}
+	}
+	&.imgtitle{
+		@include floatblock();
+		padding:20px 0;
+		a{
+			@include floatblock();
+		}
+		img{
+			display:none;
+			@include breakpoint($desk){
+				@include floatblock(left,120px);
+			}
+			padding-right:20px;
+		}
+		h2{
+			@include bebas(20px,$blue);
+			@include floatblock();
+			@include breakpoint($desk){
+				width:calc(100% - 120px);
+			}
+		}
+	}
+	&.linkimg{
+		h4{
+			border-bottom:1px solid $gold;
+			padding-bottom:5px;
+			margin-bottom:20px;
+		}
+		a{
+			img{
+				max-width:100%;
+			}
+		}
+	}
+	&.generic{
+		padding-bottom:20px;
+		border-bottom:2px solid $dk-blue;
+		img{
+			@include floatblock();
+			border-bottom:2px solid $gold;
+		}
+		.container{
+			@include floatblock();
+			background:$white;
+			h2{
+				@include bebas(18px,$dk-blue);
+				@include floatblock();
+				margin:10px 0 0;
+				border-bottom:0;
+			}
+			p{
+				@include floatblock();
+				font-size:16px;
+				line-height:22px;
+				overflow:hidden;
+			}
+		}
+	}
+	&.genericv2{
+		padding:20px;
+		img{
+			display:block;
+			margin:auto;
+		}
+		.container{
+			@include floatblock();
+			background:$white;
+			h2{
+				@include f-dm(18px,$dk-blue);
+				text-transform:none;
+				@include floatblock();
+				margin:10px 0 0;
+				border-bottom:0;
+				text-align:center;
+			}
+			p{
+				@include floatblock();
+				font-size:16px;
+				line-height:22px;
+				overflow:hidden;
+			}
+		}
+	}
+	&.promo{
+		h4{
+			@include bebas(20px,$dk-blue);
+			font-weight:bold;
+			@include floatblock();
+			margin:0;
+			text-transform:initial;
+		}
+		hr{
+			@include floatblock();
+			border:none;
+			border-bottom:1px solid $gold;
+			position:relative;
+		}
+		.container{
+			.intro{
+				@include f-bk(16px,$c-default);
+				@include floatblock();
+				a{
+					@include f-bk(18px,$dk-blue);
+				}
+			}
+			> a{
+				@include bebas(16px,$dk-blue);
+				@include floatblock(left,auto);
+				@include arrowafter($dk-blue,14px,"\f0da");
+				text-transform:uppercase;
+				margin:10px 0;
+			}
+		}
+		&.dark{
+			padding:10px 20px;
+			background:$dk-blue;
+			h4{
+				color:$white;
+				font-weight:normal;	
+			}
+			.container{
+				.intro{
+					color:$white;
+				}
+				> a{
+					color:$gold;
+					&:after{
+						color:$gold;
+					}
+				}
+			}
+		}
+		&.light{
+			padding:10px 20px;
+			background:$white-1;
+			.container{
+				h4{
+					@include bebas(24px,$dk-blue);
+					color:$dk-blue;
+					font-weight:normal;
+				}
+				.intro{
+					color:$c-default;
+				}
+				> a{
+					color:$dk-blue;
+					&:after{
+						color:$dk-blue;
+					}
+				}
+			}
+		}
+		&.wrap{
+			img{
+				float:left;
+				padding-right:10px;
+			}
+			.container{
+				.intro{
+					display:inline;
+					float:none;
+				}
+			}
+		}
+	}
+	&.textlink{
+	}
+	&.button{
+		@include floatblock();
+		max-width:100%;
+		margin:0 0 20px;
+		transition:all .2s;
+		@include breakpoint($tab){
+			width:200px;
+		}
+		a{
+			@include floatblock();
+			position:relative;
+			img{
+				@include floatblock();
+				width:100%;
+			}
+			.container{
+				display:table;
+				float:left;
+				width:100%;
+				position:relative;
+				background:$t-white;
+				padding:5vw;
+				@include breakpoint($tab,true){
+					padding:15px 20px;
+				}
+				span{
+					font-size:30px;
+					@include breakpoint($tab,true){
+						font-size:16px;
+					}
+					display:table-cell;
+					width:auto;
+					vertical-align:middle;
+					padding-right:5px;
+				}
+				p{
+					@include floatblock(left,auto);
+					@include bebas(24px,$c-default);
+					margin:0;
+					@include breakpoint($tab,true){
+						font-size:24px;
+						line-height:28px;
+					}
+				}
+			}
+		}
+		&.light{
+			border:1px solid $gray;
+			a{
+				.container{
+					background:$gold;
+					span{
+						color:$dk-blue;
+					}
+					p{
+						color:$dk-blue;
+					}
+				}
+			}
+		}
+		&.dark{
+			border:1px solid #444;
+			a{
+				.container{
+					background:$dk-blue;
+					span{
+						color:$white;
+					}
+					p{
+						color:$white;
+					}
+				}
+			}
+		}
+	}
+	&.more-news{
+		width:200px;
+		margin:auto;
+		float:none;
+		@include breakpoint($tab){
+			position:absolute;
+			bottom:90px;
+			left:0;
+			right:0;
+		}
+		a{
+			.container{
+				p{
+					text-align:center;
+					float:none;
+				}
+			}
+		}
+	}
+}
+.submit-media{
+	@include floatblock(left,200px);
+	@include bebas(18px,black);
+	line-height:40px;
+	padding-left:20px;
+	@include breakpoint($desk){
+		padding:0;
+	}
+	span{
+		color:$dk-blue;
+		padding-right:5px;
+	}
+}
+.filter-media{
+	@include floatblock(right);
+	margin:2px 0;
+	@include breakpoint($tab,true){
+		width:calc(100% - 200px);
+	}
+	@include breakpoint($desk){
+		width:auto;
+	}
+	ul{
+		@include floatblock(right);
+		@include breakpoint($tab){
+			width:auto;
+		}
+		li{
+			@include floatblock();
+			@include breakpoint($tab){
+				width:auto;
+			}
+			margin-left:5px;
+			a{
+				@include f-bk(14px,$dk-blue);
+				padding:5px 15px;
+				text-transform:uppercase;
+				border-radius:0;
+			}
+		}
+	}
+}
+.cta-bar{
+	background: $gold;
+	z-index:1;
+	.column{
+		h2{
+			margin: 5px auto 40px;
+			color:#222;
+			text-align:center;
+			font-size:36px;
+		}
+		padding: 0;
+		ul{
+			@include floatblock();
+			margin:auto;
+			text-align:center;
+			@include breakpoint($tab,true){
+				width:auto;
+				float:none;
+			}
+			li{
+				@include floatblock();
+				padding: 0;
+				@include breakpoint($tab,true){
+					width: 25%;
+					padding: 15px 0;
+				}
+				a{
+					@include paradoxbold(16px,$dk-blue);
+					height: 90px;
+					padding: 15px 5px 5px 5px;
+					background: none;
+					border: none;
+					border-left: 2px solid #fadd86;
+					border-bottom:2px solid $dk-blue;
+					@include breakpoint($tab){
+						border-bottom:0;
+					}
+					.icon-wrap {
+						@include floatblock(left,auto);
+						padding: 0 10px;
+						text-align: right;
+						@include breakpoint($tab){
+							width:40%;
+							padding:0;
+						}
+						i.fa {
+							width: 50px;
+							height: 50px;
+							padding: 10px 0 0 0;
+							background: $blue;
+							color: white;
+							font-size: 30px;
+							text-align: center;
+							border-radius: 50%;
+						}
+					}
+					span {
+						@include floatblock(left,60%);
+						padding: 0 0 0 10px;
+						text-align: left;
+						h3 {
+							@include bebas(30px,$blue);
+							margin: 0;
+							line-height: 20px;
+						}
+						p {
+							font-style:italic;
+							text-transform:capitalize;
+							float: left;
+							margin: 0;
+							color: $blue;
+							font-size: 14px;
+							line-height: 20px;
+							padding:5px 5px 0 0;
+						}
+					}
+				}
+				&:last-child a {
+					border-right: 2px solid #fadd86;
+				}
+			}
+		}
+	}
+}
+.variable-matrix {
+	@include floatblock();
+	@include breakpoint($tab,true){
+		padding: 50px 0;
+	}
+	.text-image-intro {
+		&.news-events {
+			width: 33.3333%;
+		}
+		&.virtual-tour{
+			@include breakpoint($tab){
+				width: 66.6666%;
+			}
+		}
+		&.spotlight {
+			@include breakpoint($tab){
+				width: 66.6666%;
+				margin-top:75px;
+			}
+		}
+	}
+	.news-events {
+		@include floatblock();
+		@include breakpoint($tab,true){
+			width: 33.3333%;
+		}
+	}
+	.virtual-tour {
+		@include floatblock();
+		padding: 20px;
+		@include breakpoint($tab,true){
+			width: 66.6666%;
+		}
+		h2 {
+			margin: 0 0 20px 0;
+			border-bottom: 1px solid $gold;
+		}
+		img {
+			width: 100%;
+			max-width: 750px;
+		}
+	}
+}
+.social-feeds.wrapper {
+	@include breakpoint($tab,true){
+		width: 33%;
+		margin: 55px 0 0 0;
+	}
+}
+#instafeed,
+#instafeed-undergrad{
+	@include floatblock();
+	.item{
+		display:none;
+		@include breakpoint($tab,true){
+			@include floatblock(left, 33.3333%);
+		}
+		&:first-child{
+			display:block;
+			width:100%;
+			@include breakpoint($tab,true){
+				@include floatblock(left, 33.3333%);
+			}
+		}
+		a{
+			@include floatblock();
+			position:relative;
+			img{
+				@include floatblock(left,auto);
+				height:100%;
+				width:100%;
+			}
+			h3{
+				@include paradoxbold(18px);
+				@include breakpoint($tab,true){
+					font-size:12px;
+				}
+				@include breakpoint($desk,true){
+					font-size:18px;
+				}
+				color:white;
+				text-shadow:1px 1px 0px rgba(0,0,0,0.8);
+				width:100%;
+				line-height:18px;
+				padding:15px;
+				box-sizing: border-box;
+				position: absolute;
+				bottom: 0px;
+				left:0;
+				margin:0;
+				@include v-gradient();
+				&:before{
+					content:"\f16d";
+					font-family:FontAwesome;
+					padding-right:10px;
+				}
+			}
+		}
+	}
+}
+/* unh homepage news and events tabs */
+#tab-0{
+	margin:0;
+	padding:0px 20px;
+}
+.bio-table{
+	border:none;
+	overflow:visible;
+	padding:20px 0;
+	@include floatblock();
+	@include breakpoint($tab){
+		width:70%;
+	}
+	@include breakpoint($tab-large){
+		width:100%;
+	}
+	table{
+		table-layout:fixed;
+		box-shadow:none;
+		tbody{
+			border:none;
+			tr{
+				border:none;
+				td{
+					@include paradox(14px,#111);
+					border:none;
+					@include calc(width,"100% - 75px",170px);
+					padding:5px 0px;
+					font-weight:bold;
+					vertical-align:top;
+					&:first-child{
+						width:75px;
+						@include bebas(14px,#111);
+					}
+					a{
+						@include paradox(14px,$dk-blue);
+					}
+				}
+			}
+		}
+	}
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	input[type='text'],
+	input[type='number'],
+	textarea {
+		font-size: 16px!important;
+	}
+	strong{
+		font-weight:bold;
+	}
+}

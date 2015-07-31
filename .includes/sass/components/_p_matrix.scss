@@ -1,0 +1,35 @@
+.matrix{
+	@include floatblock();
+	&.halves{
+		> div{
+			@include floatblock();
+			@include breakpoint($tab,true){
+				width:50%;
+			}
+		}
+	}
+	&.thirds{
+		> div{
+			@include floatblock();
+			@include breakpoint($tab,true){
+				width:33.3333%;
+			}
+		}
+	}
+	&.fourths{
+		> div{
+			@include floatblock();
+			@include breakpoint($tab,true){
+				width:25%;
+			}
+		}
+	}
+	&.fifths{
+		> div{
+			@include floatblock();
+			@include breakpoint($tab,true){
+				width:20%;
+			}
+		}
+	}
+}

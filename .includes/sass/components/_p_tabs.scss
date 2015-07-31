@@ -1,0 +1,56 @@
+.ui-tabs{
+	@include floatblock();
+	margin:40px 0;
+	.ui-tabs-nav{
+		display:table;
+		width:100%;
+		> li{
+			@include floatblock(left,auto);
+			color:$white;
+			border-right:2px solid $white;
+			&:last-child{
+				border-right:none;
+			}
+			&.ui-tabs-active,
+			&.ui-state-active{
+				a{
+					background:$dk-blue;
+					h3{
+						color:$white;
+						background:$dk-blue;
+					}
+				}
+			}
+			&.ui-state-hover{}
+			a{
+				@include floatblock();
+				outline:none;
+				text-align:center;
+				line-height:50px;
+				text-transform:uppercase;
+				padding:0 10px;
+				background:$gold;
+				span{
+					@include floatblock();
+				}
+				h3{
+					@include bebas(20px,$dk-blue);
+					border-bottom:0;
+					margin:0;
+					padding:5px 0;
+					@include breakpoint($tab-large,true){
+						padding:15px;
+					}
+					@include breakpoint($desk,true){
+						padding:20px;
+					}
+					}
+			}
+		}
+	}
+	.ui-tabs-panel{
+		@include floatblock();
+		padding:20px;
+		border:2px solid $dk-blue;
+	}
+}

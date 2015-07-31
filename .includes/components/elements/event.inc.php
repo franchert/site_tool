@@ -1,0 +1,24 @@
+<?php
+function p_event($type = 'normal',$title="Event Title Here",$intro = "Event description, location or extra information",$link="#",$month=null,$day=null,$weekday=null){
+	if ($month == null){
+		$month = date("M");
+	}
+	if ($day == null){
+		$day = date('d');
+	}
+	if ($weekday == null){
+		$weekday = date('D');
+	}
+	$string = '<div class="promo-event '.$type.'">';
+	$string .= '<a href="'.$link.'">';
+	$string .= '<div class="date">';
+	$string .= '<div class="weekday">'.$weekday.'</div>';
+	$string .= '<div class="month">'.$month.'</div>';
+	$string .= '<div class="day">'.$day.'</div>';
+	$string .= '</div>';
+	$string .= '<div class="info">';
+	$string .= '<h3>'.$title.'</h3>';
+	$string .= '<p>'.$intro.'</p>';
+	$string .= '</div></a></div>';
+	return $string;
+}

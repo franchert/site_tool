@@ -1,0 +1,39 @@
+.ui-accordion{
+	@include floatblock();
+	margin-bottom:40px;
+	h3{
+		padding:10px 20px;
+		@include bebas(20px,$white);
+		text-transform:uppercase;
+		background:$dk-blue;
+		border-bottom:2px solid $white;
+		cursor:pointer;
+		outline:none;
+		margin:0;
+		&.ui-state-active{
+			background:$gold;
+			color:$dk-blue;
+			&:after{
+				-webkit-transform:rotateZ(-90deg);
+				-ms-transform:rotateZ(-90deg);
+				transform:rotateZ(-90deg);
+			}
+		}
+		@include arrowdown(inherit,12px,"\f0da");
+		&:after{
+			right:20px;
+			font-size:20px;
+			top:calc(50% - 12px);
+		}
+	}
+	.ui-accordion-content{
+		@include floatblock;
+		padding:0 20px;
+		border:1px solid $gold;
+		border-top:0;
+		margin-bottom:2px;
+		p{
+			float:none;
+		}
+	}
+}
