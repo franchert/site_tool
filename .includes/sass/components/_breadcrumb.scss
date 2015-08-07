@@ -1,16 +1,15 @@
 #breadcrumb{
-	@include floatblock();
 	padding: 0 20px;
 	@include breakpoint($desk){
 		padding:0;
 	}
 	ul{
-		@include floatblock();
 		padding:10px 0px;
 		li{
 			@include floatblock(left,auto);
 			padding-right:10px;
 			font-size:14px;
+			line-height:18px;
 			&:before{
 				content:"\f0da";
 				font-family:FontAwesome;
@@ -24,6 +23,9 @@
 				color:$black;
 				border-bottom:1px dotted $gray;
 				font-size:14px;
+				line-height:18px;
+				float:none;
+				display:initial;
 				&:hover{
 					text-decoration:none;
 					border-bottom: 1px solid $gray;

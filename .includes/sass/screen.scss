@@ -11,9 +11,15 @@
 @import "base/**/*";
 body{
 	@import "components/**/*";
-}
-*{
-	box-sizing:border-box;
+	*{
+		box-sizing:border-box;
+		display:block;
+		float:left;
+		width:100%;
+	}
+	script{
+		display:none;
+	}
 }
 .back-to-top{
 	display:none;
@@ -47,12 +53,10 @@ body{
 	}
 }
 .wrapper{
-	@include floatblock();
 	position:relative;
 	overflow:hidden;
 	> img{
-		@include floatblock(left,auto);
-		//position:absolute;
+		width:auto;
 		min-width:100%;
 		z-index:-1;
 		min-height:100%;
@@ -62,17 +66,17 @@ body{
 	}
 }
 .column{
-	max-width:$maxwidth;
-	margin:auto;
-	@include breakpoint(max-width $tab,true){
-		@include floatblock();
+	@include breakpoint($tab){
+		max-width:$maxwidth;
+		margin:auto;
+		float:none;
 	}
 	@include breakpoint($desk){
 		position:relative;
 	}
 }
 .twocolumns{
-	@include floatblock(left,50%);
+	width:50%;
 	padding-right:20px;
 }
 img{
@@ -103,36 +107,32 @@ h2{
 	@include paradoxbold(26px,$blue);
 }
 h3{
-	@include floatblock();
 	@include paradoxbold(24px,$blue);
 	line-height:24px;
 	border-bottom:1px solid $gold;
 	margin:0 0 20px 0;
 }
 h4{
-	@include floatblock();
 	@include bebas(20px,$dk-blue);
 }
 h5{
-	@include floatblock();
 	@include paradox(16px,$dk-blue);
 	font-weight:bold;
 	padding-top:20px;
 }
 p{
-	@include floatblock(none,100%);
+	float:none;
 	@include f-bk(18px,#000);
 	margin:10px 0;
 }
 ul,
 ol{
-	@include floatblock(none,100%);
+	float:none;
 	li{
 		@include f-bk(18px,#222);
 	}
 }
 section{
-	@include floatblock();
 	margin:20px 0;
 	max-height:initial;
 	position:relative;
@@ -171,13 +171,11 @@ section{
 }
 form{
 	div{
-		@include floatblock();
 		position:relative;
 		input{
 			@include f-bk(18px,$dk-gray);
 			font-style:italic;
 			line-height:24px;
-			@include floatblock();
 			padding:10px;
 			position:relative;
 			margin:10px 0;
@@ -195,7 +193,6 @@ form{
 			@include f-bk(18px,$dk-gray);
 			line-height:24px;
 			font-style:italic;
-			@include floatblock();
 			padding:10px;
 			max-width:100%;
 			min-height:200px;
@@ -204,7 +201,7 @@ form{
 	}
 	.submit{
 		@include bebas(18px,$white);
-		@include floatblock(left,auto);
+		width:auto;
 		margin:10px 0;
 		background:$dk-blue;
 		border:1px solid $gray;
@@ -214,9 +211,6 @@ form{
 		cursor:pointer;
 		-webkit-appearance: none;
 	}
-}
-iframe{
-	@include floatblock();
 }
 a{
 	@include f-bkcd(16px,$blue);
@@ -251,7 +245,6 @@ a{
 	}
 }
 blockquote{
-	@include floatblock();
 	@include bebas(36px,$dk-blue);
 	padding:0 10px;
 	margin-bottom:15px;
@@ -289,6 +282,13 @@ blockquote{
 	@include floatblock();
 	overflow-x:hidden;
 	min-height:100vh;
+	margin-top:99px;
+	@include breakpoint($tab){
+		margin-top:155px;
+	}
+	@include breakpoint($desk){
+		margin-top: 200px;
+	}
 	h1{
 		margin:20px;
 	}
@@ -298,7 +298,7 @@ header{
 	.l-head{
 		@include floatblock();
 		background: $dk-blue;
-		position:relative;
+		position:fixed;
 		z-index:2;
 		.toggle-wrapper{
 			@include floatblock(right,50px);
@@ -426,6 +426,7 @@ header{
 			.header-right{
 				position:relative;
 				z-index:1;
+				float:none;
 				.search{
 					display:none;
 					width:auto;
@@ -501,6 +502,7 @@ header{
 						top:0;
 						height:42px;
 						width:42px;
+						margin-right:0;
 					}
 					&:focus{
 						outline:rgb(77,144,254) auto 5px;
@@ -525,6 +527,7 @@ header{
 						display:none;
 						padding:0 7px;
 						vertical-align:middle;
+						float:none;
 						@include breakpoint($desk,true){
 							display:table-cell;
 							width:auto;
@@ -555,6 +558,7 @@ header{
 						padding:5px 5px 10px 5px;
 						vertical-align:middle;
 						position:relative;
+						float:none;
 						h3{
 							@include f-dm(14px,$white);
 							@include arrowdown($blue,8px);
@@ -646,6 +650,10 @@ header{
 				position:relative;
 				top:0;
 				margin:9px 0;
+			}
+			@include breakpoint($desk){
+				width:600px;
+				transition:all 0.2s ease-in-out;
 			}
 			img{
 				display:block;
@@ -789,10 +797,12 @@ header{
 	&.mobi-open{
 		.l-head{
 			left: 0;
-			height:100%;
 			z-index:9998;
-			@include breakpoint($tab,true){
-				position:relative;
+			overflow:auto;
+			height:100vh;
+			@include breakpoint($tab){
+				height:auto;
+				overflow:visible;
 			}
 			.toggle-wrapper{
 				.toggle{
@@ -818,12 +828,31 @@ header{
 			}
 			.site-logo{
 				background:$blue;
-				display:none;
-				@include breakpoint($tab-large,true){
-					display:block;
+				display:block;
+				margin:0;
+				@include breakpoint($desk,true){
 					position:relative;
 					top:0;
 					background:none;
+					margin:9px 0;
+				}
+				img{
+					display:none;
+					@include breakpoint(490px){
+						display:block;
+						position:fixed;
+						top:0;
+						max-height:50px;
+						width:auto;
+						max-width:50%;
+						max-width:-webkit-calc(100% - 181px);
+						max-width:calc(100% - 181px);
+					}
+					@include breakpoint($desk){
+						position:relative;
+						max-height: initial;
+						max-width: initial;
+					}
 				}
 			}
 			.utility{
@@ -835,14 +864,15 @@ header{
 				.header-left{
 					width:100%;
 					position:absolute;
-					top:549px;
+					top:548px;
 					background:black;
-					@include breakpoint($tab-large){
+					@include breakpoint($tab){
+						top:598px;
+					}
+					@include breakpoint($desk){
 						position:relative;
 						top:initial;
 						background:none;
-					}
-					@include breakpoint($desk){
 						width:auto;
 					}
 					ul.gateway-menu{
@@ -851,7 +881,8 @@ header{
 						overflow:initial;
 						background:inherit;
 						@include breakpoint($desk){
-							margin-top:7px;
+							margin-top:10px;
+							margin-left:20px;
 						}
 					}
 				}
@@ -859,11 +890,12 @@ header{
 					width:100%;
 					@include breakpoint($desk){
 						width:auto;
+						float:right;
 					}
 					.search-toggle{
 						top:-50px;
 						margin-bottom:-50px;
-						@include breakpoint($tab,true){
+						@include breakpoint($tab){
 							margin-bottom:0;
 						}
 						@include breakpoint($desk){
@@ -877,14 +909,14 @@ header{
 						float:right;
 						width:100%;
 						position:absolute;
-						top:371px;
+						top:370px;
 						background:black;
-						@include breakpoint($tab-large){
-							position:relative;
-							top:initial;
-							background:none;
+						@include breakpoint($tab){
+							top:420px;
 						}
 						@include breakpoint($desk,true){
+							position:relative;
+							top:initial;
 							float:right;
 							width:auto;
 							background:none;
@@ -987,26 +1019,6 @@ header{
 	}
 }
 body{
-	&.home{
-		h1{
-			border:none;
-		}
-		.program-search{
-			background:#eee;
-			.column{
-				@include breakpoint($tab,true){
-					margin-top:-350px;
-				}
-			}
-		}
-		.factoid{
-			.container{
-				@include breakpoint($tab,true){
-					background:$t-blue;
-				}
-			}
-		}
-	}
 	&.generic_inner{
 		.l-page{
 			.l-featured-header{
@@ -1360,6 +1372,7 @@ body{
 		.l-page .l-content-center .l-content-wrapper .l-content{
 			@include breakpoint($tab){
 				width:calc(100% - 350px);
+
 			}
 		}
 		.l-page .l-content-center .l-content-wrapper .l-promo-sidebar{
@@ -1368,13 +1381,124 @@ body{
 			}
 		}
 	}
-	&.sticky{
-		.l-head{
-			position:fixed;
-			z-index:99999;
+	&.home{
+		h1{
+			border:none;
 		}
-		.l-page{
-			margin-top:170px;
+		.program-search{
+			background:#eee;
+			.column{
+				@include breakpoint($tab,true){
+					margin-top:-350px;
+				}
+			}
+		}
+		.factoid{
+			.container{
+				@include breakpoint($tab,true){
+					background:$t-blue;
+				}
+			}
+		}
+	}
+	&.subnav-open{
+		.subnav{
+			&.open{
+				h2{
+					&:before{}
+				}
+			}
+		}
+	}
+	&.sticky{
+		header{
+			&.mobi-open{
+				.l-head{
+					@include breakpoint($desk){
+						position:fixed;
+						height:auto;
+					}
+					.site-logo-wrapper{
+						.site-logo{
+							img{
+							}
+						}
+					}
+				}
+			}
+			.l-head{
+				position:fixed;
+				z-index:99999;
+				.site-logo-wrapper{
+					.site-logo{
+						margin:0;
+						img{
+							@include breakpoint(490px){
+								position:fixed;
+								top:0;
+								max-height:50px;
+								width:auto;
+								max-width:50%;
+								max-width:-webkit-calc(100% - 181px);
+								max-width:calc(100% - 181px);
+							}
+							@include breakpoint($desk){
+								margin:0;
+								position:relative;
+								height:auto;
+								width:0;
+							}
+						}
+					}
+				}
+				@include breakpoint($desk){
+					.main-nav-container{
+						.nav-wrapper{
+							background:none;
+							border:none;
+							.column{
+								> .desk-sticky{
+										display:block;
+										float:left;
+										width:30%;
+										height:56px;
+										overflow:hidden;
+									img{
+										width:auto;
+										height:56px;
+									}
+								}
+								.main-nav{
+									width:70%;
+									float:right;
+									height:57px;
+									li{
+										border-bottom:0;
+										vertical-align:middle;
+										a{
+											color:$white;
+											font-size:13px;
+											&:hover{
+												color:$white;
+											}
+										}
+									}
+									&:hover{
+										li{
+											a{
+												color:$t-white-dark;
+												&:hover{
+													color:$white;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -1873,27 +1997,17 @@ footer{
 		padding:0 10px 0 0;
 		width:auto;
 	}
-	ul{
+	> div{
 		display:none;
 		float:left;
 		width:100%;
 		z-index:2;
 		background:$white;
 		border:1px solid $gold;
-		li{
-			@include floatblock();
-			a{
-				@include f-bk(14px,$blue);
-				@include floatblock(left,calc(100% - 20px));
-				padding:10px 5px;
-				margin:0 10px;
-				border-bottom:1px solid $gray;
-			}
-		}
 	}
 	.dropdown{
 		@include bebas(20px);
-		@include floatblock(left);
+		@include floatblock(left,auto);
 		@include arrowdown(inherit,12px,"\f0da");
 		border:1px solid $blue;
 		outline:none;
@@ -1913,11 +2027,11 @@ footer{
 				transform:rotateZ(-90deg);
 			}
 		}
-		ul{
+		> div{
 			display:block;
 			position:relative;
 			top:100%;
-			@include breakpoint($tab,true){
+			@include breakpoint($tab){
 				position:absolute;
 			}
 		}
@@ -1940,385 +2054,6 @@ footer{
 				background:$gold;
 				border-color:$gold;
 				color:$dk-blue;
-			}
-		}
-	}
-}
-.text-image-intro{
-	@include floatblock();
-	&.overlay{
-		position:relative;
-		padding:20px 0;
-		@include breakpoint($tab,true){
-			padding: 0;
-		}
-		a{
-			@include floatblock();
-			position:relative;
-			overflow:hidden;
-			@include breakpoint($tab,true){}
-		}
-		img{
-			@include floatblock();
-			position:relative;
-		}
-		.tag{
-			h3{
-				@include bebas(30px,$dk-blue);
-				line-height:48px;
-				position: absolute;
-				background: $gold;
-				width: auto;
-				padding: 0px 20px;
-				text-transform: uppercase;
-				box-shadow:1px 2px 3px rgba(0,0,0,0.5);
-				border:none;
-				margin:20px 0;
-				@include breakpoint($tab){
-					font-size:36px;
-				}
-				&:after{
-					content: '';
-					position: absolute;
-					border: 0px solid $gold;
-					border-right-color: transparent;
-					bottom: 0px;
-					right: -12px;
-					border-width: 24px;
-					border-right-width: 12px;
-					border-left-width: 0;
-				}
-			}
-		}
-		.container{
-			@include floatblock();
-			bottom:0;
-			background:$blue;
-			position:relative;
-			@include breakpoint($tab-large,true){
-				background:$t-blue;
-				position:absolute;
-			}
-			p{
-				@include f-bk(16px,$white);
-				padding:0 20px 20px 20px;
-				height:auto;
-				overflow:hidden;
-				margin:0;
-			}
-			h2{
-				@include paradoxbold(16px,$white);
-				padding:20px 20px 0 20px;
-				margin:0;
-				border-bottom:0;
-			}
-			ul{
-				li{
-					.drop-container{
-						width:100%;
-						.dropdown{
-							@include paradoxbold(22px,$blue);
-							line-height:22px;
-							width:100%;
-							text-align:left;
-							background:$y-gold;
-							border:none;
-							border-radius:0;
-							text-transform:none;
-							@include arrowdown($dk-gray);
-							&:after{
-								content:"\f054";
-								right:5px;
-								top: calc(50% - 9px);
-								font-size:18px;
-							}
-						}
-						ul{
-							width:100%;
-						}
-						&.open{
-							.dropdown{
-								&:after{
-									-webkit-transform:rotateZ(-90deg);
-									-ms-transform:rotateZ(-90deg);
-									transform:rotateZ(-90deg);
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		&.spotlight{
-			padding:20px;
-			@include breakpoint($tab,true){
-				padding:0 20px;
-			}
-			.container{
-				h2{
-					font-size:30px;
-					line-height:34px;
-				}
-			}
-		}
-	}
-	&.imgtitle{
-		@include floatblock();
-		padding:20px 0;
-		a{
-			@include floatblock();
-		}
-		img{
-			display:none;
-			@include breakpoint($desk){
-				@include floatblock(left,120px);
-			}
-			padding-right:20px;
-		}
-		h2{
-			@include bebas(20px,$blue);
-			@include floatblock();
-			@include breakpoint($desk){
-				width:calc(100% - 120px);
-			}
-		}
-	}
-	&.linkimg{
-		h4{
-			border-bottom:1px solid $gold;
-			padding-bottom:5px;
-			margin-bottom:20px;
-		}
-		a{
-			img{
-				max-width:100%;
-			}
-		}
-	}
-	&.generic{
-		padding-bottom:20px;
-		border-bottom:2px solid $dk-blue;
-		img{
-			@include floatblock();
-			border-bottom:2px solid $gold;
-		}
-		.container{
-			@include floatblock();
-			background:$white;
-			h2{
-				@include bebas(18px,$dk-blue);
-				@include floatblock();
-				margin:10px 0 0;
-				border-bottom:0;
-			}
-			p{
-				@include floatblock();
-				font-size:16px;
-				line-height:22px;
-				overflow:hidden;
-			}
-		}
-	}
-	&.genericv2{
-		padding:20px;
-		img{
-			display:block;
-			margin:auto;
-		}
-		.container{
-			@include floatblock();
-			background:$white;
-			h2{
-				@include f-dm(18px,$dk-blue);
-				text-transform:none;
-				@include floatblock();
-				margin:10px 0 0;
-				border-bottom:0;
-				text-align:center;
-			}
-			p{
-				@include floatblock();
-				font-size:16px;
-				line-height:22px;
-				overflow:hidden;
-			}
-		}
-	}
-	&.promo{
-		h4{
-			@include bebas(20px,$dk-blue);
-			font-weight:bold;
-			@include floatblock();
-			margin:0;
-			text-transform:initial;
-		}
-		hr{
-			@include floatblock();
-			border:none;
-			border-bottom:1px solid $gold;
-			position:relative;
-		}
-		.container{
-			.intro{
-				@include f-bk(16px,$c-default);
-				@include floatblock();
-				a{
-					@include f-bk(18px,$dk-blue);
-				}
-			}
-			> a{
-				@include bebas(16px,$dk-blue);
-				@include floatblock(left,auto);
-				@include arrowafter($dk-blue,14px,"\f0da");
-				text-transform:uppercase;
-				margin:10px 0;
-			}
-		}
-		&.dark{
-			padding:10px 20px;
-			background:$dk-blue;
-			h4{
-				color:$white;
-				font-weight:normal;	
-			}
-			.container{
-				.intro{
-					color:$white;
-				}
-				> a{
-					color:$gold;
-					&:after{
-						color:$gold;
-					}
-				}
-			}
-		}
-		&.light{
-			padding:10px 20px;
-			background:$white-1;
-			.container{
-				h4{
-					@include bebas(24px,$dk-blue);
-					color:$dk-blue;
-					font-weight:normal;
-				}
-				.intro{
-					color:$c-default;
-				}
-				> a{
-					color:$dk-blue;
-					&:after{
-						color:$dk-blue;
-					}
-				}
-			}
-		}
-		&.wrap{
-			img{
-				float:left;
-				padding-right:10px;
-			}
-			.container{
-				.intro{
-					display:inline;
-					float:none;
-				}
-			}
-		}
-	}
-	&.textlink{
-	}
-	&.button{
-		@include floatblock();
-		max-width:100%;
-		margin:0 0 20px;
-		transition:all .2s;
-		@include breakpoint($tab){
-			width:200px;
-		}
-		a{
-			@include floatblock();
-			position:relative;
-			img{
-				@include floatblock();
-				width:100%;
-			}
-			.container{
-				display:table;
-				float:left;
-				width:100%;
-				position:relative;
-				background:$t-white;
-				padding:5vw;
-				@include breakpoint($tab,true){
-					padding:15px 20px;
-				}
-				span{
-					font-size:30px;
-					@include breakpoint($tab,true){
-						font-size:16px;
-					}
-					display:table-cell;
-					width:auto;
-					vertical-align:middle;
-					padding-right:5px;
-				}
-				p{
-					@include floatblock(left,auto);
-					@include bebas(24px,$c-default);
-					margin:0;
-					@include breakpoint($tab,true){
-						font-size:24px;
-						line-height:28px;
-					}
-				}
-			}
-		}
-		&.light{
-			border:1px solid $gray;
-			a{
-				.container{
-					background:$gold;
-					span{
-						color:$dk-blue;
-					}
-					p{
-						color:$dk-blue;
-					}
-				}
-			}
-		}
-		&.dark{
-			border:1px solid #444;
-			a{
-				.container{
-					background:$dk-blue;
-					span{
-						color:$white;
-					}
-					p{
-						color:$white;
-					}
-				}
-			}
-		}
-	}
-	&.more-news{
-		width:200px;
-		margin:auto;
-		float:none;
-		@include breakpoint($tab){
-			position:absolute;
-			bottom:90px;
-			left:0;
-			right:0;
-		}
-		a{
-			.container{
-				p{
-					text-align:center;
-					float:none;
-				}
 			}
 		}
 	}
@@ -2454,7 +2189,7 @@ footer{
 	@include breakpoint($tab,true){
 		padding: 50px 0;
 	}
-	.text-image-intro {
+	.p-promo {
 		&.news-events {
 			width: 33.3333%;
 		}

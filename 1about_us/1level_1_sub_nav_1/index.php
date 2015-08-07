@@ -25,7 +25,7 @@ $p_promo_sidebar .="<section><h2>Find Us On</h2>".p_list(
 	"social",
 	""
 )."</section>";
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button light",
 	"Apply Now",
 	null,
@@ -34,7 +34,7 @@ $p_promo_sidebar .= p_text_image_intro(
 	"#",
 	"file"
 );
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button dark",
 	"Give to UNH",
 	null,

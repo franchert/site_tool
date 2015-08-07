@@ -21,6 +21,10 @@
 		.column{
 			position:relative;
 			top:1px;
+			> .desk-sticky{
+				width:0;
+				display:none;
+			}
 			.main-nav{
 				@include floatblock();
 				@include breakpoint($tab-large,true){

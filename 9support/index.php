@@ -26,7 +26,7 @@ $arr[1]['b'] = "<h3>Three Easy Ways to Make Your Gift</h3>".p_paragraph(2);
 $arr[2]['b'] = "<h3>Tab 2</h3>".p_paragraph(2);
 $arr[3]['b'] = "<h3>Tab 3</h3>".p_paragraph(2);
 $p_content .=p_tabs("tab-3",$arr);
-$p_promo_sidebar .= "<section><h2>Make A Gift</h2>".p_text_image_intro(
+$p_promo_sidebar .= "<section><h2>Make A Gift</h2>".p_promo(
 	"button light",
 	"Donate Now",
 	null,
@@ -36,7 +36,7 @@ $p_promo_sidebar .= "<section><h2>Make A Gift</h2>".p_text_image_intro(
 	"usd"
 )."</section>";
 $p_promo_sidebar .="<section><h2>Thank You!</h2>".p_paragraph().p_video()."</section>";
-$p_promo_sidebar .="<section><h2>Donor Spotlight</h2>".p_text_image_intro(
+$p_promo_sidebar .="<section><h2>Donor Spotlight</h2>".p_promo(
 	"spotlight",
 	"Mark Ceccorulli",
 	"Mark remembers what it was like to work full time, attend school and take care of a family. Several years ago, he put his son through law school. I'm amazed at the debt some of the students have to take on, he says. If we all gave back, we could make it easier on those kids.",

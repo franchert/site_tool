@@ -15,7 +15,7 @@ function p_matrix($id,$arr,$width=null,$title = null,$offset=0,$morelink=''){
 	}
 	$addclass='';
 	if ($len == 1){
-
+		
 	}else if ($len % 5 == 0 || $width == 5){
 		$addclass = ('fifths');
 	}else if ($len % 4 == 0 || $width == 4){
@@ -31,15 +31,15 @@ function p_matrix($id,$arr,$width=null,$title = null,$offset=0,$morelink=''){
 		$addclass .= ' offset';
 	}
 	$string ='<div class="matrix '.$id.' '.$addclass.'">';
-	if(isset($title) && $title !=''){
-		$string .= '<div><h2>'.$title.'</h2></div>';
-	}
-	foreach($arr as $k => $v){
-		$string .='<div>'.$v.'</div>';
-	}
-	if($morelink != ''){
-		$string .= "<a href='#'>".$morelink."</a>";
-	}
+		if(isset($title) && $title !=''){
+			$string .= '<div><h2>'.$title.'</h2></div>';
+		}
+		foreach($arr as $k => $v){
+			$string .='<div>'.$v.'</div>';
+		}
+		if($morelink != ''){
+			$string .= "<a href='#'>".$morelink."</a>";
+		}
 	$string .='</div>';
 	return $string;
 }?>

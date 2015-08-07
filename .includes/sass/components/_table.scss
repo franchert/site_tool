@@ -1,5 +1,4 @@
 .table-wrapper{
-	@include floatblock();
 	overflow:auto;
 	@include breakpoint($tab){
 		border:1px solid $dk-blue;
@@ -7,21 +6,50 @@
 	table{
 		width:100%;
 		box-shadow: 0px 0px 1px $t-black;
-		table-layout:fixed;
+		@include breakpoint($tab){
+			display:table;
+			float:none;
+			table-layout:fixed;
+		}
 		thead{
 			display:none;
 			@include breakpoint($tab){
 				display:table-header-group;
+				float:none;
+				width:auto;
 			}
 			tr{
 				background:$white;
 				border-bottom:1px solid #eee;
+				@include breakpoint($tab){
+					display:table-row;
+					float:none;
+					width:auto;
+					border:0;
+					border-bottom:1px solid #eee;
+					margin:0;
+					&:last-child{
+						border-bottom:none;
+					}
+				}
 				th{
+					display:block;
+					float:left;
+					width:100%;
 					@include f-bk(18px,$white);
 					border-right:1px solid $gray;
 					background:$dk-blue;
 					padding:10px 30px;
 					text-align:left;
+					@include breakpoint($tab){
+						padding:10px 30px;
+						border-right:1px solid $gray;
+						display:table-cell;
+						float:none;
+						&:before{
+							content:'';
+						}
+					}
 					&:last-child{
 						@include breakpoint($tab){
 							border-right:none;
@@ -31,8 +59,12 @@
 			}
 		}
 		tbody{
+			@include breakpoint($tab){
+				display:table-row-group;
+				float:none;
+				width:auto;
+			}
 			tr{
-				@include floatblock();
 				background:$white;
 				border:1px solid $gray;
 				margin-bottom:10px;
@@ -48,10 +80,9 @@
 					}
 				}
 				td{
-					@include floatblock();
 					@include f-bk(18px,$c-default);
-					padding:10px 30px;
 					text-align:left;
+					padding:10px 20px;
 					@include breakpoint($tab){
 						padding:10px 30px;
 						border-right:1px solid $gray;
@@ -78,6 +109,9 @@
 						@include breakpoint($tab){
 							border-right:none;
 						}
+					}
+					*{
+						width:auto;
 					}
 				}
 				&.even{

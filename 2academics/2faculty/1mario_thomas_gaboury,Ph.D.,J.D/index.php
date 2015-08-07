@@ -78,17 +78,17 @@ $p_promo_sidebar .= "<section><h2>Important Links</h2>".p_list(
 	)."</section>";
 $p_promo_sidebar .= "<section><h2>From the Blog</h2>".p_list(
 	array(
-		p_text_image_intro("textlink","Sub Title / H4 Header",p_paragraph('1',true,false),NULL,NULL,"#",'Read More'),
-		p_text_image_intro("textlink","Sub Title / H4 Header",p_paragraph('1',true,false),NULL,NULL,"#",'Read More'),
-		p_text_image_intro("textlink","Sub Title / H4 Header",p_paragraph('1',true,false),NULL,NULL,"#",'Read More'),
+		p_promo("textlink","Sub Title / H4 Header",p_paragraph('1',true,false),NULL,NULL,"#",'Read More'),
+		p_promo("textlink","Sub Title / H4 Header",p_paragraph('1',true,false),NULL,NULL,"#",'Read More'),
+		p_promo("textlink","Sub Title / H4 Header",p_paragraph('1',true,false),NULL,NULL,"#",'Read More'),
 	),
 	"blog-listing nodisc"
 )."</section>";
 $p_promo_sidebar .= "<section><h2>News</h2>".p_list(
 	array(
-		p_text_image_intro("imgtitle","Nearly 100 Students Inducted into society for experiential education","experiential education",NULL,"https://placehold.it/100x100.png","#"),
-		p_text_image_intro("imgtitle","Jeknavorian chosen for distinguished service award in art education","experiential education",NULL,"https://placehold.it/100x100.png","#"),
-		p_text_image_intro("imgtitle","Painter speaks at Lyme Academy College of Fine Arts commencement","experiential education",NULL,"https://placehold.it/100x100.png",NULL),
+		p_promo("imgtitle","Nearly 100 Students Inducted into society for experiential education","experiential education",NULL,"https://placehold.it/100x100.png","#"),
+		p_promo("imgtitle","Jeknavorian chosen for distinguished service award in art education","experiential education",NULL,"https://placehold.it/100x100.png","#"),
+		p_promo("imgtitle","Painter speaks at Lyme Academy College of Fine Arts commencement","experiential education",NULL,"https://placehold.it/100x100.png",NULL),
 	),
 	"news-listing nodisc"
 );

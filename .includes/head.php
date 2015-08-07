@@ -1,13 +1,13 @@
 <!doctype HTML>
 <html>
 <head>
-	<?php if($page == 'home'){ ?>
-		<title>University of New Haven</title>
-		<meta property="og:title" content="University of New Haven">
-	<?php }else{ ?>
-		<title><?php echo $page_title; ?> - University of New Haven</title>
-		<meta property="og:title" content="<?php echo $page_title.' - University of New Haven'; ?>">
-	<?php } ?>
+<?php if($page == 'home'){ ?>
+	<title>University of New Haven</title>
+	<meta property="og:title" content="University of New Haven">
+<?php }else{ ?>
+	<title><?php echo $page_title; ?> - University of New Haven</title>
+	<meta property="og:title" content="<?php echo $page_title.' - University of New Haven'; ?>">
+<?php } ?>
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="<?php echo $base_url.$url; ?>">
 	<meta property="og:site_name" content="University of New Haven">
@@ -33,6 +33,7 @@ if($section != $page){
 /*if we're on a mini site, add an extra class to show it's parent mini item*/
 if(isset($mini) && $mini == true){
 	echo ' mini';
+	/*if we're deeper than the mini home, add a mini-specific class*/
 	if(isset($depth) && $depth > 0){
 		echo ' m-'.substr($segments[$depth],1);
 	}
@@ -40,12 +41,13 @@ if(isset($mini) && $mini == true){
 echo " ".$layout;?>">
 	<a class="back-to-top" href="#top">Back to Top</a>
 	<div id="fb-root"></div>
-	<script>(function(d, s, id) {
-		var js, fjs = d.getElementsByTagName(s)[0];
-		if (d.getElementById(id)) return;
-		js = d.createElement(s); js.id = id;
-		js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=470606949755533";
-		fjs.parentNode.insertBefore(js, fjs);
+	<script>
+		(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=470606949755533";
+			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));
 	</script>
 	<header>
@@ -78,52 +80,7 @@ echo " ".$layout;?>">
 			<div class="column">
 				<div class="header-right">
 					<button class="search-toggle" aria-label="site search toggle"><span class="fa fa-search"></span></button>
-					<ul class="quick-links">
-						<li>
-							<h3 tabindex='0'>Quick Links</h3>
-							<ul class="utility-sub">
-								<li><h4>Getting In</h4>
-									<ul>
-										<li><a href="#">Undergraduate Admissions</a></li>
-										<li><a href="#">Graduate Admissions</a></li>
-										<li><a href="#">International Admissions</a></li>
-										<li><a href="#">Apply Now</a></li>
-										<li><a href="#">Financial Aid</a></li>
-										<li><a href="#">Net Price Calculator</a></li>
-									</ul>
-								</li>
-								<li><h4>Our Colleges</h4>
-									<ul>
-										<li><a href="#">College of Arts &amp; Sciences</a></li>
-										<li><a href="#">College of Business</a></li>
-										<li><a href="#">Henry C. Lee College</a></li>
-										<li><a href="#">Lyme Academy College of Fine Arts</a></li>
-										<li><a href="#">Tagliatela College of Engineering</a></li>
-									</ul>
-								</li>
-								<li><h4>Information Technology</h4>
-									<ul>
-										<li><a href="#">IT Support</a></li>
-										<li><a href="#">InsideUNH</a></li>
-										<li><a href="#">Student Email</a></li>
-										<li><a href="#">Faculty &amp; Staff Email</a></li>
-										<li><a href="#">Blackboard</a></li>
-										<li><a href="#">Office of Information Technology (OIT)</a></li>
-									</ul>
-								</li>
-								<li><h4>Popular Sites</h4>
-									<ul>
-										<li><a href="#">Emergency Procedures and Notifications</a></li>
-										<li><a href="#">Career Development Center</a></li>
-										<li><a href="#">Diversity - IDEA Council</a></li>
-										<li><a href="#">Public Safety and Administrative Services</a></li>
-										<li><a href="#">Study Abroad</a></li>
-										<li><a href="#">Top Searches and Most-Visited Pages</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
+					<?php include($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/snippets/quick-links.tpl.php"); ?>
 					<div class="search">
 						<?php include($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/snippets/global-search.tpl.php"); ?>
 					</div>
@@ -148,8 +105,8 @@ echo " ".$layout;?>">
 
 			</div>
 		</div>
-		<div class="column">
-			<?php if($page == 'home'){echo "<h1>";} ?><a class="site-logo" href="/"><img src="/.includes/stylesheets/images/unh-logo.jpg" alt='Western Carolina University'></a><?php if($page == 'home'){echo "</h1>";} ?>
+		<div class="column site-logo-wrapper">
+			<?php if($page == 'home'){echo "<h1>";} ?><a class="site-logo" href="/"><img src="/.includes/stylesheets/images/unh-logo.svg" alt='Site Logo'></a><?php if($page == 'home'){echo "</h1>";} ?>
 		</div>
 		<div class='main-nav-container wrapper'>
 	<?php	

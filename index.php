@@ -28,9 +28,9 @@ $p_one .= "<div class='variable-matrix'>";
 $p_n_1[1]['t'] = "News";
 $p_n_1[1]['b'] = p_list(
 	array(
-		p_text_image_intro("imgtitle","Nearly 100 Students Inducted into society for experiential education","experiential education",NULL,"https://placehold.it/100x100.png","#"),
-		p_text_image_intro("imgtitle","Jeknavorian chosen for distinguished service award in art education","experiential education",NULL,"https://placehold.it/100x100.png","#"),
-		p_text_image_intro("imgtitle","Painter speaks at Lyme Academy College of Fine Arts commencement","experiential education",NULL,"https://placehold.it/100x100.png",NULL),
+		p_promo("imgtitle","Nearly 100 Students Inducted into society for experiential education","experiential education",NULL,"https://placehold.it/100x100.png","#"),
+		p_promo("imgtitle","Jeknavorian chosen for distinguished service award in art education","experiential education",NULL,"https://placehold.it/100x100.png","#"),
+		p_promo("imgtitle","Painter speaks at Lyme Academy College of Fine Arts commencement","experiential education",NULL,"https://placehold.it/100x100.png",NULL),
 	),
 	"news-listing nodisc"
 );
@@ -50,12 +50,12 @@ $p_n_1[2]['b'] .= "<a class='read-more' href='#'>View all Events</a>";
 $p_one .= "<div class='promo news-events'>";
 $p_one .= p_tabs_mobi("tab-0",true,$p_n_1);
 $p_one .= "</div>";
-$p_one .= p_text_image_intro("overlay","Seema Bhat, MBA","Masters's in Business Administration","spotlight","/.includes/images/seema-bhat.jpg","#",'','spotlight');
+$p_one .= p_promo("overlay","Seema Bhat, MBA","Masters's in Business Administration","spotlight","/.includes/images/seema-bhat.jpg","#",'','spotlight');
 $p_one .= "</div>";
 $p_one .= p_matrix("overlay-cta",array(
-		p_text_image_intro("overlay","Supporting Students Who Support the Community","","community","/.includes/images/unh-community01.jpg","#",''),
-		p_text_image_intro("overlay","Ebola Virus Information","","news","/.includes/images/unh-news01.jpg","#",''),
-		p_text_image_intro("overlay","Supporting Students Who Support the Community","","community","/.includes/images/unh-community01.jpg",'#','')
+		p_promo("overlay","Supporting Students Who Support the Community","","community","/.includes/images/unh-community01.jpg","#",''),
+		p_promo("overlay","Ebola Virus Information","","news","/.includes/images/unh-news01.jpg","#",''),
+		p_promo("overlay","Supporting Students Who Support the Community","","community","/.includes/images/unh-community01.jpg",'#','')
 	));
 
 /*virtual tour*/

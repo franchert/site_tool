@@ -31,7 +31,7 @@ $p_content .="<h3>Why Study at UNH?</h3>".p_list(
 		p_paragraph(),
 	)
 );
-$p_content .= p_text_image_intro(
+$p_content .= p_promo(
 	"promo light",
 	"Program Faculty",
 	P_list(
@@ -43,7 +43,7 @@ $p_content .= p_text_image_intro(
 		"nodisc"
 	)
 );
-$p_content .= p_text_image_intro(
+$p_content .= p_promo(
 	"promo light",
 	"Program Support Staff",
 	P_list(
@@ -62,7 +62,7 @@ $p_promo_sidebar .="<section><h2>Find Us On</h2>".p_list(
 	"social",
 	""
 )."</section>";
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button light",
 	"Apply Now",
 	null,
@@ -71,7 +71,7 @@ $p_promo_sidebar .= p_text_image_intro(
 	"#",
 	"file"
 );
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button dark",
 	"Contact Us",
 	null,
@@ -103,7 +103,7 @@ $p_promo_sidebar .= "<section><h2>Academic Catalog</h2>".p_list(
 	),
 	"academic-catalog"
 )."</section>";
-$p_promo_sidebar .= "<section>".p_text_image_intro(
+$p_promo_sidebar .= "<section>".p_promo(
 	"linkimg",
 	"Learn About Our Lyme Campus",
 	'',

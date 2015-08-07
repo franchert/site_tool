@@ -40,9 +40,9 @@ $p_content .="<section><h3>Sub Title / H3 Header</h3><blockquote>This is an exam
 $p_content .=p_matrix(
 	"generic-cta",
 	array(
-		p_text_image_intro("generic","Undergraduate",null,null,"https://placehold.it/300x200.png","#","Online Programs"),
-		p_text_image_intro("generic","Graduate",null,null,"https://placehold.it/300x200.png","#","Resources"),
-		p_text_image_intro("generic","International Undergrad &amp; Grad",null,null,"https://placehold.it/300x200.png","#","Apply Today")
+		p_promo("generic","Undergraduate",null,null,"https://placehold.it/300x200.png","#","Online Programs"),
+		p_promo("generic","Graduate",null,null,"https://placehold.it/300x200.png","#","Resources"),
+		p_promo("generic","International Undergrad &amp; Grad",null,null,"https://placehold.it/300x200.png","#","Apply Today")
 	)
 );
 $p_content.="<section><h3>Effective June 1, 2015</h3>".p_table_mobile("sample")."</section>";
@@ -56,7 +56,7 @@ $p_promo_sidebar .="<section><h2>Find Us On</h2>".p_list(
 	"social",
 	""
 )."</section>";
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button light",
 	"Apply Now",
 	null,
@@ -65,7 +65,7 @@ $p_promo_sidebar .= p_text_image_intro(
 	"#",
 	"file"
 );
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button dark",
 	"Give to UNH",
 	null,
@@ -74,7 +74,7 @@ $p_promo_sidebar .= p_text_image_intro(
 	"#",
 	"gift"
 );
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button dark",
 	"Contact Us",
 	null,
@@ -130,12 +130,12 @@ $p_promo_sidebar .= "<section><h2>Sub Header / H2 Header</h2>".p_list(
 	),
 	"ordered"
 	)."</section>";
-$p_promo_sidebar .= "<section>".p_text_image_intro(
+$p_promo_sidebar .= "<section>".p_promo(
 		"promo dark",
 		"Sub Header / H4 Header",
 		"This is how page specific info will be shown, such as library hours or fast facts."
 	)."</section>";
-$p_promo_sidebar .= "<section>".p_text_image_intro(
+$p_promo_sidebar .= "<section>".p_promo(
 		"promo dark",
 		"Sub Header / H4 Header",
 		"This is how page specific info will be shown, such as library hours or fast facts.",
@@ -144,12 +144,12 @@ $p_promo_sidebar .= "<section>".p_text_image_intro(
 		"#",
 		"View more fast facts"
 	)."</section>";
-$p_promo_sidebar .= "<section>".p_text_image_intro(
+$p_promo_sidebar .= "<section>".p_promo(
 		"promo",
 		"Communications and Public Affairs Office",
 		"203.932.7264</br>300 Boston Post Road</br>West Haven, CT 06516"
 	)."</section>";
-$p_promo_sidebar .= "<section>".p_text_image_intro(
+$p_promo_sidebar .= "<section>".p_promo(
 		"promo",
 		"Online Newsletter",
 		"UNH Today is e-mailed every Monday during the academic year to students, faculty, staff and the Board of Governors",
@@ -158,7 +158,7 @@ $p_promo_sidebar .= "<section>".p_text_image_intro(
 		"#",
 		"Sign Up Today"
 	)."</section>";
-$p_promo_sidebar .= "<section>".p_text_image_intro(
+$p_promo_sidebar .= "<section>".p_promo(
 		"promo",
 		"Alumni Magazine",
 		"The University of New Haven Magazine highlights individuals, news and events significant to the University.",

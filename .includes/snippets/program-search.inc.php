@@ -23,12 +23,12 @@ $string .= p_dropdown(
 	array(
 		p_matrix("explore-colleges",
 			array(
-				p_text_image_intro("overlay","International Student Information","","/.includes/images/international-student-information.jpg","#",''),
-				p_text_image_intro("overlay","Military and Veteran Resources","","/.includes/images/military-and-veteran-resources.jpg","#",''),
-				p_text_image_intro("overlay","Non-Degree Seeking Students","","/.includes/images/non-degree-seeking-students.jpg",null,''),
-				p_text_image_intro("overlay","International Student Information","","/.includes/images/international-student-information.jpg","#",''),
-				p_text_image_intro("overlay","Military and Veteran Resources","","/.includes/images/military-and-veteran-resources.jpg","#",''),
-				p_text_image_intro("overlay","Non-Degree Seeking Students","","/.includes/images/non-degree-seeking-students.jpg",null,''),
+				p_promo("overlay","International Student Information","","/.includes/images/international-student-information.jpg","#",''),
+				p_promo("overlay","Military and Veteran Resources","","/.includes/images/military-and-veteran-resources.jpg","#",''),
+				p_promo("overlay","Non-Degree Seeking Students","","/.includes/images/non-degree-seeking-students.jpg",null,''),
+				p_promo("overlay","International Student Information","","/.includes/images/international-student-information.jpg","#",''),
+				p_promo("overlay","Military and Veteran Resources","","/.includes/images/military-and-veteran-resources.jpg","#",''),
+				p_promo("overlay","Non-Degree Seeking Students","","/.includes/images/non-degree-seeking-students.jpg",null,''),
 			)
 		)
 	)

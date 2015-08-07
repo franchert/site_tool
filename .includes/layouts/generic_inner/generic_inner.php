@@ -14,8 +14,7 @@ if ($layout == "generic_inner"){
 	$page_h1 = $page_title;
 	$p_content_header = breadcrumb() . $p_content_header;
 	$p_content_header = "<div class='wrapper'><div class='column'><h1>".$page_h1."</h1></div></div>". $p_content_header;
-	$p_nav_sidebar = "<section><h3>Share This</h3><script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f3d4dbf27ddf45d' async='async'></script><div class='addthis_sharing_toolbox'></div></section>" . $p_nav_sidebar;
-	//$p_nav_sidebar = "<section><h3>Share This</h3><div class='sharethis'><span class='st_facebook_large' displayText='Facebook'></span><span class='st_twitter_large' displayText='Tweet'></span><span class='st_email_large' displayText='Email'></span><span class='st_pinterest_large' displayText='Pinterest'></span></div></section>".$p_nav_sidebar;
+	//$p_nav_sidebar = "<section><h3>Share This</h3><script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f3d4dbf27ddf45d' async='async'></script><div class='addthis_sharing_toolbox'></div></section>" . $p_nav_sidebar;
 	if(isset($mini) && $mini == true){
 		$i = -1;
 		$temp_path = "/";

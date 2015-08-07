@@ -16,49 +16,49 @@ $p_content_header .= "<div class='wrapper'><div class='column'>".p_slider_custom
 	array(
 		"<div class='slide slide-left'>".p_list(
 			array(
-				p_text_image_intro("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
-				p_text_image_intro("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
-				p_text_image_intro("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
+				p_promo("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
+				p_promo("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
+				p_promo("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
 			),
 			"nodisc"
 		)."</div>",
 		"<div class='slide slide-right'>".p_list(
 			array(
-				p_text_image_intro("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
-				p_text_image_intro("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
-				p_text_image_intro("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
+				p_promo("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
+				p_promo("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
+				p_promo("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
 			),
 			"nodisc"
 		)."</div>",
 		"<div class='slide slide-left'>".p_list(
 			array(
-				p_text_image_intro("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
-				p_text_image_intro("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
-				p_text_image_intro("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
+				p_promo("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
+				p_promo("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
+				p_promo("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
 			),
 			"nodisc"
 		)."</div>",
 		"<div class='slide slide-right'>".p_list(
 			array(
-				p_text_image_intro("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
-				p_text_image_intro("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
-				p_text_image_intro("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
+				p_promo("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
+				p_promo("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
+				p_promo("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
 			),
 			"nodisc"
 		)."</div>",
 		"<div class='slide slide-left'>".p_list(
 			array(
-				p_text_image_intro("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
-				p_text_image_intro("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
-				p_text_image_intro("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
+				p_promo("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
+				p_promo("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
+				p_promo("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
 			),
 			"nodisc"
 		)."</div>",
 		"<div class='slide slide-right'>".p_list(
 			array(
-				p_text_image_intro("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
-				p_text_image_intro("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
-				p_text_image_intro("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
+				p_promo("overlay colorbox","#blossoms #pink #pretty #maxcyhall #unh by <span>heyItsmonicak</span> via Instagram","",NULL,"/.includes/images/unh-community01.jpg","/.includes/images/unh-community01.jpg",''),
+				p_promo("overlay colorbox","Students Cheering on our Chargers at Ralph F. DellaCamera Stadium","",NULL,"/.includes/images/unh-news01.jpg","/.includes/images/unh-news01.jpg",''),
+				p_promo("overlay colorbox","In front of South Campus by <span>Clarissa Jones</span> via Self Submit","",NULL,"/.includes/images/unh-community01.jpg",'/.includes/images/unh-community01.jpg','')
 			),
 			"nodisc"
 		)."</div>"
@@ -78,7 +78,7 @@ $p_content .="<section><h3>Get Involved!</h3>".p_paragraph('1')."</section>";
 $p_content .=p_matrix(
 	"generic-cta",
 	array(
-		p_text_image_intro("generic","Athletics &amp; Recreation",null,null,"https://placehold.it/300x200.png","#","Online Programs",'',
+		p_promo("generic","Athletics &amp; Recreation",null,null,"https://placehold.it/300x200.png","#","Online Programs",'',
 			array(
 				p_link('','#','Athletics'),
 				p_link('','#','Campus Recreation'),
@@ -86,7 +86,7 @@ $p_content .=p_matrix(
 				p_link('','#','RECSports')
 			)
 		),
-		p_text_image_intro("generic","Health and Wellness",null,null,"https://placehold.it/300x200.png","#","Resources",'',
+		p_promo("generic","Health and Wellness",null,null,"https://placehold.it/300x200.png","#","Resources",'',
 			array(
 				p_link('','#','Campus Access Services'),
 				p_link('','#','Counseling &amp; Psychological Services'),
@@ -96,7 +96,7 @@ $p_content .=p_matrix(
 				p_link('','#','Eating Well')
 			)
 		),
-		p_text_image_intro("generic","Safety",null,null,"https://placehold.it/300x200.png","#","Apply Today",'',
+		p_promo("generic","Safety",null,null,"https://placehold.it/300x200.png","#","Apply Today",'',
 			array(
 				p_link('','#','Campus Police'),
 				p_link('','#','Violence Prevention and Intervention Center'),
@@ -105,7 +105,7 @@ $p_content .=p_matrix(
 				p_link('','#','Sexual Misconduct, Relationship Abuse &amp; Stalking')
 			)
 		),
-		p_text_image_intro("generic","Living and Dining",null,null,"https://placehold.it/300x200.png","#","Apply Today",'',
+		p_promo("generic","Living and Dining",null,null,"https://placehold.it/300x200.png","#","Apply Today",'',
 			array(
 				p_link('','#','Dining Services'),
 				p_link('','#','Commuter Resources'),
@@ -116,7 +116,7 @@ $p_content .=p_matrix(
 				p_link('','#','Off-Campus Living Guide')
 			)
 		),
-		p_text_image_intro("generic","Get Involved",null,null,"https://placehold.it/300x200.png","#","Apply Today",'',
+		p_promo("generic","Get Involved",null,null,"https://placehold.it/300x200.png","#","Apply Today",'',
 			array(
 				p_link('','#','Community Service'),
 				p_link('','#','First-Year Mentor Program'),
@@ -129,7 +129,7 @@ $p_content .=p_matrix(
 				p_link('','#','Student Employment Clubs &amp; Organizations')
 			)
 		),
-		p_text_image_intro("generic","Experience",null,null,"https://placehold.it/300x200.png","#","Apply Today",'',
+		p_promo("generic","Experience",null,null,"https://placehold.it/300x200.png","#","Apply Today",'',
 			array(
 				p_link('','#','Graduate Student Services'),
 				p_link('','#','Intercultural Relations'),
@@ -191,7 +191,7 @@ $p_promo_sidebar .= "<section><h2>Events</h2>".p_slider(
 	"",
 	false
 )."<a class='read-more' href='#'>View More Events</a></section>";
-$p_promo_sidebar .= "<section>".p_text_image_intro(
+$p_promo_sidebar .= "<section>".p_promo(
 		"linkimg",
 		NULL,
 		"Are you Positively Charged? Click here to get some positive energy about the UNH Community",

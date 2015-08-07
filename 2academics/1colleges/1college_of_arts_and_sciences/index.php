@@ -39,9 +39,9 @@ $p_content .="<section>".p_paragraph(2)."</section>";
 $p_content .=p_matrix(
 	"generic-cta",
 	array(
-		p_text_image_intro("generic","Undergraduate",null,null,"https://placehold.it/300x200.png","#","Online Programs"),
-		p_text_image_intro("generic","Graduate",null,null,"https://placehold.it/300x200.png","#","Resources"),
-		p_text_image_intro("generic","International Undergrad &amp; Grad",null,null,"https://placehold.it/300x200.png","#","Apply Today")
+		p_promo("generic","Undergraduate",null,null,"https://placehold.it/300x200.png","#","Online Programs"),
+		p_promo("generic","Graduate",null,null,"https://placehold.it/300x200.png","#","Resources"),
+		p_promo("generic","International Undergrad &amp; Grad",null,null,"https://placehold.it/300x200.png","#","Apply Today")
 	)
 );
 $p_promo_sidebar .="<section><h2>Find Us On</h2>".p_list(
@@ -52,7 +52,7 @@ $p_promo_sidebar .="<section><h2>Find Us On</h2>".p_list(
 	"social",
 	""
 )."</section>";
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button light",
 	"Apply Now",
 	null,
@@ -61,7 +61,7 @@ $p_promo_sidebar .= p_text_image_intro(
 	"#",
 	"file"
 );
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button dark",
 	"Contact Us",
 	null,

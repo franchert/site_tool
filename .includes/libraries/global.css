@@ -437,33 +437,33 @@ body .flexslider .slides img{
 	box-sizing:border-box;
 }
 
-/*generic text-image-intro promo*/
-.matrix .promo.text-image-intro{
+/*generic p-promo promo*/
+.matrix .promo.p-promo{
 	border-left:1px solid #333;
 	box-sizing:border-box;
 }
-.promo.text-image-intro h2{}
-.promo.text-image-intro h2 a{}
-.promo.text-image-intro img{
+.promo.p-promo h2{}
+.promo.p-promo h2 a{}
+.promo.p-promo img{
 	display:block;
 	float:left;
 	padding:5px;
 	box-sizing:border-box;
 }
-.promo.text-image-intro p{}
-.promo.text-image-intro a{}
+.promo.p-promo p{}
+.promo.p-promo a{}
 /*left*/
-.promo.text-image-intro.left{}
-.promo.text-image-intro.left h2{}
-.promo.text-image-intro.left h2 a{}
-.promo.text-image-intro.left img{}
-.promo.text-image-intro.left p{}
-.promo.text-image-intro.left a{}
+.promo.p-promo.left{}
+.promo.p-promo.left h2{}
+.promo.p-promo.left h2 a{}
+.promo.p-promo.left img{}
+.promo.p-promo.left p{}
+.promo.p-promo.left a{}
 /*center*/
-.promo.text-image-intro.center{}
-.promo.text-image-intro.center h2{}
-.promo.text-image-intro.center h2 a{}
-.promo.text-image-intro.center img{
+.promo.p-promo.center{}
+.promo.p-promo.center h2{}
+.promo.p-promo.center h2 a{}
+.promo.p-promo.center img{
 	float:none;
 	position:absolute;
 	padding:0;
@@ -472,23 +472,23 @@ body .flexslider .slides img{
 	margin:auto;
 	z-index:-1;
 }
-.promo.text-image-intro.center p{}
-.promo.text-image-intro.center a{}
+.promo.p-promo.center p{}
+.promo.p-promo.center a{}
 /*right*/
-.promo.text-image-intro.right{}
-.promo.text-image-intro.right h2{}
-.promo.text-image-intro.right h2 a{}
-.promo.text-image-intro.right img{
+.promo.p-promo.right{}
+.promo.p-promo.right h2{}
+.promo.p-promo.right h2 a{}
+.promo.p-promo.right img{
 	float:right;
 }
-.promo.text-image-intro.right p{}
-.promo.text-image-intro.right a{}
+.promo.p-promo.right p{}
+.promo.p-promo.right a{}
 /*listlink*/
-.promo.text-image-intro.listlink{
+.promo.p-promo.listlink{
 	min-height:200px;
 	position:relative;
 }
-.promo.text-image-intro.listlink .container{
+.promo.p-promo.listlink .container{
 	width: 70%;
 	margin: auto;
 	background: white;
@@ -499,9 +499,9 @@ body .flexslider .slides img{
 	bottom:5px;
 	border:1px solid #333;
 }
-.promo.text-image-intro.listlink h2{}
-.promo.text-image-intro.listlink h2 a{}
-.promo.text-image-intro.listlink img{
+.promo.p-promo.listlink h2{}
+.promo.p-promo.listlink h2 a{}
+.promo.p-promo.listlink img{
 	float:none;
 	position:absolute;
 	padding:0;
@@ -511,25 +511,25 @@ body .flexslider .slides img{
 	z-index:-1;
 	min-height:100%;
 }
-.promo.text-image-intro.listlink p{}
-.promo.text-image-intro.listlink a{}
+.promo.p-promo.listlink p{}
+.promo.p-promo.listlink a{}
 /*slidelink*/
-.promo.text-image-intro.slidelink{}
-.promo.text-image-intro.slidelink .container{
+.promo.p-promo.slidelink{}
+.promo.p-promo.slidelink .container{
 	position:relative;
 	padding:20px;
 
 }
-.promo.text-image-intro.slidelink h2{}
-.promo.text-image-intro.slidelink h2 a{}
-.promo.text-image-intro.slidelink img{
+.promo.p-promo.slidelink h2{}
+.promo.p-promo.slidelink h2 a{}
+.promo.p-promo.slidelink img{
 	width: 100vw;
 	height: 40vw;
 	max-width:100%;
 	max-height:640px;
 }
-.promo.text-image-intro.slidelink p{}
-.promo.text-image-intro.slidelink a{}
+.promo.p-promo.slidelink p{}
+.promo.p-promo.slidelink a{}
 /**/
 .promo.promo-event{
 	width:90%;
@@ -1082,39 +1082,39 @@ footer{}
 			.promo a:hover{}
 		.promo p{}
 
-		.promo.text-image-intro{}
-			.promo.text-image-intro h2{}
-				.promo.text-image-intro h2 a{}
-			.promo.text-image-intro img{}
-			.promo.text-image-intro p{}
-			.promo.text-image-intro a{}
-		.promo.text-image-intro.left{}
-			.promo.text-image-intro.left h2{}
-				.promo.text-image-intro.left h2 a{}
-			.promo.text-image-intro.left img{}
-			.promo.text-image-intro.left p{}
-			.promo.text-image-intro.left a{}
-		.promo.text-image-intro.right{}
-			.promo.text-image-intro.right h2{}
-				.promo.text-image-intro.right h2 a{}
-			.promo.text-image-intro.right img{}
-			.promo.text-image-intro.right p{}
-			.promo.text-image-intro.right a{}
-		.promo.text-image-intro.center{}
-			.promo.text-image-intro.center h2{}
-				.promo.text-image-intro.center h2 a{}
-			.promo.text-image-intro.center img{}
-			.promo.text-image-intro.center p{}
-			.promo.text-image-intro.center a{}
-		.promo.text-image-intro.listlink{}
-			.promo.text-image-intro.listlink .container{}
-			.promo.text-image-intro.listlink h2{}
-				.promo.text-image-intro.listlink h2 a{}
-			.promo.text-image-intro.listlink img{}
-			.promo.text-image-intro.listlink p{}
-			.promo.text-image-intro.listlink a{}
-		.promo.text-image-intro.slidelink{}
-			.promo.text-image-intro.slidelink .container{
+		.promo.p-promo{}
+			.promo.p-promo h2{}
+				.promo.p-promo h2 a{}
+			.promo.p-promo img{}
+			.promo.p-promo p{}
+			.promo.p-promo a{}
+		.promo.p-promo.left{}
+			.promo.p-promo.left h2{}
+				.promo.p-promo.left h2 a{}
+			.promo.p-promo.left img{}
+			.promo.p-promo.left p{}
+			.promo.p-promo.left a{}
+		.promo.p-promo.right{}
+			.promo.p-promo.right h2{}
+				.promo.p-promo.right h2 a{}
+			.promo.p-promo.right img{}
+			.promo.p-promo.right p{}
+			.promo.p-promo.right a{}
+		.promo.p-promo.center{}
+			.promo.p-promo.center h2{}
+				.promo.p-promo.center h2 a{}
+			.promo.p-promo.center img{}
+			.promo.p-promo.center p{}
+			.promo.p-promo.center a{}
+		.promo.p-promo.listlink{}
+			.promo.p-promo.listlink .container{}
+			.promo.p-promo.listlink h2{}
+				.promo.p-promo.listlink h2 a{}
+			.promo.p-promo.listlink img{}
+			.promo.p-promo.listlink p{}
+			.promo.p-promo.listlink a{}
+		.promo.p-promo.slidelink{}
+			.promo.p-promo.slidelink .container{
 				position: absolute;
 				width: 300px;
 				min-width:30%;
@@ -1124,11 +1124,11 @@ footer{}
 				padding: 20px;
 				box-shadow: 0 0 10px rgba(0,0,0,0.3);
 			}
-			.promo.text-image-intro.slidelink h2{}
-				.promo.text-image-intro.slidelink h2 a{}
-			.promo.text-image-intro.slidelink img{}
-			.promo.text-image-intro.slidelink p{}
-			.promo.text-image-intro.slidelink a{}
+			.promo.p-promo.slidelink h2{}
+				.promo.p-promo.slidelink h2 a{}
+			.promo.p-promo.slidelink img{}
+			.promo.p-promo.slidelink p{}
+			.promo.p-promo.slidelink a{}
 
 		.promo.page-intro{}
 			.promo.page-intro .container{}

@@ -1,12 +1,10 @@
 <?php
- function p_tabs_mobi($id,$collapsable=false,$arr = null){
+ function p_tabs_mobi($id,$collapsable=true,$arr = null){
   $string = '<div class="container"><div id="'.$id.'">';
   if ($collapsable){
     $c = ' collapsable';
-    $c2 = ' collapsed';
   }else{
     $c = '';
-    $c2 = '';
   }
   if($arr == null){
     $string .='

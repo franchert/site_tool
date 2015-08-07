@@ -19,7 +19,7 @@ $p_t[0]['b'] = p_list(
 		p_news('')
 	),
 	'nodisc'
-).p_text_image_intro('button light more-news','Read More News',null,null,null,"#",'');
+).p_promo('button light more-news','Read More News',null,null,null,"#",'');
 $p_t[1]['t'] = 'UNH in the Media';
 $p_t[1]['b'] = p_list(
 	array(
@@ -30,7 +30,7 @@ $p_t[1]['b'] = p_list(
 		p_news('','https://placehold.it/200x200.png')
 	),
 	'nodisc'
-).p_text_image_intro('button light more-news','Read More News',null,null,null,"#",'');
+).p_promo('button light more-news','Read More News',null,null,null,"#",'');
 $p_t[2]['t'] = 'Lectures &amp; Events';
 $p_t[2]['b'] = p_list(
 	array(
@@ -41,9 +41,9 @@ $p_t[2]['b'] = p_list(
 		p_news('')
 	),
 	'nodisc'
-).p_text_image_intro('button light more-news','Read More News',null,null,null,"#",'');
+).p_promo('button light more-news','Read More News',null,null,null,"#",'');
 $p_content .=p_tabs_mobi("tab-3",true,$p_t);
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button dark",
 	"Send Us Your News",
 	null,
@@ -52,7 +52,7 @@ $p_promo_sidebar .= p_text_image_intro(
 	"#",
 	"paper-plane"
 );
-$p_promo_sidebar .= p_text_image_intro(
+$p_promo_sidebar .= p_promo(
 	"button dark",
 	"Find Faculty Experts",
 	null,
@@ -70,14 +70,14 @@ $p_promo_sidebar .= "<section><h2>Important Links</h2>".p_list(
 	),
 	"important-links"
 	)."</section>";
-$p_promo_sidebar .= "<section>".p_text_image_intro(
+$p_promo_sidebar .= "<section>".p_promo(
 		"promo",
 		"Online Newsletter",
 		"UNH Today is e-mailed every Monday during the academic year to students, faculty, staff and the Board of Governors",
 		NULL,
 		"https://placehold.it/400x100.png"
 	)."</section>";
-$p_promo_sidebar .= "<section>".p_text_image_intro(
+$p_promo_sidebar .= "<section>".p_promo(
 		"promo",
 		"Alumni Magazine",
 		"The University of New Haven Magazine highlights individuals, news and events significant to the University.",

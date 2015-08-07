@@ -116,13 +116,13 @@ $(document).ready(function(){
 					$(this).parents('.tabheaders').siblings('div.contents').each(function(i){
 						$(this).removeClass('open');
 					});
-					$('#'+b).addClass('open');
+					$(this).parents('.tabheaders').siblings('#'+b).addClass('open');
 					$(this).parents('.tabheaders').addClass('collapsed');
 				}else{
 					$(this).parents('.tabheaders').siblings('div.contents').each(function(i){
 						$(this).removeClass('open');
 					});
-					$('#'+b).removeClass('open');
+					$(this).parents('.tabheaders').siblings('#'+b).removeClass('open');
 					$(this).parents('.tabheaders').removeClass('collapsed');
 					$(this).parent().removeClass('open');
 				}
@@ -131,7 +131,7 @@ $(document).ready(function(){
 					$(this).parents('.tabheaders').siblings('div.contents').each(function(i){
 						$(this).removeClass('open');
 					});
-					$('#'+b).addClass('open');
+					$(this).parents('.tabheaders').siblings('#'+b).addClass('open');
 					$(this).parents('.tabheaders').addClass('collapsed');
 				}
 			}
@@ -141,7 +141,7 @@ $(document).ready(function(){
 			$(this).parents('.tabheaders').siblings('div.contents').each(function(i){
 				$(this).removeClass('open-desk');
 			});
-			$('#'+b).addClass('open-desk');
+			$(this).parents('.tabheaders').siblings('#'+b).addClass('open-desk');
 		}
 	});
 	equalHeight('.matrix.overlay-cta > div .container');
@@ -175,7 +175,6 @@ function equalHeight(path){
 		if($(this).height() > h_val){
 			h_val = $(this).height();
 		}
-		//console.log(h_val);
 	});
 	$(path).each(function(e){
 		if (isMobile()){
@@ -183,7 +182,6 @@ function equalHeight(path){
 		}else{
 			$(this).height(h_val);
 		}
-		//console.log(h_val);
 	});
 }
 
@@ -202,7 +200,6 @@ function deskImage(){
 
 function stickyHeader(subPos){
 	var topPos = $(document).scrollTop();
-	console.log(subPos.top);
 	if(subPos.top = topPos){
 		$('body').addClass('sticky');
 	}else{
