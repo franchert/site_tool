@@ -66,6 +66,7 @@ body{
 	}
 }
 .column{
+	padding:0 20px;
 	@include breakpoint($tab){
 		max-width:$maxwidth;
 		margin:auto;
@@ -80,8 +81,8 @@ body{
 	padding-right:20px;
 }
 img{
-	display:block;
 	position:relative;
+	width:auto;
 	&.mobile-image{
 		@include breakpoint($tab){
 			display:none!important;
@@ -265,12 +266,17 @@ blockquote{
 }
 .caption{
 	max-width:100%;
+	width:auto;
 	p{
+		@include floatblock();
 		color:$blue;
 		font-style:italic;
 		margin:0 0 15px 0;
 		border-bottom:1px solid $gold;
 		padding:10px 0;
+	}
+	img{
+		width:100%;
 	}
 }
 .l-region{
@@ -1046,8 +1052,7 @@ body{
 			}
 			.l-content-header {
 				@include floatblock();
-				margin-bottom:20px;
-				padding:20px;
+				margin:20px auto;
 				.wrapper{
 					.column{
 						@include breakpoint($desk){
@@ -1055,15 +1060,11 @@ body{
 						}
 					}
 				}
-				.subnav{
-					border-top:none;
-					margin:20px 0;
-				}
 				h1{
 					@include floatblock();
 					margin:0;
 					@include breakpoint($tab-large,true){
-						margin-top:50px;
+						margin-top:25px;
 					}
 					@include breakpoint($desk,true){
 						padding:10px 0;
@@ -1089,23 +1090,17 @@ body{
 				}
 				.l-nav-sidebar{
 					@include floatblock();
-					@include breakpoint($tab,true){
-						padding-bottom:40px;
-					}
 					@include breakpoint($desk,true){
 						width:20%;
 						width: -webkit-calc(#{$nav-sidebar-width});
 						width: calc(#{$nav-sidebar-width});
 					}
-					section{
-						padding:0 20px;
-					}
 				}
 				.l-content-featured{
 					@include floatblock();
-					padding:0px 20px 20px 20px;
+					padding-bottom:20px;
 					@include breakpoint($desk,true){
-						padding-right:0;
+						padding:0px 0px 20px 20px;
 						width:80%;
 						width:-webkit-calc(100% - #{$nav-sidebar-width});
 						width: calc(100% - #{$nav-sidebar-width});
@@ -1121,16 +1116,18 @@ body{
 					}
 					.l-content {
 						@include floatblock();
-						padding:20px;
 						border-bottom:5px solid $gold;
 						margin:0 0 20px 0;
 						@include breakpoint($tab,true){
 							border-bottom:0;
-							padding:0 20px;
+							padding:0 20px 0 0;
 							margin:0;
 							width:66.6666%;
 							width: -webkit-calc(100% - #{$nav-promo-width});
 							width: calc(100% - #{$nav-promo-width});
+						}
+						@include breakpoint($desk){
+							padding-left:20px;
 						}
 						img{
 							max-width:100%;
@@ -1144,19 +1141,15 @@ body{
 							border:none;
 						}
 						section{
-							margin:0 0 40px;
+							margin:0 0 20px;
 						}
 					}
 					.l-promo-sidebar{
 						@include floatblock();
-						padding:0 20px;
 						@include breakpoint($tab,true){
 							width:33.3333%;
 							width:-webkit-calc(#{$nav-promo-width});
 							width:calc(#{$nav-promo-width});
-						}
-						@include breakpoint($desk){
-							padding-right:0;
 						}
 					}
 					&.full-width{
@@ -1195,7 +1188,6 @@ body{
 					}
 				}
 			}
-			.breadcrumb{}
 		}
 	}
 	&.bio{
@@ -1235,10 +1227,6 @@ body{
 							padding:0 20px;
 						}
 					}
-				}
-				.subnav{
-					border-top:none;
-					margin:20px 0;
 				}
 				h1{
 					@include floatblock();
@@ -1397,15 +1385,6 @@ body{
 			.container{
 				@include breakpoint($tab,true){
 					background:$t-blue;
-				}
-			}
-		}
-	}
-	&.subnav-open{
-		.subnav{
-			&.open{
-				h2{
-					&:before{}
 				}
 			}
 		}

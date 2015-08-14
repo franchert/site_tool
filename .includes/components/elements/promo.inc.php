@@ -16,19 +16,43 @@ function p_promo(
 		$p_img = null,
 		$p_link = "#", 
 		$p_link_title = null,
-		$arr=null
+		$arr=null,
+		$img_tag = false
 	){
 	if(is_null($p_img)){
-		$image = "<img alt='placeholder' class='img-center' src='http://placehold.it/400x400.png'/>";
-	}elseif($image == ''){
+		//$image = "<img alt='placeholder' class='img-center' src='http://placehold.it/400x400.png'/>";
+		$image = p_image("400","400");
+	}elseif(isset($image) && $image == ''){
 		$image = "";
 	}else{
-		$image = "<img alt='".$p_title."' class='img-center' src='".$p_img."'/>";
+		if(isset($img_tag) && $img_tag == true){
+			$image = $p_img;
+		}else{
+			$image = "<img alt='".$p_title."' class='img-center' src='".$p_img."'/>";
+		}
 	}
 	$string = '';
 	$string .="<div class='p-promo ".$p_wrapper_class." ".$addl_class."'>";
 
-	if(strrpos($p_wrapper_class,"overlay") !== false){
+	if(strrpos($p_wrapper_class,"overlayv2") !== false){
+		if(!is_null($p_link)){
+			$string .="<a href='".$p_link."'>";
+		}
+		$string .= $image;
+		if(!is_null($p_tag)){
+			$string .="<div class='tag'><h3>".$p_tag."</h3></div>";
+		}
+		$string .= "<div class='container'>";
+			$string .="<h2>".$p_title."</h2>";
+			if(is_null($p_intro)){
+				$p_intro = file_get_contents('http://loripsum.net/api/1/short/plaintext');
+			}
+			$string .= "<p>".$p_intro."</p>";
+		$string .= "</div>";
+		if(!is_null($p_link)){
+			$string .="</a>";
+		}
+	}else if(strrpos($p_wrapper_class,"overlay") !== false){
 		if(!is_null($p_link)){
 			$string .="<a href='".$p_link."'>";
 		}
@@ -48,7 +72,7 @@ function p_promo(
 		}
 	}else if(strrpos($p_wrapper_class,"imgtitle") !== false){
 		if($p_link != null){
-			$string .= "<a href='".$p_link."'>";
+			$string .= "<a class='".$addl_class."' href='".$p_link."'>";
 		}
 		$string .=$image."<h2>".$p_title."</h2>";
 		if($p_link != null){
@@ -71,6 +95,18 @@ function p_promo(
 		if($p_link != null){
 			$string .= "</a>";
 		}
+	}else if(strrpos($p_wrapper_class,"hovertext") !== false){
+		$string .= $image;
+		$string .="<a href='".$p_link."'>";
+		$string .="<h2>".$p_title."</h2>";
+		if(is_null($p_link_title)){
+			$string .= "<p>Read More</p>";
+		}else if($p_link_title == ''){
+			$string .='';
+		}else{
+			$string .= "<p>".$p_link_title."</p>";
+		}
+		$string .= "</a>";
 	}else if(strrpos($p_wrapper_class,"genericv2") !== false){
 		if($p_link != null){
 			$string .= "<a href='".$p_link."'>";
@@ -139,11 +175,6 @@ function p_promo(
 				$string .= "<a href='".$p_link."'>".$p_link_title."</a>";
 			}
 		$string .= "</div>";
-	}else if(strrpos($p_wrapper_class,"textlink") !== false){
-		$string .="<a href='".$p_link."'>";
-		$string .="<h4>".$p_title."</h4>";
-		$string .= "</a>";
-		$string .=$p_intro;
 	}else if(strrpos($p_wrapper_class,"button") !== false){
 		$string .="<a href='".$p_link."'>";
 		if(!is_null($p_img)){
@@ -160,7 +191,7 @@ function p_promo(
 			$string .="<p>".$p_title."</p>";
 		$string .= "</div></a>";
 	}else{
-		$string .= "<p style='color:red;padding:20px;border:2px solid red;border-radius:5px;'>The ".$p_wrapper_class." promo type does not exist.</p>";
+		$string .= "<p style='color:#222;padding:20px;border:2px solid red;border-radius:5px;background:rgba(255,0,0,0.2);'>The &lsquo;".$p_wrapper_class."&rsquo; promo type does not exist. Please try a different name.</p>";
 	}
 	$string .="</div>";
 	return($string); 

@@ -1,5 +1,5 @@
 <?php
-function p_link($class=false,$link="#",$text="lorem ipsum"){
+function p_link($link="#",$text="lorem ipsum",$class=false){
 	$string = "<a";
 	if($class != false){
 		$string .=" class='".$class."'";

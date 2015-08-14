@@ -28,13 +28,13 @@
 				text-align:center;
 				line-height:50px;
 				text-transform:uppercase;
-				padding:0 10px;
 				background:$gold;
 				span{
 					@include floatblock();
 				}
 				h3{
 					@include bebas(20px,$dk-blue);
+					line-height:20px;
 					border-bottom:0;
 					margin:0;
 					padding:5px 0;

@@ -1,76 +1,57 @@
 <?php
 //include the owl js on the page
 $owl = true;
-//$bS = Small Breakpoint
-//$bM = Medium Breakpoint
-//$bL = Large Breakpoint
-function p_carousel($id,$arr = null,$bS='479,1',$bM='768,2',$bL='1199,3',$width = 200,$height = 200){
+//$bS = Small Breakpoint,number of elements visible
+//$bM = Medium Breakpoint,number of elements visible
+//$bL = Large Breakpoint,number of elements visible
+function p_carousel($id,$arr = null,$bS=479,$bM=768,$bL=1199,$width = 200,$height = 200){
 	$string = 
 	'<script type="text/javascript" charset="utf-8">
 		$(window).load(function() {
 			$(".'.$id.'").owlCarousel({
-				items:4,
-				itemsDesktop : ['.$bL.'],
-				itemsDesktopSmall : false,
-				itemsTablet: ['.$bM.'],
-				itemsTabletSmall: false,
-				itemsMobile : ['.$bS.'],
-				navigation:true,
+				resopnsiveClass:true,
+				responsive:{
+					0:{
+						items:1
+					},
+					'.$bS.':{
+						items:2
+					},
+					'.$bM.':{
+						items:4
+					},
+					'.$bL.':{
+						items:4
+					}
+				},
+				nav:true,
 				pagination:true,
-				navigationText : false
+				loop:true,
+				navText:["<i class=\"fa fa-angle-left\"></i>", "<i class=\"fa fa-angle-right\"></i>"]
 			});
 		});
 	</script>';
+	$img = p_image($width,$height,'');
 	if($arr == null){
 		$string .='
-		<div class="'.$id.' owlCarousel">
+		<div class="'.$id.' owlCarousel carousel">
 			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
+				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
 			</div>
 			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
+				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
 			</div>
 			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
+				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
 			</div>
 			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
+				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
 			</div>
 			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
+				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
 			</div>
 			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
-			</div>
-			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
-			</div>
-			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
-			</div>
-			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
-			</div>
-			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
-			</div>
-			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
-			</div>
-			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
-			</div>
-			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
-			</div>
-			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
-			</div>
-			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
-			</div>
-			<div>
-				<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />
+				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
 			</div>
 		</div>';
 	}else{
@@ -81,7 +62,7 @@ function p_carousel($id,$arr = null,$bS='479,1',$bM='768,2',$bL='1199,3',$width 
 			if ($v){
 				$string .= $v;
 			}else{
-				$string .= '<img alt="placeholder" src="http://placehold.it/'.$width.'x'.$height.'" />';
+				$string .= p_promo("hovertext","","TextLink Promo");
 			}
 			$string .='</div>';
 		}

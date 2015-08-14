@@ -174,9 +174,9 @@
 		z-index:-1;
 	}
 }
-//@include calc(width,"100% - 75px",170px);
+//@include calc('width','100% - 75px','170px');
 @mixin calc($prop,$value,$fallback){
-	#{$prop}:$fallback;
+	#{$prop}:#{$fallback};
 	#{$prop}:-webkit-calc(#{$value});
 	#{$prop}:calc(#{$value});
 }

@@ -2,25 +2,25 @@
 <html>
 <head>
 <?php if($page == 'home'){ ?>
-	<title>University of New Haven</title>
-	<meta property="og:title" content="University of New Haven">
+	<title><?php echo $client_name;?></title>
+	<meta property="og:title" content="<?php echo $client_name;?>">
 <?php }else{ ?>
-	<title><?php echo $page_title; ?> - University of New Haven</title>
-	<meta property="og:title" content="<?php echo $page_title.' - University of New Haven'; ?>">
+	<title><?php echo $page_title; ?> - <?php echo $client_name;?></title>
+	<meta property="og:title" content="<?php echo $page_title.' - <?php echo $client_name;?>'; ?>">
 <?php } ?>
 	<meta property="og:type" content="website">
 	<meta property="og:url" content="<?php echo $base_url.$url; ?>">
-	<meta property="og:site_name" content="University of New Haven">
-	<meta property="og:description" content="University of New Haven" >
+	<meta property="og:site_name" content="<?php echo $client_name;?>">
+	<meta property="og:description" content="<?php echo $client_name;?>" >
 	<meta property="og:image" content="" >
 	<meta property="og:locale" content="en_US" >
 	<meta property="twitter:card" content="summary" >
-	<meta property="twitter:title" content="<?php echo $page_title.' - University of New Haven'; ?>" >
-	<meta property="twitter:description" content="University of New Haven" >
+	<meta property="twitter:title" content="<?php echo $page_title.' - <?php echo $client_name;?>'; ?>" >
+	<meta property="twitter:description" content="<?php echo $client_name;?>" >
 	<meta property="twitter:creator" content="@" >
 	<meta property="twitter:url" content="" >
 	<meta property="twitter:image" content="" >
-	<meta name="description" content="University of New Haven">
+	<meta name="description" content="<?php echo $client_name;?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?php include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/directory_loc.php");?>
 	<?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/styles.php"); ?>

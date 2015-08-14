@@ -53,7 +53,7 @@ $p_t_1[1]['b'] = '<div id="instafeed-undergrad"></div>';
 $p_t_1[2]['t'] = "<span class='fa fa-youtube'></span>";
 $p_t_1[2]['b'] = '<iframe width="420" height="315" src="https://www.youtube.com/embed/XQu8TTBmGhA" frameborder="0" allowfullscreen></iframe>';
 $p_t_1[3]['t'] = "<span class='fa fa-facebook'></span>";
-$p_t_1[3]['b'] = '<div class="fb-page" data-href="https://www.facebook.com/unewhaven" data-width="500" data-hide-cover="false" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/newhaven"><a href="https://www.facebook.com/unewhaven">University of New Haven</a></blockquote></div></div>';
+$p_t_1[3]['b'] = '<div class="fb-page" data-href="https://www.facebook.com/unewhaven" data-width="500" data-hide-cover="false" data-show-facepile="false" data-show-posts="true"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/newhaven"><a href="https://www.facebook.com/unewhaven">$client_name</a></blockquote></div></div>';
 $p_t_1[4]['t'] = "<span class='fa fa-twitter'></span>";
 $p_t_1[4]['b'] = "<a class='twitter-timeline' href='https://twitter.com/UNH' data-widget-id='618779030846836736'>Tweets by @UNH</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','twitter-wjs');</script>";
 

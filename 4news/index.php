@@ -70,20 +70,7 @@ $p_promo_sidebar .= "<section><h2>Important Links</h2>".p_list(
 	),
 	"important-links"
 	)."</section>";
-$p_promo_sidebar .= "<section>".p_promo(
-		"promo",
-		"Online Newsletter",
-		"UNH Today is e-mailed every Monday during the academic year to students, faculty, staff and the Board of Governors",
-		NULL,
-		"https://placehold.it/400x100.png"
-	)."</section>";
-$p_promo_sidebar .= "<section>".p_promo(
-		"promo",
-		"Alumni Magazine",
-		"The University of New Haven Magazine highlights individuals, news and events significant to the University.",
-		NULL,
-		"https://placehold.it/150x200.png"
-	)."</section>";
+
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/head.php");
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

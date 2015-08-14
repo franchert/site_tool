@@ -119,8 +119,129 @@
 			}
 		}
 	}
-	&.imgtitle{
+	&.overlayv2{
+		position:relative;
 		padding:20px 0;
+		@include breakpoint($tab,true){
+			padding: 0;
+		}
+		a{
+			@include floatblock();
+			position:relative;
+			overflow:hidden;
+			@include breakpoint($tab,true){}
+		}
+		img{
+			@include floatblock();
+			position:relative;
+		}
+		.tag{
+			h3{
+				@include bebas(30px,$dk-blue);
+				line-height:48px;
+				position: absolute;
+				background: $gold;
+				width: auto;
+				padding: 0px 20px;
+				text-transform: uppercase;
+				box-shadow:1px 2px 3px rgba(0,0,0,0.5);
+				border:none;
+				margin:20px 0;
+				@include breakpoint($tab){
+					font-size:36px;
+				}
+				&:after{
+					content: '';
+					position: absolute;
+					border: 0px solid $gold;
+					border-right-color: transparent;
+					bottom: 0px;
+					right: -12px;
+					border-width: 24px;
+					border-right-width: 12px;
+					border-left-width: 0;
+				}
+			}
+		}
+		.container{
+			@include floatblock();
+			bottom:0;
+			background:$blue;
+			position:relative;
+			@include breakpoint($tab-large){
+				background:$t-blue;
+				position:absolute;
+				bottom:75px;
+				left:75px;
+				@include calc('width','100% - 150px','100%');
+			}
+			@include breakpoint($desk){
+				@include calc('width','60% - 150px','60%');
+			}
+			p{
+				@include f-bk(16px,$white);
+				padding:0 20px 20px 20px;
+				height:auto;
+				overflow:hidden;
+				margin:0;
+			}
+			h2{
+				@include paradoxbold(16px,$white);
+				padding:20px 20px 0 20px;
+				margin:0;
+				border-bottom:0;
+			}
+			ul{
+				li{
+					.drop-container{
+						width:100%;
+						.dropdown{
+							@include paradoxbold(22px,$blue);
+							line-height:22px;
+							width:100%;
+							text-align:left;
+							background:$gold;
+							border:none;
+							border-radius:0;
+							text-transform:none;
+							@include arrowdown($dk-gray);
+							&:after{
+								content:"\f054";
+								right:5px;
+								top: calc(50% - 9px);
+								font-size:18px;
+							}
+						}
+						ul{
+							width:100%;
+						}
+						&.open{
+							.dropdown{
+								&:after{
+									-webkit-transform:rotateZ(-90deg);
+									-ms-transform:rotateZ(-90deg);
+									transform:rotateZ(-90deg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.spotlight{
+			padding:20px;
+			@include breakpoint($tab,true){
+				padding:0 20px;
+			}
+			.container{
+				h2{
+					font-size:30px;
+					line-height:34px;
+				}
+			}
+		}
+	}
+	&.imgtitle{
 		a{
 			display:table;
 			table-layout:fixed;
@@ -137,6 +258,98 @@
 			padding-left:20px;
 			@include breakpoint($tab){
 				width:75%;
+			}
+		}
+	}
+	&.hovertext{
+		position:relative;
+		overflow:hidden;
+		img{
+			@include floatblock();
+			border:1px solid $white;
+		}
+		a{
+			background:$t-black;
+			position:absolute;
+			@include breakpoint($tab){
+				background:none;
+				@include v-gradient();
+			}
+			@include floatblock();
+			padding:0;
+			height:100%;
+			transition:all 0.2s;
+			&:hover{
+				background:$t-black;
+				h2{
+					bottom:initial;
+					top:20%;
+					color:$white;
+					@include breakpoint($tab){
+						top:10%;
+					}
+					@include breakpoint($tab-large){
+						top:20%;
+					}
+				}
+				p{
+					bottom:10%;
+					&:after{
+						content:'';
+					}
+				}
+				@include arrowdown($white,16px);
+				position:absolute;
+				&:after{
+					font-size:28px;
+					@include calc('left','50% - 14px','50%');
+					top:90%;
+				}
+			}
+			h2{
+				bottom:initial;
+				@include floatblock();
+				position:absolute;
+				text-align:center;
+				padding:0 20px;
+				text-shadow:1px 1px 3px $t-black;
+				border:none;
+				text-transform:initial;
+				transition:all 0.2s;
+				top:20%;
+				@include breakpoint($tab,true){
+					bottom:20%;
+					font-size:20px;
+					line-height:26px;
+					top:initial;
+				}
+				@include breakpoint($desk,true){
+					font-size:28px;
+					line-height:32px;
+				}
+			}
+			p{
+				@include s-text-book(18px,$white);
+				position:absolute;
+				bottom:10%;
+				width:100%;
+				background:none;
+				text-transform:initial;
+				text-shadow:1px 1px 3px $t-black;
+				padding:0 20px;
+				transition:all 0.2s;
+				text-align:center;
+				&:after{
+					content:'';
+				}
+				@include breakpoint($tab){
+					bottom:-100%;
+					font-size:14px;
+					line-height:18px;
+				}
+				@include breakpoint($tab-large){
+					font-size:16px;
+				}
 			}
 		}
 	}
@@ -316,12 +529,11 @@
 			}
 		}
 	}
-	&.textlink{
-	}
 	&.button{
 		max-width:100%;
 		margin:0 0 20px;
 		transition:all .2s;
+		box-shadow:0px 0px 5px $t-black-light,2px 2px 3px $t-black-light;
 		a{
 			position:relative;
 			img{
@@ -361,7 +573,6 @@
 			}
 		}
 		&.light{
-			border:1px solid $gray;
 			a{
 				.container{
 					background:$gold;
@@ -375,7 +586,6 @@
 			}
 		}
 		&.dark{
-			border:1px solid #444;
 			a{
 				.container{
 					background:$dk-blue;
@@ -456,7 +666,12 @@
 			h2{
 				display:block;
 				width:100%;
+				padding:0;
+				text-align:center;
 			}
+		}
+		&.hovertext{
+			
 		}
 		&.linkimg{
 			h4{}
@@ -552,6 +767,9 @@
 					h2{}
 				}
 			}
+		}
+		&.hovertext{
+			
 		}
 		&.linkimg{
 			h4{}

@@ -1,417 +1,124 @@
 .owl-carousel{
-	&.featured{
-		max-width:$outerwidth;
-		margin:auto;
-		.owl-stage-outer {
-			background:$blue;
-			.owl-stage {
-				.owl-item {
-					.slide{
-						overflow:hidden;
-						@include breakpoint($tab,true){
-							height:375px;
+	.owl-stage-outer {
+		.owl-stage {
+			.owl-item {
+				.slide{
+					img{}
+					.container{
+						@include floatblock();
+						padding:40px;
+						background:$dk-blue;
+						@include breakpoint($tab-large){
+							width:30%;
+							position:absolute;
+							right:0;
 						}
-						@include breakpoint($desk,true){
-							height:500px;
+						h2{
+							color:$white;
 						}
-						img {
-							width: 100%;
-							height: auto;
-							margin:auto;
-							min-width:100%;
-							@include breakpoint($tab,true){
-								height: auto;
-								width:100%;
-							}
-							@include breakpoint($desk,true){
-								min-height: 100%;
-								width:auto;
-							}
+						hr{
+							border-color:$gold;
 						}
-						.wrapper {
-							height: 100%;
-							position: absolute;
-							top: 0;
-							background:rgba(0,0,0,0.6);
-							@include breakpoint($tab,true){
-							}
-							.container {
-								.column {
-									margin: 0;
-									h2 {
-										@include paradoxbold(36px,$white);
-										padding:40px;
-										width:100%;
-										text-shadow:0px 0px 10px rgba(0,0,0,0.5);
-										@include breakpoint($tab,true){
-											font-size:68px;
-											line-height:72px;
-											padding:40px 0px 0px 140px;
-											max-width:80%;
-											position:relative;
-										}
-									}
-									p {
-										@include f-bk(16px,$white);
-										display: none;
-										width:100%;
-										@include breakpoint($desk,true){
-											display: block;
-											background: rgba(0,51,102,0.6);
-											color: $white;
-											width:400px;
-											padding:20px;
-											margin:40px 0px 40px 140px;
-											position:relative;
-										}
-									}
-								}
-							}
+						p{
+							color:$white;
+							max-height:145px;
+							overflow:hidden;
+							line-height:24px;
 						}
+						a{
+							@include bebas(18px,$dk-blue);
+							@include floatblock(left,auto);
+							background:$gold;
+							padding:10px 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+	.owl-controls{
+		.owl-nav{
+			opacity:0.5;
+			.owl-prev,
+			.owl-next{
+				width:auto;
+				position: absolute;
+				@include calc('top','50% - 40px','50%');
+				font-size:80px;
+				color:$white;
+			}
+			.owl-prev{
+				left:2%;
+			}
+			.owl-next{
+				right:2%;
+			}
+			&:hover{
+				opacity:1;
+			}
+		}
+		.owl-dots{
+			position:relative;
+			width:auto;
+			display:table;
+			margin:auto;
+			float:none;
+			top:-50px;
+			.owl-dot{
+				width:10px;
+				margin:0 5px;
+				span {
+					height:8px;
+					width:8px;
+					margin:1px;
+					border-radius:50%;
+					background:$t-white;
+					box-shadow:1px 1px 3px $t-black-light;
+				}
+				&.active {
+					span {
+						width: 10px;
+						height: 10px;
+						margin: 0;
+						background:$white;
+					}
+				}
+			}
+		}
+	}
+	&:hover{
+		.owl-controls{
+			.owl-nav{
+				opacity:1;
+			}
+		}
+	}
+	&.carousel{
+		margin-bottom:20px;
+		.owl-controls{
+			.owl-nav{
+				.owl-prev,
+				.owl-next{
+					@include calc('top','50% - 40px','50%');
+					font-size:40px;
+					color:$dk-blue;
+				}
+				.owl-prev{
+					left:-10px;
+				}
+				.owl-next{
+					right:-10px;
+				}
+			}
+			.owl-dots{
+				top:0px;
+				.owl-dot{
+					span{
+						background:$gray;
 					}
 					&.active{
-						.slide{
-							.wrapper{
-								background:none;
-							}
-						}
-					}
-				}
-			}
-		}
-		.owl-controls{
-			.owl-nav{
-				color: white;
-				opacity: 0.5;
-				font-size: 30px;
-				@include breakpoint($tab,true){
-					font-size: 100px;
-				}
-				.owl-prev{
-					position: absolute;
-					top: 40%;
-					left:2%;
-					@include breakpoint($tab-large){
-						left: 13%;
-					}
-				}
-				.owl-next{
-					position: absolute;
-					top: 40%;
-					right:2%;
-					@include breakpoint($tab-large){
-						right: 13%;
-					}
-				}
-			}
-			.owl-dots{
-				display:table;
-				height:10px;
-				bottom:0;
-				margin:auto;
-				position: relative;
-				top: -40px;
-				margin-bottom: -40px;
-				@include breakpoint($tab-large,true){
-				}
-				.owl-dot{
-					@include floatblock(left,10px);
-					height:10px;
-					margin:15px 3px;
-					span {
-						@include floatblock(left,8px);
-						height:8px;
-						width:8px;
-						margin:1px;
-						border-radius:50%;
-						background:$t-white;
-					}
-					&.active {
-						span {
-							width: 10px;
-							height: 10px;
-							margin: 0;
-							background: $white;
-						}
-					}
-				}
-			}
-		}
-	}
-	&.multi-frame{
-		.owl-stage-outer {
-			border-bottom:1px solid $gold;
-			.owl-stage {
-				.owl-item {
-					.slide{
-						ul{
-							padding:0;
-							li{
-								@include floatblock();
-								@include breakpoint($mobile-large){
-									width:50%;
-								}
-								margin:0;
-								padding:5px;
-								.p-promo{
-									padding:0;
-									&.overlay{
-										a{
-											&:focus{
-												outline: 2px dotted $gold;
-											}
-											.container{
-												position:absolute;
-												background:$t-blue;
-												h2{
-													@include f-dm(16px,$white);
-													padding:5px 20px;
-													span{
-														color:$gold;
-													}
-												}
-												p{
-													padding:0;
-												}
-											}
-										}
-									}
-								}
-							}
-						}
-						&.slide-left{
-							ul{
-								li{
-									display:block;
-									&:first-child{
-										display:block;
-										width:100%;
-									}
-								}
-							}
-						}
-						&.slide-right{
-							ul{
-								li{
-									&:last-child{
-										display:block;
-										width:100%;
-									}
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-		.owl-controls{
-			margin:auto;
-			width:225px;
-			position:relative;
-			@include breakpoint($desk){
-				position:absolute;
-			}
-			left:0;
-			right:0;
-			.owl-nav{
-				.owl-prev{
-					@include floatblock(left,auto);
-					position: relative;
-					left:2%;
-					font-size:40px;
-					color:$dk-blue;
-				}
-				.owl-next{
-					@include floatblock(right,auto);
-					position: relative;
-					right:2%;
-					font-size:40px;
-					color:$dk-blue;
-				}
-			}
-			.owl-dots{
-				display:table;
-				height:10px;
-				bottom:0;
-				margin:auto;
-				position: relative;
-				@include breakpoint($tab-large,true){
-				}
-				.owl-dot{
-					@include floatblock(left,10px);
-					height:10px;
-					margin:15px 3px;
-					span {
-						@include floatblock(left,8px);
-						height:8px;
-						width:8px;
-						margin:1px;
-						border-radius:50%;
-						background:$t-black-light;
-					}
-					&.active {
-						span {
-							width: 10px;
-							height: 10px;
-							margin: 0;
-							background: $dk-blue;
-						}
-					}
-				}
-			}
-		}
-	}
-	&.generic{
-		.owl-stage-outer {
-			background:$dk-blue;
-			.owl-stage {
-				.owl-item {
-					.slide{
-						img{
-							@include floatblock();
-							@include breakpoint($tab-large){
-								width:70%;
-							}
-						}
-						.container{
-							@include floatblock();
-							padding:40px;
-							background:$dk-blue;
-							@include breakpoint($tab-large){
-								width:30%;
-								position:absolute;
-								right:0;
-							}
-							h2{
-								color:$white;
-							}
-							p{
-								color:$white;
-								max-height:145px;
-								overflow:hidden;
-								line-height:24px;
-							}
-							a{
-								@include bebas(18px,$dk-blue);
-								@include floatblock(left,auto);
-								background:$gold;
-								padding:10px 30px;
-							}
-						}
-					}
-				}
-			}
-		}
-		.owl-controls{
-			.owl-nav{
-				.owl-prev{
-					position: absolute;
-					top: 50%;
-					left:2%;
-					font-size:40px;
-					color:$white;
-				}
-				.owl-next{
-					position: absolute;
-					top: 50%;
-					right:2%;
-					font-size:40px;
-					color:$white;
-				}
-			}
-			.owl-dots{
-				display:table;
-				height:10px;
-				bottom:0;
-				margin:auto;
-				position: relative;
-				top: -40px;
-				margin-bottom: -40px;
-				@include breakpoint($tab-large,true){
-				}
-				.owl-dot{
-					@include floatblock(left,10px);
-					height:10px;
-					margin:15px 3px;
-					span {
-						@include floatblock(left,8px);
-						height:8px;
-						width:8px;
-						margin:1px;
-						border-radius:50%;
-						background:$t-white;
-					}
-					&.active {
-						span {
-							width: 10px;
-							height: 10px;
-							margin: 0;
-							background: $white;
-						}
-					}
-				}
-			}
-		}
-	}
-	&.upcoming-events{
-		@include floatblock();
-		position:relative;
-		top:25px;
-		margin-top:-40px;
-		.owl-stage-outer {
-			position:relative;
-			margin-bottom:0px;
-			padding-bottom:10px;
-			border-bottom:1px solid $gold;
-			.owl-stage {
-				.owl-item {
-					> div{
-						@include floatblock();
-					}
-				}
-			}
-		}
-		.owl-controls{
-			@include floatblock(left,50px);
-			.owl-nav{
-				.owl-prev{
-					@include floatblock(left,auto);
-					font-size:30px;
-					color:$dk-blue;
-					padding-right:20px;
-				}
-				.owl-next{
-					@include floatblock(left,auto);
-					font-size:30px;
-					color:$dk-blue;
-				}
-			}
-			.owl-dots{
-				display:none!important;
-				height:10px;
-				bottom:0;
-				margin:auto;
-				position: relative;
-				@include breakpoint($tab-large,true){
-				}
-				.owl-dot{
-					@include floatblock(left,10px);
-					height:10px;
-					margin:15px 3px;
-					span {
-						@include floatblock(left,8px);
-						height:8px;
-						width:8px;
-						margin:1px;
-						border-radius:50%;
-						background:$t-black-light;
-					}
-					&.active {
-						span {
-							width: 10px;
-							height: 10px;
-							margin: 0;
-							background: $dk-blue;
+						span{
+							background:$dk-gray;
 						}
 					}
 				}

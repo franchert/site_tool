@@ -1,22 +1,44 @@
 <?php
-function p_list($arr,$class = '',$title = ''){
-	$string = '<div class="p-list '.$class.'">';
-	if($class == 'ordered'){
-		$string .='<ol>';
+function p_list($arr = null,$class = ''){
+	if(!is_null($arr)){
+		$string = '<div class="p-list '.$class.'">';
+		if($class == 'ordered'){
+			$string .='<ol>';
+		}else{
+			$string .='<ul>';
+		}
+		foreach($arr as $k => $v){
+			$string .= '<li>'.$v.'</li>';
+		}
+		if($class == 'ordered'){
+			$string .='</ol>';
+		}else{
+			$string .='</ul>';
+		}
+		$string .= '</div>';
 	}else{
-		$string .='<ul>';
+		if($class == 'ordered'){
+			$ltype ='ol';
+		}else{
+			$ltype ='ul';
+		}
+		$string ='
+		<div class="p-list '.$class.'">
+			<'.$ltype.'>
+				<li>lorem ipsum</li>
+				<li>lorem ipsum
+					<div class="p-list '.$class.'">
+						<'.$ltype.'>
+							<li>lorem ipsum</li>
+							<li>lorem ipsum</li>
+							<li>lorem ipsum</li>
+						</'.$ltype.'>
+					</div>
+				</li>
+				<li>lorem ipsum</li>
+				<li>lorem ipsum</li>
+			</'.$ltype.'>
+		</div>';
 	}
-	if ($title != ''){
-		$string .="<h2>".$title."</h2>";
-	}
-	foreach($arr as $k => $v){
-		$string .= '<li>'.$v.'</li>';
-	}
-	if($class == 'ordered'){
-		$string .='</ol>';
-	}else{
-		$string .='</ul>';
-	}
-	$string .= '</div>';
 	return $string;
 }?>

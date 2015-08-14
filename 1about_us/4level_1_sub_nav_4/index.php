@@ -9,6 +9,7 @@ $instafeed = false;
 /*promo director initializes region variables and includes all the functions to create elements*/
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/promo-director.php");
 /*define promos here*/
+$p_content_header .= '<div class="wrapper"><div class="column"><img src="https://placehold.it/1200x300.png" alt="placeholder image"/></div></div>';
 
 $p_content .="<section>".p_imgcaption().p_paragraph().p_link('button read-more dark',"#","Read More")."</section>";
 $p_content .="<section><h3>Sub Title / H3 Header</h3>".p_imgcaption('left','300','200').p_paragraph('2')."</section>";

@@ -168,6 +168,7 @@ function isMobile() {
 		return false;
 	}
 }
+/*
 function equalHeight(path){
 	var h_val = 0;
 	$(path).each(function(e){
@@ -184,7 +185,19 @@ function equalHeight(path){
 		}
 	});
 }
-
+*/
+function equalHeight(path){
+	if (isMobile()){
+		$(path).height("auto");
+	}else{
+		var max = Math.max.apply(null, 
+			$(path).map(function () {
+				return $(this).height();
+			})
+		);
+	}
+	$(path).height(max);
+}
 function deskImage(){
 	$(".mobile-image").each(function(){
 		if(!$(this).next().is('img')){

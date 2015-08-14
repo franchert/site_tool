@@ -2,7 +2,7 @@
 <footer>
 	<div class="column">
 		<div class="footer-first footer-meta">
-				<img src="/.includes/stylesheets/images/footer-logo.png" alt="university of new haven"/>
+				<img src="/.includes/stylesheets/images/footer-logo.png" alt="<?php echo $client_name;?>"/>
 				<a class="location" href="#">
 					300 Boston Post Road </br>West Haven, CT 06516
 				</a>
