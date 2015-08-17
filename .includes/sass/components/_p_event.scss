@@ -1,11 +1,11 @@
 .promo-event{
 	a{
-		@include floatblock(none,300px);
 		margin:auto;
 		text-align:center;
 		max-width:100%;
+		margin-bottom:10px;
 		.date{
-			@include floatblock(left,100px);
+			width:100px;
 			background:$dk-blue;
 			padding:10px 0px;
 			position:relative;
@@ -30,7 +30,8 @@
 			}
 		}
 		.info{
-			@include floatblock(left,calc(100% - 100px));
+			@include floatblock(left);
+			@include calc('width','100% - 100px','75%');
 			h3{
 				@include paradox(20px,$dk-blue);
 				padding:0 10px;
@@ -50,6 +51,83 @@
 		}
 		&:hover{
 			text-decoration:none;
+		}
+	}
+	&.tall{
+		a{
+			.date{
+				width:50px;
+				padding-bottom:0;
+				.weekday{
+					width:100%;
+					font-size:18px;
+					line-height:18px;
+				}
+				.month{
+					width:100%;
+					font-size:24px;
+					line-height:24px;
+				}
+				.day{
+					position:relative;
+					width:100%;
+					top:initial;
+					right:initial;
+					font-size:38px;
+					line-height:38px;
+					padding-bottom:5px;
+				}
+			}
+			.info{
+				@include calc('width','100% - 50px','75%');
+				h3{}
+				p{}
+			}
+		}
+	}
+	&.round{
+		a{
+			.date{
+				width:80px;
+				padding-bottom:0;
+				background:none;
+				display:table-cell;
+				vertical-align:middle;
+				float:none;
+				.weekday{
+					width:100%;
+					font-size:18px;
+					line-height:18px;
+					color:$dk-blue;
+				}
+				.month{
+					width:100%;
+					font-size:24px;
+					line-height:24px;
+					color:$dk-blue;
+				}
+				.day{
+					position:relative;
+					width:100%;
+					top:initial;
+					right:initial;
+					font-size:40px;
+					line-height:40px;
+					width:80px;
+					padding-bottom:5px;
+					background:$dk-blue;
+					border-radius:50%;
+					padding:20px;
+				}
+			}
+			.info{
+				display:table-cell;
+				vertical-align:middle;
+				float:none;
+				@include calc('width','100% - 80px','75%');
+				h3{}
+				p{}
+			}
 		}
 	}
 }

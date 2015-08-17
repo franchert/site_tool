@@ -102,15 +102,11 @@ echo " ".$layout;?>">
 						<li><a href="#">Visitors</a></li>
 					</ul>
 				</div>
-
 			</div>
 		</div>
 		<div class="column site-logo-wrapper">
-			<?php if($page == 'home'){echo "<h1>";} ?><a class="site-logo" href="/"><img src="/.includes/stylesheets/images/unh-logo.svg" alt='Site Logo'></a><?php if($page == 'home'){echo "</h1>";} ?>
+			<?php if($page == 'home'){echo "<h1>";} ?><a class="site-logo" href="/"><img src="<?php echo $site_logo; ?>" alt='Site Logo'></a><?php if($page == 'home'){echo "</h1>";} ?>
 		</div>
 		<div class='main-nav-container wrapper'>
-	<?php	
-				include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/main_nav.php"); 
-	?>
-				<!--button class="menu-toggle">M Main Menu</button-->
+			<?php include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/main_nav.php"); ?>
 		</div>

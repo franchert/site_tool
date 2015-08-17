@@ -33,4 +33,9 @@
 <script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/jquery.colorbox-min.js"></script>	
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
-<script type="text/javascript">stLight.options({publisher: "21096445-7709-4823-a586-4e0b94ce5425", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<script type="text/javascript">stLight.options({
+	publisher: "21096445-7709-4823-a586-4e0b94ce5425", 
+	doNotHash: false,
+	doNotCopy: false,
+	hashAddressBar: false
+});</script>

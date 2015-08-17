@@ -459,16 +459,12 @@ body .cbox-title .container p {
   padding: 0;
 }
 body .promo-event a {
-  display: block;
-  float: none;
-  width: 300px;
   margin: auto;
   text-align: center;
   max-width: 100%;
+  margin-bottom: 10px;
 }
 body .promo-event a .date {
-  display: block;
-  float: left;
   width: 100px;
   background: #003366;
   padding: 10px 0px;
@@ -514,6 +510,9 @@ body .promo-event a .date .day {
 body .promo-event a .info {
   display: block;
   float: left;
+  width: 100%;
+  width: 75%;
+  width: -webkit-calc(100% - 100px);
   width: calc(100% - 100px);
 }
 body .promo-event a .info h3 {
@@ -542,6 +541,75 @@ body .promo-event a .info p {
 }
 body .promo-event a:hover {
   text-decoration: none;
+}
+body .promo-event.tall a .date {
+  width: 50px;
+  padding-bottom: 0;
+}
+body .promo-event.tall a .date .weekday {
+  width: 100%;
+  font-size: 18px;
+  line-height: 18px;
+}
+body .promo-event.tall a .date .month {
+  width: 100%;
+  font-size: 24px;
+  line-height: 24px;
+}
+body .promo-event.tall a .date .day {
+  position: relative;
+  width: 100%;
+  top: initial;
+  right: initial;
+  font-size: 38px;
+  line-height: 38px;
+  padding-bottom: 5px;
+}
+body .promo-event.tall a .info {
+  width: 75%;
+  width: -webkit-calc(100% - 50px);
+  width: calc(100% - 50px);
+}
+body .promo-event.round a .date {
+  width: 80px;
+  padding-bottom: 0;
+  background: none;
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+}
+body .promo-event.round a .date .weekday {
+  width: 100%;
+  font-size: 18px;
+  line-height: 18px;
+  color: #003366;
+}
+body .promo-event.round a .date .month {
+  width: 100%;
+  font-size: 24px;
+  line-height: 24px;
+  color: #003366;
+}
+body .promo-event.round a .date .day {
+  position: relative;
+  width: 100%;
+  top: initial;
+  right: initial;
+  font-size: 40px;
+  line-height: 40px;
+  width: 80px;
+  padding-bottom: 5px;
+  background: #003366;
+  border-radius: 50%;
+  padding: 20px;
+}
+body .promo-event.round a .info {
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  width: 75%;
+  width: -webkit-calc(100% - 80px);
+  width: calc(100% - 80px);
 }
 body .factoid {
   display: block;
@@ -4519,41 +4587,6 @@ footer .column .footer-third .links-resources h3 {
   width: 1.2em;
   margin-left: -1.2em;
   font-size: 12px;
-}
-
-.promo-event.tall a {
-  padding: 0 20px;
-}
-@media (min-width: 45em) {
-  .promo-event.tall a {
-    padding: 0;
-  }
-}
-.promo-event.tall a .date {
-  width: 50px;
-  padding-bottom: 0;
-}
-.promo-event.tall a .date .weekday {
-  width: 100%;
-  font-size: 18px;
-  line-height: 18px;
-}
-.promo-event.tall a .date .month {
-  width: 100%;
-  font-size: 24px;
-  line-height: 24px;
-}
-.promo-event.tall a .date .day {
-  position: relative;
-  width: 100%;
-  top: initial;
-  right: initial;
-  font-size: 38px;
-  line-height: 38px;
-  padding-bottom: 5px;
-}
-.promo-event.tall a .info {
-  width: calc(100% - 50px);
 }
 
 .ui-tabs#tab-1 {

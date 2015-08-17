@@ -4,7 +4,8 @@
 //gets first level of directories from the root in an array
 $dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
 //build the list
-echo "<div class='nav-wrapper'><div class='column'><a class='desk-sticky' href='/'><img src='/.includes/stylesheets/images/unh-logo.svg'/></a><ul class='main-nav'>";
+$wrap = "<div class='nav-wrapper'><div class='column'><a class='desk-sticky' href='/'><img src='".$site_logo."'/></a><ul class='main-nav'>";
+echo $wrap;
 $count = 0;
 //loop for each directory returned
 foreach($dirs as $dir){

@@ -46,3 +46,12 @@ Dynamic front-end site prototype following the principles of [Atomic Design][htt
 
 ###/.includes/mini_nav.php
 - Dynamically builds navigation tree from a specified root directory.
+
+###/.includes/scripts.php
+- Adds correct js files to each page
+
+###/.includes/styles.php
+- Adds correct css files to each page
+
+###/.includes/subnav.php
+- Builds dynamic subnav based on folder structure
