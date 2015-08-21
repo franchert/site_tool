@@ -11,7 +11,7 @@
 			margin:0 0 0 15px;
 			padding:3px 0;
 			a{
-				@include f-bk(18px,$dk-blue);
+				@include f-bk(18px,$color-1);
 				@include floatblock(none,100%);
 				&:hover{}
 			}
@@ -28,7 +28,7 @@
 			margin:0 0 0 15px;
 			padding:3px 0;
 			a{
-				@include f-bk(18px,$dk-blue);
+				@include f-bk(18px,$color-1);
 				@include floatblock(none,100%);
 				&:hover{}
 			}

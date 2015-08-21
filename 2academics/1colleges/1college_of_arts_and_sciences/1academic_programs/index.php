@@ -10,7 +10,6 @@ $instafeed = false;
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/promo-director.php");
 /*define promos here*/
 
-
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/head.php");
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

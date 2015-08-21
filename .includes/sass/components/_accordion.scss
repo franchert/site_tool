@@ -1,0 +1,96 @@
+$tabaccordion-breakpoint:$tab;
+
+ul.tabaccordion{
+	float:left;
+	position:relative;
+	margin-bottom:20px;
+	> li{
+		position:static;
+		@include breakpoint($tabaccordion-breakpoint){
+			display:inline;
+			float:left;
+			width:auto;
+		}
+		h3{
+			@include bebas(20px,$white);
+			text-transform:uppercase;
+			background:$color-1;
+			cursor:pointer;
+			outline:none;
+			margin:0;
+			border-top:2px solid $white;
+			border-bottom:0;
+			color:$white;
+			padding:10px 20px;
+			@include arrowdown(inherit,12px,"\f0da");
+			&:after{
+				right:20px;
+				font-size:20px;
+				@include calc('top','50% - 12px','50%');
+				top:calc(50% - 12px);
+			}
+			@include breakpoint($tabaccordion-breakpoint){
+				padding:20px;
+				display:inline-block;
+				float:left;
+				width:100%;
+				border-top:0;
+				border-right:2px solid #fff;
+				color:$color-1;
+				background:$color-2;
+				&:after{
+					content:'';
+				}
+			}
+		}
+		> div{
+			display:none;
+			@include breakpoint($tabaccordion-breakpoint){
+				position:absolute;
+				top:68px;
+				left:0;
+			}
+		}
+		&.acc-active{
+			@include breakpoint(max-width $tabaccordion-breakpoint){
+				h3{
+					background:$color-1;
+					color:$white;
+						color:$white;
+					&:after{
+						-webkit-transform:rotateZ(-90deg);
+						-ms-transform:rotateZ(-90deg);
+						transform:rotateZ(-90deg);
+					}
+				}
+				> div{
+					display:inline-block;
+					padding:20px;
+					width:auto;
+					border:2px solid $color-1;
+					margin-top:-2px;
+				}
+			}
+		}
+		&.tab-active{
+			@include breakpoint($tabaccordion-breakpoint){
+				h3{
+					background:$color-1;
+					color:$white;
+					&:after{
+						-webkit-transform:rotateZ(-90deg);
+						-ms-transform:rotateZ(-90deg);
+						transform:rotateZ(-90deg);
+					}
+				}
+				> div{
+					display:inline-block;
+					padding:0 20px;
+					width:auto;
+					border:2px solid $color-1;
+					margin-top:-2px;
+				}
+			}
+		}
+	}
+}

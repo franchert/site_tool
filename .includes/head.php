@@ -88,7 +88,7 @@ echo " ".$layout;?>">
 						<li><a href="#">Apply</a></li>
 						<li><a href="#">Online Learning</a></li>
 						<li><a href="#">Directory</a></li>
-						<li><a href="#">InsideUNH</a></li>
+						<li><a href="#">Inside</a></li>
 					</ul>
 				</div>
 				<div class="header-left">
@@ -108,5 +108,12 @@ echo " ".$layout;?>">
 			<?php if($page == 'home'){echo "<h1>";} ?><a class="site-logo" href="/"><img src="<?php echo $site_logo; ?>" alt='Site Logo'></a><?php if($page == 'home'){echo "</h1>";} ?>
 		</div>
 		<div class='main-nav-container wrapper'>
-			<?php include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/main_nav.php"); ?>
+			<?php 
+			//if(isset($mini) && $mini == true){
+			//	echo(p_mini_nav());
+			//}else{
+				echo(p_main_nav()); 
+			//}
+			?>
+			<?php //include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/main_nav.php"); ?>
 		</div>

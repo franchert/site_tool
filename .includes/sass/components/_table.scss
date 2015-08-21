@@ -1,7 +1,7 @@
 .table-wrapper{
 	overflow:auto;
 	@include breakpoint($tab){
-		border:1px solid $dk-blue;
+		border:1px solid $color-1;
 	}
 	table{
 		width:100%;
@@ -38,7 +38,7 @@
 					width:100%;
 					@include f-bk(18px,$white);
 					border-right:1px solid $gray;
-					background:$dk-blue;
+					background:$color-1;
 					padding:10px 30px;
 					text-align:left;
 					@include breakpoint($tab){

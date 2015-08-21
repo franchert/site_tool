@@ -16,6 +16,9 @@ $p_content .= p_event('tall');
 $p_content .= p_event('round');
 
 $p_content .= "<h2>News</h2>";
-
+$p_content .= p_news();
+$p_content .= p_news('normal',null,'news item without read more','#',null,null,false);
+$p_content .= p_news('normal','','removed image from default','#',null,null,true);
+$p_content .= p_news('short');
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

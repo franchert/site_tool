@@ -1,5 +1,11 @@
 <?php
-function p_event($type = 'normal',$title="Event Title Here",$intro = "Event description, location or extra information",$link="#",$month=null,$day=null,$weekday=null){
+function p_event($type = 'normal',
+	$title="Event Title Here",
+	$intro = "Event description, location or extra information",
+	$link="#",
+	$month=null,
+	$day=null,
+	$weekday=null){
 	if ($month == null){
 		$month = date("M");
 	}

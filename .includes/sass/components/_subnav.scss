@@ -55,7 +55,7 @@
 				}
 				&.active{
 					> a{
-						border-left:3px solid $dk-gold;
+						border-left:3px solid $color-2;
 					}
 				}
 				padding:0;
@@ -79,7 +79,7 @@
 			}
 			> a{
 				@include floatblock();
-				@include paradoxbold(14px,$gold);
+				@include paradoxbold(14px,$color-2);
 				padding:20px;
 				text-transform:uppercase;
 				@include arrowbefore($white);
@@ -104,7 +104,7 @@
 						@include floatblock();
 						font-size:21px;
 						line-height:56px;
-						color:$gold;
+						color:$color-2;
 						cursor:pointer;
 						height:100%;
 						-webkit-transform:rotateZ(90deg);

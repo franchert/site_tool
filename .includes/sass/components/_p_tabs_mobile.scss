@@ -1,7 +1,7 @@
 
 .tabs-container{
 	@include floatblock();
-	margin:20px 0;
+	margin-bottom:20px;
 	.tabheaders{
 		@include floatblock();
 		@include breakpoint($tab){
@@ -16,19 +16,19 @@
 				width:auto;
 			}
 			a{
-				@include bebas(20px,$dk-blue);
+				@include bebas(20px,$color-1);
 				line-height:18px;
 				transition:all .5s ease-in-out;
 				height:56px;
 				display:block;
 				text-decoration:none;
 				padding:20px;
-				background:$gold;
+				background:$color-2;
 				position:relative;
 				@include breakpoint($tab){
 					background:none;
 					transition:none;
-					background:$gold;
+					background:$color-2;
 					border-right: 2px solid $white;
 				}
 				&:hover{
@@ -39,7 +39,7 @@
 					font-family:Times;
 					font-weight:normal;
 					position:absolute;
-					color:$dk-blue;
+					color:$color-1;
 					font-weight:bold;
 					right:20px;
 					font-size:18px;
@@ -53,9 +53,9 @@
 			&.open{
 				a{
 					color:$white;
-					background:$dk-blue;
+					background:$color-1;
 					@include breakpoint($tab){
-						color:$dk-blue;
+						color:$color-1;
 						background:none;
 					}
 				}
@@ -64,7 +64,7 @@
 				a{
 					@include breakpoint($tab){
 						color:$white;
-						background:$dk-blue;
+						background:$color-1;
 					}
 				}
 			}
@@ -78,8 +78,8 @@
 						color:$white;
 						@include breakpoint($tab){
 							height:auto;
-							color:$dk-blue;
-							background:$gold;
+							color:$color-1;
+							background:$color-2;
 						}
 						&:after{
 							@include breakpoint($tab){
@@ -94,20 +94,20 @@
 					a{
 						@include breakpoint($tab){
 							color:$white;
-							background:$dk-blue;
+							background:$color-1;
 						}
 					}
 				}
 				a{
 					transition:all .5s ease-in-out;
 					height:20px;
-					padding:1px 0px;
-					color:$gold;
+					padding:1px 20px;
+					//color:$color-2;
 					@include breakpoint($tab){
 						height:auto;
 						padding:20px;
 						transition:none;
-						color:$dk-blue;
+						color:$color-1;
 					}
 				}
 			}
@@ -121,7 +121,7 @@
 			float:left;
 			width:100%;
 			padding:20px;
-			border: 1px solid $dk-blue;
+			border: 2px solid $color-1;
 			border-top: 0;
 			@include breakpoint($tab){
 				display:none;
@@ -133,7 +133,7 @@
 				float:left;
 				width:100%;
 				padding:20px;
-				border:1px solid $dk-blue;
+				border:2px solid $color-1;
 			}
 		}
 	}

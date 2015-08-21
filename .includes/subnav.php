@@ -4,6 +4,8 @@
 */
 	include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/settings.php");
 	include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/directory_loc.php");
+	$subnav_string = "";
+	$level = 0;
 	function p_subnav($root_path = null,$depth = null,$printsection = true,$backtohome = false,$toggle = false){
 		global $starting;
 		global $section;
@@ -12,44 +14,39 @@
 		if ($root_path == null){
 			$root_path = $section;
 		}
-		$dirs =array_filter(glob('*'), 'is_dir');
 		$subnav = expandDirectories($_SERVER['DOCUMENT_ROOT'].$file_base."/".$root_path);
 		$subnav = str_replace($url_remove,'',$subnav);
 		$key_values = array_combine(array_values($subnav), array_values($subnav));
 		foreach ($key_values as $k=>$v){
 			$k = str_replace($url_remove,'',$k);
 		}
-		//print_r($key_values);
-		//print_r(explodeTree($key_values, "/",true));
+		//print_r(explodeTree($key_values, "/",true,$starting));
 		$tree = plotTree(explodeTree($key_values, "/",true,$starting),true,$printsection,$backtohome,$starting,$toggle);
-
 		return $tree;
 	}
-	$string = "";
-	$level = 0;
 	//get flat array of directories located under the $base_dir
 	function expandDirectories($base_dir) {
 		global $base_site;
-			$directories = array();
-			foreach(scandir($base_dir) as $file) {
-				if($file == '.' || $file == '..') continue;
-				$dir = $base_dir.DIRECTORY_SEPARATOR.$file;
-				if(is_dir($dir)) {
-					//get rid of the base_site
-					$temp = str_replace($base_site,"",$dir);
-					//don't include dirs starting with a .
-					if($temp[0] != "."){
-						$directories []= $temp;
-						//merge with existing and recur to sub
-						$directories = array_merge($directories, expandDirectories($dir));
-					}
+		$directories = array();
+		foreach(scandir($base_dir) as $file) {
+			if($file == '.' || $file == '..') continue;
+			$dir = $base_dir.DIRECTORY_SEPARATOR.$file;
+			if(is_dir($dir)) {
+				//get rid of the base_site
+				$temp = str_replace($base_site,"",$dir);
+				//don't include dirs starting with a .
+				if($temp[0] != "."){
+					$directories []= $temp;
+					//merge with existing and recur to sub
+					$directories = array_merge($directories, expandDirectories($dir));
 				}
-		  }
-		  return $directories;
+			}
+		}
+		return $directories;
 	}
 	//build the list structure
 	function plotTree($arr, $initial_run=true,$printsection,$backtohome,$starting,$toggle){
-		global $string;
+		global $subnav_string;
 		global $section;
 		global $section_title;
 		global $page;
@@ -61,6 +58,8 @@
 		global $mini;
 		//print_r($arr);
 		if ($initial_run) {
+			//wrappers for the container
+			$subnav_string = "<div class='subnav' id='subnav'>";
 			//print the toggle for the nav.
 			if($printsection === true){
 				$temp ="<h2 tabindex='0'>".$section_title."</h2>";
@@ -69,18 +68,17 @@
 			}else{
 				$temp = "";
 			}
-			//wrappers for the container
-			$string = "<div class='subnav' id='subnav'>".$temp;
+			$subnav_string .= $temp;
 			$d = 0;
 		}else{
-				//$string .= "<div>";
-				$string .= "<ul class='level-".$level."'>";
-				//add the "back to home" link on the first level. This hasn't been tested...
-				if($backtohome){
-					$string .="<a class='backtohome' href='/'>Back to Home</a>";
-					$string .="<h3>".$section_title."</h3>";
-					$backtohome = false;
-				}
+			//$subnav_string .= "<div>";
+			$subnav_string .= "<ul class='level-".$level."'>";
+			//add the "back to home" link on the first level. This hasn't been tested...
+			if($backtohome){
+				$subnav_string .="<a class='backtohome' href='/'>Back to Home</a>";
+				$subnav_string .="<h3>".$section_title."</h3>";
+				$backtohome = false;
+			}
 		}
 		foreach ($arr as $k=>$v){
 			if ($k == "__base_val") continue;
@@ -93,11 +91,11 @@
 			}
 			//if the current array value is an array, get the base value and set it
 			//as the value we use for printing out the array
-			$show_val = (is_array($v) ? $v["__base_val"] : $v);
-			//show_val_temp is current page slug
-			$show_val_temp = preg_replace( '%^(.+)/%', '', $show_val );
-			//show_val_title is current page title
-			$show_val_title = 
+			$base_array = (is_array($v) ? $v["__base_val"] : $v);
+			//base_array_slug is current page slug
+			$base_array_slug = preg_replace( '%^(.+)/%', '', $base_array );
+			//base_array_title is current page title
+			$base_array_title = 
 				str_replace(" * ","-",
 				str_replace("To ","to ",
 				str_replace("Of ","of ",
@@ -105,50 +103,50 @@
 				str_replace("And ","&amp; ",
 				ucwords(
 					str_replace("-"," * ",
-					str_replace("_"," ",substr($show_val_temp,1)
+					str_replace("_"," ",substr($base_array_slug,1)
 				))))))));
 			//if we're on the section root
-			if($section == $show_val_temp && $level < 1){
-				//initial recursion
+			if($section == $base_array_slug && $level < 1){
 				$level ++;
+				//if we're on a sub-array, we need to go deeper to get a value to print
 				if (is_array($v)) {plotTree($v, false,$printsection,$backtohome,$starting,$toggle);};
 			} else{
+				$level ++;
 				//open the array item. Note we skip the section root in the subnav
-				$string .= "<li class='";
+				$subnav_string .= "<li class='";
 				//if we're on the active page
-				if($page == $show_val_temp){
-					$string .="active ";
+				if($page == $base_array_slug){
+					$subnav_string .="active ";
 				};
 				//if we're in the active section
 				if($active_trail){
-					$string .="active-trail ";
+					$subnav_string .="active-trail ";
 				};
-				$show_val = str_replace($url_remove,"",$show_val);
+				$base_array = str_replace($url_remove,"",$base_array);
 				//if there is a child under the current item, we want to print a toggle and add a class.
 				if(is_array($v) && $toggle === true){
-					$string .="'><a class='has-sub' href='" . $file_base ."/". $show_val . "'>" . $show_val_title. "</a>";
-					$string .="<button class='sn-toggle'><span class='fa fa-angle-right'></span></button>";
+					$subnav_string .="'><a class='has-sub' href='" . $file_base ."/". $base_array . "'>" . $base_array_title. "</a>";
+					$subnav_string .="<button class='sn-toggle'><span class='fa fa-angle-right'></span></button>";
 				}else{
-					$string .="'><a href='" . $file_base ."/". $show_val . "'>" . $show_val_title. "</a>";
+					//we don't need a toggle, as it's turned off or there isn't anything there to toggle.
+					$subnav_string .="'><a href='" . $file_base ."/". $base_array . "'>" . $base_array_title. "</a>";
 				}
 				//if we still have more to do (if there's a sub-array), recur
-				$level ++;
 				if (is_array($v)) {plotTree($v, false,$printsection,$backtohome,$starting,$toggle);};
 				//close off the current array item
 				$level --;
-				$string .= "</li>";
+				$subnav_string .= "</li>";
 			};
+			//go to the next array item
 		}
-		//close off this loop by closing the ul
+		//close off this recursion loop by closing the ul (or main container div if we're at the top)
 		if ($initial_run) {
-			$string .= "</div>";
+			$subnav_string .= "</div>";
 		}else{
-			$string .= "</ul>";
-			//$string .= "</div>";
+			$subnav_string .= "</ul>";
 		}
-		//Return the closed loop to the function call.
-		//Exiting the recursion if not on the initial run.
-		return $string;
+		//Return the closed loop to the function call
+		return $subnav_string;
 	}
 
 /**

@@ -36,6 +36,7 @@ if($layout == "one-column"){
 
 //include the subnav function
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/subnav.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/nav_fxns.php");
 
 //include everything from the components folder
 foreach (glob($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/components/*.inc.php") as $filename){

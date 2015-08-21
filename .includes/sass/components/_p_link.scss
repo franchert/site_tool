@@ -1,8 +1,8 @@
 a{
 	&.button{
-		@include f-bk(16px,$blue);
+		@include f-bk(16px,$color-1);
 		@include floatblock(left);
-		color:$blue;
+		color:$color-1;
 		background:#eee;
 		line-height:22px;
 		padding: 15px 25px;
@@ -10,18 +10,18 @@ a{
 		border-radius:3px;
 		text-transform:uppercase;
 		&.dark{
-			background:$dk-blue;
+			background:$color-1;
 			color:$white;
 			font-weight:bold;
 		}
 		&.light{
-			background:$gold;
-			color:$dk-blue;
+			background:$color-2;
+			color:$color-1;
 			font-weight:bold;
 		}
 	}
 	&.read-more{
-		@include bebas(16px,$dk-blue);
+		@include bebas(16px,$color-1);
 		@include floatblock(right,auto);
 		@include arrowafter(inherit,inherit,$fa-caret-right);
 		padding-right:20px;

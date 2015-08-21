@@ -25,16 +25,16 @@ body{
 	display:none;
 	right:20px;
 	bottom:20px;
-	background:$dk-blue;
-	border: 3px solid $gold;
-	@include arrowdown($gold,30px);
+	background:$color-1;
+	border: 3px solid $color-2;
+	@include arrowdown($color-2,30px);
 	position:fixed;
 	height:60px;
 	width:60px;
 	border-radius:50%;
 	z-index:9999;
 	transition:box-shadow 0.3s;
-	color:$gold;
+	color:$color-2;
 	text-transform:uppercase;
 	font-size:12px;
 	line-height:12px;
@@ -97,29 +97,35 @@ img{
 }
 
 h1{
-	@include paradoxbold(36px,$blue);
-	border-bottom:1px solid $gold;
+	@include paradoxbold(36px,$color-1);
+	margin:0 0 20px 0;
 	@include breakpoint($tab,true){
 		font-size:48px;
 		line-height:54px;
 	}
 }
 h2{
-	@include paradoxbold(26px,$blue);
+	@include paradoxbold(28px,$color-1);
+	margin:0 0 20px 0;
 }
 h3{
-	@include paradoxbold(24px,$blue);
+	@include paradoxbold(24px,$color-1);
 	line-height:24px;
-	border-bottom:1px solid $gold;
+	border-bottom:1px solid $color-2;
 	margin:0 0 20px 0;
 }
 h4{
-	@include bebas(20px,$dk-blue);
+	@include bebas(20px,$color-1);
+	margin:0 0 10px 0;
 }
 h5{
-	@include paradox(16px,$dk-blue);
+	@include paradox(18px,$black);
 	font-weight:bold;
-	padding-top:20px;
+	margin:0 0 10px 0;
+}
+h6{
+	@include paradox(18px,$black);
+	margin:0 0 10px 0;
 }
 p{
 	float:none;
@@ -141,15 +147,15 @@ section{
 		margin-top:0px;
 	}
 	> h2{
-		border-bottom:1px solid $gold;
+		border-bottom:1px solid $color-2;
 		margin-bottom:20px;
 	}
 	&.short{
 		max-height:300px;
 		overflow:hidden;
 		.view-more{
-			@include bebas(16px,$dk-blue);
-			@include arrowafter($dk-blue,12px,"\f067");
+			@include bebas(16px,$color-1);
+			@include arrowafter($color-1,12px,"\f067");
 			position:absolute;
 			background:$white;
 			&:after{
@@ -158,8 +164,8 @@ section{
 		}
 	}
 	.view-more{
-		@include arrowafter($dk-blue,12px,"\f068");
-		@include bebas(16px,$dk-blue);
+		@include arrowafter($color-1,12px,"\f068");
+		@include bebas(16px,$color-1);
 		display:block;
 		bottom:-4px;
 		width:100%;
@@ -204,7 +210,7 @@ form{
 		@include bebas(18px,$white);
 		width:auto;
 		margin:10px 0;
-		background:$dk-blue;
+		background:$color-1;
 		border:1px solid $gray;
 		border-radius:3px;
 		padding:10px 30px;
@@ -214,7 +220,7 @@ form{
 	}
 }
 a{
-	@include f-bkcd(16px,$blue);
+	@include f-bkcd(16px,$color-1);
 	text-decoration:none;
 	&:hover{
 		text-decoration:underline;
@@ -246,19 +252,19 @@ a{
 	}
 }
 blockquote{
-	@include bebas(36px,$dk-blue);
+	@include bebas(36px,$color-1);
 	padding:0 10px;
 	margin-bottom:15px;
 	&:before{
 		content:'\201C';
-		color:$gold;
+		color:$color-2;
 		font-size:1.3em;
 		line-height:0.7em;
 		padding-right:5px;
 	}
 	&:after{
 		content:'\201D';
-		color:$gold;
+		color:$color-2;
 		font-size:1.3em;
 		line-height:0.7em;
 		padding-left:5px;
@@ -269,10 +275,10 @@ blockquote{
 	width:auto;
 	p{
 		@include floatblock();
-		color:$blue;
+		color:$color-1;
 		font-style:italic;
 		margin:0 0 15px 0;
-		border-bottom:1px solid $gold;
+		border-bottom:1px solid $color-2;
 		padding:10px 0;
 	}
 	img{
@@ -295,15 +301,12 @@ blockquote{
 	@include breakpoint($desk){
 		margin-top: 200px;
 	}
-	h1{
-		margin:20px;
-	}
 }
 header{
 	@include floatblock();
 	.l-head{
 		@include floatblock();
-		background: $dk-blue;
+		background: $color-1;
 		position:fixed;
 		z-index:2;
 		.toggle-wrapper{
@@ -397,7 +400,7 @@ header{
 					right:0;
 					height:0;
 					overflow:hidden;
-					background:$dk-blue;
+					background:$color-1;
 					@include breakpoint($tab){}
 					margin-left:20px;
 					@include breakpoint($desk,true){
@@ -437,7 +440,7 @@ header{
 					display:none;
 					width:auto;
 					float:right;
-					background:$lt-blue;
+					background:$color-3;
 					height:50px;
 					padding:10px;
 					form{
@@ -462,10 +465,10 @@ header{
 							}
 						}
 						#site_search_button{
-							@include bebas(20px,$blue);
+							@include bebas(20px,$color-1);
 							@include floatblock(left,50px);
 							font-size:20px;
-							color:$gold;
+							color:$color-2;
 							height:30px;
 							background:none;
 							border:none;
@@ -499,7 +502,7 @@ header{
 					@include floatblock(right,50px);
 					height:50px;
 					border:none;
-					color:$gold;
+					color:$color-2;
 					font-size:18px;
 					position:relative;
 					margin-right:50px;
@@ -520,7 +523,7 @@ header{
 					right:0;
 					height:0;
 					overflow:hidden;
-					background:$dk-blue;
+					background:$color-1;
 					display:table;
 					height:42px;
 					float:right;
@@ -541,7 +544,7 @@ header{
 						}
 						position:relative;
 						a {
-							color: $gold;
+							color: $color-2;
 							font-size:14px;
 						}
 					}
@@ -560,15 +563,15 @@ header{
 					}
 					>li{
 						display:table-cell;
-						background:$gold;
+						background:$color-2;
 						padding:5px 5px 10px 5px;
 						vertical-align:middle;
 						position:relative;
 						float:none;
 						h3{
 							@include f-dm(14px,$white);
-							@include arrowdown($blue,8px);
-							color:$blue;
+							@include arrowdown($color-1,8px);
+							color:$color-1;
 							background:none;
 							cursor:pointer;
 							line-height:35px;
@@ -599,7 +602,7 @@ header{
 							background:white;
 							padding:10px 20px;
 							box-shadow:1px 4px 5px $t-black;
-							border:5px solid $lt-blue;
+							border:5px solid $color-3;
 							@include breakpoint($tab){
 								max-width:80vw;
 								right:-54px;
@@ -624,7 +627,7 @@ header{
 							}
 						}
 						&.open{
-							background:$lt-blue;
+							background:$color-3;
 							h3{
 								color:$white;
 								&:after{
@@ -679,14 +682,14 @@ header{
 			max-width:$maxwidth;
 			margin:auto;
 			h3{
-				@include f-dm(22px,$gold);
+				@include f-dm(22px,$color-2);
 				text-transform:uppercase;
 				@include floatblock(left,calc(100% - 60px));
 				border:none;
 				margin:0;
 			}
 			span{
-				@include paradoxbold(26px,$gold);
+				@include paradoxbold(26px,$color-2);
 				line-height:26px;
 				text-transform:uppercase;
 				@include floatblock(left,60px);
@@ -787,7 +790,7 @@ header{
 							}
 						}
 						.search-toggle{
-							background:$lt-blue;
+							background:$color-3;
 							color:$white;
 							span.fa-search{
 								&:before{
@@ -833,7 +836,7 @@ header{
 				}
 			}
 			.site-logo{
-				background:$blue;
+				background:$color-1;
 				display:block;
 				margin:0;
 				@include breakpoint($desk,true){
@@ -938,7 +941,7 @@ header{
 							@include breakpoint($desk){
 								width:auto;
 								background:none;
-								color:$gold;
+								color:$color-2;
 								padding:0 7px;
 								float:none;
 							}
@@ -1060,21 +1063,6 @@ body{
 						}
 					}
 				}
-				h1{
-					@include floatblock();
-					margin:0;
-					@include breakpoint($tab-large,true){
-						margin-top:25px;
-					}
-					@include breakpoint($desk,true){
-						padding:10px 0;
-					}
-					.program-tag{
-						@include breakpoint($tab,true){
-							margin:15px 0px 15px 20px;
-						}
-					}
-				}
 				.feature{
 					@include floatblock();
 					padding-bottom:40px;
@@ -1116,7 +1104,7 @@ body{
 					}
 					.l-content {
 						@include floatblock();
-						border-bottom:5px solid $gold;
+						border-bottom:5px solid $color-2;
 						margin:0 0 20px 0;
 						@include breakpoint($tab,true){
 							border-bottom:0;
@@ -1134,7 +1122,7 @@ body{
 						}
 						> h2{
 							@include floatblock();
-							border-bottom: 1px solid $gold;
+							border-bottom: 1px solid $color-2;
 							margin:0 0 20px 0;
 						}
 						.matrix{
@@ -1171,24 +1159,7 @@ body{
 		}
 	}
 	&.one-column{
-		.l-page{
-			h1{
-				@include floatblock();
-				padding:20px;
-				margin:0;
-				@include breakpoint($tab,true){
-					margin-top:50px;
-				}
-				@include breakpoint($desk,true){
-					padding:10px 0;
-				}
-				.program-tag{
-					@include breakpoint($tab,true){
-						margin:15px 0px 15px 20px;
-					}
-				}
-			}
-		}
+		.l-page{}
 	}
 	&.bio{
 		.l-page{
@@ -1225,22 +1196,6 @@ body{
 					.column{
 						@include breakpoint($desk){
 							padding:0 20px;
-						}
-					}
-				}
-				h1{
-					@include floatblock();
-					padding:20px;
-					margin:0;
-					@include breakpoint($tab,true){
-						margin-top:50px;
-					}
-					@include breakpoint($desk,true){
-						padding:10px 0;
-					}
-					.program-tag{
-						@include breakpoint($tab,true){
-							margin:15px 0px 15px 20px;
 						}
 					}
 				}
@@ -1324,7 +1279,7 @@ body{
 						}
 						> h2{
 							@include floatblock();
-							border-bottom: 1px solid $gold;
+							border-bottom: 1px solid $color-2;
 							margin:0 0 20px 0;
 						}
 						.matrix{
@@ -1370,9 +1325,6 @@ body{
 		}
 	}
 	&.home{
-		h1{
-			border:none;
-		}
 		.program-search{
 			background:#eee;
 			.column{
@@ -1384,7 +1336,7 @@ body{
 		.factoid{
 			.container{
 				@include breakpoint($tab,true){
-					background:$t-blue;
+					background:$color-1-t;
 				}
 			}
 		}
@@ -1487,7 +1439,7 @@ footer{
 	border-top:7px solid rgba(0, 0, 0, 0.15);
 	.column{
 		h3{
-			@include bebas(18px,$gold);
+			@include bebas(18px,$color-2);
 			padding: 20px;
 			text-align: center;
 			text-transform:uppercase;
@@ -1498,73 +1450,9 @@ footer{
 				text-align: left;
 			}
 		}
-		.footer-first {
-			padding-top:20px;
-			@include breakpoint($tab){
-				padding-top:0;
-			}
-			img{
-				margin:auto;
-				max-width:100%;
-			}
-			@include f-bk(15px,$gray);
+		.footer{
 			@include floatblock();
-			@include breakpoint($tab,true){
-				width: 25%;
-				padding:30px 0;
-			}
-			a{
-				@include bebas(16px,$lt-blue);
-				@include floatblock();
-				max-width:100%;
-				padding:10px;
-				text-align:center;
-				img{
-					max-width:100%;
-				}
-			}
-			.location{
-				br{
-					display:none;
-					@include breakpoint($tab){
-						display:block;
-					}
-				}
-			}
-		}
-		.footer-second {
-			@include floatblock();
-			@include breakpoint($tab,true){
-				width: 55%;
-				padding:30px 0;
-			}
-			a{
-				@include floatblock(none);
-				margin:auto;
-				h3{
-					border:none;
-					padding:0 20px;
-					@include breakpoint($tab){
-						padding:0;
-					}
-				}
-				img{
-					max-width:100%;
-					margin:auto;
-					@include breakpoint($tab){
-						width:auto;
-					}
-					@include breakpoint($tab-large){}
-				}
-			}
-		}
-		.footer-third{
-			@include floatblock();
-			@include breakpoint($tab,true){
-				width: 20%;
-				padding:30px 0;
-			}
-			div.social{
+			.social{
 				@include floatblock();
 				margin:auto;
 				@include breakpoint($tab,true){}
@@ -1615,7 +1503,7 @@ footer{
 					border-bottom:0;
 					margin:10px 0 0;
 					@include breakpoint($tab,true){
-						border-bottom: 1px solid $gold;
+						border-bottom: 1px solid $color-2;
 					}
 				}
 			}
@@ -1659,7 +1547,7 @@ footer{
 					padding:0;
 					border-bottom:0;
 					@include breakpoint($tab,true){
-						border-bottom: 1px solid $gold;
+						border-bottom: 1px solid $color-2;
 					}
 				}
 			}
@@ -1757,7 +1645,7 @@ footer{
 			list-style-type:none;
 			margin:0;
 			h4{
-				border-bottom:1px solid $gold;
+				border-bottom:1px solid $color-2;
 			}
 		}
 	}
@@ -1769,7 +1657,7 @@ footer{
 				&:before{
 					content:"\f054";
 					font-family:FontAwesome;
-					color:$dk-blue;
+					color:$color-1;
 					display:inline-block;
 					width:1.2em;
 					margin-left:-1.2em;
@@ -1852,8 +1740,8 @@ footer{
 		}
 	}
 	&.ug-factoids{
-		border-top:1px solid $gold;
-		border-bottom:1px solid $gold;
+		border-top:1px solid $color-2;
+		border-bottom:1px solid $color-2;
 		margin-bottom:30px;
 		&.fourths{
 			> div{
@@ -1909,8 +1797,8 @@ footer{
 		}
 	}
 	&.ug-awards{
-		border-top:1px solid $gold;
-		border-bottom:1px solid $gold;
+		border-top:1px solid $color-2;
+		border-bottom:1px solid $color-2;
 		margin-bottom:30px;
 	}
 }
@@ -1926,7 +1814,7 @@ footer{
 .factoid{
 	&.dark{
 		.container{
-			background:$blue;
+			background:$color-1;
 		}
 	}
 }
@@ -1944,13 +1832,13 @@ footer{
 		width:100%;
 		z-index:2;
 		background:$white;
-		border:1px solid $gold;
+		border:1px solid $color-2;
 	}
 	.dropdown{
 		@include bebas(20px);
 		@include floatblock(left,auto);
 		@include arrowdown(inherit,12px,"\f0da");
-		border:1px solid $blue;
+		border:1px solid $color-1;
 		outline:none;
 		padding:15px 30px 15px 20px;
 		cursor:pointer;
@@ -1979,22 +1867,22 @@ footer{
 	}
 	&.light{
 		.dropdown{
-			color:$dk-blue;
+			color:$color-1;
 			background:#eee;
-			border-color:$dk-blue;
+			border-color:$color-1;
 		}
 	}
 	&.dark{
 		.dropdown{
 			color:$white;
-			background:$dk-blue;
-			border-color:$dk-blue;
+			background:$color-1;
+			border-color:$color-1;
 		}
 		&.open{
 			.dropdown{
-				background:$gold;
-				border-color:$gold;
-				color:$dk-blue;
+				background:$color-2;
+				border-color:$color-2;
+				color:$color-1;
 			}
 		}
 	}
@@ -2008,7 +1896,7 @@ footer{
 		padding:0;
 	}
 	span{
-		color:$dk-blue;
+		color:$color-1;
 		padding-right:5px;
 	}
 }
@@ -2033,7 +1921,7 @@ footer{
 			}
 			margin-left:5px;
 			a{
-				@include f-bk(14px,$dk-blue);
+				@include f-bk(14px,$color-1);
 				padding:5px 15px;
 				text-transform:uppercase;
 				border-radius:0;
@@ -2042,7 +1930,7 @@ footer{
 	}
 }
 .cta-bar{
-	background: $gold;
+	background: $color-2;
 	z-index:1;
 	.column{
 		h2{
@@ -2068,13 +1956,13 @@ footer{
 					padding: 15px 0;
 				}
 				a{
-					@include paradoxbold(16px,$dk-blue);
+					@include paradoxbold(16px,$color-1);
 					height: 90px;
 					padding: 15px 5px 5px 5px;
 					background: none;
 					border: none;
 					border-left: 2px solid #fadd86;
-					border-bottom:2px solid $dk-blue;
+					border-bottom:2px solid $color-1;
 					@include breakpoint($tab){
 						border-bottom:0;
 					}
@@ -2090,7 +1978,7 @@ footer{
 							width: 50px;
 							height: 50px;
 							padding: 10px 0 0 0;
-							background: $blue;
+							background: $color-1;
 							color: white;
 							font-size: 30px;
 							text-align: center;
@@ -2102,7 +1990,7 @@ footer{
 						padding: 0 0 0 10px;
 						text-align: left;
 						h3 {
-							@include bebas(30px,$blue);
+							@include bebas(30px,$color-1);
 							margin: 0;
 							line-height: 20px;
 						}
@@ -2111,7 +1999,7 @@ footer{
 							text-transform:capitalize;
 							float: left;
 							margin: 0;
-							color: $blue;
+							color: $color-1;
 							font-size: 14px;
 							line-height: 20px;
 							padding:5px 5px 0 0;
@@ -2160,7 +2048,7 @@ footer{
 		}
 		h2 {
 			margin: 0 0 20px 0;
-			border-bottom: 1px solid $gold;
+			border-bottom: 1px solid $color-2;
 		}
 		img {
 			width: 100%;
@@ -2260,7 +2148,7 @@ footer{
 						@include bebas(14px,#111);
 					}
 					a{
-						@include paradox(14px,$dk-blue);
+						@include paradox(14px,$color-1);
 					}
 				}
 			}

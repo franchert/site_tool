@@ -2,12 +2,12 @@
 .subsection{
 	@include floatblock();
 	padding:20px;
-	border-bottom:1px solid $gold;
+	border-bottom:1px solid $color-2;
 	@include breakpoint($desk){
 		padding:5px 0 20px;
 	}
 	h3{
-		@include bebas(28px,$dk-blue);
+		@include bebas(28px,$color-1);
 		@include floatblock();
 		border:none;
 		margin:10px 0;
@@ -46,7 +46,7 @@
 			}
 			button{
 				@include bebas(20px,$white);
-				background:$dk-blue;
+				background:$color-1;
 				padding:15px 30px 15px 20px;
 				border:none;
 				cursor:pointer;
@@ -69,7 +69,7 @@
 		.container{
 			width:100%;
 			h3{
-				@include f-dm(24px,$dk-blue);
+				@include f-dm(24px,$color-1);
 				text-transform:initial;
 			}
 		}
@@ -91,7 +91,7 @@
 			> h4{
 				padding:5px 20px;
 				margin-top:20px;
-				background:$gold;
+				background:$color-2;
 			}
 			.p-list{
 				margin-bottom:-30px;

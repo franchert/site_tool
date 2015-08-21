@@ -19,9 +19,9 @@ function p_promo(
 		$arr=null,
 		$img_tag = false
 	){
-	if(is_null($p_img)){
 		//$image = "<img alt='placeholder' class='img-center' src='http://placehold.it/400x400.png'/>";
-		$image = p_image("400","400");
+	if(is_null($p_img)){
+		$image = p_image("400","300");
 	}elseif(isset($image) && $image == ''){
 		$image = "";
 	}else{

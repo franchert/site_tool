@@ -1,7 +1,7 @@
 .factoid{
 	@include floatblock();
 	.container{
-		@include f-bk(16px,$dk-blue);
+		@include f-bk(16px,$color-1);
 		@include floatblock(none,220px);
 		margin:auto;
 		text-align:center;
@@ -13,7 +13,7 @@
 			width:300px;
 		}
 		span{
-			@include f-bkcd(78px,$dk-blue);
+			@include f-bkcd(78px,$color-1);
 			@include floatblock();
 			text-transform:none;
 			span{

@@ -7,7 +7,7 @@
 					.container{
 						@include floatblock();
 						padding:40px;
-						background:$dk-blue;
+						background:$color-1;
 						@include breakpoint($tab-large){
 							width:30%;
 							position:absolute;
@@ -17,7 +17,7 @@
 							color:$white;
 						}
 						hr{
-							border-color:$gold;
+							border-color:$color-2;
 						}
 						p{
 							color:$white;
@@ -26,9 +26,9 @@
 							line-height:24px;
 						}
 						a{
-							@include bebas(18px,$dk-blue);
+							@include bebas(18px,$color-1);
 							@include floatblock(left,auto);
-							background:$gold;
+							background:$color-2;
 							padding:10px 30px;
 						}
 					}
@@ -101,7 +101,7 @@
 				.owl-next{
 					@include calc('top','50% - 40px','50%');
 					font-size:40px;
-					color:$dk-blue;
+					color:$color-1;
 				}
 				.owl-prev{
 					left:-10px;

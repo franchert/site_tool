@@ -10,7 +10,7 @@
 	.nav-wrapper{
 		@include floatblock();
 		background: white;
-		border-bottom:1px solid $gold;
+		border-bottom:1px solid $color-2;
 		overflow:visible;
 		@include breakpoint(max-width $tab,true){
 			background:none;
@@ -32,17 +32,17 @@
 				}
 				li{
 					@include floatblock();
-					border-bottom:1px solid $blue;
+					border-bottom:1px solid $color-1;
 					@include breakpoint($tab-large,true){
 						display:table-cell;
 						width:auto;
 						float:none;
 						border-top:none;
-						border-bottom:1px solid $gold;
+						border-bottom:1px solid $color-2;
 					}
 					a{
 						@include floatblock();
-						@include f-dm(14px,$blue);
+						@include f-dm(14px,$color-1);
 						text-transform:uppercase;
 						text-align:left;
 						padding: 10px 20px;
@@ -75,7 +75,7 @@
 						a{
 							text-decoration:none;
 							span{
-								color:$gold
+								color:$color-2
 							}
 						}
 					}

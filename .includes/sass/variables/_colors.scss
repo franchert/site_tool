@@ -14,21 +14,10 @@ $black:#000;
 $t-black-light:rgba(0,0,0,0.3);
 $t-black:rgba(0,0,0,0.5);
 $t-black-heavy:rgba(0,0,0,0.8);
-$t-gray:rgba(55,55,55,0.5);
-$t-gray-heavy:rgba(33,33,33,0.8);
-$lt-blue:#4687c3;
-$blue:#003366;
-$dk-blue:#003366;
-$t-blue:rgba(0, 51, 102, 0.75);
-$t-blue-light:rgba(0, 51, 102, 0.65);
-$t-blue-heavy:rgba(102,40,139,0.9);
 
 $red:#d21301;
-
-$gold: #ffcc33;
-$dk-gold:#b89a68;
-
 $t-red:rgba(173,0,0,0.9);
+
 $white-1:#E6E8E6;
 $white-2:#F2F4F6;
 $white-3:#F9F9F9;
@@ -37,3 +26,21 @@ $white-4:#FDFDFD;
 
 $dk:#444;
 $lt:#ccc;
+
+$r1:42;
+$g1:42;
+$b1:42;
+$color-1:rgba($r1,$g1,$b1,1);
+$color-1-tl:rgba($r1, $g1, $b1, 0.25);
+$color-1-t:rgba($r1, $g1, $b1, 0.5);
+$color-1-th:rgba($r1,$g1,$b1,0.75);
+
+$r2:187;
+$g2:187;
+$b2:187;
+$color-2: rgba($r2,$g2,$b2,1);
+$color-2-tl:rgba($r2,$g2,$b2,0.25);
+$color-2-t:rgba($r2,$g2,$b2,0.5);
+$color-2-th:rgba($r2,$g2,$b2,0.75);
+
+$color-3:rgba(70,135,195,1);

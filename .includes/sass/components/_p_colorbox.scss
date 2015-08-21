@@ -8,12 +8,12 @@
 	.container{
 		margin-bottom:24px;
 		position:relative;
-		background:$t-blue;
+		background:$color-1-t;
 		h2{
 			@include f-dm(16px,$white);
 			padding:5px 20px;
 			span{
-				color:$gold;
+				color:$color-2;
 			}
 		}
 		p{
