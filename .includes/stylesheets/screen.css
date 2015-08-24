@@ -360,15 +360,6 @@ body .main-nav-container .nav-wrapper .column .main-nav li a {
   text-align: left;
   padding: 10px 20px;
 }
-@media (min-width: 45em) {
-  body .main-nav-container .nav-wrapper .column .main-nav li a {
-    /*
-    text-align:center;
-    padding:10px 0;
-    font-size:12px; 
-    */
-  }
-}
 @media (min-width: 55em) {
   body .main-nav-container .nav-wrapper .column .main-nav li a {
     text-align: center;
@@ -1035,6 +1026,7 @@ body .p-promo.overlay .container {
   bottom: 0;
   background: #2a2a2a;
   position: relative;
+  padding: 20px;
 }
 @media (min-width: 55em) {
   body .p-promo.overlay .container {
@@ -1047,7 +1039,6 @@ body .p-promo.overlay .container p {
   color: #fff;
   font-size: 16px;
   line-height: 22px;
-  padding: 0 20px 20px 20px;
   height: auto;
   overflow: hidden;
   margin: 0;
@@ -1057,7 +1048,6 @@ body .p-promo.overlay .container h2 {
   color: #fff;
   font-size: 16px;
   line-height: 22px;
-  padding: 20px 20px 0 20px;
   margin: 0;
   border-bottom: 0;
 }
@@ -1117,6 +1107,14 @@ body .p-promo.overlay.spotlight {
 body .p-promo.overlay.spotlight .container h2 {
   font-size: 30px;
   line-height: 34px;
+}
+body .p-promo.overlay.hover .container p {
+  height: 0;
+  transition: all 0.2s ease-in-out;
+}
+body .p-promo.overlay.hover:hover .container p {
+  height: 66px;
+  overflow: hidden;
 }
 body .p-promo.overlayv2 {
   position: relative;
@@ -1403,10 +1401,6 @@ body .p-promo.hovertext a h2 {
   }
 }
 body .p-promo.hovertext a p {
-  font-family: 'Arial',sans-serif;
-  color: #fff;
-  font-size: 18px;
-  line-height: 24px;
   position: absolute;
   bottom: 10%;
   width: 100%;
@@ -1509,17 +1503,23 @@ body .p-promo.generic.left img {
     margin-top: 0;
   }
 }
-body .p-promo.genericv2 img {
+body .p-promo.generic.hover {
+  padding: 10px;
+  border: 1px solid #bbbbbb;
+  margin-top: 0;
+}
+body .p-promo.generic.hover img {
   display: block;
   margin: auto;
+  float: none;
 }
-body .p-promo.genericv2 .container {
+body .p-promo.generic.hover .container {
   display: block;
   float: left;
   width: 100%;
   background: #fff;
 }
-body .p-promo.genericv2 .container h2 {
+body .p-promo.generic.hover .container h2 {
   font-family: 'ITCFranklinGothicDMCD',sans-serif;
   color: #2a2a2a;
   font-size: 18px;
@@ -1531,16 +1531,19 @@ body .p-promo.genericv2 .container h2 {
   width: 100%;
   margin: 10px 0 0;
   border-bottom: 0;
-  text-align: center;
 }
-body .p-promo.genericv2 .container p {
+body .p-promo.generic.hover .container p {
   display: block;
   float: left;
   width: 100%;
   font-size: 16px;
   line-height: 22px;
   overflow: hidden;
-  text-align: center;
+}
+body .p-promo.generic.hover:hover {
+  transition: all 0.1s ease-in-out;
+  border-top: 5px solid #bbbbbb;
+  margin-bottom: 16px;
 }
 body .p-promo.promo h4 {
   font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
@@ -1618,7 +1621,7 @@ body .p-promo.promo.dark .container > a:after {
 }
 body .p-promo.promo.light {
   padding: 10px 20px;
-  background: #fff;
+  background: #ccc;
 }
 body .p-promo.promo.light .container h4 {
   font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
@@ -1650,7 +1653,6 @@ body .p-promo.button {
   max-width: 100%;
   margin: 0 0 20px;
   transition: all .2s;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3), 2px 2px 3px rgba(0, 0, 0, 0.3);
 }
 body .p-promo.button a {
   position: relative;
@@ -1762,16 +1764,16 @@ body .l-promo-sidebar .p-promo.generic.left .container, body .l-promo-sidebar .p
   width: 100%;
 }
 @media (min-width: 45em) {
-  body .l-content .p-promo.genericv2 img {
+  body .l-content .p-promo.generic.hover img {
     width: 200px;
     float: left;
   }
 }
-body .l-content .p-promo.genericv2 .container {
+body .l-content .p-promo.generic.hover .container {
   padding: 0 20px;
 }
 @media (min-width: 45em) {
-  body .l-content .p-promo.genericv2 .container {
+  body .l-content .p-promo.generic.hover .container {
     width: 100%;
     width: -webkit-calc(100% - 200px);
     width: calc(100% - 200px);
@@ -2491,7 +2493,7 @@ body .table-wrapper table tbody tr td:before {
   display: block;
   float: left;
   width: 100px;
-  font-family: 'Arial',sans-serif;
+  font-family: 'ITCFranklinGothicBK';
   color: #444;
   font-size: 16px;
   line-height: 22px;
@@ -2975,17 +2977,6 @@ blockquote:after {
   width: 100%;
   overflow-x: hidden;
   min-height: 100vh;
-  margin-top: 99px;
-}
-@media (min-width: 45em) {
-  .l-page {
-    margin-top: 155px;
-  }
-}
-@media (min-width: 70em) {
-  .l-page {
-    margin-top: 200px;
-  }
 }
 
 header {
@@ -3410,7 +3401,7 @@ header .l-head .utility .header-right ul.quick-links > li.open .utility-sub {
   display: block;
   float: left;
 }
-header .l-head .site-logo {
+header .l-head .site-logo-wrapper .site-logo {
   display: block;
   width: 100%;
   position: relative;
@@ -3418,21 +3409,20 @@ header .l-head .site-logo {
   margin: auto;
 }
 @media (min-width: 45em) {
-  header .l-head .site-logo {
+  header .l-head .site-logo-wrapper .site-logo {
     width: auto;
     float: left;
     position: relative;
     top: 0;
-    margin: 9px 0;
   }
 }
 @media (min-width: 70em) {
-  header .l-head .site-logo {
+  header .l-head .site-logo-wrapper .site-logo {
     width: 600px;
     transition: all 0.2s ease-in-out;
   }
 }
-header .l-head .site-logo img {
+header .l-head .site-logo-wrapper .site-logo img {
   display: block;
   width: 100%;
   margin: auto;
@@ -3865,6 +3855,9 @@ header.mobi-open.open .l-head .utility .column .header-right .search {
   }
 }
 
+body.home h1 {
+  margin: 0;
+}
 body.generic_inner .l-page .l-featured-header .featured {
   max-height: 500px;
 }

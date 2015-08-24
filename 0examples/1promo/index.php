@@ -10,12 +10,6 @@ $mini = true;
 $depth = 2;
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/promo-director.php");
 
-$p_content .= p_promo("generic","","Generic Promo");
-$p_content .= p_promo("generic","left","Generic Promo Left");
-$p_content .= p_promo("generic","right","Generic Promo Right");
-$p_content .= p_promo("genericv2","","GenericV2 Promo");
-$p_content .= p_promo("overlay","","Overlay Promo");
-$p_content .= p_promo("overlayv2","","OverlayV2 Promo");
 $p_content .= p_promo("linkimg","","LinkImg Promo");
 $p_content .= p_promo("imgtitle","","ImgTitle Promo");
 $p_content .= p_promo("promo","","Promo Promo");
@@ -27,12 +21,6 @@ $p_content .= p_promo("button","light","Button Promo Light");
 $p_content .= p_promo("button","dark","Button Promo Dark");
 $p_content .= p_promo("something_else","","Not Found Promo");
 
-$p_promo_sidebar .= p_promo("generic","","Generic Promo");
-$p_promo_sidebar .= p_promo("generic","left","Generic Promo Left");
-$p_promo_sidebar .= p_promo("generic","right","Generic Promo Right");
-$p_promo_sidebar .= p_promo("genericv2","","GenericV2 Promo");
-$p_promo_sidebar .= p_promo("overlay","","Overlay Promo");
-//$p_promo_sidebar .= p_promo("overlayv2","","Overlay Promo");
 $p_promo_sidebar .= p_promo("linkimg","","LinkImg Promo");
 $p_promo_sidebar .= p_promo("imgtitle","","ImgTitle Promo");
 $p_promo_sidebar .= p_promo("promo","","Promo Promo");

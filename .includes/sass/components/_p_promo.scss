@@ -52,20 +52,19 @@
 			bottom:0;
 			background:$color-1;
 			position:relative;
+			padding:20px;
 			@include breakpoint($tab-large,true){
 				background:$color-1-t;
 				position:absolute;
 			}
 			p{
 				@include f-bk(16px,$white);
-				padding:0 20px 20px 20px;
 				height:auto;
 				overflow:hidden;
 				margin:0;
 			}
 			h2{
 				@include paradoxbold(16px,$white);
-				padding:20px 20px 0 20px;
 				margin:0;
 				border-bottom:0;
 			}
@@ -106,6 +105,7 @@
 				}
 			}
 		}
+
 		&.spotlight{
 			padding:20px;
 			@include breakpoint($tab,true){
@@ -115,6 +115,22 @@
 				h2{
 					font-size:30px;
 					line-height:34px;
+				}
+			}
+		}
+		&.hover{
+			.container{
+				p{
+					height:0;
+					transition:all 0.2s ease-in-out;
+				}
+			}
+			&:hover{
+				.container{
+					p{
+						height:66px;
+						overflow:hidden;
+					}
 				}
 			}
 		}
@@ -329,7 +345,6 @@
 				}
 			}
 			p{
-				@include s-text-book(18px,$white);
 				position:absolute;
 				bottom:10%;
 				width:100%;
@@ -421,29 +436,36 @@
 				}
 			}
 		}
-	}
-	&.genericv2{
-		img{
-			display:block;
-			margin:auto;
-		}
-		.container{
-			@include floatblock();
-			background:$white;
-			h2{
-				@include f-dm(18px,$color-1);
-				text-transform:none;
-				@include floatblock();
-				margin:10px 0 0;
-				border-bottom:0;
-				text-align:center;
+		&.hover{
+			padding:10px;
+			border:1px solid $color-2;
+			margin-top:0;
+			img{
+				display:block;
+				margin:auto;
+				float:none;
 			}
-			p{
+			.container{
 				@include floatblock();
-				font-size:16px;
-				line-height:22px;
-				overflow:hidden;
-				text-align:center;
+				background:$white;
+				h2{
+					@include f-dm(18px,$color-1);
+					text-transform:none;
+					@include floatblock();
+					margin:10px 0 0;
+					border-bottom:0;
+				}
+				p{
+					@include floatblock();
+					font-size:16px;
+					line-height:22px;
+					overflow:hidden;
+				}
+			}
+			&:hover{
+				transition:all 0.1s ease-in-out;
+				border-top:5px solid $color-2;
+				margin-bottom:16px;
 			}
 		}
 	}
@@ -498,7 +520,7 @@
 		}
 		&.light{
 			padding:10px 20px;
-			background:$white;
+			background:$gray;
 			.container{
 				h4{
 					@include bebas(24px,$color-1);
@@ -533,7 +555,6 @@
 		max-width:100%;
 		margin:0 0 20px;
 		transition:all .2s;
-		box-shadow:0px 0px 5px $t-black-light,2px 2px 3px $t-black-light;
 		a{
 			position:relative;
 			img{
@@ -695,13 +716,6 @@
 				}
 			}
 		}
-		&.genericv2{
-			img{}
-			.container{
-				h2{}
-				p{}
-			}
-		}
 		&.promo{
 			h4{}
 			hr{}
@@ -782,21 +796,21 @@
 				img{}
 				.container{}
 			}
-		}
-		&.genericv2{
-			img{
-				@include breakpoint($tab){
-					width:200px;
-					float:left;
+			&.hover{
+				img{
+					@include breakpoint($tab){
+						width:200px;
+						float:left;
+					}
 				}
-			}
-			.container{
-				padding:0 20px;
-				@include breakpoint($tab){
-					@include calc("width","100% - 200px",100%);
+				.container{
+					padding:0 20px;
+					@include breakpoint($tab){
+						@include calc("width","100% - 200px",100%);
+					}
+					h2{}
+					p{}
 				}
-				h2{}
-				p{}
 			}
 		}
 		&.promo{

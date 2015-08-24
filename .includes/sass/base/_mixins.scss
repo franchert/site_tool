@@ -45,49 +45,6 @@
 
 
 
-
-@mixin s-bold($size:16px,$color:$c-default){
-	font-family:'Arial',sans-serif;
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
-@mixin s-semi-bold($size:16px,$color:$c-default){
-	font-family:'Arial',sans-serif;
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
-@mixin s-text-book($size:16px,$color:$c-default){
-	font-family:'Arial',sans-serif;
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
-@mixin s-text-bold($size:16px,$color:$c-default){
-	font-family:'Arial',sans-serif;
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
-@mixin s-text-med($size:16px,$color:$c-default){
-	font-family:'Arial',sans-serif;
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
-@mixin s-book($size:16px,$color:$c-default){
-	font-family:'Arial',sans-serif;
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
-@mixin s-black-italic($size:16px,$color:$c-default){
-	font-family:'Arial',sans-serif;
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
 @mixin arrowbefore($color:$t-white,$font-size:14px){
 	position:relative;
 	&:before{
@@ -128,14 +85,12 @@
 	}
 }
 @mixin v-gradient(){
-	// needs latest Compass, add '@import "compass"' to your scss
 	@include filter-gradient(#000000, #a60000, vertical); // IE6-8
 	// IE9 SVG, needs conditional override of 'filter' to 'none'
 	$experimental-support-for-svg: true;
 	@include background-image(linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%));
 }
 @mixin h-gradient-dark($back-color){
-	// needs latest Compass, add '@import "compass"' to your scss
 	@include filter-gradient(#570000, #000000, horizontal); // IE6-8
 	// IE9 SVG, needs conditional override of 'filter' to 'none'
 	$experimental-support-for-svg: true;
@@ -143,19 +98,11 @@
 	background-color:$back-color
 }
 @mixin h-gradient($back-color){
-	// needs latest Compass, add '@import "compass"' to your scss
 	@include filter-gradient(#570000, #000000, horizontal); // IE6-8
 	// IE9 SVG, needs conditional override of 'filter' to 'none'
 	$experimental-support-for-svg: true;
 	@include background-image(linear-gradient(left, rgba(0,0,0,0.28) 0%,rgba(0,0,0,0.22) 5%,rgba(0,0,0,0.15) 23%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 99%));
 	background-color:$back-color
-}
-@mixin clearfix(){
-	&:after{
-		content:'';
-		display:table;
-		clear:both;
-	}
 }
 @mixin skew($color:$t-white,$deg:-15deg){
 	&:before{

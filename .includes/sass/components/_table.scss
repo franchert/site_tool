@@ -97,7 +97,7 @@
 						display:block;
 						float:left;
 						width:100px;
-						@include s-book(16px);
+						@include f-bk(16px);
 						text-align:left;
 						font-weight:bold;
 						@include breakpoint($tab){

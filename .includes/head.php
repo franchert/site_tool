@@ -27,16 +27,11 @@
 	<?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/scripts.php"); ?>
 </head>
 <body class="<?php echo $section_slug; 
-if($section != $page){
-	echo ' '.$page_slug;
-}
+if($section != $page){echo ' '.$page_slug;}
 /*if we're on a mini site, add an extra class to show it's parent mini item*/
-if(isset($mini) && $mini == true){
-	echo ' mini';
+if(isset($mini) && $mini == true){echo ' mini';
 	/*if we're deeper than the mini home, add a mini-specific class*/
-	if(isset($depth) && $depth > 0){
-		echo ' m-'.substr($segments[$depth],1);
-	}
+	if(isset($depth) && $depth > 0){echo ' m-'.substr($segments[$depth],1);}
 }
 echo " ".$layout;?>">
 	<a class="back-to-top" href="#top">Back to Top</a>
@@ -104,8 +99,10 @@ echo " ".$layout;?>">
 				</div>
 			</div>
 		</div>
-		<div class="column site-logo-wrapper">
-			<?php if($page == 'home'){echo "<h1>";} ?><a class="site-logo" href="/"><img src="<?php echo $site_logo; ?>" alt='Site Logo'></a><?php if($page == 'home'){echo "</h1>";} ?>
+		<div class="site-logo-wrapper">
+			<div class='column'>
+				<?php if($page == 'home'){echo "<h1>";} ?><a class="site-logo" href="/"><img src="<?php echo $site_logo; ?>" alt='Site Logo'></a><?php if($page == 'home'){echo "</h1>";} ?>
+			</div>
 		</div>
 		<div class='main-nav-container wrapper'>
 			<?php 
@@ -115,5 +112,4 @@ echo " ".$layout;?>">
 				echo(p_main_nav()); 
 			//}
 			?>
-			<?php //include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/main_nav.php"); ?>
 		</div>

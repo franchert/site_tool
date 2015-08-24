@@ -1,8 +1,7 @@
-
 .main-nav-container{
 	background: white;
 	display:none;
-	@include breakpoint($tab-large,true){
+	@include breakpoint($tab-large){
 		@include floatblock();
 		background:inherit;
 		overflow:visible;
@@ -12,7 +11,7 @@
 		background: white;
 		border-bottom:1px solid $color-2;
 		overflow:visible;
-		@include breakpoint(max-width $tab,true){
+		@include breakpoint(max-width $tab){
 			background:none;
 		}
 		@include breakpoint(max-width $tab-large){
@@ -27,13 +26,13 @@
 			}
 			.main-nav{
 				@include floatblock();
-				@include breakpoint($tab-large,true){
+				@include breakpoint($tab-large){
 					display:table;
 				}
 				li{
 					@include floatblock();
 					border-bottom:1px solid $color-1;
-					@include breakpoint($tab-large,true){
+					@include breakpoint($tab-large){
 						display:table-cell;
 						width:auto;
 						float:none;
@@ -46,14 +45,7 @@
 						text-transform:uppercase;
 						text-align:left;
 						padding: 10px 20px;
-						@include breakpoint($tab,true){
-							/*
-							text-align:center;
-							padding:10px 0;
-							font-size:12px; 
-							*/
-						}
-						@include breakpoint($tab-large,true){
+						@include breakpoint($tab-large){
 							text-align:center;
 							padding:10px 5px;
 							font-size:16px;
@@ -69,7 +61,7 @@
 					&.h-active,
 					&:hover,
 					&:focus{
-						@include breakpoint($tab,true){
+						@include breakpoint($tab){
 							border-bottom:1px solid $dk-gray;
 						}
 						a{
@@ -81,7 +73,7 @@
 					}
 					&:first-child{
 						a{
-							@include breakpoint($tab,true){
+							@include breakpoint($tab){
 								border-left:1px solid $t-white;
 							}
 						}
@@ -90,7 +82,7 @@
 			}
 			.menu-toggle{
 				@include floatblock();
-				@include breakpoint($tab,true){
+				@include breakpoint($tab){
 					display:none;
 				}
 			}

@@ -4,7 +4,6 @@ $(document).ready(function(){
 	if($('body').hasClass('mini')){
 		miniSite = true;
 	}
-	stickyHeader(subPos);
 	var nav_open = '';
 	if(!isMobile()){
 		deskImage();
@@ -145,7 +144,6 @@ $(document).ready(function(){
 		}
 	});
 	equalHeight('.matrix.overlay-cta > div .container');
-	tabAccordion();
 	$('.tabaccordion h3').on('keypress click', function() {
 		console.log(tot_h);
 		if (isMobile()) {
@@ -164,6 +162,8 @@ $(document).ready(function(){
 			$(this).parents('ul.tabaccordion').css('height',tot_h);
 		}
 	});
+	tabAccordion();
+	stickyHeader(subPos);
 });
 
 
