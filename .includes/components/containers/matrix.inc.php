@@ -10,7 +10,7 @@ function p_matrix($width=0,$arr=null,$title = null,$offset=0,$morelink=''){
 	if(isset($title) && $title !=''){
 		$string .= '<div><h2>'.$title.'</h2></div>';
 	}
-	if(!is_null($arr)){
+	if(!is_null($arr) && is_array($arr)){
 		$len = count($arr) + $offset;
 	}else{
 		if($width == 0){
@@ -40,9 +40,14 @@ function p_matrix($width=0,$arr=null,$title = null,$offset=0,$morelink=''){
 			$string .='<div>'.p_promo('generic').'</div>';
 			$len --;
 		}
-	}else{
+	}else if (is_array($arr)){
 		foreach($arr as $k => $v){
 			$string .='<div>'.$v.'</div>';
+		}
+	}else{
+		while ($len > 0){
+			$string .='<div>'.$arr.'</div>';
+			$len --;
 		}
 	}
 	if($morelink != ''){
