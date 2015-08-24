@@ -2,44 +2,52 @@
 /**
 *	Function to include a text and image intro promo
 *
-*	@param string  $id = wrapper class around promo
 *	@param string  $arr = array of items to display in matrix
 *	@param string  $width = set the width manually, null gives dynamic
 *	@param string  $offset = set to 1 to use the first space for title
 */
-function p_matrix($id,$arr,$width=null,$title = null,$offset=0,$morelink=''){
-	if(isset($width)){
-		$len = $width + $offset;
-	}else{
+function p_matrix($width=0,$arr=null,$title = null,$offset=0,$morelink=''){
+	if(isset($title) && $title !=''){
+		$string .= '<div><h2>'.$title.'</h2></div>';
+	}
+	if(!is_null($arr)){
 		$len = count($arr) + $offset;
+	}else{
+		if($width == 0){
+			$width = 3;
+		}
+		$len = $width + $offset;
 	}
 	$addclass='';
 	if ($len == 1){
-		
-	}else if ($len % 5 == 0 || $width == 5){
-		$addclass = ('fifths');
-	}else if ($len % 4 == 0 || $width == 4){
-		$addclass = ('fourths');
-	}else if ($len % 3 == 0 || $width == 3){
-		$addclass = ('thirds');
-	}else if ($len % 2 == 0 || $width == 2){
-		$addclass = ('halves');
-	}else{
-		$addclass = ('fifths');
+		}else if ($len % 5 == 0 || $width == 5){
+			$addclass = ('fifths');
+		}else if ($len % 4 == 0 || $width == 4){
+			$addclass = ('fourths');
+		}else if ($len % 3 == 0 || $width == 3){
+			$addclass = ('thirds');
+		}else if ($len % 2 == 0 || $width == 2){
+			$addclass = ('halves');
+		}else{
+			$addclass = ('thirds');
 	}
 	if ($offset == 1){
 		$addclass .= ' offset';
 	}
-	$string ='<div class="matrix '.$id.' '.$addclass.'">';
-		if(isset($title) && $title !=''){
-			$string .= '<div><h2>'.$title.'</h2></div>';
+	$string ='<div class="matrix '.$addclass.'">';
+	if(is_null($arr)){
+		while ($len > 0){
+			$string .='<div>'.p_promo('generic').'</div>';
+			$len --;
 		}
+	}else{
 		foreach($arr as $k => $v){
 			$string .='<div>'.$v.'</div>';
 		}
-		if($morelink != ''){
-			$string .= "<a href='#'>".$morelink."</a>";
-		}
+	}
+	if($morelink != ''){
+		$string .= "<a href='#'>".$morelink."</a>";
+	}
 	$string .='</div>';
 	return $string;
 }?>

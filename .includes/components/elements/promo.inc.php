@@ -107,7 +107,7 @@ function p_promo(
 			$string .= "<p>".$p_link_title."</p>";
 		}
 		$string .= "</a>";
-	}else if(strrpos($p_wrapper_class,"genericv2") !== false){
+	}/*else if(strrpos($p_wrapper_class,"genericv2") !== false){
 		if($p_link != null){
 			$string .= "<a href='".$p_link."'>";
 		}
@@ -129,7 +129,7 @@ function p_promo(
 		if($p_link != null){
 			$string .= "</a>";
 		}
-	}else if(strrpos($p_wrapper_class,"generic") !== false){
+	}*/else if(strrpos($p_wrapper_class,"generic") !== false){
 		$string .= $image;
 		$string .= "<div class='container'>";
 			$string .="<h2>".$p_title."</h2>";

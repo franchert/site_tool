@@ -1,10 +1,21 @@
+$matrix-padding:10px;
+
 .matrix{
 	@include floatblock();
+	> div{
+		padding:0 #{$matrix-padding / 2};
+	}
 	&.halves{
 		> div{
 			@include floatblock();
 			@include breakpoint($tab,true){
 				width:50%;
+			}
+			&:nth-child(2n+1){
+				padding-right:10px;
+			}
+			&:nth-child(2n){
+				padding-left:10px;
 			}
 		}
 	}
@@ -14,6 +25,12 @@
 			@include breakpoint($tab,true){
 				width:33.3333%;
 			}
+			&:nth-child(3n+1){
+				padding:0 $matrix-padding 0 0;
+			}
+			&:nth-child(3n){
+				padding:0 0 0 $matrix-padding;
+			}
 		}
 	}
 	&.fourths{
@@ -21,6 +38,12 @@
 			@include floatblock();
 			@include breakpoint($tab,true){
 				width:25%;
+			}
+			&:nth-child(4n+1){
+				padding:0 $matrix-padding 0 0;
+			}
+			&:nth-child(4n){
+				padding:0 0 0 $matrix-padding;
 			}
 		}
 	}
@@ -30,6 +53,13 @@
 			@include breakpoint($tab,true){
 				width:20%;
 			}
+			&:nth-child(5n+1){
+				padding:0 $matrix-padding 0 0;
+			}
+			&:nth-child(5n){
+				padding:0 0 0 $matrix-padding;
+			}
 		}
 	}
+
 }

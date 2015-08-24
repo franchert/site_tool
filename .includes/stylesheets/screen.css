@@ -910,6 +910,9 @@ body .matrix {
   float: left;
   width: 100%;
 }
+body .matrix > div {
+  padding: 0 5px;
+}
 body .matrix.halves > div {
   display: block;
   float: left;
@@ -919,6 +922,12 @@ body .matrix.halves > div {
   body .matrix.halves > div {
     width: 50%;
   }
+}
+body .matrix.halves > div:nth-child(2n+1) {
+  padding-right: 10px;
+}
+body .matrix.halves > div:nth-child(2n) {
+  padding-left: 10px;
 }
 body .matrix.thirds > div {
   display: block;
@@ -930,6 +939,12 @@ body .matrix.thirds > div {
     width: 33.3333%;
   }
 }
+body .matrix.thirds > div:nth-child(3n+1) {
+  padding: 0 10px 0 0;
+}
+body .matrix.thirds > div:nth-child(3n) {
+  padding: 0 0 0 10px;
+}
 body .matrix.fourths > div {
   display: block;
   float: left;
@@ -940,6 +955,12 @@ body .matrix.fourths > div {
     width: 25%;
   }
 }
+body .matrix.fourths > div:nth-child(4n+1) {
+  padding: 0 10px 0 0;
+}
+body .matrix.fourths > div:nth-child(4n) {
+  padding: 0 0 0 10px;
+}
 body .matrix.fifths > div {
   display: block;
   float: left;
@@ -949,6 +970,12 @@ body .matrix.fifths > div {
   body .matrix.fifths > div {
     width: 20%;
   }
+}
+body .matrix.fifths > div:nth-child(5n+1) {
+  padding: 0 10px 0 0;
+}
+body .matrix.fifths > div:nth-child(5n) {
+  padding: 0 0 0 10px;
 }
 body .profile img {
   float: left;
