@@ -14,6 +14,7 @@ $p_content .= "<h2>Events</h2>";
 $p_content .= p_event();
 $p_content .= p_event('tall');
 $p_content .= p_event('round');
+$p_content .= p_event('basic');
 
 $p_content .= "<h2>News</h2>";
 $p_content .= p_news();

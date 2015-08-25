@@ -750,6 +750,34 @@ body .promo-event.round a .info {
   width: -webkit-calc(100% - 80px);
   width: calc(100% - 80px);
 }
+body .promo-event.basic a .date {
+  display: block;
+  float: left;
+  width: auto;
+  padding-right: 10px;
+  background: #bbbbbb;
+  margin: 0 0 10px 10px;
+}
+body .promo-event.basic a .date .weekday,
+body .promo-event.basic a .date .month,
+body .promo-event.basic a .date .day {
+  display: block;
+  float: left;
+  width: auto;
+  position: relative;
+  background: none;
+  color: #2a2a2a;
+  left: 0;
+  right: 0;
+  font-size: 18px;
+  line-height: 18px;
+  padding-left: 10px;
+}
+body .promo-event.basic a .info {
+  display: block;
+  float: left;
+  width: 100%;
+}
 body .factoid {
   display: block;
   float: left;

@@ -128,4 +128,30 @@
 			}
 		}
 	}
+	&.basic{
+		a{
+			.date{
+				@include floatblock(left,auto);
+				padding-right:10px;
+				background:$color-2;
+				margin:0 0 10px 10px;
+				.weekday,
+				.month,
+				.day{
+					@include floatblock(left,auto);
+					position:relative;
+					background:none;
+					color:$color-1;
+					left:0;
+					right:0;
+					font-size:18px;
+					line-height:18px;
+					padding-left:10px;
+				}
+			}
+			.info{
+				@include floatblock();
+			}
+		}
+	}
 }
