@@ -45,7 +45,7 @@ function p_page_intro($type,$title = "Sample Page Intro",$text = NULL,$image = N
 			$string .= "</ul>";
 		}
 	}
-	$string .="</div>";
+	$string .="</div></div>";
 	return($string); 
 }
 ?>

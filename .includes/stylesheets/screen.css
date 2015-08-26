@@ -4794,22 +4794,14 @@ footer .column .footer .links-resources h3 {
   width: 100%;
   padding: 20px 0 0 0;
   position: relative;
+  margin-bottom: 20px;
 }
 @media (min-width: 45em) {
   .drop-container {
     padding: 0 10px 0 0;
-    width: auto;
   }
 }
-.drop-container > div {
-  display: none;
-  float: left;
-  width: 100%;
-  z-index: 2;
-  background: #fff;
-  border: 1px solid #bbbbbb;
-}
-.drop-container .dropdown {
+.drop-container .drop-toggle {
   font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
   color: #444;
   font-size: 20px;
@@ -4826,7 +4818,7 @@ footer .column .footer .links-resources h3 {
   cursor: pointer;
   text-transform: uppercase;
 }
-.drop-container .dropdown:after {
+.drop-container .drop-toggle:after {
   content: "";
   font-family: FontAwesome;
   font-size: 12px;
@@ -4839,36 +4831,47 @@ footer .column .footer .links-resources h3 {
   transform: rotateZ(90deg);
   transition: all .2s;
 }
-.drop-container .dropdown:after {
+.drop-container .drop-toggle:after {
   top: calc(50% - 12px);
   font-size: 16px;
 }
-.drop-container.open .dropdown:after {
+.drop-container .drop-item {
+  display: none;
+  float: left;
+  width: 100%;
+  z-index: 2;
+  background: #fff;
+  border: 1px solid #bbbbbb;
+}
+.drop-container .drop-item > div {
+  width: auto;
+}
+.drop-container.open .drop-toggle:after {
   -webkit-transform: rotateZ(-90deg);
   -ms-transform: rotateZ(-90deg);
   transform: rotateZ(-90deg);
 }
-.drop-container.open > div {
+.drop-container.open .drop-item {
   display: block;
   position: relative;
   top: 100%;
 }
 @media (min-width: 45em) {
-  .drop-container.open > div {
+  .drop-container.open .drop-item {
     position: absolute;
   }
 }
-.drop-container.light .dropdown {
+.drop-container.light .drop-toggle {
   color: #2a2a2a;
   background: #eee;
   border-color: #2a2a2a;
 }
-.drop-container.dark .dropdown {
+.drop-container.dark .drop-toggle {
   color: #fff;
   background: #2a2a2a;
   border-color: #2a2a2a;
 }
-.drop-container.dark.open .dropdown {
+.drop-container.dark.open .drop-toggle {
   background: #bbbbbb;
   border-color: #bbbbbb;
   color: #2a2a2a;

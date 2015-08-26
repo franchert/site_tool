@@ -20,6 +20,7 @@ $p_content .= p_paragraph(3);
 $p_content .= p_link();
 $p_content .= "<h2>Unordered List</h2>".p_list(null);
 $p_content .= "<h2>Ordered List</h2>".p_list(null,"ordered");
+$p_content .= p_dropdown("dark","lorem ipsum",p_list());
 $p_content .= "<h2>Blockquote</h2>"."<blockquote>".p_paragraph(1,true,false)."</blockquote>";
 $p_content .= p_image();
 $p_content .= p_image("1600","900","16:9",null,"aa2","fff");

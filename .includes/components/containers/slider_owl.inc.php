@@ -23,7 +23,7 @@ function p_slider_owl($id,$arr = null,$type="generic",$width = 1600,$height = 90
 			.p_slide(p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true))
 			.p_slide(p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true))
 			.p_slide(p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true))
-		</div>';
+		.'</div>';
 	}else{
 		$string .='
 		<div class="'.$id.' owl-carousel '.$type.'">';

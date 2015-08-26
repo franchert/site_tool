@@ -55,19 +55,7 @@ $(document).ready(function(){
 			}
 		};
 	});
-	if(!isMobile()){
-		$('.student-life .colorbox a').colorbox({
-			title:function(){
-				var title = $(this).children('.container').get(0).outerHTML;
-				var string = "<div class='cbox-title'>"+title+"</div>"
-				return string;
-			},
-			rel:'gallery'
-		});
-	}else{
-
-	}
-	$('.dropdown').on('keypress click',function(e){
+	$('.drop-toggle').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
 			e.preventDefault();
 			$(this).parents('.drop-container').toggleClass('open');
@@ -192,24 +180,6 @@ function isMobile() {
 		return false;
 	}
 }
-/*
-function equalHeight(path){
-	var h_val = 0;
-	$(path).each(function(e){
-		$(this).height('initial');
-		if($(this).height() > h_val){
-			h_val = $(this).height();
-		}
-	});
-	$(path).each(function(e){
-		if (isMobile()){
-			$(this).height('initial');
-		}else{
-			$(this).height(h_val);
-		}
-	});
-}
-*/
 function equalHeight(path){
 	if (isMobile()){
 		$(path).height("auto");

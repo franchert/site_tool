@@ -22,9 +22,17 @@ $p_content .= p_news('normal',null,'news item without read more','#',null,null,f
 $p_content .= p_news('normal','','removed image from default','#',null,null,true);
 $p_content .= p_news('short');
 
+$p_content .= "<h2>Factoid</h2>";
 $p_content .= p_factoid();
+
+$p_content .= "<h2>Page Intro</h2>";
 $p_content .= p_page_intro("sample-page-intro");
+
+$p_content .= "<h2>Profile</h2>";
 $p_content .= p_profile();
-$p_content .= p_spotlight();
+
+$p_content .= "<h2>Spotlight</h2>";
+$p_content .= p_spotlight('category');
+
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

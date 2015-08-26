@@ -7,14 +7,15 @@
 *	@param string  
 *	@param string  
 */
-function p_profile($type = '',$name = "John Smith",$title = "Descriptive Title",$text = NULL,$image = NULL){
+function p_profile($type = '',$name = "John Smith",$title = "Role or Job Title",$text = NULL,$image = NULL){
 	$string = '';
 	$string .="<div class='profile ".$type."'>";
 	if(is_null($image)){
-		$image = p_image("400","300");
+		$image = p_image("400","600");
 	}else{
-		$string .= "<img alt='".$title."' src='".$image."'/>";
+		$image = "<img alt='".$title."' src='".$image."'/>";
 	}
+	$string .= $image;
 	$string .= "<div class='container'><h4>".$name."</h4>";
 	$string .= "<p>".$title."</p>";
 	if(is_null($text)){
