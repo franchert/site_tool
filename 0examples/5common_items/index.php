@@ -21,5 +21,10 @@ $p_content .= p_news();
 $p_content .= p_news('normal',null,'news item without read more','#',null,null,false);
 $p_content .= p_news('normal','','removed image from default','#',null,null,true);
 $p_content .= p_news('short');
+
+$p_content .= p_factoid();
+$p_content .= p_page_intro("sample-page-intro");
+$p_content .= p_profile();
+$p_content .= p_spotlight();
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

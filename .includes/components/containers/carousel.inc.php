@@ -34,37 +34,28 @@ function p_carousel($id,$arr = null,$bS=479,$bM=768,$bL=1199,$width = 200,$heigh
 	$img = p_image($width,$height,'');
 	if($arr == null){
 		$string .='
-		<div class="'.$id.' owlCarousel carousel">
-			<div>
-				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
-			</div>
-			<div>
-				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
-			</div>
-			<div>
-				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
-			</div>
-			<div>
-				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
-			</div>
-			<div>
-				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
-			</div>
-			<div>
-				'.p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true).'
-			</div>
-		</div>';
+		<div class="'.$id.' owlCarousel carousel">'
+			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+		.'</div>';
 	}else{
 		$string .='
 		<div class="'.$id.' owlCarousel">';
 		foreach($arr as $k => $v){
-			$string .='<div>';
 			if ($v){
-				$string .= $v;
+				$slide = $v;
 			}else{
-				$string .= p_promo("hovertext","","TextLink Promo");
+				$slide = p_promo("hovertext","","TextLink Promo");
 			}
-			$string .='</div>';
+			$string .= p_slide($slide);
 		}
 		$string .='
 		</div>';

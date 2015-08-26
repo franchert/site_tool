@@ -17,25 +17,18 @@ function p_slider_owl($id,$arr = null,$type="generic",$width = 1600,$height = 90
 	if($arr == null){
 		$img = p_image($width,$height);
 		$string .='
-		<div class="'.$id.' owl-carousel '.$type.'">
-			<div>
-				'.p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true).'
-			</div>
-			<div>
-				'.p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true).'
-			</div>
-			<div>
-				'.p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true).'
-			</div>
-			<div>
-				'.p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true).'
-			</div>
+		<div class="'.$id.' owl-carousel '.$type.'">'
+			.p_slide(p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("overlayv2","","Promo Title",null,null,$img,"#",null,null,true))
 		</div>';
 	}else{
 		$string .='
 		<div class="'.$id.' owl-carousel '.$type.'">';
 		foreach($arr as $k => $v){
-			$string .='<div>'.$v.'</div>';
+			$string .=p_slide($v);
 		}
 		$string .='</div>';
 	}

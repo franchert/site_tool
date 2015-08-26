@@ -7,7 +7,7 @@
 *	@param string  text = intro paragraph
 *	@param string  arr = list of links to be displayed under the intro
 */
-function p_page_intro($type,$title = "Promo Title",$text = NULL,$image = NULL,$arr = null,$item = null){
+function p_page_intro($type,$title = "Sample Page Intro",$text = NULL,$image = NULL,$arr = null,$item = null){
 	$string = '';
 	$string .="<div class='page-intro ".$type."'>";
 	$string .= "<div class='container'><h2>".$title."</h2>";

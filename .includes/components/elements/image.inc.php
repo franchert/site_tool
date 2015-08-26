@@ -1,5 +1,4 @@
 <?php
-
 function p_image(
 	$h = '400',
 	$w = '300',
