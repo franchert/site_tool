@@ -1,7 +1,7 @@
 <?php
 function p_event($type = 'normal',
 	$title="Event Title Here",
-	$intro = "Event description, location or extra information",
+	$text = "Event description, location or extra information",
 	$link="#",
 	$month=null,
 	$day=null,
@@ -24,7 +24,7 @@ function p_event($type = 'normal',
 	$string .= '</div>';
 	$string .= '<div class="info">';
 	$string .= '<h3>'.$title.'</h3>';
-	$string .= '<p>'.$intro.'</p>';
+	$string .= '<p>'.$text.'</p>';
 	$string .= '</div></a></div>';
 	return $string;
 }

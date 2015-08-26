@@ -1,8 +1,8 @@
 <?php
-function p_list($arr = null,$class = ''){
+function p_list($arr = null,$type = ''){
 	if(!is_null($arr)){
-		$string = '<div class="p-list '.$class.'">';
-		if($class == 'ordered'){
+		$string = '<div class="p-list '.$type.'">';
+		if($type == 'ordered'){
 			$string .='<ol>';
 		}else{
 			$string .='<ul>';
@@ -10,24 +10,24 @@ function p_list($arr = null,$class = ''){
 		foreach($arr as $k => $v){
 			$string .= '<li>'.$v.'</li>';
 		}
-		if($class == 'ordered'){
+		if($type == 'ordered'){
 			$string .='</ol>';
 		}else{
 			$string .='</ul>';
 		}
 		$string .= '</div>';
 	}else{
-		if($class == 'ordered'){
+		if($type == 'ordered'){
 			$ltype ='ol';
 		}else{
 			$ltype ='ul';
 		}
 		$string ='
-		<div class="p-list '.$class.'">
+		<div class="p-list '.$type.'">
 			<'.$ltype.'>
 				<li>lorem ipsum</li>
 				<li>lorem ipsum
-					<div class="p-list '.$class.'">
+					<div class="p-list '.$type.'">
 						<'.$ltype.'>
 							<li>lorem ipsum</li>
 							<li>lorem ipsum</li>

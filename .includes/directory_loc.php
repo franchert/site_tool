@@ -11,7 +11,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 *		$section		Top level section of current page (just under root)
 *		$section_title	Top level turned into capitalized text
 */
-	$client_name = 'University of New Haven';
+	$client_name = 'Client Name';
 	$site_logo = "/.includes/images/placeholder-svg.php?wh=600x100&color=111111&fill=cccccc&font=Arial&txt=Site Logo";
 	$url = dirname($_SERVER['PHP_SELF']);
 	$path = parse_url($url, PHP_URL_PATH);
@@ -23,25 +23,16 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 	$page_slug=substr($page,1);
 	if($page){
 		$section = $segments[1];
-		$section_slug = substr($segments[1],1);
 		//substr 1 removes the number used for placement in the menu system
-		$section_title = str_replace("And","&amp;",str_replace(" * ","-",ucwords(str_replace("-"," * ",str_replace("_"," ",$section_slug)))));
+		$section_slug = substr($segments[1],1);
+		$section_title = titleFromSlug($section_slug);
 	}else{
 		$page = 'home';
 		$page_slug = 'home';
 		$section = 'home';
 		$section_slug = 'home';
 	}
-	$page_title = 
-		str_replace(" * ","-",
-		str_replace("To ","to ",
-		str_replace("Of ","of ",
-		str_replace("The ","the ",
-		str_replace("And ","&amp; ",
-		ucwords(
-			str_replace("-"," * ",
-			str_replace("_"," ",substr($page,1)
-		))))))));
+	$page_title = titleFromSlug(substr($page,1));
 	$crumb = $file_base;
 	$active="";
 	$alert=array(

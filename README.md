@@ -25,3 +25,6 @@ Dynamic front-end site prototype following the principles of [Atomic Design][htt
 
 ###/settings.php
 - Generic pages start with the settings.php file on the root. This file gives info on the base paths needed to access needed files.
+
+###/globals.php
+- Functions used globally that don't impact content (like components do)

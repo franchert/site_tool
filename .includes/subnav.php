@@ -95,16 +95,7 @@
 			//base_array_slug is current page slug
 			$base_array_slug = preg_replace( '%^(.+)/%', '', $base_array );
 			//base_array_title is current page title
-			$base_array_title = 
-				str_replace(" * ","-",
-				str_replace("To ","to ",
-				str_replace("Of ","of ",
-				str_replace("The ","the ",
-				str_replace("And ","&amp; ",
-				ucwords(
-					str_replace("-"," * ",
-					str_replace("_"," ",substr($base_array_slug,1)
-				))))))));
+			$base_array_title = titlefromSlug($base_array_slug,1);
 			//if we're on the section root
 			if($section == $base_array_slug && $level < 1){
 				$level ++;

@@ -103,17 +103,7 @@ function p_custom_nav($root_path = null,$overview = false,$level=1){
 		$contents = explode('/',$dir);
 		$last_seg = end($contents);
 		//format our title
-		$last_seg = 
-			str_replace(" * ","-",
-			str_replace("To ","to ",
-			str_replace("Of ","of ",
-			str_replace("The ","the ",
-			str_replace("And ","&amp; ",
-			ucwords(
-				str_replace("-"," * ",
-				str_replace("_"," ",substr($last_seg,1)
-			)
-		)))))));
+		$last_seg = titleFromSlug(substr($last_seg,1));
 		//add the list item to our nav
 		$temp .= '<li class="nav'.$active.'"><a href="'.$file_base."/".$dir.'">'.$last_seg.'</a></li>';
 	}

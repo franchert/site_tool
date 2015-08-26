@@ -5,7 +5,7 @@ function p_news(
 	$title=null,
 	$link='#',
 	$date=null,
-	$intro=null,
+	$text=null,
 	$readmore = true
 ){
 	if(is_null($img)){
@@ -30,10 +30,10 @@ function p_news(
 					if ($title != ''){
 						$string .='<h2>'.$title.'</h2>';
 					}
-					if (is_null($intro)){
+					if (is_null($text)){
 						$string .= p_paragraph(1);
 					}else{
-						$string .='<p>'.$intro.'</p>';
+						$string .='<p>'.$text.'</p>';
 					}
 				$string .= '</div>';
 			$string .="</a>";
@@ -50,10 +50,10 @@ function p_news(
 				if(!is_null($link)){
 					$string .="</a>";
 				}
-					if (is_null($intro)){
+					if (is_null($text)){
 						$string .= p_paragraph(1);
 					}else{
-						$string .='<p>'.$intro.'</p>';
+						$string .='<p>'.$text.'</p>';
 					}
 				if($readmore){
 					$string .='<a class="read-more" href="'.$link.'">Read More</a>';
@@ -72,10 +72,10 @@ function p_news(
 				if(!is_null($link)){
 					$string .="</a>";
 				}
-					if (is_null($intro)){
+					if (is_null($text)){
 						$string .= p_paragraph(1);
 					}else{
-						$string .='<p>'.$intro.'</p>';
+						$string .='<p>'.$text.'</p>';
 					}
 				if($readmore){
 					$string .='<a class="read-more" href="'.$link.'">Read More</a>';

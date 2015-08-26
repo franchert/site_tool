@@ -24,6 +24,6 @@
 <?php } ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/stylesheets/print.css"/>
 
-    <!--[if IE]>
-    <link href="/.includes/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
-    <![endif]-->
+<!--[if IE]>
+	<link href="/.includes/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<![endif]-->

@@ -1,5 +1,10 @@
 <?php
-function p_factoid($number="42",$title="lorem ipsums",$image='http://placehold.it/400x300.png'){
-	$string = '<div class="factoid"><div class="container"><img src="'.$image.'"/><span>'.$number.'</span>'.$title.'</div></div>';
+function p_factoid($text="42",$title="lorem ipsums",$image=null){
+	if(is_null($image)){
+		$image = p_image("400","300");
+	}else{
+		$image = '<img src="'.$image.'"/>';
+	}
+	$string = '<div class="factoid"><div class="container">'.$image.'<span>'.$text.'</span>'.$title.'</div></div>';
 	return $string;
 }

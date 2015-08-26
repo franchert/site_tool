@@ -1,10 +1,10 @@
 <?php
-//include the owl js on the page
-$owl = true;
 //$bS = Small Breakpoint,number of elements visible
 //$bM = Medium Breakpoint,number of elements visible
 //$bL = Large Breakpoint,number of elements visible
 function p_carousel($id,$arr = null,$bS=479,$bM=768,$bL=1199,$width = 200,$height = 200){
+	//include the owl js on the page
+	$owl = true;
 	$string = 
 	'<script type="text/javascript" charset="utf-8">
 		$(window).load(function() {

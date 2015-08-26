@@ -1,8 +1,8 @@
 <?php
-function p_link($link="#",$text="lorem ipsum",$class=false){
+function p_link($link="#",$text="lorem ipsum",$type=false){
 	$string = "<a";
-	if($class != false){
-		$string .=" class='".$class."'";
+	if($type != false){
+		$string .=" class='".$type."'";
 	}
 	$string .=" href='".$link."'>".$text."</a>";
 	return $string;

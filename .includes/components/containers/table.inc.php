@@ -1,7 +1,7 @@
 <?php
-function p_table($id,$arr = null,$thead=false,$parity = true){
+function p_table($id,$thead=false,$rows = null){
 $string = "";
-	if ($arr == null){
+	if ($rows == null){
 		$string .="
 		<div>
 		<table class='".$id."'>
@@ -47,7 +47,7 @@ $string = "";
 			$string .="</thead>";
 		}
 		$string .="<tbody>";
-		foreach($arr as $k => $v){
+		foreach($rows as $k => $v){
 			$string .="<tr>";
 			$string .="<td>".$k."</td>";
 			$string .="<td>".$v."</td>";

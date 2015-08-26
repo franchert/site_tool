@@ -2,45 +2,44 @@
 /**
 *	Function to include a text and image intro promo
 *
-*	@param string  p_wrapper_class = wrapper class around promo
-*	@param string  p_title = title displayed on promo
-*	@param string  p_intro = intro paragraph
-*	@param string  p_array = list of links to be displayed under the intro
+*	@param string  type = wrapper class around promo
+*	@param string  title = title displayed on promo
+*	@param string  text = intro paragraph
+*	@param string  arr = list of links to be displayed under the intro
 */
-function p_page_intro($p_wrapper_class,$p_title = "Promo Title",$p_intro = NULL,$p_img = NULL,$p_array = null,$p_add = null){
+function p_page_intro($type,$title = "Promo Title",$text = NULL,$image = NULL,$arr = null,$item = null){
 	$string = '';
-	$string .="<div class='page-intro ".$p_wrapper_class."'>";
-	$string .= "<div class='container'><h2>".$p_title."</h2>";
-	if(is_null($p_img)){
-		$string .= "<img alt='placeholder' src='http://placehold.it/120x120.png'/>";
+	$string .="<div class='page-intro ".$type."'>";
+	$string .= "<div class='container'><h2>".$title."</h2>";
+	if(is_null($image)){
+		$image = p_image("400","300");
 	}else{
-		$string .= "<img alt='".$p_title."' src='".$p_img."'/>";
+		$image = "<img alt='".$title."' src='".$image."'/>";
 	}
-	if(is_null($p_intro)){
-		$p_intro = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit, turpis et lobortis commodo, mauris dolor finibus orci,</p>";
+	$string .= $image;
+	if(is_null($text)){
+		$text = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit, turpis et lobortis commodo, mauris dolor finibus orci,</p>";
 	}
-	$string .= $p_intro;
-	if(is_null($p_add)){
-
-	}else{
+	$string .= $text;
+	if(!is_null($item)){
 		$string .= "<div class='extra'>";
-		if(is_array($p_add)){
-			foreach($p_add as $k => $v){
+		if(is_array($item)){
+			foreach($item as $k => $v){
 				$string .= "<ul>";
 					$string .='<li><a href="'.$v['l'].'">'.$v['t'].'</a></li>';
 				}
 			$string .= "</ul>";
 		}else{
-			$string .= $p_add;
+			$string .= $item;
 		}
 		$string .= "</div>";
 	}
-	if($p_wrapper_class == "search"){
+	if($type == "search"){
 		$string .= "<div class='search-container'><input type='text' placeholder='What do you want to study?'><input type='submit' value='submit'><span>OR</span><a href='#'>View All Academic Programs</a></div>";
 	}else{
-		if(is_null($p_array)){}else{
+		if(is_null($arr)){}else{
 			$string .= "<ul>";
-			foreach($p_array as $k => $v){
+			foreach($arr as $k => $v){
 				$string .='<li><a href="'.$v['l'].'">'.$v['t'].'</a></li>';
 			}
 			$string .= "</ul>";

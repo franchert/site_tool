@@ -1,20 +1,29 @@
 <?php
 function p_subsection(
-	$image="https://placehold.it/1200x800.jpg",
+	$image=null,
 	$title=null,
-	$intro="lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.",
+	$text=null,
 	$cta=null,
 	$subsection_hidden=null){
 $string =
 '<div class="subsection">';
-if(!is_null($image)){
-	$string .='<img src="'.$image.'" />';
+if(is_null($image)){
+	$image = p_image("400","300");
+}else{
+	$image .='<img src="'.$image.'" />';
 }
+$string .= $image;
 $string .='<div class="container">';
 if(!is_null($title)){
 	$string .='<h3>'.$title.'</h3>';
 }
-	$string.='<p>'.$intro.'</p>';
+if(is_null($text)){
+	$string .= p_paragraph();
+}else if($text == ''){
+	$string .= '';
+}else{
+	$string .='<p>'.$text.'</p>';
+}
 if(!is_null($cta)){
 	$string .='<div>'.$cta.'</div>';
 }
