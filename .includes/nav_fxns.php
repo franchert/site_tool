@@ -13,16 +13,16 @@ function p_main_nav(){
 	//gets first level of directories from the root in an array
 	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
 	//build the list
-	$wrap = "<div class='nav-wrapper'><div class='column'><a class='desk-sticky' href='/'><img src='".$site_logo."'/></a><ul class='main-nav'>";
+	$wrap = "<div class='nav-wrapper test'><div class='column'><a class='desk-sticky' href='/'><img src='".$site_logo."'/></a><ul class='main-nav'>";
 	$string = $wrap;
 	$count = 0;
 	//loop for each directory returned
 	foreach($dirs as $dir){
+		$temp = file_get_contents($base_site.$dir."/nav-contents.php");
+		$dir = str_replace($url_remove,'',$dir);
 		if(substr($dir,0,1) === "0"){
 			continue;
 		}
-		$temp = file_get_contents($base_site.$dir."/nav-contents.php");
-		$dir = str_replace($url_remove,'',$dir);
 		if($page != 'home'){
 			if(strpos($dir,$section) !== false){
 				$active = ' active';
