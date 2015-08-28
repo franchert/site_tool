@@ -9,10 +9,9 @@ $layout = "generic_inner";
 $mini = true;
 $depth = 2;
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/promo-director.php");
-$p_matrix_item = p_promo('linkimg');
-$p_content .= p_matrix(2,$p_matrix_item);
-$p_content .= p_matrix(3,$p_matrix_item);
-$p_content .= p_matrix(4,$p_matrix_item);
-$p_content .= p_matrix(5,$p_matrix_item);
+
+$p_content .= p_slider_owl('example_generic');
+$p_content .= p_carousel('example_carousel');
+
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

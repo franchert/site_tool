@@ -1,5 +1,5 @@
 <?php 
-include_once("../../../settings.php");
+include_once("../../../../settings.php");
 /*set these to true to add a custom stylesheet named the $page variable.css/js */
 $styles = false;
 $scripts = false;

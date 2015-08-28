@@ -938,23 +938,25 @@ body .matrix {
   float: left;
   width: 100%;
 }
-body .matrix > div {
-  padding: 0 20px;
+@media (min-width: 45em) {
+  body .matrix > div {
+    padding: 0 20px;
+  }
 }
 body .matrix.halves > div {
   display: block;
   float: left;
   width: 100%;
 }
-body .matrix.halves > div:nth-child(2n+1) {
-  padding: 0 10px 0 0;
-}
-body .matrix.halves > div:nth-child(2n) {
-  padding: 0 0 0 10px;
-}
-@media (min-width: 45em) {
+@media (min-width: 25em) {
   body .matrix.halves > div {
     width: 50%;
+  }
+  body .matrix.halves > div:nth-child(2n+1) {
+    padding: 0 10px 0 0;
+  }
+  body .matrix.halves > div:nth-child(2n) {
+    padding: 0 0 0 10px;
   }
 }
 body .matrix.thirds > div {
@@ -963,15 +965,15 @@ body .matrix.thirds > div {
   width: 100%;
   padding: 0 6.66667px;
 }
-body .matrix.thirds > div:nth-child(3n+1) {
-  padding: 0 13.334px 0 0;
-}
-body .matrix.thirds > div:nth-child(3n) {
-  padding: 0 0 0 13.334px;
-}
 @media (min-width: 45em) {
   body .matrix.thirds > div {
     width: 33.3333%;
+  }
+  body .matrix.thirds > div:nth-child(3n+1) {
+    padding: 0 13.334px 0 0;
+  }
+  body .matrix.thirds > div:nth-child(3n) {
+    padding: 0 0 0 13.334px;
   }
 }
 body .matrix.fourths > div {
@@ -979,21 +981,21 @@ body .matrix.fourths > div {
   float: left;
   width: 100%;
 }
-body .matrix.fourths > div:nth-child(4n+1) {
-  padding: 0 15px 0 0;
-}
-body .matrix.fourths > div:nth-child(4n+2) {
-  padding: 0 10px 0 5px;
-}
-body .matrix.fourths > div:nth-child(4n+3) {
-  padding: 0 5px 0 10px;
-}
-body .matrix.fourths > div:nth-child(4n) {
-  padding: 0 0 0 15px;
-}
 @media (min-width: 45em) {
   body .matrix.fourths > div {
     width: 25%;
+  }
+  body .matrix.fourths > div:nth-child(4n+1) {
+    padding: 0 15px 0 0;
+  }
+  body .matrix.fourths > div:nth-child(4n+2) {
+    padding: 0 10px 0 5px;
+  }
+  body .matrix.fourths > div:nth-child(4n+3) {
+    padding: 0 5px 0 10px;
+  }
+  body .matrix.fourths > div:nth-child(4n) {
+    padding: 0 0 0 15px;
   }
 }
 body .matrix.fifths > div {
@@ -1001,24 +1003,24 @@ body .matrix.fifths > div {
   float: left;
   width: 100%;
 }
-body .matrix.fifths > div:nth-child(5n+1) {
-  padding: 0 16px 0 0;
-}
-body .matrix.fifths > div:nth-child(5n+2) {
-  padding: 0 12px 0 4px;
-}
-body .matrix.fifths > div:nth-child(5n+3) {
-  padding: 0 8px 0 8px;
-}
-body .matrix.fifths > div:nth-child(5n+4) {
-  padding: 0 4px 0 12px;
-}
-body .matrix.fifths > div:nth-child(5n) {
-  padding: 0 0 0 16px;
-}
 @media (min-width: 45em) {
   body .matrix.fifths > div {
     width: 20%;
+  }
+  body .matrix.fifths > div:nth-child(5n+1) {
+    padding: 0 16px 0 0;
+  }
+  body .matrix.fifths > div:nth-child(5n+2) {
+    padding: 0 12px 0 4px;
+  }
+  body .matrix.fifths > div:nth-child(5n+3) {
+    padding: 0 8px 0 8px;
+  }
+  body .matrix.fifths > div:nth-child(5n+4) {
+    padding: 0 4px 0 12px;
+  }
+  body .matrix.fifths > div:nth-child(5n) {
+    padding: 0 0 0 16px;
   }
 }
 body .profile img {
@@ -2079,6 +2081,42 @@ body .tabs-container div.contents.open {
     padding: 20px;
     border: 2px solid #2a2a2a;
   }
+}
+body .program-search #search-container {
+  position: relative;
+}
+body .program-search #search-container #searchclear {
+  width: auto;
+  float: none;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+body .program-search #search-container #results {
+  position: absolute;
+  top: 100%;
+  background: white;
+}
+body .program-search #search-container #results ul li {
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+body .program-search #search-container #results ul li a {
+  padding: 5px;
+}
+body .program-search #search-container #results ul li a:hover {
+  text-decoration: none;
+  background: #eee;
+}
+body .program-search #search-container #results ul li a strong {
+  float: none;
+  width: auto;
+  display: inline-block;
+}
+body .program-search #search-container #results ul li a .program-tag {
+  width: auto;
+  float: right;
+  padding-left: 5px;
 }
 body .subnav {
   display: block;
@@ -4297,19 +4335,6 @@ body.bio .l-page .l-content-footer section {
 @media (min-width: 45em) {
   body.undergraduate_admissions .l-page .l-content-center .l-content-wrapper .l-promo-sidebar {
     width: 350px;
-  }
-}
-body.home .program-search {
-  background: #eee;
-}
-@media (min-width: 45em) {
-  body.home .program-search .column {
-    margin-top: -350px;
-  }
-}
-@media (min-width: 45em) {
-  body.home .factoid .container {
-    background: rgba(42, 42, 42, 0.5);
   }
 }
 @media (min-width: 70em) {

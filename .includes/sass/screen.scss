@@ -1323,23 +1323,7 @@ body{
 			}
 		}
 	}
-	&.home{
-		.program-search{
-			background:#eee;
-			.column{
-				@include breakpoint($tab,true){
-					margin-top:-350px;
-				}
-			}
-		}
-		.factoid{
-			.container{
-				@include breakpoint($tab,true){
-					background:$color-1-t;
-				}
-			}
-		}
-	}
+	&.home{}
 	&.sticky{
 		header{
 			&.mobi-open{

@@ -1,0 +1,41 @@
+.program-search{
+	#search-container{
+		position:relative;
+		#searchterm{}
+		#searchclear{
+			width:auto;
+			float:none;
+			position:absolute;
+			right:10px;
+			top:20px;
+		}
+		#results{
+			position:absolute;
+			top:100%;
+			background:white;
+			ul{
+				li{
+					border:1px solid $gray;
+					border-top:0;
+					a{
+						padding:5px;
+						&:hover{
+							text-decoration:none;
+							background:$lt-gray;
+						}
+						strong{
+							float:none;
+							width:auto;
+							display:inline-block;
+						}
+						.program-tag{
+							width:auto;
+							float:right;
+							padding-left:5px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

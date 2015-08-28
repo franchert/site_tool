@@ -18,7 +18,6 @@ function p_main_nav(){
 	$count = 0;
 	//loop for each directory returned
 	foreach($dirs as $dir){
-		$temp = file_get_contents($base_site.$dir."/nav-contents.php");
 		$dir = str_replace($url_remove,'',$dir);
 		if(substr($dir,0,1) === "0"){
 			continue;
@@ -32,6 +31,7 @@ function p_main_nav(){
 		}else{
 			$active = '';
 		}
+		$temp = file_get_contents($base_site.$dir."/nav-contents.php");
 		$string .= '<li id="nav-'.$count.'" class="nav'.$active.'"><a href="'.$file_base."/".$dir.'">'.$temp.'</a></li>';
 		$count++;
 	}
