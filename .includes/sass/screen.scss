@@ -291,25 +291,158 @@ blockquote{
 	}
 }
 .l-page{
-	@include floatblock();
 	overflow-x:hidden;
 	min-height:100vh;
 }
 header{
-	@include floatblock();
 	.l-head{
 		@include floatblock();
 		background: $color-1;
 		position:fixed;
 		z-index:2;
-		.toggle-wrapper{
+		min-height:50px;
+		.mobi-toggle-container{
+			display:none;
+			@include breakpoint($tab){
+				display:block;
+			}
+			.utility {
+				@include floatblock(right,100%);
+				background: black;
+				@include breakpoint($tab){
+					height:auto;
+					padding-right:0;
+				}
+				.gateway-menu,
+				.utility-menu{
+					width:100%;
+					@include breakpoint($tab){
+						width:auto;
+						float:right;
+					}
+					@include breakpoint($desk){
+						float:left;
+					}
+					.p-list{
+						float:left;
+						ul{
+							display:block;
+							@include breakpoint($tab){
+								height:50px;
+								padding:0;
+								display:table;
+							}
+							li{
+								@include breakpoint($tab){
+									@include floatblock();
+								}
+								padding:8px 0;
+								border-bottom:1px solid $dk-gray;
+								a{
+									color:$white;
+								}
+							}
+						}
+						@include breakpoint($desk){
+							height:50px;
+							display:table;
+							width:auto;
+							ul{
+								li{
+									width:auto;
+									padding:0 15px 0 0;
+									display:table-cell;
+									vertical-align:middle;
+									float:none;
+									border:none;
+								}
+							}
+						}
+					}
+				}
+				.utility-menu{
+					float:right;
+					@include breakpoint($desk){
+						float:right;
+					}
+				}
+				.search{
+					width:100%;
+					@include breakpoint($tab){
+						width:auto;
+						float:right;
+						position:relative;
+					}
+					form{
+						margin:auto;
+						max-width:$maxwidth;
+						padding:10px 0;
+						@include breakpoint($tab){
+							display:none;
+						}
+						#as_q{
+							height:30px;
+							@include floatblock(left,calc(100% - 50px));
+							@include f-bkcd(16px,$c-default);
+							font-style:italic;
+							border:none;
+							padding-left:5px;
+							&:focus{}
+							&::-webkit-input-placeholder,
+							&:-moz-placeholder,
+							&::-moz-placeholder,
+							&:-ms-input-placeholder {
+								color: $gray;
+								@include breakpoint($tab,true){
+								}
+							}
+						}
+						#site_search_button{
+							@include bebas(20px,$color-1);
+							@include floatblock(left,50px);
+							font-size:20px;
+							color:$color-2;
+							height:30px;
+							background:none;
+							border:none;
+							cursor:pointer;
+							text-transform:uppercase;
+							&:focus{
+								outline:2px solid $t-white;
+							}
+						}
+					}
+					.search-toggle{
+						display:none;
+						cursor:pointer;
+						background:transparent;
+						height:50px;
+						border:none;
+						color:$color-2;
+						font-size:18px;
+						position:relative;
+						margin-right:50px;
+						padding:0 10px;
+						@include breakpoint($tab){
+							@include floatblock(right,50px);
+							top:0;
+							margin-right:0;
+						}
+						&:focus{
+							outline:rgb(77,144,254) auto 5px;
+						}
+					}
+				}
+			}
+		}
+		.mobi-toggle-wrapper{
 			@include floatblock(right,50px);
 			position:absolute;
 			right:0;
 			height:50px;
 			cursor:pointer;
 			background: black;
-			@include breakpoint($desk,true){
+			@include breakpoint($tab,true){
 				display:none;
 			}
 			.toggle{
@@ -379,271 +512,9 @@ header{
 				}
 			}
 		}
-		.utility {
-			@include floatblock(right,100%);
-			background: black;
-			@include breakpoint($desk,true){
-				height:auto;
-				padding-right:0;
-			}
-			.header-left{
-				@include floatblock(left,auto);
-				ul.gateway-menu{
-					width:0;
-					right:0;
-					height:0;
-					overflow:hidden;
-					background:$color-1;
-					@include breakpoint($tab){}
-					margin-left:20px;
-					@include breakpoint($desk,true){
-						@include floatblock(right);
-						width:auto;
-						height:auto;
-						overflow:initial;
-						background:inherit;
-						margin-top:10px;
-					}
-					> li{
-						@include floatblock();
-						@include breakpoint($desk,true){
-							padding:0 14px 0 0;
-							width:auto;
-							border:none;
-							background:none;
-							color:inherit;
-						}
-						a {
-							font-size:14px;
-							@include floatblock();
-							padding:5px 15px;
-							color:$white;
-							@include breakpoint($desk,true){
-								padding:0;
-							}
-						}
-					}
-				}
-			}
-			.header-right{
-				position:relative;
-				z-index:1;
-				float:none;
-				.search{
-					display:none;
-					width:auto;
-					float:right;
-					background:$color-3;
-					height:50px;
-					padding:10px;
-					form{
-						display:block;
-						margin:auto;
-						max-width:$maxwidth;
-						#as_q{
-							height:30px;
-							@include floatblock(left,calc(100% - 50px));
-							@include f-bkcd(16px,$c-default);
-							font-style:italic;
-							border:none;
-							padding-left:5px;
-							&:focus{}
-							&::-webkit-input-placeholder,
-							&:-moz-placeholder,
-							&::-moz-placeholder,
-							&:-ms-input-placeholder {
-								color: $gray;
-								@include breakpoint($tab,true){
-								}
-							}
-						}
-						#site_search_button{
-							@include bebas(20px,$color-1);
-							@include floatblock(left,50px);
-							font-size:20px;
-							color:$color-2;
-							height:30px;
-							background:none;
-							border:none;
-							cursor:pointer;
-							text-transform:uppercase;
-							&:focus{
-								outline:2px solid $t-white;
-							}
-						}
-						.search-toggle{
-							@include floatblock(left,40px);
-							display:none;
-							height:50px;
-							@include breakpoint($tab,true){
-								display:block;
-							}
-							cursor:pointer;
-							background:none;
-							border:none;
-							color:$t-white;
-							font-size:24px;
-							&:focus{
-								outline:2px solid $t-white;
-							}
-						}
-					}
-				}
-				.search-toggle{
-					cursor:pointer;
-					background:transparent;
-					@include floatblock(right,50px);
-					height:50px;
-					border:none;
-					color:$color-2;
-					font-size:18px;
-					position:relative;
-					margin-right:50px;
-					padding:0 10px;
-					@include breakpoint($desk){
-						top:0;
-						height:42px;
-						width:42px;
-						margin-right:0;
-					}
-					&:focus{
-						outline:rgb(77,144,254) auto 5px;
-					}
-				}
-				ul.utility-menu{
-					@include floatblock(left,auto);
-					width:0;
-					right:0;
-					height:0;
-					overflow:hidden;
-					background:$color-1;
-					display:table;
-					height:42px;
-					float:right;
-					overflow:initial;
-					background:inherit;
-					@include breakpoint($tab,true){
-						padding:0;
-					}
-					> li{
-						display:none;
-						padding:0 7px;
-						vertical-align:middle;
-						float:none;
-						@include breakpoint($desk,true){
-							display:table-cell;
-							width:auto;
-							border:none;
-						}
-						position:relative;
-						a {
-							color: $color-2;
-							font-size:14px;
-						}
-					}
-				}
-				ul.quick-links{
-					display:table;
-					float:right;
-					width:auto;
-					height:42px;
-					@include breakpoint($tab,true){
-						height:50px;
-					}
-					@include breakpoint($desk,true){
-						height:42px;
-						padding-right:0;
-					}
-					>li{
-						display:table-cell;
-						background:$color-2;
-						padding:5px 5px 10px 5px;
-						vertical-align:middle;
-						position:relative;
-						float:none;
-						h3{
-							@include f-dm(14px,$white);
-							@include arrowdown($color-1,8px);
-							color:$color-1;
-							background:none;
-							cursor:pointer;
-							line-height:35px;
-							margin:0;
-							padding:0;
-							text-transform:uppercase;
-							border:none;
-							@include breakpoint($desk,true){
-								line-height:22px;
-								border:none;
-							}
-							&:after{
-								font-size:12px;
-								left:calc(50% - 10px);
-								@include breakpoint($tab,true){
-									top:60%;
-								}
-							}
-						}
-						.utility-sub{
-							position:absolute;
-							width:1000px;
-							max-width:95vw;
-							right:-100px;
-							display:none;
-							top:100%;
-							z-index:1;
-							background:white;
-							padding:10px 20px;
-							box-shadow:1px 4px 5px $t-black;
-							border:5px solid $color-3;
-							@include breakpoint($tab){
-								max-width:80vw;
-								right:-54px;
-							}
-							h4{
-								color:#111;
-								margin-top:5px;
-								text-transform:uppercase;
-							}
-							> li {
-								display:block;
-								float:left;
-								padding:10px;
-								width:100%;
-								@include breakpoint($tab-large){
-									width:25%;
-								}
-							}
-							li{
-								line-height:28px;
-								a{}
-							}
-						}
-						&.open{
-							background:$color-3;
-							h3{
-								color:$white;
-								&:after{
-									color:$white;
-									-webkit-transform:rotateZ(-90deg);
-									-ms-transform:rotateZ(-90deg);
-									transform:rotateZ(-90deg);
-									left: calc(50% - 12px);
-								}
-							}
-							.utility-sub{
-								display:block;
-								float:left;
-							}
-						}
-					}
-				}
-			}
-		}
 		.site-logo-wrapper{
 			.site-logo{
 				display:block;
-				width:100%;
 				position:relative;
 				z-index:0;
 				margin:auto;
@@ -655,12 +526,51 @@ header{
 				}
 				@include breakpoint($desk){
 					width:600px;
-					transition:all 0.2s ease-in-out;
 				}
 				img{
 					display:block;
-					width: 100%;
-					margin:auto;
+					position:fixed;
+					top:0;
+					max-height:50px;
+					width:auto;
+					@include calc('max-width','100% - 70px','100%');
+					@include breakpoint($desk){
+						position:relative;
+						max-height: initial;
+						max-width: initial;
+					}
+				}
+			}
+		}
+		&.search-open{
+			.utility{
+				.column{
+					.search{
+						.search-toggle{
+							background:$color-3;
+							span.fa-search{
+								&:before{
+									content:"\f00d";
+								}
+							}
+						}
+						form{
+							display:table-cell;
+							vertical-align:middle;
+							float:none;
+							position:relative;
+							@include calc('width','100% - 42px', '100%');
+							@include breakpoint($tab){
+								width:300px;
+								position:absolute;
+								top:50px;
+								z-index:2;
+								background:$color-3;
+								padding:10px;
+								right:0;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -768,35 +678,6 @@ header{
 			}
 		}
 	}
-	&.open{
-		.l-head{
-			.utility{
-				.column{
-					.header-right{
-						.search{
-							@include floatblock();
-							@include breakpoint($desk,true){
-								height:50px;
-								top:42px;
-								position:absolute;
-								width:300px;
-								right:0;
-							}
-						}
-						.search-toggle{
-							background:$color-3;
-							color:$white;
-							span.fa-search{
-								&:before{
-									content:"\f00d";
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
 	&.mobi-open{
 		.l-head{
 			left: 0;
@@ -807,7 +688,10 @@ header{
 				height:auto;
 				overflow:visible;
 			}
-			.toggle-wrapper{
+			.mobi-toggle-container{
+				display:block;
+			}
+			.mobi-toggle-wrapper{
 				.toggle{
 					left:0px;
 					.toggle-element{
@@ -829,195 +713,28 @@ header{
 					}
 				}
 			}
-			.site-logo{
-				background:$color-1;
-				display:block;
-				margin:0;
-				@include breakpoint($desk,true){
-					position:relative;
-					top:0;
-					background:none;
-					margin:9px 0;
-				}
-				img{
-					display:none;
-					@include breakpoint(490px){
-						display:block;
-						position:fixed;
-						top:0;
-						max-height:50px;
-						width:auto;
-						max-width:50%;
-						max-width:-webkit-calc(100% - 181px);
-						max-width:calc(100% - 181px);
-					}
-					@include breakpoint($desk){
-						position:relative;
-						max-height: initial;
-						max-width: initial;
-					}
-				}
-			}
 			.utility{
 				height:auto;
 				padding-top:50px;
-				@include breakpoint($desk,true){
-					padding:0;
-				}
-				.header-left{
-					width:100%;
-					position:absolute;
-					top:548px;
-					background:black;
-					@include breakpoint($tab){
-						top:598px;
-					}
-					@include breakpoint($desk){
-						position:relative;
-						top:initial;
-						background:none;
-						width:auto;
-					}
-					ul.gateway-menu{
-						@include floatblock(right);
-						height:auto;
-						overflow:initial;
-						background:inherit;
-						@include breakpoint($desk){
-							margin-top:10px;
-							margin-left:20px;
-						}
-					}
-				}
-				.header-right{
-					width:100%;
-					@include breakpoint($desk){
-						width:auto;
-						float:right;
-					}
-					.search-toggle{
-						top:-50px;
-						margin-bottom:-50px;
-						@include breakpoint($tab){
-							margin-bottom:0;
-						}
-						@include breakpoint($desk){
-							top:0;
-							margin-bottom:0;
-						}
-					}
-					ul.utility-menu{
-						height:auto;
-						display:block;
-						float:right;
-						width:100%;
-						position:absolute;
-						top:370px;
-						background:black;
-						@include breakpoint($tab){
-							top:420px;
-						}
-						@include breakpoint($desk,true){
-							position:relative;
-							top:initial;
-							float:right;
-							width:auto;
-							background:none;
-							margin-top:0;
-							height:42px;
-							display:table;
-						}
-						>li{
-							display:table-cell;
-							float:left;
-							width:100%;
-							padding:0;
-							@include breakpoint($desk){
-								width:auto;
-								background:none;
-								color:$color-2;
-								padding:0 7px;
-								float:none;
-							}
-							a{
-								@include floatblock();
-								padding:5px 15px;
-								@include breakpoint($desk,true){
-									padding:0;
-								}
-							}
-						}
-					}
-					ul.quick-links{
-						height:auto;
-						position:relative;
-						top:-50px;
-						right:100px;
-						margin-bottom:-49px;
-						@include breakpoint($tab){
-							right:0;
-						}
-						@include breakpoint($tab-large){
-							margin-bottom:0;
-						}
-						@include breakpoint($desk,true){
-							width:auto;
-							background:none;
-							margin-top:0;
-							position:relative;
-							top:0;
-							height:42px;
-						}
-					}
+				@include breakpoint($tab){
+					padding-top:0;
 				}
 			}
-		}
-		.search{
-			display:none;
-			float:left;
-			z-index:1;
-			left:50px;
-			z-index:9999;
-			@include breakpoint ($tab,true){
-				position:absolute;
-				display:none;
-				left:initial;
-				position:relative;
+			&.search-open{
+				.utility{
+					.column{
+						.search{
+							@include breakpoint($tab){}
+							@include breakpoint($desk){}
+						}
+					}
+				}
 			}
 		}
 		.main-nav-container{
 			width:100%;
 			float:right;
 			display:block;
-		}
-		&.open{
-			.l-head{
-				.utility{
-					.column{
-						.header-right{
-							.search{
-								display:block;
-								float:left;
-								top:-1px;
-								position:relative;
-								left:0;
-								@include breakpoint($tab,true){
-									left:initial;
-									margin-bottom:-50px;
-									top:-50px;
-								}
-								@include breakpoint($desk,true){
-									top:-50px;
-									position:absolute;
-									left:initial;
-									float:none;
-									top:42px;
-								}
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 }
@@ -1156,9 +873,6 @@ body{
 				}
 			}
 		}
-	}
-	&.one-column{
-		.l-page{}
 	}
 	&.bio{
 		.l-page{
@@ -1310,20 +1024,6 @@ body{
 			}
 		}
 	}
-	&.undergraduate_admissions{
-		.l-page .l-content-center .l-content-wrapper .l-content{
-			@include breakpoint($tab){
-				width:calc(100% - 350px);
-
-			}
-		}
-		.l-page .l-content-center .l-content-wrapper .l-promo-sidebar{
-			@include breakpoint($tab){
-				width:350px;
-			}
-		}
-	}
-	&.home{}
 	&.sticky{
 		header{
 			&.mobi-open{
@@ -1341,16 +1041,10 @@ body{
 					.site-logo{
 						margin:0;
 						img{
-							@include breakpoint(490px){
-								position:fixed;
+							@include breakpoint($desk){
 								top:0;
 								max-height:50px;
-								width:auto;
-								max-width:50%;
-								max-width:-webkit-calc(100% - 181px);
-								max-width:calc(100% - 181px);
-							}
-							@include breakpoint($desk){
+								@include calc('max-width','100% - 181px','50%');
 								margin:0;
 								position:relative;
 								height:auto;
@@ -1796,10 +1490,8 @@ footer{
 	}
 }
 .drop-container{
-	@include floatblock();
 	padding:20px 0 0 0;
 	position:relative;
-	margin-bottom:20px;
 	@include breakpoint($tab,true){
 		padding:0 10px 0 0;
 	}
@@ -1819,8 +1511,6 @@ footer{
 	}
 	.drop-item{
 		display:none;
-		float:left;
-		width:100%;
 		z-index:2;
 		background:$white;
 		border:1px solid $color-2;
@@ -1863,6 +1553,26 @@ footer{
 				background:$color-2;
 				border-color:$color-2;
 				color:$color-1;
+			}
+		}
+	}
+	&.mobile{
+		padding:0;
+		width:100%;
+		.drop-toggle{
+			padding:11px 30px 11px 20px;
+			width:100%;
+			position:relative;
+			@include breakpoint($desk){
+				display:none;
+			}
+		}
+		.drop-item{
+			background:none;
+			border:none;
+			@include breakpoint($desk){
+				display:block;
+				position:relative;
 			}
 		}
 	}

@@ -1,37 +1,20 @@
 .p-list{
-	@include floatblock();
-	ul{
-		@include floatblock();
+	ul,
+	ol{
 		list-style-type:disc;
 		padding:0 10px;
 		li{
 			display:list-item;
 			float:left;
-			width:calc(100% - 15px);
+			@include calc('width','100% - 15px','100%');
 			margin:0 0 0 15px;
 			padding:3px 0;
 			a{
-				@include f-bk(18px,$color-1);
-				@include floatblock(none,100%);
-				&:hover{}
+				@include f-bk(16px,$color-1);
 			}
 		}
 	}
 	ol{
-		@include floatblock();
-		padding:10px;
 		list-style-type:decimal;
-		li{
-			display:list-item;
-			float:left;
-			width:100%;
-			margin:0 0 0 15px;
-			padding:3px 0;
-			a{
-				@include f-bk(18px,$color-1);
-				@include floatblock(none,100%);
-				&:hover{}
-			}
-		}
 	}
 }

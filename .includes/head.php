@@ -70,33 +70,36 @@ echo " ".$layout;?>">
 	<?php } ?>
 
 	<div class="l-head <?php if(isset($mini) && $mini == true){echo "mini-site";} ?>">
-		<div class="toggle-wrapper"><div class="toggle"><div class="toggle-element"></div></div></div>
-		<div class="utility">
-			<div class="column">
-				<div class="header-right">
-					<button class="search-toggle" aria-label="site search toggle"><span class="fa fa-search"></span></button>
-					<?php include($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/snippets/quick-links.tpl.php"); ?>
+		<div class="mobi-toggle-container">
+			<div class="utility">
+				<div class="column">
 					<div class="search">
 						<?php include($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/snippets/global-search.tpl.php"); ?>
+						<button class="search-toggle" aria-label="site search toggle"><span class="fa fa-search"></span></button>
 					</div>
-					<ul class="utility-menu">
-						<li><a href="#">Apply</a></li>
-						<li><a href="#">Online Learning</a></li>
-						<li><a href="#">Directory</a></li>
-						<li><a href="#">Inside</a></li>
-					</ul>
+					<?php echo(p_dropdown('gateway-menu mobile','Gateway Menu',p_list(
+						array(
+							p_link("#",'Future Students'),
+							p_link("#",'Current Students'),
+							p_link("#",'Parents'),
+							p_link("#",'Veterans'),
+							p_link("#",'Alumni'),
+							p_link("#",'Faculty &amp; Staff'),
+							p_link("#",'Visitors'),
+						)
+					))); ?>
+					<?php echo(p_dropdown('utility-menu mobile','Utility Menu',p_list(
+						array(
+							p_link("#",'Apply'),
+							p_link("#",'Online Learning'),
+							p_link("#",'Directory'),
+							p_link("#",'Inside'),
+						)
+					))); ?>
 				</div>
-				<div class="header-left">
-					<ul class="gateway-menu">
-						<li><a href="#">Future Students</a></li>
-						<li><a href="#">Current Students</a></li>
-						<li><a href="#">Parents</a></li>
-						<li><a href="#">Veterans</a></li>
-						<li><a href="#">Alumni</a></li>
-						<li><a href="#">Faculty &amp; Staff</a></li>
-						<li><a href="#">Visitors</a></li>
-					</ul>
-				</div>
+			</div>
+			<div class='main-nav-container wrapper'>
+				<?php echo(p_main_nav()); ?>
 			</div>
 		</div>
 		<div class="site-logo-wrapper">
@@ -104,12 +107,4 @@ echo " ".$layout;?>">
 				<?php if($page == 'home'){echo "<h1>";} ?><a class="site-logo" href="/"><img src="<?php echo $site_logo; ?>" alt='Site Logo'></a><?php if($page == 'home'){echo "</h1>";} ?>
 			</div>
 		</div>
-		<div class='main-nav-container wrapper'>
-			<?php 
-			//if(isset($mini) && $mini == true){
-			//	echo(p_mini_nav());
-			//}else{
-				echo(p_main_nav()); 
-			//}
-			?>
-		</div>
+		<div class="mobi-toggle-wrapper"><div class="toggle"><div class="toggle-element"></div></div></div>

@@ -1,7 +1,7 @@
 .main-nav-container{
 	background: white;
 	display:none;
-	@include breakpoint($tab-large){
+	@include breakpoint($tab){
 		@include floatblock();
 		background:inherit;
 		overflow:visible;
@@ -14,25 +14,26 @@
 		@include breakpoint(max-width $tab){
 			background:none;
 		}
-		@include breakpoint(max-width $tab-large){
+		@include breakpoint(max-width $tab){
 			position:relative;
 		}
 		.column{
 			position:relative;
 			top:1px;
+			padding:0;
 			> .desk-sticky{
 				width:0;
 				display:none;
 			}
 			.main-nav{
 				@include floatblock();
-				@include breakpoint($tab-large){
+				@include breakpoint($tab){
 					display:table;
 				}
 				li{
 					@include floatblock();
 					border-bottom:1px solid $color-1;
-					@include breakpoint($tab-large){
+					@include breakpoint($tab){
 						display:table-cell;
 						width:auto;
 						float:none;
@@ -45,7 +46,7 @@
 						text-transform:uppercase;
 						text-align:left;
 						padding: 10px 20px;
-						@include breakpoint($tab-large){
+						@include breakpoint($tab){
 							text-align:center;
 							padding:10px 5px;
 							font-size:16px;
