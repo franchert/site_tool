@@ -1,5 +1,5 @@
 <?php 
-/* add the following to promo-director.php
+/* add the following to director.php
 	if($layout == "longscroll"){
 		$p_longscroll_first = "";
 		$p_longscroll_second = "";

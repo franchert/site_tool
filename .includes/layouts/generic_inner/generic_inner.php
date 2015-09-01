@@ -1,5 +1,5 @@
 <?php 
-/* add the following to promo-director.php
+/* add the following to director.php
 if ($layout == "generic_inner"){
 	$p_featured_header = "";
 	$p_content_header = "";

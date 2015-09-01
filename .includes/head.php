@@ -22,7 +22,6 @@
 	<meta property="twitter:image" content="" >
 	<meta name="description" content="<?php echo $client_name;?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<?php include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/directory_loc.php");?>
 	<?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/styles.php"); ?>
 	<?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/scripts.php"); ?>
 </head>
@@ -35,16 +34,6 @@ if(isset($mini) && $mini == true){echo ' mini';
 }
 echo " ".$layout;?>">
 	<a class="back-to-top" href="#top">Back to Top</a>
-	<div id="fb-root"></div>
-	<script>
-		(function(d, s, id) {
-			var js, fjs = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=470606949755533";
-			fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));
-	</script>
 	<header>
 	<?php if(isset($alert)){ ?>
 	<div class="alert <?php echo $alert['type'][0]; ?>">

@@ -48,3 +48,7 @@ foreach (glob($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/components/elemen
 foreach (glob($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/components/containers/*.inc.php") as $filename){
 	include_once($filename);
 }
+
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/variables.php");
+
+?>

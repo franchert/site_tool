@@ -7,7 +7,7 @@ $feed_search = true;
 $layout = 'bio';
 $instafeed = false;
 /*promo director initializes region variables and includes all the functions to create elements*/
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/promo-director.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
 /*define promos here*/
 	$page_h1 = $page_title;
 	$p_content_header .= "<div class='wrapper'><div class='column'><h1>".$page_h1."</h1></div></div>";
@@ -92,6 +92,5 @@ $p_promo_sidebar .= "<section><h2>News</h2>".p_list(
 	),
 	"news-listing nodisc"
 );
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/head.php");
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

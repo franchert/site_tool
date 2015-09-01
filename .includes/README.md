@@ -5,13 +5,13 @@ Includes all the pieces used to create the site.
 - fonts -> font file directories
 - images -> content images
 - js -> javascript files
-- layouts -> template structures that pull strings initialized by promo-director.php into container elements
+- layouts -> template structures that pull strings initialized by director.php into container elements
 - libraries -> external js and css libraries
 - sass -> source files
 - snippets -> static html code pulled into other places
 - stylesheets -> sass compiles into here
 
-###/.includes/directory_loc.php 
+###/.includes/variables.php 
 - Creates many page/section specific variables for use throughout the application.
 
 ###/.includes/footer.php
@@ -27,7 +27,7 @@ Includes all the pieces used to create the site.
 	- Dynamically pulls information from nav-contents.php located on the top level files
 - Custom nav function dynamically builds navigation tree from a specified root directory.
 
-###/.includes/promo-director.php
+###/.includes/director.php
 - Initializes strings used within the layout files and includes all component functions 
 
 ###/.includes/scripts.php

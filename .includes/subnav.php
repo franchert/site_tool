@@ -3,7 +3,7 @@
 *	Provides functions to create subnavigation based on the folder structure
 */
 	include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/settings.php");
-	include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/directory_loc.php");
+	include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/variables.php");
 	$subnav_string = "";
 	$level = 0;
 	function p_subnav($root_path = null,$depth = null,$printsection = true,$backtohome = false,$toggle = false){

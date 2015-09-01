@@ -7,7 +7,7 @@ $flexslider = true;
 $colorbox = true;
 $layout = "generic_inner";
 $feed_search = true;
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/promo-director.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
 $p_nav_sidebar .= p_promo("button","","Button Promo");
 $p_nav_sidebar .= p_promo("button","light","Button Promo Light");
 $p_nav_sidebar .= p_promo("button","dark","Button Promo Dark");

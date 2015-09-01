@@ -7,7 +7,7 @@ $feed_search = true;
 $layout = 'one-column';
 $instafeed = false;
 /*promo director initializes region variables and includes all the functions to create elements*/
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/promo-director.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
 /*define promos here*/
 
 $p_one .= breadcrumb();

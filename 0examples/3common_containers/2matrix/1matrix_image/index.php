@@ -8,7 +8,7 @@ $colorbox = true;
 $layout = "generic_inner";
 $mini = true;
 $depth = 2;
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/promo-director.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
 $p_matrix_item = p_promo('linkimg');
 $p_content .= p_matrix(2,$p_matrix_item);
 $p_content .= p_matrix(3,$p_matrix_item);
