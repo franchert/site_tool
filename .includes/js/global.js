@@ -205,10 +205,16 @@ function stickyHeader(subPos){
 		}
 	}
 	$('.l-page').css('margin-top',headHeight);
-	if(120 < topPos){
+	if(topPos == 0){
+		$('body').removeClass('sticky');
+		$('.l-page').css('margin-top',0);
+		$('.l-head').css('position','relative');
+	}else if(120 < topPos){
 		$('body').addClass('sticky');
+		$('.l-head').css('position','fixed');
 	}else{
 		$('body').removeClass('sticky');
+		$('.l-head').css('position','fixed');
 	}
 }
 function tabAccordion(){

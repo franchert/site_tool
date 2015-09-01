@@ -3065,7 +3065,6 @@ header .l-head {
   float: left;
   width: 100%;
   background: #2a2a2a;
-  position: fixed;
   z-index: 2;
   min-height: 50px;
 }
@@ -3089,6 +3088,9 @@ header .l-head .mobi-toggle-container .utility {
     padding-right: 0;
   }
 }
+header .l-head .mobi-toggle-container .utility > .column {
+  padding: 0;
+}
 header .l-head .mobi-toggle-container .utility .gateway-menu,
 header .l-head .mobi-toggle-container .utility .utility-menu {
   width: 100%;
@@ -3108,31 +3110,37 @@ header .l-head .mobi-toggle-container .utility .utility-menu {
 }
 header .l-head .mobi-toggle-container .utility .gateway-menu .p-list,
 header .l-head .mobi-toggle-container .utility .utility-menu .p-list {
+  display: block;
   float: left;
+  width: 100%;
 }
 header .l-head .mobi-toggle-container .utility .gateway-menu .p-list ul,
 header .l-head .mobi-toggle-container .utility .utility-menu .p-list ul {
   display: block;
+  padding: 0;
 }
 @media (min-width: 45em) {
   header .l-head .mobi-toggle-container .utility .gateway-menu .p-list ul,
   header .l-head .mobi-toggle-container .utility .utility-menu .p-list ul {
     height: 50px;
-    padding: 0;
     display: table;
   }
 }
 header .l-head .mobi-toggle-container .utility .gateway-menu .p-list ul li,
 header .l-head .mobi-toggle-container .utility .utility-menu .p-list ul li {
-  padding: 8px 0;
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 8px;
+  background: #4687c3;
   border-bottom: 1px solid #444;
+  margin: 0;
+  list-style-type: none;
 }
-@media (min-width: 45em) {
+@media (min-width: 70em) {
   header .l-head .mobi-toggle-container .utility .gateway-menu .p-list ul li,
   header .l-head .mobi-toggle-container .utility .utility-menu .p-list ul li {
-    display: block;
-    float: left;
-    width: 100%;
+    background: none;
   }
 }
 header .l-head .mobi-toggle-container .utility .gateway-menu .p-list ul li a,
@@ -4510,7 +4518,7 @@ footer .column .footer .links-resources h3 {
   width: 100%;
 }
 .drop-container.mobile .drop-toggle {
-  padding: 11px 30px 11px 20px;
+  padding: 12px 30px 12px 20px;
   width: 100%;
   position: relative;
 }

@@ -298,7 +298,6 @@ header{
 	.l-head{
 		@include floatblock();
 		background: $color-1;
-		position:fixed;
 		z-index:2;
 		min-height:50px;
 		.mobi-toggle-container{
@@ -313,6 +312,9 @@ header{
 					height:auto;
 					padding-right:0;
 				}
+				> .column{
+					padding:0;
+				}
 				.gateway-menu,
 				.utility-menu{
 					width:100%;
@@ -324,20 +326,24 @@ header{
 						float:left;
 					}
 					.p-list{
-						float:left;
+						@include floatblock();
 						ul{
 							display:block;
+							padding:0;
 							@include breakpoint($tab){
 								height:50px;
-								padding:0;
 								display:table;
 							}
 							li{
-								@include breakpoint($tab){
-									@include floatblock();
-								}
-								padding:8px 0;
+								@include floatblock();
+								padding:8px;
+								background:$color-3;
 								border-bottom:1px solid $dk-gray;
+								margin:0;
+								list-style-type:none;
+								@include breakpoint($desk){
+									background:none;
+								}
 								a{
 									color:$white;
 								}
@@ -1560,7 +1566,7 @@ footer{
 		padding:0;
 		width:100%;
 		.drop-toggle{
-			padding:11px 30px 11px 20px;
+			padding:12px 30px 12px 20px;
 			width:100%;
 			position:relative;
 			@include breakpoint($desk){
