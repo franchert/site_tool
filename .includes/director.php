@@ -1,4 +1,6 @@
 <?php
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/globals.php");
+
 // initialize promo regions per template so we can fill them out with elements on the template level
 if ($layout == "generic_inner"){
 	$p_featured_header = "";

@@ -11,8 +11,14 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 *		$section		Top level section of current page (just under root)
 *		$section_title	Top level turned into capitalized text
 */
+
+/*Manually set variables*/
 	$client_name = 'Client Name';
 	$site_logo = "/.includes/images/placeholder-svg.php?wh=600x100&color=111111&fill=cccccc&font=Arial&txt=Site Logo";
+	$header = 'sticky-h';
+	$alert_on = false;
+
+/*Automatically Set Variables*/
 	$url = dirname($_SERVER['PHP_SELF']);
 	$path = parse_url($url, PHP_URL_PATH);
 	$path = str_replace($file_base,'',$path);
@@ -35,19 +41,20 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 	$page_title = titleFromSlug(substr($page,1));
 	$crumb = $file_base;
 	$active="";
-	$alert=array(
-		'type' => array(
-			'0' => "emgergency",
-			'1' => "Campus Wide Alert"
-		),
-		'message' =>array(
-			'0' =>"Evacuation Procedures in Place",
-			'1' =>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-		),
-		'contact' => array(
-			'0' => "Police - 911",
-			'1' => "Campus Police - 555.555.5555"
-		),
-	);
-	$alert=null;
+	if($alert_on){
+		$alert=array(
+			'type' => array(
+				'0' => "emgergency",
+				'1' => "Campus Wide Alert"
+			),
+			'message' =>array(
+				'0' =>"Evacuation Procedures in Place",
+				'1' =>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+			),
+			'contact' => array(
+				'0' => "Police - 911",
+				'1' => "Campus Police - 555.555.5555"
+			),
+		);
+	}
 ?>

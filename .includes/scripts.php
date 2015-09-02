@@ -10,9 +10,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 <script src="<?php echo $file_base; ?>/.includes/js/jquery.hoverIntent.js"></script>
 <?php //include all necessary libraries ?>
-<?php if(isset($layout)){ if($layout != 'longscroll' || !isset($longscroll_nav) || $longscroll_nav == true){ ?>
+<?php if(isset($layout)){ ?>
 	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/layouts/<?php echo $layout ?>/<?php echo $layout ?>.js"></script>
-<?php } }?>
+<?php } ?>
+<?php if(isset($header)){ ?>
+	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/headers/<?php echo $header ?>/<?php echo $header ?>.js"></script>
+<?php } ?>
 <?php if(isset($waypoints) && $waypoints === true){	?>
 	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/jquery.waypoints.min.js"></script>	
 <?php } ?>
@@ -25,12 +28,13 @@
 <?php if(isset($instafeed) && $instafeed === true){	?>
 	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/instafeed.min.js"></script>	
 <?php } ?>
+<?php if(isset($colorbox) && $colorbox === true){	?>
+	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/jquery.colorbox-min.js"></script>	
+<?php } ?>
 
 <script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/global.js"></script>
 
 <?php if(isset($scripts) && $scripts === true){	?>
 	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/<?php echo $page_slug ?>.js"></script>	
 <?php } ?>
-<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/jquery.colorbox-min.js"></script>	
 <script type="text/javascript">var switchTo5x=true;</script>
-<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>

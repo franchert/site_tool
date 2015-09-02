@@ -17,4 +17,30 @@
 	ol{
 		list-style-type:decimal;
 	}
+	&.nodisc{
+		ul{
+			list-style-type:none;
+			padding:0;
+			li{
+				margin:0;
+			}
+		}
+	}
+	&.carot{
+		>ul {
+			> li{
+				list-style-type:none;
+				padding-left:0;
+				&:before{
+					content:"\f054";
+					font-family:FontAwesome;
+					color:$color-1;
+					display:inline-block;
+					width:1.2em;
+					margin-left:-1.2em;
+					font-size:12px;
+				}
+			}
+		}
+	}
 }

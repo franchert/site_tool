@@ -2,17 +2,18 @@
 
 ##Framework
 
-Dynamic front-end site prototype following the principles of [Atomic Design][http://bradfrost.com/blog/post/atomic-web-design/]. Product starts out-of-the-box as a clickable prototype of a typical higher education website. 
+Dynamic front-end site prototype following the principles of [Atomic Design][http://bradfrost.com/blog/post/atomic-web-design/]. Product starts out-of-the-box as a clickable prototype of a blank higher education website. 
+
+Each index file pulls in a specified 'layout' file, which represents the front-end code. The layout file then pulls in the header and footer. The header pulls in stylesheets and script files.
+
+It also pulls in a 'director' file, which represents the dynamic and back-end components. The director file pulls in components functions, which are organized into groups within the components folder. It also pulls in global functions (which are functions that don't directly impact content but used many places), as well as a variables file, which calculates dynamic per-page variables such as path, page titles, section and mini-site information.
 
 '''
 
 ##TODO:
 
-- Remove client-specific logos/text
-- Change color scheme to grayscale
-- Add additional components to examples pages (dropdown, matrix, module, table, colorbox, event, news, factoid, profile, subsection, spotlight)
-- Style sitemap page
-- Clean complex functions (subnav, main nav, promo)
+- Add additional components to examples pages (colorbox, profile, subsection, spotlight)
+- Style .sitemap page
 - Figure out a way to not need numbering on directories for ordering purposes within subnav/main nav
 
 '''

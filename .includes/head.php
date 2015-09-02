@@ -57,43 +57,7 @@ echo " ".$layout;?>">
 		</div>
 	</div>
 	<?php } ?>
-
 	<div class="l-head <?php if(isset($mini) && $mini == true){echo "mini-site";} ?>">
-		<div class="mobi-toggle-container">
-			<div class="utility">
-				<div class="column">
-					<div class="search">
-						<?php include($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/snippets/global-search.tpl.php"); ?>
-						<button class="search-toggle" aria-label="site search toggle"><span class="fa fa-search"></span></button>
-					</div>
-					<?php echo(p_dropdown('gateway-menu mobile','Gateway Menu',p_list(
-						array(
-							p_link("#",'Future Students'),
-							p_link("#",'Current Students'),
-							p_link("#",'Parents'),
-							p_link("#",'Veterans'),
-							p_link("#",'Alumni'),
-							p_link("#",'Faculty &amp; Staff'),
-							p_link("#",'Visitors'),
-						)
-					))); ?>
-					<?php echo(p_dropdown('utility-menu mobile','Utility Menu',p_list(
-						array(
-							p_link("#",'Apply'),
-							p_link("#",'Online Learning'),
-							p_link("#",'Directory'),
-							p_link("#",'Inside'),
-						)
-					))); ?>
-				</div>
-			</div>
-			<div class='main-nav-container wrapper'>
-				<?php echo(p_main_nav()); ?>
-			</div>
-		</div>
-		<div class="site-logo-wrapper">
-			<div class='column'>
-				<?php if($page == 'home'){echo "<h1>";} ?><a class="site-logo" href="/"><img src="<?php echo $site_logo; ?>" alt='Site Logo'></a><?php if($page == 'home'){echo "</h1>";} ?>
-			</div>
-		</div>
-		<div class="mobi-toggle-wrapper"><div class="toggle"><div class="toggle-element"></div></div></div>
+		<?php if(isset($header)){
+			include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/headers/".$header."/".$header.".php");
+		} ?>
