@@ -15,6 +15,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 /*Manually set variables*/
 	$client_name = 'Client Name';
 	$site_logo = "/.includes/images/placeholder-svg.php?wh=600x100&color=111111&fill=cccccc&font=Arial&txt=Site Logo";
+	/*choose a header type in the .includes/header folder*/
 	$header = 'sticky-h';
 	$alert_on = false;
 

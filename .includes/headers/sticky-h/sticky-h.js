@@ -19,6 +19,11 @@ $(document).ready(function(){
 			document.getElementById('as_q').focus();
 		};
 	});
+	$('.mobi-toggle-wrapper').on('keypress click',function(e){
+		if (e.which === 13 || e.type === 'click') {
+			$('header').toggleClass("mobi-open");
+		};
+	});
 });
 
 $( window ).resize(function() {

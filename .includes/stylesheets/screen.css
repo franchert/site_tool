@@ -127,6 +127,79 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.otf);
   src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.woff);
 }
+body nav .p-list > ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  text-align: left;
+  display: block;
+  width: auto;
+}
+body nav .p-list > ul > li {
+  display: inline-block;
+  position: relative;
+  margin: 0;
+  width: auto;
+  padding: 0;
+}
+body nav .p-list > ul > li.hidden {
+  display: none;
+}
+body nav .p-list > ul > li a {
+  display: block;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  padding: 5px 10px;
+}
+body nav .p-list > ul > li a + ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-right: 0;
+  padding: 0;
+}
+body nav .p-list > ul > li a + ul li {
+  margin: 0;
+  padding: 0;
+  width: auto;
+  float: right;
+  background: #444;
+}
+body nav .p-list > ul > li a + ul li a {
+  padding-left: 16px;
+  text-align: left;
+  white-space: nowrap;
+}
+body nav .p-list > ul > li:hover > a {
+  background: #bbbbbb;
+}
+body nav .p-list > ul > li:hover ul {
+  display: block;
+  z-index: 2;
+  list-style-type: none;
+}
+body nav .p-list > ul > li.more > a {
+  font-size: 11px;
+  line-height: 11px;
+  width: 75px;
+  background: rgba(255, 255, 255, 0.25);
+}
+body nav.gateway-menu {
+  width: 65%;
+}
+body nav.gateway-menu .p-list > ul > li a + ul li {
+  float: left;
+}
+body nav.utility-menu {
+  width: 35%;
+}
+body nav.utility-menu .p-list > ul {
+  float: right;
+}
+
 body header .l-head {
   display: block;
   float: left;
@@ -463,6 +536,55 @@ body header .l-head.search-open .utility .column .search form {
     padding: 10px;
     right: 0;
   }
+}
+body header.mobi-open .l-head {
+  left: 0;
+  z-index: 9998;
+  overflow: auto;
+  height: 100vh;
+}
+@media (min-width: 45em) {
+  body header.mobi-open .l-head {
+    height: auto;
+    overflow: visible;
+  }
+}
+body header.mobi-open .l-head .mobi-toggle-container {
+  display: block;
+}
+body header.mobi-open .l-head .mobi-toggle-wrapper .toggle {
+  left: 0px;
+}
+body header.mobi-open .l-head .mobi-toggle-wrapper .toggle .toggle-element {
+  background: none;
+}
+body header.mobi-open .l-head .mobi-toggle-wrapper .toggle .toggle-element:before {
+  top: 0px;
+  background: #fff;
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+body header.mobi-open .l-head .mobi-toggle-wrapper .toggle .toggle-element:after {
+  top: -4px;
+  background: #fff;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+body header.mobi-open .l-head .utility {
+  height: auto;
+  padding-top: 50px;
+}
+@media (min-width: 45em) {
+  body header.mobi-open .l-head .utility {
+    padding-top: 0;
+  }
+}
+body header.mobi-open .main-nav-container {
+  width: 100%;
+  float: right;
+  display: block;
 }
 @media (min-width: 70em) {
   body.sticky header.mobi-open .l-head {
@@ -4071,55 +4193,6 @@ body footer .column .footer .links-resources h3 {
   body footer .column .footer .links-resources h3 {
     border-bottom: 1px solid #bbbbbb;
   }
-}
-body.mobi-open .l-head {
-  left: 0;
-  z-index: 9998;
-  overflow: auto;
-  height: 100vh;
-}
-@media (min-width: 45em) {
-  body.mobi-open .l-head {
-    height: auto;
-    overflow: visible;
-  }
-}
-body.mobi-open .l-head .mobi-toggle-container {
-  display: block;
-}
-body.mobi-open .l-head .mobi-toggle-wrapper .toggle {
-  left: 0px;
-}
-body.mobi-open .l-head .mobi-toggle-wrapper .toggle .toggle-element {
-  background: none;
-}
-body.mobi-open .l-head .mobi-toggle-wrapper .toggle .toggle-element:before {
-  top: 0px;
-  background: #fff;
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-body.mobi-open .l-head .mobi-toggle-wrapper .toggle .toggle-element:after {
-  top: -4px;
-  background: #fff;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-body.mobi-open .l-head .utility {
-  height: auto;
-  padding-top: 50px;
-}
-@media (min-width: 45em) {
-  body.mobi-open .l-head .utility {
-    padding-top: 0;
-  }
-}
-body.mobi-open .main-nav-container {
-  width: 100%;
-  float: right;
-  display: block;
 }
 body.home h1 {
   margin: 0;

@@ -1,7 +1,12 @@
 <?php
-function p_list($arr = null,$type = ''){
+function p_list($arr = null,$type = '',$idORclass='class'){
 	if(!is_null($arr)){
-		$string = '<div class="p-list '.$type.'">';
+		if($idORclass == "id"){
+			$value = '" id="'.$type;
+		}else if($idORclass == "class"){
+			$value = ' '.$type;
+		}
+		$string = '<div class="p-list'.$value.'">';
 		if($type == 'ordered'){
 			$string .='<ol>';
 		}else{

@@ -37,11 +37,6 @@ $(document).ready(function(){
 			$(this).blur();
 		};
 	});
-	$('.mobi-toggle-wrapper').on('keypress click',function(e){
-		if (e.which === 13 || e.type === 'click') {
-			$('header').toggleClass("mobi-open");
-		};
-	});
 	$(".featured .slide img").each(function(i, img) {
 		$(img).css({
 			left: ($(img).parent().width() - $(img).width()) / 2

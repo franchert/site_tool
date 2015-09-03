@@ -15,6 +15,7 @@ It also pulls in a 'director' file, which represents the dynamic and back-end co
 - Add additional components to examples pages (colorbox, profile, subsection, spotlight)
 - Style .sitemap page
 - Figure out a way to not need numbering on directories for ordering purposes within subnav/main nav
+- Print Stylesheets
 
 '''
 
