@@ -145,9 +145,8 @@ function isMobile() {
 	}
 }
 function equalHeight(path){
-	if (isMobile()){
-		$(path).height("auto");
-	}else{
+	$(path).height("auto");
+	if (!isMobile()){
 		var max = Math.max.apply(null, 
 			$(path).map(function () {
 				return $(this).height();

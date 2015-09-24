@@ -22,7 +22,7 @@
 <?php if(isset($owl) && $owl == true){	?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/libraries/owl.carousel.css"/>
 <?php } ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/stylesheets/print.css"/>
+	<link rel="stylesheet" media="print" type="text/css" href="<?php echo $file_base; ?>/.includes/stylesheets/print.css"/>
 
 <!--[if IE]>
 	<link href="/.includes/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />

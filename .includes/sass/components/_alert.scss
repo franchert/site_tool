@@ -1,112 +1,103 @@
 $emergency_alert_color:$red;
 $weather_alert_color:$blue;
-body{
-	.alert{
-		@include floatblock();
-		overflow:visible;
-		.toggle{
-			height:55px;
-			padding:15px 20px;
-			cursor:pointer;
-			max-width:$maxwidth;
-			margin:auto;
-			h3{
-				@include f-dm(22px,$color-2);
-				text-transform:uppercase;
-				@include floatblock(left,calc(100% - 60px));
-				border:none;
-				margin:0;
-			}
-			span{
-				@include paradoxbold(26px,$color-2);
-				line-height:26px;
-				text-transform:uppercase;
-				@include floatblock(left,60px);
-				&:after{
-					content:'\f057';
-					font-family:FontAwesome;
-					-webkit-transform:rotateZ(180deg);
-					-ms-transform:rotateZ(180deg);
-					transform:rotateZ(180deg);
-					transition:all .3s;
-					display:block;
-					position:relative;
-					text-align:center;
-					width:26px;
-					height:26px;
-					border-radius:50%;
-					margin:0 auto;
-				}
-			}
+.alert{
+	@include floatblock();
+	overflow:visible;
+	.toggle{
+		height:55px;
+		padding:15px 20px;
+		cursor:pointer;
+		max-width:$maxwidth;
+		margin:auto;
+		h3{
+			@include font('f-dm',22px,$color-2);
+			text-transform:uppercase;
+			@include floatblock(left,calc(100% - 60px));
+			border:none;
+			margin:0;
 		}
-		.message{
-			background:$red;
-			@include floatblock();
-			position:relative;
-			z-index:11;
-			padding:20px;
-			.column{
-				.message{
-					@include floatblock();
-					padding:0;
-					@include breakpoint($tab){
-						padding:0 20px;
-						width:calc(100% - 200px);
-					}
-					h2{
-						@include floatblock();
-						@include paradox(32px,$white);
-					}
-					p{
-						@include floatblock();
-						@include f-bk(18px,$white);
-						position:relative;
-					}
-				}
-				.contact{
-					@include floatblock();
-					@include breakpoint($tab){
-						width:200px;
-					}
-					h2{
-						@include floatblock();
-						@include paradox(32px,$white);
-					}
-					ul{
-						@include floatblock();
-						li{
-							@include f-bk(18px,$white);
-						}
-					}
-				}
-			}
-			a{
-				@include paradoxbold(16px,$white);
-				@include arrowafter($white);
-				@include floatblock(left,auto);
+		span{
+			@include font('paradoxbold',26px,$color-2);
+			line-height:26px;
+			text-transform:uppercase;
+			@include floatblock(left,60px);
+			&:after{
+				content:'\f057';
+				font-family:FontAwesome;
+				-webkit-transform:rotateZ(180deg);
+				-ms-transform:rotateZ(180deg);
+				transform:rotateZ(180deg);
+				transition:all .3s;
+				display:block;
 				position:relative;
-				padding:10px 0 10px 20px;
+				text-align:center;
+				width:26px;
+				height:26px;
+				border-radius:50%;
+				margin:0 auto;
 			}
 		}
-		&.closed{
+	}
+	.message{
+		background:$red;
+		position:relative;
+		z-index:11;
+		padding:20px;
+		.column{
 			.message{
-				display:none;
+				padding:0;
+				@include breakpoint($tab){
+					padding:0 20px;
+					width:calc(100% - 200px);
+				}
+				h2{
+					@include font('paradox',32px,$white);
+				}
+				p{
+					@include font('f-bk',18px,$white);
+					position:relative;
+				}
 			}
-			.toggle{
-				span{
-					&:after{
-					-webkit-transform:rotateZ(45deg);
-					-ms-transform:rotateZ(45deg);
-					transform:rotateZ(45deg);
+			.contact{
+				@include breakpoint($tab){
+					width:200px;
+				}
+				h2{
+					@include font('paradox',32px,$white);
+				}
+				ul{
+					li{
+						@include font('f-bk',18px,$white);
 					}
 				}
 			}
 		}
-		&.emergency{
-			background:$emergency_alert_color;
+		a{
+			@include font('paradoxbold',16px,$white);
+			@include arrowafter($white);
+			width:auto;
+			position:relative;
+			padding:10px 0 10px 20px;
 		}
-		&.weather{
-			background:$weather_alert_color;
+	}
+	&.closed{
+		.message{
+			display:none;
 		}
+		.toggle{
+			span{
+				&:after{
+				-webkit-transform:rotateZ(45deg);
+				-ms-transform:rotateZ(45deg);
+				transform:rotateZ(45deg);
+				}
+			}
+		}
+	}
+	&.emergency{
+		background:$emergency_alert_color;
+	}
+	&.weather{
+		background:$weather_alert_color;
 	}
 }

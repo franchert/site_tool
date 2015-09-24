@@ -1,4 +1,5 @@
 $tabaccordion-breakpoint:$tab;
+$tab-font:"bebas";
 
 ul.tabaccordion{
 	float:left;
@@ -12,7 +13,7 @@ ul.tabaccordion{
 			width:auto;
 		}
 		h3{
-			@include bebas(20px,$white);
+			@include font($tab-font,20px,$white);
 			text-transform:uppercase;
 			background:$color-1;
 			cursor:pointer;

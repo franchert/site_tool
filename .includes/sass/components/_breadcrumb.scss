@@ -5,7 +5,7 @@
 	ul{
 		padding:10px 0px;
 		li{
-			@include floatblock(left,auto);
+			width:auto;
 			padding-right:10px;
 			font-size:14px;
 			line-height:18px;

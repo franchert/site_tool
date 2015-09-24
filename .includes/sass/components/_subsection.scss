@@ -1,14 +1,12 @@
 
 .subsection{
-	@include floatblock();
 	padding:20px;
 	border-bottom:1px solid $color-2;
 	@include breakpoint($desk){
 		padding:5px 0 20px;
 	}
 	h3{
-		@include bebas(28px,$color-1);
-		@include floatblock();
+		@include font('bebas',28px,$color-1);
 		border:none;
 		margin:10px 0;
 		@include breakpoint($tab){
@@ -16,20 +14,17 @@
 		}
 	}
 	img{
-		@include floatblock();
 		padding:0 20px 20px 0;
-		@include breakpoint($tab-large,true){
+		@include breakpoint($tab-large){
 			width:35%;
 			padding-bottom:0;
 		}
 	}
 	.container{
-		@include floatblock();
-		@include breakpoint($tab-large,true){
+		@include breakpoint($tab-large){
 			width:65%;
 		}
 		p{
-			@include floatblock();
 			padding:20px 0;
 			@include breakpoint($tab-large){
 				padding-left:0;
@@ -39,13 +34,12 @@
 			margin:0;
 		}
 		> div{
-			@include floatblock();
 			margin:20px 0;
 			@include breakpoint($tab-large){
 				width:25%;
 			}
 			button{
-				@include bebas(20px,$white);
+				@include font('bebas',20px,$white);
 				background:$color-1;
 				padding:15px 30px 15px 20px;
 				border:none;
@@ -60,7 +54,7 @@
 				}
 			}
 			a{
-				@include floatblock(left,auto);
+				width:auto;
 			}
 		}
 	}
@@ -69,7 +63,7 @@
 		.container{
 			width:100%;
 			h3{
-				@include f-dm(24px,$color-1);
+				@include font('f-dm',24px,$color-1);
 				text-transform:initial;
 			}
 		}

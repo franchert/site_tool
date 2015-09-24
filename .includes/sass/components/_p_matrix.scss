@@ -1,7 +1,7 @@
 $matrix-padding:20px;
 $matrix-break:$tab;
+
 .matrix{
-	@include floatblock();
 	> div{
 		@include breakpoint($matrix-break){
 			padding:0 $matrix-padding;
@@ -9,7 +9,6 @@ $matrix-break:$tab;
 	}
 	&.halves{
 		> div{
-			@include floatblock();
 			@include breakpoint($mobile-large){
 				width:50%;
 				&:nth-child(2n+1){
@@ -23,7 +22,6 @@ $matrix-break:$tab;
 	}
 	&.thirds{
 		> div{
-			@include floatblock();
 			padding:0 #{$matrix-padding / 3};
 			@include breakpoint($matrix-break){
 				width:33.3333%;
@@ -38,7 +36,6 @@ $matrix-break:$tab;
 	}
 	&.fourths{
 		> div{
-			@include floatblock();
 			@include breakpoint($matrix-break){
 				width:25%;
 				&:nth-child(4n+1){
@@ -58,7 +55,6 @@ $matrix-break:$tab;
 	}
 	&.fifths{
 		> div{
-			@include floatblock();
 			@include breakpoint($matrix-break){
 				width:20%;
 				&:nth-child(5n+1){

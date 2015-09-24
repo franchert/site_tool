@@ -1,12 +1,10 @@
 .subnav{
-	@include floatblock();
 	margin-bottom:20px;
-	@include breakpoint($desk,true){
+	@include breakpoint($desk){
 		padding:0;
 	}
 	h2{
-		@include f-dm(18px,$c-default);
-		@include floatblock();
+		@include font('f-dm',18px,$c-default);
 		white-space:nowrap;
 		cursor:pointer;
 		line-height:41px;
@@ -14,7 +12,7 @@
 		background:$white-1;
 		padding:0 20px;
 		margin-bottom:1px;
-		@include breakpoint($desk,true){
+		@include breakpoint($desk){
 			display:none;
 		}
 		&:before{
@@ -25,7 +23,6 @@
 			top:0px;
 			left:-5px;
 			position:relative;
-			@include floatblock(left,auto);
 			-webkit-transition:all 500ms;
 			transition:all 500ms;
 			-webkit-transform:rotateZ(0deg);
@@ -37,7 +34,6 @@
 		ul{
 			display:none;
 			li{
-				@include floatblock();
 				border-top:1px solid $t-white;
 				line-height:0;
 				&.open{
@@ -69,17 +65,15 @@
 			background:#333;
 			width:$subnav-mobile;
 			overflow-y:auto;
-			@include breakpoint($tab,true){
+			@include breakpoint($tab){
 				width:$subnav-width;
 			}
 			h3{
-				@include floatblock();
 				padding:11px 20px;
 				color:$white;
 			}
 			> a{
-				@include floatblock();
-				@include paradoxbold(14px,$color-2);
+				@include font('paradoxbold',14px,$color-2);
 				padding:20px;
 				text-transform:uppercase;
 				@include arrowbefore($white);
@@ -91,7 +85,6 @@
 				}
 			}
 			> li{
-				@include floatblock();
 				button{
 					background:none;
 					width:56px;
@@ -101,7 +94,6 @@
 					border:none;
 					outline:none;
 					span{
-						@include floatblock();
 						font-size:21px;
 						line-height:56px;
 						color:$color-2;
@@ -114,19 +106,18 @@
 					}
 				}
 				a{
-					@include floatblock();
 					overflow:hidden;
 					&.has-sub{
-						width:calc(100% - 56px);
+						@include calc('width','100% - 56px','80%');
 					}
-					@include f-bk(16px,$gray);
+					@include font('f-bk',16px,$gray);
 					line-height:21px;
 					padding:17px 20px;
 				}
 				ul{
 					float:left;
 					width:100%;
-					background:rgba(128, 128, 128, 0.22);
+					background:$t-black;
 				}
 			}
 		}
@@ -145,7 +136,7 @@
 	}
 	> ul{
 		display:none;
-		@include breakpoint($desk,true){
+		@include breakpoint($desk){
 			display:block;
 		}
 		li{

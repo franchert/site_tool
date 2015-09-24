@@ -1,14 +1,11 @@
 
 .tabs-container{
-	@include floatblock();
 	margin-bottom:20px;
 	.tabheaders{
-		@include floatblock();
 		@include breakpoint($tab){
 			display:table;
 		}
 		li{
-			@include floatblock();
 			border-bottom:2px solid $white;
 			@include breakpoint($tab){
 				display:table-cell;
@@ -16,7 +13,7 @@
 				width:auto;
 			}
 			a{
-				@include bebas(20px,$color-1);
+				@include font('bebas',20px,$color-1);
 				line-height:18px;
 				transition:all .5s ease-in-out;
 				height:56px;

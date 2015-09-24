@@ -1,20 +1,18 @@
 .factoid{
-	@include floatblock();
 	.container{
-		@include f-bk(16px,$color-1);
-		@include floatblock(none,220px);
+		@include font('f-bk',16px,$color-1);
+		float:none;
+		width:220px;
 		margin:auto;
 		text-align:center;
 		padding:30px 20px 40px;
 		max-width:100%;
 		text-transform:uppercase;
-		@include breakpoint($tab,true){}
-		@include breakpoint($desk,true){
+		@include breakpoint($desk){
 			width:300px;
 		}
 		span{
-			@include f-bkcd(78px,$color-1);
-			@include floatblock();
+			@include font('f-bkcd',78px,$color-1);
 			text-transform:none;
 			span{
 				font-size:40px;

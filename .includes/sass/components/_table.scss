@@ -36,7 +36,7 @@
 					display:block;
 					float:left;
 					width:100%;
-					@include f-bk(18px,$white);
+					@include font('f-bk',18px,$white);
 					border-right:1px solid $gray;
 					background:$color-1;
 					padding:10px 30px;
@@ -80,7 +80,7 @@
 					}
 				}
 				td{
-					@include f-bk(18px,$c-default);
+					@include font('f-bk',18px,$c-default);
 					text-align:left;
 					padding:10px 20px;
 					@include breakpoint($tab){
@@ -97,7 +97,7 @@
 						display:block;
 						float:left;
 						width:100px;
-						@include f-bk(16px);
+						@include font('f-bk',16px,$c-default);
 						text-align:left;
 						font-weight:bold;
 						@include breakpoint($tab){

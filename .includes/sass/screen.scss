@@ -67,6 +67,11 @@ body{
 		overflow:visible;
 	}
 }
+.banner{
+	img{
+		width:100%;
+	}
+}
 .column{
 	padding:0 20px;
 	@include breakpoint($tab){
@@ -99,46 +104,46 @@ img{
 }
 
 h1{
-	@include paradoxbold(36px,$color-1);
+	@include font('paradoxbold',36px,$color-1);
 	margin:0 0 20px 0;
-	@include breakpoint($tab,true){
+	@include breakpoint($tab){
 		font-size:48px;
 		line-height:54px;
 	}
 }
 h2{
-	@include paradoxbold(28px,$color-1);
+	@include font('paradoxbold',28px,$color-1);
 	margin:0 0 20px 0;
 }
 h3{
-	@include paradoxbold(24px,$color-1);
+	@include font('paradoxbold',24px,$color-1);
 	line-height:24px;
 	border-bottom:1px solid $color-2;
 	margin:0 0 20px 0;
 }
 h4{
-	@include bebas(20px,$color-1);
+	@include font('bebas',20px,$color-1);
 	margin:0 0 10px 0;
 }
 h5{
-	@include paradox(18px,$black);
+	@include font('paradox',18px,$color-1);
 	font-weight:bold;
 	margin:0 0 10px 0;
 }
 h6{
-	@include paradox(18px,$black);
+	@include font('paradox',18px,$black);
 	margin:0 0 10px 0;
 }
 p{
 	float:none;
-	@include f-bk(18px,#000);
+	@include font('f-bk',18px,$dk-gray);
 	margin:10px 0;
 }
 ul,
 ol{
 	float:none;
 	li{
-		@include f-bk(18px,#222);
+		@include font('f-bk',18px,$dk-gray);
 	}
 }
 section{
@@ -156,7 +161,7 @@ section{
 		max-height:300px;
 		overflow:hidden;
 		.view-more{
-			@include bebas(16px,$color-1);
+			@include font('bebas',16px,$color-1);
 			@include arrowafter($color-1,12px,"\f067");
 			position:absolute;
 			background:$white;
@@ -166,8 +171,8 @@ section{
 		}
 	}
 	.view-more{
+		@include font('bebas',16px,$color-1);
 		@include arrowafter($color-1,12px,"\f068");
-		@include bebas(16px,$color-1);
 		display:block;
 		bottom:-4px;
 		width:100%;
@@ -182,7 +187,7 @@ form{
 	div{
 		position:relative;
 		input{
-			@include f-bk(18px,$dk-gray);
+			@include font('f-bk',18px,$dk-gray);
 			font-style:italic;
 			line-height:24px;
 			padding:10px;
@@ -199,7 +204,7 @@ form{
 			}
 		}
 		textarea{
-			@include f-bk(18px,$dk-gray);
+			@include font('f-bk',18px,$dk-gray);
 			line-height:24px;
 			font-style:italic;
 			padding:10px;
@@ -209,7 +214,7 @@ form{
 		}
 	}
 	.submit{
-		@include bebas(18px,$white);
+		@include font('bebas',18px,$white);
 		width:auto;
 		margin:10px 0;
 		background:$color-1;
@@ -222,7 +227,7 @@ form{
 	}
 }
 a{
-	@include f-bkcd(16px,$color-1);
+	@include font('f-bkcd',18px,$color-1);
 	text-decoration:none;
 	&:hover{
 		text-decoration:underline;
@@ -254,7 +259,7 @@ a{
 	}
 }
 blockquote{
-	@include bebas(36px,$color-1);
+	@include font('bebas',36px,$color-1);
 	padding:0 10px;
 	margin-bottom:15px;
 	&:before{
@@ -296,44 +301,74 @@ body{
 	.l-page{
 		overflow-x:hidden;
 		min-height:100vh;
+		&.demo{
+			.l-region{
+				border:1px dashed $red;
+				border-radius:8px;
+			}
+			.l-featured-header{
+				min-height:100px;
+			}
+			.l-content-header{}
+			.l-content-center{
+				.l-nav-sidebar{
+					min-height:500px;
+				}
+				.l-content-featured{
+					min-height:300px;
+				}
+				.l-content-wrapper{
+					min-height:200px;
+					.l-content{
+						min-height:200px;
+					}
+					.l-promo-sidebar{
+						min-height:200px;
+					}
+				}
+			}
+			.l-content-footer{
+				min-height:200px;
+			}
+		}
+	}
+	&.home{
+		h1{
+			margin:0;
+		}
 	}
 	footer{
-		@include floatblock();
 		background: black;
 		border-top:7px solid rgba(0, 0, 0, 0.15);
 		.column{
 			h3{
-				@include bebas(18px,$color-2);
+				@include font('bebas',18px,$color-2);
 				padding: 20px;
 				text-align: center;
 				text-transform:uppercase;
 				margin:20px 0 0;
-				@include breakpoint($tab,true){
+				@include breakpoint($tab){
 					margin:0 0 10px;
 					padding: 0;
 					text-align: left;
 				}
 			}
 			.footer{
-				@include floatblock();
 				.social{
-					@include floatblock();
 					margin:auto;
-					@include breakpoint($tab,true){}
 					ul{
 						display:table;
 						width:auto;
 						margin:auto;
-						@include breakpoint($tab,true){
+						@include breakpoint($tab){
 							float:left;
 						}
 						li{
 							display:table-cell;
 							width:auto;
 							padding:10px;
-							@include breakpoint($tab,true){
+							@include breakpoint($tab){
 								padding:0px 10px 10px 0;
-								@include floatblock(left,auto);
 							}
 							a{
 								span{
@@ -347,17 +382,14 @@ body{
 						}
 					}
 					> a{
-						@include floatblock();
-						@include f-bk(18px,$white);
+						@include font('f-bk',18px,$white);
 						text-align:center;
-						@include breakpoint($tab,true){
+						@include breakpoint($tab){
 							font-size:10px;
 							line-height:14px;
 							position: absolute;
 							width:auto;
 							margin: 16px 0 0 70px;
-						}
-						@include breakpoint($tab){
 							@include arrowafter($white,14px,"\f101");
 							position:absolute;
 						}
@@ -366,27 +398,22 @@ body{
 						padding:0;
 						border-bottom:0;
 						margin:10px 0 0;
-						@include breakpoint($tab,true){
+						@include breakpoint($tab){
 							border-bottom: 1px solid $color-2;
 						}
 					}
 				}
 				.links-resources {
-					@include floatblock();
 					padding-bottom:100px;
-					@include breakpoint($tab,true){
+					@include breakpoint($tab){
 						padding:0;
 					}
 					ul{
 						li{
-							@include breakpoint($tab,true){
-								@include floatblock(left);
-							}
 							a{
-								@include floatblock();
-								@include f-bk(14px,$gray);
+								@include font('f-bk',14px,$gray);
 								text-align:center;
-								@include breakpoint($tab,true){
+								@include breakpoint($tab){
 									text-align:left;
 								}
 							}
@@ -402,7 +429,7 @@ body{
 							border:none;
 							border-bottom:1px solid $t-white;
 							text-align:center;
-							@include breakpoint($tab,true){
+							@include breakpoint($tab){
 								display:none;
 							}
 						}
@@ -410,17 +437,12 @@ body{
 					h3{
 						padding:0;
 						border-bottom:0;
-						@include breakpoint($tab,true){
+						@include breakpoint($tab){
 							border-bottom: 1px solid $color-2;
 						}
 					}
 				}
 			}
-		}
-	}
-	&.home{
-		h1{
-			margin:0;
 		}
 	}
 }

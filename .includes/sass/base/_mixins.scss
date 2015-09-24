@@ -3,46 +3,29 @@
 	float:$dir;
 	width:$width;
 }
-@mixin bebas($size:16px,$color:$c-default){
-	font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-	text-transform:uppercase;
-}
-@mixin f-dm($size:16px,$color:$c-default){
-	font-family: 'ITCFranklinGothicDMCD',sans-serif;
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-	font-weight:bold;
-}
-@mixin f-bk($size:16px,$color:$c-default){
-	font-family: 'ITCFranklinGothicBK';
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
-@mixin f-bkcd($size:16px,$color:$c-default){
-	font-family: 'ITCFranklinGothicBKCD';
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
-@mixin paradox($size:16px,$color:$c-default){
-	font-family: 'DTLParadoxReg',sans-serif;
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
-@mixin paradoxbold($size:16px,$color:$c-default){
-	font-family: 'DTLParadoxBold',sans-serif;
-	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
-}
 
-
+@mixin font($family:"Arial",$size:16px,$color:$c-default){
+	color:$color;
+	font-size:$size;
+	line-height:$size + 6px;
+	@if $family == 'bebas'{
+		font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+		text-transform:uppercase;
+	} @else if $family == 'f-dm'{
+		font-family: 'ITCFranklinGothicDMCD',sans-serif;
+		font-weight:bold;
+	} @else if $family == 'paradox'{
+		font-family: 'DTLParadoxReg',sans-serif;
+	} @else if $family == 'paradoxbold'{
+		font-family: 'DTLParadoxBold',sans-serif;
+	} @else if $family == 'f-bk'{
+		font-family: 'ITCFranklinGothicBK';
+	} @else if $family == 'f-bkcd'{
+		font-family: 'ITCFranklinGothicBKCD';
+	} @else {
+		font-family:'Arial', sans-serif;
+	}
+}
 
 
 @mixin arrowbefore($color:$t-white,$font-size:14px){

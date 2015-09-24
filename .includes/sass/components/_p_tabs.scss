@@ -1,11 +1,10 @@
 .ui-tabs{
-	@include floatblock();
 	margin-bottom:20px;
 	.ui-tabs-nav{
 		display:table;
 		width:100%;
 		> li{
-			@include floatblock(left,auto);
+			width:auto;
 			color:$white;
 			border-right:2px solid $white;
 			&:last-child{
@@ -23,17 +22,13 @@
 			}
 			&.ui-state-hover{}
 			a{
-				@include floatblock();
 				outline:none;
 				text-align:center;
 				line-height:50px;
 				text-transform:uppercase;
 				background:$color-2;
-				span{
-					@include floatblock();
-				}
 				h3{
-					@include bebas(20px,$color-1);
+					@include font('bebas',20px,$color-1);
 					line-height:20px;
 					border-bottom:0;
 					margin:0;
@@ -43,7 +38,6 @@
 		}
 	}
 	.ui-tabs-panel{
-		@include floatblock();
 		padding:20px;
 		border:2px solid $color-1;
 	}

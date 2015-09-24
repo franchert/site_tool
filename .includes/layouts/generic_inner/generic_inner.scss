@@ -7,7 +7,7 @@ body{
 				}
 				.column{
 					h2{
-						@include paradox(24px,$white);
+						@include font('paradox',24px,$white);
 						@include breakpoint($tab){
 							font-size:40px;
 							line-height:50px;
@@ -25,7 +25,6 @@ body{
 				}
 			}
 			.l-content-header {
-				@include floatblock();
 				margin:20px auto;
 				.wrapper{
 					.column{
@@ -35,7 +34,6 @@ body{
 					}
 				}
 				.feature{
-					@include floatblock();
 					padding-bottom:40px;
 					img{
 						max-width:100%;
@@ -43,22 +41,19 @@ body{
 				}
 			}
 			.l-content-center{
-				@include floatblock(none,100%);
-				@include breakpoint($desk,true){
+				@include breakpoint($desk){
 					padding:20px;
 				}
 				.l-nav-sidebar{
-					@include floatblock();
-					@include breakpoint($desk,true){
+					@include breakpoint($desk){
 						width:20%;
 						width: -webkit-calc(#{$nav-sidebar-width});
 						width: calc(#{$nav-sidebar-width});
 					}
 				}
 				.l-content-featured{
-					@include floatblock();
 					padding-bottom:20px;
-					@include breakpoint($desk,true){
+					@include breakpoint($desk){
 						padding:0px 0px 20px 20px;
 						width:80%;
 						width:-webkit-calc(100% - #{$nav-sidebar-width});
@@ -67,7 +62,7 @@ body{
 				}
 				.l-content-wrapper{
 					@include floatblock(right);
-					@include breakpoint($desk,true){
+					@include breakpoint($desk){
 						width:80%;
 						width: -webkit-calc(100% - #{$nav-sidebar-width});
 						width: calc(100% - #{$nav-sidebar-width});
@@ -75,10 +70,8 @@ body{
 					}
 					.l-content {
 						@include floatblock();
-						border-bottom:5px solid $color-2;
 						margin:0 0 20px 0;
-						@include breakpoint($tab,true){
-							border-bottom:0;
+						@include breakpoint($tab){
 							padding:0 20px 0 0;
 							margin:0;
 							width:66.6666%;
@@ -92,7 +85,6 @@ body{
 							max-width:100%;
 						}
 						> h2{
-							@include floatblock();
 							border-bottom: 1px solid $color-2;
 							margin:0 0 20px 0;
 						}
@@ -104,8 +96,7 @@ body{
 						}
 					}
 					.l-promo-sidebar{
-						@include floatblock();
-						@include breakpoint($tab,true){
+						@include breakpoint($tab){
 							width:33.3333%;
 							width:-webkit-calc(#{$nav-promo-width});
 							width:calc(#{$nav-promo-width});
@@ -119,7 +110,6 @@ body{
 				}
 			}
 			.l-content-footer{
-				@include floatblock();
 				section{
 					padding:20px;
 					@include breakpoint($tab){

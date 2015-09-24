@@ -10,7 +10,7 @@
 			margin:0 0 0 15px;
 			padding:3px 0;
 			a{
-				@include f-bk(16px,$color-1);
+				@include font('f-bk',16px,$color-1);
 			}
 		}
 	}

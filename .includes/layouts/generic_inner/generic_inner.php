@@ -38,7 +38,7 @@ if ($layout == "generic_inner"){
 ?>
 </header>
 <div class="wrapper clearfix">
-<div class="l-page">
+<div class="l-page l-region<?php if(isset($demo) && $demo == true){ echo " demo"; }?>">
 	<?php if($p_featured_header != ''){
 		echo '<div class="l-featured-header l-region">'.$p_featured_header.'</div>';
 	} ?>
@@ -46,22 +46,24 @@ if ($layout == "generic_inner"){
 		<?php if($p_content_header != ''){
 			echo '<div class="l-content-header l-region">'.$p_content_header.'</div>';
 		} ?>
-		<div class="l-content-center l-region-container column">
-			<div class="l-nav-sidebar l-region">
-				<?php echo $p_nav_sidebar; ?>
-			</div>
-			<?php if($p_content_featured != ''){
-				echo '<div class="l-content-featured l-region">'.$p_content_featured.'</div>';
-			} ?>
-			<div class="l-content-wrapper l-region<?php if($p_promo_sidebar == ''){ echo " full-width";}?>">
-				<div class="l-content l-region">
-					<?php echo $p_content; ?>
+		<div class="column">
+			<div class="l-content-center l-region">
+				<div class="l-nav-sidebar l-region">
+					<?php echo $p_nav_sidebar; ?>
 				</div>
-				<?php if($p_promo_sidebar != ''){ ?>
-				<div class="l-promo-sidebar l-region">
-					<?php echo $p_promo_sidebar; ?>
+				<?php if($p_content_featured != ''){
+					echo '<div class="l-content-featured l-region">'.$p_content_featured.'</div>';
+				} ?>
+				<div class="l-content-wrapper<?php if($p_promo_sidebar == ''){ echo " full-width";}?>">
+					<div class="l-content l-region">
+						<?php echo $p_content; ?>
+					</div>
+					<?php if($p_promo_sidebar != ''){ ?>
+					<div class="l-promo-sidebar l-region">
+						<?php echo $p_promo_sidebar; ?>
+					</div>
+					<?php } ?>
 				</div>
-				<?php } ?>
 			</div>
 		</div>
 		<?php if($p_content_footer != ''){ ?>

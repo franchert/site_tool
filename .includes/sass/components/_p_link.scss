@@ -1,10 +1,7 @@
 a{
 	&.button{
-		@include f-bk(16px,$color-1);
-		@include floatblock(left);
-		color:$color-1;
+		@include font('f-bk',16px,$color-1);
 		background:#eee;
-		line-height:22px;
 		padding: 15px 25px;
 		border:1px solid $gray;
 		border-radius:3px;
@@ -21,8 +18,9 @@ a{
 		}
 	}
 	&.read-more{
-		@include bebas(16px,$color-1);
-		@include floatblock(right,auto);
+		@include font('bebas',16px,$color-1);
+		float:right;
+		width:auto;
 		@include arrowafter(inherit,inherit,$fa-caret-right);
 		padding-right:20px;
 		z-index:2;
