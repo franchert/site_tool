@@ -136,43 +136,24 @@
 	}
 	> ul{
 		display:none;
+		background:$md-gray;
+		float:left;
 		@include breakpoint($desk){
 			display:block;
 		}
 		li{
+			border-top:1px solid $white;
 			a{
 				display:block;
 				padding:15px 0 15px 20px;
-				background:$white-1;
-				border-bottom:1px solid $white;
 				color:#111;
 			}
 			ul{
 				display:none;
-				li{
-					a{
-						padding-left:30px;
-						background:$white-2;
-					}
-					ul{
-						li{
-							a{
-								padding-left:40px;
-								background:$white-3;
-							}
-							ul{
-								li{
-									a{
-										padding-left:50px;
-										background:$white-4;
-									}
-								}
-							}
-						}
-					}
-				}
+				float:left;
+				background:$t-white;
 			}
-			&.active-trail{
+			&.open{
 				>ul{
 					display:block;
 				}
@@ -181,6 +162,45 @@
 				font-weight:bold;
 				li{
 					font-weight:normal;
+				}
+			}
+		}
+	}
+	&.toggles{
+		> ul{
+			li{
+				> .sn-toggle{
+					background:none;
+					@include calc('width','54px','20%');
+					height:56px;
+					text-align:center;
+					padding:0;
+					border:none;
+					span{
+						font-size:21px;
+						line-height:56px;
+						color:$c-default;
+						cursor:pointer;
+						height:100%;
+						-webkit-transform:rotateZ(90deg);
+						-ms-transform:rotate(90deg);
+						transform:rotateZ(90deg);
+						transition:transform 0.3s;
+					}
+				}
+				a{
+					&.has-sub{
+						@include calc('width','100% - 54px','80%');
+					}
+				}
+				&.open{
+					> .sn-toggle{
+						span{
+							-webkit-transform:rotateZ(-90deg);
+							-ms-transform:rotate(-90deg);
+							transform:rotateZ(-90deg);
+						}
+					}
 				}
 			}
 		}

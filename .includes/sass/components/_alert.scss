@@ -1,5 +1,6 @@
 $emergency_alert_color:$red;
 $weather_alert_color:$blue;
+
 .alert{
 	@include floatblock();
 	overflow:visible;

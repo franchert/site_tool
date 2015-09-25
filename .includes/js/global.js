@@ -51,6 +51,15 @@ $(document).ready(function(){
 			$(this).blur();
 		}
 	});
+	$('.subnav .sn-toggle').on('keypress click',function(e){
+		if (e.keyCode === 13 || e.type === 'click') {
+			e.preventDefault();
+			$(this).parent().toggleClass('open');
+		};
+		if (e.type === 'click'){
+			$(this).blur();
+		}
+	});
 	$('.subsection button').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
 			$(this).parents('.subsection').toggleClass('open');

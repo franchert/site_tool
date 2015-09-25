@@ -131,6 +131,7 @@ body{
 							margin-right:50px;
 							padding:0 10px;
 							@include breakpoint($tab){
+								display:block;
 								width:50px;
 								top:0;
 								margin-right:0;

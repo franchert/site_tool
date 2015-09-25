@@ -59,7 +59,11 @@
 		//print_r($arr);
 		if ($initial_run) {
 			//wrappers for the container
-			$subnav_string = "<div class='subnav' id='subnav'>";
+			$subnav_string = "<div class='subnav";
+			if($toggle === true){
+				$subnav_string .=" toggles";
+			}
+			$subnav_string .="' id='subnav'>";
 			//print the toggle for the nav.
 			if($printsection === true){
 				$temp ="<h2 tabindex='0'>".$section_title."</h2>";
@@ -72,7 +76,9 @@
 			$d = 0;
 		}else{
 			//$subnav_string .= "<div>";
-			$subnav_string .= "<ul class='level-".$level."'>";
+			$subnav_string .= "<ul class='level-".$level;
+
+			$subnav_string .="'>";
 			//add the "back to home" link on the first level. This hasn't been tested...
 			if($backtohome){
 				$subnav_string .="<a class='backtohome' href='/'>Back to Home</a>";
@@ -111,7 +117,7 @@
 				};
 				//if we're in the active section
 				if($active_trail){
-					$subnav_string .="active-trail ";
+					$subnav_string .="active-trail open ";
 				};
 				$base_array = str_replace($url_remove,"",$base_array);
 				//if there is a child under the current item, we want to print a toggle and add a class.
