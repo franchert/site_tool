@@ -31,9 +31,9 @@ if ($layout == "generic_inner"){
 		$temp_path = substr($temp_path,-1);
 		//adjust for mini-site depth
 		$starting += $depth-1;
-		$p_nav_sidebar = p_subnav(substr($temp_path,1),null,true,false,false) . $p_nav_sidebar;
+		$p_nav_sidebar = p_subnav(substr($temp_path,1),null,true,false,true) . $p_nav_sidebar;
 	}else{
-		$p_nav_sidebar = p_subnav(null,null,true,false,false) . $p_nav_sidebar;
+		$p_nav_sidebar = p_subnav(null,null,true,false,true) . $p_nav_sidebar;
 	}
 ?>
 </header>

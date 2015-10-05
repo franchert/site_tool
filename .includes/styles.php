@@ -8,12 +8,19 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/stylesheets/screen.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/stylesheets/colorbox.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/libraries/font-awesome-4.3.0/css/font-awesome.css"/>
-<?php
+<?php if(isset($fe_framework)){
+/*
+*	Add in our front-end framework css
+*/
+?>
+	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/stylesheets/<?php echo $fe_framework ?>.css"/>
+<?php } ?>
+
+<?php if($layout){
 /*
 *	Styles per layout are statically applied through css file, and not scss
 */
 ?>
-<?php if($layout){	?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/layouts/<?php echo $layout ?>/<?php echo $layout ?>.css"/>
 <?php } ?>
 <?php if(isset($styles) && $styles != false){	?>

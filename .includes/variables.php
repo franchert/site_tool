@@ -18,6 +18,9 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 	/*choose a header type in the .includes/header folder*/
 	$header = 'sticky-h';
 	$alert_on = false;
+	//$fe_framework = 'bootstrap';
+	//$fe_framework = 'skeleton';/*not implemented*/
+	//$fe_framework = 'foundation' /*not implemented*/
 
 /*Automatically Set Variables*/
 	$url = dirname($_SERVER['PHP_SELF']);
