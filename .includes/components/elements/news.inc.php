@@ -25,7 +25,7 @@ function p_news(
 		if(strrpos($type,"short") !== false){
 			$string .="<a href='".$link."'>";
 				$string .=$image;
-				$string .='<div class="container'.$width.'">';
+				$string .='<div class="news-container'.$width.'">';
 					$string .='<h5>'.$date.'</h5>';
 					if ($title != ''){
 						$string .='<h2>'.$title.'</h2>';
@@ -39,7 +39,7 @@ function p_news(
 			$string .="</a>";
 		}else if(strrpos($type,"normal") !== false){
 			$string .=$image;
-			$string .='<div class="container'.$width.'">';
+			$string .='<div class="news-container'.$width.'">';
 				$string .='<h5>'.$date.'</h5>';
 				if(!is_null($link)){
 					$string .="<a href='".$link."'>";
@@ -61,7 +61,7 @@ function p_news(
 			$string .= '</div>';
 		}else{
 			$string .=$image;
-			$string .='<div class="container'.$width.'">';
+			$string .='<div class="news-container'.$width.'">';
 				if(!is_null($link)){
 					$string .="<a href='".$link."'>";
 				}

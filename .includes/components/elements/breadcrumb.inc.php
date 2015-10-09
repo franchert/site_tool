@@ -1,21 +1,18 @@
 <?php
-function breadcrumb($column=true){
+function breadcrumb(){
 	global $segments;
 	global $crumb;
-	if($column){
-		$string = '<div class="wrapper clearfix"><div class="column">';
-	}else{
-		$string = '<div class="wrapper clearfix">';
-	}
-	$string .= '<div id="breadcrumb" class="row">';
-	$string .= '<ul>';
+	global $fe_wrapper;
+	global $fe_container;
+	global $fe_region;
+	$string = '<div class="'.$fe_wrapper.'"><div id="breadcrumb"><ul>';
 	$i = -1;
 	$count = count($segments);
 	foreach($segments as $segment){
 		if ($i !=-1){
 			$crumb .=$segment."/";
 		}
-	        $segment = 
+			$segment = 
 				str_replace(" * ","-",
 				str_replace("To ","to ",
 				str_replace("Of ","of ",
@@ -40,9 +37,7 @@ function breadcrumb($column=true){
 		$string .='</li>';
 	}
 	$string .= '</ul></div></div>';
-	if($column){
-		$string .="</div>";
-	}
+
 	return $string;
 }
 ?>

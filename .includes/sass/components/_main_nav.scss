@@ -16,7 +16,7 @@
 		@include breakpoint(max-width $tab){
 			position:relative;
 		}
-		.column{
+		> div{
 			position:relative;
 			top:1px;
 			padding:0;
@@ -25,6 +25,7 @@
 				display:none;
 			}
 			.main-nav{
+				margin-bottom:0;
 				@include breakpoint($tab){
 					display:table;
 				}
@@ -42,6 +43,7 @@
 						text-transform:uppercase;
 						text-align:left;
 						padding: 10px 20px;
+						width:100%;
 						@include breakpoint($tab){
 							text-align:center;
 							padding:10px 5px;

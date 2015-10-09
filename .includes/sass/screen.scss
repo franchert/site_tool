@@ -54,39 +54,6 @@ body{
 		text-decoration:none;
 	}
 }
-.wrapper{
-	position:relative;
-	overflow:hidden;
-	> img{
-		width:auto;
-		min-width:100%;
-		z-index:-1;
-		min-height:100%;
-	}
-	&.overlay-cta{
-		overflow:visible;
-	}
-}
-.banner{
-	img{
-		width:100%;
-	}
-}
-.column{
-	padding:0 20px;
-	@include breakpoint($tab){
-		max-width:$maxwidth;
-		margin:auto;
-		float:none;
-	}
-	@include breakpoint($desk){
-		position:relative;
-	}
-}
-.twocolumns{
-	width:50%;
-	padding-right:20px;
-}
 img{
 	position:relative;
 	width:auto;
@@ -144,6 +111,38 @@ ol{
 	float:none;
 	li{
 		@include font('f-bk',18px,$dk-gray);
+	}
+}
+a{
+	@include font('f-bkcd',18px,$color-1);
+	text-decoration:none;
+	&:hover{
+		text-decoration:underline;
+	}
+	&[href="#"]{
+		//outline:dotted 1px red!important;
+	}
+	&[href$=".pdf"]{
+		&:after{
+			content:"\f1c1";
+			font-family:FontAwesome;
+			color:#FF0000;
+			font-size:12px;
+			padding-left:5px;
+			text-shadow: 1px 1px 0px $t-black-light;
+		}
+	}
+	&[href$=".docx"],
+	&[href$=".doc"]{
+		&:after{
+			content:"\f1c2";
+			font-family:FontAwesome;
+			color:#0005FF;
+			font-weight:bold;
+			font-size:12px;
+			padding-left:5px;
+			text-shadow: 1px 1px 0px $t-black-light;
+		}
 	}
 }
 section{
@@ -226,57 +225,6 @@ form{
 		-webkit-appearance: none;
 	}
 }
-a{
-	@include font('f-bkcd',18px,$color-1);
-	text-decoration:none;
-	&:hover{
-		text-decoration:underline;
-	}
-	&[href="#"]{
-		//outline:dotted 1px red!important;
-	}
-	&[href$=".pdf"]{
-		&:after{
-			content:"\f1c1";
-			font-family:FontAwesome;
-			color:#FF0000;
-			font-size:12px;
-			padding-left:5px;
-			text-shadow: 1px 1px 0px $t-black-light;
-		}
-	}
-	&[href$=".docx"],
-	&[href$=".doc"]{
-		&:after{
-			content:"\f1c2";
-			font-family:FontAwesome;
-			color:#0005FF;
-			font-weight:bold;
-			font-size:12px;
-			padding-left:5px;
-			text-shadow: 1px 1px 0px $t-black-light;
-		}
-	}
-}
-blockquote{
-	@include font('bebas',36px,$color-1);
-	padding:0 10px;
-	margin-bottom:15px;
-	&:before{
-		content:'\201C';
-		color:$color-2;
-		font-size:1.3em;
-		line-height:0.7em;
-		padding-right:5px;
-	}
-	&:after{
-		content:'\201D';
-		color:$color-2;
-		font-size:1.3em;
-		line-height:0.7em;
-		padding-left:5px;
-	}
-}
 .caption{
 	max-width:100%;
 	width:auto;
@@ -292,157 +240,10 @@ blockquote{
 		width:100%;
 	}
 }
-.l-region{
-	img{
-		max-width:100%;
-	}
-}
 body{
-	.l-page{
-		overflow-x:hidden;
-		min-height:100vh;
-		&.demo{
-			.l-region{
-				border:1px dashed $red;
-				border-radius:8px;
-			}
-			.l-featured-header{
-				min-height:100px;
-			}
-			.l-content-header{}
-			.l-content-center{
-				.l-nav-sidebar{
-					min-height:500px;
-				}
-				.l-content-featured{
-					min-height:300px;
-				}
-				.l-content-wrapper{
-					min-height:200px;
-					.l-content{
-						min-height:200px;
-					}
-					.l-promo-sidebar{
-						min-height:200px;
-					}
-				}
-			}
-			.l-content-footer{
-				min-height:200px;
-			}
-		}
-	}
 	&.home{
 		h1{
 			margin:0;
-		}
-	}
-	footer{
-		background: black;
-		border-top:7px solid rgba(0, 0, 0, 0.15);
-		.column{
-			h3{
-				@include font('bebas',18px,$color-2);
-				padding: 20px;
-				text-align: center;
-				text-transform:uppercase;
-				margin:20px 0 0;
-				@include breakpoint($tab){
-					margin:0 0 10px;
-					padding: 0;
-					text-align: left;
-				}
-			}
-			.footer{
-				.social{
-					margin:auto;
-					ul{
-						display:table;
-						width:auto;
-						margin:auto;
-						@include breakpoint($tab){
-							float:left;
-						}
-						li{
-							display:table-cell;
-							width:auto;
-							padding:10px;
-							@include breakpoint($tab){
-								padding:0px 10px 10px 0;
-							}
-							a{
-								span{
-									color:$gray;
-									span{
-										text-indent:-9999px;
-										display:inline-block;
-									}
-								}
-							}
-						}
-					}
-					> a{
-						@include font('f-bk',18px,$white);
-						text-align:center;
-						@include breakpoint($tab){
-							font-size:10px;
-							line-height:14px;
-							position: absolute;
-							width:auto;
-							margin: 16px 0 0 70px;
-							@include arrowafter($white,14px,"\f101");
-							position:absolute;
-						}
-					}
-					h3{
-						padding:0;
-						border-bottom:0;
-						margin:10px 0 0;
-						@include breakpoint($tab){
-							border-bottom: 1px solid $color-2;
-						}
-					}
-				}
-				.links-resources {
-					padding-bottom:100px;
-					@include breakpoint($tab){
-						padding:0;
-					}
-					ul{
-						li{
-							a{
-								@include font('f-bk',14px,$gray);
-								text-align:center;
-								@include breakpoint($tab){
-									text-align:left;
-								}
-							}
-							&:last-child{
-								a{
-									border:none;
-								}
-							}
-						}
-						hr{
-							display:block;
-							width:34px;
-							border:none;
-							border-bottom:1px solid $t-white;
-							text-align:center;
-							@include breakpoint($tab){
-								display:none;
-							}
-						}
-					}
-					h3{
-						padding:0;
-						border-bottom:0;
-						@include breakpoint($tab){
-							border-bottom: 1px solid $color-2;
-						}
-					}
-				}
-			}
 		}
 	}
 }

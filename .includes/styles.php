@@ -6,7 +6,6 @@
 */
 ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/stylesheets/screen.css"/>
-	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/stylesheets/colorbox.css"/>
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/libraries/font-awesome-4.3.0/css/font-awesome.css"/>
 <?php if(isset($fe_framework)){
 /*
@@ -23,12 +22,19 @@
 ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/layouts/<?php echo $layout ?>/<?php echo $layout ?>.css"/>
 <?php } ?>
+
 <?php if(isset($styles) && $styles != false){	?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/libraries/<?php echo $page ?>.css"/>
 <?php } ?>
+
 <?php if(isset($owl) && $owl == true){	?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/libraries/owl.carousel.css"/>
 <?php } ?>
+
+<?php if(isset($colorbox) && $colorbox == true){	?>
+	<link rel="stylesheet" type="text/css" href="<?php echo $file_base; ?>/.includes/stylesheets/colorbox.css"/>
+<?php } ?>
+
 	<link rel="stylesheet" media="print" type="text/css" href="<?php echo $file_base; ?>/.includes/stylesheets/print.css"/>
 
 <!--[if IE]>

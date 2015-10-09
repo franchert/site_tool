@@ -16,7 +16,7 @@ function p_profile($type = '',$name = "John Smith",$title = "Role or Job Title",
 		$image = "<img alt='".$title."' src='".$image."'/>";
 	}
 	$string .= $image;
-	$string .= "<div class='container'><h4>".$name."</h4>";
+	$string .= "<div class='profile-container'><h4>".$name."</h4>";
 	$string .= "<p>".$title."</p>";
 	if(is_null($text)){
 		$text = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit, turpis et lobortis commodo, mauris dolor finibus orci,</p>";

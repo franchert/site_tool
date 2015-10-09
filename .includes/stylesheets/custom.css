@@ -1,0 +1,308 @@
+@charset "UTF-8";
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* default color for everything */
+/* breakpoints */
+/* max width of site column */
+@font-face {
+  font-family: 'BebasNeueBold';
+  src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.otf);
+  src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.woff);
+}
+@font-face {
+  font-family: 'BebasNeueBook';
+  src: url(/.includes/fonts/bebas/bebasneue_book-webfont.otf);
+  src: url(/.includes/fonts/bebas/bebasneue_book-webfont.woff);
+}
+@font-face {
+  font-family: 'BebasNeueLight';
+  src: url(/.includes/fonts/bebas/bebasneue_light-webfont.otf);
+  src: url(/.includes/fonts/bebas/bebasneue_light-webfont.woff);
+}
+@font-face {
+  font-family: 'BebasNeueReg';
+  src: url(/.includes/fonts/bebas/bebasneue_regular-webfont.otf);
+  src: url(/.includes/fonts/bebas/bebasneue_regular-webfont.woff);
+}
+@font-face {
+  font-family: 'BebasNeueThin';
+  src: url(/.includes/fonts/bebas/bebasneue_thin-webfont.otf);
+  src: url(/.includes/fonts/bebas/bebasneue_thin-webfont.woff);
+}
+@font-face {
+  font-family: 'DTLParadoxBold';
+  src: url(/.includes/fonts/dtlparadox/Bold/dtlparadoxt-bold-webfont.otf);
+  src: url(/.includes/fonts/dtlparadox/Bold/dtlparadoxt-bold-webfont.woff);
+}
+@font-face {
+  font-family: 'DTLParadoxItal';
+  src: url(/.includes/fonts/dtlparadox/Italic/dtlparadoxt-italic-webfont.otf);
+  src: url(/.includes/fonts/dtlparadox/Italic/dtlparadoxt-italic-webfont.woff);
+}
+@font-face {
+  font-family: 'DTLParadoxReg';
+  src: url(/.includes/fonts/dtlparadox/Regular/dtlparadoxt-webfont.otf);
+  src: url(/.includes/fonts/dtlparadox/Regular/dtlparadoxt-webfont.woff);
+}
+@font-face {
+  font-family: 'ITCFranklinGothicBK';
+  src: url(/.includes/fonts/franklin/bk/ITCFranklinGothicStd-Book.otf);
+  src: url(/.includes/fonts/franklin/bk/ITCFranklinGothicStd-Book.woff);
+}
+@font-face {
+  font-family: 'ITCFranklinGothicBKCD';
+  src: url(/.includes/fonts/franklin/bkcd/ITCFranklinGothicStd-BkCd.otf);
+  src: url(/.includes/fonts/franklin/bkcd/ITCFranklinGothicStd-BkCd.woff);
+}
+@font-face {
+  font-family: 'ITCFranklinGothicBKCDIT';
+  src: url(/.includes/fonts/franklin/bkcdit/ITCFranklinGothicStd-BkCdIt.otf);
+  src: url(/.includes/fonts/franklin/bkcdit/ITCFranklinGothicStd-BkCdIt.woff);
+}
+@font-face {
+  font-family: 'ITCFranklinGothicDMCD';
+  src: url(/.includes/fonts/franklin/dmcd/ITCFranklinGothicStd-DmCd.otf);
+  src: url(/.includes/fonts/franklin/dmcd/ITCFranklinGothicStd-DmCd.woff);
+}
+@font-face {
+  font-family: 'ITCFranklinGothicDMCDIT';
+  src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.otf);
+  src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.woff);
+}
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.wrapper > img {
+  width: auto;
+  min-width: 100%;
+  z-index: -1;
+  min-height: 100%;
+}
+.wrapper.overlay-cta {
+  overflow: visible;
+}
+
+.l-region img {
+  max-width: 100%;
+}
+
+.banner img {
+  width: 100%;
+}
+
+.column {
+  padding: 0 20px;
+}
+@media (min-width: 45em) {
+  .column {
+    max-width: 1140px;
+    margin: auto;
+    float: none;
+  }
+}
+@media (min-width: 70em) {
+  .column {
+    position: relative;
+  }
+}
+
+.twocolumns {
+  width: 50%;
+  padding-right: 20px;
+}
+
+blockquote {
+  color: #2a2a2a;
+  font-size: 36px;
+  line-height: 42px;
+  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+  text-transform: uppercase;
+  padding: 0 10px;
+  margin-bottom: 15px;
+}
+blockquote:before {
+  content: '\201C';
+  color: #bbbbbb;
+  font-size: 1.3em;
+  line-height: 0.7em;
+  padding-right: 5px;
+}
+blockquote:after {
+  content: '\201D';
+  color: #bbbbbb;
+  font-size: 1.3em;
+  line-height: 0.7em;
+  padding-left: 5px;
+}
+
+#breadcrumb {
+  max-width: 1140px;
+  margin: auto;
+  float: none;
+  padding: 0 20px;
+}
+
+body .l-page {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+body .l-page.demo .l-region {
+  border: 1px dashed #d21301;
+  border-radius: 8px;
+}
+body .l-page.demo .l-featured-header {
+  min-height: 100px;
+}
+body .l-page.demo .l-content-center .l-nav-sidebar {
+  min-height: 500px;
+}
+body .l-page.demo .l-content-center .l-content-featured {
+  min-height: 300px;
+}
+body .l-page.demo .l-content-center .l-content-wrapper {
+  min-height: 200px;
+}
+body .l-page.demo .l-content-center .l-content-wrapper .l-content {
+  min-height: 200px;
+}
+body .l-page.demo .l-content-center .l-content-wrapper .l-promo-sidebar {
+  min-height: 200px;
+}
+body .l-page.demo .l-content-footer {
+  min-height: 200px;
+}
+body footer {
+  background: black;
+  border-top: 7px solid rgba(0, 0, 0, 0.15);
+}
+body footer .column h3 {
+  color: #bbbbbb;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+  text-transform: uppercase;
+  padding: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 20px 0 0;
+}
+@media (min-width: 45em) {
+  body footer .column h3 {
+    margin: 0 0 10px;
+    padding: 0;
+    text-align: left;
+  }
+}
+body footer .column .footer .social {
+  margin: auto;
+}
+body footer .column .footer .social ul {
+  display: table;
+  width: auto;
+  margin: auto;
+}
+@media (min-width: 45em) {
+  body footer .column .footer .social ul {
+    float: left;
+  }
+}
+body footer .column .footer .social ul li {
+  display: table-cell;
+  width: auto;
+  padding: 10px;
+}
+@media (min-width: 45em) {
+  body footer .column .footer .social ul li {
+    padding: 0px 10px 10px 0;
+  }
+}
+body footer .column .footer .social ul li a span {
+  color: #ccc;
+}
+body footer .column .footer .social ul li a span span {
+  text-indent: -9999px;
+  display: inline-block;
+}
+body footer .column .footer .social > a {
+  color: #fff;
+  font-size: 18px;
+  line-height: 24px;
+  font-family: 'ITCFranklinGothicBK';
+  text-align: center;
+}
+@media (min-width: 45em) {
+  body footer .column .footer .social > a {
+    font-size: 10px;
+    line-height: 14px;
+    position: absolute;
+    width: auto;
+    margin: 16px 0 0 70px;
+    position: relative;
+    position: absolute;
+  }
+  body footer .column .footer .social > a:after {
+    content: "";
+    font-family: FontAwesome;
+    font-size: 14px;
+    position: absolute;
+    right: -10px;
+    color: #fff;
+  }
+}
+body footer .column .footer .social h3 {
+  padding: 0;
+  border-bottom: 0;
+  margin: 10px 0 0;
+}
+@media (min-width: 45em) {
+  body footer .column .footer .social h3 {
+    border-bottom: 1px solid #bbbbbb;
+  }
+}
+body footer .column .footer .links-resources {
+  padding-bottom: 100px;
+}
+@media (min-width: 45em) {
+  body footer .column .footer .links-resources {
+    padding: 0;
+  }
+}
+body footer .column .footer .links-resources ul li a {
+  color: #ccc;
+  font-size: 14px;
+  line-height: 20px;
+  font-family: 'ITCFranklinGothicBK';
+  text-align: center;
+}
+@media (min-width: 45em) {
+  body footer .column .footer .links-resources ul li a {
+    text-align: left;
+  }
+}
+body footer .column .footer .links-resources ul li:last-child a {
+  border: none;
+}
+body footer .column .footer .links-resources ul hr {
+  display: block;
+  width: 34px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  text-align: center;
+}
+@media (min-width: 45em) {
+  body footer .column .footer .links-resources ul hr {
+    display: none;
+  }
+}
+body footer .column .footer .links-resources h3 {
+  padding: 0;
+  border-bottom: 0;
+}
+@media (min-width: 45em) {
+  body footer .column .footer .links-resources h3 {
+    border-bottom: 1px solid #bbbbbb;
+  }
+}

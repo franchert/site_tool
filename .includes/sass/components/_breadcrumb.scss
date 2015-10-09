@@ -1,7 +1,4 @@
 #breadcrumb{
-	@include breakpoint($desk){
-		padding:0;
-	}
 	ul{
 		padding:10px 0px;
 		li{

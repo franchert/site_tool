@@ -9,7 +9,7 @@
 			padding-right:20px;
 		}
 	}
-	.container{
+	.news-container{
 		@include breakpoint($tab){
 			@include calc('width','100% - 200px','75%');
 		}

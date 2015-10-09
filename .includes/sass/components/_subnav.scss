@@ -30,7 +30,7 @@
 			transform:rotateZ(0deg);
 		}
 	}
-	.column{
+	> div{
 		ul{
 			display:none;
 			li{
@@ -147,6 +147,7 @@
 				display:block;
 				padding:15px 0 15px 20px;
 				color:#111;
+				width:100%;
 			}
 			ul{
 				display:none;

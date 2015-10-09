@@ -3,6 +3,9 @@
 	float:left;
 	width:100%;
 	margin-bottom:20px;
+	img{
+		min-width:100%;
+	}
 	&.overlay{
 		position:relative;
 		padding:20px 0;
@@ -44,7 +47,7 @@
 				}
 			}
 		}
-		.container{
+		.promo-container{
 			bottom:0;
 			background:$color-1;
 			position:relative;
@@ -106,7 +109,7 @@
 			@include breakpoint($tab){
 				padding:0 20px;
 			}
-			.container{
+			.promo-container{
 				h2{
 					font-size:30px;
 					line-height:34px;
@@ -114,14 +117,14 @@
 			}
 		}
 		&.hover{
-			.container{
+			.promo-container{
 				p{
 					height:0;
 					transition:all 0.2s ease-in-out;
 				}
 			}
 			&:hover{
-				.container{
+				.promo-container{
 					p{
 						height:66px;
 						overflow:hidden;
@@ -171,7 +174,7 @@
 				}
 			}
 		}
-		.container{
+		.promo-container{
 			bottom:0;
 			background:$color-1;
 			position:relative;
@@ -240,7 +243,7 @@
 			@include breakpoint($tab){
 				padding:0 20px;
 			}
-			.container{
+			.promo-container{
 				h2{
 					font-size:30px;
 					line-height:34px;
@@ -373,8 +376,9 @@
 	&.generic{
 		padding-bottom:20px;
 		border-bottom:2px solid $dk-gray;
-		.container{
+		.promo-container{
 			background:$white;
+			width:auto;
 			h2{
 				@include font('bebas',18px,$color-1);
 				border-bottom:0;
@@ -394,7 +398,7 @@
 				}
 				float:right;
 			}
-			.container{
+			.promo-container{
 				@include breakpoint($tab){
 					width:70%;
 					h2{
@@ -411,7 +415,7 @@
 				}
 				float:left;
 			}
-			.container{
+			.promo-container{
 				@include breakpoint($tab){
 					width:70%;
 					h2{
@@ -429,7 +433,7 @@
 				margin:auto;
 				float:none;
 			}
-			.container{
+			.promo-container{
 				background:$white;
 				h2{
 					@include font('f-dm',18px,$color-1);
@@ -462,7 +466,7 @@
 			border-bottom:1px solid $color-2;
 			position:relative;
 		}
-		.container{
+		.promo-container{
 			.intro{
 				@include font('f-bk',16px,$c-default);
 				a{
@@ -484,7 +488,7 @@
 				color:$white;
 				font-weight:normal;
 			}
-			.container{
+			.promo-container{
 				.intro{
 					color:$white;
 				}
@@ -499,7 +503,7 @@
 		&.light{
 			padding:10px 20px;
 			background:$gray;
-			.container{
+			.promo-container{
 				h4{
 					@include font('bebas',24px,$color-1);
 					color:$color-1;
@@ -521,7 +525,7 @@
 				float:left;
 				padding-right:10px;
 			}
-			.container{
+			.promo-container{
 				.intro{
 					display:inline;
 					float:none;
@@ -538,7 +542,7 @@
 			img{
 				width:100%;
 			}
-			.container{
+			.promo-container{
 				display:table;
 				float:left;
 				width:100%;
@@ -573,7 +577,7 @@
 		}
 		&.light{
 			a{
-				.container{
+				.promo-container{
 					background:$color-2;
 					span{
 						color:$color-1;
@@ -586,7 +590,7 @@
 		}
 		&.dark{
 			a{
-				.container{
+				.promo-container{
 					background:$color-1;
 					span{
 						color:$white;
@@ -609,7 +613,7 @@
 			right:0;
 		}
 		a{
-			.container{
+			.promo-container{
 				p{
 					text-align:center;
 					float:none;
@@ -628,7 +632,7 @@
 					&:after{}
 				}
 			}
-			.container{
+			.promo-container{
 				position:relative;
 				background:$color-1;
 				p{}
@@ -650,7 +654,7 @@
 				}
 			}
 			&.spotlight{
-				.container{
+				.promo-container{
 					h2{}
 				}
 			}
@@ -678,7 +682,7 @@
 			}
 		}
 		&.generic{
-			.container{
+			.promo-container{
 				h2{
 					margin-top:10px;
 				}
@@ -689,7 +693,7 @@
 					width:100%;
 					padding:0;
 				}
-				.container{
+				.promo-container{
 					width:100%;
 				}
 			}
@@ -697,7 +701,7 @@
 		&.promo{
 			h4{}
 			hr{}
-			.container{
+			.promo-container{
 				.intro{
 					a{}
 				}
@@ -709,7 +713,7 @@
 		&.button{
 			a{
 				img{}
-				.container{
+				.promo-container{
 					span{}
 					p{}
 				}
@@ -717,7 +721,7 @@
 		}
 		&.more-news{
 			a{
-				.container{
+				.promo-container{
 					p{}
 				}
 			}
@@ -734,7 +738,7 @@
 					&:after{}
 				}
 			}
-			.container{
+			.promo-container{
 				p{}
 				h2{}
 				ul{
@@ -754,7 +758,7 @@
 				}
 			}
 			&.spotlight{
-				.container{
+				.promo-container{
 					h2{}
 				}
 			}
@@ -772,16 +776,17 @@
 			&.left,
 			&.right{
 				img{}
-				.container{}
+				.promo-container{}
 			}
 			&.hover{
 				img{
 					@include breakpoint($tab){
 						width:200px;
 						float:left;
+						min-width:initial;
 					}
 				}
-				.container{
+				.promo-container{
 					padding:0 20px;
 					@include breakpoint($tab){
 						@include calc("width","100% - 200px",100%);
@@ -800,7 +805,7 @@
 					float:left;
 				}
 			}
-			.container{
+			.promo-container{
 				padding:0 20px;
 				@include breakpoint($tab){
 					@include calc("width","100% - 200px",100%);
@@ -816,7 +821,7 @@
 		&.button{
 			a{
 				img{}
-				.container{
+				.promo-container{
 					span{}
 					p{}
 				}
@@ -824,7 +829,7 @@
 		}
 		&.more-news{
 			a{
-				.container{
+				.promo-container{
 					p{}
 				}
 			}

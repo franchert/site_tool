@@ -10,11 +10,37 @@ if ($layout == "generic_inner"){
 	$p_content_footer = "";
 }
 */
+/* region classes for each framework option*/
+if($fe_framework == 'custom'){
+	$fe_l_page = ' l-page';
+	$fe_l_featured_header = ' l-featured-header';
+	$fe_l_promo_sidebar = ' l-promo-sidebar';
+	$fe_l_nav_sidebar = ' l-nav-sidebar';
+	$fe_l_content = ' l-content';
+	$fe_l_content_wrapper = ' l-content-wrapper';
+	$fe_l_content_header = ' l-content-header';
+	$fe_l_content_featured = ' l-content-featured';
+	$fe_l_content_center = ' l-content-center';
+	$fe_l_content_footer = ' l-content-footer';
+}
+if($fe_framework == 'bootstrap'){
+	$fe_l_page = '';
+	$fe_l_featured_header = ' col-md-12';
+	$fe_l_promo_sidebar = ' col-md-3';
+	$fe_l_nav_sidebar = ' col-md-3';
+	$fe_l_content = ' col-md-12';
+	$fe_l_content_wrapper = ' col-md-9';
+	$fe_l_content_header = ' col-md-12';
+	$fe_l_content_featured = ' col-md-9';
+	$fe_l_content_center = ' col-md-12';
+	$fe_l_content_footer = ' col-md-12';
+}
 	include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/head.php");
 	$page_h1 = $page_title;
+	/*prepend to regions*/
 	$p_content_header = breadcrumb() . $p_content_header;
-	$p_content_header = "<div class='wrapper'><div class='column'><h1>".$page_h1."</h1></div></div>". $p_content_header;
-	//$p_nav_sidebar = "<section><h3>Share This</h3><script type='text/javascript' src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f3d4dbf27ddf45d' async='async'></script><div class='addthis_sharing_toolbox'></div></section>" . $p_nav_sidebar;
+	$subnav_dropdowns = true;
+	$p_content_header = "<div class='".$fe_wrapper."'><div class='".$fe_container."'><h1>".$page_h1."</h1></div></div>". $p_content_header;
 	if(isset($mini) && $mini == true){
 		$i = -1;
 		$temp_path = "/";
@@ -31,48 +57,44 @@ if ($layout == "generic_inner"){
 		$temp_path = substr($temp_path,-1);
 		//adjust for mini-site depth
 		$starting += $depth-1;
-		$p_nav_sidebar = p_subnav(substr($temp_path,1),null,true,false,true) . $p_nav_sidebar;
+		$p_nav_sidebar = p_subnav(substr($temp_path,1),null,true,false,$subnav_dropdowns) . $p_nav_sidebar;
 	}else{
-		$p_nav_sidebar = p_subnav(null,null,true,false,true) . $p_nav_sidebar;
+		$p_nav_sidebar = p_subnav(null,null,true,false,$subnav_dropdowns) . $p_nav_sidebar;
 	}
 ?>
 </header>
-<div class="wrapper clearfix">
-<div class="l-page l-region<?php if(isset($demo) && $demo == true){ echo " demo"; }?>">
+<div class="<?php echo $fe_region.$fe_l_page; ?><?php if(isset($demo) && $demo == true){ echo " demo"; }?>">
 	<?php if($p_featured_header != ''){
-		echo '<div class="l-featured-header l-region">'.$p_featured_header.'</div>';
+		echo '<div class="'.$fe_l_featured_header.$fe_region.'">'.$p_featured_header.'</div>';
 	} ?>
-	<div class="wrapper clearfix">
-		<?php if($p_content_header != ''){
-			echo '<div class="l-content-header l-region">'.$p_content_header.'</div>';
-		} ?>
-		<div class="column">
-			<div class="l-content-center l-region">
-				<div class="l-nav-sidebar l-region">
-					<?php echo $p_nav_sidebar; ?>
+	<?php if($p_content_header != ''){
+		echo '<div class="'.$fe_l_content_header.$fe_region.'">'.$p_content_header.'</div>';
+	} ?>
+	<div class="<?php echo $fe_region.$fe_l_content_center; ?>">
+		<div class="<?php echo $fe_container; ?>">
+			<div class="<?php echo $fe_region; ?><?php echo $fe_l_nav_sidebar; ?>">
+				<?php echo $p_nav_sidebar; ?>
+			</div>
+			<?php if($p_content_featured != ''){
+				echo '<div class="'.$fe_l_content_featured.$fe_region.'">'.$p_content_featured.'</div>';
+			} ?>
+			<div class="<?php echo $fe_l_content_wrapper; ?><?php if($p_promo_sidebar == ''){ echo " full-width";}?>">
+				<div class="<?php echo $fe_region; ?><?php echo $fe_l_content; ?>">
+					<?php echo $p_content; ?>
 				</div>
-				<?php if($p_content_featured != ''){
-					echo '<div class="l-content-featured l-region">'.$p_content_featured.'</div>';
-				} ?>
-				<div class="l-content-wrapper<?php if($p_promo_sidebar == ''){ echo " full-width";}?>">
-					<div class="l-content l-region">
-						<?php echo $p_content; ?>
-					</div>
-					<?php if($p_promo_sidebar != ''){ ?>
-					<div class="l-promo-sidebar l-region">
-						<?php echo $p_promo_sidebar; ?>
-					</div>
-					<?php } ?>
+				<?php if($p_promo_sidebar != ''){ ?>
+				<div class="<?php echo $fe_region; ?><?php echo $fe_l_promo_sidebar; ?>">
+					<?php echo $p_promo_sidebar; ?>
 				</div>
+				<?php } ?>
 			</div>
 		</div>
-		<?php if($p_content_footer != ''){ ?>
-		<div class="l-content-footer l-region">
-			<?php echo $p_content_footer; ?>
-		</div>
-		<?php } ?>
 	</div>
-<!-- l-page div closed in footer.php -->
+	<?php if($p_content_footer != ''){ ?>
+	<div class="<?php echo $fe_region.$fe_l_content_footer; ?>">
+		<?php echo $p_content_footer; ?>
+	</div>
+	<?php } ?>
 <?php 
 	include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/footer.php");
 ?>

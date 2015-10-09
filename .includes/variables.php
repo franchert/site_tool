@@ -18,11 +18,23 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 	/*choose a header type in the .includes/header folder*/
 	$header = 'sticky-h';
 	$alert_on = false;
+	/*choose one front-end framework. Make sure the matching css file is located in stylesheets*/
+	$fe_framework = 'custom';
 	//$fe_framework = 'bootstrap';
-	//$fe_framework = 'skeleton';/*not implemented*/
+	//$fe_framework = 'skeleton'; /*not implemented*/
 	//$fe_framework = 'foundation' /*not implemented*/
-
-/*Automatically Set Variables*/
+	/*set the common elements per framework*/
+		if($fe_framework == 'custom'){
+			$fe_container = ' column';
+			$fe_wrapper = ' wrapper';
+			$fe_region = ' l-region';
+		}
+		if($fe_framework == 'bootstrap'){
+			$fe_wrapper = ' container';
+			$fe_container = ' container';
+			$fe_region = ' row';
+		}
+/*Variables that are Automatically Set */
 	$url = dirname($_SERVER['PHP_SELF']);
 	$path = parse_url($url, PHP_URL_PATH);
 	$path = str_replace($file_base,'',$path);

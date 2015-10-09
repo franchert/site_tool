@@ -5,6 +5,6 @@ function p_factoid($text="42",$title="lorem ipsums",$image=null){
 	}else{
 		$image = '<img src="'.$image.'"/>';
 	}
-	$string = '<div class="factoid"><div class="container">'.$image.'<span>'.$text.'</span>'.$title.'</div></div>';
+	$string = '<div class="factoid"><div class="factoid-container">'.$image.'<span>'.$text.'</span>'.$title.'</div></div>';
 	return $string;
 }

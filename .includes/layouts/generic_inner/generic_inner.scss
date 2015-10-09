@@ -5,34 +5,9 @@ body{
 				.featured{
 					max-height:500px;
 				}
-				.column{
-					h2{
-						@include font('paradox',24px,$white);
-						@include breakpoint($tab){
-							font-size:40px;
-							line-height:50px;
-						}
-						@include breakpoint($tab-large){
-							font-size:80px;
-							line-height:90px;
-						}
-						font-weight:bold;
-						text-shadow:0 0 5px $t-black;
-						position:absolute;
-						top:10%;
-						padding:20px;
-					}
-				}
 			}
 			.l-content-header {
 				margin:20px auto;
-				.wrapper{
-					.column{
-						@include breakpoint($desk){
-							padding:0 20px;
-						}
-					}
-				}
 				.feature{
 					padding-bottom:40px;
 					img{
@@ -41,65 +16,44 @@ body{
 				}
 			}
 			.l-content-center{
-				@include breakpoint($desk){
-					padding:20px;
-				}
 				.l-nav-sidebar{
 					@include breakpoint($desk){
-						width:20%;
-						width: -webkit-calc(#{$nav-sidebar-width});
-						width: calc(#{$nav-sidebar-width});
+						@include calc('width',' #{$nav-sidebar-width}','20%');
 					}
 				}
 				.l-content-featured{
 					padding-bottom:20px;
 					@include breakpoint($desk){
 						padding:0px 0px 20px 20px;
-						width:80%;
-						width:-webkit-calc(100% - #{$nav-sidebar-width});
-						width: calc(100% - #{$nav-sidebar-width});
+						@include calc('width','100% - #{$nav-sidebar-width}','80%');
 					}
 				}
 				.l-content-wrapper{
-					@include floatblock(right);
+					float:right;
 					@include breakpoint($desk){
-						width:80%;
-						width: -webkit-calc(100% - #{$nav-sidebar-width});
-						width: calc(100% - #{$nav-sidebar-width});
-						padding-bottom:40px;
+						@include calc('width','100% - #{$nav-sidebar-width}','80%');
+						padding:0 0 40px 20px;
 					}
 					.l-content {
-						@include floatblock();
 						margin:0 0 20px 0;
 						@include breakpoint($tab){
 							padding:0 20px 0 0;
 							margin:0;
-							width:66.6666%;
-							width: -webkit-calc(100% - #{$nav-promo-width});
-							width: calc(100% - #{$nav-promo-width});
-						}
-						@include breakpoint($desk){
-							padding-left:20px;
+							@include calc('width','100% - #{$nav-promo-width}','66.6666%');
 						}
 						img{
 							max-width:100%;
 						}
 						> h2{
-							border-bottom: 1px solid $color-2;
 							margin:0 0 20px 0;
 						}
 						.matrix{
 							border:none;
 						}
-						section{
-							margin:0 0 20px;
-						}
 					}
 					.l-promo-sidebar{
 						@include breakpoint($tab){
-							width:33.3333%;
-							width:-webkit-calc(#{$nav-promo-width});
-							width:calc(#{$nav-promo-width});
+							@include calc('width','#{$nav-promo-width}','33.3333%');
 						}
 					}
 					&.full-width{
@@ -109,14 +63,7 @@ body{
 					}
 				}
 			}
-			.l-content-footer{
-				section{
-					padding:20px;
-					@include breakpoint($tab){
-						padding:0;
-					}
-				}
-			}
+			.l-content-footer{}
 		}
 	}
 }

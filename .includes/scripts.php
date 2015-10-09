@@ -16,6 +16,9 @@
 <?php if(isset($header)){ ?>
 	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/headers/<?php echo $header ?>/<?php echo $header ?>.js"></script>
 <?php } ?>
+<?php if(isset($fe_framework)){?>
+	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/<?php echo $fe_framework ?>.js"></script>
+<?php } ?>
 <?php if(isset($waypoints) && $waypoints === true){	?>
 	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/jquery.waypoints.min.js"></script>	
 <?php } ?>

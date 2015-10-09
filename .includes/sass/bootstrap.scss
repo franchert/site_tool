@@ -7,4 +7,74 @@
 
 @import "breakpoint";
 @import "compass/reset";
+@import "variables/**/*";
+@import "base/**/*";
 @import "bootstrap-3-3-5/**/*";
+
+/* styles overwriting basic bootstrap (these are being overwritten by custom) */
+.btn,.label,a,.nav-tabs > li,.nav-pills > li,.nav > li,.container > .navbar-header,.navbar-default .navbar-collapse{
+	width:auto;
+}
+p{
+	float:left;
+}
+a.list-group-item{
+	clear:both;
+	width:100%;
+}
+table,thead,tbody,tr,th,td,.badge{
+	float:none;
+	width:auto;
+}
+body{
+	img{
+		max-width:100%;
+	}
+}
+table{
+	display:table;
+}
+thead{
+	display:table-header-group;
+}
+tbody{
+	display:table-row-group;
+}
+tr{
+	display:table-row;
+}
+th,td{
+	display:table-cell;
+}
+.dropdown-menu{
+	position:absolute;
+	margin-bottom:20px;
+	width:auto;
+	> li{
+		display:list-item;
+		> a{
+			width:100%;
+		}
+	}
+	.divider{
+		float:none;
+	}
+}
+.caret{
+	float:none;
+}
+.container{
+	float:none;
+}
+.navbar{
+	min-height:initial;
+}
+.navbar-brand{
+	height:40px;
+	padding:10px;
+}
+.carousel-indicators{
+	li{
+		float:none;
+	}
+}

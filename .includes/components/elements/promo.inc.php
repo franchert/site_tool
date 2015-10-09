@@ -42,7 +42,7 @@ function p_promo(
 		if(!is_null($tag)){
 			$string .="<div class='tag'><h3>".$tag."</h3></div>";
 		}
-		$string .= "<div class='container'>";
+		$string .= "<div class='promo-container'>";
 			$string .="<h2>".$title."</h2>";
 			if(is_null($text)){
 				$text = file_get_contents('http://loripsum.net/api/1/short/plaintext');
@@ -60,7 +60,7 @@ function p_promo(
 		if(!is_null($tag)){
 			$string .="<div class='tag'><h3>".$tag."</h3></div>";
 		}
-		$string .= "<div class='container'>";
+		$string .= "<div class='promo-container'>";
 			$string .="<h2>".$title."</h2>";
 			if(is_null($text)){
 				$text = file_get_contents('http://loripsum.net/api/1/short/plaintext');
@@ -112,7 +112,7 @@ function p_promo(
 			$string .= "<a href='".$link."'>";
 		}
 		$string .= $img;
-		$string .= "<div class='container'>";
+		$string .= "<div class='promo-container'>";
 			$string .="<h2>".$title."</h2>";
 			if(is_null($text)){
 				$text = file_get_contents('http://loripsum.net/api/1/short/plaintext');
@@ -131,7 +131,7 @@ function p_promo(
 		}
 	}*/else if(strrpos($type,"generic") !== false){
 		$string .= $img;
-		$string .= "<div class='container'>";
+		$string .= "<div class='promo-container'>";
 			$string .="<h2>".$title."</h2>";
 			if(is_null($text)){
 				$text = file_get_contents('http://loripsum.net/api/1/short/plaintext');
@@ -162,7 +162,7 @@ function p_promo(
 		}else{
 			$string .= $img;
 		}
-		$string .= "<div class='container'>";
+		$string .= "<div class='promo-container'>";
 			if(is_null($text)){
 				$text = "<p class='intro'>".file_get_contents('http://loripsum.net/api/1/short/plaintext')."</p>";
 			} else if($text == ''){
@@ -180,7 +180,7 @@ function p_promo(
 		if(!is_null($image)){
 			$string .= $img;
 		}
-		$string .= "<div class='container'>";
+		$string .= "<div class='promo-container'>";
 			if(is_null($link_title)){
 				$string .= "<span class='fa fa-circle'></span>";
 			}else if($link_title == ''){

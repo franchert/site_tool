@@ -1,6 +1,6 @@
 		<div class="mobi-toggle-container">
 			<div class="utility">
-				<div class="column">
+				<div class="<?php echo $fe_container ?>">
 					<div class="search">
 						<form action="/.search-results" _lpchecked="1">
 							<input type="hidden" name="cx" value="007701188165887638683:9z5n0yvnab4">
@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div class="site-logo-wrapper">
-			<div class='column'>
+			<div class='<?php echo $fe_container ?>'>
 				<?php if($page == 'home'){echo "<h1>";} ?><a class="site-logo" href="/"><img src="<?php echo $site_logo; ?>" alt='Site Logo'></a><?php if($page == 'home'){echo "</h1>";} ?>
 			</div>
 		</div>

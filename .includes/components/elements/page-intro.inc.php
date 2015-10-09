@@ -10,7 +10,7 @@
 function p_page_intro($type,$title = "Sample Page Intro",$text = NULL,$image = NULL,$arr = null,$item = null){
 	$string = '';
 	$string .="<div class='page-intro ".$type."'>";
-	$string .= "<div class='container'><h2>".$title."</h2>";
+	$string .= "<h2>".$title."</h2>";
 	if(is_null($image)){
 		$image = p_image("400","300");
 	}else{
@@ -45,7 +45,7 @@ function p_page_intro($type,$title = "Sample Page Intro",$text = NULL,$image = N
 			$string .= "</ul>";
 		}
 	}
-	$string .="</div></div>";
+	$string .="</div>";
 	return($string); 
 }
 ?>
