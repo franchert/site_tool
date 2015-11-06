@@ -1,4 +1,8 @@
 <?php 
+/*
+*	Displays 
+*
+*/
 $indicesServer = array('PHP_SELF', 
 'argv', 
 'argc', 
@@ -40,15 +44,15 @@ $indicesServer = array('PHP_SELF',
 'PATH_INFO', 
 'ORIG_PATH_INFO') ; 
 
-echo '<table cellpadding="10">' ; 
+echo '<div class="toggle"><table cellpadding="10" style="max-width:600px;margin:30px;">' ; 
 foreach ($indicesServer as $arg) { 
     if (isset($_SERVER[$arg])) { 
-        echo '<tr><td>'.$arg.'</td><td>' . $_SERVER[$arg] . '</td></tr>' ; 
+        echo '<tr style="display:table-row;float:none;width:auto;border-top:1px solid black;border-left:1px solid black;"><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">'.$arg.'</td><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">' . $_SERVER[$arg] . '</td></tr>' ; 
     } 
     else { 
-        echo '<tr><td>'.$arg.'</td><td>-</td></tr>' ; 
+        echo '<tr style="display:table-row;float:none;width:auto;border-top:1px solid black;border-left:1px solid black;"><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">'.$arg.'</td><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">-</td></tr>' ; 
     } 
 } 
-echo '</table>' ; 
+echo '</table></div>' ; 
 
 /* <?php include_once('/test.php'); ?> */

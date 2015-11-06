@@ -992,11 +992,14 @@ body #breadcrumb ul li:first-child:before {
 body .c-grid {
   margin-bottom: 20px;
 }
+body .c-grid > div {
+  height: 200px;
+  padding-bottom: 20px;
+}
 @media (min-width: 45em) {
   body .c-grid > div {
     padding: 0 10px 20px;
     overflow: hidden;
-    height: 300px;
   }
 }
 @media (min-width: 45em) {
@@ -1011,44 +1014,64 @@ body .c-grid {
   }
 }
 @media (min-width: 45em) {
+  body .c-grid.three > div {
+    width: 33.3333%;
+  }
+  body .c-grid.three > div:nth-child(1) {
+    padding-left: 0;
+  }
+  body .c-grid.three > div:nth-child(2) {
+    padding-right: 10px;
+  }
+  body .c-grid.three > div:nth-child(3) {
+    padding-right: 0;
+  }
+}
+body .c-grid.horizontal.three > div {
+  height: 400px;
+}
+@media (min-width: 45em) {
   body .c-grid.horizontal.three > div {
     width: 50%;
-    height: 300px;
   }
   body .c-grid.horizontal.three > div:nth-child(3n-2) {
     padding-left: 0;
   }
   body .c-grid.horizontal.three > div:nth-child(3n-1) {
-    height: 150px;
+    height: 200px;
     padding-right: 0;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
   }
   body .c-grid.horizontal.three > div:nth-child(3n) {
-    height: 150px;
-    padding-top: 10px;
+    height: 200px;
     padding-right: 0;
   }
 }
-body .c-grid.horizontal.three.right > div:nth-child(3n-2) {
-  height: 150px;
-  padding-left: 0;
-  padding-bottom: 10px;
-}
-body .c-grid.horizontal.three.right > div:nth-child(3n-1) {
-  padding-right: 0;
-  float: right;
+@media (min-width: 45em) {
+  body .c-grid.horizontal.three.right > div:nth-child(3n-2) {
+    height: 200px;
+    padding-left: 0;
+    padding-bottom: 20px;
+  }
+  body .c-grid.horizontal.three.right > div:nth-child(3n-1) {
+    padding-right: 0;
+    float: right;
+    height: 400px;
+  }
+  body .c-grid.horizontal.three.right > div:nth-child(3n) {
+    height: 200px;
+    padding-left: 0;
+    padding-right: 10px;
+  }
 }
 @media (min-width: 45em) {
   body .c-grid.vertical.three > div {
     width: 50%;
-    height: 150px;
+    height: 200px;
   }
   body .c-grid.vertical.three > div:nth-child(3n-2) {
     width: 100%;
-    padding: 0;
-    padding-right: 0;
-    padding-bottom: 10px;
-    padding-left: 0;
+    padding: 0 0 10px 0;
   }
   body .c-grid.vertical.three > div:nth-child(3n-1) {
     padding-top: 10px;
@@ -1075,18 +1098,18 @@ body .c-grid.horizontal.three.right > div:nth-child(3n-1) {
     width: 33.3333%;
     padding-left: 0;
     padding-top: 10px;
-    height: 150px;
+    height: 200px;
   }
   body .c-grid.vertical.five > div:nth-child(5n-1) {
     width: 33.3333%;
     padding-top: 10px;
-    height: 150px;
+    height: 200px;
   }
   body .c-grid.vertical.five > div:nth-child(5n) {
     width: 33.3333%;
     padding-right: 0;
     padding-top: 10px;
-    height: 150px;
+    height: 200px;
   }
 }
 @media (min-width: 45em) {
@@ -1104,10 +1127,10 @@ body .c-grid.horizontal.three.right > div:nth-child(3n-1) {
   body .c-grid.offset > div {
     width: 33.3333%;
   }
-  body .c-grid.offset > div:nth-child(2n) {
-    width: 66.6666%;
-    padding-right: 0;
-  }
+}
+body .c-grid.offset.two > div:nth-child(2n) {
+  width: 66.6666%;
+  padding-right: 0;
 }
 @media (min-width: 45em) {
   body .c-grid.offset.two.right > div {
@@ -1115,15 +1138,6 @@ body .c-grid.horizontal.three.right > div:nth-child(3n-1) {
   }
   body .c-grid.offset.two.right > div:nth-child(2n-1) {
     width: 66.6666%;
-  }
-}
-@media (min-width: 45em) {
-  body .c-grid.offset.three > div:nth-child(2n) {
-    width: 33.3333%;
-    padding-right: 10px;
-  }
-  body .c-grid.offset.three > div:nth-child(3n) {
-    padding-right: 0;
   }
 }
 @media (min-width: 45em) {
@@ -1165,8 +1179,21 @@ body .c-grid.horizontal.three.right > div:nth-child(3n-1) {
   body .c-grid.offset.five > div {
     width: 33.3333%;
   }
-  body .c-grid.offset.five > div:nth-child(1) {
+  body .c-grid.offset.five > div:nth-child(5n-4) {
     width: 66.6666%;
+    padding-left: 0;
+  }
+  body .c-grid.offset.five > div:nth-child(5n-3) {
+    padding-right: 0;
+  }
+  body .c-grid.offset.five > div:nth-child(5n-2) {
+    padding-left: 0;
+  }
+  body .c-grid.offset.five > div:nth-child(5n-1) {
+    padding-right: 10px;
+  }
+  body .c-grid.offset.five > div:nth-child(5n) {
+    padding-right: 0;
   }
 }
 @media (min-width: 45em) {
