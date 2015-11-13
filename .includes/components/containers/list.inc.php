@@ -1,5 +1,16 @@
 <?php
-function p_list($arr = null,$type = '',$idORclass='class'){
+/**
+*	Function to include a list
+*
+*	@param array  $arr = 
+*	@param string  $type = 
+*	@param string  $idORclass = 
+*/
+function p_list(
+	$arr = null,
+	$type = '',
+	$idORclass='class'){
+
 	if(!is_null($arr)){
 		if($idORclass == "id"){
 			$value = '" id="'.$type;

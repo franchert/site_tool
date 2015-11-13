@@ -1,5 +1,9 @@
 <?php
+/**
+*	Function 
+*/
 function p_program_search(){
+
 	$string = '
 	<div class="program-search">
 		<div id="search-container">

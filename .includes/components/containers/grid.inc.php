@@ -1,11 +1,21 @@
 <?php
 /**
+	NOT READY, still in development
 *	Function to include a grid of components
 *
-*	@param string  $arr = array of items to display in grid
-*	@param string  $width = set the width manually, null gives dynamic
+*	@param string  $type = 
+*	@param string  $width = 
+*	@param string  $title = 
+*	@param array  $arr = 
+*	@param string  $morelink = 
 */
-function p_grid($type='vertical',$width=0,$title = null,$arr=null,$morelink=''){
+function p_grid(
+	$type='vertical',
+	$width=0,
+	$title = null,
+	$arr=null,
+	$morelink=''){
+
 	$string = '';
 	if(isset($title) && $title !=''){
 		$string .= '<div><h2>'.$title.'</h2></div>';

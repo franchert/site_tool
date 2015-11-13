@@ -1,5 +1,15 @@
 <?php
- function p_tabaccordion($id,$arr = null){
+/**
+*	Function to include a structure that functions as an Accordion on mobile and tabs on desktop
+*
+*	@param string  $id = unique ID of structure being displayed
+*	@param array  $arr = array of items to display. 
+*		Each item should contain two keys, [t] for contents of tab and [b] for contents of body
+*/
+function p_tabaccordion(
+	$id,
+	$arr = null){
+
 	$string = '<ul class="tabaccordion" id="'.$id.'">';
 	if($arr == null){
 		$string .='

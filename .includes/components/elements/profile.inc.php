@@ -1,13 +1,18 @@
 <?php 
 /**
-*	Function to include a profile promo
+*	Function 
 *
-*	@param string  
-*	@param string  
-*	@param string  
-*	@param string  
+*	@param string  $count = 
+*	@param string  $short = 
+*	@param string  $tags = 
 */
-function p_profile($type = '',$name = "John Smith",$title = "Role or Job Title",$text = NULL,$image = NULL){
+function p_profile(
+	$type = '',
+	$name = "John Smith",
+	$title = "Role or Job Title",
+	$text = NULL,
+	$image = NULL){
+
 	$string = '';
 	$string .="<div class='profile ".$type."'>";
 	if(is_null($image)){

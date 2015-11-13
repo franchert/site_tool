@@ -1,5 +1,18 @@
 <?php
-function p_spotlight($type = null,$title = 'sample title',$date = null,$image = null){
+/**
+*	Function 
+*
+*	@param string  $type = 
+*	@param string  $title = 
+*	@param string  $date = 
+*	@param string  $image = 
+*/
+function p_spotlight(
+	$type = null,
+	$title = 'sample title',
+	$date = null,
+	$image = null){
+
 	if(is_null($date)){
 		$date = date("F j, Y");
 	}

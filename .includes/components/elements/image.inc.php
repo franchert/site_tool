@@ -1,4 +1,9 @@
 <?php
+/**
+*	Function 
+*
+*	@param string  $selector = 
+*/
 function p_image(
 	$h = '400',
 	$w = '300',
@@ -6,8 +11,8 @@ function p_image(
 	$caption = null,
 	$fill = 'ccc',
 	$color = '444',
-	$inline_css = ''
-	){
+	$inline_css = ''){
+
 	$size = max($w,$h)/30;
 	if($size < 20){
 		$size = 20;

@@ -1,10 +1,20 @@
 <?php
-function p_table_mobile($id,$head = null,$rows = null){
-$string = "";
+/**
+*	Function 
+*
+*	@param string  $arr = 
+*	@param string  $width = 
+*/
+function p_table_mobile(
+	$id,
+	$head = null,
+	$rows = null){
+
+	$string = "";
 	if ($head == null && $rows == null){
 		$string .="
-		<div class='table-wrapper'>
-		<table class='".$id."'>
+<div class='table-wrapper'>
+	<table class='".$id."'>
 		<thead>
 			<tr>
 				<th>Sample</th>
@@ -38,7 +48,10 @@ $string = "";
 				<td data-label='Check'><span class='fa fa-check'></span></td>
 				<td data-label='Row'></td>
 			</tr>
-		</tbody></table></div>";
+		</tbody>
+	</table>
+</div>
+";
 	}else{
 		$string .="<div class='table-wrapper'><table class='".$id."'>";
 		if($head != null){

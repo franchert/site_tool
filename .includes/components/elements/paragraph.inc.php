@@ -1,5 +1,16 @@
 <?php
-function p_paragraph($count = '1',$short = false,$tags = true){
+/**
+*	Function 
+*
+*	@param string  $count = 
+*	@param string  $short = 
+*	@param string  $tags = 
+*/
+function p_paragraph(
+	$count = '1',
+	$short = false,
+	$tags = true){
+
 	$string = '';
 	for($i = 1; $i <= $count; $i++){
 		if($tags){

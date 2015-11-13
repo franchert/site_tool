@@ -1,36 +1,50 @@
 <?php
-//$bS = Small Breakpoint,number of elements visible
-//$bM = Medium Breakpoint,number of elements visible
-//$bL = Large Breakpoint,number of elements visible
-function p_carousel($id,$arr = null,$bS=479,$bM=768,$bL=1199,$width = 200,$height = 200){
-	//include the owl js on the page
+/**
+*	Function to include a carousel
+*
+*	@param string  $id = unique ID of structure being displayed
+*	@param array  $arr = array of items to display. Each array item should be a complete slide
+*	@param string  $bS = Small Breakpoint pixel value
+*	@param string  $bM = Medium Breakpoint pixel value
+*	@param string  $bL = Large Breakpoint pixel value
+*/
+function p_carousel(
+	$id,
+	$arr = null,
+	$bS=479,
+	$bM=768,
+	$bL=1199,
+	$width = 200,
+	$height = 200){
+
 	$owl = true;
-	$string = 
-	'<script type="text/javascript" charset="utf-8">
-		$(window).load(function() {
-			$(".'.$id.'").owlCarousel({
-				resopnsiveClass:true,
-				responsive:{
-					0:{
-						items:1
-					},
-					'.$bS.':{
-						items:2
-					},
-					'.$bM.':{
-						items:4
-					},
-					'.$bL.':{
-						items:4
-					}
-				},
-				nav:true,
-				pagination:true,
-				loop:true,
-				navText:["<i class=\"fa fa-angle-left\"></i>", "<i class=\"fa fa-angle-right\"></i>"]
-			});
-		});
-	</script>';
+	global $script_var;
+	$script_var .='
+$(window).load(function() {
+	$(".'.$id.'").owlCarousel({
+		resopnsiveClass:true,
+		responsive:{
+			0:{
+				items:1
+			},
+			'.$bS.':{
+				items:2
+			},
+			'.$bM.':{
+				items:4
+			},
+			'.$bL.':{
+				items:4
+			}
+		},
+		nav:true,
+		pagination:true,
+		loop:true,
+		navText:["<i class=\"fa fa-angle-left\"></i>", "<i class=\"fa fa-angle-right\"></i>"]
+	});
+});
+	';
+	$string = '';
 	$img = p_image($width,$height,'');
 	if($arr == null){
 		$string .='
@@ -41,14 +55,11 @@ function p_carousel($id,$arr = null,$bS=479,$bM=768,$bL=1199,$width = 200,$heigh
 			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
 			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
 			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
-		.'</div>';
+		.'</div>
+		';
 	}else{
 		$string .='
-		<div class="'.$id.' owlCarousel">';
+		<div class="'.$id.' owlCarousel carousel">';
 		foreach($arr as $k => $v){
 			if ($v){
 				$slide = $v;

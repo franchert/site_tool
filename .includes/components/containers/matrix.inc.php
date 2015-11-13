@@ -6,7 +6,13 @@
 *	@param string  $width = set the width manually, null gives dynamic
 *	@param string  $offset = set to 1 to use the first space for title
 */
-function p_matrix($width=0,$arr=null,$title = null,$offset=0,$morelink=''){
+function p_matrix(
+	$width=0,
+	$arr=null,
+	$title = null,
+	$offset=0,
+	$morelink=''){
+
 	if(isset($title) && $title !=''){
 		$string .= '<div><h2>'.$title.'</h2></div>';
 	}

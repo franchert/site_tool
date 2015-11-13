@@ -1,19 +1,31 @@
 <?php
-//include the owl js on the page
+/**
+*	Function to include a slider
+*
+*	@param string  $arr = 
+*	@param string  $width = 
+*/
 $owl = true;
-function p_slider_owl($id,$arr = null,$type="generic",$width = 1600,$height = 900){
-	$string = 
-	'<script type="text/javascript" charset="utf-8">
-		$(window).load(function() {
-			$(".'.$id.'").owlCarousel({
-				items:1,
-				loop:true,
-				dots:true,
-				nav:true,
-				navText:["<i class=\"fa fa-angle-left\"></i>", "<i class=\"fa fa-angle-right\"></i>"],
-			})
-		});
-	</script>';
+function p_slider_owl(
+	$id,
+	$arr = null,
+	$type="generic",
+	$width = 1600,
+	$height = 900){
+
+	global $script_var;
+	$script_var .= '
+$(window).load(function() {
+	$(".'.$id.'").owlCarousel({
+		items:1,
+		loop:true,
+		dots:true,
+		nav:true,
+		navText:["<i class=\"fa fa-angle-left\"></i>", "<i class=\"fa fa-angle-right\"></i>"],
+	})
+});
+	';
+	$string = '';
 	if($arr == null){
 		$img = p_image($width,$height);
 		$string .='

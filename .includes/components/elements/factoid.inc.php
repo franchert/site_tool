@@ -1,5 +1,14 @@
 <?php
-function p_factoid($text="42",$title="lorem ipsums",$image=null){
+/**
+*	Function 
+*
+*	@param string  $selector = 
+*/
+function p_factoid(
+	$text="42",
+	$title="lorem ipsums",
+	$image=null){
+
 	if(is_null($image)){
 		$image = p_image("400","300");
 	}else{

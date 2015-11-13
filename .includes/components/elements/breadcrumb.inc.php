@@ -1,5 +1,9 @@
 <?php
+/**
+*	Function to include a breadcrumb
+*/
 function breadcrumb(){
+
 	global $segments;
 	global $crumb;
 	global $fe_wrapper;
@@ -12,17 +16,7 @@ function breadcrumb(){
 		if ($i !=-1){
 			$crumb .=$segment."/";
 		}
-			$segment = 
-				str_replace(" * ","-",
-				str_replace("To ","to ",
-				str_replace("Of ","of ",
-				str_replace("The ","the ",
-				str_replace("And ","&amp; ",
-				ucwords(
-					str_replace("-"," * ",
-					str_replace("_"," ",substr($segment,1)
-				))))))));
-		//$segment = str_replace(" * ","-",ucwords(str_replace("-"," * ",str_replace("_"," ",$segment))));
+			$segment = titleFromSlug(substr($segment,1));
 		if ($i ==-1){
 			$segment = "<span class='fa fa-home'></span>";
 			$crumb .= "/";

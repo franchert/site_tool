@@ -8,17 +8,17 @@
 *	@param string  link = URL string you're linking to
 */
 function p_promo(
-		$type,
-		$addl_class='',
-		$title = "Promo Title",
-		$text = null,
-		$tag = null,
-		$image = null,
-		$link = "#", 
-		$link_title = null,
-		$arr=null,
-		$img_tag = false
-	){
+	$type,
+	$addl_class='',
+	$title = "Promo Title",
+	$text = null,
+	$tag = null,
+	$image = null,
+	$link = "#", 
+	$link_title = null,
+	$arr=null,
+	$img_tag = false){
+
 	if(is_null($image)){
 		$img = p_image("400","300");
 	}elseif(isset($image) && $image == ''){

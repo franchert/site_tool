@@ -1,11 +1,24 @@
 <?php
-function p_event($type = 'normal',
+/**
+*	Function 
+*
+*	@param string  $type = 
+*	@param string  $title = 
+*	@param string  $text = 
+*	@param string  $link = 
+*	@param string  $month = 
+*	@param string  $type = 
+*	@param string  $type = 
+*/
+function p_event(
+	$type = 'normal',
 	$title="Event Title Here",
 	$text = "Event description, location or extra information",
 	$link="#",
 	$month=null,
 	$day=null,
 	$weekday=null){
+
 	if ($month == null){
 		$month = date("M");
 	}

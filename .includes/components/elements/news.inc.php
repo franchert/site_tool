@@ -1,4 +1,9 @@
 <?php
+/**
+*	Function 
+*
+*	@param string  $selector = 
+*/
 function p_news(
 	$type='',
 	$img=null,
@@ -6,8 +11,8 @@ function p_news(
 	$link='#',
 	$date=null,
 	$text=null,
-	$readmore = true
-){
+	$readmore = true){
+
 	if(is_null($img)){
 		$image = p_image("300","300");
 		$width = '';
