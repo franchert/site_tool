@@ -1,13 +1,13 @@
 <?php
 /**
-*	Function to include a carousel
-*
-*	@param string  $id = unique ID of structure being displayed
-*	@param array  $arr = array of items to display. Each array item should be a complete slide
-*	@param string  $bS = Small Breakpoint pixel value
-*	@param string  $bM = Medium Breakpoint pixel value
-*	@param string  $bL = Large Breakpoint pixel value
-*/
+ *	Function to include a carousel
+ *
+ *	@param string  $id = unique ID of structure being displayed
+ *	@param array  $arr = array of items to display. Each array item should be a complete slide
+ *	@param string  $bS = Small Breakpoint pixel value
+ *	@param string  $bM = Medium Breakpoint pixel value
+ *	@param string  $bL = Large Breakpoint pixel value
+ */
 function p_carousel(
 	$id,
 	$arr = null,

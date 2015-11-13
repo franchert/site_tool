@@ -7,40 +7,26 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/variables.php");
 *		-initializes any other global variable strings needed
 *
 */
-
+$init = "";
+if($demo){$init = " ";}
 /*initialize region string variables*/
 if ($layout == "generic_inner"){
-	$p_featured_header = "";
-	$p_content_header = "";
-	$p_nav_sidebar = "";
-	$p_content = "";
-	$p_content_featured = "";
-	$p_promo_sidebar = "";
-	$p_content_footer = "";
-}
-if ($layout == "bio"){
-	$p_featured_header = "";
-	$p_content_header = "";
-	$p_nav_sidebar = "";
-	$p_content = "";
-	$p_content_featured = "";
-	$p_promo_sidebar = "";
-	$p_content_footer = "";
-}
-if($layout == "two_column"){
-	$p_content_header = "";
-	$p_content_center = "";
-	$p_content_right = "";
-	$p_content_footer = "";
+	$p_featured_header = $init;
+	$p_content_header = $init;
+	$p_nav_sidebar = $init;
+	$p_content = $init;
+	$p_content_featured = $init;
+	$p_promo_sidebar = $init;
+	$p_content_footer = $init;
 }
 if($layout == "longscroll"){
-	$p_longscroll_first = "";
-	$p_longscroll_second = "";
-	$p_longscroll_third = "";
-	$p_longscroll_fourth = "";
+	$p_longscroll_first = $init;
+	$p_longscroll_second = $init;
+	$p_longscroll_third = $init;
+	$p_longscroll_fourth = $init;
 }
 if($layout == "one-column"){
-	$p_one = "";
+	$p_one = $init;
 }
 
 /*initialize global variables*/

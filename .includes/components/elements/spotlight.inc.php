@@ -1,12 +1,12 @@
 <?php
 /**
-*	Function 
-*
-*	@param string  $type = 
-*	@param string  $title = 
-*	@param string  $date = 
-*	@param string  $image = 
-*/
+ *	Function 
+ *
+ *	@param string  $type = 
+ *	@param string  $title = 
+ *	@param string  $date = 
+ *	@param string  $image = 
+ */
 function p_spotlight(
 	$type = null,
 	$title = 'sample title',

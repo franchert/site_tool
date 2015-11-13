@@ -1,11 +1,11 @@
 <?php
 /**
-*	Function 
-*
-*	@param string  $count = 
-*	@param string  $short = 
-*	@param string  $tags = 
-*/
+ *	Function 
+ *
+ *	@param string  $count = 
+ *	@param string  $short = 
+ *	@param string  $tags = 
+ */
 function p_paragraph(
 	$count = '1',
 	$short = false,

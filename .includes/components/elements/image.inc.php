@@ -1,9 +1,9 @@
 <?php
 /**
-*	Function 
-*
-*	@param string  $selector = 
-*/
+ *	Function 
+ *
+ *	@param string  $selector = 
+ */
 function p_image(
 	$h = '400',
 	$w = '300',

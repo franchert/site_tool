@@ -1,11 +1,11 @@
 <?php
 /**
-*	Function to include a list
-*
-*	@param array  $arr = 
-*	@param string  $type = 
-*	@param string  $idORclass = 
-*/
+ *	Function to include a list
+ *
+ *	@param array  $arr = 
+ *	@param string  $type = 
+ *	@param string  $idORclass = 
+ */
 function p_list(
 	$arr = null,
 	$type = '',

@@ -1,9 +1,9 @@
 <?php
 /**
-*	Function to include a video
-*
-*	@param string  url = Link to video
-*/
+ *	Function to include a video
+ *
+ *	@param string  url = Link to video
+ */
 function p_video(
 	$url="https://www.youtube.com/embed/XQu8TTBmGhA"){
 

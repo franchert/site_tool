@@ -1,11 +1,20 @@
 <?php
-/**
- *	Provides functions to create subnavigation based on the folder structure
- */
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/settings.php");
 $subnav_string = "";
 $level = 0;
-function p_subnav($root_path = null,$depth = null,$printsection = true,$backtohome = false,$toggle = false){
+/**
+ *	Function	
+ *
+ *	@param string	$root_path = 
+ *
+ */
+function p_subnav(
+	$root_path = null,
+	$depth = null,
+	$printsection = true,
+	$backtohome = false,
+	$toggle = false){
+
 	global $starting;
 	global $section;
 	global $file_base;
@@ -23,8 +32,15 @@ function p_subnav($root_path = null,$depth = null,$printsection = true,$backtoho
 	$tree = plotTree(explodeTree($key_values, "/",true,$starting),true,$printsection,$backtohome,$starting,$toggle);
 	return $tree;
 }
-//get flat array of directories located under the $base_dir
-function expandDirectories($base_dir) {
+/**
+ *	Function	get flat array of directories located under the $base_dir
+ *
+ *	@param string	$root_path = 
+ *
+ */
+function expandDirectories(
+	$base_dir){
+
 	global $base_site;
 	$directories = array();
 	foreach(scandir($base_dir) as $file) {
@@ -43,8 +59,20 @@ function expandDirectories($base_dir) {
 	}
 	return $directories;
 }
-//build the list structure
-function plotTree($arr, $initial_run=true,$printsection,$backtohome,$starting,$toggle){
+/**
+ *	Function	get flat array of directories located under the $base_dir
+ *
+ *	@param string	$selector = 
+ *
+ */
+function plotTree(
+	$arr,
+	$initial_run=true,
+	$printsection,
+	$backtohome,
+	$starting,
+	$toggle){
+
 	global $subnav_string;
 	global $section;
 	global $section_title;

@@ -1,7 +1,7 @@
 <?php
 /**
-*	Function to include a breadcrumb
-*/
+ *	Function to include a breadcrumb
+ */
 function breadcrumb(){
 
 	global $segments;

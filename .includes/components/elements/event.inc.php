@@ -1,15 +1,15 @@
 <?php
 /**
-*	Function 
-*
-*	@param string  $type = 
-*	@param string  $title = 
-*	@param string  $text = 
-*	@param string  $link = 
-*	@param string  $month = 
-*	@param string  $type = 
-*	@param string  $type = 
-*/
+ *	Function 
+ *
+ *	@param string  $type = 
+ *	@param string  $title = 
+ *	@param string  $text = 
+ *	@param string  $link = 
+ *	@param string  $month = 
+ *	@param string  $type = 
+ *	@param string  $type = 
+ */
 function p_event(
 	$type = 'normal',
 	$title="Event Title Here",

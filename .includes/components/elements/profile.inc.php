@@ -1,11 +1,11 @@
 <?php 
 /**
-*	Function 
-*
-*	@param string  $count = 
-*	@param string  $short = 
-*	@param string  $tags = 
-*/
+ *	Function 
+ *
+ *	@param string  $count = 
+ *	@param string  $short = 
+ *	@param string  $tags = 
+ */
 function p_profile(
 	$type = '',
 	$name = "John Smith",

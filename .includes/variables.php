@@ -1,32 +1,35 @@
 <?php
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
-/*	ADDED TO DIRECTOR.PHP
-*
-*	Site-Specific variables that should be changed based on client:
-*		$client_name	Plain text name of client
-*		$site_logo		URL of site logo
-*		$alert_on		boolean to turn on and off the alert. Only used within this file
-*		$header			Type of header to use on the site. See headers directory for more information
-*		$fe_framework	Type of framework used to put toegether the grid. Some layouts and headers may behave differently with different frameworks chosen.
-*			$fe_container, $fe_wrapper, $fe_region		variables used in creation of the grid
-*
-*	Variables based on directory or other static value:
-*		$url			Overall URL (homepage is / )
-*		$page			URL segment of current page (last segment of URL, homepage is empty string)
-*		$page_slug		Removes the first character of $page to form a readable URL
-*		$page_title		$page_segment turned into readable, capitalized text
-*		$segments		Array holding each segment of the URL
-*		$section		Top level section of current page (just under home)
-*		$section_slug	Removes the first character of $section to form a readable URL
-*		$section_title	Top level turned into capitalized text
-*		$parent			URL segemtnt of direct parent of current page
-*		$crumb			Used to build breadcrumb dynamically
-*
-*/
+/**
+ *	ADDED TO DIRECTOR.PHP
+ *
+ *Site-Specific variables that should be changed based on client
+ *	@param string	$client_name	Plain text name of client
+ *	@param string	$site_logo		URL of site logo
+ *	@param string	$alert_on		boolean to turn on and off the alert. Only used within this file
+ *	@param string	$demo			demonstration of layout region shapes.
+ *	@param string	$header			Type of header to use on the site. See headers directory for more information
+ *	@param string	$fe_framework	Type of framework used to put toegether the grid. Some layouts and headers may behave differently with different frameworks chosen.
+ *		$fe_container, $fe_wrapper, $fe_region		variables used in creation of the grid
+ *
+ *Variables based on directory or other static value:
+ *	@param string	$url			Overall URL (homepage is / )
+ *	@param string	$page			URL segment of current page (last segment of URL, homepage is empty string)
+ *	@param string	$page_slug		Removes the first character of $page to form a readable URL
+ *	@param string	$page_title		$page_segment turned into readable, capitalized text
+ *	@param string	$segments		Array holding each segment of the URL
+ *	@param string	$section		Top level section of current page (just under home)
+ *	@param string	$section_slug	Removes the first character of $section to form a readable URL
+ *	@param string	$section_title	Top level turned into capitalized text
+ *	@param string	$parent			URL segemtnt of direct parent of current page
+ *	@param string	$crumb			Used to build breadcrumb dynamically
+ *
+ */
 
 	$client_name = 'Client Name';
 	$site_logo = "/.includes/images/placeholder-svg.php?wh=600x100&color=111111&fill=cccccc&font=Arial&txt=Site Logo";
 	$alert_on = false;
+	$demo = false;
 	/*choose a header type in the .includes/header folder*/
 	$header = 'sticky-h';
 	/*choose one front-end framework. Make sure the matching css file is located in stylesheets*/

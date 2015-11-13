@@ -1,10 +1,10 @@
 <?php
 /**
-*	Function 
-*
-*	@param string  $arr = 
-*	@param string  $width = 
-*/
+ *	Function 
+ *
+ *	@param string  $arr = 
+ *	@param string  $width = 
+ */
 function p_table(
 	$id,
 	$thead=false,

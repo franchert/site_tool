@@ -1,12 +1,12 @@
-<?php 
+<?php
 /**
-*	Function to include a text and image intro promo
-*
-*	@param string  type = wrapper class around promo
-*	@param string  title = title displayed on promo
-*	@param string  intro = intro paragraph
-*	@param string  link = URL string you're linking to
-*/
+ *	Function to include a text and image intro promo
+ *
+ *	@param string  type = wrapper class around promo
+ *	@param string  title = title displayed on promo
+ *	@param string  intro = intro paragraph
+ *	@param string  link = URL string you're linking to
+ */
 function p_promo(
 	$type,
 	$addl_class='',

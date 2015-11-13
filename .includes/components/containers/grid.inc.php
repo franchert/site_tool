@@ -1,14 +1,14 @@
 <?php
 /**
-	NOT READY, still in development
-*	Function to include a grid of components
-*
-*	@param string  $type = 
-*	@param string  $width = 
-*	@param string  $title = 
-*	@param array  $arr = 
-*	@param string  $morelink = 
-*/
+ 	NOT READY, still in development
+ *	Function to include a grid of components
+ *
+ *	@param string  $type = 
+ *	@param string  $width = 
+ *	@param string  $title = 
+ *	@param array  $arr = 
+ *	@param string  $morelink = 
+ */
 function p_grid(
 	$type='vertical',
 	$width=0,

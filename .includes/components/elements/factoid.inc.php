@@ -1,9 +1,9 @@
 <?php
 /**
-*	Function 
-*
-*	@param string  $selector = 
-*/
+ *	Function 
+ *
+ *	@param string  $selector = 
+ */
 function p_factoid(
 	$text="42",
 	$title="lorem ipsums",

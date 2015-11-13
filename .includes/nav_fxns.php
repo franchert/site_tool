@@ -1,8 +1,10 @@
 <?php
-function p_main_nav(){
-	/*
-	*	prints out main nav
-	*/
+/**
+*	prints out main nav
+*/
+function p_main_nav(
+	){
+
 	global $file_base;
 	global $base_site;
 	global $url_remove;
@@ -30,10 +32,14 @@ function p_main_nav(){
 	$string .= "</ul></div></div>";
 	return $string;
 }
-function p_custom_nav($root_path = null,$overview = false){
-	/*
-	*	prints out navigation based on root path
-	*/
+
+/**
+*	prints out navigation based on root path
+*/
+function p_custom_nav(
+	$root_path = null,
+	$overview = false){
+
 	global $file_base;
 	global $base_site;
 	global $url_remove;

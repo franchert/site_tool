@@ -1,10 +1,10 @@
 <?php
 /**
-*	Function to include a slider
-*
-*	@param string  $arr = 
-*	@param string  $width = 
-*/
+ *	Function to include a slider
+ *
+ *	@param string  $arr = 
+ *	@param string  $width = 
+ */
 $owl = true;
 function p_slider_owl(
 	$id,

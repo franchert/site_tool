@@ -27,7 +27,7 @@
 </head>
 <body class="<?php echo $section_slug; 
 if($section != $page){echo ' '.$page_slug;}
-/*if we're on a mini site, add an extra class to show it's parent mini item*/
+/*if we're on a mini site, add an extra class to show its parent mini item*/
 if(isset($mini) && $mini == true){echo ' mini';
 	/*if we're deeper than the mini home, add a mini-specific class*/
 	if(isset($depth) && $depth > 0){echo ' m-'.substr($segments[$depth],1);}

@@ -1,4 +1,9 @@
 <?php
+/**
+ *	Function
+ *
+ *	@param string  item
+ */
 function p_slide(
 	$item){
 

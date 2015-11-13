@@ -1,12 +1,12 @@
 <?php 
 /**
-*	Function to include a text and image intro promo
-*
-*	@param string  type = wrapper class around promo
-*	@param string  title = title displayed on promo
-*	@param string  text = intro paragraph
-*	@param string  arr = list of links to be displayed under the intro
-*/
+ *	Function to include a text and image intro promo
+ *
+ *	@param string  type = wrapper class around promo
+ *	@param string  title = title displayed on promo
+ *	@param string  text = intro paragraph
+ *	@param string  arr = list of links to be displayed under the intro
+ */
 function p_page_intro(
 	$type,
 	$title = "Sample Page Intro",

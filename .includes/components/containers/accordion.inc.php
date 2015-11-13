@@ -1,11 +1,11 @@
 <?php
 /**
-		DEPRECIATED, use accordiontab if possible
-*	Function to include a jQuery UI Accordion
-*
-*	@param string  $id
-*	@param array  $arr = array of items to display
-*/
+ 		DEPRECIATED, use accordiontab if possible
+ *	Function to include a jQuery UI Accordion
+ *
+ *	@param string  $id
+ *	@param array  $arr = array of items to display
+ */
 function p_accordion(
 	$id,
 	$arr = null){

@@ -1,7 +1,7 @@
 <?php
 /**
-*	Function 
-*/
+ *	Function 
+ */
 function p_program_search(){
 
 	$string = '

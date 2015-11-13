@@ -1,11 +1,11 @@
 <?php
 /**
-*	Function to include a text and image intro promo
-*
-*	@param string  $arr = array of items to display in matrix
-*	@param string  $width = set the width manually, null gives dynamic
-*	@param string  $offset = set to 1 to use the first space for title
-*/
+ *	Function to include a text and image intro promo
+ *
+ *	@param string  $arr = array of items to display in matrix
+ *	@param string  $width = set the width manually, null gives dynamic
+ *	@param string  $offset = set to 1 to use the first space for title
+ */
 function p_matrix(
 	$width=0,
 	$arr=null,
