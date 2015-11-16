@@ -3,8 +3,11 @@
 	float:left;
 	width:100%;
 	margin-bottom:20px;
-	img{
-		min-width:100%;
+	.item{
+		position:relative;
+		img{
+			min-width:100%;
+		}
 	}
 	&.overlay{
 		position:relative;
@@ -16,7 +19,7 @@
 			position:relative;
 			overflow:hidden;
 		}
-		img{
+		.item{
 			position:relative;
 		}
 		.tag{
@@ -143,7 +146,7 @@
 			position:relative;
 			overflow:hidden;
 		}
-		img{
+		.item{
 			position:relative;
 		}
 		.tag{
@@ -256,7 +259,7 @@
 			display:table;
 			table-layout:fixed;
 		}
-		img{
+		.item{
 			display:table-cell;
 			float:none;
 		}
@@ -274,7 +277,7 @@
 	&.hovertext{
 		position:relative;
 		overflow:hidden;
-		img{
+		.item{
 			border:1px solid $white;
 		}
 		a{
@@ -361,14 +364,14 @@
 			}
 		}
 	}
-	&.linkimg{
+	&.link.item{
 		h4{
 			border-bottom:1px solid $color-2;
 			padding-bottom:5px;
 			margin-bottom:20px;
 		}
 		a{
-			img{
+			.item{
 				width:100%;
 			}
 		}
@@ -391,7 +394,7 @@
 			}
 		}
 		&.right{
-			img{
+			> .item{
 				@include breakpoint($tab){
 					width:30%;
 					padding-left:20px;
@@ -408,7 +411,7 @@
 			}
 		}
 		&.left{
-			img{
+			> .item{
 				@include breakpoint($tab){
 					width:30%;
 					padding-right:20px;
@@ -428,7 +431,7 @@
 			padding:10px;
 			border:1px solid $color-2;
 			margin-top:0;
-			img{
+			.item{
 				display:block;
 				margin:auto;
 				float:none;
@@ -521,7 +524,7 @@
 			}
 		}
 		&.wrap{
-			img{
+			.item{
 				float:left;
 				padding-right:10px;
 			}
@@ -539,7 +542,7 @@
 		transition:all .2s;
 		a{
 			position:relative;
-			img{
+			.item{
 				width:100%;
 			}
 			.promo-container{
@@ -626,7 +629,7 @@
 	.p-promo{
 		&.overlay{
 			a{}
-			img{}
+			.item{}
 			.tag{
 				h3{
 					&:after{}
@@ -663,7 +666,7 @@
 			a{
 				display:block;
 			}
-			img{
+			.item{
 				display:block;
 			}
 			h2{
@@ -675,10 +678,10 @@
 		}
 		&.hovertext{
 		}
-		&.linkimg{
+		&.link.item{
 			h4{}
 			a{
-				img{}
+				.item{}
 			}
 		}
 		&.generic{
@@ -689,7 +692,7 @@
 			}
 			&.left,
 			&.right{
-				img{
+				.item{
 					width:100%;
 					padding:0;
 				}
@@ -712,7 +715,7 @@
 		}
 		&.button{
 			a{
-				img{}
+				.item{}
 				.promo-container{
 					span{}
 					p{}
@@ -732,7 +735,7 @@
 	.p-promo{
 		&.overlay{
 			a{}
-			img{}
+			.item{}
 			.tag{
 				h3{
 					&:after{}
@@ -766,20 +769,20 @@
 		&.hovertext{
 			
 		}
-		&.linkimg{
+		&.link.item{
 			h4{}
 			a{
-				img{}
+				.item{}
 			}
 		}
 		&.generic{
 			&.left,
 			&.right{
-				img{}
+				.item{}
 				.promo-container{}
 			}
 			&.hover{
-				img{
+				.item{
 					@include breakpoint($tab){
 						width:200px;
 						float:left;
@@ -799,7 +802,7 @@
 		&.promo{
 			h4{}
 			hr{}
-			img{
+			.item{
 				@include breakpoint($tab){
 					width:200px;
 					float:left;
@@ -820,7 +823,7 @@
 		}
 		&.button{
 			a{
-				img{}
+				.item{}
 				.promo-container{
 					span{}
 					p{}

@@ -1986,7 +1986,10 @@ body .p-promo {
   width: 100%;
   margin-bottom: 20px;
 }
-body .p-promo img {
+body .p-promo .item {
+  position: relative;
+}
+body .p-promo .item img {
   min-width: 100%;
 }
 body .p-promo.overlay {
@@ -2002,7 +2005,7 @@ body .p-promo.overlay a {
   position: relative;
   overflow: hidden;
 }
-body .p-promo.overlay img {
+body .p-promo.overlay .item {
   position: relative;
 }
 body .p-promo.overlay .tag h3 {
@@ -2146,7 +2149,7 @@ body .p-promo.overlayv2 a {
   position: relative;
   overflow: hidden;
 }
-body .p-promo.overlayv2 img {
+body .p-promo.overlayv2 .item {
   position: relative;
 }
 body .p-promo.overlayv2 .tag h3 {
@@ -2286,7 +2289,7 @@ body .p-promo.imgtitle a {
   display: table;
   table-layout: fixed;
 }
-body .p-promo.imgtitle img {
+body .p-promo.imgtitle .item {
   display: table-cell;
   float: none;
 }
@@ -2306,7 +2309,7 @@ body .p-promo.hovertext {
   position: relative;
   overflow: hidden;
 }
-body .p-promo.hovertext img {
+body .p-promo.hovertext .item {
   border: 1px solid #fff;
 }
 body .p-promo.hovertext a {
@@ -2433,12 +2436,12 @@ body .p-promo.hovertext a p:after {
     font-size: 16px;
   }
 }
-body .p-promo.linkimg h4 {
+body .p-promo.link.item h4 {
   border-bottom: 1px solid #bbbbbb;
   padding-bottom: 5px;
   margin-bottom: 20px;
 }
-body .p-promo.linkimg a img {
+body .p-promo.link.item a .item {
   width: 100%;
 }
 body .p-promo.generic {
@@ -2463,11 +2466,11 @@ body .p-promo.generic .promo-container p {
   line-height: 22px;
   overflow: hidden;
 }
-body .p-promo.generic.right img {
+body .p-promo.generic.right > .item {
   float: right;
 }
 @media (min-width: 45em) {
-  body .p-promo.generic.right img {
+  body .p-promo.generic.right > .item {
     width: 30%;
     padding-left: 20px;
   }
@@ -2480,11 +2483,11 @@ body .p-promo.generic.right img {
     margin-top: 0;
   }
 }
-body .p-promo.generic.left img {
+body .p-promo.generic.left > .item {
   float: left;
 }
 @media (min-width: 45em) {
-  body .p-promo.generic.left img {
+  body .p-promo.generic.left > .item {
     width: 30%;
     padding-right: 20px;
   }
@@ -2502,7 +2505,7 @@ body .p-promo.generic.hover {
   border: 1px solid #bbbbbb;
   margin-top: 0;
 }
-body .p-promo.generic.hover img {
+body .p-promo.generic.hover .item {
   display: block;
   margin: auto;
   float: none;
@@ -2615,7 +2618,7 @@ body .p-promo.promo.light .promo-container > a {
 body .p-promo.promo.light .promo-container > a:after {
   color: #2a2a2a;
 }
-body .p-promo.promo.wrap img {
+body .p-promo.promo.wrap .item {
   float: left;
   padding-right: 10px;
 }
@@ -2631,7 +2634,7 @@ body .p-promo.button {
 body .p-promo.button a {
   position: relative;
 }
-body .p-promo.button a img {
+body .p-promo.button a .item {
   width: 100%;
 }
 body .p-promo.button a .promo-container {
@@ -2718,7 +2721,7 @@ body .l-promo-sidebar .p-promo.overlay .promo-container {
 body .l-promo-sidebar .p-promo.imgtitle a {
   display: block;
 }
-body .l-promo-sidebar .p-promo.imgtitle img {
+body .l-promo-sidebar .p-promo.imgtitle .item {
   display: block;
 }
 body .l-promo-sidebar .p-promo.imgtitle h2 {
@@ -2730,7 +2733,7 @@ body .l-promo-sidebar .p-promo.imgtitle h2 {
 body .l-promo-sidebar .p-promo.generic .promo-container h2 {
   margin-top: 10px;
 }
-body .l-promo-sidebar .p-promo.generic.left img, body .l-promo-sidebar .p-promo.generic.right img {
+body .l-promo-sidebar .p-promo.generic.left .item, body .l-promo-sidebar .p-promo.generic.right .item {
   width: 100%;
   padding: 0;
 }
@@ -2738,7 +2741,7 @@ body .l-promo-sidebar .p-promo.generic.left .promo-container, body .l-promo-side
   width: 100%;
 }
 @media (min-width: 45em) {
-  body .l-content .p-promo.generic.hover img {
+  body .l-content .p-promo.generic.hover .item {
     width: 200px;
     float: left;
     min-width: initial;
@@ -2755,7 +2758,7 @@ body .l-content .p-promo.generic.hover .promo-container {
   }
 }
 @media (min-width: 45em) {
-  body .l-content .p-promo.promo img {
+  body .l-content .p-promo.promo .item {
     width: 200px;
     float: left;
   }
