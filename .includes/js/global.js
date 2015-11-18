@@ -28,6 +28,23 @@ $(document).ready(function(){
 			}
 		};
 	});
+	$('.accordion h3').on('keypress click',function(e){
+		$(this).toggleClass('active');
+		var selector = $(this).next();
+		$(this).next().toggleClass('open');
+/*		if($(this).next().hasClass('open')){
+			var val = '0';
+		}else{
+			var val = 'auto';
+		}
+		selector
+			.toggleClass('open')
+			.data('oHeight',selector.height())
+			.css('height',val)
+			.data('nHeight',selector.height())
+			.animate({height: selector.data('nHeight')},400);
+*/
+	});
 	$('.drop-toggle').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
 			e.preventDefault();

@@ -1,25 +1,18 @@
 <?php
 /**
- 		DEPRECIATED, use accordiontab or accordion if possible
- *	Function to include a jQuery UI Accordion
+ *	Function to include an Accordion
  *
  *	@param string  $id
  *	@param array  $arr = array of items to display
  */
-function p_accordion_ui(
+function p_accordion(
 	$id,
 	$arr = null){
 
 	global $script_var;
 	$string = '';
-	$script_var .= '
-$(function() {
-	$( "#'.$id.'" ).accordion({
-		heightStyle: "content"
-	});
-});
-	';
-	$string .='<div id="'.$id.'">';
+
+	$string .='<div class="accordion" id="'.$id.'">';
 	if($arr == null){
 		$string .='
 		<h3>Section 1</h3>

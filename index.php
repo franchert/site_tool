@@ -9,7 +9,7 @@ $instafeed = true;
 /*promo director initializes region variables and includes all the functions to create elements*/
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
 
-$p_one .="<div class='wrapper'><div class='column'>".p_promo("button","light","Examples Page",null,null,null,"/0examples")."</div></div>";
+$p_one .="<div class='wrapper'><div class='column'>".p_promo("button","image","light","Examples Page",null,null,null,"/0examples")."</div></div>";
 
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

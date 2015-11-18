@@ -11,7 +11,9 @@ $depth = 2;
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
 
 $p_content .= "<h2>Sample UI Accordion</h2>";
-$p_content .= p_accordion("sample-acc");
+$p_content .= p_accordion_ui("sample-acc");
+$p_content .= "<h2>Sample New Accordion</h2>";
+$p_content .= p_accordion("new_acc");
 $p_content .= "<h2>Mobile Accordion to Desktop Tabs</h2>";
 $p_content .= p_tabaccordion("sample-acc-v2");
 $p_content .= "<h2>Sample UI Tabs</h2>";

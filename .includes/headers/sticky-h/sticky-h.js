@@ -31,6 +31,7 @@ $( window ).resize(function() {
 });
 
 $(window).scroll(function() {
+	subPos = $('.l-head').offset();
 	stickyHeader(subPos);
 });
 

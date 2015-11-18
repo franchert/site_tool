@@ -732,14 +732,13 @@ body ul.tabaccordion > li h3 {
   line-height: 26px;
   font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
   text-transform: uppercase;
-  text-transform: uppercase;
   background: #2a2a2a;
+  text-transform: uppercase;
   cursor: pointer;
   outline: none;
   margin: 0;
   border-top: 2px solid #fff;
   border-bottom: 0;
-  color: #fff;
   padding: 10px 20px;
   position: relative;
   padding-right: 20px;
@@ -792,9 +791,8 @@ body ul.tabaccordion > li > div {
 }
 @media (max-width: 45em) {
   body ul.tabaccordion > li.acc-active h3 {
-    background: #2a2a2a;
-    color: #fff;
-    color: #fff;
+    background: #bbbbbb;
+    color: #2a2a2a;
   }
   body ul.tabaccordion > li.acc-active h3:after {
     -webkit-transform: rotateZ(-90deg);
@@ -805,7 +803,7 @@ body ul.tabaccordion > li > div {
     display: inline-block;
     padding: 20px;
     width: auto;
-    border: 2px solid #2a2a2a;
+    border: 2px solid #bbbbbb;
     margin-top: -2px;
   }
 }
@@ -826,6 +824,65 @@ body ul.tabaccordion > li > div {
     border: 2px solid #2a2a2a;
     margin-top: -2px;
   }
+}
+body .accordion {
+  margin-bottom: 20px;
+}
+body .accordion h3 {
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 26px;
+  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+  text-transform: uppercase;
+  text-transform: uppercase;
+  background: #2a2a2a;
+  border-bottom: 2px solid #fff;
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+  position: relative;
+  padding-right: 20px;
+}
+body .accordion h3.active {
+  background: #bbbbbb;
+  color: #2a2a2a;
+}
+body .accordion h3.active:after {
+  -webkit-transform: rotateZ(-90deg);
+  -ms-transform: rotateZ(-90deg);
+  transform: rotateZ(-90deg);
+}
+body .accordion h3:after {
+  content: "";
+  font-family: FontAwesome;
+  font-size: 12px;
+  position: absolute;
+  padding: 0 10px;
+  top: calc(50% - 6px);
+  color: inherit;
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+  transition: all .2s;
+}
+body .accordion h3:after {
+  right: 20px;
+  font-size: 20px;
+  top: calc(50% - 12px);
+}
+body .accordion > div {
+  display: none;
+  float: left;
+  width: 100%;
+  padding: 0 20px;
+  border: 1px solid #bbbbbb;
+  border-top: 0;
+  margin-bottom: 2px;
+  overflow: hidden;
+}
+body .accordion > div.open {
+  display: inline-block;
 }
 body .alert {
   display: block;
