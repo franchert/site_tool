@@ -19,6 +19,7 @@ function p_subnav(
 	global $section;
 	global $file_base;
 	global $url_remove;
+	global $cms;
 	if ($root_path == null){
 		$root_path = $section;
 	}
@@ -29,7 +30,11 @@ function p_subnav(
 		$k = str_replace($url_remove,'',$k);
 	}
 	//print_r(explodeTree($key_values, "/",true,$starting));
-	$tree = plotTree(explodeTree($key_values, "/",true,$starting),true,$printsection,$backtohome,$starting,$toggle);
+	if($cms == 't4'){
+		$tree = plotTree_t4(explodeTree($key_values, "/",true,$starting),true,$printsection,$backtohome,$starting,$toggle);
+	}else{
+		$tree = plotTree(explodeTree($key_values, "/",true,$starting),true,$printsection,$backtohome,$starting,$toggle);
+	}
 	return $tree;
 }
 /**
@@ -127,7 +132,7 @@ function plotTree(
 		} else{
 			//open the array item. Note we skip the section root in the subnav
 			$subnav_string .= "<li class='".($page == $base_array_slug ? 'active ':'').($active_trail ? 'active-trail open ':'')."'>";
-			$subnav_string .="<a href='" . $file_base ."/". $base_array . "' class='".(is_array($v) && $toggle === true ? 'has-sub':'')."'>" . $base_array_title. "</a>";
+			$subnav_string .="<a href='" . $file_base.$base_array . "' class='".(is_array($v) && $toggle === true ? 'has-sub':'')."'>" . $base_array_title. "</a>";
 			$base_array = str_replace($url_remove,"",$base_array);
 			//if there is a child under the current item, we want to add a toggle.
 			if(is_array($v) && $toggle === true){
@@ -135,6 +140,107 @@ function plotTree(
 			}
 			//if we still have more to do (if there's a sub-array), recur
 			if (is_array($v)) {plotTree($v, false,$printsection,$backtohome,$starting,$toggle);};
+			//close off the current array item
+			$level --;
+			$subnav_string .= "</li>";
+		};
+		//go to the next array item
+	}
+	//close off this recursion loop by closing the ul (or main container div if we're at the top)
+	if ($initial_run) {
+		$subnav_string .= "</div>";
+	}else{
+		$subnav_string .= "</ul>";
+	}
+	//Return the closed loop to the function call
+	return $subnav_string;
+}
+/**
+ *	Function	get flat array of directories located under the $base_dir
+ *	For use with the TerminalFour CMS. Provides a structure usable by the Multilevel Menus functionality
+ *
+ *	@param string	$selector = 
+ *
+ */
+function plotTree_t4(
+	$arr,
+	$initial_run=true,
+	$printsection,
+	$backtohome,
+	$starting,
+	$toggle){
+
+	global $subnav_string;
+	global $section;
+	global $section_title;
+	global $page;
+	global $path;
+	global $segments;
+	global $file_base;
+	global $level ;
+	global $url_remove;
+	global $mini;
+	//print_r($arr);
+	if ($initial_run) {
+		//wrappers for the container
+		$subnav_string = "<div class='subnav' id='subnav'>";
+		//print the toggle for the nav.
+		if($printsection === true){
+			$temp ="<h2 tabindex='0'>".$section_title."</h2>";
+		}else if ($printsection === false){
+			$temp = "<h2>Menu</h2>";
+		}else{
+			$temp = "";
+		}
+		$subnav_string .= $temp;
+		$d = 0;
+		//t4 is 0 based instead of 1 based for level.
+		$level -= 2;
+	}else{
+		if($level == -1){
+			$subnav_string .= "<ul class='mainMenu'>";
+		}else{
+			$subnav_string .= "<ul class='multilevel-linkul-".$level."'>";
+		}
+	}
+	foreach ($arr as $k=>$v){
+		if ($k == "__base_val") continue;
+		$active_trail = false;
+		if(is_array($v) && strpos($path,(string)$v['__base_val']) !== false){
+			$active_trail = true;
+		}
+		if(!is_array($v) && strpos($path,(string)$v) !== false){
+			$active_trail = true;
+		}
+		//if the current array value is an array, get the base value and set it
+		//as the value we use for printing out the array
+		$base_array = (is_array($v) ? $v["__base_val"] : $v);
+		$base_array_slug = preg_replace( '%^(.+)/%', '', $base_array );
+		$base_array_title = titlefromSlug(substr($base_array_slug,1));
+		//print_r($base_array."</br>");
+		//if we're on the section root
+		$level ++;
+		if($section == $base_array_slug && $level <= 1){
+			//if we're on a sub-array, we need to go deeper to get a value to print
+			if (is_array($v)) {plotTree_t4($v, false,$printsection,$backtohome,$starting,$toggle);};
+		} else{
+			//open the array item. Note we skip the section root in the subnav
+			$subnav_string .= "<li>";
+			if($active_trail){
+				$subnav_string .="<span class='currentbranch".$level."'>";
+			}
+			//need to add the root in only if file_base is empty
+			$subnav_string .="<a href='".($file_base == "" ? "/":""). $file_base . $base_array . "'>" . $base_array_title. "</a>";
+			if($active_trail){
+				$subnav_string .="</span>";
+			}
+			$base_array = str_replace($url_remove,"",$base_array);
+			//if there is a child under the current item, we want to add a toggle.
+			if(is_array($v) && $toggle === true){
+				//$subnav_string .="<button class='sn-toggle'><span class='fa fa-angle-right'></span></button>";
+			}
+			//if we still have more to do (if there's a sub-array), recur
+			if (is_array($v)) {plotTree_t4($v, false,$printsection,$backtohome,$starting,$toggle);};
 			//close off the current array item
 			$level --;
 			$subnav_string .= "</li>";

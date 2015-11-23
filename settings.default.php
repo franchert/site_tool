@@ -19,6 +19,19 @@ $starting = 1;
 	//ALSO, /sitename needs to be added to file calls through htaccess
 
 
+
+	//remaining bugs to be solved
+
+	/*========================================================================================================
+
+	-relative/absolute paths to resources in sass files (can't use php variables)
+	.includes/sass/_typography
+
+	  - Added ../../ to font URLs
+
+	========================================================================================================*/
+
+
 //debugging server variables
 //include_once($_SERVER['DOCUMENT_ROOT'].$file_base.'/test.php');
 ?>

@@ -30,24 +30,20 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 	$site_logo = $file_base."/.includes/images/placeholder-svg.php?wh=600x100&color=111111&fill=cccccc&font=Arial&txt=Site Logo";
 	$alert_on = false;
 	$demo = false;
-	/*choose a header type in the .includes/header folder*/
+
+/*choose a header type in the .includes/header folder*/
 	$header = 'sticky-h';
-	/*choose one front-end framework. Make sure the matching css file is located in stylesheets*/
+
+/*choose one front-end framework. Make sure the matching css file is located in stylesheets*/
 	$fe_framework = 'custom';
 	//$fe_framework = 'bootstrap';
 	//$fe_framework = 'skeleton'; /*not implemented*/
 	//$fe_framework = 'foundation' /*not implemented*/
-	if($fe_framework == 'custom'){
-		$fe_container = ' column';
-		$fe_wrapper = ' wrapper';
-		$fe_region = ' l-region';
-	}
-	if($fe_framework == 'bootstrap'){
-		$fe_wrapper = ' container';
-		$fe_container = ' container';
-		$fe_region = ' row';
-	}
 
+/*choose the CMS this project is going to be implemented into*/
+	//$cms = 'ou';
+	$cms = 't4';
+	//$cms = 'perc';
 
 	$url = dirname($_SERVER['PHP_SELF']);
 	$path = parse_url($url, PHP_URL_PATH);

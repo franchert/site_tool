@@ -3,7 +3,7 @@ date: -2015
 link:
 notes:
 	Added this changelog file.
-
+	added $file_base variable to fix a few issues with apache default setup
 
 
 version: 0.3

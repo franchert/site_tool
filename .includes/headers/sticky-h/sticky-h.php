@@ -34,7 +34,13 @@
 				</div>
 			</div>
 			<div class='main-nav-container wrapper'>
-				<?php echo(p_main_nav()); ?>
+				<?php 
+					if($cms == 't4'){
+						echo(p_main_nav_t4()); 
+					}else{
+						echo(p_main_nav()); 
+					}
+				?>
 			</div>
 		</div>
 		<div class="site-logo-wrapper">

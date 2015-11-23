@@ -14,10 +14,15 @@ function p_main_nav(
 	global $path;
 	global $site_logo;
 	global $fe_container;
+	global $header;
 	//gets first level of directories from the root in an array
 	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
 	//build the list
-	$string = "<div class='nav-wrapper'><div class='".$fe_container."'><a class='desk-sticky' href='/'><img src='".$site_logo."'/></a><ul class='main-nav'>";
+	$string ="<div class='nav-wrapper'><div class='".$fe_container."'>";
+	if($header == 'sticky-h' || 'sticky-aacc'){
+		$string.="<a class='desk-sticky' href='/'><img src='".$site_logo."'/></a>";
+	}
+	$string.="<ul class='main-nav'>";
 	$count = 0;
 	//loop for each directory returned
 	foreach($dirs as $dir){
@@ -26,13 +31,50 @@ function p_main_nav(
 		if(substr($dir,0,1) === "0"){
 			continue;
 		}
-		$string .= '<li id="nav-'.$count.'" class="nav'.($page != 'home' && strpos($dir,$section) !== false ? 'active':'').'"><a href="'.$file_base."/".$dir.'">'.$alt.'</a></li>';
+		$string .= '<li id="nav-'.$count.'" class="nav'.($page != 'home' && strpos($dir,$section) !== false ? 'active':'').'"><a href="'.$file_base.$dir.'">'.$alt.'</a></li>';
 		$count++;
 	}
 	$string .= "</ul></div></div>";
 	return $string;
 }
+/**
+*	prints out main nav
+*/
+function p_main_nav_t4(
+	){
 
+	global $file_base;
+	global $base_site;
+	global $url_remove;
+	global $section;
+	global $page;
+	global $page_title;
+	global $path;
+	global $site_logo;
+	global $fe_container;
+	global $header;
+	//gets first level of directories from the root in an array
+	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
+	//build the list
+	$string ="<div class='nav-wrapper'><div class='".$fe_container."'>";
+	if($header == 'sticky-h' || 'sticky-aacc'){
+		$string.="<a class='desk-sticky' href='/'><img src='".$site_logo."'/></a>";
+	}
+	$string.="<ul class='main-nav'>";
+	$count = 0;
+	//loop for each directory returned
+	foreach($dirs as $dir){
+		$alt = file_get_contents($base_site.$dir."/nav-contents.php");
+		$dir = str_replace($url_remove,'',$dir);
+		if(substr($dir,0,1) === "0"){
+			continue;
+		}
+		$string .= '<li>'.($page != 'home' && strpos($dir,$section) !== false ? '<span class="currentbranch'.$count.'">':'').'<a href="'.$file_base."/".$dir.'">'.$alt.'</a>'.($page != 'home' && strpos($dir,$section) !== false ? '</span>':'').'</li>';
+		$count++;
+	}
+	$string .= "</ul></div></div>";
+	return $string;
+}
 /**
 *	prints out navigation based on root path
 */

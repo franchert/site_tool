@@ -1,2 +1,4 @@
 /.htaccess
 /settings.php
+/.includes/.sass-cache/*
+

@@ -29,6 +29,17 @@ if($layout == "one-column"){
 	$p_one = $init;
 }
 
+if($fe_framework == 'custom'){
+	$fe_container = ' column';
+	$fe_wrapper = ' wrapper';
+	$fe_region = ' l-region';
+}
+if($fe_framework == 'bootstrap'){
+	$fe_wrapper = ' container';
+	$fe_container = ' container';
+	$fe_region = ' row';
+}
+
 /*initialize global variables*/
 $script_var = '';
 $active = '';
