@@ -8,9 +8,11 @@
 */
 function p_tabaccordion(
 	$id,
-	$arr = null){
+	$arr = null,
+	$active = 1){
 
 	$string = '<ul class="tabaccordion" id="'.$id.'">';
+	$count = 1;
 	if($arr == null){
 		$string .='
 		<li class="tab-active"><h3 tabindex="0">Section 1</h3>
@@ -52,7 +54,12 @@ function p_tabaccordion(
 	}else{
 		$acc_string ='';
 		foreach($arr as $k => $v){
-			$acc_string .='<li><h3 tabindex="0">'.$v["t"].'</h3><div>'.$v["b"].'</div></li>';
+			$acc_string .='<li';
+			if ($active == $count){
+				$acc_string .= ' class="tab-active"';
+			}
+			$count++;
+			$acc_string .='><h3 tabindex="0">'.$v["t"].'</h3><div>'.$v["b"].'</div></li>';
 		}
 		$string .=$acc_string;
 	}
