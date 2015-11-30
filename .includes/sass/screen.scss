@@ -57,6 +57,7 @@ body{
 img{
 	position:relative;
 	width:auto;
+	height:auto;
 	&.mobile-image{
 		@include breakpoint($tab){
 			display:none!important;

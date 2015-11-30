@@ -29,7 +29,7 @@ function p_image(
 	if(is_null($caption)){
 		$string .=' style="'.$inline_css.'"';
 	}
-	$string .='/>';
+	$string .=' height="'.$h.'" width="'.$w.'"/>';
 	if(!is_null($caption)){
 		$string .='<p>'.$caption.'</p>';
 		$string .= '</div>';

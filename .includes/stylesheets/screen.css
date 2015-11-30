@@ -3674,6 +3674,7 @@ body script {
 img {
   position: relative;
   width: auto;
+  height: auto;
 }
 @media (min-width: 45em) {
   img.mobile-image {

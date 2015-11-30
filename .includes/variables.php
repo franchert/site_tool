@@ -41,8 +41,8 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 	//$fe_framework = 'foundation' /*not implemented*/
 
 /*choose the CMS this project is going to be implemented into*/
-	//$cms = 'ou';
-	$cms = 't4';
+	$cms = 'ou';
+	//$cms = 't4';
 	//$cms = 'perc';
 
 	$url = dirname($_SERVER['PHP_SELF']);
