@@ -3767,6 +3767,7 @@ ol li {
   font-size: 18px;
   line-height: 24px;
   font-family: 'ITCFranklinGothicBK';
+  display: list-item;
 }
 
 a {
