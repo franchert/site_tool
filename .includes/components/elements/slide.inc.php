@@ -6,10 +6,8 @@
  */
 function p_slide(
 	$item){
-
-	$string = '<div class="slide">';
-	$string .= $item;
-	$string .= '</div>';
+	
+	$string = "\n<div class='slide'>\n\t".$item."\n</div>\n";
 	return $string;
 }
 ?>

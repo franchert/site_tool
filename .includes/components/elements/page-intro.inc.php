@@ -16,18 +16,18 @@ function p_page_intro(
 	$item = null){
 
 	$string = '';
-	$string .="<div class='page-intro ".$type."'>";
-	$string .= "<h2>".$title."</h2>";
+	$string .="\n<div class='page-intro ".$type."'>\n\t";
+	$string .= "<h2>".$title."</h2>\n\t";
 	if(is_null($image)){
 		$image = p_image("400","300");
 	}else{
 		$image = "<img alt='".$title."' src='".$image."'/>";
 	}
-	$string .= $image;
+	$string .= $image."\n\t";
 	if(is_null($text)){
 		$text = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent blandit, turpis et lobortis commodo, mauris dolor finibus orci,</p>";
 	}
-	$string .= $text;
+	$string .= $text."\n";
 	if(!is_null($item)){
 		$string .= "<div class='extra'>";
 		if(is_array($item)){
@@ -52,7 +52,7 @@ function p_page_intro(
 			$string .= "</ul>";
 		}
 	}
-	$string .="</div>";
+	$string .="</div>\n";
 	return($string); 
 }
 ?>

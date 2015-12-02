@@ -5,89 +5,89 @@
  *	@param string  $selector = 
  */
 function p_news(
-	$type='',
+	$type="",
 	$img=null,
 	$title=null,
-	$link='#',
+	$link="#",
 	$date=null,
 	$text=null,
 	$readmore = true){
 
 	if(is_null($img)){
-		$image = p_image("300","300");
-		$width = '';
-	}elseif(isset($img) && $img == ''){
-		$image = "";
-		$width = ' fullwidth';
+		$image = p_image('300','300');
+		$width = "";
+	}elseif(isset($img) && $img == ""){
+		$image = '';
+		$width = " fullwidth";
 	}
 	if (is_null($date)){
-		$date = date('F d,Y');
+		$date = date("F d,Y");
 	}
 	if (is_null($title)){
-		$title = 'lorem ipsum dolor sit amet';
+		$title = "lorem ipsum dolor sit amet";
 	}
-	$string = '<div class="news_article '.$type.'">';
-		if(strrpos($type,"short") !== false){
-			$string .="<a href='".$link."'>";
-				$string .=$image;
-				$string .='<div class="news-container'.$width.'">';
-					$string .='<h5>'.$date.'</h5>';
-					if ($title != ''){
-						$string .='<h2>'.$title.'</h2>';
+	$string = "\n<div class='news_article ".$type."'>\n\t";
+		if(strrpos($type,'short') !== false){
+			$string .="<a href='".$link."'>\n\t\t";
+				$string .=$image."\n\t\t";
+				$string .="<div class='news-container".$width."'>\n\t\t\t";
+					$string .="<h5>".$date."</h5>\n\t\t\t";
+					if ($title != ""){
+						$string .="<h2>".$title."</h2>\n\t\t\t";
 					}
 					if (is_null($text)){
-						$string .= p_paragraph(1);
+						$string .= p_paragraph(1)."\n\t\t";
 					}else{
-						$string .='<p>'.$text.'</p>';
+						$string .="<p>".$text."</p>\n\t";
 					}
-				$string .= '</div>';
-			$string .="</a>";
-		}else if(strrpos($type,"normal") !== false){
-			$string .=$image;
-			$string .='<div class="news-container'.$width.'">';
-				$string .='<h5>'.$date.'</h5>';
+				$string .= "</div>\n\t";
+			$string .="</a>\n\t";
+		}else if(strrpos($type,'normal') !== false){
+			$string .=$image."\n\t";
+			$string .="<div class='news-container".$width."'>\n\t\t";
+				$string .="<h5>".$date."</h5>\n\t\t";
 				if(!is_null($link)){
-					$string .="<a href='".$link."'>";
+					$string .="<a href='".$link."'>\n\t\t\t";
 				}
-				if ($title != ''){
-					$string .='<h2>'.$title.'</h2>';
+				if ($title != ""){
+					$string .="<h2>".$title."</h2>\n\t\t";
 				}
 				if(!is_null($link)){
-					$string .="</a>";
+					$string .="</a>\n\t\t";
 				}
-					if (is_null($text)){
-						$string .= p_paragraph(1);
-					}else{
-						$string .='<p>'.$text.'</p>';
-					}
+				if (is_null($text)){
+					$string .= p_paragraph(1)."\n";
+				}else{
+					$string .="<p>".$text."</p>\n";
+				}
 				if($readmore){
-					$string .='<a class="read-more" href="'.$link.'">Read More</a>';
+					$string .="\t\t<a class='read-more' href='".$link."'>Read More</a>\n";
 				}
-			$string .= '</div>';
+			$string .= "\t</div>\n";
 		}else{
-			$string .=$image;
-			$string .='<div class="news-container'.$width.'">';
+			$string .=$image."\n\t";
+			$string .="<div class='news-container".$width."'>\n\t\t";
 				if(!is_null($link)){
-					$string .="<a href='".$link."'>";
+					$string .="<a href='".$link."'>\n\t\t\t";
 				}
-				if ($title != ''){
-					$string .='<h2>'.$title.'</h2>';
+				if ($title != ""){
+					$string .="<h2>".$title."</h2>\n\t\t\t";
 				}
-				$string .='<h5>'.$date.'</h5>';
+				$string .="<h5>".$date."</h5>\n\t\t";
 				if(!is_null($link)){
-					$string .="</a>";
+					$string .="</a>\n\t\t";
 				}
 					if (is_null($text)){
-						$string .= p_paragraph(1);
+						$string .= p_paragraph(1)."\n\t\t";
 					}else{
-						$string .='<p>'.$text.'</p>';
+						$string .="<p>".$text."</p>\n\t";
 					}
 				if($readmore){
-					$string .='<a class="read-more" href="'.$link.'">Read More</a>';
+					$string .="<a class='read-more' href='".$link."'>Read More</a>\n\t";
 				}
-			$string .= '</div>';
+			$string .= "</div>\n";
 		}
-	$string .= '</div>';
+	$string .= "</div>\n";
 	return $string;
 }
 ?>

@@ -30,25 +30,27 @@ function p_promo(
 	}
 
 	$string = '';
-	$string .="<div class='p-promo ".$type." ".$addl_class."'>";
+	$string .="\n<div class='p-promo ".$type." ".$addl_class."'>\n\t";
 
 	if(strrpos($type,"overlayv2") !== false){
 		if(!is_null($link)){
-			$string .="<a href='".$link."'>";
+			$string .="<a href='".$link."'>\n\t\t";
 		}
-		$string .= "<div class='item'>".$img."</div>";
+		$string .= "<div class='item'>".$img."</div>\n\t\t";
 		if(!is_null($tag)){
-			$string .="<div class='tag'><h3>".$tag."</h3></div>";
+			$string .="<div class='tag'><h3>".$tag."</h3></div>\n\t\t";
 		}
-		$string .= "<div class='promo-container'>";
-			$string .="<h2>".$title."</h2>";
+		$string .= "<div class='promo-container'>
+			";
+			$string .="<h2>".$title."</h2>
+			";
 			if(is_null($text)){
 				$text = file_get_contents('http://loripsum.net/api/1/short/plaintext');
 			}
-			$string .= "<p>".$text."</p>";
-		$string .= "</div>";
+			$string .= "<p>".$text."</p>\n\t\t";
+		$string .= "</div>\n\t";
 		if(!is_null($link)){
-			$string .="</a>";
+			$string .="</a>\n";
 		}
 	}else if(strrpos($type,"overlay") !== false){
 		if(!is_null($link)){
@@ -70,20 +72,20 @@ function p_promo(
 		}
 	}else if(strrpos($type,"imgtitle") !== false){
 		if($link != null){
-			$string .= "<a class='".$addl_class."' href='".$link."'>";
+			$string .= "<a class='".$addl_class."' href='".$link."'>\n\t\t";
 		}
-		$string .="<div class='item'>".$img."</div><h2>".$title."</h2>";
+		$string .="<div class='item'>".$img."</div>\n\t\t<h2>".$title."</h2>\n\t";
 		if($link != null){
-			$string .= "</a>";
+			$string .= "</a>\n";
 		}
 	}else if(strrpos($type,"linkimg") !== false){
 		if(!is_null($title)){
-			$string .= "<h4>".$title."</h4>";
+			$string .= "<h4>".$title."</h4>\n\t";
 		}
 		if($link != null){
-			$string .= "<a href='".$link."'>";
+			$string .= "<a href='".$link."'>\n\t\t";
 		}
-		$string .="<div class='item'>".$img."</div>";
+		$string .="<div class='item'>".$img."</div>\n\t";
 		if ($text == ""){
 			$text = "";
 		}else if(is_null($text)){
@@ -91,85 +93,85 @@ function p_promo(
 		}
 		$string .= $text;
 		if($link != null){
-			$string .= "</a>";
+			$string .= "</a>\n";
 		}
 	}else if(strrpos($type,"hovertext") !== false){
-		$string .= "<div class='item'>".$img."</div>";
-		$string .="<a href='".$link."'>";
-		$string .="<h2>".$title."</h2>";
+		$string .= "<div class='item'>\n\t\t".$img."\n\t</div>\n\t";
+		$string .="<a href='".$link."'>\n\t\t";
+		$string .="<h2>".$title."</h2>\n\t\t";
 		if(is_null($link_title)){
-			$string .= "<p>Read More</p>";
+			$string .= "<p>Read More</p>\n\t";
 		}else if($link_title == ''){
 			$string .='';
 		}else{
-			$string .= "<p>".$link_title."</p>";
+			$string .= "<p>".$link_title."</p>\n";
 		}
-		$string .= "</a>";
+		$string .= "</a>\n";
 	}else if(strrpos($type,"generic") !== false){
-		$string .= "<div class='item'>".$img."</div>";
-		$string .= "<div class='promo-container'>";
-			$string .="<h2>".$title."</h2>";
+		$string .= "<div class='item'>".$img."</div>\n\t";
+		$string .= "<div class='promo-container'>\n\t\t";
+			$string .="<h2>".$title."</h2>\n\t\t";
 			if(is_null($text)){
 				$text = file_get_contents('http://loripsum.net/api/1/short/plaintext');
 			}
-			$string .= "<p>".$text."</p>";
+			$string .= "<p>".$text."</p>\n\t\t";
 			if(!is_null($arr)){
 				$string .="<ul>";
 				foreach($arr as $k => $v){
 					$string .= '<li>'.$v.'</li>';
 				}
-				$string .="</ul>";
+				$string .="</ul>\n\t\t";
 			}
 			if(is_null($link_title)){
-				$string .= "<a class='read-more' href='".$link."'>Read More</a>";
+				$string .= "<a class='read-more' href='".$link."'>Read More</a>\n\t";
 			}else if($link_title == ''){
-				$string .="";
+				$string .="\n\t";
 			}else{
-				$string .= "<a class='read-more' href='".$link."'>".$link_title."</a>";
+				$string .= "<a class='read-more' href='".$link."'>".$link_title."</a>\n\t";
 			}
-		$string .= "</div>";
+		$string .= "</div>\n";
 	}else if(strrpos($type,"promo") !== false){
 		if(!is_null($title)){
-			$string .="<h4>".$title."</h4>";
+			$string .="<h4>".$title."</h4>\n\t";
 		}
-		if(strrpos($type,"light") === false){$string .="<hr>";}
+		if(strrpos($type,"light") === false){$string .="<hr>\n\t";}
 		if($item === ''){
-			$string .='';
+			$string .="\n\t";
 		}else{
-			$string .= "<div class='item'>".$img."</div>";
+			$string .= "<div class='item'>".$img."</div>\n\t";
 		}
-		$string .= "<div class='promo-container'>";
+		$string .= "<div class='promo-container'>\n\t\t";
 			if(is_null($text)){
 				$text = "<p class='intro'>".file_get_contents('http://loripsum.net/api/1/short/plaintext')."</p>";
 			} else if($text == ''){
 				$string .='';
 			}
-			$string .= $text;
+			$string .= $text."\n\t";
 			if(is_null($link_title) || $link_title == ''){
 				$string .= "";
 			}else{
-				$string .= "<a href='".$link."'>".$link_title."</a>";
+				$string .= "<a href='".$link."'>".$link_title."</a>\n\t";
 			}
-		$string .= "</div>";
+		$string .= "</div>\n";
 	}else if(strrpos($type,"button") !== false){
-		$string .="<a href='".$link."'>";
+		$string .="<a href='".$link."'>\n\t\t";
 		if(!is_null($item)){
 			$string .= $img;
 		}
-		$string .= "<div class='promo-container'>";
+		$string .= "<div class='promo-container'>\n\t\t\t";
 			if(is_null($link_title)){
-				$string .= "<span class='fa fa-circle'></span>";
+				$string .= "<span class='fa fa-circle'></span>\n\t\t\t";
 			}else if($link_title == ''){
 				$string .='';
 			}else{
-				$string .= "<span class='fa fa-".$link_title."'></span>";
+				$string .= "<span class='fa fa-".$link_title."'></span>\n\t\t\t";
 			}
-			$string .="<p>".$title."</p>";
-		$string .= "</div></a>";
+			$string .="<p>".$title."</p>\n\t\t";
+		$string .= "</div>\n\t</a>\n";
 	}else{
-		$string .= "<p style='color:#222;padding:20px;border:2px solid red;border-radius:5px;background:rgba(255,0,0,0.2);'>The &lsquo;".$type."&rsquo; promo type does not exist. Please try a different name.</p>";
+		$string .= "<p style='color:#222;padding:20px;border:2px solid red;border-radius:5px;background:rgba(255,0,0,0.2);'>The &lsquo;".$type."&rsquo; promo type does not exist. Please try a different name.</p>\n";
 	}
-	$string .="</div>";
+	$string .="</div>\n";
 	return($string); 
 }
 ?>

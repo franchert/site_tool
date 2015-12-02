@@ -22,8 +22,8 @@
 	<meta property="twitter:image" content="" >
 	<meta name="description" content="<?php echo $client_name;?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/styles.php"); ?>
-	<?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/scripts.php"); ?>
+<?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/styles.php"); ?>
+<?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/scripts.php"); ?>
 </head>
 <body class="<?php echo $section_slug; 
 if($section != $page){echo ' '.$page_slug;}
@@ -33,7 +33,6 @@ if(isset($mini) && $mini == true){echo ' mini';
 	if(isset($depth) && $depth > 0){echo ' m-'.substr($segments[$depth],1);}
 }
 echo " ".$layout;?>">
-
 	<a class="back-to-top" href="#top">Back to Top</a>
 	<header>
 	<?php if(isset($alert)){ ?>

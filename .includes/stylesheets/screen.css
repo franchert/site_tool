@@ -3083,6 +3083,8 @@ body .subnav h2 {
 body .subnav h2:before {
   content: "\f0d7";
   font-family: FontAwesome;
+  display: block;
+  float: left;
   color: #444;
   font-size: 24px;
   top: 0px;

@@ -40,7 +40,7 @@ if($fe_framework == 'bootstrap'){
 	/*prepend to regions*/
 	$p_content_header = breadcrumb() . $p_content_header;
 	$subnav_dropdowns = true;
-	$p_content_header = "<div class='".$fe_wrapper."'><div class='".$fe_container."'><h1>".$page_h1."</h1></div></div>". $p_content_header;
+	$p_content_header = "\n\t<div class='".$fe_wrapper."'>\n\t\t<div class='".$fe_container."'><h1>".$page_h1."</h1></div>\n\t</div>\n\t". $p_content_header;
 	if(isset($mini) && $mini == true){
 		$i = -1;
 		$temp_path = "/";

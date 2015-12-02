@@ -49,12 +49,12 @@ $(window).load(function() {
 	if($arr == null){
 		$string .='
 		<div class="'.$id.' owlCarousel carousel">'
-			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("hovertext","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","image","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","image","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","image","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","image","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","image","","TextLink Promo",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo("hovertext","image","","TextLink Promo",null,null,$img,"#",null,null,true))
 		.'</div>
 		';
 	}else{

@@ -9,7 +9,7 @@ function breadcrumb(){
 	global $fe_wrapper;
 	global $fe_container;
 	global $fe_region;
-	$string = '<div class="'.$fe_wrapper.'"><div id="breadcrumb"><ul>';
+	$string = "\n\t<div class='".$fe_wrapper."'>\n\t\t<div id='breadcrumb'>\n\t\t\t<ul>\n\t\t";
 	$i = -1;
 	$count = count($segments);
 	foreach($segments as $segment){
@@ -22,15 +22,15 @@ function breadcrumb(){
 			$crumb .= "/";
 		}
 		$i++;
-		$string .= '<li>';
+		$string .= "\t\t<li>";
 		if($count == $i+1){
 			$string .= $segment;
 		}else{
 			$string .='<a href="'.$crumb.'">'.$segment.'</a>';
 		}
-		$string .='</li>';
+		$string .="</li>\n\t\t";
 	}
-	$string .= '</ul></div></div>';
+	$string .= "\t</ul>\n\t\t</div>\n\t</div>\n";
 
 	return $string;
 }

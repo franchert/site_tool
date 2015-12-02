@@ -17,19 +17,25 @@ function p_list(
 		}else if($idORclass == "class"){
 			$value = ' '.$type;
 		}
-		$string = '<div class="p-list'.$value.'">';
+		$string = '<div class="p-list'.$value.'">
+	';
 		if($type == 'ordered'){
-			$string .='<ol>';
+			$string .='<ol>
+	';
 		}else{
-			$string .='<ul>';
+			$string .='<ul>
+	';
 		}
 		foreach($arr as $k => $v){
-			$string .= '<li>'.$v.'</li>';
+			$string .= '	<li>'.$v.'</li>
+	';
 		}
 		if($type == 'ordered'){
-			$string .='</ol>';
+			$string .='</ol>
+';
 		}else{
-			$string .='</ul>';
+			$string .='</ul>
+';
 		}
 		$string .= '</div>';
 	}else{

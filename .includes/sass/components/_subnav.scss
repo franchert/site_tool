@@ -18,6 +18,8 @@
 		&:before{
 			content:"\f0d7";
 			font-family:FontAwesome;
+			display:block;
+			float:left;
 			color:$c-default;
 			font-size:24px;
 			top:0px;

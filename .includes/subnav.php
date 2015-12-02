@@ -132,7 +132,7 @@ function plotTree(
 		} else{
 			//open the array item. Note we skip the section root in the subnav
 			$subnav_string .= "<li class='".($page == $base_array_slug ? 'active ':'').($active_trail ? 'active-trail open ':'')."'>";
-			$subnav_string .="<a href='" . $file_base.$base_array . "' class='".(is_array($v) && $toggle === true ? 'has-sub':'')."'>" . $base_array_title. "</a>";
+			$subnav_string .="<a href='" . $file_base.'/'.$base_array . "' class='".(is_array($v) && $toggle === true ? 'has-sub':'')."'>" . $base_array_title. "</a>";
 			$base_array = str_replace($url_remove,"",$base_array);
 			//if there is a child under the current item, we want to add a toggle.
 			if(is_array($v) && $toggle === true){
@@ -148,7 +148,7 @@ function plotTree(
 	}
 	//close off this recursion loop by closing the ul (or main container div if we're at the top)
 	if ($initial_run) {
-		$subnav_string .= "</div>";
+		$subnav_string .= "</div>\n";
 	}else{
 		$subnav_string .= "</ul>";
 	}
@@ -249,7 +249,7 @@ function plotTree_t4(
 	}
 	//close off this recursion loop by closing the ul (or main container div if we're at the top)
 	if ($initial_run) {
-		$subnav_string .= "</div>";
+		$subnav_string .= "</div>\n";
 	}else{
 		$subnav_string .= "</ul>";
 	}

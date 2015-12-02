@@ -7,10 +7,10 @@
 *		$fe_framework
 */
 ?>
-<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+("devicePixelRatio" in window ? ","+devicePixelRatio : ",1")+'; path=/';</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-<script src="<?php echo $file_base; ?>/.includes/js/jquery.hoverIntent.js"></script>
+	<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+("devicePixelRatio" in window ? ","+devicePixelRatio : ",1")+'; path=/';</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+	<script src="<?php echo $file_base; ?>/.includes/js/jquery.hoverIntent.js"></script>
 <?php //include all necessary libraries ?>
 <?php if(isset($layout)){ ?>
 	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/layouts/<?php echo $layout ?>/<?php echo $layout ?>.js"></script>
@@ -36,10 +36,8 @@
 <?php if(isset($colorbox) && $colorbox === true){	?>
 	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/jquery.colorbox-min.js"></script>
 <?php } ?>
-
-<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/global.js"></script>
-
+	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/global.js"></script>
 <?php if(isset($scripts) && $scripts === true){	?>
 	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/js/<?php echo $page_slug ?>.js"></script>
 <?php } ?>
-<script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript">var switchTo5x=true;</script>

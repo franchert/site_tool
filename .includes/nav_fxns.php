@@ -18,11 +18,11 @@ function p_main_nav(
 	//gets first level of directories from the root in an array
 	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
 	//build the list
-	$string ="<div class='nav-wrapper'><div class='".$fe_container."'>";
+	$string ="\n<div class='nav-wrapper'>\n\t<div class='".$fe_container."'>\n\t\t";
 	if($header == 'sticky-h' || 'sticky-aacc'){
-		$string.="<a class='desk-sticky' href='/'><img src='".$site_logo."'/></a>";
+		$string.="<a class='desk-sticky' href='/'><img src='".$site_logo."'/></a>\n\t\t";
 	}
-	$string.="<ul class='main-nav'>";
+	$string.="<ul class='main-nav'>\n\t\t";
 	$count = 0;
 	//loop for each directory returned
 	foreach($dirs as $dir){
@@ -31,10 +31,10 @@ function p_main_nav(
 		if(substr($dir,0,1) === "0"){
 			continue;
 		}
-		$string .= '<li id="nav-'.$count.'" class="nav'.($page != 'home' && strpos($dir,$section) !== false ? 'active':'').'"><a href="'.$file_base.$dir.'">'.$alt.'</a></li>';
+		$string .= "\t<li id='nav-".$count."' class='nav".($page != "home" && strpos($dir,$section) !== false ? "active":"")."''><a href='".$file_base."/".$dir."'>".$alt."</a></li>\n\t\t";
 		$count++;
 	}
-	$string .= "</ul></div></div>";
+	$string .= "</ul>\n\t</div>\n</div>\n";
 	return $string;
 }
 /**
@@ -56,11 +56,11 @@ function p_main_nav_t4(
 	//gets first level of directories from the root in an array
 	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
 	//build the list
-	$string ="<div class='nav-wrapper'><div class='".$fe_container."'>";
+	$string ="\n<div class='nav-wrapper'>\n\t<div class='".$fe_container."'>\n\t\t";
 	if($header == 'sticky-h' || 'sticky-aacc'){
-		$string.="<a class='desk-sticky' href='/'><img src='".$site_logo."'/></a>";
+		$string.="<a class='desk-sticky' href='/'><img src='".$site_logo."'/></a>\n\t\t";
 	}
-	$string.="<ul class='main-nav'>";
+	$string.="<ul class='main-nav'>\n\t\t";
 	$count = 0;
 	//loop for each directory returned
 	foreach($dirs as $dir){
@@ -69,10 +69,10 @@ function p_main_nav_t4(
 		if(substr($dir,0,1) === "0"){
 			continue;
 		}
-		$string .= '<li>'.($page != 'home' && strpos($dir,$section) !== false ? '<span class="currentbranch'.$count.'">':'').'<a href="'.$file_base."/".$dir.'">'.$alt.'</a>'.($page != 'home' && strpos($dir,$section) !== false ? '</span>':'').'</li>';
+		$string .= "\t<li>".($page != "home" && strpos($dir,$section) !== false ? "<span class='currentbranch".$count."'>":"")."<a href='".$file_base."/".$dir."'>".$alt."</a>".($page != "home" && strpos($dir,$section) !== false ? "</span>":"")."</li>\n\t\t";
 		$count++;
 	}
-	$string .= "</ul></div></div>";
+	$string .= "</ul>\n\t</div>\n</div>\n";
 	return $string;
 }
 /**
