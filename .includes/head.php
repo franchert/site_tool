@@ -25,14 +25,22 @@
 <?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/styles.php"); ?>
 <?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/scripts.php"); ?>
 </head>
-<body class="<?php echo $section_slug; 
-if($section != $page){echo ' '.$page_slug;}
-/*if we're on a mini site, add an extra class to show its parent mini item*/
-if(isset($mini) && $mini == true){echo ' mini';
-	/*if we're deeper than the mini home, add a mini-specific class*/
-	if(isset($depth) && $depth > 0){echo ' m-'.substr($segments[$depth],1);}
+<body <?php 
+/*t4 doesn't allow for body classes*/
+if($cms !="t4"){
+	echo 'class="'.$section_slug; 
+if($section != $page){
+	echo ' '.$page_slug;
 }
-echo " ".$layout;?>">
+/*if we're on a mini site, add an extra class to show its parent mini item*/
+if(isset($mini) && $mini == true){
+	echo ' mini';
+	/*if we're deeper than the mini home, add a mini-specific class*/
+	if(isset($depth) && $depth > 0){
+		echo ' m-'.substr($segments[$depth],1);
+	}
+}
+echo ' '.$layout.'"';}?> >
 	<a class="back-to-top" href="#top">Back to Top</a>
 	<header>
 	<?php if(isset($alert)){ ?>

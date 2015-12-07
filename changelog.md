@@ -5,6 +5,13 @@ link:
 notes:
 	Added this changelog file.
 	added $file_base variable to fix a few issues with apache default setup
+	Updated rendered html with newlines and tabs
+	Added grid component to experiments, calendar component to experiments
+	Added default htaccess and settings files and gitignored the actual files
+	Updated formatting of functions for consistency
+	Docuementation updates
+	Added a CMS variable to create menus with CMS limitations in mind
+	Added a getting started guide on the homepage
 ```
 version: 0.3
 ```
