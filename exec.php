@@ -8,11 +8,12 @@ foreach ($haystack as $k => $v){
 	$dir = $v['slug'];
 	$title = $v['title'];
 	$parent = $v['parent'];
+	$id = $v['id'];
 	$temp = '';
 	$tabs = 0;
 	$times = 0;
 	$root = false;
-	if($parent == 'root'){
+	if($parent == "0"){
 		$root = true;
 	}
 	findParent($parent,$dir,$haystack);
@@ -32,9 +33,9 @@ function findParent($find,$string,$haystack){
 	global $temp, $times, $tabs;
 	$times++;
 	foreach($haystack as $k => $v){
-		if($v['slug'] === $find){
+		if($v['id'] === $find){
 			$string = $v['slug']."/".$string;
-			if($v['parent'] != 'root'){
+			if($v['parent'] != "0"){
 				findParent($v['parent'],$string,$haystack);
 			}else{
 				$tabs = $times;
