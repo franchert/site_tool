@@ -1,5 +1,5 @@
 <?php 
-include_once("../../settings.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/settings.php");
 /*page-specific variables*/
 $styles = false;
 $scripts = false;

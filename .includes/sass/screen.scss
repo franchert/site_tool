@@ -106,6 +106,12 @@ p{
 	float:none;
 	@include font('f-bk',18px,$dk-gray);
 	margin:10px 0;
+	a{
+		display:inline-block;
+		float:none;
+		width:auto;
+		text-decoration:underline;
+	}
 }
 ul,
 ol{

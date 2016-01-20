@@ -2505,11 +2505,11 @@ body .p-promo.generic {
   padding-bottom: 20px;
   border-bottom: 2px solid #222;
 }
-body .p-promo.generic .promo-container {
+body .p-promo.generic > .promo-container {
   background: #fff;
   width: auto;
 }
-body .p-promo.generic .promo-container h2 {
+body .p-promo.generic > .promo-container h2 {
   color: #2a2a2a;
   font-size: 18px;
   line-height: 24px;
@@ -2518,7 +2518,7 @@ body .p-promo.generic .promo-container h2 {
   border-bottom: 0;
   margin-top: 10px;
 }
-body .p-promo.generic .promo-container p {
+body .p-promo.generic > .promo-container p {
   font-size: 16px;
   line-height: 22px;
   overflow: hidden;
@@ -3757,6 +3757,12 @@ p {
   line-height: 24px;
   font-family: 'ITCFranklinGothicBK';
   margin: 10px 0;
+}
+p a {
+  display: inline-block;
+  float: none;
+  width: auto;
+  text-decoration: underline;
 }
 
 ul,

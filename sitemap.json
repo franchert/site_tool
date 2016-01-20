@@ -1,0 +1,122 @@
+[
+	{
+		"title":"About Us",
+		"parent":"root",
+		"slug":"1about_us"
+	},
+		{
+			"title":"About Us",
+			"parent":"1about_us",
+			"slug":"1level_1_sub_nav_1"
+		},
+		{
+			"title":"About Us",
+			"parent":"1about_us",
+			"slug":"2level_1_sub_nav_2"
+		},
+		{
+			"title":"About Us",
+			"parent":"1about_us",
+			"slug":"3level_1_sub_nav_3"
+		},
+			{
+				"title":"About Us",
+				"parent":"3level_1_sub_nav_3",
+				"slug":"1level_2_sub_nav_1"
+			},
+			{
+				"title":"About Us",
+				"parent":"3level_1_sub_nav_3",
+				"slug":"2level_2_sub_nav_2"
+			},
+			{
+				"title":"About Us",
+				"parent":"3level_1_sub_nav_3",
+				"slug":"3level_2_sub_nav_3"
+			},
+				{
+					"title":"About Us",
+					"parent":"3level_2_sub_nav_3",
+					"slug":"1level_3_sub_nav_1"
+				},
+				{
+					"title":"About Us",
+					"parent":"3level_2_sub_nav_3",
+					"slug":"2level_3_sub_nav_2"
+				},
+					{
+						"title":"About Us",
+						"parent":"2level_3_sub_nav_2",
+						"slug":"1level_4_sub_nav_1"
+					},
+					{
+						"title":"About Us",
+						"parent":"2level_3_sub_nav_2",
+						"slug":"2level_4_sub_nav_2"
+					},
+		{
+			"title":"About Us",
+			"parent":"1about_us",
+			"slug":"4level_1_sub_nav_4"
+		},
+		{
+			"title":"About Us",
+			"parent":"1about_us",
+			"slug":"5level_1_sub_nav_5"
+		},
+	{
+		"title":"Academics",
+		"parent":"root",
+		"slug":"2academics"
+	},
+		{
+			"title":"Colleges",
+			"parent":"2academics",
+			"slug":"1colleges"
+		},
+			{
+				"title":"Colleges",
+				"parent":"1colleges",
+				"slug":"1college_of_arts_and_sciences"
+			},
+		{
+			"title":"Programs",
+			"parent":"2academics",
+			"slug":"2programs"
+		},
+			{
+				"title":"Accounting",
+				"parent":"2programs",
+				"slug":"0accounting"
+			},
+			{
+				"title":"Communications",
+				"parent":"2programs",
+				"slug":"0communications"
+			},
+		{
+			"title":"Faculty",
+			"parent":"2academics",
+			"slug":"3faculty"
+		},
+			{
+				"title":"Faculty",
+				"parent":"3faculty",
+				"slug":"1firstname_lastname"
+			},
+	{
+		"title":"Admissions",
+		"parent":"root",
+		"slug":"3admissions"
+	},
+		{
+			"title":"Admissions",
+			"parent":"3admissions",
+			"slug":"1undergraduate_admissions"
+		},
+		{
+			"title":"Admissions",
+			"parent":"3admissions",
+			"slug":"2apply_to_the_university"
+		}
+]

@@ -20,6 +20,7 @@ function p_subnav(
 	global $file_base;
 	global $url_remove;
 	global $cms;
+	global $path;
 	if ($root_path == null){
 		$root_path = $section;
 	}
@@ -30,6 +31,7 @@ function p_subnav(
 		$k = str_replace($url_remove,'',$k);
 	}
 	//print_r(explodeTree($key_values, "/",true,$starting));
+	//print_r($path);
 	if($cms == 't4'){
 		$tree = plotTree_t4(explodeTree($key_values, "/",true,$starting),true,$printsection,$backtohome,$starting,$toggle);
 	}else{
@@ -88,7 +90,6 @@ function plotTree(
 	global $level ;
 	global $url_remove;
 	global $mini;
-	//print_r($arr);
 	if ($initial_run) {
 		//wrappers for the container
 		$subnav_string = "<div class='subnav".($toggle === true ? " toggles":"")."' id='subnav'>";

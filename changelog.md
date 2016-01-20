@@ -1,8 +1,11 @@
+
+
 version 0.4
 ```
-date: -2015
+date: 1-20-2015
 link:
 notes:
+	Removed all site-specific pages. Added exec.php to generate a sitemap based on a sitemap.json file and index.default.php.
 	Added this changelog file.
 	added $file_base variable to fix a few issues with apache default setup
 	Updated rendered html with newlines and tabs
@@ -13,6 +16,7 @@ notes:
 	Added a CMS variable to create menus with CMS limitations in mind
 	Added a getting started guide on the homepage
 ```
+
 version: 0.3
 ```
 date: 10-9-2015

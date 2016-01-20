@@ -19,12 +19,18 @@ function p_promo(
 	$link_title = null,
 	$arr=null){
 
+	if(strip_tags($title) == ''){
+		$alt = "alt text";
+	}else{
+		$alt = strip_tags($title);
+	};
+
 	if($img_type == "image"){
 		$img = p_image("400","300");
 	}else if($img_type == "comp"){
 		$img = $item;
 	}else if($img_type == "image_url"){
-		$img = "<img alt='".$title."' src='".$item."'/>";
+		$img = "<img alt='".$alt."' src='".$item."'/>";
 	}else{
 		$img = '';
 	}
