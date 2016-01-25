@@ -11,6 +11,16 @@
 @import "base/**/*";
 @import "../headers/**/*";
 @import "../layouts/**/*";
+
+html {
+	font-size: 50%;
+	@include breakpoint($tab-large){
+		font-size: 55%;
+	}
+	@include breakpoint($desk){
+		font-size: 62.5%;
+	}
+}
 body{
 	@import "components/**/*";
 	*{
@@ -72,7 +82,7 @@ img{
 }
 
 h1{
-	@include font('paradoxbold',36px,$color-1);
+	@include font('paradoxbold',36,$color-1);
 	margin:0 0 20px 0;
 	@include breakpoint($tab){
 		font-size:48px;
@@ -80,31 +90,31 @@ h1{
 	}
 }
 h2{
-	@include font('paradoxbold',28px,$color-1);
+	@include font('paradoxbold',28,$color-1);
 	margin:0 0 20px 0;
 }
 h3{
-	@include font('paradoxbold',24px,$color-1);
+	@include font('paradoxbold',24,$color-1);
 	line-height:24px;
 	border-bottom:1px solid $color-2;
 	margin:0 0 20px 0;
 }
 h4{
-	@include font('bebas',20px,$color-1);
+	@include font('bebas',20,$color-1);
 	margin:0 0 10px 0;
 }
 h5{
-	@include font('paradox',18px,$color-1);
+	@include font('paradox',18,$color-1);
 	font-weight:bold;
 	margin:0 0 10px 0;
 }
 h6{
-	@include font('paradox',18px,$black);
+	@include font('paradox',18,$black);
 	margin:0 0 10px 0;
 }
 p{
 	float:none;
-	@include font('f-bk',18px,$dk-gray);
+	@include font('f-bk',18,$dk-gray);
 	margin:10px 0;
 	a{
 		display:inline-block;
@@ -117,12 +127,12 @@ ul,
 ol{
 	float:none;
 	li{
-		@include font('f-bk',18px,$dk-gray);
+		@include font('f-bk',18,$dk-gray);
 		display:list-item;
 	}
 }
 a{
-	@include font('f-bkcd',18px,$color-1);
+	@include font('f-bkcd',18,$color-1);
 	text-decoration:none;
 	&:hover{
 		text-decoration:underline;
@@ -132,7 +142,7 @@ a{
 	}
 	&[href$=".pdf"]{
 		&:after{
-			content:"\f1c1";
+			content:$fa-file-pdf-o;
 			font-family:FontAwesome;
 			color:#FF0000;
 			font-size:12px;
@@ -143,7 +153,7 @@ a{
 	&[href$=".docx"],
 	&[href$=".doc"]{
 		&:after{
-			content:"\f1c2";
+			content:$fa-file-word-o;
 			font-family:FontAwesome;
 			color:#0005FF;
 			font-weight:bold;
@@ -168,7 +178,7 @@ section{
 		max-height:300px;
 		overflow:hidden;
 		.view-more{
-			@include font('bebas',16px,$color-1);
+			@include font('bebas',16,$color-1);
 			@include arrowafter($color-1,12px,"\f067");
 			position:absolute;
 			background:$white;
@@ -178,7 +188,7 @@ section{
 		}
 	}
 	.view-more{
-		@include font('bebas',16px,$color-1);
+		@include font('bebas',16,$color-1);
 		@include arrowafter($color-1,12px,"\f068");
 		display:block;
 		bottom:-4px;
@@ -194,7 +204,7 @@ form{
 	div{
 		position:relative;
 		input{
-			@include font('f-bk',18px,$dk-gray);
+			@include font('f-bk',18,$dk-gray);
 			font-style:italic;
 			line-height:24px;
 			padding:10px;
@@ -211,7 +221,7 @@ form{
 			}
 		}
 		textarea{
-			@include font('f-bk',18px,$dk-gray);
+			@include font('f-bk',18,$dk-gray);
 			line-height:24px;
 			font-style:italic;
 			padding:10px;
@@ -221,7 +231,7 @@ form{
 		}
 	}
 	.submit{
-		@include font('bebas',18px,$white);
+		@include font('bebas',18,$white);
 		width:auto;
 		margin:10px 0;
 		background:$color-1;

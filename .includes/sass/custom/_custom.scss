@@ -38,7 +38,7 @@
 	padding-right:20px;
 }
 blockquote{
-	@include font('bebas',36px,$color-1);
+	@include font('bebas',36,$color-1);
 	padding:0 10px;
 	margin-bottom:15px;
 	&:before{
@@ -103,7 +103,7 @@ body{
 		border-top:7px solid rgba(0, 0, 0, 0.15);
 		.column{
 			h3{
-				@include font('bebas',18px,$color-2);
+				@include font('bebas',18,$color-2);
 				padding: 20px;
 				text-align: center;
 				text-transform:uppercase;
@@ -143,7 +143,7 @@ body{
 						}
 					}
 					> a{
-						@include font('f-bk',18px,$white);
+						@include font('f-bk',18,$white);
 						text-align:center;
 						@include breakpoint($tab){
 							font-size:10px;
@@ -172,7 +172,7 @@ body{
 					ul{
 						li{
 							a{
-								@include font('f-bk',14px,$gray);
+								@include font('f-bk',14,$gray);
 								text-align:center;
 								@include breakpoint($tab){
 									text-align:left;

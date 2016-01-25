@@ -1,24 +1,25 @@
+
 a{
 	&.button{
-		@include font('f-bk',16px,$color-1);
+		@include font($font_fam,16,$dark_background);
 		background:#eee;
 		padding: 15px 25px;
 		border:1px solid $gray;
 		border-radius:3px;
 		text-transform:uppercase;
 		&.dark{
-			background:$color-1;
-			color:$white;
+			background:$dark_background;
+			color:$light_background;
 			font-weight:bold;
 		}
 		&.light{
-			background:$color-2;
-			color:$color-1;
+			background:$light_background;
+			color:$dark_background;
 			font-weight:bold;
 		}
 	}
 	&.read-more{
-		@include font('bebas',16px,$color-1);
+		@include font($font_fam,16,$dark_background);
 		float:right;
 		width:auto;
 		@include arrowafter(inherit,inherit,$fa-caret-right);
@@ -29,7 +30,7 @@ a{
 			right:10px;
 		}
 		&.button{
-			color:$white;
+			color:$light_background;
 			width:auto;
 			float:left;
 			padding-right:35px;

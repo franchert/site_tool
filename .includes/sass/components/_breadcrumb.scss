@@ -1,3 +1,4 @@
+
 #breadcrumb{
 	ul{
 		padding:10px 0px;
@@ -7,24 +8,24 @@
 			font-size:14px;
 			line-height:18px;
 			&:before{
-				content:"\f0da";
+				content:$separator;
 				font-family:FontAwesome;
 				position:relative;
 				font-size:12px;
 				top:0px;
 				padding-right:10px;
-				color:$black;
+				color:$text-color;
 			}
 			a{
-				color:$black;
-				border-bottom:1px dotted $gray;
+				color:$text-color;
+				border-bottom:1px dotted $border-color;
 				font-size:14px;
 				line-height:18px;
 				float:none;
 				display:initial;
 				&:hover{
 					text-decoration:none;
-					border-bottom: 1px solid $gray;
+					border-bottom: 1px solid $border-color;
 				}
 			}
 			&:first-child{

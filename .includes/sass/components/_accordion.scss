@@ -1,25 +1,22 @@
-$tabaccordion-breakpoint:$tab;
-$tab-font:"bebas";
-
 ul.tabaccordion{
 	float:left;
 	position:relative;
 	margin-bottom:20px;
 	> li{
 		position:static;
-		@include breakpoint($tabaccordion-breakpoint){
+		@include breakpoint($tabacc_breakpoint){
 			display:inline;
 			float:left;
 			width:auto;
 		}
 		h3{
-			@include font($tab-font,20px,$white);
-			background:$color-1;
+			@include font($tabacc_font,20,$tabacc_tab_color);
+			background:$tabacc_active_tab;
 			text-transform:uppercase;
 			cursor:pointer;
 			outline:none;
 			margin:0;
-			border-top:2px solid $white;
+			border-top:2px solid $tabacc_tab_color;
 			border-bottom:0;
 			padding:10px 20px;
 			@include arrowdown(inherit,12px,"\f0da");
@@ -27,17 +24,16 @@ ul.tabaccordion{
 				right:20px;
 				font-size:20px;
 				@include calc('top','50% - 12px','50%');
-				top:calc(50% - 12px);
 			}
-			@include breakpoint($tabaccordion-breakpoint){
+			@include breakpoint($tabacc_breakpoint){
 				padding:20px;
 				display:inline-block;
 				float:left;
 				width:100%;
 				border-top:0;
 				border-right:2px solid #fff;
-				color:$color-1;
-				background:$color-2;
+				color:$tabacc_active_tab;
+				background:$tabacc_inactive_tab;
 				&:after{
 					content:'';
 				}
@@ -45,17 +41,17 @@ ul.tabaccordion{
 		}
 		> div{
 			display:none;
-			@include breakpoint($tabaccordion-breakpoint){
+			@include breakpoint($tabacc_breakpoint){
 				position:absolute;
 				top:68px;
 				left:0;
 			}
 		}
 		&.acc-active{
-			@include breakpoint(max-width $tabaccordion-breakpoint){
+			@include breakpoint(max-width $tabacc_breakpoint){
 				h3{
-					background:$color-2;
-					color:$color-1;
+					background:$tabacc_inactive_tab;
+					color:$tabacc_active_tab;
 					&:after{
 						-webkit-transform:rotateZ(-90deg);
 						-ms-transform:rotateZ(-90deg);
@@ -66,16 +62,16 @@ ul.tabaccordion{
 					display:inline-block;
 					padding:20px;
 					width:auto;
-					border:2px solid $color-2;
+					border:2px solid $tabacc_inactive_tab;
 					margin-top:-2px;
 				}
 			}
 		}
 		&.tab-active{
-			@include breakpoint($tabaccordion-breakpoint){
+			@include breakpoint($tabacc_breakpoint){
 				h3{
-					background:$color-1;
-					color:$white;
+					background:$tabacc_active_tab;
+					color:$tabacc_tab_color;
 					&:after{
 						-webkit-transform:rotateZ(-90deg);
 						-ms-transform:rotateZ(-90deg);
@@ -86,7 +82,7 @@ ul.tabaccordion{
 					display:inline-block;
 					padding:0 20px;
 					width:auto;
-					border:2px solid $color-1;
+					border:2px solid $tabacc_active_tab;
 					margin-top:-2px;
 				}
 			}
@@ -97,16 +93,16 @@ ul.tabaccordion{
 	margin-bottom:20px;
 	h3{
 		padding:10px 20px;
-		@include font($tab-font,20px,$white);
+		@include font($tabacc_font,20,$tabacc_tab_color);
 		text-transform:uppercase;
-		background:$color-1;
-		border-bottom:2px solid $white;
+		background:$tabacc_active_tab;
+		border-bottom:2px solid $tabacc_tab_color;
 		cursor:pointer;
 		outline:none;
 		margin:0;
 		&.active{
-			background:$color-2;
-			color:$color-1;
+			background:$tabacc_inactive_tab;
+			color:$tabacc_active_tab;
 			&:after{
 				-webkit-transform:rotateZ(-90deg);
 				-ms-transform:rotateZ(-90deg);
@@ -125,7 +121,7 @@ ul.tabaccordion{
 		float:left;
 		width:100%;
 		padding:0 20px;
-		border:1px solid $color-2;
+		border:1px solid $tabacc_active_tab;
 		border-top:0;
 		margin-bottom:2px;
 		overflow:hidden;

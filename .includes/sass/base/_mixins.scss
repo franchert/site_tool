@@ -4,10 +4,9 @@
 	width:$width;
 }
 
-@mixin font($family:"Arial",$size:16px,$color:$c-default){
+@mixin font($family:"Arial",$size:16,$color:$c-default,$line-height:$size){
 	color:$color;
-	font-size:$size;
-	line-height:$size + 6px;
+	@include font-size($size);
 	@if $family == 'bebas'{
 		font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
 		text-transform:uppercase;
@@ -26,12 +25,17 @@
 		font-family:'Arial', sans-serif;
 	}
 }
+@mixin font-size($sizeValue: 16) {
+	font-size: $sizeValue + px;
+	font-size: ($sizeValue / 10) + rem;
+	line-height: ($sizeValue + 6) + px;
+	line-height: (($sizeValue + 6) / 10) + rem;
+}
 
-
-@mixin arrowbefore($color:$t-white,$font-size:14px){
+@mixin arrowbefore($color:$t-white,$font-size:14px,$type:$fa-angle-right){
 	position:relative;
 	&:before{
-		content: "\f105";
+		content: $type;
 		font-family: FontAwesome;
 		font-size: $font-size;
 		position: absolute;
@@ -39,7 +43,7 @@
 		color:$color;
 	}
 }
-@mixin arrowafter($color:$t-white,$font-size:14px,$type:"\f105"){
+@mixin arrowafter($color:$t-white,$font-size:14px,$type:$fa-angle-right){
 	position:relative;
 	&:after{
 		content: $type;
@@ -50,7 +54,7 @@
 		color:$color;
 	}
 }
-@mixin arrowdown($color:inherit,$font-size:12px,$type:"\f105"){
+@mixin arrowdown($color:inherit,$font-size:12px,$type:$fa-angle-right){
 	position:relative;
 	padding-right:20px;
 	&:after{
@@ -105,7 +109,7 @@
 	}
 }
 //@include calc('width','100% - 75px','170px');
-@mixin calc($prop,$value,$fallback){
+@mixin calc($prop,$value,$fallback:100%){
 	#{$prop}:#{$fallback};
 	#{$prop}:-webkit-calc(#{$value});
 	#{$prop}:calc(#{$value});

@@ -4,7 +4,7 @@
 		padding:0;
 	}
 	h2{
-		@include font('f-dm',18px,$c-default);
+		@include font('f-dm',18,$c-default);
 		white-space:nowrap;
 		cursor:pointer;
 		line-height:41px;
@@ -75,7 +75,7 @@
 				color:$white;
 			}
 			> a{
-				@include font('paradoxbold',14px,$color-2);
+				@include font('paradoxbold',14,$color-2);
 				padding:20px;
 				text-transform:uppercase;
 				@include arrowbefore($white);
@@ -112,7 +112,7 @@
 					&.has-sub{
 						@include calc('width','100% - 56px','80%');
 					}
-					@include font('f-bk',16px,$gray);
+					@include font('f-bk',16,$gray);
 					line-height:21px;
 					padding:17px 20px;
 				}

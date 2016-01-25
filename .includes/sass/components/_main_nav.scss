@@ -1,5 +1,6 @@
+
 .main-nav-container{
-	background: white;
+	background: $background_color;
 	display:none;
 	@include breakpoint($tab){
 		display:block;
@@ -7,8 +8,8 @@
 		overflow:visible;
 	}
 	.nav-wrapper{
-		background: white;
-		border-bottom:1px solid $color-2;
+		background: $background_color;
+		border-bottom:1px solid $secondary_font_color;
 		overflow:visible;
 		@include breakpoint(max-width $tab){
 			background:none;
@@ -30,16 +31,16 @@
 					display:table;
 				}
 				li{
-					border-bottom:1px solid $color-1;
+					border-bottom:1px solid $primary_font_color;
 					@include breakpoint($tab){
 						display:table-cell;
 						width:auto;
 						float:none;
 						border-top:none;
-						border-bottom:1px solid $color-2;
+						border-bottom:1px solid $secondary_font_color;
 					}
 					a{
-						@include font('f-dm',14px,$color-1);
+						@include font($primary_font_family,14,$primary_font_color);
 						text-transform:uppercase;
 						text-align:left;
 						padding: 10px 20px;
@@ -50,7 +51,7 @@
 							font-size:16px;
 						}
 						span{
-							@include font('paradoxbold',16px,$white);
+							@include font($secondary_font_family,16,$secondary_font_color);
 							text-transform:uppercase;
 							font-style:initial;
 						}
@@ -60,12 +61,12 @@
 					&:hover,
 					&:focus{
 						@include breakpoint($tab){
-							border-bottom:1px solid $dk-gray;
+							border-bottom:1px solid $primary_font_color;
 						}
 						a{
 							text-decoration:none;
 							span{
-								color:$color-2
+								color:$secondary_font_color;
 							}
 						}
 					}

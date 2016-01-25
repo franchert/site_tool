@@ -6,7 +6,7 @@
 		padding:0 10px 0 0;
 	}
 	.drop-toggle{
-		@include font('bebas',20px,$c-default);
+		@include font('bebas',20,$c-default);
 		width:auto;
 		@include arrowdown(inherit,12px,"\f0da");
 		border:1px solid $color-1;

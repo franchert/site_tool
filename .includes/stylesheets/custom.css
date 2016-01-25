@@ -6,6 +6,7 @@
 /* default color for everything */
 /* breakpoints */
 /* max width of site column */
+/* font faces */
 @font-face {
   font-family: 'BebasNeueBold';
   src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.otf);
@@ -71,6 +72,16 @@
   src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.otf);
   src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.woff);
 }
+/* end font faces */
+/* fontawesome variables */
+/* end fontawesome variables */
+/* _accordion.scss */
+/* _alert.scss */
+/* _breadcrumb.scss */
+/* _grid.scss */
+/* _main_nav.scss */
+/* _p_link.scss */
+/* _p_matrix.scss */
 .wrapper {
   position: relative;
   overflow: hidden;
@@ -117,7 +128,9 @@
 blockquote {
   color: #2a2a2a;
   font-size: 36px;
+  font-size: 3.6rem;
   line-height: 42px;
+  line-height: 4.2rem;
   font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
   text-transform: uppercase;
   padding: 0 10px;
@@ -181,7 +194,9 @@ body footer {
 body footer .column h3 {
   color: #bbbbbb;
   font-size: 18px;
+  font-size: 1.8rem;
   line-height: 24px;
+  line-height: 2.4rem;
   font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
   text-transform: uppercase;
   padding: 20px;
@@ -229,7 +244,9 @@ body footer .column .footer .social ul li a span span {
 body footer .column .footer .social > a {
   color: #fff;
   font-size: 18px;
+  font-size: 1.8rem;
   line-height: 24px;
+  line-height: 2.4rem;
   font-family: 'ITCFranklinGothicBK';
   text-align: center;
 }
@@ -273,7 +290,9 @@ body footer .column .footer .links-resources {
 body footer .column .footer .links-resources ul li a {
   color: #ccc;
   font-size: 14px;
+  font-size: 1.4rem;
   line-height: 20px;
+  line-height: 2rem;
   font-family: 'ITCFranklinGothicBK';
   text-align: center;
 }

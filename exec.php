@@ -2,39 +2,35 @@
 $default_index = file_get_contents("index.default.php");
 $string = file_get_contents("sitemap.json");
 $haystack = json_decode($string, true);
-echo "directory structure created:</br>";
+echo "-- the following directory structure has been created --</br></br>";
 foreach ($haystack as $k => $v){
 	//echo "</br>".$v['title']." * ".$v['parent']." * ".$v['slug']."</br>";
-	$dir = $v['slug'];
+	$id = $v['id'];
 	$title = $v['title'];
 	$parent = $v['parent'];
-	$id = $v['id'];
+	$slug = $v['slug'];
+	$menupos = $v['menupos'];
+	$segment = $menupos.$slug;
 	$temp = '';
 	$tabs = 0;
 	$times = 0;
-	$root = false;
-	if($parent == "0"){
-		$root = true;
-	}
-	findParent($parent,$dir,$haystack);
-	if($root){
-		$new = $dir;
-	}else{
-		$new = $temp;
-	}
+	findParent($parent,$segment,$haystack);
+	if($parent == "0"){$new = $segment;}
+	else{$new = $temp;}
 	while ($tabs > 0){
-		echo "&nbsp;&nbsp;&nbsp;&nbsp;";
+		echo "&nbsp;--&nbsp;";
 		$tabs--;
 	}
 	echo $new."</br>";
-	makeDir($new,$root,$title);
+	makeDir($new,$parent,$title);
 }
+echo "</br>Return to the <a href='/'>Home page</a>";
 function findParent($find,$string,$haystack){
 	global $temp, $times, $tabs;
 	$times++;
 	foreach($haystack as $k => $v){
 		if($v['id'] === $find){
-			$string = $v['slug']."/".$string;
+			$string = $v['menupos'].$v['slug']."/".$string;
 			if($v['parent'] != "0"){
 				findParent($v['parent'],$string,$haystack);
 			}else{
@@ -44,7 +40,7 @@ function findParent($find,$string,$haystack){
 		}
 	}
 }
-function makeDir($path,$root,$title='placeholder'){
+function makeDir($path,$parent,$title){
 	global $default_index;
 	if(!is_dir($path)){
 		mkdir($path,0777,true);
@@ -53,7 +49,7 @@ function makeDir($path,$root,$title='placeholder'){
 		touch($path."/index.php");
 		file_put_contents($path."/index.php",$default_index);
 	}
-	if($root){
+	if($parent == "0" && !file_exists($path."/nav-contents.php")){
 		touch($path."/nav-contents.php");
 		file_put_contents($path."/nav-contents.php",$title);
 	}

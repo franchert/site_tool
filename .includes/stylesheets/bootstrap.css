@@ -62,6 +62,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* default color for everything */
 /* breakpoints */
 /* max width of site column */
+/* font faces */
 @font-face {
   font-family: 'BebasNeueBold';
   src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.otf);
@@ -127,6 +128,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.otf);
   src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.woff);
 }
+/* end font faces */
+/* fontawesome variables */
+/* end fontawesome variables */
+/* _accordion.scss */
+/* _alert.scss */
+/* _breadcrumb.scss */
+/* _grid.scss */
+/* _main_nav.scss */
+/* _p_link.scss */
+/* _p_matrix.scss */
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -1524,7 +1535,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #333333;
+  color: #000;
   background-color: #fff;
 }
 
@@ -3675,7 +3686,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #737373;
+  color: #404040;
 }
 
 @media (min-width: 45em) {
@@ -5633,7 +5644,7 @@ a.badge:hover, a.badge:focus {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #333333;
+  color: #000;
 }
 
 a.thumbnail:hover,
@@ -9106,7 +9117,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #737373;
+  color: #404040;
 }
 
 @media (min-width: 45em) {
@@ -13825,7 +13836,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #333333;
+  color: #000;
   background-color: #fff;
 }
 
@@ -14655,7 +14666,7 @@ table th[class*="col-"] {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #333333;
+  color: #000;
 }
 
 a.thumbnail:hover,

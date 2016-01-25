@@ -31,7 +31,7 @@ function p_main_nav(
 		if(substr($dir,0,1) === "0"){
 			continue;
 		}
-		$string .= "\t<li id='nav-".$count."' class='nav".($page != "home" && strpos($dir,$section) !== false ? "active":"")."''><a href='".$file_base."/".$dir."'>".$alt."</a></li>\n\t\t";
+		$string .= "\t<li id='nav-".$count."' class='nav".($page != "home" && strpos($dir,$section) !== false ? " active":"")."''><a href='".$file_base."/".$dir."'>".$alt."</a></li>\n\t\t";
 		$count++;
 	}
 	$string .= "</ul>\n\t</div>\n</div>\n";

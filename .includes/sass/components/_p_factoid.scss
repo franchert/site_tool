@@ -1,6 +1,6 @@
 .factoid{
 	.factoid-container{
-		@include font('f-bk',16px,$color-1);
+		@include font('f-bk',16,$color-1);
 		float:none;
 		width:220px;
 		margin:auto;
@@ -12,7 +12,7 @@
 			width:300px;
 		}
 		span{
-			@include font('f-bkcd',78px,$color-1);
+			@include font('f-bkcd',78,$color-1);
 			text-transform:none;
 			span{
 				font-size:40px;

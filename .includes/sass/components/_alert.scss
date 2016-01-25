@@ -1,5 +1,3 @@
-$emergency_alert_color:$red;
-$weather_alert_color:$blue;
 
 .alert{
 	@include floatblock();
@@ -11,14 +9,14 @@ $weather_alert_color:$blue;
 		max-width:$maxwidth;
 		margin:auto;
 		h3{
-			@include font('f-dm',22px,$color-2);
+			@include font('f-dm',22,$alert_toggle_color);
 			text-transform:uppercase;
 			@include floatblock(left,calc(100% - 60px));
 			border:none;
 			margin:0;
 		}
 		span{
-			@include font('paradoxbold',26px,$color-2);
+			@include font('paradoxbold',26,$alert_toggle_color);
 			line-height:26px;
 			text-transform:uppercase;
 			@include floatblock(left,60px);
@@ -40,7 +38,7 @@ $weather_alert_color:$blue;
 		}
 	}
 	.message{
-		background:$red;
+		background:$emergency_alert_color;
 		position:relative;
 		z-index:11;
 		padding:20px;
@@ -52,10 +50,10 @@ $weather_alert_color:$blue;
 					width:calc(100% - 200px);
 				}
 				h2{
-					@include font('paradox',32px,$white);
+					@include font('paradox',32,$alert_text_color);
 				}
 				p{
-					@include font('f-bk',18px,$white);
+					@include font('f-bk',18,$alert_text_color);
 					position:relative;
 				}
 			}
@@ -64,18 +62,18 @@ $weather_alert_color:$blue;
 					width:200px;
 				}
 				h2{
-					@include font('paradox',32px,$white);
+					@include font('paradox',32,$alert_text_color);
 				}
 				ul{
 					li{
-						@include font('f-bk',18px,$white);
+						@include font('f-bk',18,$alert_text_color);
 					}
 				}
 			}
 		}
 		a{
-			@include font('paradoxbold',16px,$white);
-			@include arrowafter($white);
+			@include font('paradoxbold',16,$alert_text_color);
+			@include arrowafter($alert_text_color);
 			width:auto;
 			position:relative;
 			padding:10px 0 10px 20px;

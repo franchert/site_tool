@@ -10,7 +10,7 @@
 		position:relative;
 		background:$color-1-t;
 		h2{
-			@include font('f-dm',16px,$white);
+			@include font('f-dm',16,$white);
 			padding:5px 20px;
 			span{
 				color:$color-2;
