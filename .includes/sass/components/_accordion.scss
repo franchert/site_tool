@@ -1,3 +1,14 @@
+
+/* _accordion.scss */
+$tabacc_breakpoint:$tab;
+$tabacc_font:"bebas";
+//inactive tab background, active accordion background & content border
+$tabacc_inactive_tab:$color-2;
+//active tab background & content border, inactive font. inactive accordion background
+$tabacc_active_tab:$color-1;
+//active tab color, inactive accordion color, space between tabs
+$tabacc_tab_color:$white;
+
 ul.tabaccordion{
 	float:left;
 	position:relative;

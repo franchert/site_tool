@@ -42,16 +42,16 @@ function findParent($find,$string,$haystack){
 }
 function makeDir($path,$parent,$title){
 	global $default_index;
-	if(!is_dir($path)){
-		mkdir($path,0777,true);
+	if(!is_dir("../".$path)){
+		mkdir("../".$path,0777,true);
 	}
-	if(!file_exists($path."/index.php")){
-		touch($path."/index.php");
-		file_put_contents($path."/index.php",$default_index);
+	if(!file_exists("../".$path."/index.php")){
+		touch("../".$path."/index.php");
+		file_put_contents("../".$path."/index.php",$default_index);
 	}
-	if($parent == "0" && !file_exists($path."/nav-contents.php")){
-		touch($path."/nav-contents.php");
-		file_put_contents($path."/nav-contents.php",$title);
+	if($parent == "0" && !file_exists("../".$path."/nav-contents.php")){
+		touch("../".$path."/nav-contents.php");
+		file_put_contents("../".$path."/nav-contents.php",$title);
 	}
 }
 ?>

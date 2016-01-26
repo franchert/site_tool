@@ -1,4 +1,8 @@
 
+/* _p_matrix.scss */
+$matrix-padding:20px;
+$matrix-break:$tab;
+
 .matrix{
 	> div{
 		@include breakpoint($matrix-break){

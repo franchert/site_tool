@@ -131,13 +131,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* end font faces */
 /* fontawesome variables */
 /* end fontawesome variables */
-/* _accordion.scss */
-/* _alert.scss */
-/* _breadcrumb.scss */
-/* _grid.scss */
-/* _main_nav.scss */
-/* _p_link.scss */
-/* _p_matrix.scss */
 body .l-head nav .p-list > ul {
   list-style-type: none;
   margin: 0;
@@ -740,6 +733,15 @@ html {
   }
 }
 
+body {
+  /* _accordion.scss */
+  /* _alert.scss */
+  /* _breadcrumb.scss */
+  /* _grid.scss */
+  /* _main_nav.scss */
+  /* _p_link.scss */
+  /* _p_matrix.scss */
+}
 body ul.tabaccordion {
   float: left;
   position: relative;
@@ -3507,41 +3509,41 @@ body .subsection.open .subsection-hidden .p-list ul li {
 body .subsection.open .subsection-hidden .p-list ul li:last-child .subsection {
   border: none;
 }
-body .table-wrapper {
+body .responsive-table-wrapper {
   overflow: auto;
 }
 @media (min-width: 45em) {
-  body .table-wrapper {
+  body .responsive-table-wrapper {
     border: 1px solid #2a2a2a;
   }
 }
-body .table-wrapper table {
+body .responsive-table-wrapper table {
   width: 100%;
   box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
 }
 @media (min-width: 45em) {
-  body .table-wrapper table {
+  body .responsive-table-wrapper table {
     display: table;
     float: none;
     table-layout: fixed;
   }
 }
-body .table-wrapper table thead {
+body .responsive-table-wrapper table thead {
   display: none;
 }
 @media (min-width: 45em) {
-  body .table-wrapper table thead {
+  body .responsive-table-wrapper table thead {
     display: table-header-group;
     float: none;
     width: auto;
   }
 }
-body .table-wrapper table thead tr {
+body .responsive-table-wrapper table thead tr {
   background: #fff;
   border-bottom: 1px solid #eee;
 }
 @media (min-width: 45em) {
-  body .table-wrapper table thead tr {
+  body .responsive-table-wrapper table thead tr {
     display: table-row;
     float: none;
     width: auto;
@@ -3549,11 +3551,11 @@ body .table-wrapper table thead tr {
     border-bottom: 1px solid #eee;
     margin: 0;
   }
-  body .table-wrapper table thead tr:last-child {
+  body .responsive-table-wrapper table thead tr:last-child {
     border-bottom: none;
   }
 }
-body .table-wrapper table thead tr th {
+body .responsive-table-wrapper table thead tr td {
   display: block;
   float: left;
   width: 100%;
@@ -3569,35 +3571,35 @@ body .table-wrapper table thead tr th {
   text-align: left;
 }
 @media (min-width: 45em) {
-  body .table-wrapper table thead tr th {
+  body .responsive-table-wrapper table thead tr td {
     padding: 10px 30px;
     border-right: 1px solid #ccc;
     display: table-cell;
     float: none;
   }
-  body .table-wrapper table thead tr th:before {
+  body .responsive-table-wrapper table thead tr td:before {
     content: '';
   }
 }
 @media (min-width: 45em) {
-  body .table-wrapper table thead tr th:last-child {
+  body .responsive-table-wrapper table thead tr td:last-child {
     border-right: none;
   }
 }
 @media (min-width: 45em) {
-  body .table-wrapper table tbody {
+  body .responsive-table-wrapper table tbody {
     display: table-row-group;
     float: none;
     width: auto;
   }
 }
-body .table-wrapper table tbody tr {
+body .responsive-table-wrapper table tbody tr {
   background: #fff;
   border: 1px solid #ccc;
   margin-bottom: 10px;
 }
 @media (min-width: 45em) {
-  body .table-wrapper table tbody tr {
+  body .responsive-table-wrapper table tbody tr {
     display: table-row;
     float: none;
     width: auto;
@@ -3605,11 +3607,11 @@ body .table-wrapper table tbody tr {
     border-bottom: 1px solid #eee;
     margin: 0;
   }
-  body .table-wrapper table tbody tr:last-child {
+  body .responsive-table-wrapper table tbody tr:last-child {
     border-bottom: none;
   }
 }
-body .table-wrapper table tbody tr td {
+body .responsive-table-wrapper table tbody tr td {
   color: #444;
   font-size: 18px;
   font-size: 1.8rem;
@@ -3620,17 +3622,17 @@ body .table-wrapper table tbody tr td {
   padding: 10px 20px;
 }
 @media (min-width: 45em) {
-  body .table-wrapper table tbody tr td {
+  body .responsive-table-wrapper table tbody tr td {
     padding: 10px 30px;
     border-right: 1px solid #ccc;
     display: table-cell;
     float: none;
   }
-  body .table-wrapper table tbody tr td:before {
+  body .responsive-table-wrapper table tbody tr td:before {
     content: '';
   }
 }
-body .table-wrapper table tbody tr td:before {
+body .responsive-table-wrapper table tbody tr td:before {
   content: attr(data-label);
   display: block;
   float: left;
@@ -3645,20 +3647,20 @@ body .table-wrapper table tbody tr td:before {
   font-weight: bold;
 }
 @media (min-width: 45em) {
-  body .table-wrapper table tbody tr td:before {
+  body .responsive-table-wrapper table tbody tr td:before {
     width: 150px;
     display: none;
   }
 }
 @media (min-width: 45em) {
-  body .table-wrapper table tbody tr td:last-child {
+  body .responsive-table-wrapper table tbody tr td:last-child {
     border-right: none;
   }
 }
-body .table-wrapper table tbody tr td * {
+body .responsive-table-wrapper table tbody tr td * {
   width: auto;
 }
-body .table-wrapper table tbody tr.even {
+body .responsive-table-wrapper table tbody tr.even {
   background: #eee;
 }
 body .ui-accordion {

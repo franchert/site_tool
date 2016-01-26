@@ -1,4 +1,9 @@
 
+/* _p_link.scss */
+$dark_background:$color-1;
+$light_background:$color-2;
+$font_fam:'bebas';
+
 a{
 	&.button{
 		@include font($font_fam,16,$dark_background);

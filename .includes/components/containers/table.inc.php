@@ -5,71 +5,72 @@
  *	@param string  $arr = 
  *	@param string  $width = 
  */
+
 function p_table(
 	$id,
-	$thead=false,
-	$rows = null){
+	$head = null,
+	$rows = null,
+	$type = 'responsive-table-wrapper'){
 
 	$string = "";
-	if ($rows == null){
-		$string .="
-<div>
-	<table class='".$id."'>
-		<tbody>
-			<tr>
-				<th>Sample</th>
-				<th>Header</th>
-				<th><span class='fa fa-check'></span></th>
-				<th>Row</th>
-			</tr>
-			<tr class='odd'>
-				<td>Sample</td>
-				<td>Body</td>
-				<td><span class='fa fa-check'></span></td>
-				<td><a href='sample.doc'>Row</a></td>
-			</tr>
-			<tr class='even'>
-				<td>Sample</td>
-				<td>Body</td>
-				<td><span class='fa fa-check'></span></td>
-				<td><a href='#'>Row</a></td>
-			</tr>
-			<tr class='odd'>
-				<td>Sample</td>
-				<td>Body</td>
-				<td><span class='fa fa-check'></span></td>
-				<td><a href='sample.pdf'>Row</a></td>
-			</tr>
-			<tr class='even'>
-				<td>Sample</td>
-				<td>Body</td>
-				<td><span class='fa fa-check'></span></td>
-				<td></td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-		";
-	}else{
-		$string .="<div class='".$id."'>";
-		$string .="<table>";
-		if($thead){
-			$string .="<thead>";
-		}
-		if($thead){
-			$string .="</thead>";
-		}
-		$string .="<tbody>";
-		foreach($rows as $k => $v){
-			$string .="<tr>";
-			$string .="<td>".$k."</td>";
-			$string .="<td>".$v."</td>";
-			$string .="</tr>";
-		}
-		$string .="</tbody>";
-		$string .="</table>";
-		$string .="</div>";
+	if ($head == null){
+		$head = array(
+			'First Name',
+			'Last Name',
+			'Enrolled',
+			'Resume'
+		);
 	}
+	if($rows == null){
+		$rows = array(
+			array(
+				"John",
+				"Smith",
+				"<span class='fa fa-check'></span>",
+				"<a href='sample.doc'>PDF</a>"
+			),
+			array(
+				"Tim",
+				"Jones",
+				"",
+				"<a href='sample.pdf'>file</a>"
+			),
+			array(
+				"Jane",
+				"Doe",
+				"<span class='fa fa-check'></span>",
+				"not available"
+			),
+			array(
+				"Sample",
+				"Person",
+				"",
+				"<a href='sample.pdf'>another</a>"
+			)
+		);
+	}
+
+	$string .="\n<div class='".$type."'>\n\t<table class='".$id."'>\n\t\t";
+	if($head != null){
+		$string .="<thead>\n\t\t\t<tr>\n\t\t\t";
+		foreach($head as $k => $v){
+			$string .= "\t<td>".$v."</td>\n\t\t\t";
+		}
+		$string .="</tr>\n\t\t</thead>\n\t\t";
+	}
+	if($rows != null){
+		$string .="<tbody>\n\t\t";
+			$count = 0;
+			foreach($rows as $key => $value){
+				$string .="\t<tr"." class='".(++$count%2 ? "odd" : "even")."'>\n\t\t\t";
+				foreach($value as $k => $v){
+					$string .= "\t<td>".$v."</td>\n\t\t\t";
+				}
+				$string .="</tr>\n\t\t";
+			}
+		$string .="</tbody>\n\t";
+	}
+	$string .="</table>\n</div>\n";
 	return $string;
 }
 ?>

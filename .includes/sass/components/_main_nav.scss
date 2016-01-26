@@ -1,4 +1,11 @@
 
+/* _main_nav.scss */
+$background_color:$white;
+$primary_font_family:'f-dm';
+$primary_font_color:$color-1;
+$secondary_font_family:'paradoxbold';
+$secondary_font_color:$color-2;
+
 .main-nav-container{
 	background: $background_color;
 	display:none;

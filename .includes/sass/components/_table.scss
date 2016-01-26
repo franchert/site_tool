@@ -1,4 +1,4 @@
-.table-wrapper{
+.responsive-table-wrapper{
 	overflow:auto;
 	@include breakpoint($tab){
 		border:1px solid $color-1;
@@ -32,7 +32,7 @@
 						border-bottom:none;
 					}
 				}
-				th{
+				td{
 					display:block;
 					float:left;
 					width:100%;

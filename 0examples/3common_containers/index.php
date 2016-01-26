@@ -21,7 +21,7 @@ $p_content .= p_tabs('sample-tabs');
 $p_content .= "<h2>Desktop Tabs to Mobile</h2>";
 $p_content .= p_tabs_mobi('sample-tabs-mobi');
 $p_content .= "<h2>Sample Mobile Table</h2>";
-$p_content .= p_table_mobile('sample-table');
+$p_content .= p_table('sample-table');
 
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

@@ -1,4 +1,10 @@
 
+/* _alert.scss */
+$emergency_alert_color:$red;
+$weather_alert_color:$blue;
+$alert_toggle_color:$color-2;
+$alert_text_color:$white;
+
 .alert{
 	@include floatblock();
 	overflow:visible;
