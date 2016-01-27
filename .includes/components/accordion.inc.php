@@ -3,7 +3,7 @@
  		DEPRECIATED, use accordiontab or accordion if possible
  *	Function to include a jQuery UI Accordion
  *
- *	@param string  $id
+ *	@param string  $id = identification of this specific accordion
  *	@param array  $arr = array of items to display
  */
 function p_accordion_ui(

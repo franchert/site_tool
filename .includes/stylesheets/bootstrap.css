@@ -62,82 +62,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* default color for everything */
 /* breakpoints */
 /* max width of site column */
-/* font faces */
-@font-face {
-  font-family: 'BebasNeueBold';
-  src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueBook';
-  src: url(/.includes/fonts/bebas/bebasneue_book-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_book-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueLight';
-  src: url(/.includes/fonts/bebas/bebasneue_light-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_light-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueReg';
-  src: url(/.includes/fonts/bebas/bebasneue_regular-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_regular-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueThin';
-  src: url(/.includes/fonts/bebas/bebasneue_thin-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_thin-webfont.woff);
-}
-@font-face {
-  font-family: 'DTLParadoxBold';
-  src: url(/.includes/fonts/dtlparadox/Bold/dtlparadoxt-bold-webfont.otf);
-  src: url(/.includes/fonts/dtlparadox/Bold/dtlparadoxt-bold-webfont.woff);
-}
-@font-face {
-  font-family: 'DTLParadoxItal';
-  src: url(/.includes/fonts/dtlparadox/Italic/dtlparadoxt-italic-webfont.otf);
-  src: url(/.includes/fonts/dtlparadox/Italic/dtlparadoxt-italic-webfont.woff);
-}
-@font-face {
-  font-family: 'DTLParadoxReg';
-  src: url(/.includes/fonts/dtlparadox/Regular/dtlparadoxt-webfont.otf);
-  src: url(/.includes/fonts/dtlparadox/Regular/dtlparadoxt-webfont.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicBK';
-  src: url(/.includes/fonts/franklin/bk/ITCFranklinGothicStd-Book.otf);
-  src: url(/.includes/fonts/franklin/bk/ITCFranklinGothicStd-Book.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicBKCD';
-  src: url(/.includes/fonts/franklin/bkcd/ITCFranklinGothicStd-BkCd.otf);
-  src: url(/.includes/fonts/franklin/bkcd/ITCFranklinGothicStd-BkCd.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicBKCDIT';
-  src: url(/.includes/fonts/franklin/bkcdit/ITCFranklinGothicStd-BkCdIt.otf);
-  src: url(/.includes/fonts/franklin/bkcdit/ITCFranklinGothicStd-BkCdIt.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicDMCD';
-  src: url(/.includes/fonts/franklin/dmcd/ITCFranklinGothicStd-DmCd.otf);
-  src: url(/.includes/fonts/franklin/dmcd/ITCFranklinGothicStd-DmCd.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicDMCDIT';
-  src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.otf);
-  src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.woff);
-}
+/* font faces 
+	@font-face{
+		font-family: 'BebasNeueBold';
+		src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.otf);
+		src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.woff);
+	}
 /* end font faces */
 /* fontawesome variables */
 /* end fontawesome variables */
-/* _accordion.scss */
-/* _alert.scss */
-/* _breadcrumb.scss */
-/* _grid.scss */
-/* _main_nav.scss */
-/* _p_link.scss */
-/* _p_matrix.scss */
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -1535,7 +1468,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #000;
+  color: #333333;
   background-color: #fff;
 }
 
@@ -3686,7 +3619,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #404040;
+  color: #737373;
 }
 
 @media (min-width: 45em) {
@@ -5644,7 +5577,7 @@ a.badge:hover, a.badge:focus {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #000;
+  color: #333333;
 }
 
 a.thumbnail:hover,
@@ -9117,7 +9050,7 @@ select[multiple].input-lg,
   display: block;
   margin-top: 5px;
   margin-bottom: 10px;
-  color: #404040;
+  color: #737373;
 }
 
 @media (min-width: 45em) {
@@ -13836,7 +13769,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857;
-  color: #000;
+  color: #333333;
   background-color: #fff;
 }
 
@@ -14666,7 +14599,7 @@ table th[class*="col-"] {
 }
 .thumbnail .caption {
   padding: 9px;
-  color: #000;
+  color: #333333;
 }
 
 a.thumbnail:hover,

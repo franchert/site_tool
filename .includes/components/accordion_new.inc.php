@@ -2,7 +2,7 @@
 /**
  *	Function to include an Accordion
  *
- *	@param string  $id
+ *	@param string  $id = identification of this specific accordion
  *	@param array  $arr = array of items to display
  */
 function p_accordion(

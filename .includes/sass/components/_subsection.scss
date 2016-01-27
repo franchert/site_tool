@@ -6,7 +6,7 @@
 		padding:5px 0 20px;
 	}
 	h3{
-		@include font('bebas',28,$color-1);
+		@include font('lobster',28,$color-1);
 		border:none;
 		margin:10px 0;
 		@include breakpoint($tab){
@@ -39,7 +39,7 @@
 				width:25%;
 			}
 			button{
-				@include font('bebas',20,$white);
+				@include font('lobster',20,$white);
 				background:$color-1;
 				padding:15px 30px 15px 20px;
 				border:none;
@@ -63,7 +63,7 @@
 		.container{
 			width:100%;
 			h3{
-				@include font('f-dm',24,$color-1);
+				@include font('open_sans',24,$color-1);
 				text-transform:initial;
 			}
 		}

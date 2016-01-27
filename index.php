@@ -18,7 +18,7 @@ $p_one .="<p>Examples of the code used to create these components and how the sy
 $p_one .="<h2>Getting Started</h2>";
 $p_one .="<p>The file structure that this system uses replicates the sitemap created in the information architecture phase of the project. Creating a new directory will place it within the directory structure in alphabetical order. Creating an index.php file inside of that directory will display the contents of that file when accessing it via the web.</p>";
 $p_one .="<div style='float:right;width:300px;padding-right:20px;'>".p_promo("button","image","light","Run the Generator",null,null,null,"/.util/.generate/index.php")."</div>";
-$p_one .="<p>Click the link to the right to generate a file system defined in the <a href='/sitemap.json' target='_blank' style='display:inline-block;'>sitemap.json</a> file</p>";
+$p_one .="<p>Click the link to the right to generate a file system defined in the <a href='/.util/.generate/sitemap.json' target='_blank' style='display:inline-block;'>sitemap.json</a> file</p>";
 $p_one .="<p>Each index.php file pulls in sitewide variables, sets page specific variables and builds a string to display within regions on a layout defined by these variables. Each file has three major sections:</p><ol style='list-style:decimal;margin-left:30px;'><li>Set Variables</li><li>Initialize and build strings</li><li>Print out strings within defined layout</li></ol>";
 $p_one .="<p>Initializing and printing the strings are done through includes files, but the variables containing these strings need to be built manually to show the content for each specific page</p>";
 $p_one .="<h3>Creating a new page</h3>";

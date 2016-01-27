@@ -15,14 +15,14 @@ $alert_text_color:$white;
 		max-width:$maxwidth;
 		margin:auto;
 		h3{
-			@include font('f-dm',22,$alert_toggle_color);
+			@include font('open_sans',22,$alert_toggle_color);
 			text-transform:uppercase;
 			@include floatblock(left,calc(100% - 60px));
 			border:none;
 			margin:0;
 		}
 		span{
-			@include font('paradoxbold',26,$alert_toggle_color);
+			@include font(''open_sans_bold'',26,$alert_toggle_color);
 			line-height:26px;
 			text-transform:uppercase;
 			@include floatblock(left,60px);
@@ -56,10 +56,10 @@ $alert_text_color:$white;
 					width:calc(100% - 200px);
 				}
 				h2{
-					@include font('paradox',32,$alert_text_color);
+					@include font('open_sans_reg',32,$alert_text_color);
 				}
 				p{
-					@include font('f-bk',18,$alert_text_color);
+					@include font('lora',18,$alert_text_color);
 					position:relative;
 				}
 			}
@@ -68,17 +68,17 @@ $alert_text_color:$white;
 					width:200px;
 				}
 				h2{
-					@include font('paradox',32,$alert_text_color);
+					@include font('open_sans_reg',32,$alert_text_color);
 				}
 				ul{
 					li{
-						@include font('f-bk',18,$alert_text_color);
+						@include font('lora',18,$alert_text_color);
 					}
 				}
 			}
 		}
 		a{
-			@include font('paradoxbold',16,$alert_text_color);
+			@include font(''open_sans_bold'',16,$alert_text_color);
 			@include arrowafter($alert_text_color);
 			width:auto;
 			position:relative;

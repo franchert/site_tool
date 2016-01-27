@@ -1,6 +1,7 @@
 <!doctype HTML>
 <html>
 <head>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Lora:400,400italic,700,700italic|Lobster' rel='stylesheet' type='text/css'>
 <?php if($page == 'home'){ ?>
 	<title><?php echo $client_name;?></title>
 	<meta property="og:title" content="<?php echo $client_name;?>">

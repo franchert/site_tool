@@ -25,7 +25,7 @@
 		}
 		.tag{
 			h3{
-				@include font('bebas',30,$color-1);
+				@include font('lobster',30,$color-1);
 				line-height:48px;
 				position: absolute;
 				background: $color-2;
@@ -61,13 +61,13 @@
 				position:absolute;
 			}
 			p{
-				@include font('f-bk',16,$white);
+				@include font('lora',16,$white);
 				height:auto;
 				overflow:hidden;
 				margin:0;
 			}
 			h2{
-				@include font('paradoxbold',16,$white);
+				@include font(''open_sans_bold'',16,$white);
 				margin:0;
 				border-bottom:0;
 			}
@@ -76,7 +76,7 @@
 					.drop-container{
 						width:100%;
 						.dropdown{
-							@include font('paradoxbold',16,$color-1);
+							@include font(''open_sans_bold'',16,$color-1);
 							line-height:22px;
 							width:100%;
 							text-align:left;
@@ -152,7 +152,7 @@
 		}
 		.tag{
 			h3{
-				@include font('bebas',30,$color-1);
+				@include font('lobster',30,$color-1);
 				line-height:48px;
 				position: absolute;
 				background: $color-2;
@@ -193,14 +193,14 @@
 				@include calc('width','75% - 100px','60%');
 			}
 			p{
-				@include font('f-bk',16,$white);
+				@include font('lora',16,$white);
 				padding:0 20px 20px 20px;
 				height:auto;
 				overflow:hidden;
 				margin:0;
 			}
 			h2{
-				@include font('paradoxbold',16,$white);
+				@include font(''open_sans_bold'',16,$white);
 				padding:20px 20px 0 20px;
 				margin:0;
 				border-bottom:0;
@@ -210,7 +210,7 @@
 					.drop-container{
 						width:100%;
 						.dropdown{
-							@include font('paradoxbold',22,$color-1);
+							@include font(''open_sans_bold'',22,$color-1);
 							line-height:22px;
 							width:100%;
 							text-align:left;
@@ -385,7 +385,7 @@
 			background:$white;
 			width:auto;
 			h2{
-				@include font('bebas',18,$color-1);
+				@include font('lobster',18,$color-1);
 				border-bottom:0;
 				margin-top:10px;
 			}
@@ -441,7 +441,7 @@
 			.promo-container{
 				background:$white;
 				h2{
-					@include font('f-dm',18,$color-1);
+					@include font('open_sans',18,$color-1);
 					text-transform:none;
 					margin:10px 0 0;
 					border-bottom:0;
@@ -461,7 +461,7 @@
 	}
 	&.promo{
 		h4{
-			@include font('bebas',20,$color-1);
+			@include font('lobster',20,$color-1);
 			font-weight:bold;
 			margin:0;
 			text-transform:initial;
@@ -473,13 +473,13 @@
 		}
 		.promo-container{
 			.intro{
-				@include font('f-bk',16,$c-default);
+				@include font('lora',16,$c-default);
 				a{
-					@include font('f-bk',18,$color-1);
+					@include font('lora',18,$color-1);
 				}
 			}
 			> a{
-				@include font('bebas',16,$color-1);
+				@include font('lobster',16,$color-1);
 				width:auto;
 				@include arrowafter($color-1,14px,"\f0da");
 				text-transform:uppercase;
@@ -510,7 +510,7 @@
 			background:$gray;
 			.promo-container{
 				h4{
-					@include font('bebas',24,$color-1);
+					@include font('lobster',24,$color-1);
 					color:$color-1;
 					font-weight:normal;
 				}
@@ -569,7 +569,7 @@
 					}
 				}
 				p{
-					@include font('bebas',24,$c-default);
+					@include font('lobster',24,$c-default);
 					width:auto;
 					margin:0;
 					padding-left:10px;

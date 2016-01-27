@@ -62,72 +62,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* default color for everything */
 /* breakpoints */
 /* max width of site column */
-/* font faces */
-@font-face {
-  font-family: 'BebasNeueBold';
-  src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueBook';
-  src: url(/.includes/fonts/bebas/bebasneue_book-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_book-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueLight';
-  src: url(/.includes/fonts/bebas/bebasneue_light-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_light-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueReg';
-  src: url(/.includes/fonts/bebas/bebasneue_regular-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_regular-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueThin';
-  src: url(/.includes/fonts/bebas/bebasneue_thin-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_thin-webfont.woff);
-}
-@font-face {
-  font-family: 'DTLParadoxBold';
-  src: url(/.includes/fonts/dtlparadox/Bold/dtlparadoxt-bold-webfont.otf);
-  src: url(/.includes/fonts/dtlparadox/Bold/dtlparadoxt-bold-webfont.woff);
-}
-@font-face {
-  font-family: 'DTLParadoxItal';
-  src: url(/.includes/fonts/dtlparadox/Italic/dtlparadoxt-italic-webfont.otf);
-  src: url(/.includes/fonts/dtlparadox/Italic/dtlparadoxt-italic-webfont.woff);
-}
-@font-face {
-  font-family: 'DTLParadoxReg';
-  src: url(/.includes/fonts/dtlparadox/Regular/dtlparadoxt-webfont.otf);
-  src: url(/.includes/fonts/dtlparadox/Regular/dtlparadoxt-webfont.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicBK';
-  src: url(/.includes/fonts/franklin/bk/ITCFranklinGothicStd-Book.otf);
-  src: url(/.includes/fonts/franklin/bk/ITCFranklinGothicStd-Book.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicBKCD';
-  src: url(/.includes/fonts/franklin/bkcd/ITCFranklinGothicStd-BkCd.otf);
-  src: url(/.includes/fonts/franklin/bkcd/ITCFranklinGothicStd-BkCd.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicBKCDIT';
-  src: url(/.includes/fonts/franklin/bkcdit/ITCFranklinGothicStd-BkCdIt.otf);
-  src: url(/.includes/fonts/franklin/bkcdit/ITCFranklinGothicStd-BkCdIt.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicDMCD';
-  src: url(/.includes/fonts/franklin/dmcd/ITCFranklinGothicStd-DmCd.otf);
-  src: url(/.includes/fonts/franklin/dmcd/ITCFranklinGothicStd-DmCd.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicDMCDIT';
-  src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.otf);
-  src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.woff);
-}
+/* font faces 
+	@font-face{
+		font-family: 'BebasNeueBold';
+		src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.otf);
+		src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.woff);
+	}
 /* end font faces */
 /* fontawesome variables */
 /* end fontawesome variables */
@@ -335,7 +275,7 @@ body header .l-head .mobi-toggle-container .utility .search form #as_q {
   font-size: 1.6pxrem;
   line-height: 22pxpx;
   line-height: 2.2pxrem;
-  font-family: 'ITCFranklinGothicBKCD';
+  font-family: 'Open Sans',sans-serif;
   font-style: italic;
   border: none;
   padding-left: 5px;
@@ -352,8 +292,7 @@ body header .l-head .mobi-toggle-container .utility .search form #site_search_bu
   font-size: 2pxrem;
   line-height: 26pxpx;
   line-height: 2.6pxrem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Open Sans',sans-serif;
   font-size: 20px;
   color: #bbbbbb;
   height: 30px;
@@ -780,8 +719,7 @@ body ul.tabaccordion > li h3 {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Open Sans',sans-serif;
   background: #2a2a2a;
   text-transform: uppercase;
   cursor: pointer;
@@ -884,8 +822,7 @@ body .accordion h3 {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Open Sans',sans-serif;
   text-transform: uppercase;
   background: #2a2a2a;
   border-bottom: 2px solid #fff;
@@ -954,8 +891,8 @@ body .alert .toggle h3 {
   font-size: 2.2rem;
   line-height: 28px;
   line-height: 2.8rem;
-  font-family: 'ITCFranklinGothicDMCD',sans-serif;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
   display: block;
   float: left;
@@ -969,7 +906,7 @@ body .alert .toggle span {
   font-size: 2.6rem;
   line-height: 32px;
   line-height: 3.2rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   line-height: 26px;
   text-transform: uppercase;
   display: block;
@@ -1012,7 +949,8 @@ body .alert .message .column .message h2 {
   font-size: 3.2rem;
   line-height: 38px;
   line-height: 3.8rem;
-  font-family: 'DTLParadoxReg',sans-serif;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 600;
 }
 body .alert .message .column .message p {
   color: #fff;
@@ -1020,7 +958,8 @@ body .alert .message .column .message p {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   position: relative;
 }
 @media (min-width: 45em) {
@@ -1034,7 +973,8 @@ body .alert .message .column .contact h2 {
   font-size: 3.2rem;
   line-height: 38px;
   line-height: 3.8rem;
-  font-family: 'DTLParadoxReg',sans-serif;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 600;
 }
 body .alert .message .column .contact ul li {
   color: #fff;
@@ -1042,7 +982,8 @@ body .alert .message .column .contact ul li {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
 }
 body .alert .message a {
   color: #fff;
@@ -1050,7 +991,7 @@ body .alert .message a {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   position: relative;
   width: auto;
   position: relative;
@@ -1128,8 +1069,8 @@ body .cbox-title .container h2 {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'ITCFranklinGothicDMCD',sans-serif;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   padding: 5px 20px;
 }
 body .cbox-title .container h2 span {
@@ -1153,8 +1094,8 @@ body .drop-container .drop-toggle {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   width: auto;
   position: relative;
   padding-right: 20px;
@@ -1271,8 +1212,7 @@ body .promo-event a .date .weekday {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   line-height: 16px;
   text-transform: uppercase;
 }
@@ -1283,8 +1223,7 @@ body .promo-event a .date .month {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   line-height: 16px;
   text-transform: uppercase;
 }
@@ -1295,8 +1234,8 @@ body .promo-event a .date .day {
   font-size: 4.2rem;
   line-height: 48px;
   line-height: 4.8rem;
-  font-family: 'ITCFranklinGothicDMCD',sans-serif;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   top: 50%;
   top: -webkit-calc(50% - 22px);
   top: calc(50% - 22px);
@@ -1317,7 +1256,8 @@ body .promo-event a .info h3 {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'DTLParadoxReg',sans-serif;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 600;
   padding: 0 10px;
   line-height: 20px;
   text-align: left;
@@ -1334,7 +1274,8 @@ body .promo-event a .info p {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
 }
 body .promo-event a:hover {
   text-decoration: none;
@@ -1430,7 +1371,8 @@ body .factoid .factoid-container {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   float: none;
   width: 220px;
   margin: auto;
@@ -1450,7 +1392,8 @@ body .factoid .factoid-container span {
   font-size: 7.8rem;
   line-height: 84px;
   line-height: 8.4rem;
-  font-family: 'ITCFranklinGothicBKCD';
+  font-family: 'Lora', serif;
+  font-weight: 700;
   text-transform: none;
 }
 body .factoid .factoid-container span span {
@@ -1687,8 +1630,7 @@ body a.button {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   background: #eee;
   padding: 15px 25px;
   border: 1px solid #ccc;
@@ -1711,8 +1653,7 @@ body a.read-more {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   float: right;
   width: auto;
   position: relative;
@@ -1836,8 +1777,8 @@ body .main-nav-container .nav-wrapper > div .main-nav li a {
   font-size: 1.4rem;
   line-height: 20px;
   line-height: 2rem;
-  font-family: 'ITCFranklinGothicDMCD',sans-serif;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
   text-align: left;
   padding: 10px 20px;
@@ -1856,7 +1797,7 @@ body .main-nav-container .nav-wrapper > div .main-nav li a span {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   text-transform: uppercase;
   font-style: initial;
 }
@@ -2028,8 +1969,7 @@ body .owl-carousel .owl-stage-outer .owl-stage .owl-item .slide .container a {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   width: auto;
   background: #bbbbbb;
   padding: 10px 30px;
@@ -2194,8 +2134,7 @@ body .p-promo.overlay .tag h3 {
   font-size: 3rem;
   line-height: 36px;
   line-height: 3.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   line-height: 48px;
   position: absolute;
   background: #bbbbbb;
@@ -2240,7 +2179,8 @@ body .p-promo.overlay .promo-container p {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   height: auto;
   overflow: hidden;
   margin: 0;
@@ -2251,7 +2191,7 @@ body .p-promo.overlay .promo-container h2 {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   margin: 0;
   border-bottom: 0;
 }
@@ -2264,7 +2204,7 @@ body .p-promo.overlay .promo-container ul li .drop-container .dropdown {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   line-height: 22px;
   width: 100%;
   text-align: left;
@@ -2346,8 +2286,7 @@ body .p-promo.overlayv2 .tag h3 {
   font-size: 3rem;
   line-height: 36px;
   line-height: 3.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   line-height: 48px;
   position: absolute;
   background: #bbbbbb;
@@ -2403,7 +2342,8 @@ body .p-promo.overlayv2 .promo-container p {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   padding: 0 20px 20px 20px;
   height: auto;
   overflow: hidden;
@@ -2415,7 +2355,7 @@ body .p-promo.overlayv2 .promo-container h2 {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   padding: 20px 20px 0 20px;
   margin: 0;
   border-bottom: 0;
@@ -2429,7 +2369,7 @@ body .p-promo.overlayv2 .promo-container ul li .drop-container .dropdown {
   font-size: 2.2rem;
   line-height: 28px;
   line-height: 2.8rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   line-height: 22px;
   width: 100%;
   text-align: left;
@@ -2654,8 +2594,7 @@ body .p-promo.generic > .promo-container h2 {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   border-bottom: 0;
   margin-top: 10px;
 }
@@ -2717,8 +2656,8 @@ body .p-promo.generic.hover .promo-container h2 {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicDMCD',sans-serif;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   text-transform: none;
   margin: 10px 0 0;
   border-bottom: 0;
@@ -2739,8 +2678,7 @@ body .p-promo.promo h4 {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   font-weight: bold;
   margin: 0;
   text-transform: initial;
@@ -2756,7 +2694,8 @@ body .p-promo.promo .promo-container .intro {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
 }
 body .p-promo.promo .promo-container .intro a {
   color: #2a2a2a;
@@ -2764,7 +2703,8 @@ body .p-promo.promo .promo-container .intro a {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
 }
 body .p-promo.promo .promo-container > a {
   color: #2a2a2a;
@@ -2772,8 +2712,7 @@ body .p-promo.promo .promo-container > a {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   width: auto;
   position: relative;
   text-transform: uppercase;
@@ -2814,8 +2753,7 @@ body .p-promo.promo.light .promo-container h4 {
   font-size: 2.4rem;
   line-height: 30px;
   line-height: 3rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   color: #2a2a2a;
   font-weight: normal;
 }
@@ -2879,8 +2817,7 @@ body .p-promo.button a .promo-container p {
   font-size: 2.4rem;
   line-height: 30px;
   line-height: 3rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   width: auto;
   margin: 0;
   padding-left: 10px;
@@ -2999,8 +2936,8 @@ body .subnav h2 {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicDMCD',sans-serif;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   white-space: nowrap;
   cursor: pointer;
   line-height: 41px;
@@ -3074,7 +3011,7 @@ body .subnav > div > ul > a {
   font-size: 1.4rem;
   line-height: 20px;
   line-height: 2rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   padding: 20px;
   text-transform: uppercase;
   position: relative;
@@ -3120,7 +3057,8 @@ body .subnav > div > ul > li a {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   line-height: 21px;
   padding: 17px 20px;
 }
@@ -3180,14 +3118,24 @@ body .subnav.toggles > ul li > .sn-toggle {
   width: 20%;
   width: -webkit-calc(54px);
   width: calc(54px);
-  height: 56px;
+  height: 50px;
   text-align: center;
   padding: 0;
   border: none;
 }
+@media (min-width: 45em) {
+  body .subnav.toggles > ul li > .sn-toggle {
+    height: 54px;
+  }
+}
+@media (min-width: 70em) {
+  body .subnav.toggles > ul li > .sn-toggle {
+    height: 56px;
+  }
+}
 body .subnav.toggles > ul li > .sn-toggle span {
   font-size: 21px;
-  line-height: 56px;
+  line-height: 50px;
   color: #444;
   cursor: pointer;
   height: 100%;
@@ -3195,6 +3143,16 @@ body .subnav.toggles > ul li > .sn-toggle span {
   -ms-transform: rotate(90deg);
   transform: rotateZ(90deg);
   transition: transform 0.3s;
+}
+@media (min-width: 45em) {
+  body .subnav.toggles > ul li > .sn-toggle span {
+    line-height: 54px;
+  }
+}
+@media (min-width: 70em) {
+  body .subnav.toggles > ul li > .sn-toggle span {
+    line-height: 56px;
+  }
 }
 body .subnav.toggles > ul li a.has-sub {
   width: 80%;
@@ -3221,8 +3179,7 @@ body .subsection h3 {
   font-size: 2.8rem;
   line-height: 34px;
   line-height: 3.4rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   border: none;
   margin: 10px 0;
 }
@@ -3270,8 +3227,7 @@ body .subsection .container > div button {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   background: #2a2a2a;
   padding: 15px 30px 15px 20px;
   border: none;
@@ -3308,8 +3264,8 @@ body .subsection .subsection-hidden .container h3 {
   font-size: 2.4rem;
   line-height: 30px;
   line-height: 3rem;
-  font-family: 'ITCFranklinGothicDMCD',sans-serif;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   text-transform: initial;
 }
 body .subsection.open .container > div button:after {
@@ -3390,7 +3346,8 @@ body .responsive-table-wrapper table thead tr td {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   border-right: 1px solid #ccc;
   background: #2a2a2a;
   padding: 10px 30px;
@@ -3443,7 +3400,8 @@ body .responsive-table-wrapper table tbody tr td {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   text-align: left;
   padding: 10px 20px;
 }
@@ -3468,7 +3426,8 @@ body .responsive-table-wrapper table tbody tr td:before {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   text-align: left;
   font-weight: bold;
 }
@@ -3524,8 +3483,7 @@ body .ui-tabs .ui-tabs-nav > li a h3 {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   line-height: 20px;
   border-bottom: 0;
   margin: 0;
@@ -3559,8 +3517,7 @@ body .tabs-container .tabheaders li a {
   font-size: 2pxrem;
   line-height: 26pxpx;
   line-height: 2.6pxrem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   line-height: 18px;
   transition: all .5s ease-in-out;
   height: 56px;
@@ -3693,8 +3650,7 @@ body .ui-accordion h3 {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   text-transform: uppercase;
   background: #2a2a2a;
   border-bottom: 2px solid #fff;
@@ -3841,7 +3797,7 @@ h1 {
   font-size: 3.6rem;
   line-height: 42px;
   line-height: 4.2rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   margin: 0 0 20px 0;
 }
 @media (min-width: 45em) {
@@ -3857,7 +3813,7 @@ h2 {
   font-size: 2.8rem;
   line-height: 34px;
   line-height: 3.4rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   margin: 0 0 20px 0;
 }
 
@@ -3867,7 +3823,7 @@ h3 {
   font-size: 2.4rem;
   line-height: 30px;
   line-height: 3rem;
-  font-family: 'DTLParadoxBold',sans-serif;
+  font-family: 'Open Sans',sans-serif;
   line-height: 24px;
   border-bottom: 1px solid #bbbbbb;
   margin: 0 0 20px 0;
@@ -3879,8 +3835,7 @@ h4 {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   margin: 0 0 10px 0;
 }
 
@@ -3890,7 +3845,8 @@ h5 {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'DTLParadoxReg',sans-serif;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 600;
   font-weight: bold;
   margin: 0 0 10px 0;
 }
@@ -3901,7 +3857,8 @@ h6 {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'DTLParadoxReg',sans-serif;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 600;
   margin: 0 0 10px 0;
 }
 
@@ -3912,7 +3869,8 @@ p {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   margin: 10px 0;
 }
 p a {
@@ -3933,17 +3891,19 @@ ol li {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   display: list-item;
 }
 
 a {
   color: #2a2a2a;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 24px;
-  line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBKCD';
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 22px;
+  line-height: 2.2rem;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 600;
   text-decoration: none;
 }
 a:hover {
@@ -3991,8 +3951,7 @@ section.short .view-more {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   position: relative;
   position: absolute;
   background: #fff;
@@ -4014,8 +3973,7 @@ section .view-more {
   font-size: 1.6rem;
   line-height: 22px;
   line-height: 2.2rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   position: relative;
   display: block;
   bottom: -4px;
@@ -4044,7 +4002,8 @@ form div input {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   font-style: italic;
   line-height: 24px;
   padding: 10px;
@@ -4064,7 +4023,8 @@ form div textarea {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   line-height: 24px;
   font-style: italic;
   padding: 10px;
@@ -4078,8 +4038,7 @@ form .submit {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   width: auto;
   margin: 10px 0;
   background: #2a2a2a;

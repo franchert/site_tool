@@ -5,7 +5,7 @@
 		padding:0;
 	}
 	h2{
-		@include font('f-dm',18,$c-default);
+		@include font('open_sans',18,$c-default);
 		white-space:nowrap;
 		cursor:pointer;
 		line-height:41px;
@@ -76,7 +76,7 @@
 				color:$white;
 			}
 			> a{
-				@include font('paradoxbold',14,$color-2);
+				@include font(''open_sans_bold'',14,$color-2);
 				padding:20px;
 				text-transform:uppercase;
 				@include arrowbefore($white);
@@ -113,7 +113,7 @@
 					&.has-sub{
 						@include calc('width','100% - 56px','80%');
 					}
-					@include font('f-bk',16,$gray);
+					@include font('lora',16,$gray);
 					line-height:21px;
 					padding:17px 20px;
 				}
@@ -176,13 +176,19 @@
 				> .sn-toggle{
 					background:none;
 					@include calc('width','54px','20%');
-					height:56px;
+					height:50px;
 					text-align:center;
 					padding:0;
 					border:none;
+					@include breakpoint($tab){
+						height:54px;
+					}
+					@include breakpoint($desk){
+						height:56px;
+					}
 					span{
 						font-size:21px;
-						line-height:56px;
+						line-height:50px;
 						color:$c-default;
 						cursor:pointer;
 						height:100%;
@@ -190,6 +196,12 @@
 						-ms-transform:rotate(90deg);
 						transform:rotateZ(90deg);
 						transition:transform 0.3s;
+						@include breakpoint($tab){
+							line-height:54px;
+						}
+						@include breakpoint($desk){
+							line-height:56px;
+						}
 					}
 				}
 				a{

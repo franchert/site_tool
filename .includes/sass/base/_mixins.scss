@@ -7,22 +7,25 @@
 @mixin font($family:"Arial",$size:16,$color:$c-default,$line-height:$size){
 	color:$color;
 	@include font-size($size);
-	@if $family == 'bebas'{
-		font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-		text-transform:uppercase;
-	} @else if $family == 'f-dm'{
-		font-family: 'ITCFranklinGothicDMCD',sans-serif;
-		font-weight:bold;
-	} @else if $family == 'paradox'{
-		font-family: 'DTLParadoxReg',sans-serif;
-	} @else if $family == 'paradoxbold'{
-		font-family: 'DTLParadoxBold',sans-serif;
-	} @else if $family == 'f-bk'{
-		font-family: 'ITCFranklinGothicBK';
-	} @else if $family == 'f-bkcd'{
-		font-family: 'ITCFranklinGothicBKCD';
+	@if $family == 'lobster'{
+		font-family: 'Lobster', cursive;
+	} @else if $family == 'open_sans'{
+		font-family:'Open Sans', sans-serif;;
+		font-weight:400;
+	} @else if $family == 'open_sans_reg'{
+		font-family: 'Open Sans',sans-serif;
+		font-weight:600;
+	} @else if $family == 'open_sans_bold'{
+		font-family: 'Open Sans',sans-serif;
+		font-weight:700;
+	} @else if $family == 'lora'{
+		font-family: 'Lora', serif;
+		font-weight:400;
+	} @else if $family == 'lora_bold'{
+		font-family: 'Lora', serif;
+		font-weight:700;
 	} @else {
-		font-family:'Arial', sans-serif;
+		font-family:'Open Sans',sans-serif;
 	}
 }
 @mixin font-size($sizeValue: 16) {

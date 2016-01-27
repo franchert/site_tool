@@ -6,82 +6,15 @@
 /* default color for everything */
 /* breakpoints */
 /* max width of site column */
-/* font faces */
-@font-face {
-  font-family: 'BebasNeueBold';
-  src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueBook';
-  src: url(/.includes/fonts/bebas/bebasneue_book-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_book-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueLight';
-  src: url(/.includes/fonts/bebas/bebasneue_light-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_light-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueReg';
-  src: url(/.includes/fonts/bebas/bebasneue_regular-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_regular-webfont.woff);
-}
-@font-face {
-  font-family: 'BebasNeueThin';
-  src: url(/.includes/fonts/bebas/bebasneue_thin-webfont.otf);
-  src: url(/.includes/fonts/bebas/bebasneue_thin-webfont.woff);
-}
-@font-face {
-  font-family: 'DTLParadoxBold';
-  src: url(/.includes/fonts/dtlparadox/Bold/dtlparadoxt-bold-webfont.otf);
-  src: url(/.includes/fonts/dtlparadox/Bold/dtlparadoxt-bold-webfont.woff);
-}
-@font-face {
-  font-family: 'DTLParadoxItal';
-  src: url(/.includes/fonts/dtlparadox/Italic/dtlparadoxt-italic-webfont.otf);
-  src: url(/.includes/fonts/dtlparadox/Italic/dtlparadoxt-italic-webfont.woff);
-}
-@font-face {
-  font-family: 'DTLParadoxReg';
-  src: url(/.includes/fonts/dtlparadox/Regular/dtlparadoxt-webfont.otf);
-  src: url(/.includes/fonts/dtlparadox/Regular/dtlparadoxt-webfont.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicBK';
-  src: url(/.includes/fonts/franklin/bk/ITCFranklinGothicStd-Book.otf);
-  src: url(/.includes/fonts/franklin/bk/ITCFranklinGothicStd-Book.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicBKCD';
-  src: url(/.includes/fonts/franklin/bkcd/ITCFranklinGothicStd-BkCd.otf);
-  src: url(/.includes/fonts/franklin/bkcd/ITCFranklinGothicStd-BkCd.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicBKCDIT';
-  src: url(/.includes/fonts/franklin/bkcdit/ITCFranklinGothicStd-BkCdIt.otf);
-  src: url(/.includes/fonts/franklin/bkcdit/ITCFranklinGothicStd-BkCdIt.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicDMCD';
-  src: url(/.includes/fonts/franklin/dmcd/ITCFranklinGothicStd-DmCd.otf);
-  src: url(/.includes/fonts/franklin/dmcd/ITCFranklinGothicStd-DmCd.woff);
-}
-@font-face {
-  font-family: 'ITCFranklinGothicDMCDIT';
-  src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.otf);
-  src: url(/.includes/fonts/franklin/dmcdit/ITCFranklinGothicStd-DmCdIt.woff);
-}
+/* font faces 
+	@font-face{
+		font-family: 'BebasNeueBold';
+		src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.otf);
+		src: url(/.includes/fonts/bebas/bebasneue_bold-webfont.woff);
+	}
 /* end font faces */
 /* fontawesome variables */
 /* end fontawesome variables */
-/* _accordion.scss */
-/* _alert.scss */
-/* _breadcrumb.scss */
-/* _grid.scss */
-/* _main_nav.scss */
-/* _p_link.scss */
-/* _p_matrix.scss */
 .wrapper {
   position: relative;
   overflow: hidden;
@@ -131,8 +64,7 @@ blockquote {
   font-size: 3.6rem;
   line-height: 42px;
   line-height: 4.2rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   padding: 0 10px;
   margin-bottom: 15px;
 }
@@ -197,8 +129,7 @@ body footer .column h3 {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'BebasNeueBold', Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
-  text-transform: uppercase;
+  font-family: 'Lobster', cursive;
   padding: 20px;
   text-align: center;
   text-transform: uppercase;
@@ -247,7 +178,8 @@ body footer .column .footer .social > a {
   font-size: 1.8rem;
   line-height: 24px;
   line-height: 2.4rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   text-align: center;
 }
 @media (min-width: 45em) {
@@ -293,7 +225,8 @@ body footer .column .footer .links-resources ul li a {
   font-size: 1.4rem;
   line-height: 20px;
   line-height: 2rem;
-  font-family: 'ITCFranklinGothicBK';
+  font-family: 'Lora', serif;
+  font-weight: 400;
   text-align: center;
 }
 @media (min-width: 45em) {

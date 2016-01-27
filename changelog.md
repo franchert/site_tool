@@ -1,8 +1,16 @@
-
+version 0.5
+```
+date: 1-27-2016
+link:
+notes:
+	Removed all client-specific fonts and replaced with google fonts
+	Added and updated several utilities to automatically generate folder structure, beginnings of publishing to a static file, server variables printouts, installation
+	updated styling and variable condensation within components
+	updated documentation
 
 version 0.4
 ```
-date: 1-20-2015
+date: 1-20-2016
 link:
 notes:
 	Removed all site-specific pages. Added exec.php to generate a sitemap based on a sitemap.json file and index.default.php.

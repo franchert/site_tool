@@ -16,6 +16,7 @@ It also pulls in a 'director' file, which represents the dynamic and back-end co
 - Explain process and how to get started using the tool.
 - Figure out a way to not need numbering on directories for ordering purposes within subnav/main nav
 - Print Stylesheets
+- Automatically generate a static "includes" folder to reference stylesheets, javascript, and extermal libraries
 
 ---
 
@@ -27,6 +28,3 @@ It also pulls in a 'director' file, which represents the dynamic and back-end co
 
 ###/settings.php
 - Generic pages start with the settings.php file on the root. This file gives info on the base paths needed to access needed files.
-
-###/globals.php
-- Functions used globally that don't impact content (like components do)

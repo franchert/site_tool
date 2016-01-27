@@ -12,7 +12,7 @@ function p_calendar(
 	$month = date("m");
 	$year = date("Y");
 
-	$day = 21;$month = 12;$year = 2015;
+	//$day = 21;$month = 12;$year = 2015;
 	$time = time();
 	$string = '';
 	$n_starting_week = ($day - date('w',mktime(0, 0, 0, $month, $day, $year)));

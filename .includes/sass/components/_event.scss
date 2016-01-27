@@ -16,19 +16,19 @@
 			position:relative;
 			.weekday{
 				width:51%;
-				@include font('bebas',16,$color-2);
+				@include font('lobster',16,$color-2);
 				line-height:16px;
 				text-transform:uppercase;
 			}
 			.month{
 				width:51%;
-				@include font('bebas',20,$white);
+				@include font('lobster',20,$white);
 				line-height:16px;
 				text-transform:uppercase;
 			}
 			.day{
 				width:51%;
-				@include font('f-dm',42,$white);
+				@include font('open_sans',42,$white);
 				@include calc('top','50% - 22px','50%');
 				position:absolute;
 				right:10px;
@@ -40,7 +40,7 @@
 			vertical-align:middle;
 			@include calc('width','100% - 100px','75%');
 			h3{
-				@include font('paradox',20,$color-1);
+				@include font('open_sans_reg',20,$color-1);
 				padding:0 10px;
 				line-height:20px;
 				text-align:left;
@@ -52,7 +52,7 @@
 				margin:0;
 				text-align:left;
 				padding:0 10px;
-				@include font('f-bk',16,$c-default);
+				@include font('lora',16,$c-default);
 			}
 		}
 		&:hover{
