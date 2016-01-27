@@ -94,31 +94,6 @@ body .l-page {
   overflow-x: hidden;
   min-height: 100vh;
 }
-body .l-page.demo .l-region {
-  border: 1px dashed #d21301;
-  border-radius: 8px;
-}
-body .l-page.demo .l-featured-header {
-  min-height: 100px;
-}
-body .l-page.demo .l-content-center .l-nav-sidebar {
-  min-height: 500px;
-}
-body .l-page.demo .l-content-center .l-content-featured {
-  min-height: 300px;
-}
-body .l-page.demo .l-content-center .l-content-wrapper {
-  min-height: 200px;
-}
-body .l-page.demo .l-content-center .l-content-wrapper .l-content {
-  min-height: 200px;
-}
-body .l-page.demo .l-content-center .l-content-wrapper .l-promo-sidebar {
-  min-height: 200px;
-}
-body .l-page.demo .l-content-footer {
-  min-height: 200px;
-}
 body footer {
   background: black;
   border-top: 7px solid rgba(0, 0, 0, 0.15);

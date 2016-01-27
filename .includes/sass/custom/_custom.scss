@@ -67,36 +67,6 @@ body{
 	.l-page{
 		overflow-x:hidden;
 		min-height:100vh;
-		&.demo{
-			.l-region{
-				border:1px dashed $red;
-				border-radius:8px;
-			}
-			.l-featured-header{
-				min-height:100px;
-			}
-			.l-content-header{}
-			.l-content-center{
-				.l-nav-sidebar{
-					min-height:500px;
-				}
-				.l-content-featured{
-					min-height:300px;
-				}
-				.l-content-wrapper{
-					min-height:200px;
-					.l-content{
-						min-height:200px;
-					}
-					.l-promo-sidebar{
-						min-height:200px;
-					}
-				}
-			}
-			.l-content-footer{
-				min-height:200px;
-			}
-		}
 	}
 	footer{
 		background: black;

@@ -219,6 +219,10 @@ body header .l-head .mobi-toggle-container .utility .utility-menu .p-list ul li 
 body header .l-head .mobi-toggle-container .utility .gateway-menu .p-list ul li a,
 body header .l-head .mobi-toggle-container .utility .utility-menu .p-list ul li a {
   color: #fff;
+  font-size: 12px;
+  font-size: 1.2rem;
+  line-height: 18px;
+  line-height: 1.8rem;
 }
 @media (min-width: 70em) {
   body header .l-head .mobi-toggle-container .utility .gateway-menu .p-list,
@@ -3158,6 +3162,7 @@ body .subnav.toggles > ul li a.has-sub {
   width: 80%;
   width: -webkit-calc(100% - 54px);
   width: calc(100% - 54px);
+  float: left;
 }
 body .subnav.toggles > ul li.open > .sn-toggle span {
   -webkit-transform: rotateZ(-90deg);
@@ -3650,7 +3655,8 @@ body .ui-accordion h3 {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'Lobster', cursive;
+  font-family: 'Open Sans',sans-serif;
+  font-weight: 600;
   text-transform: uppercase;
   background: #2a2a2a;
   border-bottom: 2px solid #fff;
@@ -3724,6 +3730,62 @@ body * {
 }
 body script {
   display: none;
+}
+body.demo a[href="#"] {
+  outline: dotted 2px #00BFFF !important;
+}
+body.demo h1:before {
+  content: 'H1';
+}
+body.demo h2:before {
+  content: 'H2';
+}
+body.demo h3:before {
+  content: 'H3';
+}
+body.demo h4:before {
+  content: 'H4';
+}
+body.demo h5:before {
+  content: 'H5';
+}
+body.demo h6:before {
+  content: 'H6';
+}
+body.demo h1:before, body.demo h2:before, body.demo h3:before, body.demo h4:before, body.demo h5:before, body.demo h6:before {
+  color: red;
+  position: relative;
+  top: -14px;
+  font-size: 10px;
+}
+body.demo .column {
+  background-image: url("/.includes/images/placeholder-svg.php?wh=2000x8000&color=FCC&fill=FFDAB9&font=Arial&size=20&txt=ph_default_text");
+  overflow: hidden;
+}
+body.demo .l-region {
+  border: 1px dashed red;
+  border-radius: 8px;
+}
+body.demo .l-featured-header {
+  min-height: 100px;
+}
+body.demo .l-content-center .l-nav-sidebar {
+  min-height: 500px;
+}
+body.demo .l-content-center .l-content-featured {
+  min-height: 300px;
+}
+body.demo .l-content-center .l-content-wrapper {
+  min-height: 200px;
+}
+body.demo .l-content-center .l-content-wrapper .l-content {
+  min-height: 200px;
+}
+body.demo .l-content-center .l-content-wrapper .l-promo-sidebar {
+  min-height: 200px;
+}
+body.demo .l-content-footer {
+  min-height: 200px;
 }
 
 .back-to-top {
@@ -3894,6 +3956,10 @@ ol li {
   font-family: 'Lora', serif;
   font-weight: 400;
   display: list-item;
+}
+ul li *,
+ol li * {
+  float: none;
 }
 
 a {

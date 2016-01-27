@@ -28,11 +28,11 @@
 		font-family:'Open Sans',sans-serif;
 	}
 }
-@mixin font-size($sizeValue: 16) {
+@mixin font-size($sizeValue: 16,$spacing:6) {
 	font-size: $sizeValue + px;
 	font-size: ($sizeValue / 10) + rem;
-	line-height: ($sizeValue + 6) + px;
-	line-height: (($sizeValue + 6) / 10) + rem;
+	line-height: ($sizeValue + $spacing) + px;
+	line-height: (($sizeValue + $spacing) / 10) + rem;
 }
 
 @mixin arrowbefore($color:$t-white,$font-size:14px,$type:$fa-angle-right){

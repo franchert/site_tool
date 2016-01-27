@@ -207,6 +207,7 @@
 				a{
 					&.has-sub{
 						@include calc('width','100% - 54px','80%');
+						float:left;
 					}
 				}
 				&.open{

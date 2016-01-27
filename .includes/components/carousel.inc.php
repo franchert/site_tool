@@ -31,7 +31,7 @@ $(window).load(function() {
 				items:2
 			},
 			'.$bM.':{
-				items:4
+				items:3
 			},
 			'.$bL.':{
 				items:4

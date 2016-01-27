@@ -6,7 +6,7 @@
 	margin-bottom:40px;
 	h3{
 		padding:10px 20px;
-		@include font('lobster',20,$white);
+		@include font('open_sans_reg',20,$white);
 		text-transform:uppercase;
 		background:$color-1;
 		border-bottom:2px solid $white;

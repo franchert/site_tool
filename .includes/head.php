@@ -41,6 +41,9 @@ if(isset($mini) && $mini == true){
 		echo ' m-'.substr($segments[$depth],1);
 	}
 }
+if(isset($demo) && $demo == true){
+	echo ' demo';
+}
 echo ' '.$layout.'"';}?> >
 	<a class="back-to-top" href="#top">Back to Top</a>
 	<header>
