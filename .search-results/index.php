@@ -16,7 +16,7 @@ $p_one .="<div class='wrapper'><div class='column'><h1>".$page_h1."</h1></div></
 
 $p_one .="<script>
   (function() {
-    var cx = '007701188165887638683:9z5n0yvnab4';
+    var cx = '".$google_CSE_cx."';
     var gcse = document.createElement('script');
     gcse.type = 'text/javascript';
     gcse.async = true;

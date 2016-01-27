@@ -23,6 +23,7 @@ html {
 }
 body{
 	@import "components/**/*";
+	@import "../components/**/*";
 	*{
 		box-sizing:border-box;
 		display:block;

@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/globals.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/globals.php");
 include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/variables.php");
 /*	ADDED TO INDEX.PHP (per directory)
 *		-initializes region string variables within layouts to populate with components
@@ -61,20 +61,17 @@ if($alert_on){
 	);
 }
 
-//include the subnav function
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/subnav.php");
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/nav_fxns.php");
-
 //include everything from the components directories
 foreach (glob($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/components/*.inc.php") as $filename){
 	include_once($filename);
 }
+/*
 foreach (glob($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/components/elements/*.inc.php") as $filename){
 	include_once($filename);
 }
 foreach (glob($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/components/containers/*.inc.php") as $filename){
 	include_once($filename);
 }
-
+*/
 
 ?>

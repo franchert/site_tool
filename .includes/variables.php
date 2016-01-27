@@ -30,6 +30,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 	$site_logo = $file_base."/.includes/images/placeholder-svg.php?wh=600x100&color=111111&fill=cccccc&font=Arial&txt=Site Logo";
 	$alert_on = false;
 	$demo = false;
+	$google_CSE_cx = '007701188165887638683:9z5n0yvnab4';
 
 /*choose a header type in the .includes/header folder*/
 	$header = 'sticky-h';
