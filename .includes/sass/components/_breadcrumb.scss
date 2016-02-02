@@ -2,7 +2,6 @@
 /* _breadcrumb.scss */
 $text-color:$black;
 $border-color:$gray;
-$separator:$fa-caret-right;
 
 #breadcrumb{
 	ul{
@@ -13,7 +12,7 @@ $separator:$fa-caret-right;
 			font-size:14px;
 			line-height:18px;
 			&:before{
-				content:$separator;
+				content:"\f105";
 				font-family:FontAwesome;
 				position:relative;
 				font-size:12px;

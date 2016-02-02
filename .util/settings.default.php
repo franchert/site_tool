@@ -31,7 +31,4 @@ $starting = 1;
 
 	========================================================================================================*/
 
-
-//debugging server variables
-//include_once($_SERVER['DOCUMENT_ROOT'].$file_base.'/test.php');
 ?>

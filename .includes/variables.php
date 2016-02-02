@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 /**
  *	ADDED TO DIRECTOR.PHP
  *
@@ -8,21 +8,10 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
  *	@param string	$site_logo		URL of site logo
  *	@param string	$alert_on		boolean to turn on and off the alert. Only used within this file
  *	@param string	$demo			demonstration of layout region shapes.
+ *	@param string	$google_CSE_cx	Google custom search engine key.
  *	@param string	$header			Type of header to use on the site. See headers directory for more information
  *	@param string	$fe_framework	Type of framework used to put toegether the grid. Some layouts and headers may behave differently with different frameworks chosen.
- *		$fe_container, $fe_wrapper, $fe_region		variables used in creation of the grid
- *
- *Variables based on directory or other static value:
- *	@param string	$url			Overall URL (homepage is / )
- *	@param string	$page			URL segment of current page (last segment of URL, homepage is empty string)
- *	@param string	$page_slug		Removes the first character of $page to form a readable URL
- *	@param string	$page_title		$page_segment turned into readable, capitalized text
- *	@param string	$segments		Array holding each segment of the URL
- *	@param string	$section		Top level section of current page (just under home)
- *	@param string	$section_slug	Removes the first character of $section to form a readable URL
- *	@param string	$section_title	Top level turned into capitalized text
- *	@param string	$parent			URL segemtnt of direct parent of current page
- *	@param string	$crumb			Used to build breadcrumb dynamically
+ *	@param string	$cms			CMS the final product will be built for. When in doubt, go with "custom"
  *
  */
 
@@ -38,32 +27,30 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/"."settings.php");
 /*choose one front-end framework. Make sure the matching css file is located in stylesheets*/
 	$fe_framework = 'custom';
 	//$fe_framework = 'bootstrap';
-	//$fe_framework = 'skeleton'; /*not implemented*/
-	//$fe_framework = 'foundation' /*not implemented*/
+	//$fe_framework = 'skeleton'; /*not yet implemented*/
+	//$fe_framework = 'foundation' /*not yet implemented*/
 
 /*choose the CMS this project is going to be implemented into*/
-	$cms = 'ou';
+	$cms = 'custom';
 	//$cms = 't4';
-	//$cms = 'perc';
+	//$cms = 'ou'; /*not yet implemented*/
+	//$cms = 'perc'; /*not yet implemented*/
 
-	$url = dirname($_SERVER['PHP_SELF']);
-	$path = parse_url($url, PHP_URL_PATH);
-	$path = str_replace($file_base,'',$path);
-	$segments = explode('/', rtrim($path, '/'));
-	$segments[0] = 'Home';
-	$parent=basename(dirname(dirname(__FILE__)));
-	if($url === "/"){
-		$page = 'home';
-		$page_slug = 'home';
-		$section = 'home';
-		$section_slug = 'home';
-	}else{
-		$page=basename($url);
-		$page_slug=substr($page,1);
-		$section = $segments[1];
-		$section_slug = substr($segments[1],1);
+/*when the alert is on, the information will be pulled from this array*/
+	if($alert_on){
+		$alert=array(
+			'type' => array(
+				'0' => "emgergency",
+				'1' => "Campus Wide Alert"
+			),
+			'message' =>array(
+				'0' =>"Evacuation Procedures in Place",
+				'1' =>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+			),
+			'contact' => array(
+				'0' => "Police - 911",
+				'1' => "Campus Police - 555.555.5555"
+			),
+		);
 	}
-	$page_title = titleFromSlug($page_slug);
-	$section_title = titleFromSlug($section_slug);
-	$crumb = $file_base;
 ?>

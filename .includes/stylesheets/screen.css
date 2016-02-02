@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -700,7 +699,6 @@ body {
   /* _tabs.scss */
   /* _ui_accordion.scss */
   /* _video.scss */
-  /* No files to import found in ../components/**\/* */
 }
 body ul.tabaccordion {
   float: left;
@@ -736,7 +734,7 @@ body ul.tabaccordion > li h3 {
   padding-right: 20px;
 }
 body ul.tabaccordion > li h3:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 12px;
   position: absolute;
@@ -846,7 +844,7 @@ body .accordion h3.active:after {
   transform: rotateZ(-90deg);
 }
 body .accordion h3:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 12px;
   position: absolute;
@@ -1002,7 +1000,7 @@ body .alert .message a {
   padding: 10px 0 10px 20px;
 }
 body .alert .message a:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 14px;
   position: absolute;
@@ -1033,7 +1031,7 @@ body #breadcrumb ul li {
   line-height: 18px;
 }
 body #breadcrumb ul li:before {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   position: relative;
   font-size: 12px;
@@ -1110,7 +1108,7 @@ body .drop-container .drop-toggle {
   text-transform: uppercase;
 }
 body .drop-container .drop-toggle:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 12px;
   position: absolute;
@@ -1666,7 +1664,7 @@ body a.read-more {
   padding-bottom: 10px;
 }
 body a.read-more:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: inherit;
   position: absolute;
@@ -2220,7 +2218,7 @@ body .p-promo.overlay .promo-container ul li .drop-container .dropdown {
   padding-right: 20px;
 }
 body .p-promo.overlay .promo-container ul li .drop-container .dropdown:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 12px;
   position: absolute;
@@ -2385,7 +2383,7 @@ body .p-promo.overlayv2 .promo-container ul li .drop-container .dropdown {
   padding-right: 20px;
 }
 body .p-promo.overlayv2 .promo-container ul li .drop-container .dropdown:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 12px;
   position: absolute;
@@ -2503,7 +2501,7 @@ body .p-promo.hovertext a:hover p:after {
   content: '';
 }
 body .p-promo.hovertext a:hover:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 16px;
   position: absolute;
@@ -2723,7 +2721,7 @@ body .p-promo.promo .promo-container > a {
   margin: 10px 0;
 }
 body .p-promo.promo .promo-container > a:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 14px;
   position: absolute;
@@ -3021,7 +3019,7 @@ body .subnav > div > ul > a {
   position: relative;
 }
 body .subnav > div > ul > a:before {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 14px;
   position: absolute;
@@ -3116,6 +3114,45 @@ body .subnav > ul li.active {
 }
 body .subnav > ul li.active li {
   font-weight: normal;
+}
+body .subnav > ul li.haschild .sn-toggle {
+  width: 20%;
+  width: -webkit-calc(50px);
+  width: calc(50px);
+  float: right;
+  height: 50px;
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+body .subnav > ul li.haschild .sn-toggle span {
+  -webkit-transform: rotateZ(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotateZ(90deg);
+  transition: transform 0.3s;
+  font-size: 24px;
+}
+body .subnav > ul li.haschild > a {
+  width: 80%;
+  width: -webkit-calc(100% - 50px);
+  width: calc(100% - 50px);
+}
+body .subnav > ul li.haschild > span {
+  width: 80%;
+  width: -webkit-calc(100% - 50px);
+  width: calc(100% - 50px);
+}
+body .subnav > ul li.haschild ul {
+  display: none;
+}
+body .subnav > ul li.haschild.open > ul {
+  display: block;
+}
+body .subnav > ul li.haschild.open > .sn-toggle span {
+  -webkit-transform: rotateZ(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotateZ(-90deg);
 }
 body .subnav.toggles > ul li > .sn-toggle {
   background: none;
@@ -3240,7 +3277,7 @@ body .subsection .container > div button {
   position: relative;
 }
 body .subsection .container > div button:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 16px;
   position: absolute;
@@ -3676,7 +3713,7 @@ body .ui-accordion h3.ui-state-active:after {
   transform: rotateZ(-90deg);
 }
 body .ui-accordion h3:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 12px;
   position: absolute;
@@ -3758,10 +3795,6 @@ body.demo h1:before, body.demo h2:before, body.demo h3:before, body.demo h4:befo
   top: -14px;
   font-size: 10px;
 }
-body.demo .column {
-  background-image: url("/.includes/images/placeholder-svg.php?wh=2000x8000&color=FCC&fill=FFDAB9&font=Arial&size=20&txt=ph_default_text");
-  overflow: hidden;
-}
 body.demo .l-region {
   border: 1px dashed red;
   border-radius: 8px;
@@ -3810,7 +3843,7 @@ body.demo .l-content-footer {
   padding: 24px 0 0 0;
 }
 .back-to-top:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 30px;
   position: absolute;
@@ -4023,7 +4056,7 @@ section.short .view-more {
   background: #fff;
 }
 section.short .view-more:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 12px;
   position: absolute;
@@ -4048,7 +4081,7 @@ section .view-more {
   padding-right: 12px;
 }
 section .view-more:after {
-  content: "";
+  content: "\f105";
   font-family: FontAwesome;
   font-size: 12px;
   position: absolute;

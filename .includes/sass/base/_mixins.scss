@@ -35,10 +35,10 @@
 	line-height: (($sizeValue + $spacing) / 10) + rem;
 }
 
-@mixin arrowbefore($color:$t-white,$font-size:14px,$type:$fa-angle-right){
+@mixin arrowbefore($color:$t-white,$font-size:14px,$type:"\f105"){
 	position:relative;
 	&:before{
-		content: $type;
+		content: "\f105";
 		font-family: FontAwesome;
 		font-size: $font-size;
 		position: absolute;
@@ -46,10 +46,10 @@
 		color:$color;
 	}
 }
-@mixin arrowafter($color:$t-white,$font-size:14px,$type:$fa-angle-right){
+@mixin arrowafter($color:$t-white,$font-size:14px,$type:"\f105"){
 	position:relative;
 	&:after{
-		content: $type;
+		content: "\f105";
 		font-family: FontAwesome;
 		font-size: $font-size;
 		position: absolute;
@@ -57,11 +57,11 @@
 		color:$color;
 	}
 }
-@mixin arrowdown($color:inherit,$font-size:12px,$type:$fa-angle-right){
+@mixin arrowdown($color:inherit,$font-size:12px,$type:"\f105"){
 	position:relative;
 	padding-right:20px;
 	&:after{
-		content: $type;
+		content: "\f105";
 		font-family: FontAwesome;
 		font-size: $font-size;
 		position: absolute;

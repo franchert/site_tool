@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -168,7 +167,7 @@ body footer .column .footer .social > a {
     position: absolute;
   }
   body footer .column .footer .social > a:after {
-    content: "";
+    content: "\f105";
     font-family: FontAwesome;
     font-size: 14px;
     position: absolute;

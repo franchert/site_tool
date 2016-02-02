@@ -8,14 +8,39 @@ $(document).ready(function(){
 	if(!isMobile()){
 		deskImage();
 	}
-	$('.alert .toggle').on('click',function(e){
-		$(this).toggleClass('closed');
-	});
 	$('section.collapsable').each(function(e){
 		if ($(this).height() > 500){
 			$(this).append("<a class='view-more' href='#'>View More</a>");
 			$(this).toggleClass('short');
 		}
+	});
+	$(".featured .slide img").each(function(i, img) {
+		$(img).css({
+			left: ($(img).parent().width() - $(img).width()) / 2
+		});
+	});
+	$('.responsive-table-wrapper').each(function(){
+		var headers = Array();
+		$(this).find('thead tr td').each(function(){
+			headers.push(($(this)[0].textContent===undefined) ? $(this)[0].innerText : $(this)[0].textContent);
+		});
+		$(this).find('tbody tr').each(function(){
+			var temp = 0;
+			var attr = '';
+			$(this).children('td').each(function(){
+				$(this).attr('data-label',headers[temp]);
+				attr = $(this).attr('colspan');
+				if(typeof attr !== typeof undefined && attr !== false) {
+					temp += parseInt($(this).attr('colspan'));
+				}else{
+					temp++;
+				}
+			});
+			temp = 0;
+		});
+	});
+	$('.alert .toggle').on('click',function(e){
+		$(this).toggleClass('closed');
 	});
 	$('.view-more').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
@@ -32,18 +57,6 @@ $(document).ready(function(){
 		$(this).toggleClass('active');
 		var selector = $(this).next();
 		$(this).next().toggleClass('open');
-/*		if($(this).next().hasClass('open')){
-			var val = '0';
-		}else{
-			var val = 'auto';
-		}
-		selector
-			.toggleClass('open')
-			.data('oHeight',selector.height())
-			.css('height',val)
-			.data('nHeight',selector.height())
-			.animate({height: selector.data('nHeight')},400);
-*/
 	});
 	$('.drop-toggle').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
@@ -54,11 +67,6 @@ $(document).ready(function(){
 			$(this).blur();
 		};
 	});
-	$(".featured .slide img").each(function(i, img) {
-		$(img).css({
-			left: ($(img).parent().width() - $(img).width()) / 2
-		});
-	});
 	$('.subnav h2').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
 			$(this).parents('.subnav').toggleClass('open');
@@ -68,6 +76,7 @@ $(document).ready(function(){
 			$(this).blur();
 		}
 	});
+	/*toggles for subnav either added server-side or through js below*/
 	$('.subnav .sn-toggle').on('keypress click',function(e){
 		if (e.keyCode === 13 || e.type === 'click') {
 			e.preventDefault();
@@ -77,6 +86,14 @@ $(document).ready(function(){
 			$(this).blur();
 		}
 	});
+	/* use this to add subnav toggling on the front-end*/
+	/*$('.subnav ul li').each(function(){
+		if($(this).children('ul').length > 0){
+			$(this).addClass('haschild');
+			$(this).prepend('<button class="sn-toggle"><span class="fa fa-angle-right"></span></button>');
+		}
+	});
+	*/
 	$('.subsection button').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
 			$(this).parents('.subsection').toggleClass('open');
@@ -142,26 +159,6 @@ $(document).ready(function(){
 			$(this).parents('ul.tabaccordion').css('height',tot_h);
 		}
 	});
-	$('.responsive-table-wrapper').each(function(){
-		var headers = Array();
-		$(this).find('thead tr td').each(function(){
-			headers.push(($(this)[0].textContent===undefined) ? $(this)[0].innerText : $(this)[0].textContent);
-		});
-		$(this).find('tbody tr').each(function(){
-			var temp = 0;
-			var attr = '';
-			$(this).children('td').each(function(){
-				$(this).attr('data-label',headers[temp]);
-				attr = $(this).attr('colspan');
-				if(typeof attr !== typeof undefined && attr !== false) {
-					temp += parseInt($(this).attr('colspan'));
-				}else{
-					temp++;
-				}
-			});
-			temp = 0;
-		});
-	});
 	equalHeight('.matrix.overlay-cta > div .container');
 	tabAccordion();
 });
@@ -202,6 +199,7 @@ function equalHeight(path){
 	$(path).height(max);
 }
 function deskImage(){
+	/*requires uploading two images, one for desktop and another for mobile (with a -mobi suffix).*/
 	$(".mobile-image").each(function(){
 		if(!$(this).next().is('img')){
 			var alt = $(this).attr('alt')

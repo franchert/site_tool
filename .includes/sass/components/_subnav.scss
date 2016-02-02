@@ -168,6 +168,45 @@
 					font-weight:normal;
 				}
 			}
+			&.haschild{
+				.sn-toggle{
+					@include calc('width','50px','20%');
+					float:right;
+					height:50px;
+					color:$white;
+					background:none;
+					border:none;
+					cursor:pointer;
+					span{
+						-webkit-transform: rotateZ(90deg);
+						-ms-transform: rotate(90deg);
+						transform: rotateZ(90deg);
+						transition: transform 0.3s;
+						font-size:24px;
+					}
+				}
+				> a{
+					@include calc('width','100% - 50px','80%');
+				}
+				> span{
+						@include calc('width','100% - 50px','80%');
+				}
+				ul{
+					display:none;
+				}
+				&.open{
+					> ul{
+						display:block;
+					}
+					> .sn-toggle{
+						span{
+							-webkit-transform: rotateZ(-90deg);
+							-ms-transform: rotate(-90deg);
+							transform: rotateZ(-90deg);
+						}
+					}
+				}
+			}
 		}
 	}
 	&.toggles{

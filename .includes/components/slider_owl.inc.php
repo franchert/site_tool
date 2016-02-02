@@ -11,7 +11,8 @@ function p_slider_owl(
 	$arr = null,
 	$type="generic",
 	$width = 1600,
-	$height = 900){
+	$height = 900,
+	$slidetype = 'overlayv2'){
 
 	global $script_var;
 	$script_var .= '
@@ -30,11 +31,11 @@ $(window).load(function() {
 		$img = p_image($width,$height);
 		$string .='
 		<div class="'.$id.' owl-carousel '.$type.'">'
-			.p_slide(p_promo("overlayv2","image","","Promo Title",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("overlayv2","image","","Promo Title",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("overlayv2","image","","Promo Title",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("overlayv2","image","","Promo Title",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("overlayv2","image","","Promo Title",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo($slidetype,"image","","Promo Title",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo($slidetype,"image","","Promo Title",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo($slidetype,"image","","Promo Title",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo($slidetype,"image","","Promo Title",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo($slidetype,"image","","Promo Title",null,null,$img,"#",null,null,true))
 		.'</div>';
 	}else{
 		$string .='

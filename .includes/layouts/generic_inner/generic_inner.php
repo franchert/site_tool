@@ -1,15 +1,5 @@
 <?php 
-/* add the following to director.php
-if ($layout == "generic_inner"){
-	$p_featured_header = "";
-	$p_content_header = "";
-	$p_nav_sidebar = "";
-	$p_content = "";
-	$p_content_featured = "";
-	$p_promo_sidebar = "";
-	$p_content_footer = "";
-}
-*/
+
 /* region classes for each framework option*/
 if($fe_framework == 'custom'){
 	$fe_l_page = ' l-page';
