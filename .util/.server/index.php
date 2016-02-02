@@ -44,6 +44,7 @@ $indicesServer = array('PHP_SELF',
 'PATH_INFO', 
 'ORIG_PATH_INFO') ; 
 
+echo "</br>Return to the <a href='/.util'>Utility page</a>";
 echo '<div class="toggle"><table cellpadding="10" style="max-width:600px;margin:30px;">' ; 
 foreach ($indicesServer as $arg) { 
     if (isset($_SERVER[$arg])) { 

@@ -5,166 +5,101 @@
 		"parent":"0",
 		"slug":"about_us",
 		"menupos":"1"
-	},
-	{
-		"id":"2",
-		"title":"About Us",
-		"parent":"1",
-		"slug":"level_1_sub_nav_1",
-		"menupos":"1"
-	},
-	{
-		"id":"3",
-		"title":"About Us",
-		"parent":"1",
-		"slug":"level_1_sub_nav_2",
-		"menupos":"2"
-	},
-	{
-		"id":"4",
-		"title":"About Us",
-		"parent":"1",
-		"slug":"level_1_sub_nav_3",
-		"menupos":"3"
-	},
-	{
-		"id":"5",
-		"title":"About Us",
-		"parent":"4",
-		"slug":"level_2_sub_nav_1",
-		"menupos":"1"
-	},
-	{
-		"id":"6",
-		"title":"About Us",
-		"parent":"4",
-		"slug":"level_2_sub_nav_2",
-		"menupos":"2"
-	},
-	{
+	},{
 		"id":"7",
-		"title":"About Us",
-		"parent":"4",
-		"slug":"level_2_sub_nav_3",
-		"menupos":"3"
-	},
-	{
+		"title":"Presidents Message",
+		"parent":"1",
+		"slug":"president",
+		"menupos":"1"
+	},{
 		"id":"8",
-		"title":"About Us",
-		"parent":"7",
-		"slug":"level_3_sub_nav_1",
-		"menupos":"1"
-	},
-	{
+		"title":"Mission & Vision",
+		"parent":"1",
+		"slug":"mission_vision",
+		"menupos":"2"
+	},{
 		"id":"9",
-		"title":"About Us",
-		"parent":"7",
-		"slug":"level_3_sub_nav_2",
-		"menupos":"2"
-	},
-	{
-		"id":"10",
-		"title":"About Us",
-		"parent":"9",
-		"slug":"level_4_sub_nav_1",
-		"menupos":"1"
-	},
-	{
-		"id":"11",
-		"title":"About Us",
-		"parent":"9",
-		"slug":"level_4_sub_nav_2",
-		"menupos":"2"
-	},
-	{
-		"id":"12",
-		"title":"About Us",
+		"title":"Quick Facts",
 		"parent":"1",
-		"slug":"level_1_sub_nav_4",
-		"menupos":"4"
-	},
-	{
-		"id":"13",
-		"title":"About Us",
-		"parent":"1",
-		"slug":"level_1_sub_nav_5",
-		"menupos":"5"
-	},
-	{
-		"id":"14",
+		"slug":"quick_facts",
+		"menupos":"3"
+	},{
+		"id":"2",
 		"title":"Academics",
 		"parent":"0",
 		"slug":"academics",
 		"menupos":"2"
-	},
-	{
-		"id":"15",
-		"title":"Colleges",
-		"parent":"14",
-		"slug":"colleges",
-		"menupos":"1"
-	},
-	{
-		"id":"16",
-		"title":"Colleges",
-		"parent":"15",
-		"slug":"college_of_arts_and_sciences",
-		"menupos":"1"
-	},
-	{
+	},{
 		"id":"17",
-		"title":"Programs",
-		"parent":"14",
+		"title":"Departments",
+		"parent":"2",
+		"slug":"departments",
+		"menupos":"1"
+	},{
+		"id":"10",
+		"title":"Academic Programs",
+		"parent":"2",
 		"slug":"programs",
 		"menupos":"2"
-	},
-	{
-		"id":"18",
+	},{
+		"id":"15",
 		"title":"Accounting",
-		"parent":"17",
+		"parent":"10",
 		"slug":"accounting",
 		"menupos":"0"
-	},
-	{
-		"id":"19",
+	},{
+		"id":"16",
 		"title":"Communications",
-		"parent":"17",
+		"parent":"10",
 		"slug":"communications",
 		"menupos":"0"
-	},
-	{
-		"id":"20",
-		"title":"Faculty",
-		"parent":"14",
-		"slug":"faculty",
+	},{
+		"id":"11",
+		"title":"Colleges/Schools",
+		"parent":"2",
+		"slug":"colleges_schools",
+		"menupos":"2"
+	},{
+		"id":"12",
+		"title":"Research",
+		"parent":"2",
+		"slug":"research",
 		"menupos":"3"
-	},
-	{
-		"id":"21",
-		"title":"Faculty",
-		"parent":"20",
-		"slug":"firstname_lastname",
-		"menupos":"1"
-	},
-	{
-		"id":"22",
+	},{
+		"id":"3",
 		"title":"Admissions",
 		"parent":"0",
 		"slug":"admissions",
 		"menupos":"3"
-	},
-	{
-		"id":"23",
-		"title":"Admissions",
-		"parent":"22",
+	},{
+		"id":"13",
+		"title":"Undergraduate Admissions",
+		"parent":"3",
 		"slug":"undergraduate_admissions",
 		"menupos":"1"
-	},
-	{
-		"id":"24",
-		"title":"Admissions",
-		"parent":"22",
-		"slug":"apply_to_the_university",
-		"menupos":"2"
+	},{
+		"id":"14",
+		"title":"Graduate Admissions",
+		"parent":"3",
+		"slug":"graduate_admissions",
+		"menupos":"1"
+	},{
+		"id":"4",
+		"title":"Student Life",
+		"parent":"0",
+		"slug":"student_life",
+		"menupos":"4"
+	},{
+		"id":"5",
+		"title":"News & Events",
+		"parent":"0",
+		"slug":"news_events",
+		"menupos":"5"
+	},{
+		"id":"6",
+		"title":"Athletics",
+		"parent":"0",
+		"slug":"athletics",
+		"menupos":"6"
 	}
 ]

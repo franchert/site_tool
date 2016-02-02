@@ -1,6 +1,6 @@
-<?php include_once("../settings.php"); ?>
-<?php include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/subnav.php"); ?>
-<?php
+<?php 
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/.includes/director.php");
 	$dirs =array_filter(glob('*'), 'is_dir');
 	$subnav = expandDirectories($_SERVER['DOCUMENT_ROOT']);
 	$key_values = array_combine(array_values($subnav), array_values($subnav));

@@ -24,7 +24,7 @@ foreach ($haystack as $k => $v){
 	echo $new."</br>";
 	makeDir($new,$parent,$title);
 }
-echo "</br>Return to the <a href='/'>Home page</a>";
+echo "</br>Return to the <a href='/.util'>Utility page</a>";
 function findParent($find,$string,$haystack){
 	global $temp, $times, $tabs;
 	$times++;
