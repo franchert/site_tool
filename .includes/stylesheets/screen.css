@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -69,6 +70,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 	}
 /* end font faces */
 /* fontawesome variables */
+/* these don't work well yet, avoid using */
 /* end fontawesome variables */
 body .l-head nav .p-list > ul {
   list-style-type: none;
@@ -2681,7 +2683,6 @@ body .p-promo.promo h4 {
   line-height: 26px;
   line-height: 2.6rem;
   font-family: 'Lobster', cursive;
-  font-weight: bold;
   margin: 0;
   text-transform: initial;
 }
@@ -4090,6 +4091,21 @@ section .view-more:after {
 }
 section .view-more:after {
   right: 0;
+}
+
+code {
+  color: #8f9c6c;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 22px;
+  line-height: 2.2rem;
+  font-family: "PT Mono";
+  background: #1d1f21;
+  padding: 5px;
+  margin: 0 5px 10px 5px;
+  width: 90%;
+  width: -webkit-calc(100% - 10px);
+  width: calc(100% - 10px);
 }
 
 form div {

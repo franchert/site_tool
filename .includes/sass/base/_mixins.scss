@@ -24,6 +24,8 @@
 	} @else if $family == 'lora_bold'{
 		font-family: 'Lora', serif;
 		font-weight:700;
+	} @else if($family == 'mono'){
+		font-family: 'PT Mono'
 	} @else {
 		font-family:'Open Sans',sans-serif;
 	}

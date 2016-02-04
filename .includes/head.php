@@ -1,7 +1,7 @@
 <!doctype HTML>
 <html>
 <head>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Lora:400,400italic,700,700italic|Lobster' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Lora:400,400italic,700,700italic|Lobster|PT+Mono' rel='stylesheet' type='text/css'>
 <?php if($page == 'home'){ ?>
 	<title><?php echo $client_name;?></title>
 	<meta property="og:title" content="<?php echo $client_name;?>">
@@ -30,21 +30,23 @@
 /*t4 doesn't allow for body classes*/
 if($cms !="t4"){
 	echo 'class="'.$section_slug; 
-if($section != $page){
-	echo ' '.$page_slug;
-}
-/*if we're on a mini site, add an extra class to show its parent mini item*/
-if(isset($mini) && $mini == true){
-	echo ' mini';
-	/*if we're deeper than the mini home, add a mini-specific class*/
-	if(isset($depth) && $depth > 0){
-		echo ' m-'.substr($segments[$depth],1);
+	if($section != $page){
+		echo ' '.$page_slug;
 	}
+	/*if we're on a mini site, add an extra class to show its parent mini item*/
+	if(isset($mini) && $mini == true){
+		echo ' mini';
+		/*if we're deeper than the mini home, add a mini-specific class*/
+		if(isset($depth) && $depth > 0){
+			echo ' m-'.substr($segments[$depth],1);
+		}
+	}
+	if(isset($demo) && $demo == true){
+		echo ' demo';
+	}
+	echo ' '.$layout.'"';
 }
-if(isset($demo) && $demo == true){
-	echo ' demo';
-}
-echo ' '.$layout.'"';}?> >
+?> >
 	<a class="back-to-top" href="#top">Back to Top</a>
 	<header>
 	<?php if(isset($alert)){ ?>

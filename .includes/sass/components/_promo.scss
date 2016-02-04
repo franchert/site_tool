@@ -462,7 +462,6 @@
 	&.promo{
 		h4{
 			@include font('lobster',20,$color-1);
-			font-weight:bold;
 			margin:0;
 			text-transform:initial;
 		}

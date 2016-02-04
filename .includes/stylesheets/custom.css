@@ -13,6 +13,7 @@
 	}
 /* end font faces */
 /* fontawesome variables */
+/* these don't work well yet, avoid using */
 /* end fontawesome variables */
 .wrapper {
   position: relative;
@@ -116,119 +117,38 @@ body footer .column h3 {
     text-align: left;
   }
 }
-body footer .column .footer .social {
-  margin: auto;
-}
-body footer .column .footer .social ul {
-  display: table;
-  width: auto;
-  margin: auto;
-}
-@media (min-width: 45em) {
-  body footer .column .footer .social ul {
-    float: left;
-  }
-}
-body footer .column .footer .social ul li {
-  display: table-cell;
-  width: auto;
-  padding: 10px;
-}
-@media (min-width: 45em) {
-  body footer .column .footer .social ul li {
-    padding: 0px 10px 10px 0;
-  }
-}
-body footer .column .footer .social ul li a span {
-  color: #ccc;
-}
-body footer .column .footer .social ul li a span span {
-  text-indent: -9999px;
-  display: inline-block;
-}
-body footer .column .footer .social > a {
+body footer .column .footer .p-promo {
   color: #fff;
-  font-size: 18px;
-  font-size: 1.8rem;
-  line-height: 24px;
-  line-height: 2.4rem;
-  font-family: 'Lora', serif;
-  font-weight: 400;
-  text-align: center;
 }
-@media (min-width: 45em) {
-  body footer .column .footer .social > a {
-    font-size: 10px;
-    line-height: 14px;
-    position: absolute;
-    width: auto;
-    margin: 16px 0 0 70px;
-    position: relative;
-    position: absolute;
-  }
-  body footer .column .footer .social > a:after {
-    content: "\f105";
-    font-family: FontAwesome;
-    font-size: 14px;
-    position: absolute;
-    right: -10px;
-    color: #fff;
-  }
+body footer .column .footer .p-promo h4 {
+  color: #fff;
 }
-body footer .column .footer .social h3 {
+body footer .column .footer .p-promo ul {
+  list-style: none;
   padding: 0;
-  border-bottom: 0;
-  margin: 10px 0 0;
+  margin: 0;
 }
-@media (min-width: 45em) {
-  body footer .column .footer .social h3 {
-    border-bottom: 1px solid #bbbbbb;
-  }
-}
-body footer .column .footer .links-resources {
-  padding-bottom: 100px;
-}
-@media (min-width: 45em) {
-  body footer .column .footer .links-resources {
-    padding: 0;
-  }
-}
-body footer .column .footer .links-resources ul li a {
-  color: #ccc;
-  font-size: 14px;
-  font-size: 1.4rem;
-  line-height: 20px;
-  line-height: 2rem;
-  font-family: 'Lora', serif;
-  font-weight: 400;
-  text-align: center;
-}
-@media (min-width: 45em) {
-  body footer .column .footer .links-resources ul li a {
-    text-align: left;
-  }
-}
-body footer .column .footer .links-resources ul li:last-child a {
-  border: none;
-}
-body footer .column .footer .links-resources ul hr {
-  display: block;
-  width: 34px;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  text-align: center;
-}
-@media (min-width: 45em) {
-  body footer .column .footer .links-resources ul hr {
-    display: none;
-  }
-}
-body footer .column .footer .links-resources h3 {
+body footer .column .footer .p-promo ul li {
   padding: 0;
-  border-bottom: 0;
+  margin: 0;
 }
-@media (min-width: 45em) {
-  body footer .column .footer .links-resources h3 {
-    border-bottom: 1px solid #bbbbbb;
-  }
+body footer .column .footer .p-promo ul li a {
+  display: inline-block;
+  width: auto;
+  color: #fff;
+}
+body footer .column .footer .p-promo ul li span {
+  display: inline-block;
+  width: auto;
+  color: #fff;
+  padding-right: 10px;
+  width: 25px;
+  text-align: center;
+}
+body footer .column .footer .p-promo ul li p {
+  color: #fff;
+  margin: 0;
+}
+body footer .column .footer .p-promo .city {
+  margin-left: 25px;
 }

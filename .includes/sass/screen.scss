@@ -251,6 +251,13 @@ section{
 		}
 	}
 }
+code{
+	@include font('mono',16,#8f9c6c);
+	background:#1d1f21;
+	padding:5px;
+	margin:0 5px 10px 5px;
+	@include calc('width','100% - 10px','90%');
+}
 form{
 	div{
 		position:relative;

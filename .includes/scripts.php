@@ -5,13 +5,18 @@
 *		$layout
 *		$header
 *		$fe_framework
+*	OPTIONAL VARIABLES PER PAGE: (all are boolean)
+*		$waypoints
+*		$owl
+*		$feed_search
+*		$instafeed
+*		$colorbox
 */
 ?>
 	<script>document.cookie='resolution='+Math.max(screen.width,screen.height)+("devicePixelRatio" in window ? ","+devicePixelRatio : ",1")+'; path=/';</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 	<script src="<?php echo $file_base; ?>/.includes/js/jquery.hoverIntent.js"></script>
-<?php //include all necessary libraries ?>
 <?php if(isset($layout)){ ?>
 	<script type="text/javascript" src="<?php echo $file_base; ?>/.includes/layouts/<?php echo $layout ?>/<?php echo $layout ?>.js"></script>
 <?php } ?>
