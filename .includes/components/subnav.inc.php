@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/redirect_install.php");
 $subnav_string = "";
 $level = 0;
 /**

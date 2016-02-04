@@ -26,13 +26,14 @@ function titleFromSlug($slug){
 function expandDirectories(
 	$base_dir){
 
+	global $base_site;
 	$directories = array();
 	foreach(scandir($base_dir) as $file) {
 		if($file == '.' || $file == '..') continue;
 		$dir = $base_dir.DIRECTORY_SEPARATOR.$file;
 		if(is_dir($dir)) {
 			//get rid of the base_site
-			$temp = str_replace($_SERVER['DOCUMENT_ROOT']."/","",$dir);
+			$temp = str_replace($base_site,"",$dir);
 			//don't include dirs starting with a .
 			if($temp[0] != "."){
 				$directories []= $temp;
@@ -58,6 +59,7 @@ function plotTree(
 	$toggle){
 
 	global $subnav_string;
+	global $base_site;
 	global $section;
 	global $section_title;
 	global $page;
@@ -149,6 +151,7 @@ function plotTree_t4(
 	$toggle){
 
 	global $subnav_string;
+	global $base_site;
 	global $section;
 	global $section_title;
 	global $page;

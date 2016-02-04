@@ -4,15 +4,15 @@
 *	right now i'm using the homepage only and visiting via a cURL, pulling the DOM into a string
 *	and saving it to a file. Need to make this follow the sitemap (check .usage for the sitemap tree)
 */
-include_once($_SERVER['DOCUMENT_ROOT']."/.util/.publish/simple_html_dom.php");
-include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/.publish/simple_html_dom.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/redirect_install.php");
 global $starting;
 global $section;
 global $url_remove;
 global $base_site;
-include_once($_SERVER['DOCUMENT_ROOT']."/.includes/director.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
 
-	$base_dir  = $_SERVER['DOCUMENT_ROOT']."/";
+	$base_dir  = $base_site;
 	$directories = array();
 	foreach(scandir($base_dir) as $file) {
 		if(substr($file,0,1) == '.' 

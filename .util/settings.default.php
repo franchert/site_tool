@@ -1,16 +1,17 @@
 <?php
 //file base takes into account the path from the web root to the homepage.
+$base_site='/var/www/cf-9/';
 $file_base="";
 //base url is what you would type in your browser to visit the site
 $base_url="";
 $url_remove="";
 $starting = 1;
 //VPMDEV defaults
-	//$_SERVER['DOCUMENT_ROOT']."/"="";
+	//$base_site="";
 	//$url_remove="/home/vpadmin/url.vpmdev.com/";
 	//$starting = 4;
 // apache default setup (is this working?)
-	//$_SERVER['DOCUMENT_ROOT']."/"="/var/www/html/sitename";
+	//$base_site="/var/www/html/sitename";
 	//$file_base="/sitename";
 	//$url_remove="/html/";
 	//$starting = 2;

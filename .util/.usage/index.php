@@ -4,12 +4,12 @@
 *	to remove sass partials and header/layout calls from the source.
 *	take care not to remove functions that are used within other functions.
 */
-include_once($_SERVER['DOCUMENT_ROOT']."/settings.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/settings.php");
 global $starting;
 global $section;
 global $url_remove;
 global $base_site;
-include_once($_SERVER['DOCUMENT_ROOT']."/.includes/director.php");
+include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
 echo "Return to the <a href='/.util'>Utility page</a></br>";
 $needles = array(
 	'p_accordion_ui',
@@ -41,7 +41,7 @@ $needles = array(
 	'p_tabs',
 	'p_video'
 );
-	$base_dir  = $_SERVER['DOCUMENT_ROOT']."/";
+	$base_dir  = $base_site;
 	$directories = array('/');
 	foreach(scandir($base_dir) as $file) {
 		if(substr($file,0,1) == '.' 

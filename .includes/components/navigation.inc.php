@@ -14,8 +14,9 @@ function p_main_nav(
 	global $site_logo;
 	global $fe_container;
 	global $header;
+	global $base_site;
 	//gets first level of directories from the root in an array
-	$dirs = str_replace($_SERVER['DOCUMENT_ROOT']."/","",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
+	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
 	//build the list
 	$string ="\n<div class='nav-wrapper'>\n\t<div class='".$fe_container."'>\n\t\t";
 	if($header == 'sticky-h' || 'sticky-aacc'){
@@ -25,7 +26,7 @@ function p_main_nav(
 	$count = 0;
 	//loop for each directory returned
 	foreach($dirs as $dir){
-		$alt = file_get_contents($_SERVER['DOCUMENT_ROOT']."/".$dir."/nav-contents.php");
+		$alt = file_get_contents($base_site.$dir."/nav-contents.php");
 		$dir = str_replace($url_remove,'',$dir);
 		if(substr($dir,0,1) === "0"){
 			continue;
@@ -43,6 +44,7 @@ function p_main_nav_t4(
 	){
 
 	global $file_base;
+	global $base_site;
 	global $url_remove;
 	global $section;
 	global $page;
@@ -52,7 +54,7 @@ function p_main_nav_t4(
 	global $fe_container;
 	global $header;
 	//gets first level of directories from the root in an array
-	$dirs = str_replace($_SERVER['DOCUMENT_ROOT']."/","",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
+	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
 	//build the list
 	$string ="\n<div class='nav-wrapper'>\n\t<div class='".$fe_container."'>\n\t\t";
 	if($header == 'sticky-h' || 'sticky-aacc'){
@@ -62,7 +64,7 @@ function p_main_nav_t4(
 	$count = 0;
 	//loop for each directory returned
 	foreach($dirs as $dir){
-		$alt = file_get_contents($_SERVER['DOCUMENT_ROOT']."/".$dir."/nav-contents.php");
+		$alt = file_get_contents($base_site.$dir."/nav-contents.php");
 		$dir = str_replace($url_remove,'',$dir);
 		if(substr($dir,0,1) === "0"){
 			continue;
@@ -80,6 +82,7 @@ function p_custom_nav(
 	$root_path = null,
 	$overview = false){
 
+	global $base_site;
 	global $file_base;
 	global $url_remove;
 	global $section;
@@ -90,11 +93,11 @@ function p_custom_nav(
 		$root_path = $path;
 	}
 	//gets first level of directories from the root_path
-	$dirs = str_replace($_SERVER['DOCUMENT_ROOT']."/","",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.$root_path.'*'), 'is_dir'));
+	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.$root_path.'*'), 'is_dir'));
 
 	//initialize the string
 	$string = "<div class='custom-nav' id='custom-nav'><h2 tabindex='0'>".$page_title."</h2><ul>";
-	$home = str_replace($_SERVER['DOCUMENT_ROOT']."/","",str_replace($url_remove,'',$_SERVER['DOCUMENT_ROOT']."/".substr($root_path,0,-1)));
+	$home = str_replace($base_site,"",str_replace($url_remove,'',$base_site.substr($root_path,0,-1)));
 
 	if($overview){
 		$string .= '<li class="nav'.($home == $path ? ' active':'').'"><a href="'.$home.'">Overview</a></li>';
