@@ -65,7 +65,6 @@ function plotTree(
 	global $page;
 	global $path;
 	global $segments;
-	global $file_base;
 	global $level ;
 	global $url_remove;
 	global $mini;
@@ -112,7 +111,7 @@ function plotTree(
 		} else{
 			//open the array item. Note we skip the section root in the subnav
 			$subnav_string .= "<li class='".($page == $base_array_slug ? 'active ':'').($active_trail ? 'active-trail open ':'')."'>";
-			$subnav_string .="<a href='" . $file_base.'/'.$base_array . "' class='".(is_array($v) && $toggle === true ? 'has-sub':'')."'>" . $base_array_title. "</a>";
+			$subnav_string .="<a href='/".$base_array . "' class='".(is_array($v) && $toggle === true ? 'has-sub':'')."'>" . $base_array_title. "</a>";
 			$base_array = str_replace($url_remove,"",$base_array);
 			//if there is a child under the current item, we want to add a toggle.
 			if(is_array($v) && $toggle === true){
@@ -157,7 +156,6 @@ function plotTree_t4(
 	global $page;
 	global $path;
 	global $segments;
-	global $file_base;
 	global $level ;
 	global $url_remove;
 	global $mini;
@@ -211,7 +209,7 @@ function plotTree_t4(
 				$subnav_string .="<span class='currentbranch".$level."'>";
 			}
 			//need to add the root in only if file_base is empty
-			$subnav_string .="<a href='".($file_base == "" ? "/":""). $file_base . $base_array . "'>" . $base_array_title. "</a>";
+			$subnav_string .="<a href='" . $base_array . "'>" . $base_array_title. "</a>";
 			if($active_trail){
 				$subnav_string .="</span>";
 			}

@@ -1,5 +1,5 @@
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/redirect_install.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 /**
  *	ADDED TO DIRECTOR.PHP
  *
@@ -16,7 +16,7 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/redirect_install.php")
  */
 
 $client_name = 'Client Name';
-$site_logo = $file_base."/.includes/images/placeholder-svg.php?wh=600x100&color=111111&fill=cccccc&font=Arial&txt=Site Logo";
+$site_logo = "/.includes/images/placeholder-svg.php?wh=600x100&color=111111&fill=cccccc&font=Arial&txt=Site Logo";
 $alert_on = false;
 $demo = false;
 $google_CSE_cx = '007701188165887638683:9z5n0yvnab4';

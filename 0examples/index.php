@@ -1,5 +1,5 @@
 <?php 
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/redirect_install.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 /*page-specific variables*/
 $styles = false;
 $scripts = false;
@@ -8,7 +8,7 @@ $colorbox = true;
 $layout = "generic_inner";
 $feed_search = true;
 /*end page-specific variables*/
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
+include_once($docroot."/.includes/director.php");
 
 /*actual on-page content*/
 	$p_nav_sidebar .= p_promo("button","image","","Button Promo");
@@ -20,5 +20,5 @@ include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
 	$p_promo_sidebar .= p_promo("linkimg","image");
 /*end actual on-page content*/
 
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

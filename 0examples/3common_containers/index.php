@@ -1,5 +1,5 @@
 <?php 
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/redirect_install.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 /*set these to true to add a custom stylesheet named the $page variable.css/js */
 $styles = false;
 $scripts = false;
@@ -8,7 +8,7 @@ $colorbox = false;
 $layout = "generic_inner";
 $mini = true;
 $depth = 2;
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
+include_once($docroot."/.includes/director.php");
 
 $p_content .= "<h2>Sample UI Accordion</h2>";
 $p_content .= p_accordion_ui("sample-acc");
@@ -23,5 +23,5 @@ $p_content .= p_tabs_mobi('sample-tabs-mobi');
 $p_content .= "<h2>Sample Mobile Table</h2>";
 $p_content .= p_table('sample-table');
 
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

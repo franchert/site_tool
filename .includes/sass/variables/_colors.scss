@@ -1,34 +1,32 @@
 /* default color for everything */
 $c-default:#444;
 
+$t-white-heavy:rgba(255,255,255,0.9);
+$t-white-dark:rgba(255,255,255,0.6);
+$t-white:rgba(255,255,255,0.25);
 $white:#fff;
 $off-white:#efeae1;
-$t-white:rgba(255,255,255,0.25);
-$t-white-dark:rgba(255,255,255,0.6);
-$t-white-heavy:rgba(255,255,255,0.9);
 
-$lt-gray:#eee;
-$gray:#ccc;
-$md-gray:#999;
-$dk-gray:#222;
+$lt-gray:#ccc;
+$gray:#999;
+$md-gray:#666;
+$dk-gray:#333;
 
+$off-black:#111;
 $black:#000;
-$t-black-light:rgba(0,0,0,0.3);
-$t-black:rgba(0,0,0,0.5);
-$t-black-heavy:rgba(0,0,0,0.8);
+$t-black-light:rgba(0,0,0,0.25);
+$t-black:rgba(0,0,0,0.6);
+$t-black-heavy:rgba(0,0,0,0.9);
 
 $red:#d21301;
 $t-red:rgba(173,0,0,0.9);
 $blue:#0000FF;
+$t-blue:rgba(0,0,173,0.9);
+$green:#00FF00;
+$t-green:rgba(0,173,0,0.9);
 
-$white-1:#E6E8E6;
-$white-2:#F2F4F6;
-$white-3:#F9F9F9;
-$white-4:#FDFDFD;
-
-
-$dk:#444;
-$lt:#ccc;
+$dk:$t-black;
+$lt:$t-black-light;
 
 $r1:42;
 $g1:42;
@@ -46,4 +44,10 @@ $color-2-tl:rgba($r2,$g2,$b2,0.25);
 $color-2-t:rgba($r2,$g2,$b2,0.5);
 $color-2-th:rgba($r2,$g2,$b2,0.75);
 
-$color-3:rgba(70,135,195,1);
+$r3:70;
+$g3:135;
+$b3:195;
+$color-3: rgba($r3,$g3,$b3,1);
+$color-3-tl:rgba($r3,$g2,$b3,0.25);
+$color-3-t:rgba($r3,$g3,$b3,0.5);
+$color-3-th:rgba($r3,$g3,$b3,0.75);

@@ -111,7 +111,7 @@ body .l-head nav .p-list > ul > li a + ul li {
   padding: 0;
   width: auto;
   float: right;
-  background: #222;
+  background: #333;
 }
 body .l-head nav .p-list > ul > li a + ul li a {
   padding-left: 16px;
@@ -207,7 +207,7 @@ body header .l-head .mobi-toggle-container .utility .gateway-menu .p-list ul li,
 body header .l-head .mobi-toggle-container .utility .utility-menu .p-list ul li {
   padding: 8px;
   background: #4687c3;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid #333;
   margin: 0;
   list-style-type: none;
 }
@@ -286,7 +286,7 @@ body header .l-head .mobi-toggle-container .utility .search form #as_q {
   padding-left: 5px;
 }
 body header .l-head .mobi-toggle-container .utility .search form #as_q::-webkit-input-placeholder, body header .l-head .mobi-toggle-container .utility .search form #as_q:-moz-placeholder, body header .l-head .mobi-toggle-container .utility .search form #as_q::-moz-placeholder, body header .l-head .mobi-toggle-container .utility .search form #as_q:-ms-input-placeholder {
-  color: #ccc;
+  color: #999;
 }
 body header .l-head .mobi-toggle-container .utility .search form #site_search_button {
   width: 10%;
@@ -723,7 +723,8 @@ body ul.tabaccordion > li h3 {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'Open Sans',sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   background: #2a2a2a;
   text-transform: uppercase;
   cursor: pointer;
@@ -826,7 +827,8 @@ body .accordion h3 {
   font-size: 2rem;
   line-height: 26px;
   line-height: 2.6rem;
-  font-family: 'Open Sans',sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
   text-transform: uppercase;
   background: #2a2a2a;
   border-bottom: 2px solid #fff;
@@ -1043,7 +1045,7 @@ body #breadcrumb ul li:before {
 }
 body #breadcrumb ul li a {
   color: #000;
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 1px dotted #999;
   font-size: 14px;
   line-height: 18px;
   float: none;
@@ -1051,7 +1053,7 @@ body #breadcrumb ul li a {
 }
 body #breadcrumb ul li a:hover {
   text-decoration: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #999;
 }
 body #breadcrumb ul li:first-child:before {
   content: none;
@@ -1637,7 +1639,7 @@ body a.button {
   font-family: 'Lobster', cursive;
   background: #eee;
   padding: 15px 25px;
-  border: 1px solid #ccc;
+  border: 1px solid #999;
   border-radius: 3px;
   text-transform: uppercase;
 }
@@ -1895,7 +1897,7 @@ body .matrix.thirds > div {
 }
 body .news_article {
   padding: 0 0 20px 0;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #999;
   margin-bottom: 20px;
 }
 body .news_article img {
@@ -2018,7 +2020,7 @@ body .owl-carousel .owl-controls .owl-dots .owl-dot span {
   margin: 1px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.25);
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
 }
 body .owl-carousel .owl-controls .owl-dots .owl-dot.active span {
   width: 10px;
@@ -2050,10 +2052,10 @@ body .owl-carousel.carousel .owl-controls .owl-dots {
   top: 0px;
 }
 body .owl-carousel.carousel .owl-controls .owl-dots .owl-dot span {
-  background: #ccc;
+  background: #999;
 }
 body .owl-carousel.carousel .owl-controls .owl-dots .owl-dot.active span {
-  background: #222;
+  background: #333;
 }
 body .profile img {
   float: left;
@@ -2084,7 +2086,7 @@ body .program-search #search-container #results {
   background: white;
 }
 body .program-search #search-container #results ul li {
-  border: 1px solid #ccc;
+  border: 1px solid #999;
   border-top: 0;
 }
 body .program-search #search-container #results ul li a {
@@ -2092,7 +2094,7 @@ body .program-search #search-container #results ul li a {
 }
 body .program-search #search-container #results ul li a:hover {
   text-decoration: none;
-  background: #eee;
+  background: #ccc;
 }
 body .program-search #search-container #results ul li a strong {
   float: none;
@@ -2226,7 +2228,7 @@ body .p-promo.overlay .promo-container ul li .drop-container .dropdown:after {
   position: absolute;
   padding: 0 10px;
   top: calc(50% - 6px);
-  color: #222;
+  color: #333;
   -webkit-transform: rotateZ(90deg);
   -ms-transform: rotateZ(90deg);
   transform: rotateZ(90deg);
@@ -2391,7 +2393,7 @@ body .p-promo.overlayv2 .promo-container ul li .drop-container .dropdown:after {
   position: absolute;
   padding: 0 10px;
   top: calc(50% - 6px);
-  color: #222;
+  color: #333;
   -webkit-transform: rotateZ(90deg);
   -ms-transform: rotateZ(90deg);
   transform: rotateZ(90deg);
@@ -2453,7 +2455,7 @@ body .p-promo.hovertext .item {
   border: 1px solid #fff;
 }
 body .p-promo.hovertext a {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   position: absolute;
   display: block;
   float: left;
@@ -2476,7 +2478,7 @@ body .p-promo.hovertext a {
   }
 }
 body .p-promo.hovertext a:hover {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
   position: relative;
   padding-right: 20px;
   position: absolute;
@@ -2530,7 +2532,7 @@ body .p-promo.hovertext a h2 {
   position: absolute;
   text-align: center;
   padding: 0 20px;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
   border: none;
   text-transform: initial;
   transition: all 0.2s;
@@ -2556,7 +2558,7 @@ body .p-promo.hovertext a p {
   width: 100%;
   background: none;
   text-transform: initial;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
   padding: 0 20px;
   transition: all 0.2s;
   text-align: center;
@@ -2586,7 +2588,7 @@ body .p-promo.link.item a .item {
 }
 body .p-promo.generic {
   padding-bottom: 20px;
-  border-bottom: 2px solid #222;
+  border-bottom: 2px solid #333;
 }
 body .p-promo.generic > .promo-container {
   background: #fff;
@@ -2748,7 +2750,7 @@ body .p-promo.promo.dark .promo-container > a:after {
 }
 body .p-promo.promo.light {
   padding: 10px 20px;
-  background: #ccc;
+  background: #999;
 }
 body .p-promo.promo.light .promo-container h4 {
   color: #2a2a2a;
@@ -2945,7 +2947,6 @@ body .subnav h2 {
   cursor: pointer;
   line-height: 41px;
   text-transform: uppercase;
-  background: #E6E8E6;
   padding: 0 20px;
   margin-bottom: 1px;
 }
@@ -3055,7 +3056,7 @@ body .subnav > div > ul > li button span {
 }
 body .subnav > div > ul > li a {
   overflow: hidden;
-  color: #ccc;
+  color: #999;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 22px;
@@ -3073,7 +3074,7 @@ body .subnav > div > ul > li a.has-sub {
 body .subnav > div > ul > li ul {
   float: left;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.6);
 }
 body .subnav.open > ul {
   display: block;
@@ -3085,7 +3086,7 @@ body .subnav.open h2:before {
 }
 body .subnav > ul {
   display: none;
-  background: #999;
+  background: #666;
   float: left;
 }
 @media (min-width: 70em) {
@@ -3344,7 +3345,7 @@ body .responsive-table-wrapper {
 }
 body .responsive-table-wrapper table {
   width: 100%;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
 }
 @media (min-width: 45em) {
   body .responsive-table-wrapper table {
@@ -3391,7 +3392,7 @@ body .responsive-table-wrapper table thead tr td {
   line-height: 2.4rem;
   font-family: 'Lora', serif;
   font-weight: 400;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #999;
   background: #2a2a2a;
   padding: 10px 30px;
   text-align: left;
@@ -3399,7 +3400,7 @@ body .responsive-table-wrapper table thead tr td {
 @media (min-width: 45em) {
   body .responsive-table-wrapper table thead tr td {
     padding: 10px 30px;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #999;
     display: table-cell;
     float: none;
   }
@@ -3421,7 +3422,7 @@ body .responsive-table-wrapper table thead tr td {
 }
 body .responsive-table-wrapper table tbody tr {
   background: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #999;
   margin-bottom: 10px;
 }
 @media (min-width: 45em) {
@@ -3451,7 +3452,7 @@ body .responsive-table-wrapper table tbody tr td {
 @media (min-width: 45em) {
   body .responsive-table-wrapper table tbody tr td {
     padding: 10px 30px;
-    border-right: 1px solid #ccc;
+    border-right: 1px solid #999;
     display: table-cell;
     float: none;
   }
@@ -3960,7 +3961,7 @@ h6 {
 
 p {
   float: none;
-  color: #222;
+  color: #333;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 24px;
@@ -3982,7 +3983,7 @@ ol {
 }
 ul li,
 ol li {
-  color: #222;
+  color: #333;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 24px;
@@ -4015,7 +4016,7 @@ a[href$=".pdf"]:after {
   color: #FF0000;
   font-size: 12px;
   padding-left: 5px;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
 }
 a[href$=".docx"]:after, a[href$=".doc"]:after {
   content: "";
@@ -4024,7 +4025,7 @@ a[href$=".docx"]:after, a[href$=".doc"]:after {
   font-weight: bold;
   font-size: 12px;
   padding-left: 5px;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
 }
 
 section {
@@ -4112,7 +4113,7 @@ form div {
   position: relative;
 }
 form div input {
-  color: #222;
+  color: #333;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 24px;
@@ -4133,7 +4134,7 @@ form div.required:after {
   top: 14px;
 }
 form div textarea {
-  color: #222;
+  color: #333;
   font-size: 18px;
   font-size: 1.8rem;
   line-height: 24px;
@@ -4157,7 +4158,7 @@ form .submit {
   width: auto;
   margin: 10px 0;
   background: #2a2a2a;
-  border: 1px solid #ccc;
+  border: 1px solid #999;
   border-radius: 3px;
   padding: 10px 30px;
   text-transform: uppercase;

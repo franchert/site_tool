@@ -7,7 +7,7 @@ $feed_search = true;
 $layout = 'one-column';
 $instafeed = false;
 /*promo director initializes region variables and includes all the functions to create elements*/
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
+include_once($docroot."/.includes/director.php");
 /*define promos here*/
 
 $p_one .= breadcrumb();
@@ -28,6 +28,6 @@ $p_one .="<script>
 </script>
 <gcse:searchresults-only></gcse:searchresults-only>";
 
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/head.php");
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/head.php");
+include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

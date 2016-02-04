@@ -1,5 +1,5 @@
 <?php 
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/redirect_install.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 /*set these to true to add a custom stylesheet named the $page variable.css/js */
 $styles = false;
 $scripts = false;
@@ -8,7 +8,7 @@ $colorbox = true;
 $layout = "generic_inner";
 $mini = true;
 $depth = 2;
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
+include_once($docroot."/.includes/director.php");
 
 $p_content .= p_promo("linkimg","image","","LinkImg Promo");
 $p_content .= p_promo("imgtitle","image","","ImgTitle Promo");
@@ -32,5 +32,5 @@ $p_promo_sidebar .= p_promo("button","image","light","Button Promo Light");
 $p_promo_sidebar .= p_promo("button","image","dark","Button Promo Dark");
 $p_promo_sidebar .= p_promo("something_else","image","","Not Found Promo");
 
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

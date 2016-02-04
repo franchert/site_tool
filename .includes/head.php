@@ -23,8 +23,8 @@
 	<meta property="twitter:image" content="" >
 	<meta name="description" content="<?php echo $client_name;?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/styles.php"); ?>
-<?php include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/scripts.php"); ?>
+<?php include_once( $docroot."/.includes/styles.php"); ?>
+<?php include_once( $docroot."/.includes/scripts.php"); ?>
 </head>
 <body <?php 
 /*t4 doesn't allow for body classes*/
@@ -73,5 +73,5 @@ if($cms !="t4"){
 	<?php } ?>
 	<div class="l-head <?php if(isset($mini) && $mini == true){echo "mini-site";} ?>">
 		<?php if(isset($header)){
-			include_once( $_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/headers/".$header."/".$header.".php");
+			include_once( $docroot."/.includes/headers/".$header."/".$header.".php");
 		} ?>

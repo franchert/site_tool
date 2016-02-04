@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'].'/.includes/libraries/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php');
+require_once($docroot.'/.includes/libraries/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php');
 use Facebook\FacebookRequest;
 
 $app_id = '573341462823400';

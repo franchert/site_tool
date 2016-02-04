@@ -1,5 +1,5 @@
 <?php 
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/redirect_install.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 /*set these to true to add a custom stylesheet named the $page variable.css/js */
 $styles = false;
 $scripts = false;
@@ -8,7 +8,7 @@ $colorbox = true;
 $layout = "generic_inner";
 $mini = true;
 $depth = 2;
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
+include_once($docroot."/.includes/director.php");
 
 $p_content .= "<h1>Heading Level 1</h1>";
 $p_content .= "<h2>Heading Level 2</h2>";
@@ -26,5 +26,5 @@ $p_content .= p_image();
 $p_content .= p_image("1600","900","16:9",null,"aa2","fff");
 $p_content .= p_image("400","300","overwriting the placeholder image text","This is a caption that will show up below the image","123",'cab');
 $p_content .= p_video();
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

@@ -7,7 +7,7 @@
 		$p_longscroll_fourth = "";
 	}
 */
-	include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/head.php");
+	include_once($docroot."/.includes/head.php");
 	echo "</div></div>"; //div closes head and wrapper
 ?>
 <div class="l-page">
@@ -35,7 +35,7 @@
 	        <?php echo $p_longscroll_fourth; ?>
 	    </section>
 	</div>
-<!-- l-page div closed in footer.php -->
+<!-- l-page div closed in foot.php -->
 <?php
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/footer.php");
+include_once($docroot."/.includes/foot.php");
 ?>

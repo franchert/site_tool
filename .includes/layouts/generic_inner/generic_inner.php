@@ -25,7 +25,7 @@ if($fe_framework == 'bootstrap'){
 	$fe_l_content_center = ' col-md-12';
 	$fe_l_content_footer = ' col-md-12';
 }
-	include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/head.php");
+	include_once($docroot."/.includes/head.php");
 	$page_h1 = $page_title;
 	/*prepend to regions*/
 	$p_content_header = breadcrumb() . $p_content_header;
@@ -86,5 +86,5 @@ if($fe_framework == 'bootstrap'){
 	</div>
 	<?php } ?>
 <?php 
-	include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/footer.php");
+	include_once($docroot."/.includes/foot.php");
 ?>

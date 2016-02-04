@@ -1,11 +1,11 @@
 <?php
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 /**
 *	prints out main nav
 */
 function p_main_nav(
 	){
 
-	global $file_base;
 	global $url_remove;
 	global $section;
 	global $page;
@@ -15,8 +15,9 @@ function p_main_nav(
 	global $fe_container;
 	global $header;
 	global $base_site;
+	global $docroot;
 	//gets first level of directories from the root in an array
-	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
+	$dirs = str_replace($base_site,"",array_filter(glob($docroot.'/*'), 'is_dir'));
 	//build the list
 	$string ="\n<div class='nav-wrapper'>\n\t<div class='".$fe_container."'>\n\t\t";
 	if($header == 'sticky-h' || 'sticky-aacc'){
@@ -31,7 +32,7 @@ function p_main_nav(
 		if(substr($dir,0,1) === "0"){
 			continue;
 		}
-		$string .= "\t<li id='nav-".$count."' class='nav".($page != "home" && strpos($dir,$section) !== false ? " active":"")."''><a href='".$file_base."/".$dir."'>".$alt."</a></li>\n\t\t";
+		$string .= "\t<li id='nav-".$count."' class='nav".($page != "home" && strpos($dir,$section) !== false ? " active":"")."''><a href='/".$dir."'>".$alt."</a></li>\n\t\t";
 		$count++;
 	}
 	$string .= "</ul>\n\t</div>\n</div>\n";
@@ -43,7 +44,6 @@ function p_main_nav(
 function p_main_nav_t4(
 	){
 
-	global $file_base;
 	global $base_site;
 	global $url_remove;
 	global $section;
@@ -53,8 +53,9 @@ function p_main_nav_t4(
 	global $site_logo;
 	global $fe_container;
 	global $header;
+	global $docroot;
 	//gets first level of directories from the root in an array
-	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.'/*'), 'is_dir'));
+	$dirs = str_replace($base_site,"",array_filter(glob($docroot.'/*'), 'is_dir'));
 	//build the list
 	$string ="\n<div class='nav-wrapper'>\n\t<div class='".$fe_container."'>\n\t\t";
 	if($header == 'sticky-h' || 'sticky-aacc'){
@@ -69,7 +70,7 @@ function p_main_nav_t4(
 		if(substr($dir,0,1) === "0"){
 			continue;
 		}
-		$string .= "\t<li>".($page != "home" && strpos($dir,$section) !== false ? "<span class='currentbranch".$count."'>":"")."<a href='".$file_base."/".$dir."'>".$alt."</a>".($page != "home" && strpos($dir,$section) !== false ? "</span>":"")."</li>\n\t\t";
+		$string .= "\t<li>".($page != "home" && strpos($dir,$section) !== false ? "<span class='currentbranch".$count."'>":"")."<a href='/".$dir."'>".$alt."</a>".($page != "home" && strpos($dir,$section) !== false ? "</span>":"")."</li>\n\t\t";
 		$count++;
 	}
 	$string .= "</ul>\n\t</div>\n</div>\n";
@@ -83,17 +84,17 @@ function p_custom_nav(
 	$overview = false){
 
 	global $base_site;
-	global $file_base;
 	global $url_remove;
 	global $section;
 	global $page;
 	global $page_title;
 	global $path;
+	global $docroot;
 	if(is_null($root_path)){
 		$root_path = $path;
 	}
 	//gets first level of directories from the root_path
-	$dirs = str_replace($base_site,"",array_filter(glob($_SERVER['DOCUMENT_ROOT'].$file_base.$root_path.'*'), 'is_dir'));
+	$dirs = str_replace($base_site,"",array_filter(glob($docroot.$root_path.'*'), 'is_dir'));
 
 	//initialize the string
 	$string = "<div class='custom-nav' id='custom-nav'><h2 tabindex='0'>".$page_title."</h2><ul>";
@@ -111,7 +112,7 @@ function p_custom_nav(
 		//format our title
 		$last_seg = titleFromSlug(substr(end($contents),1));
 		//add the list item to our nav
-		$string .= '<li class="nav'.($dir == $temp_path ? ' active':'').'"><a href="'.$file_base."/".$dir.'">'.$last_seg.'</a></li>';
+		$string .= '<li class="nav'.($dir == $temp_path ? ' active':'').'"><a href="'."/".$dir.'">'.$last_seg.'</a></li>';
 	}
 	$string .= "</ul></div>";
 	return $string;

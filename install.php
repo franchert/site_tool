@@ -16,5 +16,5 @@
 		touch("settings.php");
 		file_put_contents("settings.php",file_get_contents('.util/settings.default.php'));
 	}
-	//header('Location: '.$location);
+	header('Location: '.$location);
 ?>

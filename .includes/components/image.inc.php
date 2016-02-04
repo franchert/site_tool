@@ -13,7 +13,6 @@ function p_image(
 	$color = '444',
 	$inline_css = ''){
 
-	global $file_base;
 	$size = max($w,$h)/30;
 	if($size < 20){
 		$size = 20;
@@ -25,7 +24,7 @@ function p_image(
 	if(!is_null($caption)){
 		$string .= '<div class="caption" style="width:'.$h.'px;'.$inline_css.'">';
 	}
-	$string .='<img src="'.$file_base.'/.includes/images/placeholder-svg.php?wh='.$h.'x'.$w.'&color='.$color.'&fill='.$fill.'&font=Arial&size='.$size.'&txt='.$phtext.'"';
+	$string .='<img src="/.includes/images/placeholder-svg.php?wh='.$h.'x'.$w.'&color='.$color.'&fill='.$fill.'&font=Arial&size='.$size.'&txt='.$phtext.'"';
 	if(is_null($caption)){
 		$string .=' style="'.$inline_css.'"';
 	}

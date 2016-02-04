@@ -1,13 +1,13 @@
 <?php 
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/redirect_install.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 /*set these to true to add a custom stylesheet named the $page variable.css/js */
 $styles = false;
 $scripts = true;
-$feed_search = true;
 $layout = 'one-column';
+$feed_search = true;
 $instafeed = true;
 /*promo director initializes region variables and includes all the functions to create elements*/
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
+include_once($docroot."/.includes/director.php");
 
 $p_one .="<div class='wrapper'><div class='column'>";
 $p_one .="<h2>Welcome to <span style='font-family:&#39;Comic Sans MS&#39;, cursive;color:blue;text-shadow:2px 2px 0px rgba(255,0,0,1),4px 4px 0px rgba(0,255,0,1);width:auto;float:none;display:inline-block;'>Build-O-Tron</span></h2>";
@@ -41,7 +41,7 @@ $p_one .="<code>\$p_one .= p_link('http://www.example.com','New Title','button')
 $p_one .="<p>Now we have a more specific example:</p>";
 $p_one .="<code>&lt;a class='button' href='http://www.example.com'&gt;New Title&lt;/a&gt;</code>";
 $p_one .="<h3>Where the magic happens</h3>";
-$p_one .="<p>&ldquo;But that's the same amount of typing, how is this saving us time?&rdquo;</p>";
+$p_one .="<blockquote>But that's the same amount of typing, how is this saving us time?</blockquote>";
 $p_one .="<p>In that particular instance (the link component), one single link won't save us any time at all. The real time savings comes from combining these smaller components into larger ones. Here's an example:</p>";
 $p_one .="<code>\$p_one .= p_slider_owl('example');</code>";
 $p_one .="<p>Our 'example' (added as the slider id) slider here uses multiple 'slide' components with a 'promo' component in each. This 'promo' is built up of a 'paragraph' component and a 'link' component (as well as some static content). This function gives us the following:</p>";
@@ -52,5 +52,5 @@ $p_one .="<p>Once everything is filled out, going to /.util/.publish will take t
 $p_one .="<p>We're currently updating guidelines for VisionPoint Front-End development, but the draft can be found <a href='http://visionpointmarketing.github.io'>here</a></p>";
 $p_one .="</div></div>";
 
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

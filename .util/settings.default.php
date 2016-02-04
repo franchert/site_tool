@@ -1,7 +1,7 @@
 <?php
 //file base takes into account the path from the web root to the homepage.
-$base_site='/var/www/cf-9/';
-$file_base="";
+$docroot = $_SERVER['DOCUMENT_ROOT'];
+$base_site = $docroot.'/';
 //base url is what you would type in your browser to visit the site
 $base_url="";
 $url_remove="";
@@ -10,13 +10,6 @@ $starting = 1;
 	//$base_site="";
 	//$url_remove="/home/vpadmin/url.vpmdev.com/";
 	//$starting = 4;
-// apache default setup (is this working?)
-	//$base_site="/var/www/html/sitename";
-	//$file_base="/sitename";
-	//$url_remove="/html/";
-	//$starting = 2;
-	//ALSO, /sitename needs to be added to file calls through htaccess
-
 
 
 	//remaining bugs to be solved
