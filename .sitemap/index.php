@@ -1,6 +1,6 @@
 <?php 
-include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
-include_once($docroot."/.includes/director.php");
+include_once("../.util/redirect_install.php");
+include_once("../.includes/director.php");
 	$dirs =array_filter(glob('*'), 'is_dir');
 	$subnav = expandDirectories($docroot);
 	$key_values = array_combine(array_values($subnav), array_values($subnav));

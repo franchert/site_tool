@@ -4,13 +4,13 @@
 *	right now i'm using the homepage only and visiting via a cURL, pulling the DOM into a string
 *	and saving it to a file. Need to make this follow the sitemap (check .usage for the sitemap tree)
 */
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/.publish/simple_html_dom.php");
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.util/redirect_install.php");
+include_once($docroot."/.util/.publish/simple_html_dom.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 global $starting;
 global $section;
 global $url_remove;
 global $base_site;
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
+include_once($docroot."/.includes/director.php");
 
 	$base_dir  = $base_site;
 	$directories = array();
@@ -38,7 +38,7 @@ foreach ($directories as $k=>$v){
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 	$curl_html = curl_exec($ch);
 	$html = str_get_html($curl_html);
-	$newfile = $_SERVER['DOCUMENT_ROOT'].$v."/index.html";
+	$newfile = $docroot.$v."/index.html";
 	print_r($v."/index.html</br>");
 	if(!file_exists($newfile)){touch($newfile);}
 	file_put_contents($newfile,$html);

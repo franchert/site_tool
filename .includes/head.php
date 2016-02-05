@@ -67,6 +67,7 @@ if($cms !="t4"){
 							<li><?php echo $alert['contact'][0]; ?></li>
 							<li><?php echo $alert['contact'][1]; ?></li>
 						</ul>
+					</div>
 				</div>
 			</div>
 		</div>

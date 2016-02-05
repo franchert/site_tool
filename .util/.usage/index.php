@@ -4,12 +4,12 @@
 *	to remove sass partials and header/layout calls from the source.
 *	take care not to remove functions that are used within other functions.
 */
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/settings.php");
+include_once($docroot."/settings.php");
 global $starting;
 global $section;
 global $url_remove;
 global $base_site;
-include_once($_SERVER['DOCUMENT_ROOT'].$file_base."/.includes/director.php");
+include_once($docroot."/.includes/director.php");
 echo "Return to the <a href='/.util'>Utility page</a></br>";
 $needles = array(
 	'p_accordion_ui',
@@ -66,7 +66,7 @@ $needles = array(
 		$var = ($a.' is used');
 		$regex = "/".$a."/u";
 		foreach($directories as $k => $v){
-			$file = file_get_contents($_SERVER['DOCUMENT_ROOT'].$v."/index.php");
+			$file = file_get_contents($docroot.$v."/index.php");
 			if(preg_match_all($regex,$file,$matches) > 0){
 				$string .= "&nbsp;&nbsp;".preg_match_all($regex,$file,$matches) ." times in ".$v."</br>";
 				$count += preg_match_all($regex,$file,$matches);

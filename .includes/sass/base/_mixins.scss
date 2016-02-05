@@ -119,3 +119,18 @@
 	#{$prop}:-webkit-calc(#{$value});
 	#{$prop}:calc(#{$value});
 }
+
+@mixin placeholder($prop,$value){
+	&::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+		#{$prop}:#{$value};
+	}
+	&::-moz-placeholder { /* Firefox 19+ */
+		#{$prop}:#{$value};
+	}
+	&:-ms-input-placeholder { /* IE 10+ */
+		#{$prop}:#{$value};
+	}
+	&:-moz-placeholder { /* Firefox 18- */
+		#{$prop}:#{$value};
+	}
+}
