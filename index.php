@@ -17,7 +17,7 @@ $p_one .="<p>The link to the left is an example of a default implementation of a
 $p_one .="<p>Examples of the code used to create these components and how the system works can be found in the README.md files in each directory.</p>";
 $p_one .="<h3>Getting Started</h3>";
 $p_one .="<div style='float:right;width:300px;padding-left:20px;'>".p_promo("button","image","light","the Utility Section",null,null,null,"/.util")."</div>";
-$p_one .="<p>The first step is to create a directory structure building our sitemap. This can be done manually, but it is strongly recommended to automatically generate directories defined in the <a href='/.util/.generate/sitemap.json' target='_blank' style='display:inline-block;'>/.util/.generate/sitemap.json</a> file. Once the file is updated to match the sitemap for this project, the generator can be found in the utility section to the right.</p>";
+$p_one .="<p>The first step is to create a directory structure building our sitemap. This can be done manually, but it is strongly recommended to automatically generate directories defined in the json file within this directory. Once the file is updated to match the sitemap for this project, the generator can be found in the utility section to the right.</p>";
 $p_one .="<p>Each page consists of a folder with an index.php file located inside. Each index.php file pulls in sitewide variables, sets page specific variables and builds a string to display within regions on a layout defined by these variables. Each file has three major sections:</p><ol style='list-style:decimal;margin-left:30px;'><li>Set Variables</li><li>Initialize and build strings</li><li>Print out strings within defined layout</li></ol>";
 $p_one .="<p>Initializing and printing the strings are done through includes files, but the variables containing these strings need to be built manually to show the content for each specific page</p>";
 $p_one .="<h3>Creating a new page</h3>";
@@ -48,7 +48,7 @@ $p_one .="<p>Our 'example' (added as the slider id) slider here uses multiple 's
 $p_one .= p_slider_owl('example');
 $p_one .="<p>This also gives us a way to standardize the components we use in each design while having the flexibility in design to customize to our needs.</p>";
 $p_one .="<h3>Publishing</h3>";
-$p_one .="<p>Once everything is filled out, going to /.util/.publish will take the dynamic PHP you've created and print out some static HTML in an index.html in each directory. This isn't fully built out or tested yet, so I'm not giving you a direct link. It will eventually build an includes directory with css/js and any libraries/fonts required. I hope to eventually change all the URLs in this static version to exclude the number positioning.</p>";
+$p_one .="<p>Once everything is filled out, going to /.util/.publish will take the dynamic PHP you've created and print out some static HTML in a client-specific directory as well as an includes directory with css/js and any libraries/fonts required. I hope to eventually change all the URLs in this static version to exclude the number positioning.</p>";
 $p_one .="<p>We're currently updating guidelines for VisionPoint Front-End development, but the draft can be found <a href='http://visionpointmarketing.github.io'>here</a></p>";
 $p_one .="</div></div>";
 

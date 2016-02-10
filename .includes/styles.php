@@ -10,9 +10,6 @@
 <?php if(isset($fe_framework)){/*	Add in our front-end framework css file	*/?>
 	<link rel="stylesheet" type="text/css" href="/.includes/stylesheets/<?php echo $fe_framework ?>.css"/>
 <?php } ?>
-<?php if($layout){/*	Add in chosen layout css file	*/?>
-	<link rel="stylesheet" type="text/css" href="/.includes/layouts/<?php echo $layout ?>/<?php echo $layout ?>.css"/>
-<?php } ?>
 <?php if(isset($styles) && $styles != false){	?>
 	<link rel="stylesheet" type="text/css" href="/.includes/libraries/<?php echo $page ?>.css"/>
 <?php } ?>

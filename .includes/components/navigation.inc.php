@@ -16,6 +16,7 @@ function p_main_nav(
 	global $header;
 	global $base_site;
 	global $docroot;
+	global $client_slug;
 	//gets first level of directories from the root in an array
 	$dirs = str_replace($base_site,"",array_filter(glob($docroot.'/*'), 'is_dir'));
 	//build the list
@@ -27,13 +28,15 @@ function p_main_nav(
 	$count = 0;
 	//loop for each directory returned
 	foreach($dirs as $dir){
-		$alt = file_get_contents($base_site.$dir."/nav-contents.php");
-		$dir = str_replace($url_remove,'',$dir);
-		if(substr($dir,0,1) === "0"){
-			continue;
+		if($dir != $client_slug){
+			$alt = file_get_contents($base_site.$dir."/nav-contents.php");
+			$dir = str_replace($url_remove,'',$dir);
+			if(substr($dir,0,1) === "0"){
+				continue;
+			}
+			$string .= "\t<li id='nav-".$count."' class='nav".($page != "home" && strpos($dir,$section) !== false ? " active":"")."''><a href='/".$dir."'>".$alt."</a></li>\n\t\t";
+			$count++;
 		}
-		$string .= "\t<li id='nav-".$count."' class='nav".($page != "home" && strpos($dir,$section) !== false ? " active":"")."''><a href='/".$dir."'>".$alt."</a></li>\n\t\t";
-		$count++;
 	}
 	$string .= "</ul>\n\t</div>\n</div>\n";
 	return $string;

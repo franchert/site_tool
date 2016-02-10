@@ -24,6 +24,8 @@ $page_title = titleFromSlug($page_slug);
 $section_title = titleFromSlug($section_slug);
 $crumb = '';
 
+$client_slug = str_replace(' ','_',strtolower($client_name));
+
 $init = "";
 if(isset($demo) && $demo){$init = " ";}
 /*initialize region string variables*/
