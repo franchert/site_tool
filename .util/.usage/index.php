@@ -4,43 +4,25 @@
 *	to remove sass partials and header/layout calls from the source.
 *	take care not to remove functions that are used within other functions.
 */
-include_once($docroot."/settings.php");
+include_once($_SERVER['DOCUMENT_ROOT']."/settings.php");
 global $starting;
 global $section;
 global $url_remove;
 global $base_site;
+global $docroot;
 include_once($docroot."/.includes/director.php");
 echo "Return to the <a href='/.util'>Utility page</a></br>";
-$needles = array(
-	'p_accordion_ui',
-	'p_accordion',
-	'p_tabaccordion',
-	'p_calendar',
-	'p_carousel',
-	'p_colorbox',
-	'p_contact',
-	'p_dropdown',
-	'p_event',
-	'p_factoid',
-	'p_grid',
-	'p_image',
-	'p_link',
-	'p_list',
-	'p_matrix',
-	'p_news',
-	'p_page_intro',
-	'p_paragraph',
-	'p_profile',
-	'p_program_search',
-	'p_promo',
-	'p_slide',
-	'p_slider_owl',
-	'p_spotlight',
-	'p_table',
-	'p_tabs_mobi',
-	'p_tabs',
-	'p_video'
-);
+echo "REMEMBER, some of these components may be in use within other components, the header/footer or layouts.</br>";
+echo "Only delete them if you're absolutely sure they're not needed.";
+$fxns = get_defined_functions();
+$user_fxns = $fxns['user'];
+foreach($user_fxns as $k => $v){
+	if(substr($v,0,2) != "p_"){
+		unset($user_fxns[$k]);
+		continue;
+	};
+	//print_r($v."</br>");
+}
 	$base_dir  = $base_site;
 	$directories = array('/');
 	foreach(scandir($base_dir) as $file) {
@@ -59,7 +41,7 @@ $needles = array(
 		}
 	}
 	//print_r ($directories);
-	foreach($needles as $p => $a){
+	foreach($user_fxns as $p => $a){
 		echo '</br>';
 		$count = 0;
 		$string = '';
