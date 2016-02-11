@@ -6,31 +6,28 @@ $scripts = false;
 $flexslider = true;
 $colorbox = true;
 $layout = "generic_inner";
-$mini = true;
-$depth = 2;
+
 include_once($docroot."/.includes/director.php");
 
-$p_content .= p_promo("linkimg","image","","LinkImg Promo");
-$p_content .= p_promo("imgtitle","image","","ImgTitle Promo");
-$p_content .= p_promo("promo","image","","Promo Promo");
-$p_content .= p_promo("promo","image","light","Promo Promo Light");
-$p_content .= p_promo("promo","image","dark","Promo Promo Dark");
-$p_content .= p_promo("hovertext","image","","TextLink Promo");
-$p_content .= p_promo("button","image","","Button Promo");
-$p_content .= p_promo("button","image","light","Button Promo Light");
-$p_content .= p_promo("button","image","dark","Button Promo Dark");
-$p_content .= p_promo("something_else","image","","Not Found Promo");
 
-$p_promo_sidebar .= p_promo("linkimg","image","","LinkImg Promo");
-$p_promo_sidebar .= p_promo("imgtitle","image","","ImgTitle Promo");
-$p_promo_sidebar .= p_promo("promo","image","","Promo Promo");
-$p_promo_sidebar .= p_promo("promo","image","light","Promo Promo Light");
-$p_promo_sidebar .= p_promo("promo","image","dark","Promo Promo Dark");
-$p_promo_sidebar .= p_promo("hovertext","image","","TextLink Promo");
-$p_promo_sidebar .= p_promo("button","image","","Button Promo");
-$p_promo_sidebar .= p_promo("button","image","light","Button Promo Light");
-$p_promo_sidebar .= p_promo("button","image","dark","Button Promo Dark");
-$p_promo_sidebar .= p_promo("something_else","image","","Not Found Promo");
+$p_content .= p_promo("promo","image","","Promo");
+$p_content .= p_promo("promo","image","light","Promo Light");
+$p_content .= p_promo("promo","image","dark","Promo Dark");
+$p_content .= p_promo("hovertext","image","","TextLink");
+$p_content .= p_promo("button","image","","Button");
+$p_content .= p_promo("button","image","light","Button Light");
+$p_content .= p_promo("button","image","dark","Button Dark");
+$p_content .= p_promo("something_else","image","","Not Found");
+
+
+$p_promo_sidebar .= p_promo("promo","image","","Promo");
+$p_promo_sidebar .= p_promo("promo","image","light","Promo Light");
+$p_promo_sidebar .= p_promo("promo","image","dark","Promo Dark");
+$p_promo_sidebar .= p_promo("hovertext","image","","TextLink");
+$p_promo_sidebar .= p_promo("button","image","","Button");
+$p_promo_sidebar .= p_promo("button","image","light","Button Light");
+$p_promo_sidebar .= p_promo("button","image","dark","Button Dark");
+$p_promo_sidebar .= p_promo("something_else","image","","Not Found");
 
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

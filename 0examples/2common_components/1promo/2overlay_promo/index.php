@@ -6,16 +6,15 @@ $scripts = false;
 $flexslider = true;
 $colorbox = true;
 $layout = "generic_inner";
-$mini = true;
-$depth = 2;
+
 include_once($docroot."/.includes/director.php");
 
-$p_content .= p_promo("overlay","image","","Overlay Promo");
-$p_content .= p_promo("overlay hover","image","","Overlay Hover Promo");
-$p_content .= p_promo("overlayv2","image","","OverlayV2 Promo");
+$p_content .= p_promo("overlay","image","","Overlay");
+$p_content .= p_promo("overlay hover","image","","Overlay Hover");
+$p_content .= p_promo("overlayv2","image","","OverlayV2");
 
-$p_promo_sidebar .= p_promo("overlay","image","","Overlay Promo");
-$p_promo_sidebar .= p_promo("overlay hover","image","","Overlay Hover Promo");
-$p_promo_sidebar .= p_promo("overlayv2","image","","Overlay Promo");
+$p_promo_sidebar .= p_promo("overlay","image","","Overlay");
+$p_promo_sidebar .= p_promo("overlay hover","image","","Overlay Hover");
+$p_promo_sidebar .= p_promo("overlayv2","image","","OverlayV2");
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

@@ -16,7 +16,7 @@ include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
  */
 
 $client_name = 'Client Name';
-$site_logo = "/.includes/images/placeholder-svg.php?wh=600x100&color=111111&fill=cccccc&font=Arial&txt=Site Logo";
+$site_logo = "/.includes/images/placeholder-svg.php?wh=170x115&color=111111&fill=cccccc&font=Arial&txt=Site Logo&size=20";
 $alert_on = false;
 $demo = false;
 $google_CSE_cx = '007701188165887638683:9z5n0yvnab4';
@@ -28,6 +28,7 @@ $google_CSE_cx = '007701188165887638683:9z5n0yvnab4';
  *	to match the directory and the variable set below.
  */
 	$header = 'sticky-h';
+	//$header = 'sticky-aacc';
 	//$header = 'nav-plus';
 /*end header*/
 

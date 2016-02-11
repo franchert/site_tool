@@ -16,13 +16,13 @@
 			position:relative;
 			.weekday{
 				width:51%;
-				@include font('lobster',16,$color-2);
+				@include font('open_sans',16,$color-2);
 				line-height:16px;
 				text-transform:uppercase;
 			}
 			.month{
 				width:51%;
-				@include font('lobster',20,$white);
+				@include font('open_sans',20,$white);
 				line-height:16px;
 				text-transform:uppercase;
 			}

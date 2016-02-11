@@ -44,7 +44,7 @@ if($cms !="t4"){
 	if(isset($demo) && $demo == true){
 		echo ' demo';
 	}
-	echo ' '.$layout.'"';
+	echo ' '.$layout.' '.$header.'"';
 }
 ?> >
 	<a class="back-to-top" href="#top">Back to Top</a>

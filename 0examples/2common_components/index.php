@@ -6,8 +6,7 @@ $scripts = false;
 $flexslider = true;
 $colorbox = true;
 $layout = "generic_inner";
-$mini = true;
-$depth = 2;
+
 include_once($docroot."/.includes/director.php");
 
 $p_content .= "<h2>Events</h2>";

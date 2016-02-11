@@ -10,6 +10,116 @@
 			min-width:100%;
 		}
 	}
+	&.linkimg{
+		a{
+			.item{
+				height:200px;
+				overflow:hidden;
+				display:table;
+				h3{
+					position:relative;
+					z-index:1;
+					text-align:center;
+					display:table-cell;
+					vertical-align:middle;
+					float:none;
+					text-shadow: 1px 1px 3px $t-black;
+					padding:20px;
+					transition: all .2s;
+					text-transform:uppercase;
+					border:none;
+					@include font('open_sans',24,$white);
+					span{
+						@include font('lora_bold',20,inherit);
+						line-height:24px;
+						&.fa{
+							color: inherit;
+							font-family: 'FontAwesome';
+							font-style:initial;
+							font-size:40px;
+						}
+					}
+				}
+				img{
+					position:absolute;
+					left:0;
+					min-height:100%;
+					min-width:100%;
+					width:auto;
+					max-width:initial!important;
+				}
+			}
+		}
+		&:hover{
+			a{
+				.item{
+					h3{
+						color:$white;
+						background:$color-3-t;
+						span{
+							color:inherit;
+						}
+					}
+				}
+			}
+		}
+		&.dark{
+			a{
+				.item{
+					h3{
+						color:$white;
+						background:$color-3-t;
+						span{
+							color:inherit;
+						}
+					}
+				}
+			}
+			&:hover{
+				a{
+					.item{
+						h3{
+							background:$color-2-t;
+							color:$color-3;
+							span{
+								color:inherit;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.light{
+			a{
+				.item{
+					h3{
+						background:$color-2-t;
+						color:$color-3;
+						text-shadow:none;
+						span{
+							color:inherit;
+						}
+					}
+				}
+			}
+			&:hover{
+				a{
+					.item{
+						h3{
+							background:$color-3-t;
+							color:$white;
+							.fa {
+								color:inherit;
+							}
+							span{
+								color:inherit;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	&.overlay{
 		position:relative;
 		padding:20px 0;
@@ -255,26 +365,6 @@
 			}
 		}
 	}
-	&.imgtitle{
-		a{
-			display:table;
-			table-layout:fixed;
-		}
-		.item{
-			display:table-cell;
-			float:none;
-		}
-		h2{
-			width:50%;
-			float:none;
-			display:table-cell;
-			vertical-align:middle;
-			padding-left:20px;
-			@include breakpoint($tab){
-				width:75%;
-			}
-		}
-	}
 	&.hovertext{
 		position:relative;
 		overflow:hidden;
@@ -403,7 +493,7 @@
 				}
 				float:right;
 			}
-			.promo-container{
+			> .promo-container{
 				@include breakpoint($tab){
 					width:70%;
 					h2{
@@ -420,7 +510,7 @@
 				}
 				float:left;
 			}
-			.promo-container{
+			> .promo-container{
 				@include breakpoint($tab){
 					width:70%;
 					h2{
@@ -563,6 +653,7 @@
 					width:auto;
 					vertical-align:middle;
 					padding-right:5px;
+					width:20px;
 					@include breakpoint($tab,true){
 						font-size:16px;
 					}
@@ -661,6 +752,13 @@
 				.promo-container{
 					h2{}
 				}
+			}
+		}
+		&.overlayv2{
+			.promo-container{
+				width:100%;
+				position:relative;
+				left:0;
 			}
 		}
 		&.imgtitle{

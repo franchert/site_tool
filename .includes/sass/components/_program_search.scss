@@ -2,17 +2,28 @@
 .program-search{
 	#search-container{
 		position:relative;
-		#searchterm{}
+		margin:10px 0;
+		padding:20px;
+		border:1px solid $t-black-light;
+		box-shadow:0 0 5px $t-black-light;
+		label{
+			@include font('lora',16);
+			margin:5px;
+		}
+		#searchterm{
+			padding:5px;
+		}
 		#searchclear{
 			width:auto;
 			float:none;
 			position:absolute;
 			right:10px;
-			top:20px;
+			top:30px;
 		}
 		#results{
 			position:absolute;
-			top:100%;
+			@include calc('top','100% - 20px','100%');
+			@include calc('width','100% - 40px','80%');
 			background:white;
 			ul{
 				li{

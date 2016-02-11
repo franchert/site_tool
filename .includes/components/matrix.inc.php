@@ -16,7 +16,7 @@ function p_matrix(
 	if(isset($title) && $title !=''){
 		$string .= '<div><h2>'.$title.'</h2></div>';
 	}
-	if(!is_null($arr) && is_array($arr)){
+	if(!is_null($arr) && is_array($arr) && $width == 0){
 		$len = count($arr) + $offset;
 	}else{
 		if($width == 0){

@@ -1,13 +1,11 @@
 
 /* _main_nav.scss */
-$background_color:$white;
 $primary_font_family:'open_sans';
 $primary_font_color:$color-1;
 $secondary_font_family:''open_sans_bold'';
 $secondary_font_color:$color-2;
 
 .main-nav-container{
-	background: $background_color;
 	display:none;
 	@include breakpoint($tab){
 		display:block;
@@ -15,8 +13,6 @@ $secondary_font_color:$color-2;
 		overflow:visible;
 	}
 	.nav-wrapper{
-		background: $background_color;
-		border-bottom:1px solid $secondary_font_color;
 		overflow:visible;
 		@include breakpoint(max-width $tab){
 			background:none;
@@ -47,7 +43,7 @@ $secondary_font_color:$color-2;
 						border-bottom:1px solid $secondary_font_color;
 					}
 					a{
-						@include font($primary_font_family,14,$primary_font_color);
+						@include font($primary_font_family,14,$secondary_font_color);
 						text-transform:uppercase;
 						text-align:left;
 						padding: 10px 20px;

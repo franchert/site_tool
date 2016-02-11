@@ -14,11 +14,16 @@ function p_grid(
 	$width=0,
 	$title = null,
 	$arr=null,
-	$morelink=''){
+	$morelink='',
+	$addl_class='',
+	$subtitle=null){
 
 	$string = '';
 	if(isset($title) && $title !=''){
-		$string .= '<div><h2>'.$title.'</h2></div>';
+		$string .= '<div class="h2-wrap"><h2 class="'.$addl_class.'">'.$title.'</h2></div>';
+	}
+	if(isset($subtitle) && $subtitle !=''){
+		$string .= '<p class="home-h2-sub">'.$subtitle.'</p>';
 	}
 	if(!is_null($arr) && is_array($arr)){
 		$len = count($arr);

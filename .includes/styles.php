@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="/.includes/stylesheets/<?php echo $fe_framework ?>.css"/>
 <?php } ?>
 <?php if(isset($styles) && $styles != false){	?>
-	<link rel="stylesheet" type="text/css" href="/.includes/libraries/<?php echo $page ?>.css"/>
+	<link rel="stylesheet" type="text/css" href="/.includes/stylesheets/<?php echo $page_slug ?>.css"/>
 <?php } ?>
 <?php if(isset($owl) && $owl == true){	?>
 	<link rel="stylesheet" type="text/css" href="/.includes/libraries/owl.carousel.css"/>

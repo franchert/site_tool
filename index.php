@@ -14,7 +14,7 @@ $p_one .="<h2>Welcome to <span style='font-family:&#39;Comic Sans MS&#39;, cursi
 $p_one .="<p>Build-O-Tron has been developed to use as a framework for developing front-end websites specific to VisionPoint Marketing design components. It uses specific components based on typical higher education use cases to put together a prototype front-end for provided designs.</p>";
 $p_one .="<div style='width:300px;padding-right:20px;'>".p_promo("button","image","light","Examples Page",null,null,null,"/0examples")."</div>";
 $p_one .="<p>The link to the left is an example of a default implementation of a button promo, and takes you to the examples section, showing off other examples of components included in this system.</p>";
-$p_one .="<p>Examples of the code used to create these components and how the system works can be found in the README.md files in each directory.</p>";
+$p_one .="<p>Examples of the code used to create these components can be found in the index.php files in each directory.</p>";
 $p_one .="<h3>Getting Started</h3>";
 $p_one .="<div style='float:right;width:300px;padding-left:20px;'>".p_promo("button","image","light","the Utility Section",null,null,null,"/.util")."</div>";
 $p_one .="<p>The first step is to create a directory structure building our sitemap. This can be done manually, but it is strongly recommended to automatically generate directories defined in the json file within this directory. Once the file is updated to match the sitemap for this project, the generator can be found in the utility section to the right.</p>";

@@ -1,12 +1,12 @@
 
-body{
+body.sticky-h{
 	header{
 		.l-head{
-			background: $color-1;
 			z-index:2;
 			min-height:50px;
 			.mobi-toggle-container{
 				display:none;
+				background: $color-1;
 				@include breakpoint($tab){
 					display:block;
 				}
@@ -233,9 +233,6 @@ body{
 						position:relative;
 						top:0;
 					}
-					@include breakpoint($desk){
-						width:600px;
-					}
 					img{
 						display:block;
 						position:fixed;
@@ -244,6 +241,7 @@ body{
 						width:auto;
 						@include calc('max-width','100% - 70px','100%');
 						@include breakpoint($desk){
+							box-shadow:1px 1px 6px $t-black-light;
 							position:relative;
 							max-height: initial;
 							max-width: initial;

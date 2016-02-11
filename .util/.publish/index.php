@@ -128,6 +128,12 @@ foreach ($files as $name => $file)
 
 // Zip archive will be created only after closing object
 $zip->close();
+// remove the temporary directory now that we have the zip file
+/*
+if(is_dir($docroot."/".$client_slug)){
+	rrmdir($docroot."/".$client_slug);
+}
+*/
 echo "</br>Return to the <a href='/.util'>Utility page</a>";
 
 function recurse_copy($src,$dst) {
@@ -145,5 +151,16 @@ function recurse_copy($src,$dst) {
 	}
 	closedir($dir); 
 }
-
+function rrmdir($dir) {
+	if (is_dir($dir)) {
+		$objects = scandir($dir);
+		foreach ($objects as $object) {
+			if ($object != "." && $object != "..") {
+				if (filetype($dir."/".$object) == "dir") rrmdir($dir."/".$object); else unlink($dir."/".$object);
+			}
+		}
+		reset($objects);
+		rmdir($dir);
+	}
+}
 ?>

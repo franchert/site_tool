@@ -24,6 +24,9 @@ function p_main_nav(
 	if($header == 'sticky-h' || 'sticky-aacc'){
 		$string.="<a class='desk-sticky' href='/'><img src='".$site_logo."'/></a>\n\t\t";
 	}
+	if($header == 'sticky-aacc'){
+		$string .="<div class='main-nav-toggle'><i class='fa fa-bars'></i></div>";
+	}
 	$string.="<ul class='main-nav'>\n\t\t";
 	$count = 0;
 	//loop for each directory returned
@@ -63,6 +66,9 @@ function p_main_nav_t4(
 	$string ="\n<div class='nav-wrapper'>\n\t<div class='".$fe_container."'>\n\t\t";
 	if($header == 'sticky-h' || 'sticky-aacc'){
 		$string.="<a class='desk-sticky' href='/'><img src='".$site_logo."'/></a>\n\t\t";
+	}
+	if($header == 'sticky-aacc'){
+		$string .="<div class='main-nav-toggle'><i class='fa fa-bars'></i></div>";
 	}
 	$string.="<ul class='main-nav'>\n\t\t";
 	$count = 0;

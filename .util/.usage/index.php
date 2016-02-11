@@ -30,7 +30,8 @@ foreach($user_fxns as $k => $v){
 			|| substr($file,0,1) == '0' 
 			|| substr($file,0,2) == '..' 
 			|| substr($file,0,2) === '/.' 
-			|| substr($file,0,2) === '/0') continue;
+			|| substr($file,0,2) === '/0'
+			|| $file == $client_slug) continue;
 		$dir = $base_dir.DIRECTORY_SEPARATOR.$file;
 		if(is_dir($dir)) {
 			$temp = str_replace($base_site,"",$dir);

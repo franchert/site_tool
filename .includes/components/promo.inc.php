@@ -76,22 +76,15 @@ function p_promo(
 		if(!is_null($link)){
 			$string .="</a>";
 		}
-	}else if(strrpos($type,"imgtitle") !== false){
+	}else if(strrpos($type,"linkimg") !== false){/**/
 		if($link != null){
-			$string .= "<a class='".$addl_class."' href='".$link."'>\n\t\t";
+			$string .= "<a href='".$link."'>";
 		}
-		$string .="<div class='item'>".$img."</div>\n\t\t<h2>".$title."</h2>\n\t";
-		if($link != null){
-			$string .= "</a>\n";
-		}
-	}else if(strrpos($type,"linkimg") !== false){
+		$string .="<div class='item'>";
 		if(!is_null($title)){
-			$string .= "<h4>".$title."</h4>\n\t";
+			$string .= "<h3>".$title."</h3>";
 		}
-		if($link != null){
-			$string .= "<a href='".$link."'>\n\t\t";
-		}
-		$string .="<div class='item'>".$img."</div>\n\t";
+		$string.=$img."</div>";
 		if ($text == ""){
 			$text = "";
 		}else if(is_null($text)){
@@ -99,7 +92,7 @@ function p_promo(
 		}
 		$string .= $text;
 		if($link != null){
-			$string .= "</a>\n";
+			$string .= "</a>";
 		}
 	}else if(strrpos($type,"hovertext") !== false){
 		$string .= "<div class='item'>\n\t\t".$img."\n\t</div>\n\t";
