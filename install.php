@@ -1,7 +1,7 @@
 <?php
 /*
 *	redirect_install redirects through here to create site-specific .htaccess and settings.php
-*	that will be ignored in the repository
+*	that will be ignored in the repository, so the user doesn't have to!
 */
 	if(isset($_GET['location'])) {
 		$location = htmlspecialchars($_GET['location']);
