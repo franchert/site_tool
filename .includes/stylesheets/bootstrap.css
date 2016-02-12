@@ -72,6 +72,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 /* fontawesome variables */
 /* these don't work well yet, avoid using */
 /* end fontawesome variables */
+/* @include font('Open Sans',16,$white,22) */
+/* @include font-size(16,0); */
 /*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.

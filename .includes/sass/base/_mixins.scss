@@ -3,10 +3,10 @@
 	float:$dir;
 	width:$width;
 }
-
-@mixin font($family:"Arial",$size:16,$color:$c-default,$line-height:$size){
+/* @include font('Open Sans',16,$white,22) */
+@mixin font($family:"Arial",$size:16,$color:$c-default,$spacing:6){
 	color:$color;
-	@include font-size($size);
+	@include font-size($size,$spacing);
 	@if $family == 'lobster'{
 		font-family: 'Lobster', cursive;
 	} @else if $family == 'open_sans'{
@@ -30,6 +30,7 @@
 		font-family:'Open Sans',sans-serif;
 	}
 }
+/* @include font-size(16,0); */
 @mixin font-size($sizeValue: 16,$spacing:6) {
 	font-size: $sizeValue + px;
 	font-size: ($sizeValue / 10) + rem;
@@ -37,42 +38,29 @@
 	line-height: (($sizeValue + $spacing) / 10) + rem;
 }
 
-@mixin arrowbefore($color:$t-white,$font-size:14px,$type:"\f105"){
+@mixin arrow($loc:'after',$color:$t-white,$font-size:14,$type:"\f105"){
 	position:relative;
-	&:before{
-		content: "\f105";
+	&:#{$loc}{
+		content: $type;
 		font-family: FontAwesome;
-		font-size: $font-size;
+		@include font-size($font-size,0);
 		position: absolute;
 		left: -10px;
 		color:$color;
 	}
 }
-@mixin arrowafter($color:$t-white,$font-size:14px,$type:"\f105"){
-	position:relative;
-	&:after{
-		content: "\f105";
-		font-family: FontAwesome;
-		font-size: $font-size;
-		position: absolute;
-		right: -10px;
-		color:$color;
-	}
-}
-@mixin arrowdown($color:inherit,$font-size:12px,$type:"\f105"){
+@mixin arrowdown($color:inherit,$font-size:12,$type:"\f105"){
 	position:relative;
 	padding-right:20px;
 	&:after{
-		content: "\f105";
-		font-family: FontAwesome;
-		font-size: $font-size;
 		position: absolute;
-		padding:0 10px;
-		top:calc(50% - #{$font-size / 2});
 		color:$color;
-		-webkit-transform:rotateZ(90deg);
-		-ms-transform:rotateZ(90deg);
-		transform: rotateZ(90deg);
+		content: $type;
+		font-family: FontAwesome;
+		@include font-size($font-size,0);
+		@include calc('top','50% - #{$font-size / 2}','50%');
+		@include transform(rotateZ(90deg));
+		padding:0 10px;
 		transition:all .2s;
 	}
 }

@@ -1,0 +1,81 @@
+
+/* _p_matrix.scss */
+$matrix-padding:20px;
+$matrix-break:$tab;
+
+.matrix{
+	> div{
+		@include breakpoint($matrix-break){
+			padding:0 $matrix-padding;
+		}
+	}
+	&.halves{
+		> div{
+			@include breakpoint($matrix-break){
+				width:50%;
+				&:nth-child(2n+1){
+					padding:0 #{$matrix-padding * 0.5} 0 0;
+				}
+				&:nth-child(2n){
+					padding:0 0 0 #{$matrix-padding * 0.5};
+				}
+			}
+		}
+	}
+	&.thirds{
+		> div{
+			padding:0 #{$matrix-padding / 3};
+			@include breakpoint($matrix-break){
+				width:33.3333%;
+				&:nth-child(3n+1){
+					padding:0 #{$matrix-padding * 0.6667} 0 0;
+				}
+				&:nth-child(3n){
+					padding:0 0 0 #{$matrix-padding * 0.6667};
+				}
+			}
+		}
+	}
+	&.fourths{
+		> div{
+			@include breakpoint($matrix-break){
+				width:25%;
+				&:nth-child(4n+1){
+					padding:0 #{$matrix-padding * 0.75} 0 0;
+				}
+				&:nth-child(4n+2){
+					padding:0 #{$matrix-padding * 0.5} 0 #{$matrix-padding * 0.25};
+				}
+				&:nth-child(4n+3){
+					padding:0 #{$matrix-padding * 0.25} 0 #{$matrix-padding * 0.5};
+				}
+				&:nth-child(4n){
+					padding:0 0 0 #{$matrix-padding * 0.75};
+				}
+			}
+		}
+	}
+	&.fifths{
+		> div{
+			@include breakpoint($matrix-break){
+				width:20%;
+				&:nth-child(5n+1){
+					padding:0 #{$matrix-padding * 0.8} 0 0;
+				}
+				&:nth-child(5n+2){
+					padding:0 #{$matrix-padding * 0.6} 0 #{$matrix-padding * 0.2};
+				}
+				&:nth-child(5n+3){
+					padding:0 #{$matrix-padding * 0.4} 0 #{$matrix-padding * 0.4};
+				}
+				&:nth-child(5n+4){
+					padding:0 #{$matrix-padding * 0.2} 0 #{$matrix-padding * 0.6};
+				}
+				&:nth-child(5n){
+					padding:0 0 0 #{$matrix-padding * 0.8};
+				}
+			}
+		}
+	}
+
+}

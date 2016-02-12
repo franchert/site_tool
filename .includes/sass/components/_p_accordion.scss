@@ -1,0 +1,51 @@
+/* _p_accordion.scss */
+$acc_breakpoint:$tab;
+$acc_font:"open_sans";
+//inactive tab background, active accordion background & content border
+$acc_inactive_tab:$color-2;
+//active tab background & content border, inactive font. inactive accordion background
+$acc_active_tab:$color-1;
+//active tab color, inactive accordion color, space between tabs
+$acc_tab_color:$white;
+
+.accordion{
+	margin-bottom:20px;
+	h3{
+		padding:10px 20px;
+		@include font($acc_font,20,$acc_tab_color);
+		text-transform:uppercase;
+		background:$acc_active_tab;
+		border-bottom:2px solid $acc_tab_color;
+		cursor:pointer;
+		outline:none;
+		margin:0;
+		&.active{
+			background:$acc_inactive_tab;
+			color:$acc_active_tab;
+			&:after{
+				-webkit-transform:rotateZ(-90deg);
+				-ms-transform:rotateZ(-90deg);
+				transform:rotateZ(-90deg);
+			}
+		}
+		@include arrowdown(inherit,12,"\f0da");
+		&:after{
+			right:20px;
+			font-size:20px;
+			top:calc(50% - 12px);
+		}
+	}
+	> div{
+		display:none;
+		float:left;
+		width:100%;
+		padding:0 20px;
+		border:1px solid $acc_active_tab;
+		border-top:0;
+		margin-bottom:2px;
+		overflow:hidden;
+		&.open{
+			display:inline-block;
+		}
+	}
+}

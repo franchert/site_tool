@@ -7,7 +7,7 @@
 							<input type="hidden" name="cof" value="FORID:11">
 							<input type="hidden" name="ie" value="UTF-8">
 							<label style="display: none;" for="as_q">search the site</label>
-							<input aria-label="search new haven website" id="as_q" class="search-newhaven" type="text" name="as_q" placeholder="Search The Site...">
+							<input aria-label="search" id="as_q" class="search" type="text" name="as_q" placeholder="Search The Site...">
 							<button id="site_search_button" type="submit" name="sa" value="" aria-label="submit site search">Go</button>
 						</form>
 						<button class="search-toggle" aria-label="site search toggle"><span class="fa fa-search"></span></button>
@@ -35,11 +35,7 @@
 			</div>
 			<div class='main-nav-container wrapper'>
 				<?php 
-					if($cms == 't4'){
-						echo(p_main_nav_t4()); 
-					}else{
-						echo(p_main_nav()); 
-					}
+					echo(p_main_nav($cms)); 
 				?>
 			</div>
 		</div>

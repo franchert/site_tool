@@ -39,9 +39,6 @@ $(document).ready(function(){
 			temp = 0;
 		});
 	});
-	$('.alert .toggle').on('click',function(e){
-		$(this).toggleClass('closed');
-	});
 	$('.view-more').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
 			e.preventDefault();

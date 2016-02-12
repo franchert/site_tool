@@ -7,6 +7,7 @@
 
 @import "breakpoint";
 @import "compass/reset";
+@import "compass/css3/transform";
 @import "variables/**/*";
 @import "base/**/*";
 @import "../headers/**/*";
@@ -89,7 +90,7 @@ body{
 	bottom:20px;
 	background:$color-1;
 	border: 3px solid $color-2;
-	@include arrowdown($color-2,30px);
+	@include arrowdown($color-2,30);
 	position:fixed;
 	height:60px;
 	width:60px;
@@ -229,7 +230,7 @@ section{
 		overflow:hidden;
 		.view-more{
 			@include font('lobster',16,$color-1);
-			@include arrowafter($color-1,12px,"\f067");
+			@include arrow('after',$color-1,12,"\f067");
 			position:absolute;
 			background:$white;
 			&:after{
@@ -239,7 +240,7 @@ section{
 	}
 	.view-more{
 		@include font('lobster',16,$color-1);
-		@include arrowafter($color-1,12px,"\f068");
+		@include arrow('after',$color-1,12,"\f068");
 		display:block;
 		bottom:-4px;
 		width:100%;

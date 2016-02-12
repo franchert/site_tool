@@ -21,23 +21,23 @@
 					p_promo('promo','comp','social','Follow Us',
 						p_list(
 							array(
-								'<a href="#"><span class="fa fa-facebook"></span>Facebook</a>',
-								'<a href="#"><span class="fa fa-instagram"></span>Instagram</a>',
-								'<a href="#"><span class="fa fa-youtube"></span>Youtube</a>',
-								'<a href="#"><span class="fa fa-twitter"></span>Twitter</a>',
-								'<a href="#"><span class="fa fa-flickr"></span>Flickr</a>',
-								'<a href="#"><span class="fa fa-apple"></span>Apple</a>'
+								p_link("#",'<span class="fa fa-facebook"></span>Facebook'),
+								p_link("#",'<span class="fa fa-instagram"></span>Instagram'),
+								p_link("#",'<span class="fa fa-youtube"></span>Youtube'),
+								p_link("#",'<span class="fa fa-twitter"></span>Twitter'),
+								p_link("#",'<span class="fa fa-flickr"></span>Flickr'),
+								p_link("#",'<span class="fa fa-apple"></span>Apple')
 							)
 						),''
 					),
 					p_promo('promo','comp','links-resources','Links &amp; Resources',
 						p_list(
 							array(
-								'<a href="#">Emergency Procedures</a>',
-								'<a href="#">Employment</a>',
-								'<a href="#">Network &amp; Systems Status</a>',
-								'<a href="#">Online Privacy Statement</a>',
-								'<a href="#">Top Searches/Most-Visited Pages</a>'
+								p_link("#",'Emergency Procedures'),
+								p_link("#",'Employment'),
+								p_link("#",'Network &amp; Systems Status'),
+								p_link("#",'Online Privacy Statement'),
+								p_link("#",'Top Searches/Most-Visited Pages')
 							)
 						),''
 					),

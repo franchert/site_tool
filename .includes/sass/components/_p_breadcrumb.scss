@@ -1,0 +1,41 @@
+/* _p_breadcrumb.scss */
+$text-color:$black;
+$border-color:$gray;
+
+#breadcrumb{
+	ul{
+		padding:10px 0px;
+		li{
+			width:auto;
+			padding-right:10px;
+			font-size:14px;
+			line-height:18px;
+			&:before{
+				content:"\f105";
+				font-family:FontAwesome;
+				position:relative;
+				font-size:12px;
+				top:0px;
+				padding-right:10px;
+				color:$text-color;
+			}
+			a{
+				color:$text-color;
+				border-bottom:1px dotted $border-color;
+				font-size:14px;
+				line-height:18px;
+				float:none;
+				display:initial;
+				&:hover{
+					text-decoration:none;
+					border-bottom: 1px solid $border-color;
+				}
+			}
+			&:first-child{
+				&:before{
+					content:none;
+				}
+			}
+		}
+	}
+}

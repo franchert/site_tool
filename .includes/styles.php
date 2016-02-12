@@ -14,10 +14,10 @@
 	<link rel="stylesheet" type="text/css" href="/.includes/stylesheets/<?php echo $page_slug ?>.css"/>
 <?php } ?>
 <?php if(isset($owl) && $owl == true){	?>
-	<link rel="stylesheet" type="text/css" href="/.includes/libraries/owl.carousel.css"/>
+	<link rel="stylesheet" type="text/css" href="/.includes/libraries/css/owl.carousel.css"/>
 <?php } ?>
 <?php if(isset($colorbox) && $colorbox == true){	?>
-	<link rel="stylesheet" type="text/css" href="/.includes/stylesheets/colorbox.css"/>
+	<link rel="stylesheet" type="text/css" href="/.includes/libraries/css/colorbox.css"/>
 <?php } ?>
 	<link rel="stylesheet" media="print" type="text/css" href="/.includes/stylesheets/print.css"/>
 	<!--[if IE]>

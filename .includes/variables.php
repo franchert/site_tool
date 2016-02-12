@@ -27,8 +27,8 @@ $google_CSE_cx = '007701188165887638683:9z5n0yvnab4';
  *	and scss file compiled into the screen.css file. Each of these files needs
  *	to match the directory and the variable set below.
  */
-	$header = 'sticky-h';
-	//$header = 'sticky-aacc';
+	//$header = 'sticky-h';
+	$header = 'fold-out';
 	//$header = 'nav-plus';
 /*end header*/
 
@@ -62,20 +62,18 @@ $google_CSE_cx = '007701188165887638683:9z5n0yvnab4';
 /*end $cms*/
 
 /*when the alert is on, the information will be pulled from this array*/
-	if($alert_on){
-		$alert=array(
-			'type' => array(
-				'0' => "emgergency",
-				'1' => "Campus Wide Alert"
-			),
-			'message' =>array(
-				'0' =>"Evacuation Procedures in Place",
-				'1' =>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-			),
-			'contact' => array(
-				'0' => "Police - 911",
-				'1' => "Campus Police - 555.555.5555"
-			),
-		);
-	}
+	$alert=array(
+		'type' => array(
+			'0' => "emergency",
+			'1' => "Campus Wide Alert"
+		),
+		'message' =>array(
+			'0' =>"Evacuation Procedures in Place",
+			'1' =>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+		),
+		'contact' => array(
+			'0' => "Police - 911",
+			'1' => "Campus Police - 555.555.5555"
+		),
+	);
 ?>

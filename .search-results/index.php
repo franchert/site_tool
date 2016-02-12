@@ -10,7 +10,7 @@ $instafeed = false;
 include_once("../.includes/director.php");
 /*define promos here*/
 
-$p_one .= breadcrumb();
+$p_one .= p_breadcrumb();
 $page_h1 = $page_title;
 $p_one .="<div class='wrapper'><div class='column'><h1>".$page_h1."</h1></div></div>";
 

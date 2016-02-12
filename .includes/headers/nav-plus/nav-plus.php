@@ -28,5 +28,5 @@
 	) ?>
 </nav>
 <div class='main-nav-container wrapper'>
-	<?php echo(p_main_nav()); ?>
+	<?php echo(p_main_nav($cms)); ?>
 </div>

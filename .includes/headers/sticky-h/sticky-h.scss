@@ -93,7 +93,7 @@ body.sticky-h{
 							#as_q{
 								height:30px;
 								@include calc('width','100% - 50px','90%');
-								@include font('f-bkcd',16px,$c-default);
+								@include font('Lora',16,$c-default);
 								font-style:italic;
 								border:none;
 								padding-left:5px;
@@ -107,7 +107,7 @@ body.sticky-h{
 							}
 							#site_search_button{
 								@include calc('width','50px','10%');
-								@include font('bebas',20px,$color-1);
+								@include font('Lora',20,$color-1);
 								font-size:20px;
 								color:$color-2;
 								height:30px;

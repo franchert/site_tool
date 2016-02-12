@@ -14,14 +14,17 @@ It also pulls in a 'director' file, which represents the dynamic and back-end co
 
 - Figure out a way to not need numbering on directories for ordering purposes within subnav/main nav
 - Print Stylesheets
+- Accessibility testing and updates
 
 ---
 
 ##Specifics:
-- Functions are called within each index. Each function builds upon a string representing a specific region within the specified layout. 
+- Functions are called within each index file to add components. Each function builds upon a string representing a specific region within the specified layout.
 - Main navigation is built from the numbered directories on the root. (skips directories beginning with a . or a 0)
 - Dynamic navigation (main/mini/subnav) skips all "dot" directories.
 - .sitemap directory creates a full nested sitemap.
+- .util section automates directory generation and publishing to static as well as checking server variables and usage of components.
+
 
 ###/settings.php
 - Generic pages start with the settings.php file on the root. This file gives info on the base paths needed to access needed files.

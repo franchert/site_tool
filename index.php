@@ -4,11 +4,11 @@ include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 $styles = false;
 $scripts = true;
 $layout = 'one-column';
-$feed_search = true;
-$instafeed = true;
+$feed_search = false;
+$instafeed = false;
 /*promo director initializes region variables and includes all the functions to create elements*/
 include_once($docroot."/.includes/director.php");
-
+/*define content here*/
 $p_one .="<div class='wrapper'><div class='column'>";
 $p_one .="<h2>Welcome to <span style='font-family:&#39;Comic Sans MS&#39;, cursive;color:blue;text-shadow:2px 2px 0px rgba(255,0,0,1),4px 4px 0px rgba(0,255,0,1);width:auto;float:none;display:inline-block;'>Build-O-Tron</span></h2>";
 $p_one .="<p>Build-O-Tron has been developed to use as a framework for developing front-end websites specific to VisionPoint Marketing design components. It uses specific components based on typical higher education use cases to put together a prototype front-end for provided designs.</p>";
@@ -51,6 +51,6 @@ $p_one .="<h3>Publishing</h3>";
 $p_one .="<p>Once everything is filled out, going to /.util/.publish will take the dynamic PHP you've created and print out some static HTML in a client-specific directory as well as an includes directory with css/js and any libraries/fonts required. I hope to eventually change all the URLs in this static version to exclude the number positioning.</p>";
 $p_one .="<p>We're currently updating guidelines for VisionPoint Front-End development, but the draft can be found <a href='http://visionpointmarketing.github.io'>here</a></p>";
 $p_one .="</div></div>";
-
+/*end define content*/
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

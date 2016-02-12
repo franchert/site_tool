@@ -1,9 +1,9 @@
 <?php 
 /*
-*	Displays 
+*	Displays server variables
 *
 */
-$indicesServer = array('PHP_SELF', 
+/*$indicesServer = array('PHP_SELF', 
 'argv', 
 'argc', 
 'GATEWAY_INTERFACE', 
@@ -42,18 +42,18 @@ $indicesServer = array('PHP_SELF',
 'PHP_AUTH_PW', 
 'AUTH_TYPE', 
 'PATH_INFO', 
-'ORIG_PATH_INFO') ; 
+'ORIG_PATH_INFO');
 
 echo "</br>Return to the <a href='/.util'>Utility page</a>";
-echo '<div class="toggle"><table cellpadding="10" style="max-width:600px;margin:30px;">' ; 
-foreach ($indicesServer as $arg) { 
-    if (isset($_SERVER[$arg])) { 
-        echo '<tr style="display:table-row;float:none;width:auto;border-top:1px solid black;border-left:1px solid black;"><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">'.$arg.'</td><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">' . $_SERVER[$arg] . '</td></tr>' ; 
-    } 
-    else { 
-        echo '<tr style="display:table-row;float:none;width:auto;border-top:1px solid black;border-left:1px solid black;"><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">'.$arg.'</td><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">-</td></tr>' ; 
-    } 
-} 
-echo '</table></div>' ; 
-
+echo '<div class="toggle"><table cellpadding="10" style="max-width:600px;margin:30px;">' ;
+foreach ($indicesServer as $arg) {
+	if (isset($_SERVER[$arg])) {
+		echo '<tr style="display:table-row;float:none;width:auto;border-top:1px solid black;border-left:1px solid black;"><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">'.$arg.'</td><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">' . $_SERVER[$arg] . '</td></tr>' ;
+	}
+	else {
+		echo '<tr style="display:table-row;float:none;width:auto;border-top:1px solid black;border-left:1px solid black;"><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">'.$arg.'</td><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">-</td></tr>' ;
+	}
+}
+echo '</table></div>' ;*/
+echo phpinfo();
 /* <?php include_once('/test.php'); ?> */

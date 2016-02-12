@@ -1,0 +1,124 @@
+/* _p_table.scss */
+.responsive-table-wrapper{
+	overflow:auto;
+	@include breakpoint($tab){
+		border:1px solid $color-1;
+	}
+	table{
+		width:100%;
+		box-shadow: 0px 0px 1px $t-black;
+		@include breakpoint($tab){
+			display:table;
+			float:none;
+			table-layout:fixed;
+		}
+		thead{
+			display:none;
+			@include breakpoint($tab){
+				display:table-header-group;
+				float:none;
+				width:auto;
+			}
+			tr{
+				background:$white;
+				border-bottom:1px solid #eee;
+				@include breakpoint($tab){
+					display:table-row;
+					float:none;
+					width:auto;
+					border:0;
+					border-bottom:1px solid #eee;
+					margin:0;
+					&:last-child{
+						border-bottom:none;
+					}
+				}
+				td{
+					display:block;
+					float:left;
+					width:100%;
+					@include font('lora',18,$white);
+					border-right:1px solid $gray;
+					background:$color-1;
+					padding:10px 30px;
+					text-align:left;
+					@include breakpoint($tab){
+						padding:10px 30px;
+						border-right:1px solid $gray;
+						display:table-cell;
+						float:none;
+						&:before{
+							content:'';
+						}
+					}
+					&:last-child{
+						@include breakpoint($tab){
+							border-right:none;
+						}
+					}
+				}
+			}
+		}
+		tbody{
+			@include breakpoint($tab){
+				display:table-row-group;
+				float:none;
+				width:auto;
+			}
+			tr{
+				background:$white;
+				border:1px solid $gray;
+				margin-bottom:10px;
+				@include breakpoint($tab){
+					display:table-row;
+					float:none;
+					width:auto;
+					border:0;
+					border-bottom:1px solid #eee;
+					margin:0;
+					&:last-child{
+						border-bottom:none;
+					}
+				}
+				td{
+					@include font('lora',18,$c-default);
+					text-align:left;
+					padding:10px 20px;
+					@include breakpoint($tab){
+						padding:10px 30px;
+						border-right:1px solid $gray;
+						display:table-cell;
+						float:none;
+						&:before{
+							content:'';
+						}
+					}
+					&:before{
+						content:attr(data-label);
+						display:block;
+						float:left;
+						width:100px;
+						@include font('lora',16,$c-default);
+						text-align:left;
+						font-weight:bold;
+						@include breakpoint($tab){
+							width:150px;
+							display:none;
+						}
+					}
+					&:last-child{
+						@include breakpoint($tab){
+							border-right:none;
+						}
+					}
+					*{
+						width:auto;
+					}
+				}
+				&.even{
+					background:#eee;
+				}
+			}
+		}
+	}
+}

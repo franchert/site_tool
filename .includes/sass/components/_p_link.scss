@@ -1,0 +1,43 @@
+/* _p_link.scss */
+$dark_background:$color-1;
+$light_background:$color-2;
+$font_fam:'lobster';
+
+a{
+	&.button{
+		@include font($font_fam,16,$dark_background);
+		background:#eee;
+		padding: 15px 25px;
+		border:1px solid $gray;
+		border-radius:3px;
+		text-transform:uppercase;
+		&.dark{
+			background:$dark_background;
+			color:$light_background;
+			font-weight:bold;
+		}
+		&.light{
+			background:$light_background;
+			color:$dark_background;
+			font-weight:bold;
+		}
+	}
+	&.read-more{
+		@include font($font_fam,16,$dark_background);
+		float:right;
+		width:auto;
+		@include arrow('after',inherit,inherit,$fa-caret-right);
+		padding-right:20px;
+		z-index:2;
+		padding-bottom:10px;
+		&:after{
+			right:10px;
+		}
+		&.button{
+			color:$light_background;
+			width:auto;
+			float:left;
+			padding-right:35px;
+		}
+	}
+}

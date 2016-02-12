@@ -1,0 +1,940 @@
+/* _p_promo.scss */
+.p-promo{
+	display:table;
+	float:left;
+	width:100%;
+	margin-bottom:20px;
+	.item{
+		position:relative;
+		img{
+			min-width:100%;
+		}
+	}
+	&.linkimg{
+		a{
+			.item{
+				height:200px;
+				overflow:hidden;
+				display:table;
+				h3{
+					position:relative;
+					z-index:1;
+					text-align:center;
+					display:table-cell;
+					vertical-align:middle;
+					float:none;
+					text-shadow: 1px 1px 3px $t-black;
+					padding:20px;
+					transition: all .2s;
+					text-transform:uppercase;
+					border:none;
+					@include font('open_sans',24,$white);
+					span{
+						@include font('lora_bold',20,inherit);
+						line-height:24px;
+						&.fa{
+							color: inherit;
+							font-family: 'FontAwesome';
+							font-style:initial;
+							font-size:40px;
+						}
+					}
+				}
+				img{
+					position:absolute;
+					left:0;
+					min-height:100%;
+					min-width:100%;
+					width:auto;
+					max-width:initial!important;
+				}
+			}
+		}
+		&:hover{
+			a{
+				.item{
+					h3{
+						color:$white;
+						background:$color-3-t;
+						span{
+							color:inherit;
+						}
+					}
+				}
+			}
+		}
+		&.dark{
+			a{
+				.item{
+					h3{
+						color:$white;
+						background:$color-3-t;
+						span{
+							color:inherit;
+						}
+					}
+				}
+			}
+			&:hover{
+				a{
+					.item{
+						h3{
+							background:$color-2-t;
+							color:$color-3;
+							span{
+								color:inherit;
+							}
+						}
+					}
+				}
+			}
+		}
+		&.light{
+			a{
+				.item{
+					h3{
+						background:$color-2-t;
+						color:$color-3;
+						text-shadow:none;
+						span{
+							color:inherit;
+						}
+					}
+				}
+			}
+			&:hover{
+				a{
+					.item{
+						h3{
+							background:$color-3-t;
+							color:$white;
+							.fa {
+								color:inherit;
+							}
+							span{
+								color:inherit;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	&.overlay{
+		position:relative;
+		padding:20px 0;
+		@include breakpoint($tab){
+			padding: 0;
+		}
+		a{
+			position:relative;
+			overflow:hidden;
+		}
+		.item{
+			position:relative;
+		}
+		.tag{
+			h3{
+				@include font('lobster',30,$color-1);
+				line-height:48px;
+				position: absolute;
+				background: $color-2;
+				width: auto;
+				padding: 0px 20px;
+				text-transform: uppercase;
+				box-shadow:1px 2px 3px rgba(0,0,0,0.5);
+				border:none;
+				margin:20px 0;
+				@include breakpoint($tab){
+					font-size:36px;
+				}
+				&:after{
+					content: '';
+					position: absolute;
+					border: 0px solid $color-2;
+					border-right-color: transparent;
+					bottom: 0px;
+					right: -12px;
+					border-width: 24px;
+					border-right-width: 12px;
+					border-left-width: 0;
+				}
+			}
+		}
+		.promo-container{
+			bottom:0;
+			background:$color-1;
+			position:relative;
+			padding:20px;
+			@include breakpoint($tab-large){
+				background:$color-1-t;
+				position:absolute;
+			}
+			p{
+				@include font('lora',16,$white);
+				height:auto;
+				overflow:hidden;
+				margin:0;
+			}
+			h2{
+				@include font(''open_sans_bold'',16,$white);
+				margin:0;
+				border-bottom:0;
+			}
+			ul{
+				li{
+					.drop-container{
+						width:100%;
+						.dropdown{
+							@include font(''open_sans_bold'',16,$color-1);
+							line-height:22px;
+							width:100%;
+							text-align:left;
+							background:$color-2;
+							border:none;
+							border-radius:0;
+							text-transform:none;
+							@include arrowdown($dk-gray);
+							&:after{
+								content:"\f054";
+								right:5px;
+								@include calc('top','50% - 9px','50%');
+								font-size:18px;
+							}
+						}
+						ul{
+							width:100%;
+						}
+						&.open{
+							.dropdown{
+								&:after{
+									-webkit-transform:rotateZ(-90deg);
+									-ms-transform:rotateZ(-90deg);
+									transform:rotateZ(-90deg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.spotlight{
+			padding:20px;
+			@include breakpoint($tab){
+				padding:0 20px;
+			}
+			.promo-container{
+				h2{
+					font-size:30px;
+					line-height:34px;
+				}
+			}
+		}
+		&.hover{
+			.promo-container{
+				p{
+					height:0;
+					transition:all 0.2s ease-in-out;
+				}
+			}
+			&:hover{
+				.promo-container{
+					p{
+						height:66px;
+						overflow:hidden;
+					}
+				}
+			}
+		}
+	}
+	&.overlayv2{
+		position:relative;
+		padding:20px 0;
+		@include breakpoint($tab){
+			padding: 0;
+		}
+		a{
+			position:relative;
+			overflow:hidden;
+		}
+		.item{
+			position:relative;
+		}
+		.tag{
+			h3{
+				@include font('lobster',30,$color-1);
+				line-height:48px;
+				position: absolute;
+				background: $color-2;
+				width: auto;
+				padding: 0px 20px;
+				text-transform: uppercase;
+				box-shadow:1px 2px 3px rgba(0,0,0,0.5);
+				border:none;
+				margin:20px 0;
+				@include breakpoint($tab){
+					font-size:36px;
+				}
+				&:after{
+					content: '';
+					position: absolute;
+					border: 0px solid $color-2;
+					border-right-color: transparent;
+					bottom: 0px;
+					right: -12px;
+					border-width: 24px;
+					border-right-width: 12px;
+					border-left-width: 0;
+				}
+			}
+		}
+		.promo-container{
+			bottom:0;
+			background:$color-1;
+			position:relative;
+			@include breakpoint($tab-large){
+				background:$color-1-t;
+				position:absolute;
+				bottom:50px;
+				left:50px;
+				@include calc('width','100% - 100px','100%');
+			}
+			@include breakpoint($desk){
+				@include calc('width','75% - 100px','60%');
+			}
+			p{
+				@include font('lora',16,$white);
+				padding:0 20px 20px 20px;
+				height:auto;
+				overflow:hidden;
+				margin:0;
+			}
+			h2{
+				@include font(''open_sans_bold'',16,$white);
+				padding:20px 20px 0 20px;
+				margin:0;
+				border-bottom:0;
+			}
+			ul{
+				li{
+					.drop-container{
+						width:100%;
+						.dropdown{
+							@include font(''open_sans_bold'',22,$color-1);
+							line-height:22px;
+							width:100%;
+							text-align:left;
+							background:$color-2;
+							border:none;
+							border-radius:0;
+							text-transform:none;
+							@include arrowdown($dk-gray);
+							&:after{
+								content:"\f054";
+								right:5px;
+								@include calc('top','50% - 9px','50%');
+								font-size:18px;
+							}
+						}
+						ul{
+							width:100%;
+						}
+						&.open{
+							.dropdown{
+								&:after{
+									-webkit-transform:rotateZ(-90deg);
+									-ms-transform:rotateZ(-90deg);
+									transform:rotateZ(-90deg);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.spotlight{
+			padding:20px;
+			@include breakpoint($tab){
+				padding:0 20px;
+			}
+			.promo-container{
+				h2{
+					font-size:30px;
+					line-height:34px;
+				}
+			}
+		}
+	}
+	&.hovertext{
+		position:relative;
+		overflow:hidden;
+		.item{
+			border:1px solid $white;
+		}
+		a{
+			background:$t-black;
+			position:absolute;
+			@include breakpoint($tab){
+				background:none;
+				@include v-gradient();
+			}
+			@include floatblock();
+			padding:0;
+			height:100%;
+			transition:all 0.2s;
+			&:hover{
+				background:$t-black;
+				h2{
+					bottom:initial;
+					top:20%;
+					color:$white;
+					@include breakpoint($tab){
+						top:10%;
+					}
+					@include breakpoint($tab-large){
+						top:20%;
+					}
+				}
+				p{
+					bottom:10%;
+					&:after{
+						content:'';
+					}
+				}
+				@include arrowdown($white,16);
+				position:absolute;
+				&:after{
+					font-size:28px;
+					@include calc('left','50% - 14px','50%');
+					top:90%;
+				}
+			}
+			h2{
+				bottom:initial;
+				@include floatblock();
+				position:absolute;
+				text-align:center;
+				padding:0 20px;
+				text-shadow:1px 1px 3px $t-black;
+				border:none;
+				text-transform:initial;
+				transition:all 0.2s;
+				top:20%;
+				@include breakpoint($tab,true){
+					bottom:20%;
+					font-size:20px;
+					line-height:26px;
+					top:initial;
+				}
+				@include breakpoint($desk,true){
+					font-size:28px;
+					line-height:32px;
+				}
+			}
+			p{
+				position:absolute;
+				bottom:10%;
+				width:100%;
+				background:none;
+				text-transform:initial;
+				text-shadow:1px 1px 3px $t-black;
+				padding:0 20px;
+				transition:all 0.2s;
+				text-align:center;
+				&:after{
+					content:'';
+				}
+				@include breakpoint($tab){
+					bottom:-100%;
+					font-size:14px;
+					line-height:18px;
+				}
+				@include breakpoint($tab-large){
+					font-size:16px;
+				}
+			}
+		}
+	}
+	&.link.item{
+		h4{
+			border-bottom:1px solid $color-2;
+			padding-bottom:5px;
+			margin-bottom:20px;
+		}
+		a{
+			.item{
+				width:100%;
+			}
+		}
+	}
+	&.generic{
+		padding-bottom:20px;
+		border-bottom:2px solid $dk-gray;
+		> .item{}
+		> .promo-container{
+			background:$white;
+			width:auto;
+			h2{
+				@include font('lobster',18,$color-1);
+				border-bottom:0;
+				margin-top:10px;
+			}
+			p{
+				font-size:16px;
+				line-height:22px;
+				overflow:hidden;
+			}
+		}
+		&.right{
+			> .item{
+				@include breakpoint($tab){
+					width:30%;
+					padding-left:20px;
+				}
+				float:right;
+			}
+			> .promo-container{
+				@include breakpoint($tab){
+					width:70%;
+					h2{
+						margin-top:0;
+					}
+				}
+			}
+		}
+		&.left{
+			> .item{
+				@include breakpoint($tab){
+					width:30%;
+					padding-right:20px;
+				}
+				float:left;
+			}
+			> .promo-container{
+				@include breakpoint($tab){
+					width:70%;
+					h2{
+						margin-top:0;
+					}
+				}
+			}
+		}
+		&.hover{
+			padding:10px;
+			border:1px solid $color-2;
+			margin-top:0;
+			.item{
+				display:block;
+				margin:auto;
+				float:none;
+			}
+			.promo-container{
+				background:$white;
+				h2{
+					@include font('open_sans',18,$color-1);
+					text-transform:none;
+					margin:10px 0 0;
+					border-bottom:0;
+				}
+				p{
+					font-size:16px;
+					line-height:22px;
+					overflow:hidden;
+				}
+			}
+			&:hover{
+				transition:all 0.1s ease-in-out;
+				border-top:5px solid $color-2;
+				margin-bottom:16px;
+			}
+		}
+	}
+	&.promo{
+		h4{
+			@include font('lobster',20,$color-1);
+			margin:0;
+			text-transform:initial;
+		}
+		hr{
+			border:none;
+			border-bottom:1px solid $color-2;
+			position:relative;
+		}
+		.promo-container{
+			.intro{
+				@include font('lora',16,$c-default);
+				a{
+					@include font('lora',18,$color-1);
+				}
+			}
+			> a{
+				@include font('lobster',16,$color-1);
+				width:auto;
+				@include arrow('after',$color-1,14,"\f0da");
+				text-transform:uppercase;
+				margin:10px 0;
+			}
+		}
+		&.dark{
+			padding:10px 20px;
+			background:$color-1;
+			h4{
+				color:$white;
+				font-weight:normal;
+			}
+			.promo-container{
+				.intro{
+					color:$white;
+				}
+				> a{
+					color:$color-2;
+					&:after{
+						color:$color-2;
+					}
+				}
+			}
+		}
+		&.light{
+			padding:10px 20px;
+			background:$gray;
+			.promo-container{
+				h4{
+					@include font('lobster',24,$color-1);
+					color:$color-1;
+					font-weight:normal;
+				}
+				.intro{
+					color:$c-default;
+				}
+				> a{
+					color:$color-1;
+					&:after{
+						color:$color-1;
+					}
+				}
+			}
+		}
+		&.wrap{
+			.item{
+				float:left;
+				padding-right:10px;
+			}
+			.promo-container{
+				.intro{
+					display:inline;
+					float:none;
+				}
+			}
+		}
+	}
+	&.button{
+		max-width:100%;
+		margin:0 0 20px;
+		transition:all .2s;
+		a{
+			position:relative;
+			.item{
+				width:100%;
+			}
+			.promo-container{
+				display:table;
+				float:left;
+				width:100%;
+				position:relative;
+				background:$t-white;
+				padding:5vw;
+				@include breakpoint($tab,true){
+					padding:15px 20px;
+				}
+				span{
+					font-size:30px;
+					display:table-cell;
+					float:none;
+					width:auto;
+					vertical-align:middle;
+					padding-right:5px;
+					width:20px;
+					@include breakpoint($tab,true){
+						font-size:16px;
+					}
+				}
+				p{
+					@include font('lobster',24,$c-default);
+					width:auto;
+					margin:0;
+					padding-left:10px;
+					@include breakpoint($tab,true){
+						font-size:24px;
+						line-height:28px;
+					}
+				}
+			}
+		}
+		&.light{
+			a{
+				.promo-container{
+					background:$color-2;
+					span{
+						color:$color-1;
+					}
+					p{
+						color:$color-1;
+					}
+				}
+			}
+		}
+		&.dark{
+			a{
+				.promo-container{
+					background:$color-1;
+					span{
+						color:$white;
+					}
+					p{
+						color:$white;
+					}
+				}
+			}
+		}
+	}
+	&.more-news{
+		width:200px;
+		margin:auto;
+		float:none;
+		@include breakpoint($tab){
+			position:absolute;
+			bottom:90px;
+			left:0;
+			right:0;
+		}
+		a{
+			.promo-container{
+				p{
+					text-align:center;
+					float:none;
+				}
+			}
+		}
+	}
+}
+.l-promo-sidebar{
+	.p-promo{
+		&.overlay{
+			a{}
+			.item{}
+			.tag{
+				h3{
+					&:after{}
+				}
+			}
+			.promo-container{
+				position:relative;
+				background:$color-1;
+				p{}
+				h2{}
+				ul{
+					li{
+						.drop-container{
+							.dropdown{
+								&:after{}
+							}
+							ul{}
+							&.open{
+								.dropdown{
+									&:after{}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.spotlight{
+				.promo-container{
+					h2{}
+				}
+			}
+		}
+		&.overlayv2{
+			.promo-container{
+				width:100%;
+				position:relative;
+				left:0;
+			}
+		}
+		&.imgtitle{
+			a{
+				display:block;
+			}
+			.item{
+				display:block;
+			}
+			h2{
+				display:block;
+				width:100%;
+				padding:0;
+				text-align:center;
+			}
+		}
+		&.hovertext{
+		}
+		&.link.item{
+			h4{}
+			a{
+				.item{}
+			}
+		}
+		&.generic{
+			.promo-container{
+				h2{
+					margin-top:10px;
+				}
+			}
+			&.left,
+			&.right{
+				.item{
+					width:100%;
+					padding:0;
+				}
+				.promo-container{
+					width:100%;
+				}
+			}
+		}
+		&.promo{
+			h4{}
+			hr{}
+			.promo-container{
+				.intro{
+					a{}
+				}
+				> a{}
+			}
+		}
+		&.textlink{
+		}
+		&.button{
+			a{
+				.item{}
+				.promo-container{
+					span{}
+					p{}
+				}
+			}
+		}
+		&.more-news{
+			a{
+				.promo-container{
+					p{}
+				}
+			}
+		}
+	}
+}
+.l-content{
+	.p-promo{
+		&.overlay{
+			a{}
+			.item{}
+			.tag{
+				h3{
+					&:after{}
+				}
+			}
+			.promo-container{
+				p{}
+				h2{}
+				ul{
+					li{
+						.drop-container{
+							.dropdown{
+								&:after{}
+							}
+							ul{}
+							&.open{
+								.dropdown{
+									&:after{}
+								}
+							}
+						}
+					}
+				}
+			}
+			&.spotlight{
+				.promo-container{
+					h2{}
+				}
+			}
+		}
+		&.hovertext{
+			
+		}
+		&.link.item{
+			h4{}
+			a{
+				.item{}
+			}
+		}
+		&.generic{
+			&.left,
+			&.right{
+				.item{}
+				.promo-container{}
+			}
+			&.hover{
+				.item{
+					@include breakpoint($tab){
+						width:200px;
+						float:left;
+						min-width:initial;
+					}
+				}
+				.promo-container{
+					padding:0 20px;
+					@include breakpoint($tab){
+						@include calc("width","100% - 200px",100%);
+					}
+					h2{}
+					p{}
+				}
+			}
+		}
+		&.promo{
+			h4{}
+			hr{}
+			.item{
+				@include breakpoint($tab){
+					width:200px;
+					float:left;
+				}
+			}
+			.promo-container{
+				padding:0 20px;
+				@include breakpoint($tab){
+					@include calc("width","100% - 200px",100%);
+				}
+				.intro{
+					a{}
+				}
+				> a{}
+			}
+		}
+		&.textlink{
+		}
+		&.button{
+			a{
+				.item{}
+				.promo-container{
+					span{}
+					p{}
+				}
+			}
+		}
+		&.more-news{
+			a{
+				.promo-container{
+					p{}
+				}
+			}
+		}
+	}
+}

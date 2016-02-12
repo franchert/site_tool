@@ -49,29 +49,7 @@ if($cms !="t4"){
 ?> >
 	<a class="back-to-top" href="#top">Back to Top</a>
 	<header>
-	<?php if(isset($alert)){ ?>
-		<div class="alert <?php echo $alert['type'][0]; ?>">
-			<div class='toggle'>
-				<h3><?php echo $alert['type'][1]; ?></h3>
-				<span></span>
-			</div>
-			<div class="message">
-				<div class='<?php echo $fe_container; ?>'>
-					<div class="message">
-						<h2><?php echo $alert['message'][0]; ?></h2>
-						<p><?php echo $alert['message'][1]; ?></p>
-					</div>
-					<div class='contact'>
-						<h2>Contact</h2>
-						<ul>
-							<li><?php echo $alert['contact'][0]; ?></li>
-							<li><?php echo $alert['contact'][1]; ?></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	<?php } ?>
+		<?php echo p_alert($alert); ?>
 	<div class="l-head <?php if(isset($mini) && $mini == true){echo "mini-site";} ?>">
 		<?php if(isset($header)){
 			include_once( $docroot."/.includes/headers/".$header."/".$header.".php");

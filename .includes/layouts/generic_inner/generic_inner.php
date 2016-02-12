@@ -28,7 +28,7 @@ if($fe_framework == 'bootstrap'){
 	include_once($docroot."/.includes/head.php");
 	$page_h1 = $page_title;
 	/*prepend to regions*/
-	$p_content_header = breadcrumb() . $p_content_header;
+	$p_content_header = p_breadcrumb() . $p_content_header;
 	$subnav_dropdowns = true;
 	$p_content_header = "\n\t<div class='".$fe_wrapper."'>\n\t\t<div class='".$fe_container."'><h1>".$page_h1."</h1></div>\n\t</div>\n\t". $p_content_header;
 	if(isset($mini) && $mini == true){
