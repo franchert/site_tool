@@ -16,7 +16,8 @@ $alert_text_color:$white;
 		h3{
 			@include font('open_sans',22,$alert_toggle_color);
 			text-transform:uppercase;
-			@include floatblock(left,calc(100% - 60px));
+			@include floatblock(left);
+			@include calc('width','100% - 60px','100%');
 			border:none;
 			margin:0;
 		}
@@ -51,7 +52,7 @@ $alert_text_color:$white;
 				padding:0;
 				@include breakpoint($tab){
 					padding:0 20px;
-					width:calc(100% - 200px);
+					@include calc('width','100% - 200px','70%');
 				}
 				h2{
 					@include font('open_sans_reg',32,$alert_text_color);
@@ -63,7 +64,7 @@ $alert_text_color:$white;
 			}
 			.contact{
 				@include breakpoint($tab){
-					width:200px;
+					@include calc('width','200px','30%');
 				}
 				h2{
 					@include font('open_sans_reg',32,$alert_text_color);

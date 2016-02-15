@@ -7,7 +7,7 @@
 		> li{
 			width:auto;
 			color:$white;
-			border-right:2px solid $white;
+			margin-right:2px;
 			&:last-child{
 				border-right:none;
 			}
@@ -55,11 +55,12 @@
 				display:table-cell;
 				border:none;
 				width:auto;
+				margin-right:2px;
 			}
 			a{
 				@include font('lobster',20,$color-1);
 				line-height:18px;
-				transition:all .5s ease-in-out;
+				transition:height .5s ease-in-out,padding .5s ease-in-out;
 				height:56px;
 				display:block;
 				text-decoration:none;
@@ -70,7 +71,6 @@
 					background:none;
 					transition:none;
 					background:$color-2;
-					border-right: 2px solid $white;
 				}
 				&:hover{
 					text-decoration:underline;
@@ -140,10 +140,8 @@
 					}
 				}
 				a{
-					transition:all .5s ease-in-out;
 					height:20px;
 					padding:1px 20px;
-					//color:$color-2;
 					@include breakpoint($tab){
 						height:auto;
 						padding:20px;

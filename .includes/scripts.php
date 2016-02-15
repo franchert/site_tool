@@ -26,7 +26,7 @@
 <?php if(isset($fe_framework)){?>
 	<script type="text/javascript" src="/.includes/js/<?php echo $fe_framework ?>.js"></script>
 <?php } ?>
-	<script src="/.includes/libraries/js/jquery.hoverIntent.js"></script>
+	<script type="text/javascript" src="/.includes/libraries/js/jquery.hoverIntent.js"></script>
 <?php if(isset($waypoints) && $waypoints === true){	?>
 	<script type="text/javascript" src="/.includes/libraries/js/jquery.waypoints.min.js"></script>
 <?php } ?>
@@ -34,7 +34,7 @@
 	<script type="text/javascript" src="/.includes/libraries/js/owl.carousel.min.js"></script>
 <?php } ?>
 <?php if(isset($feed_search) && $feed_search === true){	?>
-	<script type="text/javascript" src="/.includes/libraries/js/feed_search.js"></script>
+	<script type="text/javascript" src="/.includes/js/feed_search.js"></script>
 <?php } ?>
 <?php if(isset($instafeed) && $instafeed === true){	?>
 	<script type="text/javascript" src="/.includes/libraries/js/instafeed.min.js"></script>

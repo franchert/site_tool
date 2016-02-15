@@ -24,15 +24,15 @@ $(function() {
 		$arr=array(
 			1 => array(
 				"t" => "Section 1",
-				"b" => p_paragraph(1,true),
+				"b" => p_paragraph(1,'short'),
 			),
 			2 => array(
 				"t" => "Section 2",
-				"b" => "second".p_paragraph(1,true),
+				"b" => p_paragraph(2,'short'),
 			),
 			3 => array(
 				"t" => "Section 3",
-				"b" => "third".p_paragraph(1,true),
+				"b" => p_paragraph(2,'short'),
 			)
 		);
 	};

@@ -18,6 +18,7 @@ ul.tabaccordion{
 			display:inline;
 			float:left;
 			width:auto;
+			margin-right:2px;
 		}
 		h3{
 			@include font($tabacc_font,20,$tabacc_tab_color);
@@ -25,32 +26,41 @@ ul.tabaccordion{
 			text-transform:uppercase;
 			cursor:pointer;
 			outline:none;
-			margin:0;
-			border-top:2px solid $tabacc_tab_color;
+			margin:2px 0 0 0;
 			border-bottom:0;
 			padding:10px 20px;
 			@include arrowdown(inherit,12,"\f0da");
 			&:after{
 				right:20px;
 				font-size:20px;
-				@include calc('top','50% - 12px','50%');
+				@include calc('top','50% - 4px','50%');
 			}
 			@include breakpoint($tabacc_breakpoint){
-				padding:20px;
+				padding:22px;
 				display:inline-block;
 				float:left;
 				width:100%;
 				border-top:0;
-				border-right:2px solid #fff;
 				color:$tabacc_active_tab;
 				background:$tabacc_inactive_tab;
 				&:after{
 					content:'';
 				}
 			}
+			@include breakpoint($tab-large){
+				padding:21px;
+			}
+			@include breakpoint($desk){
+				padding:19px;
+			}
+			&:focus{
+				@include focus_styles();
+			}
 		}
 		> div{
-			display:none;
+			transition:height 1s ease-in-out;
+			height:0;
+			overflow:hidden;
 			@include breakpoint($tabacc_breakpoint){
 				position:absolute;
 				top:68px;
@@ -58,6 +68,9 @@ ul.tabaccordion{
 			}
 		}
 		&.acc-active{
+			> div{
+				height:0;
+			}
 			@include breakpoint(max-width $tabacc_breakpoint){
 				h3{
 					background:$tabacc_inactive_tab;
@@ -69,11 +82,11 @@ ul.tabaccordion{
 					}
 				}
 				> div{
-					display:inline-block;
-					padding:20px;
+					height:auto;
 					width:auto;
 					border:2px solid $tabacc_inactive_tab;
 					margin-top:-2px;
+					padding:20px;
 				}
 			}
 		}
@@ -89,7 +102,7 @@ ul.tabaccordion{
 					}
 				}
 				> div{
-					display:inline-block;
+					height:auto;
 					padding:0 20px;
 					width:auto;
 					border:2px solid $tabacc_active_tab;

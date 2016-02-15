@@ -143,6 +143,7 @@ $(document).ready(function(){
 		if (isMobile()) {
 			$(this).parent().siblings().removeClass('acc-active');
 			$(this).parent().toggleClass('acc-active');
+			//$(this).siblings().animate({height: $(this).get(0).scrollHeight}, 1000 );
 		}else{
 			$(this).parent().siblings().removeClass('tab-active');
 			$(this).parent().addClass('tab-active');

@@ -17,21 +17,21 @@ function p_accordion(
 		$arr=array(
 			1 => array(
 				"t" => "Section 1",
-				"b" => p_paragraph(1,true),
+				"b" => p_paragraph(1,'short'),
 			),
 			2 => array(
 				"t" => "Section 2",
-				"b" => "second".p_paragraph(1,true),
+				"b" => p_paragraph(2,'short'),
 			),
 			3 => array(
 				"t" => "Section 3",
-				"b" => "third".p_paragraph(1,true),
+				"b" => p_paragraph(2,'short'),
 			)
 		);
 	};
 	$acc_string ='';
 	foreach($arr as $k => $v){
-		$acc_string .='<h3>'.$v["t"].'</h3><div>'.$v["b"].'</div>';
+		$acc_string .='<h3 tabindex="0">'.$v["t"].'</h3><div>'.$v["b"].'</div>';
 	}
 	$string .=$acc_string;
 	$string .='</div>';

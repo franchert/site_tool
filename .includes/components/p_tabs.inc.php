@@ -25,15 +25,15 @@ $(function() {
 		$arr=array(
 			1 => array(
 				"t" => "Nunc tincidunt",
-				"b" => p_paragraph(1,true),
+				"b" => p_paragraph(1,'short'),
 			),
 			2 => array(
 				"t" => "Proin dolor",
-				"b" => "second".p_paragraph(1,true),
+				"b" => p_paragraph(1,'short'),
 			),
 			3 => array(
 				"t" => "Aenean lacinia",
-				"b" => "third".p_paragraph(1,true),
+				"b" => p_paragraph(1,'short'),
 			)
 		);
 	};

@@ -84,6 +84,9 @@
 	@include background-image(linear-gradient(left, rgba(0,0,0,0.28) 0%,rgba(0,0,0,0.22) 5%,rgba(0,0,0,0.15) 23%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 99%));
 	background-color:$back-color
 }
+@mixin focus_styles(){
+	outline:2px solid #5B9DD9;
+}
 @mixin skew($color:$t-white,$deg:-15deg){
 	&:before{
 		content:'';

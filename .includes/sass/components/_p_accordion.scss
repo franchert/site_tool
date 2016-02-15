@@ -15,7 +15,6 @@ $acc_tab_color:$white;
 		@include font($acc_font,20,$acc_tab_color);
 		text-transform:uppercase;
 		background:$acc_active_tab;
-		border-bottom:2px solid $acc_tab_color;
 		cursor:pointer;
 		outline:none;
 		margin:0;
@@ -32,7 +31,10 @@ $acc_tab_color:$white;
 		&:after{
 			right:20px;
 			font-size:20px;
-			top:calc(50% - 12px);
+			@include calc('top','50% - 5px','50%');
+		}
+		&:focus{
+			@include focus_styles();
 		}
 	}
 	> div{

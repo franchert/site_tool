@@ -213,6 +213,9 @@ a{
 			text-shadow: 1px 1px 0px $t-black-light;
 		}
 	}
+	&:focus{
+		@include focus_styles();
+	}
 }
 section{
 	margin:20px 0;

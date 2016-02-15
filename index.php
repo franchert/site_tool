@@ -4,8 +4,7 @@ include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 $styles = false;
 $scripts = true;
 $layout = 'one-column';
-$feed_search = false;
-$instafeed = false;
+$owl = true;
 /*promo director initializes region variables and includes all the functions to create elements*/
 include_once($docroot."/.includes/director.php");
 /*define content here*/
