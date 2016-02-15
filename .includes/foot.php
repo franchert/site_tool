@@ -1,3 +1,4 @@
+	<a class="back-to-top" href="#top">Back to Top</a>
 </div> <!-- end l-page div -->
 <footer>
 	<script>

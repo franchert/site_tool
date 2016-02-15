@@ -17,6 +17,7 @@ include_once($docroot."/.includes/director.php");
 	$base_dir  = $base_site;
 	$directories = array();
 	$directories[] = '/';
+	/*build the list of directories we'll need to publish*/
 	foreach(scandir($base_dir) as $file) {
 		if(substr($file,0,1) == '.' 
 			|| substr($file,0,1) == '0' 
@@ -32,39 +33,49 @@ include_once($docroot."/.includes/director.php");
 			}
 		}
 	}
+	/*if there's already a published version, we don't want to overwrite*/
 if(is_dir($docroot."/".$client_slug)){
 	echo("site already published, delete the ".$client_slug." directory to republish");
 }else{
 	mkdir($docroot."/".$client_slug);
 	$global = "http://".$_SERVER['SERVER_NAME'];
 	print_r("The following static files have been published.</br>");
+	/*loop through all of the directories to recreate the structure in the new location*/
 	foreach ($directories as $k=>$v){
+		/*get the URL to pull the DOM from*/
 		$file = $global.$v."/index.php";
 		$ch = curl_init($file);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		$curl_html = curl_exec($ch);
+		/*pull in the contents*/
 		$html = str_get_html($curl_html);
+		/*since we're moving the site, need to replace the references to the dynamic version*/
 		$html = str_replace(".includes","includes",$html);
 		$html = str_replace('href="/','href="/'.$client_slug.'/',$html);
 		$html = str_replace("href='/","href='/".$client_slug.'/',$html);
 		$html = str_replace('src="/','src="/'.$client_slug.'/',$html);
 		$html = str_replace("src='/","src='/".$client_slug.'/',$html);
 		$html = str_replace("includes/headers/".$header,"includes/js",$html);
-	$results = scandir($docroot.'/.includes/layouts');
-	foreach ($results as $result){
-		if ($result === '.' or $result === '..') continue;
-		if(is_dir($docroot."/.includes/layouts/".$result)){
-			$html = str_replace("includes/layouts/".$result,"includes/js",$html);
+		/*replace references to each of the layouts as well*/
+		$results = scandir($docroot.'/.includes/layouts');
+		foreach ($results as $result){
+			if ($result === '.' or $result === '..') continue;
+			if(is_dir($docroot."/.includes/layouts/".$result)){
+				$html = str_replace("includes/layouts/".$result,"includes/js",$html);
+			}
 		}
-	}
+		/*make the directory in the new location*/
 		if(!is_dir($docroot."/".$client_slug.$v)){
 			mkdir($docroot."/".$client_slug.$v,0777,true);
 		}
+		/*create the URL for the index file in the new location*/
 		$newfile = $docroot."/".$client_slug.$v."/index.html";
-		print_r("/".$client_slug.$v."/index.html</br>");
+	print_r("/".$client_slug.$v."/index.html</br>");
+		/*create the new file*/
 		if(!file_exists($newfile)){touch($newfile);}
 		file_put_contents($newfile,$html);
 	}
+	/*add in everything we need from the includes folder*/
 	if(!is_dir($docroot."/".$client_slug."/includes")){
 		mkdir($docroot."/".$client_slug."/includes");
 	}
@@ -73,7 +84,7 @@ if(is_dir($docroot."/".$client_slug)){
 	recurse_copy($docroot."/.includes/js",$docroot."/".$client_slug."/includes/js");
 	recurse_copy($docroot."/.includes/libraries",$docroot."/".$client_slug."/includes/libraries");
 	recurse_copy($docroot."/.includes/stylesheets",$docroot."/".$client_slug."/includes/stylesheets");
-	/*layout js*/
+	/*add in the layout js (note the scss isn't needed as it isn't being delivered)*/
 	$results = scandir($docroot.'/.includes/layouts');
 	foreach ($results as $result){
 		if ($result === '.' or $result === '..') continue;
@@ -88,7 +99,7 @@ if(is_dir($docroot."/".$client_slug)){
 			}
 		}
 	}
-	/*headers js*/
+	/*add in the headers js*/
 	$files = scandir($docroot.'/.includes/headers/'.$header);
 	foreach($files as $file){
 		$parts = pathinfo($file);
@@ -98,6 +109,7 @@ if(is_dir($docroot."/".$client_slug)){
 		}
 	}
 }
+/*now we'll archive the folder*/
 // Get real path for our folder
 $rootPath = realpath($docroot."/".$client_slug);
 
@@ -128,7 +140,7 @@ foreach ($files as $name => $file)
 
 // Zip archive will be created only after closing object
 $zip->close();
-// remove the temporary directory now that we have the zip file
+// remove the temporary directory now that we have the zip file (NOT SAFE, MAY DELETE ROOT)
 /*
 if(is_dir($docroot."/".$client_slug)){
 	rrmdir($docroot."/".$client_slug);
@@ -151,6 +163,10 @@ function recurse_copy($src,$dst) {
 	}
 	closedir($dir); 
 }
+/*recursively remove directory
+ *	this isn't safe. Don't use it.
+ */
+/*
 function rrmdir($dir) {
 	if (is_dir($dir)) {
 		$objects = scandir($dir);
@@ -163,4 +179,5 @@ function rrmdir($dir) {
 		rmdir($dir);
 	}
 }
+*/
 ?>

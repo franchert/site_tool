@@ -1,3 +1,5 @@
+		<div class="mobi-toggle-wrapper"><div tabindex='0' class="toggle"><div class="toggle-element"></div></div></div>
+
 		<div class="mobi-toggle-container">
 			<div class="utility">
 				<div class="<?php echo $fe_container ?>">
@@ -44,4 +46,3 @@
 				</div>
 			</div>
 		</div>
-		<div class="mobi-toggle-wrapper"><div class="toggle"><div class="toggle-element"></div></div></div>

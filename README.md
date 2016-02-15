@@ -15,10 +15,13 @@ It also pulls in a 'director' file, which represents the dynamic and back-end co
 - Figure out a way to not need numbering on directories for ordering purposes within subnav/main nav
 - Print Stylesheets
 - Accessibility testing and updates
+- Modernizr styling for extra browser support
 
 ---
 
 ##Specifics:
+- Each directory should contain at a minimum an index.php file in order to display that pages contents. See .util/.generate/index.default.php for an example. Creating new directories should be done via .util/.generate for efficiency and accuracy.
+- The first character of each directory is used for identification and relative placement, and is chopped off before being displayed on the front-end (everywhere except the actual URL). Directories beginning with a . are ignored when scanning through all directories, and directories beginning with a 0 are excluded from main navigation on the root.
 - Functions are called within each index file to add components. Each function builds upon a string representing a specific region within the specified layout.
 - Main navigation is built from the numbered directories on the root. (skips directories beginning with a . or a 0)
 - Dynamic navigation (main/mini/subnav) skips all "dot" directories.

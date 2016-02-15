@@ -9,20 +9,12 @@ $layout = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
-
-$p_content .= p_promo("promo","image","","Promo");
-$p_content .= p_promo("promo","image","light","Promo Light");
-$p_content .= p_promo("promo","image","dark","Promo Dark");
 $p_content .= p_promo("hovertext","image","","TextLink");
 $p_content .= p_promo("button","image","","Button");
 $p_content .= p_promo("button","image","light","Button Light");
 $p_content .= p_promo("button","image","dark","Button Dark");
 $p_content .= p_promo("something_else","image","","Not Found");
 
-
-$p_promo_sidebar .= p_promo("promo","image","","Promo");
-$p_promo_sidebar .= p_promo("promo","image","light","Promo Light");
-$p_promo_sidebar .= p_promo("promo","image","dark","Promo Dark");
 $p_promo_sidebar .= p_promo("hovertext","image","","TextLink");
 $p_promo_sidebar .= p_promo("button","image","","Button");
 $p_promo_sidebar .= p_promo("button","image","light","Button Light");

@@ -12,6 +12,7 @@
 		text-transform:uppercase;
 		padding:0 20px;
 		margin-bottom:1px;
+		@include focus_styles();
 		@include breakpoint($desk){
 			display:none;
 		}
@@ -219,6 +220,7 @@
 					text-align:center;
 					padding:0;
 					border:none;
+					@include focus_styles();
 					@include breakpoint($tab){
 						height:54px;
 					}
@@ -235,6 +237,7 @@
 						-ms-transform:rotate(90deg);
 						transform:rotateZ(90deg);
 						transition:transform 0.3s;
+						@include focus_styles();
 						@include breakpoint($tab){
 							line-height:54px;
 						}

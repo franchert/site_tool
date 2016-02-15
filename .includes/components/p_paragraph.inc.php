@@ -14,9 +14,14 @@ function p_paragraph(
 	$string = '';
 	$len_types = array('short','medium','long','verylong');
 	if(is_null($len) || !in_array($len,$len_types)){
-		$len = 'medium';
+		$len = 'short';
 	}
-	$content = file_get_contents('http://loripsum.net/api/'.$count.'/'.$len);
+	if($tags==false){
+		$plain = 'plaintext';
+	}else{
+		$plain = '';
+	}
+	$content = file_get_contents('http://loripsum.net/api/'.$count.'/'.$len.'/'.$plain);
 	if($content === FALSE){
 		for($i = 1; $i <= $count; $i++){
 			if($tags){

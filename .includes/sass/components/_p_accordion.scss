@@ -33,9 +33,7 @@ $acc_tab_color:$white;
 			font-size:20px;
 			@include calc('top','50% - 5px','50%');
 		}
-		&:focus{
-			@include focus_styles();
-		}
+		@include focus_styles();
 	}
 	> div{
 		display:none;

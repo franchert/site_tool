@@ -53,10 +53,8 @@ if($fe_framework == 'bootstrap'){
 	}
 ?>
 </header>
-<div class="<?php echo $fe_region.$fe_l_page; ?><?php if(isset($demo) && $demo == true){ echo " demo"; }?>">
-	<?php if($p_featured_header != ''){
-		echo '<div class="'.$fe_l_featured_header.$fe_region.'">'.$p_featured_header.'</div>';
-	} ?>
+<div class="<?php echo $fe_region.$fe_l_page; ?><?php if(isset($demo) && $demo == true){ echo " demo"; }?>" id="main-content">
+	<?php echo '<div class="'.$fe_l_featured_header.$fe_region.'">'.$p_featured_header.'</div>';?>
 	<?php if($p_content_header != ''){
 		echo '<div class="'.$fe_l_content_header.$fe_region.'">'.$p_content_header.'</div>';
 	} ?>

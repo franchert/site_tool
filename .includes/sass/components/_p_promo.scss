@@ -524,14 +524,11 @@
 			border:1px solid $color-2;
 			margin-top:0;
 			.item{
-				display:block;
 				margin:auto;
-				float:none;
 			}
 			.promo-container{
 				background:$white;
 				h2{
-					@include font('open_sans',18,$color-1);
 					text-transform:none;
 					margin:10px 0 0;
 					border-bottom:0;
@@ -642,10 +639,7 @@
 				width:100%;
 				position:relative;
 				background:$t-white;
-				padding:5vw;
-				@include breakpoint($tab,true){
-					padding:15px 20px;
-				}
+				padding:15px 20px;
 				span{
 					font-size:30px;
 					display:table-cell;
@@ -884,7 +878,6 @@
 				.item{
 					@include breakpoint($tab){
 						width:200px;
-						float:left;
 						min-width:initial;
 					}
 				}

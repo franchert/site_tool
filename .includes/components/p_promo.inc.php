@@ -134,24 +134,21 @@ function p_promo(
 			$string .="<h4>".$title."</h4>\n\t";
 		}
 		if(strrpos($type,"light") === false){$string .="<hr>\n\t";}
-		if($item === ''){
-			$string .="\n\t";
-		}else{
-			$string .= "<div class='item'>".$img."</div>\n\t";
-		}
+		$string .= "<div class='item'>".$img."</div>\n\t";
 		$string .= "<div class='promo-container'>\n\t\t";
 			if(is_null($text)){
-				$text = "<p class='intro'>".file_get_contents('http://loripsum.net/api/1/short/plaintext')."</p>";
+				$text = "<p class='intro'>".p_paragraph(1,'short',false)."</p>";
 			} else if($text == ''){
 				$string .='';
 			}
 			$string .= $text."\n\t";
-			if(is_null($link_title) || $link_title == ''){
-				$string .= "";
-			}else{
-				$string .= "<a href='".$link."'>".$link_title."</a>\n\t";
-			}
+			$string .= $item;
 		$string .= "</div>\n";
+		if(is_null($link_title) || $link_title == ''){
+			$string .= "";
+		}else{
+			$string .= "<a href='".$link."'>".$link_title."</a>\n\t";
+		}
 	}else if(strrpos($type,"button") !== false){
 		$string .="<a href='".$link."'>\n\t\t";
 		if(!is_null($item)){

@@ -213,8 +213,26 @@ a{
 			text-shadow: 1px 1px 0px $t-black-light;
 		}
 	}
-	&:focus{
-		@include focus_styles();
+	@include focus_styles();
+	&.skip{
+		position:absolute!important;
+		clip:rect(1px,1px,1px,1px);
+		overflow:hidden;
+		height:1px;
+		top:0;
+		left:0;
+		right:0;
+		margin:auto;
+		text-align:center;
+		background:$color-2;
+		color:$color-1;
+		&:focus,&:active{
+			position:static!important;
+			clip:auto;
+			overflow:visible;
+			height:auto;
+			z-index:3;
+		}
 	}
 }
 section{

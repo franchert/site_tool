@@ -24,7 +24,7 @@ function p_image(
 	if(!is_null($caption)){
 		$string .= '<div class="caption" style="width:'.$h.'px;'.$inline_css.'">';
 	}
-	$string .='<img alt="'.$phtext.'" src="/.includes/images/placeholder-svg.php?wh='.$h.'x'.$w.'&color='.$color.'&fill='.$fill.'&font=Arial&size='.$size.'&txt='.$phtext.'"';
+	$string .='<img alt="'.str_replace("_",' ',$phtext).'" src="/.includes/images/placeholder-svg.php?wh='.$h.'x'.$w.'&color='.$color.'&fill='.$fill.'&font=Arial&size='.$size.'&txt='.$phtext.'"';
 	if(is_null($caption)){
 		$string .=' style="'.$inline_css.'"';
 	}

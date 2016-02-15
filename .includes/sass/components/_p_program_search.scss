@@ -12,6 +12,7 @@
 		}
 		#searchterm{
 			padding:5px;
+			@include focus_styles();
 		}
 		#searchclear{
 			width:auto;

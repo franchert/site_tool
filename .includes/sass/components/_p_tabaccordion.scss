@@ -53,9 +53,7 @@ ul.tabaccordion{
 			@include breakpoint($desk){
 				padding:19px;
 			}
-			&:focus{
-				@include focus_styles();
-			}
+			@include focus_styles();
 		}
 		> div{
 			transition:height 1s ease-in-out;

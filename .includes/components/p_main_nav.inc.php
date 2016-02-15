@@ -25,7 +25,7 @@ function p_main_nav($type='custom'
 		$string.="<a class='desk-sticky' href='/'><img src='".$site_logo."'/></a>\n\t\t";
 	}
 	if($header == 'fold-out'){
-		$string .="<div class='main-nav-toggle'><i class='fa fa-bars'></i></div>";
+		$string .="<div tabindex='0' class='main-nav-toggle'><i class='fa fa-bars'></i></div>";
 	}
 	$string.="<ul class='main-nav'>\n\t\t";
 	$count = 0;
