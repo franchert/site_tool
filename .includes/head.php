@@ -1,7 +1,7 @@
 <!doctype HTML>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Lora:400,400italic,700,700italic|Lobster|PT+Mono' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic|Lora:400,400italic,700,700italic|Lobster|PT+Mono' rel='stylesheet' type='text/css'>
 <?php if($page == 'home'){ ?>
 	<title><?php echo $client_name;?></title>
 	<meta property="og:title" content="<?php echo $client_name;?>">

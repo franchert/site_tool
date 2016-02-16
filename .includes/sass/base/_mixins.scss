@@ -1,9 +1,25 @@
+/* 
+ *	some default float/display/width properties we use often.
+ *	
+ *	usage:
+ *		h3{
+ *			@include floatblock();
+ *		}
+ */
 @mixin floatblock($dir:left,$width:100%){
 	display:block;
 	float:$dir;
 	width:$width;
 }
-/* @include font('Open Sans',16,$white,22) */
+/* 
+ *	Set all font properties. Do a global find/replace within the 
+ *	sass/layouts/header folders on the $family options below to update.
+ *	
+ *	usage:
+ *		h3{
+ *			@include font('Open Sans',16,$white,0);
+ *		}
+ */
 @mixin font($family:"Arial",$size:16,$color:$c-default,$spacing:6){
 	color:$color;
 	@include font-size($size,$spacing);
@@ -25,12 +41,21 @@
 		font-family: 'Lora', serif;
 		font-weight:700;
 	} @else if($family == 'mono'){
-		font-family: 'PT Mono'
-	} @else {
+		font-family: 'PT Mono';
+	} @else if($family == 'kaffee'){
+		font-family: 'Yanone Kaffeesatz', sans-serif;
+	}@else {
 		font-family:'Open Sans',sans-serif;
 	}
 }
-/* @include font-size(16,0); */
+/* 
+ *	Set font-size independant of the font mixin
+ *	
+ *	usage:
+ *		p{
+ *			@include font-size(16,0);
+ *		}
+ */
 @mixin font-size($sizeValue: 16,$spacing:6) {
 	font-size: $sizeValue + px;
 	font-size: ($sizeValue / 10) + rem;
@@ -38,6 +63,15 @@
 	line-height: (($sizeValue + $spacing) / 10) + rem;
 }
 
+/* 
+ *	Add a fontawesome icon ($type controls this) as a pseudoelement
+ *	before or after the element it's called upon.
+ *	
+ *	usage:
+ *		.button{
+ *			@include arrow('before',$t-white,14,'\f105');
+ *		}
+ */
 @mixin arrow($loc:'after',$color:$t-white,$font-size:14,$type:"\f105"){
 	position:relative;
 	&:#{$loc}{
@@ -49,6 +83,15 @@
 		color:$color;
 	}
 }
+/* 
+ *	Add a fontawesome icon ($type controls this) as a pseudoelement
+ *	centered and facing down.
+ *	
+ *	usage:
+ *		.button{
+ *			@include arrowdown($t-white,14,'\f105');
+ *		}
+ */
 @mixin arrowdown($color:inherit,$font-size:12,$type:"\f105"){
 	position:relative;
 	padding-right:20px;
@@ -62,6 +105,93 @@
 		@include transform(rotateZ(90deg));
 		padding:0 10px;
 		transition:all .2s;
+	}
+}
+/*
+ *	Mixin to standardize focus styles. Add this rather than 
+ *	styling each individually
+ *	
+ *	usage:
+ *		a{
+ *			@include focus_styles();
+ *		}
+ */
+@mixin focus_styles(){
+	&:focus{
+		outline:2px solid #5B9DD9;
+		//outline:1px dotted #000;
+	}
+}
+
+/*
+ *	Using the calc function with fallback support
+ *	usage:
+ *		li{
+ *			@include calc('width','100% - 75px','170px');
+ *		}
+ */
+@mixin calc($prop,$value,$fallback:100%){
+	#{$prop}:#{$fallback};
+	#{$prop}:-webkit-calc(#{$value});
+	#{$prop}:calc(#{$value});
+}
+/* 
+ *	Adds placeholder styles for input fields.
+ *	
+ *	usage:
+ *		input{
+ *			@include placeholder{
+ *				color:#ccc;
+ *				text-shadow:0 0 5px $t-black;
+ *			}
+ *		}
+ */
+@mixin placeholder {
+	&::-webkit-input-placeholder	{@content}
+	&:-moz-placeholder			{@content}
+	&::-moz-placeholder			{@content}
+	&:-ms-input-placeholder		{@content}
+}
+/* 
+ *	Sets width of items based on sibling count. Used
+ *	primarily for navigation menus. The low and high
+ *	values can be adjusted to reduce the amount of css
+ *	generated. If you're not worried about this, keep the defaults.
+ *	Need to add the parent, as the amp; doesn't take the direct parent
+ *	but returns the full stack.
+ *	
+ *	usage (expecting between 4 and 7 total items):
+ *		li{
+ *			@include sibling_count_widths('li',4,7);
+ *		}
+ */
+@mixin sibling_count_widths($parent:'li',$low:1,$high:10){
+	&:first-child:nth-last-child(1) {
+		width: 100%;
+	}
+	@for $i from $low through $high{
+		&:first-child:nth-last-child(#{$i}),
+		&:first-child:nth-last-child(#{$i}) ~ #{$parent} {
+			width: #{100/$i + '%'};
+		}
+	}
+
+}
+@mixin skew($color:$t-white,$deg:-15deg){
+	&:before{
+		content:'';
+		position:absolute;
+		display:block;
+		float:left;
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+		background:$color;
+		-webkit-transform:skew($deg);
+		-ms-transform:skew($deg);
+		transform:skew($deg);
+		z-index:-1;
 	}
 }
 @mixin v-gradient(){
@@ -84,39 +214,25 @@
 	@include background-image(linear-gradient(left, rgba(0,0,0,0.28) 0%,rgba(0,0,0,0.22) 5%,rgba(0,0,0,0.15) 23%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 99%));
 	background-color:$back-color
 }
-@mixin focus_styles(){
-	&:focus{
-		outline:2px solid #5B9DD9;
-		//outline:1px dotted #000;
-	}
-}
-@mixin skew($color:$t-white,$deg:-15deg){
-	&:before{
-		content:'';
-		position:absolute;
-		display:block;
-		float:left;
-		width:100%;
-		height:100%;
-		left:0;
-		top:0;
-		background:$color;
-		-webkit-transform:skew($deg);
-		-ms-transform:skew($deg);
-		transform:skew($deg);
-		z-index:-1;
-	}
-}
-//@include calc('width','100% - 75px','170px');
-@mixin calc($prop,$value,$fallback:100%){
-	#{$prop}:#{$fallback};
-	#{$prop}:-webkit-calc(#{$value});
-	#{$prop}:calc(#{$value});
-}
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
 
-@mixin placeholder {
-	&::-webkit-input-placeholder	{@content}
-	&:-moz-placeholder			{@content}
-	&::-moz-placeholder			{@content}
-	&:-ms-input-placeholder		{@content}  
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
 }

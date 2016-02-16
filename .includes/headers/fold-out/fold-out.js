@@ -39,3 +39,14 @@ $( window ).resize(function() {
 	$('header,body').removeClass("mobi-open");
 	$('.main-nav,body').removeClass('tab-open');
 });
+$(window).scroll(function() {
+	stickyHeader();
+});
+function stickyHeader(){
+	var topPos = $(document).scrollTop();
+	if(120 < topPos){
+		$('body').addClass('sticky');
+	}else{
+		$('body').removeClass('sticky');
+	}
+}

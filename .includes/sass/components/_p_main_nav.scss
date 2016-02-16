@@ -34,13 +34,15 @@ $secondary_font_color:$color-2;
 					display:table;
 				}
 				li{
-					border-bottom:1px solid $primary_font_color;
 					@include breakpoint($tab){
 						display:table-cell;
 						width:auto;
 						float:none;
 						border-top:none;
-						border-bottom:1px solid $secondary_font_color;
+					}
+					@include breakpoint($desk){
+						@include sibling_count_widths('li');
+						float:left;
 					}
 					a{
 						@include font($primary_font_family,14,$secondary_font_color);
@@ -64,7 +66,7 @@ $secondary_font_color:$color-2;
 					&:hover,
 					&:focus{
 						@include breakpoint($tab){
-							border-bottom:1px solid $primary_font_color;
+							border-bottom:1px solid $secondary_font_color;
 						}
 						a{
 							text-decoration:none;

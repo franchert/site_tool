@@ -1,4 +1,6 @@
-
+$site-logo-width:170px;
+$site-logo-condensed-mobi:78px;
+$site-logo-condensed-desk:100px;
 body.fold-out{
 	header{
 		margin-bottom:110px;
@@ -334,7 +336,7 @@ body.fold-out{
 							display:none;
 							li {
 								a {
-									@include font('lora',23,$white);
+									@include font('lora',16,$white);
 									line-height:21px;
 									font-weight:500;
 								}
@@ -356,6 +358,7 @@ body.fold-out{
 								top: 0;
 								height:auto;
 								max-width: none;
+								min-height:67px;
 								li {
 									display:table-cell;
 									a {
@@ -393,6 +396,8 @@ body.fold-out{
 					display:block;
 					top:0;
 					box-shadow:0 1px 4px rgba(0, 0, 0, 0.25);
+					width: $site-logo-width;
+					transition: width 0.3s ease-in-out;
 				}
 			}
 			&.search-open{
@@ -602,6 +607,24 @@ body.fold-out{
 			right:0;
 		}
 	}
+	&.sticky{
+		header{
+			.l-head{
+				.mobi-toggle-container{
+					.main-nav-container{
+						.site-logo{
+							img{
+								width:$site-logo-condensed-mobi;
+								@include breakpoint($desk){
+									width:$site-logo-condensed-desk;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 	.drop-container {
 		&.mobile {
 			&.gateway-menu {
@@ -609,8 +632,7 @@ body.fold-out{
 				.drop-toggle {
 					display: block;
 					background: $color-3;
-					@include font('lora',28,$white);
-					line-height:28px;
+					@include font('kaffee',28,$white);
 					@include arrowdown(inherit,27,"\f0c9");
 					padding-right:50px;
 					&:after{

@@ -22,6 +22,7 @@ html {
 		font-size: 62.5%;
 	}
 }
+
 body{
 	@import "components/**/*";
 	*{
@@ -133,7 +134,7 @@ img{
 }
 
 h1{
-	@include font(''open_sans_bold'',36,$color-1);
+	@include font('open_sans_bold',36,$color-1);
 	margin:0 0 20px 0;
 	@include breakpoint($tab){
 		font-size:48px;
@@ -141,11 +142,11 @@ h1{
 	}
 }
 h2{
-	@include font(''open_sans_bold'',28,$color-1);
+	@include font('open_sans_bold',28,$color-1);
 	margin:0 0 20px 0;
 }
 h3{
-	@include font(''open_sans_bold'',24,$color-1);
+	@include font('open_sans_bold',24,$color-1);
 	line-height:24px;
 	border-bottom:1px solid $color-2;
 	margin:0 0 20px 0;

@@ -34,7 +34,7 @@ $(window).load(function() {
 				items:3
 			},
 			'.$bL.':{
-				items:4
+				items:3
 			}
 		},
 		nav:true,
