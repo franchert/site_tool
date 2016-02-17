@@ -95,7 +95,7 @@
  *	
  *	usage (expecting between 4 and 7 total items):
  *		li{
- *			@include sibling_count_widths('li',4,7);
+ *			@include sibling_count_prop('li',4,7);
  *		}
  */
 /* _custom.scss */

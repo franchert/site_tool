@@ -41,7 +41,7 @@ $secondary_font_color:$color-2;
 						border-top:none;
 					}
 					@include breakpoint($desk){
-						@include sibling_count_widths('li');
+						@include sibling_count_prop('li');
 						float:left;
 					}
 					a{

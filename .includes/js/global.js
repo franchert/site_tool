@@ -158,11 +158,21 @@ $(document).ready(function(){
 		}
 	});
 	equalHeight('.matrix.overlay-cta > div .container');
+	equalHeight('.tabaccordion li');
+	$('.tabaccordion li > div').each(function(){
+		$(this).css('top',$(this).parent().height()+2);
+	});
 	tabAccordion();
+	section_structure();
 });
 
 
 $( window ).resize(function() {
+	equalHeight('.tabaccordion li');
+	sec_struc_update();
+	$('.tabaccordion li > div').each(function(){
+		$(this).css('top',$(this).parent().height());
+	});
 	if(isMobile()){
 		equalHeight('.matrix.overlay-cta > div .container');
 		$('.tabaccordion').css('height','auto')
@@ -178,8 +188,11 @@ $(window).scroll(function() {
 		$('.back-to-top').stop(true, true).fadeOut();
 	}
 });
-function isMobile() {
-	if(window.innerWidth <= 719) {
+function isMobile(width) {
+	if(width == undefined){
+		width = 719;
+	}
+	if(window.innerWidth <= width) {
 		return true;
 	} else {
 		return false;
@@ -217,6 +230,90 @@ function tabAccordion(){
 			var ul_h = $(this).children('li').outerHeight();
 			var open_h = $(this).find('.tab-active > div').outerHeight() + ul_h+20;
 			$(this).css('height',open_h);
+		}
+	});
+}
+function section_structure(){
+	mobile_break = 719;
+	sec_struc_update();
+	$('.section_structure.lg-tabs a').on('keypress click', function(e) {
+		if (!isMobile(mobile_break)) {
+			e.preventDefault();
+			$(this).parent().siblings().removeClass('large-active');
+			$(this).parent().addClass('large-active');
+			var tot_h = $(this).parents('li').outerHeight() + $(this).next().outerHeight();
+			$(this).parents('ul.section_structure').css('height',tot_h);
+		}
+	});
+	$('.section_structure.sm-tabs a').on('keypress click', function(e) {
+		if (isMobile(mobile_break)) {
+			e.preventDefault();
+			$(this).parent().siblings().removeClass('small-active');
+			$(this).parent().addClass('small-active');
+			var tot_h = $(this).parents('li').outerHeight() + $(this).next().outerHeight();
+			$(this).parents('ul.section_structure').css('height',tot_h);
+		}
+	});
+	$('.section_structure.lg-accs a').on('keypress click', function(e) {
+		if (!isMobile(mobile_break)) {
+			e.preventDefault();
+			$(this).parent().siblings().removeClass('large-active');
+			$(this).parent().addClass('large-active');
+			$(this).parents('ul.section_structure').css('height','auto');
+		}
+	});
+	$('.section_structure.sm-accs a').on('keypress click', function(e) {
+		if (isMobile(mobile_break)) {
+			e.preventDefault();
+			$(this).parent().siblings().removeClass('small-active');
+			$(this).parent().toggleClass('small-active');
+			$(this).parents('ul.section_structure').css('height','auto');
+		}
+	});
+	$('.section_structure.lg-anchor a').on('keypress click', function() {
+		if (!isMobile(mobile_break)) {
+			$(this).parents('ul.section_structure').css('height','auto');
+		}
+	});
+	$('.section_structure.sm-anchor a').on('keypress click', function() {
+		if (isMobile(mobile_break)) {
+			$(this).parents('ul.section_structure').css('height','auto');
+		}
+	});
+}
+function sec_struc_update(){
+	$('.section_structure').each(function(){
+		if ($(this).hasClass('lg-tabs')){
+			if(!isMobile()){
+				$(this).find('> li > div').each(function(){
+					$(this).css('top',$(this).parent().height());
+				});
+				var ul_h = $(this).children('li').outerHeight();
+				var open_h = $(this).find('.large-active > div').outerHeight() + ul_h + 20;
+				$(this).css('height',open_h);
+			}else{
+				$(this).find('> li > div').each(function(){
+					$(this).css('top','initial');
+				});
+			}
+		};
+		if ($(this).hasClass('sm-tabs') && isMobile()){
+			var ul_h = $(this).children('li').outerHeight();
+			var open_h = $(this).find('.large-active > div').outerHeight() + ul_h + 20;
+			$(this).css('height',open_h);
+		}
+		if ($(this).hasClass('lg-accs') && !isMobile()){
+			$(this).find('> li > div').css('height','auto');
+			$(this).css('height','auto');
+		}
+		if ($(this).hasClass('sm-accs') && isMobile()){
+			$(this).css('height','auto');
+		}
+		if ($(this).hasClass('sm-anchor') && isMobile()){
+			$(this).css('height','auto');
+		}
+		if ($(this).hasClass('lg-anchor') && !isMobile()){
+			$(this).css('height','auto');
 		}
 	});
 }

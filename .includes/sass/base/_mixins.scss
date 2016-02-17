@@ -162,21 +162,18 @@
  *	
  *	usage (expecting between 4 and 7 total items):
  *		li{
- *			@include sibling_count_widths('li',4,7);
+ *			@include sibling_count_prop('li',4,7);
  *		}
  */
-@mixin sibling_count_widths($parent:'li',$low:1,$high:10){
-	&:first-child:nth-last-child(1) {
-		width: 100%;
-	}
+@mixin sibling_count_prop($parent:'li',$low:1,$high:10,$property:'width'){
 	@for $i from $low through $high{
 		&:first-child:nth-last-child(#{$i}),
 		&:first-child:nth-last-child(#{$i}) ~ #{$parent} {
-			width: #{100/$i + '%'};
+			#{$property}: #{100/$i + '%'};
 		}
 	}
-
 }
+
 @mixin skew($color:$t-white,$deg:-15deg){
 	&:before{
 		content:'';

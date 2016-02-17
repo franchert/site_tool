@@ -209,7 +209,7 @@ function plotTree_t4(
 				$subnav_string .="<span class='currentbranch".$level."'>";
 			}
 			//need to add the root in only if file_base is empty
-			$subnav_string .="<a href='" . $base_array . "'>" . $base_array_title. "</a>";
+			$subnav_string .="<a class='".($page == $base_array_slug ? 'active ':'')."' href='" . $base_array . "'>" . $base_array_title. "</a>";
 			if($active_trail){
 				$subnav_string .="</span>";
 			}
