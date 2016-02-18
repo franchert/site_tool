@@ -29,6 +29,7 @@ ul.section_structure{
 			text-decoration:none;
 			h3{
 				border:none;
+				outline:0;
 			}
 		}
 		> div{}
@@ -36,6 +37,7 @@ ul.section_structure{
 			> a{
 				@include breakpoint(max-width $s_s_breakpoint){
 					background:$s_s_active_tab;
+					color:$s_s_inactive_tab;
 					h3{
 						color:$s_s_inactive_tab;
 					}
@@ -47,6 +49,7 @@ ul.section_structure{
 			> a{
 				@include breakpoint($s_s_breakpoint){
 					background:$s_s_active_tab;
+					color:$s_s_inactive_tab;
 					h3{
 						color:$s_s_inactive_tab;
 					}
@@ -106,13 +109,13 @@ ul.section_structure{
 				}
 				&.small-active{
 					a{}
-					> div{}
-				}
-				&.large-active{
-					a{}
 					> div{
 						display:block;
 					}
+				}
+				&.large-active{
+					a{}
+					> div{}
 				}
 			}
 		}
@@ -161,6 +164,10 @@ ul.section_structure{
 					padding:15px 20px;
 					display:block;
 					@include arrowdown(inherit,12,"\f0da");
+					&:after{
+						right:10px;
+						font-size:18px;
+					}
 					h3{
 						margin:0;
 					}

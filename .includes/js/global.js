@@ -157,12 +157,12 @@ $(document).ready(function(){
 			$(this).parents('ul.tabaccordion').css('height',tot_h);
 		}
 	});
-	equalHeight('.matrix.overlay-cta > div .container');
 	equalHeight('.tabaccordion li');
 	$('.tabaccordion li > div').each(function(){
 		$(this).css('top',$(this).parent().height()+2);
 	});
 	tabAccordion();
+	equalHeight('.matrix.overlay-cta > div .container');
 	section_structure();
 });
 

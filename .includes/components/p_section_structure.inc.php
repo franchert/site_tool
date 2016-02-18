@@ -36,7 +36,11 @@ function p_section_structure(
 	foreach($arr as $k => $v){
 		$acc_string .='<li';
 		if ($active == $count){
-				$acc_string .= ' class="large-active"';
+			$acc_string .= ' class="large-active';
+			if($smallscreens == 'tabs'){
+				$acc_string .=' small-active';
+			}
+			$acc_string .='"';
 		}
 		$count++;
 		$acc_string .='><a href="#'.$id.'-'.$k.'"><h3 tabindex="0">'.$v["t"].'</h3></a>';

@@ -101,7 +101,7 @@
 		content: $type;
 		font-family: FontAwesome;
 		@include font-size($font-size,0);
-		@include calc('top','50% - #{$font-size / 2}','50%');
+		@include calc('top','50% - #{$font-size / 2}px','50%');
 		@include transform(rotateZ(90deg));
 		padding:0 10px;
 		transition:all .2s;
