@@ -15,6 +15,7 @@ function p_page_intro(
 	$arr = null,
 	$item = null){
 
+	global $set_tings;
 	$string = '';
 	$string .="\n<div class='page-intro ".$type."'>\n\t";
 	$string .= "<h2>".$title."</h2>\n\t";

@@ -3,6 +3,9 @@
 *	Displays server variables
 *
 */
+include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
+include_once($docroot."/.includes/director.php");
+
 /*$indicesServer = array('PHP_SELF', 
 'argv', 
 'argc', 
@@ -42,18 +45,30 @@
 'PHP_AUTH_PW', 
 'AUTH_TYPE', 
 'PATH_INFO', 
-'ORIG_PATH_INFO');
+'ORIG_PATH_INFO');*/
 
 echo "</br>Return to the <a href='/.util'>Utility page</a>";
 echo '<div class="toggle"><table cellpadding="10" style="max-width:600px;margin:30px;">' ;
-foreach ($indicesServer as $arg) {
-	if (isset($_SERVER[$arg])) {
-		echo '<tr style="display:table-row;float:none;width:auto;border-top:1px solid black;border-left:1px solid black;"><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">'.$arg.'</td><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">' . $_SERVER[$arg] . '</td></tr>' ;
-	}
-	else {
-		echo '<tr style="display:table-row;float:none;width:auto;border-top:1px solid black;border-left:1px solid black;"><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">'.$arg.'</td><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">-</td></tr>' ;
+foreach ($set_tings as $k => $v) {
+	$str = '';
+	if(is_array($v)){
+		echo '<tr style="display:table-row;float:none;width:auto;border-top:1px solid black;border-left:1px solid black;"><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">'.$k.'</td><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">' .array_print($v,$str). '</td></tr>' ;
+	}else{
+		echo '<tr style="display:table-row;float:none;width:auto;border-top:1px solid black;border-left:1px solid black;"><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">'.$k.'</td><td style="display:table-cell;float:none;width:auto;border-bottom:1px solid black;border-right:1px solid black;padding:5px;">' .$v. '</td></tr>' ;
 	}
 }
-echo '</table></div>' ;*/
-echo phpinfo();
+echo '</table></div>' ;
+
+//echo phpinfo();
 /* <?php include_once('/test.php'); ?> */
+function array_print($arr,$str){
+	foreach($arr as $k => $v){
+		if(is_array($v)){
+			$str .= $k.'</br>&nbsp;';
+			array_print($v,$str);
+		}else{
+			$str .= $k.' : '.$v.'</br>';
+		}
+	}
+	return $str;
+}

@@ -11,6 +11,7 @@
  *	@param string  $type = 
  */
 function p_contact($type='generic'){
+	global $set_tings;
 	$string = "";
 	$string .="<div class='contact'>\n\t";
 	if(strrpos($type,"generic") !== false){

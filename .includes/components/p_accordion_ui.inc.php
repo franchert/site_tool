@@ -10,9 +10,9 @@ function p_accordion_ui(
 	$id,
 	$arr = null){
 
-	global $script_var;
+	global $set_tings;
 	$string = '';
-	$script_var .= '
+	$set_tings['script_var'] .= '
 $(function() {
 	$( "#'.$id.'" ).accordion({
 		heightStyle: "content"

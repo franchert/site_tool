@@ -13,6 +13,7 @@ function p_matrix(
 	$offset=0,
 	$morelink=''){
 
+	global $set_tings;
 	if(isset($title) && $title !=''){
 		$string .= '<div><h2>'.$title.'</h2></div>';
 	}

@@ -10,8 +10,8 @@ $mini = true;
 $depth = 2;
 include_once($docroot."/.includes/director.php");
 
-$p_content .= p_slider_owl('example_generic');
-$p_content .= p_carousel('example_carousel');
+$l_content .= p_slider_owl('example_generic');
+$l_content .= p_carousel('example_carousel');
 
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

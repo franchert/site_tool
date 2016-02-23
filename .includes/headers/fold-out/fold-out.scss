@@ -353,7 +353,7 @@ body.fold-out{
 							}
 							@include breakpoint($desk){
 								display:block;
-								background:$white;
+								background:none;
 								position:inherit;
 								top: 0;
 								height:auto;

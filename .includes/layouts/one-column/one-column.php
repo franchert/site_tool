@@ -1,14 +1,14 @@
 <?php 
 /* add the following to director.php
 	if($layout == "one-column"){
-		$p_one = "";
+		$l_one_col = "";
 	}
 */
 	include_once($docroot."/.includes/head.php");
 	echo "</div></div></header>"; //div closes head and wrapper
 ?>
 <div class="l-page" id="main-content">
-	<?php echo $p_one; ?>
+	<?php echo $l_one_col; ?>
 
 <?php
 /*l-page div closed in foot.php*/

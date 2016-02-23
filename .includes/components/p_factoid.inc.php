@@ -9,6 +9,7 @@ function p_factoid(
 	$title='lorem ipsums',
 	$image=null){
 
+	global $set_tings;
 	if(is_null($image)){
 		$image = p_image('400','300');
 	}else{

@@ -11,6 +11,7 @@ function p_calendar(
 	$day = date('j');
 	$month = date("m");
 	$year = date("Y");
+	global $set_tings;
 
 	//$day = 21;$month = 12;$year = 2015;
 	$time = time();

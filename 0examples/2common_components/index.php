@@ -9,29 +9,29 @@ $layout = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
-$p_content .= "<h2>Events</h2>";
-$p_content .= p_event();
-$p_content .= p_event('tall');
-$p_content .= p_event('round');
-$p_content .= p_event('basic');
+$l_content .= "<h2>Events</h2>";
+$l_content .= p_event();
+$l_content .= p_event('tall');
+$l_content .= p_event('round');
+$l_content .= p_event('basic');
 
-$p_content .= "<h2>News</h2>";
-$p_content .= p_news();
-$p_content .= p_news('normal',null,'news item without read more','#',null,null,false);
-$p_content .= p_news('normal','','removed image from default','#',null,null,true);
-$p_content .= p_news('short');
+$l_content .= "<h2>News</h2>";
+$l_content .= p_news();
+$l_content .= p_news('normal',null,'news item without read more','#',null,null,false);
+$l_content .= p_news('normal','','removed image from default','#',null,null,true);
+$l_content .= p_news('short');
 
-$p_content .= "<h2>Factoid</h2>";
-$p_content .= p_factoid();
+$l_content .= "<h2>Factoid</h2>";
+$l_content .= p_factoid();
 
-$p_content .= "<h2>Page Intro</h2>";
-$p_content .= p_page_intro("sample-page-intro");
+$l_content .= "<h2>Page Intro</h2>";
+$l_content .= p_page_intro("sample-page-intro");
 
-$p_content .= "<h2>Profile</h2>";
-$p_content .= p_profile();
+$l_content .= "<h2>Profile</h2>";
+$l_content .= p_profile();
 
-$p_content .= "<h2>Spotlight</h2>";
-$p_content .= p_spotlight('category');
+$l_content .= "<h2>Spotlight</h2>";
+$l_content .= p_spotlight('category');
 
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

@@ -13,6 +13,7 @@ function p_news(
 	$text=null,
 	$readmore = true){
 
+	global $set_tings;
 	if(is_null($img)){
 		$image = p_image('300','300');
 		$width = "";

@@ -4,6 +4,7 @@
  */
 function p_program_search(){
 
+	global $set_tings;
 	$string = '
 	<div class="program-search">
 		<div id="search-container">

@@ -11,7 +11,10 @@
 		}
 	}
 	&.linkimg{
+		position:relative;
 		a{
+			position:absolute;
+			overflow:hidden;
 			.item{
 				height:200px;
 				overflow:hidden;

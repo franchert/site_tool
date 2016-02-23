@@ -9,12 +9,12 @@ $layout = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
-$p_content .= p_promo("overlay","image","","Overlay");
-$p_content .= p_promo("overlay hover","image","","Overlay Hover");
-$p_content .= p_promo("overlayv2","image","","OverlayV2");
+$l_content .= p_promo("overlay","image","","Overlay");
+$l_content .= p_promo("overlay hover","image","","Overlay Hover");
+$l_content .= p_promo("overlayv2","image","","OverlayV2");
 
-$p_promo_sidebar .= p_promo("overlay","image","","Overlay");
-$p_promo_sidebar .= p_promo("overlay hover","image","","Overlay Hover");
-$p_promo_sidebar .= p_promo("overlayv2","image","","OverlayV2");
+$l_promo_sidebar .= p_promo("overlay","image","","Overlay");
+$l_promo_sidebar .= p_promo("overlay hover","image","","Overlay Hover");
+$l_promo_sidebar .= p_promo("overlayv2","image","","OverlayV2");
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

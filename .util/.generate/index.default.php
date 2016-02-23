@@ -8,7 +8,7 @@ $layout = 'generic_inner';
 include_once($docroot."/.includes/director.php");
 /*define content here*/
 
-$p_content .= p_paragraph();
+$l_content .= p_paragraph();
 
 /*end define content*/
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");

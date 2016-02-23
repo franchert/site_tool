@@ -9,6 +9,7 @@ function p_link(
 	$text="lorem ipsum",
 	$type=false){
 
+	global $set_tings;
 	$string = "<a";
 	if($type != false){
 		$string .=" class='".$type."'";

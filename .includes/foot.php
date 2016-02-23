@@ -2,7 +2,7 @@
 </div> <!-- end l-page div -->
 <footer>
 	<script>
-		<?php echo $script_var ?>
+		<?php echo $set_tings['script_var'] ?>
 	</script>
 	<div class="column">
 		<div class="footer">

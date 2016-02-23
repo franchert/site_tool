@@ -10,11 +10,11 @@ $instafeed = false;
 include_once("../.includes/director.php");
 /*define promos here*/
 
-$p_one .= p_breadcrumb();
+$l_one_col .= p_breadcrumb();
 $page_h1 = $page_title;
-$p_one .="<div class='wrapper'><div class='column'><h1>".$page_h1."</h1></div></div>";
+$l_one_col .="<div class='wrapper'><div class='column'><h1>".$page_h1."</h1></div></div>";
 
-$p_one .="<script>
+$l_one_col .="<script>
   (function() {
     var cx = '".$google_CSE_cx."';
     var gcse = document.createElement('script');

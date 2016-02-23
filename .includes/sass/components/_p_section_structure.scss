@@ -15,6 +15,9 @@ ul.section_structure{
 	position:relative;
 	margin-bottom:20px;
 	> li{
+		width:100%;
+		float:left;
+		display:table;
 		> a{
 			width:100%;
 			display: table-cell;
@@ -61,8 +64,6 @@ ul.section_structure{
 	&.lg-tabs{
 		@include breakpoint($s_s_breakpoint){
 			li{
-				width:auto;
-				float:left;
 				> a{
 					width:100%;
 					padding:15px 20px;
@@ -92,8 +93,6 @@ ul.section_structure{
 	&.sm-tabs{
 		@include breakpoint(max-width $s_s_breakpoint){
 			li{
-				width:auto;
-				float:left;
 				> a{
 					width:100%;
 					padding:15px 20px;
@@ -123,42 +122,7 @@ ul.section_structure{
 	&.lg-accs{
 		@include breakpoint($s_s_breakpoint){
 			li{
-				width:100%;
-				float:left;
-				> a{
-					width:100%;
-					padding:15px 20px;
-					display:block;
-					@include arrowdown(inherit,12,"\f0da");
-					h3{
-						margin:0;
-					}
-				}
-				> div{
-					display:none;
-					position:relative;
-					top:0;
-					left:0;
-				}
-				&.small-active{
-					> a{}
-					> div{}
-				}
-				&.large-active{
-					> a{}
-					> div{
-						display:block;
-						position:relative;
-					}
-				}
-			}
-		}
-	}
-	&.sm-accs{
-		@include breakpoint(max-width $s_s_breakpoint){
-			li{
-				width:100%;
-				float:left;
+				max-width:100%!important;
 				> a{
 					width:100%;
 					padding:15px 20px;
@@ -180,6 +144,57 @@ ul.section_structure{
 				}
 				&.small-active{
 					> a{}
+					> div{}
+				}
+				&.large-active{
+					> a{
+						&:after{
+							-moz-transform: rotateZ(-90deg);
+							-ms-transform: rotateZ(-90deg);
+							-webkit-transform: rotateZ(-90deg);
+							transform: rotateZ(-90deg);
+						}
+					}
+					> div{
+						display:block;
+						position:relative;
+					}
+				}
+			}
+		}
+	}
+	&.sm-accs{
+		@include breakpoint(max-width $s_s_breakpoint){
+			li{
+				max-width:100%!important;
+				> a{
+					width:100%;
+					padding:15px 20px;
+					display:block;
+					@include arrowdown(inherit,12,"\f0da");
+					&:after{
+						right:10px;
+						font-size:18px;
+					}
+					h3{
+						margin:0;
+					}
+				}
+				> div{
+					display:none;
+					position:relative;
+					top:0;
+					left:0;
+				}
+				&.small-active{
+					> a{
+						&:after{
+							-moz-transform: rotateZ(-90deg);
+							-ms-transform: rotateZ(-90deg);
+							-webkit-transform: rotateZ(-90deg);
+							transform: rotateZ(-90deg);
+						}
+					}
 					> div{
 						display:block;
 						position:relative;
@@ -198,13 +213,17 @@ ul.section_structure{
 			padding-top:44px;
 			>li{
 				position:static;
+				max-width:100%!important;
 				>a{
 					position:absolute;
+					display:table;
 					top:0;
 					width:$anchor-width;
 					min-width:auto;
-					padding:10px 20px;
 					h3{
+						display:table-cell;
+						vertical-align:middle;
+						padding:10px 20px;
 						width:100%;
 						margin:0;
 					}
@@ -234,13 +253,17 @@ ul.section_structure{
 			padding-top:44px;
 			>li{
 				position:static;
+				max-width:100%!important;
 				>a{
 					position:absolute;
+					display:table;
 					top:0;
 					width:$anchor-width;
 					min-width:auto;
-					padding:10px 20px;
 					h3{
+						display:table-cell;
+						vertical-align:middle;
+						padding:10px 20px;
 						width:100%;
 						margin:0;
 					}

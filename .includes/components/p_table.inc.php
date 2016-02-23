@@ -12,6 +12,7 @@ function p_table(
 	$rows = null,
 	$type = 'responsive-table-wrapper'){
 
+	global $set_tings;
 	$string = "";
 	if ($head == null){
 		$head = array(

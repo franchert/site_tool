@@ -1,10 +1,10 @@
 <?php
 function p_alert($alert){
 	global $fe_container;
-	global $script_var;
 	global $alert_on;
-
-	$script_var .="
+	global $set_tings;
+	
+	$set_tings['script_var'] .="
 $('.alert .toggle').on('click',function(e){
 	$(this).parents('.alert').toggleClass('closed');
 });";

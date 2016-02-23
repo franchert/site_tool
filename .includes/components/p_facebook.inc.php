@@ -7,7 +7,8 @@ use Facebook\FacebookRequest;
 function p_facebook($app_id,$app_secret,$url,$album,$limit){
 	require_once($docroot.'/.includes/libraries/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php');
 
-	$script_var .= "
+	global $set_tings;
+	$set_tings['script_var'] .= "
 function fbFeed(){
 	$('.fb-feed .item').each(function(){
 		var temp = $(this).find('.img-wrap img').height();

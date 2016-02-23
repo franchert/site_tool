@@ -7,6 +7,7 @@
 function p_video(
 	$url="https://www.youtube.com/embed/XQu8TTBmGhA"){
 
+	global $set_tings;
 	$string ='<div class="videoWrapper"><iframe width="420" height="315" src="'.$url.'" frameborder="0" allowfullscreen></iframe></div>';
 	return $string;
 }

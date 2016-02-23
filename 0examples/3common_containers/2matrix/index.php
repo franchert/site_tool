@@ -9,9 +9,9 @@ $layout = "generic_inner";
 $mini = true;
 $depth = 2;
 include_once($docroot."/.includes/director.php");
-$p_content .= p_matrix(2);
-$p_content .= p_matrix(3);
-$p_content .= p_matrix(4);
-$p_content .= p_matrix(5);
+$l_content .= p_matrix(2);
+$l_content .= p_matrix(3);
+$l_content .= p_matrix(4);
+$l_content .= p_matrix(5);
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

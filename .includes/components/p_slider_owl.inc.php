@@ -14,8 +14,8 @@ function p_slider_owl(
 	$height = 900,
 	$slidetype = 'overlayv2'){
 
-	global $script_var;
-	$script_var .= '
+	global $set_tings;
+	$set_tings['script_var'] .= '
 $(window).load(function() {
 	$(".'.$id.'").owlCarousel({
 		items:1,

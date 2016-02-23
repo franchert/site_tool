@@ -19,6 +19,7 @@ function p_promo(
 	$link_title = null,
 	$arr=null){
 
+	global $set_tings;
 	if(strip_tags($title) == ''){
 		$alt = "alt text";
 	}else{

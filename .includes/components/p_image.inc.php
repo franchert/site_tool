@@ -13,6 +13,7 @@ function p_image(
 	$color = '444',
 	$inline_css = ''){
 
+	global $set_tings;
 	$size = max($w,$h)/30;
 	if($size < 20){
 		$size = 20;

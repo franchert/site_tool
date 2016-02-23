@@ -26,14 +26,14 @@ function titleFromSlug($slug){
 function expandDirectories(
 	$base_dir){
 
-	global $base_site;
+	global $set_tings;
 	$directories = array();
 	foreach(scandir($base_dir) as $file) {
 		if($file == '.' || $file == '..') continue;
 		$dir = $base_dir.DIRECTORY_SEPARATOR.$file;
 		if(is_dir($dir)) {
 			//get rid of the base_site
-			$temp = str_replace($base_site,"",$dir);
+			$temp = str_replace($set_tings['base_site'],"",$dir);
 			//don't include dirs starting with a .
 			if($temp[0] != "."){
 				$directories []= $temp;
@@ -59,21 +59,15 @@ function plotTree(
 	$toggle){
 
 	global $subnav_string;
-	global $base_site;
-	global $section;
-	global $section_title;
-	global $page;
-	global $path;
-	global $segments;
-	global $level ;
-	global $url_remove;
+	global $level;
 	global $mini;
+	global $set_tings;
 	if ($initial_run) {
 		//wrappers for the container
 		$subnav_string = "<div class='subnav".($toggle === true ? " toggles":"")."' id='subnav'>";
 		//print the toggle for the nav.
 		if($printsection === true){
-			$temp ="<h2 tabindex='0'>".$section_title."</h2>";
+			$temp ="<h2 tabindex='0'>".$set_tings['section_title']."</h2>";
 		}else if ($printsection === false){
 			$temp = "<h2>Menu</h2>";
 		}else{
@@ -85,17 +79,17 @@ function plotTree(
 		$subnav_string .= "<ul class='level-".$level."'>";
 		//add the "back to home" link on the first level. This hasn't been tested...
 		if($backtohome){
-			$subnav_string .="<a class='backtohome' href='/'>Back to Home</a><h3>".$section_title."</h3>";
+			$subnav_string .="<a class='backtohome' href='/'>Back to Home</a><h3>".$set_tings['section_title']."</h3>";
 			$backtohome = false;
 		}
 	}
 	foreach ($arr as $k=>$v){
 		if ($k == "__base_val") continue;
 		$active_trail = false;
-		if(is_array($v) && strpos($path,(string)$v['__base_val']) !== false){
+		if(is_array($v) && strpos($set_tings['path'],(string)$v['__base_val']) !== false){
 			$active_trail = true;
 		}
-		if(!is_array($v) && strpos($path,(string)$v) !== false){
+		if(!is_array($v) && strpos($set_tings['path'],(string)$v) !== false){
 			$active_trail = true;
 		}
 		//if the current array value is an array, get the base value and set it
@@ -105,14 +99,14 @@ function plotTree(
 		$base_array_title = titlefromSlug(substr($base_array_slug,1));
 		//if we're on the section root
 		$level ++;
-		if($section == $base_array_slug && $level <= 1){
+		if($set_tings['section'] == $base_array_slug && $level <= 1){
 			//if we're on a sub-array, we need to go deeper to get a value to print
 			if (is_array($v)) {plotTree($v, false,$printsection,$backtohome,$starting,$toggle);};
 		} else{
 			//open the array item. Note we skip the section root in the subnav
-			$subnav_string .= "<li class='".($page == $base_array_slug ? 'active ':'').($active_trail ? 'active-trail open ':'')."'>";
+			$subnav_string .= "<li class='".($set_tings['page'] == $base_array_slug ? 'active ':'').($active_trail ? 'active-trail open ':'')."'>";
 			$subnav_string .="<a href='/".$base_array . "' class='".(is_array($v) && $toggle === true ? 'has-sub':'')."'>" . $base_array_title. "</a>";
-			$base_array = str_replace($url_remove,"",$base_array);
+			$base_array = str_replace($set_tings['url_remove'],"",$base_array);
 			//if there is a child under the current item, we want to add a toggle.
 			if(is_array($v) && $toggle === true){
 				$subnav_string .="<button class='sn-toggle'><span class='fa fa-angle-right'></span></button>";
@@ -150,22 +144,16 @@ function plotTree_t4(
 	$toggle){
 
 	global $subnav_string;
-	global $base_site;
-	global $section;
-	global $section_title;
-	global $page;
-	global $path;
-	global $segments;
-	global $level ;
-	global $url_remove;
+	global $level;
 	global $mini;
+	global $set_tings;
 	//print_r($arr);
 	if ($initial_run) {
 		//wrappers for the container
 		$subnav_string = "<div class='subnav' id='subnav'>";
 		//print the toggle for the nav.
 		if($printsection === true){
-			$temp ="<h2 tabindex='0'>".$section_title."</h2>";
+			$temp ="<h2 tabindex='0'>".$set_tings['section_title']."</h2>";
 		}else if ($printsection === false){
 			$temp = "<h2>Menu</h2>";
 		}else{
@@ -185,10 +173,10 @@ function plotTree_t4(
 	foreach ($arr as $k=>$v){
 		if ($k == "__base_val") continue;
 		$active_trail = false;
-		if(is_array($v) && strpos($path,(string)$v['__base_val']) !== false){
+		if(is_array($v) && strpos($set_tings['path'],(string)$v['__base_val']) !== false){
 			$active_trail = true;
 		}
-		if(!is_array($v) && strpos($path,(string)$v) !== false){
+		if(!is_array($v) && strpos($set_tings['path'],(string)$v) !== false){
 			$active_trail = true;
 		}
 		//if the current array value is an array, get the base value and set it
@@ -199,7 +187,7 @@ function plotTree_t4(
 		//print_r($base_array."</br>");
 		//if we're on the section root
 		$level ++;
-		if($section == $base_array_slug && $level <= 1){
+		if($set_tings['section'] == $base_array_slug && $level <= 1){
 			//if we're on a sub-array, we need to go deeper to get a value to print
 			if (is_array($v)) {plotTree_t4($v, false,$printsection,$backtohome,$starting,$toggle);};
 		} else{
@@ -209,11 +197,11 @@ function plotTree_t4(
 				$subnav_string .="<span class='currentbranch".$level."'>";
 			}
 			//need to add the root in only if file_base is empty
-			$subnav_string .="<a class='".($page == $base_array_slug ? 'active ':'')."' href='" . $base_array . "'>" . $base_array_title. "</a>";
+			$subnav_string .="<a class='".($set_tings['page'] == $base_array_slug ? 'active ':'')."' href='" . $base_array . "'>" . $base_array_title. "</a>";
 			if($active_trail){
 				$subnav_string .="</span>";
 			}
-			$base_array = str_replace($url_remove,"",$base_array);
+			$base_array = str_replace($set_tings['url_remove'],"",$base_array);
 			//if there is a child under the current item, we want to add a toggle.
 			if(is_array($v) && $toggle === true){
 				//$subnav_string .="<button class='sn-toggle'><span class='fa fa-angle-right'></span></button>";
@@ -251,15 +239,14 @@ function plotTree_t4(
  * @param string  $delimiter
  * @param boolean $baseval
  * 
- * modifications: added the $section variable to the first iteration base value 
+ * modifications: added the $set_tings['section'] variable to the first iteration base value 
  *	 (because we're not starting at root)
- *	 $parentArr[$part] = array('__base_val' => $section);
+ *	 $parentArr[$part] = array('__base_val' => $set_tings['section']);
  *	 Added comments per line for instructional purposes.
  * @return array
  */
 function explodeTree($array, $delimiter = '_', $baseval = false,$starting = null){
-	global $section;
-	global $starting;
+	global $set_tings;
 	//ensure we actually have an array in $array
 	if(!is_array($array)) return false;
 	//escapes any regex characters we may find in the url except the delimiter of "_"
@@ -280,7 +267,7 @@ function explodeTree($array, $delimiter = '_', $baseval = false,$starting = null
 			if (!isset($parentArr[$part])) {
 	//because we have an array as the actual value, this saves our needed value corresponding
 	//to the root key
-				$parentArr[$part] = array('__base_val' => $section);
+				$parentArr[$part] = array('__base_val' => $set_tings['section']);
 	//if the parent doesn't have an array inside of it yet (leaves won't have arrays inside of them)
 			} elseif (!is_array($parentArr[$part])) {
 	//if $baseval has been set to true (we want to actually have the value stored)

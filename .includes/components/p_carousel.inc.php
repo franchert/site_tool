@@ -18,8 +18,8 @@ function p_carousel(
 	$height = 200){
 
 	$owl = true;
-	global $script_var;
-	$script_var .='
+	global $set_tings;
+	$set_tings['script_var'] .='
 $(window).load(function() {
 	$(".'.$id.'").owlCarousel({
 		resopnsiveClass:true,

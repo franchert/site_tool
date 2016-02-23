@@ -10,7 +10,7 @@ $demo = false;
 /*end page-specific variables*/
 include_once($docroot."/.includes/director.php");
 
-$p_content .='
+$l_content .='
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <div class="jumbotron">
         <h1>Theme example</h1>

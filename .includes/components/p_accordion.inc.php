@@ -9,7 +9,7 @@ function p_accordion(
 	$id,
 	$arr = null){
 
-	global $script_var;
+	global $set_tings;
 	$string = '';
 
 	$string .='<div class="accordion" id="'.$id.'">';

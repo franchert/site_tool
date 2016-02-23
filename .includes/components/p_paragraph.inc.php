@@ -11,6 +11,7 @@ function p_paragraph(
 	$len = null,
 	$tags = true){
 
+	global $set_tings;
 	$string = '';
 	$len_types = array('short','medium','long','verylong');
 	if(is_null($len) || !in_array($len,$len_types)){

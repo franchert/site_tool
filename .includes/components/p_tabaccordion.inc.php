@@ -10,9 +10,11 @@ function p_tabaccordion(
 	$id,
 	$arr = null,
 	$active = 1,
-	$class='left'){
+	$class = 'acc left',
+	$type = 'tab'){
 
-	$string = '<ul class="tabaccordion '.$class.'" id="'.$id.'">';
+	global $set_tings;
+	$string = '';
 	$count = 1;
 	if($arr == null){
 		$arr=array(
@@ -30,16 +32,43 @@ function p_tabaccordion(
 			)
 		);
 	};
+	$string .= '<div class="tabaccordion '.$class.'" id="'.$id.'">';
 	$acc_string ='';
-	foreach($arr as $k => $v){
-		$acc_string .='<li';
-		if ($active == $count){
+	if($type == 'anchor'){
+		$string .='<ul class="ta_tabs">';
+		foreach($arr as $k => $v){
+			$acc_string .='<li';
+			if ($active == $count){
 				$acc_string .= ' class="tab-active"';
+			}
+			$count++;
+			$acc_string .='><a href="#ta_'.str_replace(' ','_',strtolower($v["t"])).'" tabindex="0"><h3>'.$v["t"].'</h3></a></li>';
 		}
-		$count++;
-		$acc_string .='><h3 tabindex="0">'.$v["t"].'</h3><div>'.$v["b"].'</div></li>';
+		$string .= $acc_string;
+		$acc_string ='';
+		$string .='</ul><ul class="ta_container">';
+		$count = 1;
+		foreach($arr as $k => $v){
+			$acc_string .='<li id="ta_'.str_replace(' ','_',strtolower($v["t"])).'"';
+			if ($active == $count){
+				$acc_string .= ' class="tab-active"';
+			}
+			$count++;
+			$acc_string .='><div>'.$v["b"].'</div></li>';
+		}
+		$string .=$acc_string;
+	}else if($type == 'tab'){
+		$string .='<ul>';
+		foreach($arr as $k => $v){
+			$acc_string .='<li';
+			if ($active == $count){
+					$acc_string .= ' class="tab-active"';
+			}
+			$count++;
+			$acc_string .='><h3 tabindex="0">'.$v["t"].'</h3><div>'.$v["b"].'</div></li>';
+		}
+		$string .=$acc_string;
 	}
-	$string .=$acc_string;
-	$string .='</ul>';
-return $string;
+	$string .='</ul></div>';
+	return $string;
 }?>

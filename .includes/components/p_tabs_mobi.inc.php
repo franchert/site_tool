@@ -10,6 +10,7 @@ function p_tabs_mobi(
 	$collapsable=true,
 	$arr = null){
 
+	global $set_tings;
 	$string = '<div class="container"><div id="'.$id.'">';
 	if ($collapsable){
 		$c = ' collapsable';

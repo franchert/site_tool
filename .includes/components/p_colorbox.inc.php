@@ -7,9 +7,9 @@
 function p_colorbox(
 	$selector){
 
-	global $script_var;
+	global $set_tings;
 	$string = '';
-	$script_var .='
+	$set_tings['script_var'] .='
 	$(document).ready(function(){
 		$("'.$selector.'").colorbox({
 			photo:true,

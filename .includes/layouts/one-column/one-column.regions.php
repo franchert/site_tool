@@ -1,3 +1,3 @@
 <?php
-	$p_one = $init;
+	$l_one_col = $init;
 ?>

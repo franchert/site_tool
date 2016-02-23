@@ -9,27 +9,27 @@ $layout = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
-$p_content .= p_promo("generic","image","","Generic");
-$p_content .= p_promo("generic","image","left","Generic Left");
-$p_content .= p_promo("generic","image","right","Generic Right");
-$p_content .= p_promo("generic hover","image","right","Generic Hover");
+$l_content .= p_promo("generic","image","","Generic");
+$l_content .= p_promo("generic","image","left","Generic Left");
+$l_content .= p_promo("generic","image","right","Generic Right");
+$l_content .= p_promo("generic hover","image","right","Generic Hover");
 
-$p_promo_sidebar .= p_promo("generic","image","","Generic");
-$p_promo_sidebar .= p_promo("generic","image","left","Generic Left");
-$p_promo_sidebar .= p_promo("generic","image","right","Generic Right");
-$p_promo_sidebar .= p_promo("generic hover","image","","Generic Hover");
+$l_promo_sidebar .= p_promo("generic","image","","Generic");
+$l_promo_sidebar .= p_promo("generic","image","left","Generic Left");
+$l_promo_sidebar .= p_promo("generic","image","right","Generic Right");
+$l_promo_sidebar .= p_promo("generic hover","image","","Generic Hover");
 
 
 
-$p_content .= p_promo("generic","comp","","Generic",p_promo("linkimg","image","","TextLink"));
-$p_content .= p_promo("generic","comp","left","Generic Left",p_promo("linkimg","image","","TextLink"));
-$p_content .= p_promo("generic","comp","right","Generic Right",p_promo("linkimg","image","","TextLink"));
-$p_content .= p_promo("generic hover","comp","","Generic Hover",p_promo("linkimg","image","","TextLink"));
+$l_content .= p_promo("generic","comp","","Generic",p_promo("linkimg","image","","TextLink"));
+$l_content .= p_promo("generic","comp","left","Generic Left",p_promo("linkimg","image","","TextLink"));
+$l_content .= p_promo("generic","comp","right","Generic Right",p_promo("linkimg","image","","TextLink"));
+$l_content .= p_promo("generic hover","comp","","Generic Hover",p_promo("linkimg","image","","TextLink"));
 
-$p_promo_sidebar .= p_promo("generic","comp","","Generic",p_promo("linkimg","image","","TextLink"));
-$p_promo_sidebar .= p_promo("generic","comp","left","Generic Left",p_promo("linkimg","image","","TextLink"));
-$p_promo_sidebar .= p_promo("generic","comp","right","Generic Right",p_promo("linkimg","image","","TextLink"));
-$p_promo_sidebar .= p_promo("generic hover","comp","","Generic Hover",p_promo("linkimg","image","","TextLink"));
+$l_promo_sidebar .= p_promo("generic","comp","","Generic",p_promo("linkimg","image","","TextLink"));
+$l_promo_sidebar .= p_promo("generic","comp","left","Generic Left",p_promo("linkimg","image","","TextLink"));
+$l_promo_sidebar .= p_promo("generic","comp","right","Generic Right",p_promo("linkimg","image","","TextLink"));
+$l_promo_sidebar .= p_promo("generic hover","comp","","Generic Hover",p_promo("linkimg","image","","TextLink"));
 
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

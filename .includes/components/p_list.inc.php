@@ -11,6 +11,7 @@ function p_list(
 	$type = '',
 	$idORclass='class'){
 
+	global $set_tings;
 	if(!is_null($arr)){
 		if($idORclass == "id"){
 			$value = '" id="'.$type;

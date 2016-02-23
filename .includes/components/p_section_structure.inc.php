@@ -1,5 +1,6 @@
 <?php
 /**
+	not functional, use tabaccordion instead
 *	Function to include a structure that functions as an Accordion on mobile and tabs on desktop
 *
 *	@param string  $id = unique ID of structure being displayed
@@ -14,12 +15,13 @@ function p_section_structure(
 	$active = 1,
 	$class='left'){
 
+	global $set_tings;
 	$string = '<ul class="section_structure '.$class.' lg-'.$largescreens.' sm-'.$smallscreens.'">';
 	$count = 1;
 	if($arr == null){
 		$arr=array(
 			1 => array(
-				"t" => "Section 1",
+				"t" => "Section 1 longer title for wrap",
 				"b" => p_paragraph(1,'short'),
 			),
 			2 => array(

@@ -29,8 +29,8 @@
 <body <?php 
 /*t4 doesn't allow for body classes*/
 if($cms !="t4"){
-	echo 'class="'.$section_slug; 
-	if($section != $page){
+	echo 'class="'.$set_tings['section_slug']; 
+	if($set_tings['section'] != $page){
 		echo ' '.$page_slug;
 	}
 	/*if we're on a mini site, add an extra class to show its parent mini item*/
@@ -44,13 +44,13 @@ if($cms !="t4"){
 	if(isset($demo) && $demo == true){
 		echo ' demo';
 	}
-	echo ' '.$layout.' '.$header.'"';
+	echo ' '.$layout.' '.$set_tings['header'].'"';
 }
 ?> >
 	<a tabindex='0' class="skip" href="#main-content">Skip to Main Content</a>
 	<header>
 		<?php echo p_alert($alert); ?>
 	<div class="l-head <?php if(isset($mini) && $mini == true){echo "mini-site";} ?>">
-		<?php if(isset($header)){
-			include_once( $docroot."/.includes/headers/".$header."/".$header.".php");
+		<?php if(isset($set_tings['header'])){
+			include_once( $docroot."/.includes/headers/".$set_tings['header']."/".$set_tings['header'].".php");
 		} ?>

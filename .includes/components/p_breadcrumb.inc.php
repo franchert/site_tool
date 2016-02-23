@@ -4,15 +4,14 @@
  */
 function p_breadcrumb(){
 
-	global $segments;
-	global $crumb;
 	global $fe_wrapper;
-	global $fe_container;
-	global $fe_region;
+	global $set_tings;
+
 	$string = "\n\t<div class='".$fe_wrapper."'>\n\t\t<div id='breadcrumb'>\n\t\t\t<ul>\n\t\t";
 	$i = -1;
-	$count = count($segments);
-	foreach($segments as $segment){
+	$crumb = '';
+	$count = count($set_tings['segments']);
+	foreach($set_tings['segments'] as $segment){
 		if ($i !=-1){
 			$crumb .=$segment."/";
 		}

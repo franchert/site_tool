@@ -18,6 +18,7 @@ function p_grid(
 	$addl_class='',
 	$subtitle=null){
 
+	global $set_tings;
 	$string = '';
 	if(isset($title) && $title !=''){
 		$string .= '<div class="h2-wrap"><h2 class="'.$addl_class.'">'.$title.'</h2></div>';

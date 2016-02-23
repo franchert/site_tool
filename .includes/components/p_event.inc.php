@@ -19,6 +19,7 @@ function p_event(
 	$day=null,
 	$weekday=null){
 
+	global $set_tings;
 	if ($month == null){
 		$month = date('M');
 	}

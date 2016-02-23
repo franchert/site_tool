@@ -12,8 +12,8 @@ function p_tabs(
 	$tabs = 'false',
 	$tabs_o = 'false'){
 
-	global $script_var;
-	$script_var .= '
+	global $set_tings;
+	$set_tings['script_var'] .= '
 $(function() {
 	$( "#'.$id.'" ).tabs({
 		collapsible:'.$tabs.',

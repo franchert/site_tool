@@ -12,6 +12,7 @@ function p_dropdown(
 	$text="sample dropdown",
 	$item=null){
 
+	global $set_tings;
 	$string = "\n<div class='drop-container ".$type."'>\n\t<button class='drop-toggle'>".$text."</button>\n\t<div class='drop-item'>\n".$item."\n\t</div>\n</div>\n\t";
 	return $string;
 }

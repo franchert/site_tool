@@ -13,6 +13,7 @@ function p_profile(
 	$text = NULL,
 	$image = NULL){
 
+	global $set_tings;
 	$string = '';
 	$string .="\n<div class='profile ".$type."'>\n\t";
 	if(is_null($image)){

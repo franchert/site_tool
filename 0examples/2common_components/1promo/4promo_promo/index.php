@@ -9,17 +9,17 @@ $layout = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
-$p_content .= p_promo("promo","image","","Promo");
-$p_content .= p_promo("promo","image","light","Promo Light",'');
-$p_content .= p_promo("promo","image","dark","Promo Dark");
-$p_content .= p_promo("promo","image","","Promo with a list",p_list(array(p_link(),p_link(),p_link())));
-$p_content .= p_promo("promo","image","","Promo with a list",p_promo('button','image','dark','With a dark button!'));
+$l_content .= p_promo("promo","image","","Promo");
+$l_content .= p_promo("promo","image","light","Promo Light",'');
+$l_content .= p_promo("promo","image","dark","Promo Dark");
+$l_content .= p_promo("promo","image","","Promo with a list",p_list(array(p_link(),p_link(),p_link())));
+$l_content .= p_promo("promo","image","","Promo with a list",p_promo('button','image','dark','With a dark button!'));
 
-$p_promo_sidebar .= p_promo("promo","image","","Promo");
-$p_promo_sidebar .= p_promo("promo","image","light","Promo Light");
-$p_promo_sidebar .= p_promo("promo","image","dark","Promo Dark");
-$p_promo_sidebar .= p_promo("promo","image","","Promo with a list",p_list(array(p_link(),p_link(),p_link())));
-$p_promo_sidebar .= p_promo("promo","image","","Promo with a list",p_promo('button','image','dark','With a dark button!'));
+$l_promo_sidebar .= p_promo("promo","image","","Promo");
+$l_promo_sidebar .= p_promo("promo","image","light","Promo Light");
+$l_promo_sidebar .= p_promo("promo","image","dark","Promo Dark");
+$l_promo_sidebar .= p_promo("promo","image","","Promo with a list",p_list(array(p_link(),p_link(),p_link())));
+$l_promo_sidebar .= p_promo("promo","image","","Promo with a list",p_promo('button','image','dark','With a dark button!'));
 
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
 ?>

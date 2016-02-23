@@ -22,7 +22,6 @@ if($url === "/"){
 }
 $page_title = titleFromSlug($page_slug);
 $section_title = titleFromSlug($section_slug);
-$crumb = '';
 
 $client_slug = str_replace(' ','_',strtolower($client_name));
 
@@ -47,10 +46,37 @@ if(isset($fe_framework)){
 }
 
 /*initialize global variables*/
-$script_var = '';
+$script_var= '';
 $active = '';
-
-
+/*set all the global variables in an array*/
+$set_tings = compact(array(
+	'docroot',
+	'base_site',
+	'base_url',
+	'url_remove',
+	'starting',
+	'cms',
+	'fe_framework',
+	'layout',
+	'alert',
+	'header',
+	'script_var',
+	'active',
+	'url',
+	'path',
+	'segments',
+	'parent',
+	'page',
+	'page_slug',
+	'page_title',
+	'section',
+	'section_slug',
+	'section_title',
+	'site_logo',
+	'client_name',
+	'client_slug'
+));
+//print_r($set_tings);
 //include everything from the components directories
 foreach (glob($docroot."/.includes/components/*.inc.php") as $filename){
 	include_once($filename);

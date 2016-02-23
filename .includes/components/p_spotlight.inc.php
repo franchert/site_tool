@@ -13,6 +13,7 @@ function p_spotlight(
 	$date = null,
 	$image = null){
 
+	global $set_tings;
 	if(is_null($date)){
 		$date = date("F j, Y");
 	}
