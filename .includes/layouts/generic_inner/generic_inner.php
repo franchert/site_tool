@@ -54,7 +54,7 @@ if($fe_framework == 'bootstrap'){
 	}
 ?>
 </header>
-<div class="<?php echo $fe_region.$fe_l_page; ?><?php if(isset($demo) && $demo == true){ echo " demo"; }?>" id="main-content">
+<div class="<?php echo $fe_region.$fe_l_page; ?><?php if(isset($demo) && $demo == true){ echo " demo"; }?>" id="main-content" tabindex="-1">
 	<?php echo '<div class="'.$fe_l_featured_header.$fe_region.'">'.$l_featured_header.'</div>';?>
 	<?php if($l_content_header != ''){
 		echo '<div class="'.$fe_l_content_header.$fe_region.'">'.$l_content_header.'</div>';

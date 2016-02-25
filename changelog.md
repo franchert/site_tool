@@ -4,7 +4,13 @@ date:
 link: 
 ```
 notes:
-
+-Global variables now stored in an array rather than individually
+-Publishing more robust, now generates zipped folder with all pertinant info.
+-Generation more robust, now takes first json feed in the folder to build sitemap out of, rather than specifically named one.
+-Usage now searches for ALL user defined functions and filters out the non p_ prefixed functions. 
+-Additional components from most recent projects
+-Renaming of files for consistency
+-Accessibility-focused additions
 
 ```
 version 0.5

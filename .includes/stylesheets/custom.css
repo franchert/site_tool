@@ -202,10 +202,10 @@ body footer .column h3 {
   }
 }
 body footer .column .footer .p-promo {
-  color: white;
+  color: #fff;
 }
 body footer .column .footer .p-promo h4 {
-  color: white;
+  color: #fff;
 }
 body footer .column .footer .p-promo ul {
   list-style: none;
@@ -219,18 +219,18 @@ body footer .column .footer .p-promo ul li {
 body footer .column .footer .p-promo ul li a {
   display: inline-block;
   width: auto;
-  color: white;
+  color: #fff;
 }
 body footer .column .footer .p-promo ul li span {
   display: inline-block;
   width: auto;
-  color: white;
+  color: #fff;
   padding-right: 10px;
   width: 25px;
   text-align: center;
 }
 body footer .column .footer .p-promo ul li p {
-  color: white;
+  color: #fff;
   margin: 0;
 }
 body footer .column .footer .p-promo .city {

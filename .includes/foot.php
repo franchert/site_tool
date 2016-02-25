@@ -9,7 +9,7 @@
 			<?php echo p_matrix(
 				3,
 				array(
-					p_promo('promo','','contact','Contact Us',
+					p_promo('promo contact','','','Contact Us',
 						p_list(
 							array(
 								'<p><span class="fa fa-map-marker"></span>2443 Lynn Rd, Suite 108</p>',
@@ -19,7 +19,7 @@
 							)
 						),''
 					),
-					p_promo('promo','','social','Follow Us',
+					p_promo('promo social','','','Follow Us',
 						p_list(
 							array(
 								p_link("#",'<span class="fa fa-facebook"></span>Facebook'),
@@ -31,7 +31,7 @@
 							)
 						),''
 					),
-					p_promo('promo','','links-resources','Links &amp; Resources',
+					p_promo('promo links-resources','','','Links &amp; Resources',
 						p_list(
 							array(
 								p_link("#",'Emergency Procedures'),

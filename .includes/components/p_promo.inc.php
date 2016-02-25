@@ -9,7 +9,7 @@
  */
 function p_promo(
 	$type,
-	$img_type = "image",
+	$comp_type = "image",
 	$addl_class='',
 	$title = "Promo Title",
 	$item = null,
@@ -20,24 +20,28 @@ function p_promo(
 	$arr=null){
 
 	global $set_tings;
-	if(strip_tags($title) == ''){
-		$alt = "alt text";
-	}else{
-		$alt = strip_tags($title);
-	};
 
-	if($img_type == "image"){
+	$alt = (strip_tags($title) == '') ? "placeholder alt text" : strip_tags($title);
+
+	if($comp_type == "image"){
 		$img = p_image("400","300");
-	}else if($img_type == "comp"){
-		$img = $item;
-	}else if($img_type == "image_url"){
+	}else if($comp_type == "image_url"){
 		$img = "<img alt='".$alt."' src='".$item."'/>";
+	}else if($comp_type == "comp"){
+		$img = ($item === null) ? '':$item;
 	}else{
 		$img = '';
 	}
 
-	$string = '';
-	$string .="\n<div class='p-promo ".$type." ".$addl_class."'>\n\t";
+	if(is_null($text)){
+		$text = p_paragraph('1','short',true);
+	}else if ($text == ''){
+		$text='';
+	}else{
+		$text = "<p>".$text."</p>";
+	}
+
+	$string = "\n<div class='p-promo ".$type." ".$addl_class."'>\n\t";
 
 	if(strrpos($type,"overlayv2") !== false){
 		if(!is_null($link)){
@@ -51,10 +55,7 @@ function p_promo(
 			";
 			$string .="<h2>".$title."</h2>
 			";
-			if(is_null($text)){
-				$text = file_get_contents('http://loripsum.net/api/1/short/plaintext');
-			}
-			$string .= "<p>".$text."</p>\n\t\t";
+			$string .= $text."\n\t\t";
 		$string .= "</div>\n\t";
 		if(!is_null($link)){
 			$string .="</a>\n";
@@ -68,30 +69,21 @@ function p_promo(
 			$string .="<div class='tag'><h3>".$tag."</h3></div>";
 		}
 		$string .= "<div class='promo-container'>";
-			$string .="<h2>".$title."</h2>";
-			if(is_null($text)){
-				$text = file_get_contents('http://loripsum.net/api/1/short/plaintext');
-			}
-			$string .= "<p>".$text."</p>";
+		$string .="<h2>".$title."</h2>";
+		$string .= $text;
 		$string .= "</div>";
 		if(!is_null($link)){
 			$string .="</a>";
 		}
-	}else if(strrpos($type,"linkimg") !== false){/**/
+	}else if(strrpos($type,"linkimg") !== false){
 		if($link != null){
 			$string .= "<a href='".$link."'>";
 		}
 		$string .="<div class='item'>";
 		if(!is_null($title)){
-			$string .= "<h3>".$title."</h3>";
+			$string .= "<h3>".$title."<span class='sub-text'>".$text."</span></h3>";
 		}
 		$string.=$img."</div>";
-		if ($text == ""){
-			$text = "";
-		}else if(is_null($text)){
-			$text = "<p>".file_get_contents('http://loripsum.net/api/1/short/plaintext')."</p>";
-		}
-		$string .= $text;
 		if($link != null){
 			$string .= "</a>";
 		}
@@ -111,10 +103,7 @@ function p_promo(
 		$string .= "<div class='item'>".$img."</div>\n\t";
 		$string .= "<div class='promo-container'>\n\t\t";
 			$string .="<h2>".$title."</h2>\n\t\t";
-			if(is_null($text)){
-				$text = file_get_contents('http://loripsum.net/api/1/short/plaintext');
-			}
-			$string .= "<p>".$text."</p>\n\t\t";
+			$string .= $text."\n\t\t";
 			if(!is_null($arr)){
 				$string .="<ul>";
 				foreach($arr as $k => $v){
@@ -137,13 +126,8 @@ function p_promo(
 		if(strrpos($type,"light") === false){$string .="<hr>\n\t";}
 		$string .= "<div class='item'>".$img."</div>\n\t";
 		$string .= "<div class='promo-container'>\n\t\t";
-			if(is_null($text)){
-				$text = "<p class='intro'>".p_paragraph(1,'short',false)."</p>";
-			} else if($text == ''){
-				$string .='';
-			}
-			$string .= $text."\n\t";
-			$string .= $item;
+		$string .= $text."\n\t";
+		$string .= $item;
 		$string .= "</div>\n";
 		if(is_null($link_title) || $link_title == ''){
 			$string .= "";

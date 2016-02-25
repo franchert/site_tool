@@ -1,4 +1,3 @@
-/* _p_accordion.scss */
 $acc_breakpoint:$tab;
 $acc_font:"open_sans";
 //inactive tab background, active accordion background & content border
@@ -9,6 +8,7 @@ $acc_active_tab:$color-1;
 $acc_tab_color:$white;
 
 .accordion{
+	/*  _p_accordion.scss */
 	margin-bottom:20px;
 	h3{
 		padding:10px 20px;

@@ -1,11 +1,11 @@
 
-/* _p_main_nav.scss */
 $primary_font_family:'open_sans';
 $primary_font_color:$color-1;
 $secondary_font_family:''open_sans_bold'';
 $secondary_font_color:$color-2;
 
 .main-nav-container{
+	/* _p_main_nav.scss */
 	display:none;
 	@include breakpoint($tab){
 		display:block;

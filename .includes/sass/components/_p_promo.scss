@@ -1,5 +1,5 @@
-/* _p_promo.scss */
 .p-promo{
+	/* _p_promo.scss */
 	display:table;
 	float:left;
 	width:100%;
@@ -13,7 +13,6 @@
 	&.linkimg{
 		position:relative;
 		a{
-			position:absolute;
 			overflow:hidden;
 			.item{
 				height:200px;
@@ -41,6 +40,10 @@
 							font-style:initial;
 							font-size:40px;
 						}
+						p{
+							display:none;
+							@include font('open_sans',16,inherit);
+						}
 					}
 				}
 				img{
@@ -61,6 +64,9 @@
 						background:$color-3-t;
 						span{
 							color:inherit;
+							p{
+								display:block;
+							}
 						}
 					}
 				}
@@ -561,7 +567,7 @@
 			position:relative;
 		}
 		.promo-container{
-			.intro{
+			p{
 				@include font('lora',16,$c-default);
 				a{
 					@include font('lora',18,$color-1);
@@ -583,7 +589,7 @@
 				font-weight:normal;
 			}
 			.promo-container{
-				.intro{
+				p{
 					color:$white;
 				}
 				> a{
@@ -603,7 +609,7 @@
 					color:$color-1;
 					font-weight:normal;
 				}
-				.intro{
+				p{
 					color:$c-default;
 				}
 				> a{
@@ -620,7 +626,7 @@
 				padding-right:10px;
 			}
 			.promo-container{
-				.intro{
+				p{
 					display:inline;
 					float:none;
 				}
@@ -671,10 +677,7 @@
 			a{
 				.promo-container{
 					background:$color-2;
-					span{
-						color:$color-1;
-					}
-					p{
+					span,p{
 						color:$color-1;
 					}
 				}
@@ -684,10 +687,7 @@
 			a{
 				.promo-container{
 					background:$color-1;
-					span{
-						color:$white;
-					}
-					p{
+					span,p{
 						color:$white;
 					}
 				}
@@ -717,38 +717,9 @@
 .l-promo-sidebar{
 	.p-promo{
 		&.overlay{
-			a{}
-			.item{}
-			.tag{
-				h3{
-					&:after{}
-				}
-			}
 			.promo-container{
 				position:relative;
 				background:$color-1;
-				p{}
-				h2{}
-				ul{
-					li{
-						.drop-container{
-							.dropdown{
-								&:after{}
-							}
-							ul{}
-							&.open{
-								.dropdown{
-									&:after{}
-								}
-							}
-						}
-					}
-				}
-			}
-			&.spotlight{
-				.promo-container{
-					h2{}
-				}
 			}
 		}
 		&.overlayv2{
@@ -772,14 +743,6 @@
 				text-align:center;
 			}
 		}
-		&.hovertext{
-		}
-		&.link.item{
-			h4{}
-			a{
-				.item{}
-			}
-		}
 		&.generic{
 			.promo-container{
 				h2{
@@ -797,86 +760,11 @@
 				}
 			}
 		}
-		&.promo{
-			h4{}
-			hr{}
-			.promo-container{
-				.intro{
-					a{}
-				}
-				> a{}
-			}
-		}
-		&.textlink{
-		}
-		&.button{
-			a{
-				.item{}
-				.promo-container{
-					span{}
-					p{}
-				}
-			}
-		}
-		&.more-news{
-			a{
-				.promo-container{
-					p{}
-				}
-			}
-		}
 	}
 }
 .l-content{
 	.p-promo{
-		&.overlay{
-			a{}
-			.item{}
-			.tag{
-				h3{
-					&:after{}
-				}
-			}
-			.promo-container{
-				p{}
-				h2{}
-				ul{
-					li{
-						.drop-container{
-							.dropdown{
-								&:after{}
-							}
-							ul{}
-							&.open{
-								.dropdown{
-									&:after{}
-								}
-							}
-						}
-					}
-				}
-			}
-			&.spotlight{
-				.promo-container{
-					h2{}
-				}
-			}
-		}
-		&.hovertext{
-			
-		}
-		&.link.item{
-			h4{}
-			a{
-				.item{}
-			}
-		}
 		&.generic{
-			&.left,
-			&.right{
-				.item{}
-				.promo-container{}
-			}
 			&.hover{
 				.item{
 					@include breakpoint($tab){
@@ -889,14 +777,10 @@
 					@include breakpoint($tab){
 						@include calc("width","100% - 200px",100%);
 					}
-					h2{}
-					p{}
 				}
 			}
 		}
 		&.promo{
-			h4{}
-			hr{}
 			.item{
 				@include breakpoint($tab){
 					width:200px;
@@ -907,28 +791,6 @@
 				padding:0 20px;
 				@include breakpoint($tab){
 					@include calc("width","100% - 200px",100%);
-				}
-				.intro{
-					a{}
-				}
-				> a{}
-			}
-		}
-		&.textlink{
-		}
-		&.button{
-			a{
-				.item{}
-				.promo-container{
-					span{}
-					p{}
-				}
-			}
-		}
-		&.more-news{
-			a{
-				.promo-container{
-					p{}
 				}
 			}
 		}

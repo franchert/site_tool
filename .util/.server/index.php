@@ -46,9 +46,8 @@ include_once($docroot."/.includes/director.php");
 'AUTH_TYPE', 
 'PATH_INFO', 
 'ORIG_PATH_INFO');*/
-
-echo "</br>Return to the <a href='/.util'>Utility page</a>";
-echo '<div class="toggle"><table cellpadding="10" style="max-width:600px;margin:30px;">' ;
+echo "<a href='/.util' style='position:fixed;top:20px;right:20px;background:#333;color:white;padding:20px;width:50px;height:50px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Back to Utility</a>";
+echo '<div class="toggle"><table cellpadding="10" style="max-width:600px;margin:30px;border-left:1px solid black; border-top:1px solid black;">' ;
 foreach ($set_tings as $k => $v) {
 	$str = '';
 	if(is_array($v)){

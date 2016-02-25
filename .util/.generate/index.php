@@ -40,7 +40,7 @@ if($string == ''){
 		makeDir($new,$parent,$title);
 	}
 }
-echo "</br>Return to the <a href='/.util'>Utility page</a>";
+echo "<a href='/.util' style='position:fixed;top:20px;right:20px;background:#333;color:white;padding:20px;width:50px;height:50px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Back to Utility</a>";
 function findParent($find,$string,$haystack){
 	global $temp, $times, $tabs;
 	$times++;

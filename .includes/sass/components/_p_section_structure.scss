@@ -1,4 +1,3 @@
-/* _p_section_structure.scss */
 $s_s_breakpoint:$tab;
 $s_s_font:"open_sans";
 //inactive tab background, active accordion background & content border
@@ -11,6 +10,7 @@ $max:10;
 $anchor-width:33.3333%;
 
 ul.section_structure{
+	/* _p_section_structure.scss */
 	float:left;
 	position:relative;
 	margin-bottom:20px;

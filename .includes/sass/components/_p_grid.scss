@@ -1,15 +1,15 @@
-/* _p_grid.scss */
-$grid-padding:20px;
+$grid-margin:20px;
 $grid-break:$tab;
 $vert-height:400px;
 
 .c-grid{
+	/* _p_grid.scss */
 	margin-bottom:20px;
 	> div{
 		height:#{$vert-height * 0.5};
-		padding-bottom:20px;
+		margin-bottom:20px;
 		@include breakpoint($grid-break){
-			padding:0 #{$grid-padding * 0.5} #{$grid-padding};
+			margin:0 #{$grid-margin * 0.5} #{$grid-margin};
 			overflow:hidden;
 		}
 		.p-promo{
@@ -25,12 +25,12 @@ $vert-height:400px;
 	&.two,&.four{
 		>div{
 			@include breakpoint($grid-break){
-				width:50%;
+				@include calc('width','50% - #{$grid-margin}',50%);
 				&:nth-child(2n+1){
-					padding-left:0;
+					margin-left:0;
 				}
 				&:nth-child(2n){
-					padding-right:0;
+					margin-right:0;
 				}
 			}
 		}
@@ -38,15 +38,17 @@ $vert-height:400px;
 	&.three{
 		>div{
 			@include breakpoint($grid-break){
-				width:33.3333%;
 				&:nth-child(1){
-					padding-left:0;
+					@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
+					margin-left:0;
 				}
 				&:nth-child(2){
-					padding-right:#{$grid-padding * 0.5};
+					@include calc('width','33.3333% - #{$grid-margin}',33.3333%);
+					margin-right:#{$grid-margin * 0.5};
 				}
 				&:nth-child(3){
-					padding-right:0;
+					@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
+					margin-right:0;
 				}
 			}
 		}
@@ -55,19 +57,19 @@ $vert-height:400px;
 		&.three{
 			> div{
 				@include breakpoint($grid-break){
-					height:$vert-height;
-					width:50%;
+					height:#{$vert-height + $grid-margin};
+					@include calc('width','50% - #{$grid-margin/2}',50%);
 					&:nth-child(3n-2){
-						padding-left:0;
+						margin-left:0;
 					}
 					&:nth-child(3n-1){
 						height:#{$vert-height * 0.5};
-						padding-right:0;
-						padding-bottom:#{$grid-padding};
+						margin-right:0;
+						margin-bottom:#{$grid-margin};
 					}
 					&:nth-child(3n){
 						height:#{$vert-height * 0.5};
-						padding-right:0;
+						margin-right:0;
 					}
 				}
 			}
@@ -76,18 +78,18 @@ $vert-height:400px;
 					@include breakpoint($grid-break){
 						&:nth-child(3n-2){
 							height:#{$vert-height * 0.5};
-							padding-left:0;
-							padding-bottom:#{$grid-padding};
+							margin-left:0;
+							margin-bottom:#{$grid-margin};
 						}
 						&:nth-child(3n-1){
-							padding-right:0;
+							margin-right:0;
 							float:right;
-							height:$vert-height;
+							height:#{$vert-height + $grid-margin};
 						}
 						&:nth-child(3n){
 							height:#{$vert-height * 0.5};
-							padding-left:0;
-							padding-right:#{$grid-padding * 0.5};
+							margin-left:0;
+							margin-right:#{$grid-margin * 0.5};
 						}
 					}
 				}
@@ -98,19 +100,19 @@ $vert-height:400px;
 		&.three{
 			> div{
 				@include breakpoint($grid-break){
-					width:50%;
+					@include calc('width','50% - #{$grid-margin/2}',50%);
 					height:#{$vert-height * 0.5};
 					&:nth-child(3n-2){
 						width:100%;
-						padding:0 0 #{$grid-padding * 0.5} 0;
+						margin:0 0 #{$grid-margin * 0.5} 0;
 					}
 					&:nth-child(3n-1){
-						padding-top:#{$grid-padding * 0.5};
-						padding-left:0;
+						margin-top:#{$grid-margin * 0.5};
+						margin-left:0;
 					}
 					&:nth-child(3n){
-						padding-top:#{$grid-padding * 0.5};
-						padding-right:0;
+						margin-top:#{$grid-margin * 0.5};
+						margin-right:0;
 					}
 				}
 			}
@@ -118,30 +120,30 @@ $vert-height:400px;
 		&.five{
 			> div{
 				@include breakpoint($grid-break){
-					width:50%;
+					@include calc('width','50% - #{$grid-margin/2}',50%);
 					&:nth-child(5n-4){
-						padding-left:0;
-						padding-bottom:#{$grid-padding * 0.5};
+						margin-left:0;
+						margin-bottom:#{$grid-margin * 0.5};
 					}
 					&:nth-child(5n-3){
-						padding-right:0;
-						padding-bottom:#{$grid-padding * 0.5};
+						margin-right:0;
+						margin-bottom:#{$grid-margin * 0.5};
 					}
 					&:nth-child(5n-2){
-						width:33.3333%;
-						padding-left:0;
-						padding-top:#{$grid-padding * 0.5};
+						@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
+						margin-left:0;
+						margin-top:#{$grid-margin * 0.5};
 						height:#{$vert-height * 0.5};
 					}
 					&:nth-child(5n-1){
-						width:33.3333%;
-						padding-top:#{$grid-padding * 0.5};
+						@include calc('width','33.3333% - #{$grid-margin}',33.3333%);
+						margin-top:#{$grid-margin * 0.5};
 						height:#{$vert-height * 0.5};
 					}
 					&:nth-child(5n){
-						width:33.3333%;
-						padding-right:0;
-						padding-top:#{$grid-padding * 0.5};
+						@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
+						margin-right:0;
+						margin-top:#{$grid-margin * 0.5};
 						height:#{$vert-height * 0.5};
 					}
 				}
@@ -152,10 +154,10 @@ $vert-height:400px;
 				@include breakpoint($grid-break){
 					width:33.3333%;
 					&:nth-child(3n-2){
-						padding-left:0;
+						margin-left:0;
 					}
 					&:nth-child(3n){
-						padding-right:0;
+						margin-right:0;
 					}
 				}
 			}
@@ -164,24 +166,24 @@ $vert-height:400px;
 	&.offset{
 		> div{
 			@include breakpoint($grid-break){
-				width:33.3333%;
+				@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 			}
 		}
 		&.two{
 			> div{
 				&:nth-child(2n){
 					@include breakpoint($grid-break){
-						width:66.6666%;
-						padding-right:0;
+						@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
+						margin-right:0;
 					}
 				}
 			}
 			&.right{
 				> div{
 					@include breakpoint($grid-break){
-						width:33.3333%;
+						@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 						&:nth-child(2n-1){
-							width:66.6666%;
+							@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 						}
 					}
 				}
@@ -190,20 +192,20 @@ $vert-height:400px;
 		&.four{
 			> div{
 				@include breakpoint($grid-break){
-					width:33.3333%;
-					padding-left:0;
+					@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
+					margin-left:0;
 					&:nth-child(2n){
-						padding-left:#{$grid-padding * 0.5};
+						margin-left:#{$grid-margin * 0.5};
 					}
 					&:nth-child(4n-3){
-						width:66.6666%;
+						@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 					}
 					&:nth-child(4n-2){
-						padding-right:0;
+						margin-right:0;
 					}
 					&:nth-child(4n){
-						width:66.6666%;
-						padding-right:0;
+						@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
+						margin-right:0;
 					}
 				}
 			}
@@ -211,18 +213,18 @@ $vert-height:400px;
 				> div{
 					@include breakpoint($grid-break){
 						&:nth-child(4n-3){
-							width:33.3333%;
+							@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 						}
 						&:nth-child(4n-2){
-							width:66.6666%;
-							padding-right:0;
+							@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
+							margin-right:0;
 						}
 						&:nth-child(4n-1){
-							width:66.6666%;
+							@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 						}
 						&:nth-child(4n){
-							width:33.3333%;
-							padding-right:0;
+							@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
+							margin-right:0;
 						}
 					}
 				}
@@ -231,31 +233,35 @@ $vert-height:400px;
 		&.five{
 			> div{
 				@include breakpoint($grid-break){
-					width:33.3333%;
+					@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 					&:nth-child(5n-4){
-						width:66.6666%;
-						padding-left:0;
+						@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
+						margin-left:0;
 					}
 					&:nth-child(5n-3){
-						padding-right:0;
+						margin-right:0;
 					}
 					&:nth-child(5n-2){
-						padding-left:0;
+						margin-left:0;
 					}
 					&:nth-child(5n-1){
-						padding-right:#{$grid-padding * 0.5};
+						margin-right:#{$grid-margin * 0.5};
+						@include calc('width','33.3333% - #{$grid-margin}',33.3333%);
 					}
 					&:nth-child(5n){
-						padding-right:0;
+						margin-right:0;
 					}
 				}
 			}
 			&.right{
 				> div{
 					@include breakpoint($grid-break){
-						width:33.3333%;
-						&:nth-child(2){
-							width:66.6666%;
+						@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
+						&:nth-child(5n - 3){
+							@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
+						}
+						&:nth-child(5n-1){
+							@include calc('width','33.3333% - #{$grid-margin}',33.3333%);
 						}
 					}
 				}

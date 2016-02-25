@@ -10,7 +10,7 @@
 	include_once($docroot."/.includes/head.php");
 	echo "</div></div></header>"; //div closes head and wrapper
 ?>
-<div class="l-page" id="main-content">
+<div class="l-page" id="main-content" tabindex="-1">
 	<?php if(isset($nav) && $nav == true){ ?>
 	<div id="nav">
 	  <ul>

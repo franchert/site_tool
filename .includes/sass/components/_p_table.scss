@@ -1,5 +1,5 @@
-/* _p_table.scss */
 .responsive-table-wrapper{
+	/* _p_table.scss */
 	overflow:auto;
 	@include breakpoint($tab){
 		border:1px solid $color-1;

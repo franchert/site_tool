@@ -141,7 +141,7 @@ if(is_dir($set_tings['docroot']."/".$set_tings['client_slug'])){
 	rrmdir($set_tings['docroot']."/".$set_tings['client_slug']);
 }
 */
-echo "</br>Return to the <a href='/.util'>Utility page</a>";
+echo "<a href='/.util' style='position:fixed;top:20px;right:20px;background:#333;color:white;padding:20px;width:50px;height:50px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Back to Utility</a>";
 
 function recurse_copy($src,$dst) {
 	$dir = opendir($src);

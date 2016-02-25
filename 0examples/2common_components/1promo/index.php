@@ -9,16 +9,16 @@ $layout = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
-$l_content .= p_promo("hovertext","image","","TextLink");
-$l_content .= p_promo("button","image","","Button");
-$l_content .= p_promo("button","image","light","Button Light");
-$l_content .= p_promo("button","image","dark","Button Dark");
+$l_content .= p_promo("hovertext","image","");
+$l_content .= p_promo("button","image","","Promo");
+$l_content .= p_promo("button","image","light","Promo Light");
+$l_content .= p_promo("button","image","dark","Promo Dark");
 $l_content .= p_promo("something_else","image","","Not Found");
 
 $l_promo_sidebar .= p_promo("hovertext","image","","TextLink");
-$l_promo_sidebar .= p_promo("button","image","","Button");
-$l_promo_sidebar .= p_promo("button","image","light","Button Light");
-$l_promo_sidebar .= p_promo("button","image","dark","Button Dark");
+$l_promo_sidebar .= p_promo("button","image","","Promo");
+$l_promo_sidebar .= p_promo("button","image","light","Promo Light");
+$l_promo_sidebar .= p_promo("button","image","dark","Promo Dark");
 $l_promo_sidebar .= p_promo("something_else","image","","Not Found");
 
 include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");

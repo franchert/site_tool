@@ -1,9 +1,9 @@
 
-/* _p_matrix.scss */
 $matrix-padding:20px;
 $matrix-break:$tab;
 
 .matrix{
+	/* _p_matrix.scss */
 	> div{
 		@include breakpoint($matrix-break){
 			padding:0 $matrix-padding;
