@@ -23,3 +23,6 @@
 	<!--[if IE]>
 		<link href="/.includes/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
 	<![endif]-->
+<?php if(isset($sitemap)){ ?>
+	<link rel="stylesheet" type="text/css" href="/.sitemap/sitemap.css"/>
+<?php } ?>

@@ -47,3 +47,7 @@
 	<script type="text/javascript" src="/.includes/js/<?php echo $page_slug ?>.js"></script>
 <?php } ?>
 	<script type="text/javascript">var switchTo5x=true;</script>
+<?php if(isset($sitemap)){ ?>
+	<script type="text/javascript" src="/.sitemap/jquery-sortable/source/js/jquery-sortable.js"></script>
+	<script type="text/javascript" src="/.sitemap/sitemap.js"></script>
+<?php } ?>
