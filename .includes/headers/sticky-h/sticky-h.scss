@@ -30,42 +30,40 @@ body.sticky-h{
 						@include breakpoint($desk){
 							float:left;
 						}
-						.p-list{
-							ul{
-								display:block;
-								padding:0;
-								@include breakpoint($tab){
-									height:50px;
-									display:table;
-								}
-								li{
-									padding:8px;
-									background:$color-3;
-									border-bottom:1px solid $dk-gray;
-									margin:0;
-									list-style-type:none;
-									@include breakpoint($desk){
-										background:none;
-									}
-									a{
-										color:$white;
-										@include font-size(12);
-									}
-								}
-							}
-							@include breakpoint($desk){
+						ul{
+							display:block;
+							padding:0;
+							@include breakpoint($tab){
 								height:50px;
 								display:table;
-								width:auto;
-								ul{
-									li{
-										width:auto;
-										padding:0 15px 0 0;
-										display:table-cell;
-										vertical-align:middle;
-										float:none;
-										border:none;
-									}
+							}
+							li{
+								padding:8px;
+								background:$color-3;
+								border-bottom:1px solid $dk-gray;
+								margin:0;
+								list-style-type:none;
+								@include breakpoint($desk){
+									background:none;
+								}
+								a{
+									color:$white;
+									@include font-size(12);
+								}
+							}
+						}
+						@include breakpoint($desk){
+							height:50px;
+							display:table;
+							width:auto;
+							ul{
+								li{
+									width:auto;
+									padding:0 15px 0 0;
+									display:table-cell;
+									vertical-align:middle;
+									float:none;
+									border:none;
 								}
 							}
 						}

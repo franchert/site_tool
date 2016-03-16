@@ -10,6 +10,8 @@ $border-color:$gray;
 			padding-right:10px;
 			font-size:14px;
 			line-height:18px;
+			list-style:none;
+			margin-left:0;
 			&:before{
 				content:"\f105";
 				font-family:FontAwesome;

@@ -18,44 +18,34 @@ if($string == ''){
 }else{
 	$haystack = json_decode($string, true);
 	echo "-- the following directory structure has been created --</br></br>";
-	foreach ($haystack as $k => $v){
-		//echo "</br>".$v['title']." * ".$v['parent']." * ".$v['slug']."</br>";
+	//print_r($haystack[0]);
+	foreach ($haystack[0] as $k => $v){
 		$id = $v['id'];
 		$title = $v['title'];
-		$parent = $v['parent'];
-		$slug = $v['slug'];
-		$menupos = $v['menupos'];
+		$slug = slugFromTitle($title);
+		$menupos = $v['menupos']+1;
 		$segment = $menupos.$slug;
-		$temp = '';
-		$tabs = 0;
-		$times = 0;
-		findParent($parent,$segment,$haystack);
-		if($parent == "0"){$new = $segment;}
-		else{$new = $temp;}
-		while ($tabs > 0){
-			echo "&nbsp;--&nbsp;";
-			$tabs--;
-		}
-		echo $new."</br>";
-		makeDir($new,$parent,$title);
+		//echo "</br>".$k."</br>".$title." * ".$slug." * ".$menupos." * ".$segment."</br>";
+		makeDir($segment,0,$title);
+		recurse_sitemap($segment,$v['children'],count($v['children'][0]));
 	}
 }
 echo "<a href='/.util' style='position:fixed;top:20px;right:20px;background:#333;color:white;padding:20px;width:50px;height:50px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Back to Utility</a>";
-function findParent($find,$string,$haystack){
-	global $temp, $times, $tabs;
-	$times++;
-	foreach($haystack as $k => $v){
-		if($v['id'] === $find){
-			$string = $v['menupos'].$v['slug']."/".$string;
-			if($v['parent'] != "0"){
-				findParent($v['parent'],$string,$haystack);
-			}else{
-				$tabs = $times;
-				$temp = $string;
-			}
+function recurse_sitemap($ex_segment,$arr,$count){
+	//print_r($arr[0]);
+	foreach($arr[0] as $k => $v){
+		$id = $v['id'];
+		$title = $v['title'];
+		$slug = slugFromTitle($title);
+		$menupos = $v['menupos']+1;
+		$segment = $ex_segment."/".$menupos.$slug;
+		makeDir($segment,1,$title);
+		if($count > 0){
+			recurse_sitemap($segment,$v['children'],count($v['children'][0]));
 		}
 	}
 }
+
 function makeDir($path,$parent,$title){
 	global $default_index;
 	if(!is_dir("../../".$path)){
@@ -69,5 +59,18 @@ function makeDir($path,$parent,$title){
 		touch("../../".$path."/nav-contents.php");
 		file_put_contents("../../".$path."/nav-contents.php",$title);
 	}
+}
+function slugFromTitle($title){
+	$return = 
+		str_replace("-"," * ",
+			str_replace(".","_",
+				strtolower(
+					str_replace(" * ","-",
+						str_replace(" ","_",$title)
+					)
+				)
+			)
+		);
+	return $return;
 }
 ?>

@@ -12,19 +12,21 @@ function p_list(
 	$idORclass='class'){
 
 	global $set_tings;
-	if(!is_null($arr)){
+	if($type != ''){
 		if($idORclass == "id"){
-			$value = '" id="'.$type;
+			$value = ' id="'.$type.'"';
 		}else if($idORclass == "class"){
-			$value = ' '.$type;
+			$value = ' class="'.$type.'"';
 		}
-		$string = '<div class="p-list'.$value.'">
-	';
+	}else{
+		$value = '';
+	}
+	if(!is_null($arr)){
 		if($type == 'ordered'){
-			$string .='<ol>
+			$string .='<ol'.$value.'>
 	';
 		}else{
-			$string .='<ul>
+			$string .='<ul'.$value.'>
 	';
 		}
 		foreach($arr as $k => $v){
@@ -38,7 +40,6 @@ function p_list(
 			$string .='</ul>
 ';
 		}
-		$string .= '</div>';
 	}else{
 		if($type == 'ordered'){
 			$ltype ='ol';
@@ -46,22 +47,18 @@ function p_list(
 			$ltype ='ul';
 		}
 		$string ='
-		<div class="p-list '.$type.'">
-			<'.$ltype.'>
+			<'.$ltype.$value.'>
 				<li>lorem ipsum</li>
 				<li>lorem ipsum
-					<div class="p-list '.$type.'">
-						<'.$ltype.'>
-							<li>lorem ipsum</li>
-							<li>lorem ipsum</li>
-							<li>lorem ipsum</li>
-						</'.$ltype.'>
-					</div>
+					<'.$ltype.$value.'>
+						<li>lorem ipsum</li>
+						<li>lorem ipsum</li>
+						<li>lorem ipsum</li>
+					</'.$ltype.'>
 				</li>
 				<li>lorem ipsum</li>
 				<li>lorem ipsum</li>
-			</'.$ltype.'>
-		</div>';
+			</'.$ltype.'>';
 	}
 	return $string;
 }?>

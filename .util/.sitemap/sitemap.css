@@ -1,0 +1,134 @@
+body.dragging, body.dragging * {
+  cursor: move !important;
+}
+
+.dragged {
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2000;
+}
+ol{
+  float:left;
+}
+ol li {
+  position: relative;
+  /** More li styles **/
+  padding:10px;
+  margin-left:10px;
+  float:left;
+}
+li.placeholder{
+	position:absolute;
+	height:30px;
+	background:rgba(70, 135, 195, 0.33)!important;
+}
+
+body.dragging, body.dragging * {
+  cursor: move !important; }
+.l-page .fa{
+  display:block;
+  float:right;
+  width:auto;
+  padding:5px;
+  color:#333;
+  border-radius:50%;
+  width:25px;
+  text-align:center;
+  line-height:15px;
+}
+.l-page .fa.fa-close{
+  cursor:pointer;
+  width:20px;
+  height:20px;
+  line-height:20px;
+  padding:0;
+}
+.l-page .fa.fa-bars{
+  float: left;
+  padding: 5px 0 0;
+  margin-right: 10px;
+  color: #D8D8D8;
+  text-shadow: 1px 1px rgb(255, 255, 255),-1px -1px rgba(0, 0, 0, 0.32);
+  font-size: 24px;
+}
+button.add{
+  width: auto;
+  float: right;
+  line-height: 24px;
+  padding-right: 3px;
+  margin: 10px;
+  cursor: pointer;
+  background: #4687C3;
+  border: none;
+  font-family: 'Open Sans',sans-serif;
+  color: white;
+}
+.l-page .fa.fa-plus{
+  float:right;
+  color:white;
+}
+.dragged {
+  position: absolute;
+  top: 0;
+  opacity: 0.5;
+  z-index: 2000; }
+.hidden{
+  visibility:hidden;
+}
+ol.vertical {
+  margin: 0 0 9px 0;
+  min-height: 10px; }
+  ol.vertical li {
+    display: block;
+    margin: 5px 0;
+    padding: 6px 10px 0px 12px;
+    border: 1px solid #bbb;
+    color: #0088cc;
+    background: #eeeeee; 
+    cursor:move;
+    position:static;
+    border-radius:5px;
+    width:100%;
+    box-shadow:-1px 2px 3px rgba(0,0,0,0.2);
+  }
+  ol.vertical li.currentHover{
+    border-color:#555;
+  }
+  ol.vertical li input {
+    float:left;
+    width:auto;
+    background:#eee;
+    border:none;
+    height:24px;
+    outline:none!important;
+    padding:0 5px;
+  }
+  ol.vertical li input:focus {
+    background:white;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.3);
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid transparent;
+  }
+
+  ol.vertical li.placeholder {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: none; }
+    ol.vertical li.placeholder:before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 0;
+      margin-top: -5px;
+      left: -5px;
+      top: -4px;
+      border: 5px solid transparent;
+      border-left-color: red;
+      border-right: none; }
+      ol.vertical ol{
+        float:left;
+        display:block;
+        padding:0;
+        margin:3px 0;
+      }

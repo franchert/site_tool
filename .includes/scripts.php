@@ -48,6 +48,6 @@
 <?php } ?>
 	<script type="text/javascript">var switchTo5x=true;</script>
 <?php if(isset($sitemap)){ ?>
-	<script type="text/javascript" src="/.sitemap/jquery-sortable/source/js/jquery-sortable.js"></script>
-	<script type="text/javascript" src="/.sitemap/sitemap.js"></script>
+	<script type="text/javascript" src="/.util/.sitemap/jquery-sortable/source/js/jquery-sortable.js"></script>
+	<script type="text/javascript" src="/.util/.sitemap/sitemap.js"></script>
 <?php } ?>

@@ -108,48 +108,46 @@ body.fold-out{
 						@include breakpoint($tab){
 							width:auto;
 						}
-						.p-list{
-							ul{
-								display:block;
-								padding:0;
-								@include breakpoint($tab){
-									height:50px;
-									display:table;
-								}
-								li{
-									border-bottom:1px solid $color-3;
-									margin:0;
-									list-style-type:none;
-									&:first-child {
-										a {
-											border-left:none;
-										}
-									}
-									@include breakpoint($desk){
-										background:none;
-									}
-									a{
-										color:$white;
-										display: block;
-										border-left: 1px solid white;
-										padding: 8px;
-									}
-								}
-							}
+						ul{
+							display:block;
+							padding:0;
 							@include breakpoint($tab){
 								height:50px;
 								display:table;
-								width:auto;
-								ul{
-									li{
-										width:auto;
-										display:table-cell;
-										vertical-align:middle;
-										float:none;
-										border:none;
-										a {
-											padding: 0 15px 0;
-										}
+							}
+							li{
+								border-bottom:1px solid $color-3;
+								margin:0;
+								list-style-type:none;
+								&:first-child {
+									a {
+										border-left:none;
+									}
+								}
+								@include breakpoint($desk){
+									background:none;
+								}
+								a{
+									color:$white;
+									display: block;
+									border-left: 1px solid white;
+									padding: 8px;
+								}
+							}
+						}
+						@include breakpoint($tab){
+							height:50px;
+							display:table;
+							width:auto;
+							ul{
+								li{
+									width:auto;
+									display:table-cell;
+									vertical-align:middle;
+									float:none;
+									border:none;
+									a {
+										padding: 0 15px 0;
 									}
 								}
 							}
@@ -162,21 +160,19 @@ body.fold-out{
 							margin-bottom:0;
 							float:right;
 						}
-						.p-list {
-							ul {
-								li {
-									@include breakpoint($tab){padding:23px 0;}
-									a {
-										padding: 0 8px;
-										text-decoration:none;
-										@include font('lora',14,$color-3-tl);
-										line-height:14px;
-										border-color:$color-3-tl;
-										font-weight:500;
-										&:hover{
-											color:white;
-											text-decoration:underline;
-										}
+						ul {
+							li {
+								@include breakpoint($tab){padding:23px 0;}
+								a {
+									padding: 0 8px;
+									text-decoration:none;
+									@include font('lora',14,$color-3-tl);
+									line-height:14px;
+									border-color:$color-3-tl;
+									font-weight:500;
+									&:hover{
+										color:white;
+										text-decoration:underline;
 									}
 								}
 							}
@@ -193,19 +189,17 @@ body.fold-out{
 							text-align: left;
 							border:1px solid $color-3-th;
 						}
-						.p-list{
+						ul{
 							height:auto;
 							display:block;
 							width: 100%;
-							ul{
-								li{
+							li{
+								width:100%;
+								display:block;
+								a {
 									width:100%;
-									display:block;
-									a {
-										width:100%;
-										padding: 10px 20px;
-										border-left: 0;
-									}
+									padding: 10px 20px;
+									border-left: 0;
 								}
 							}
 						}
@@ -544,13 +538,11 @@ body.fold-out{
 					height:auto;
 					padding-top:0px;
 					.utility-menu {
-						.p-list {
-							ul {
-								li {
-									a {
-										border-left:0;
-										padding: 10px 20px;
-									}
+						ul {
+							li {
+								a {
+									border-left:0;
+									padding: 10px 20px;
 								}
 							}
 						}
@@ -649,18 +641,16 @@ body.fold-out{
 						display:none;
 						background: $color-3;
 					}
-					.p-list {
+					ul {
 						width: 100%;
-						ul {
-							li {
-								display:block;
-								a {
-									border-bottom: 1px solid $color-3-tl;
-									width: 100%;
-								}
-								&:last-child {
-									a{border:none;}
-								}
+						li {
+							display:block;
+							a {
+								border-bottom: 1px solid $color-3-tl;
+								width: 100%;
+							}
+							&:last-child {
+								a{border:none;}
 							}
 						}
 					}
@@ -696,10 +686,8 @@ body.fold-out{
 						display:block;
 						position:absolute;
 					}
-					.p-list {
-						ul {
-							background-color: $color-3-th;
-						}
+					ul {
+						background-color: $color-3-th;
 					}
 				}
 			}

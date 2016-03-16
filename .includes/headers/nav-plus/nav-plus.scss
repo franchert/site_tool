@@ -1,82 +1,78 @@
 body.nav-plus{
 	.l-head{
 		nav{
-			.p-list{
-				>ul{
-					list-style-type: none;
-					margin: 0;
-					padding: 0;
-					font-size: 0;
-					text-align: left;
-					display:block;
+			>ul{
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
+				font-size: 0;
+				text-align: left;
+				display:block;
+				width:auto;
+				>li{
+					&.hidden {
+						display: none;
+					}
+					display: inline-block;
+					position: relative;
+					margin:0;
 					width:auto;
-					>li{
-						&.hidden {
+					padding:0;
+					a{
+						display: block;
+						color: $white;
+						text-align: center;
+						text-decoration: none;
+						padding: 5px 10px;
+						+ ul {
 							display: none;
-						}
-						display: inline-block;
-						position: relative;
-						margin:0;
-						width:auto;
-						padding:0;
-						a{
-							display: block;
-							color: $white;
-							text-align: center;
-							text-decoration: none;
-							padding: 5px 10px;
-							+ ul {
-								display: none;
-								position: absolute;
-								top: 100%;
-								right: 0;
-								margin-right: 0;
+							position: absolute;
+							top: 100%;
+							right: 0;
+							margin-right: 0;
+							padding:0;
+							li {
+								margin:0;
 								padding:0;
-								li {
-									margin:0;
-									padding:0;
-									width:auto;
-									float:right;
-									background:$dk-gray;
-									a {
-										padding-left: 16px;
-										text-align: left;
-										white-space: nowrap;
-									}
+								width:auto;
+								float:right;
+								background:$dk-gray;
+								a {
+									padding-left: 16px;
+									text-align: left;
+									white-space: nowrap;
 								}
 							}
 						}
-						&:hover {
-							> a {
-								background: $color-2;
-							}
-							ul {
-								display: block;
-								z-index:2;
-								list-style-type:none;
-							}
+					}
+					&:hover {
+						> a {
+							background: $color-2;
 						}
-						&.more{
-							> a{
-								font-size:11px;
-								line-height:11px;
-								width:75px;
-								background:$t-white;
-							}
+						ul {
+							display: block;
+							z-index:2;
+							list-style-type:none;
+						}
+					}
+					&.more{
+						> a{
+							font-size:11px;
+							line-height:11px;
+							width:75px;
+							background:$t-white;
 						}
 					}
 				}
 			}
 			&.gateway-menu{
 				width:65%;
-				.p-list{
-					> ul{
-						> li{
-							a{
-								+ ul{
-									li{
-										float:left;
-									}
+				> ul{
+					> li{
+						a{
+							+ ul{
+								li{
+									float:left;
 								}
 							}
 						}
@@ -85,10 +81,8 @@ body.nav-plus{
 			}
 			&.utility-menu{
 				width:35%;
-				.p-list{
-					> ul{
-						float:right;
-					}
+				> ul{
+					float:right;
 				}
 			}
 		}
