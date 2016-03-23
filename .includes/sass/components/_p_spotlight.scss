@@ -1,0 +1,19 @@
+.spotlight{
+	position:relative;
+	.cat{
+		position: absolute;
+		top: 0;
+		z-index: 1;
+		width: auto;
+		margin:10px;
+		padding:3px 10px;
+		border-radius:10px;
+		background:$dk-gray;
+		color:$white;
+	}
+	img{}
+	.date{
+		float:left;
+	}
+	h3{}
+}

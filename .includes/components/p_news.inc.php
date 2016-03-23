@@ -9,6 +9,7 @@ function p_news(
 	$img=null,
 	$title=null,
 	$link="#",
+	$cat = null,
 	$date=null,
 	$text=null,
 	$readmore = true){
@@ -27,8 +28,20 @@ function p_news(
 	if (is_null($title)){
 		$title = "lorem ipsum dolor sit amet";
 	}
+	if(!is_null($cat)){
+		if(is_array($cat)){
+			$category = "<ul class='categories'>";
+			foreach($cat as $k => $v){
+				$category .="<li><a href='#' class='cat t-".$v."'>".$v."</a>\n\t</li>";
+			}
+			$category .= "</ul>";
+		}else{
+			$category = "<a href='#' class='cat t-".$cat."'>".$cat."</a>\n\t";
+		}
+	}
 	$string = "\n<div class='news_article ".$type."'>\n\t";
 		if(strrpos($type,'short') !== false){
+			$string .= $category;
 			$string .="<a href='".$link."'>\n\t\t";
 				$string .=$image."\n\t\t";
 				$string .="<div class='news-container".$width."'>\n\t\t\t";
@@ -44,7 +57,7 @@ function p_news(
 				$string .= "</div>\n\t";
 			$string .="</a>\n\t";
 		}else if(strrpos($type,'normal') !== false){
-			$string .=$image."\n\t";
+			$string .= $image."\n\t";
 			$string .="<div class='news-container".$width."'>\n\t\t";
 				$string .="<h5>".$date."</h5>\n\t\t";
 				if(!is_null($link)){
@@ -61,12 +74,14 @@ function p_news(
 				}else{
 					$string .="<p>".$text."</p>\n";
 				}
+				$string .= $category;
 				if($readmore){
 					$string .="\t\t<a class='read-more' href='".$link."'>Read More</a>\n";
 				}
 			$string .= "\t</div>\n";
 		}else{
-			$string .=$image."\n\t";
+			$string .= $category;
+			$string .= $image."\n\t";
 			$string .="<div class='news-container".$width."'>\n\t\t";
 				if(!is_null($link)){
 					$string .="<a href='".$link."'>\n\t\t\t";

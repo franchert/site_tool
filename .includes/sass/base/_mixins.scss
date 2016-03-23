@@ -194,20 +194,20 @@
 @mixin v-gradient(){
 	@include filter-gradient(#000000, #a60000, vertical); // IE6-8
 	// IE9 SVG, needs conditional override of 'filter' to 'none'
-	$experimental-support-for-svg: true;
+	$experimental-support-for-svg: true!global;
 	@include background-image(linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%));
 }
 @mixin h-gradient-dark($back-color){
 	@include filter-gradient(#570000, #000000, horizontal); // IE6-8
 	// IE9 SVG, needs conditional override of 'filter' to 'none'
-	$experimental-support-for-svg: true;
+	$experimental-support-for-svg: true!global;
 	@include background-image(linear-gradient(left, rgba(0,0,0,0.8) 0%,rgba(0,0,0,0.7) 5%,rgba(0,0,0,0.55) 23%,rgba(0,0,0,0.33) 77%,rgba(0,0,0,0) 99%));
 	background-color:$back-color
 }
 @mixin h-gradient($back-color){
 	@include filter-gradient(#570000, #000000, horizontal); // IE6-8
 	// IE9 SVG, needs conditional override of 'filter' to 'none'
-	$experimental-support-for-svg: true;
+	$experimental-support-for-svg: true!global;
 	@include background-image(linear-gradient(left, rgba(0,0,0,0.28) 0%,rgba(0,0,0,0.22) 5%,rgba(0,0,0,0.15) 23%,rgba(0,0,0,0) 77%,rgba(0,0,0,0) 99%));
 	background-color:$back-color
 }

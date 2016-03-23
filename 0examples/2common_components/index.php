@@ -15,20 +15,22 @@ $l_content .= p_event('tall');
 $l_content .= p_event('round');
 $l_content .= p_event('basic');
 
+$news_cats = array(
+	'category 1',
+	'category 2',
+	'category 3');
 $l_content .= "<h2>News</h2>";
-$l_content .= p_news();
-$l_content .= p_news('normal',null,'news item without read more','#',null,null,false);
-$l_content .= p_news('normal','','removed image from default','#',null,null,true);
+$l_content .= p_news('',null,null,"#",'category');
+$l_content .= p_news('normal',null,'news item without read more','#',$news_cats,null,null,false);
+$l_content .= p_news('normal','','removed image from default','#',$news_cats,null,null,true);
 $l_content .= p_news('short');
 
 $l_content .= "<h2>Factoid</h2>";
 $l_content .= p_factoid();
 
-$l_content .= "<h2>Page Intro</h2>";
-$l_content .= p_page_intro("sample-page-intro");
-
-$l_content .= "<h2>Profile</h2>";
-$l_content .= p_profile();
+$l_content .= "<h2>Directory</h2>";
+$l_content .= p_directory();
+$l_content .= p_directory('course');
 
 $l_content .= "<h2>Spotlight</h2>";
 $l_content .= p_spotlight('category');

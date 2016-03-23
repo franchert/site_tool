@@ -17,17 +17,17 @@ function p_spotlight(
 	if(is_null($date)){
 		$date = date("F j, Y");
 	}
-	$string = "\n<div class='promo-spotlight'>\n\t";
+	$string = "\n<div class='spotlight'>\n\t";
 	if(!is_null($type)){
-		$string .= "<div class='cat t-".$type."'>".$type."</div>\n\t";
+		$string .= "<a href='#' class='cat t-".$type."'>".$type."</a>\n\t";
 	}
 	if(is_null($image)){
 		$string .= p_image("400","300")."\n\t";
 	}else{
 		$string .= "<img alt='".$title."' src='".$image."'/>\n\t";
 	}
-	$string .="<div class='date'>".$date."</div>\n\t";
-	$string .="<h3><a href='#'>".$title."</a></h3>\n";
+	$string .="<p class='date'>".$date."</p>\n\t";
+	$string .="<a href='#'><h3>".$title."</h3></a>\n";
 	$string .="</div>\n";
 	return $string;
 }

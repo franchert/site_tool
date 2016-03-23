@@ -1,7 +1,18 @@
 /* Welcome to Compass. Use this file to define print styles.
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/print.css" media="print" rel="stylesheet" type="text/css" /> */
+header,
 img,
-.back-to-top{
+.back-to-top,
+.owl-prev,
+.owl-next,
+.owl-dots{
 	display:none!important;
+}
+body.sitemap{
+	.fa-close,
+	.fa-bars,
+	.add{
+		display:none!important;
+	}
 }
