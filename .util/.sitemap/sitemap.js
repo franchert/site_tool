@@ -11,7 +11,8 @@ $(function  () {
 			}
 		},
 		onDrop: function ($item, container, _super) {
-			refresh();
+			//refresh();
+			$('button.save').addClass('unsaved');
 			_super($item, container);
 		}
 	});
@@ -19,10 +20,13 @@ $(function  () {
 		var temp = 'data-' + $(this).attr('class');
 		$(this).parent().attr(temp,$(this).val());
 		$(this).attr('value',$(this).val());
-		refresh();	});
+		//refresh();
+		$('button.save').addClass('unsaved');
+	});
 	$('ol.serialization').on('click keypress','.fa-close',function(){
 		$(this).parent().remove();
-		refresh();
+		//refresh();
+		$('button.save').addClass('unsaved');
 	});
 	$('button.add').on('click keypress',function(){
 		newid = 0;
@@ -34,6 +38,10 @@ $(function  () {
 		newid++;
 		var newitem = "<li data-id='"+newid+"' data-menupos='8' data-title='New'><span class='fa fa-bars'></span><input class='title' value='New'><span tabindex='0' class='fa fa-close'></span><ol></ol></li>";
 		$('#serialization > ol').prepend(newitem);
+		//refresh();
+		$('button.save').addClass('unsaved');
+	});
+	$('button.save').on('click keypress',function(){
 		refresh();
 	});
 	$('li').mouseover(function(e){
@@ -56,4 +64,5 @@ function refresh(){
 	})
 	$('#output2').empty();
 	$("ol.serialization").sortable("refresh");
+	$('button.save').removeClass('unsaved');
 }

@@ -63,6 +63,26 @@ button.add{
   font-family: 'Open Sans',sans-serif;
   color: white;
 }
+button.save{
+  width: auto;
+  float: right;
+  line-height: 24px;
+  padding-right: 3px;
+  margin: 10px;
+  background:#eee;
+  border: none;
+  font-family: 'Open Sans',sans-serif;
+  color: #aaa;
+}
+button.save.unsaved{
+  cursor: pointer;
+  background: #8687C3;
+  color: white;
+}
+.l-page .fa.fa-save{
+  float:right;
+  color:inherit;
+}
 .l-page .fa.fa-plus{
   float:right;
   color:white;

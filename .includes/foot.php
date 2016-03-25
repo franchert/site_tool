@@ -1,6 +1,7 @@
 	<a class="back-to-top" href="#top">Back to Top</a>
 </div> <!-- end l-page div -->
 <footer>
+	<?php include_once( $docroot."/.includes/scripts.php"); ?>
 	<script>
 		<?php echo $set_tings['script_var'] ?>
 	</script>

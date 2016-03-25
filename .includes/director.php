@@ -8,15 +8,15 @@ $url = dirname($_SERVER['PHP_SELF']);
 $path = parse_url($url, PHP_URL_PATH);
 $segments = explode('/', rtrim($path, '/'));
 $segments[0] = 'Home';
-$parent=basename(dirname(dirname(__FILE__)));
+$parent = basename(dirname(dirname(__FILE__)));
 if($url === "/"){
 	$page = 'home';
 	$page_slug = 'home';
 	$section = 'home';
 	$section_slug = 'home';
 }else{
-	$page=basename($url);
-	$page_slug=substr($page,1);
+	$page = basename($url);
+	$page_slug = substr($page,1);
 	$section = $segments[1];
 	$section_slug = substr($segments[1],1);
 }

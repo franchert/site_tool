@@ -4,8 +4,12 @@
 *
 */
 
-function titleFromSlug($slug){
-	$return = 
+/*
+ *		Create a Human-readable title from a URL slug
+ */
+function titleFromSlug(
+	$slug){
+	$title = 
 		str_replace(" * ","-",
 		str_replace("To ","to ",
 		str_replace("Of ","of ",
@@ -15,7 +19,7 @@ function titleFromSlug($slug){
 			str_replace("-"," * ",
 			str_replace("_"," ",$slug)
 	)))))));
-	return $return;
+	return $title;
 }
 /**
  *	Function	get flat array of directories located under the $base_dir

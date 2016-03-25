@@ -13,6 +13,7 @@ $arr = json_decode(file_get_contents('../.generate/sitemap.json'),True);
 $l_one_col .="<div class='wrapper'><div class='column'>";
 $l_one_col .="<h1>".$page_title."</h1>";
 $l_one_col .= "<button class='add'><span class='fa fa-plus'></span>Add a new item</button>";
+$l_one_col .= "<button class='save'><span class='fa fa-save'></span>Save this Sitemap</button>";
 $l_one_col .= "<div id='serialization'><ol class='serialization vertical'>";
 $l_one_col .= recurse($arr,'');
 $l_one_col .= "<div id='output2' style=''></div></div></div></div>";
