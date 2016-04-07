@@ -74,7 +74,8 @@ $set_tings = compact(array(
 	'section_title',
 	'site_logo',
 	'client_name',
-	'client_slug'
+	'client_slug',
+	'demo'
 ));
 //print_r($set_tings);
 //include everything from the components directories

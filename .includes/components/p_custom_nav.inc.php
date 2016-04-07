@@ -16,7 +16,16 @@ function p_custom_nav(
 	$dirs = str_replace($set_tings['base_site'],"",array_filter(glob($set_tings['docroot'].$root_path.'*'), 'is_dir'));
 
 	//initialize the string
-	$string = "<div class='custom-nav' id='custom-nav'><h2 tabindex='0'>".$set_tings['page_title']."</h2><ul>";
+	$string = "<div class='custom-nav' id='custom-nav'>";
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
+	$string .= "<h2 tabindex='0'>".$set_tings['page_title']."</h2><ul>";
 	$home = str_replace($set_tings['base_site'],"",str_replace($set_tings['url_remove'],'',$set_tings['base_site'].substr($root_path,0,-1)));
 
 	if($overview){

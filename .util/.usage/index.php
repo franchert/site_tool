@@ -8,7 +8,7 @@ include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 global $set_tings;
 include_once($_SERVER['DOCUMENT_ROOT']."/.includes/director.php");
 $str_print = '';
-$str_print .= "<a href='/.util' style='position:fixed;top:20px;right:20px;background:#333;color:white;padding:20px;width:50px;height:50px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Back to Utility</a>";
+$str_print .= "<a href='/.util' style='position:fixed;top:120px;right:20px;background:#333;color:white;padding:13px 0px;width:50px;height:24px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Util</a>";
 $str_print .= "</br><p>REMEMBER, some of these components may be in use within other components.</p>";
 $str_print .= "<p>Only delete them if you're absolutely sure they're not needed.</p></br>";
 $fxns = get_defined_functions();

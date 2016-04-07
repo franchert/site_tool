@@ -46,6 +46,9 @@
 				)
 			)?>
 		</div>
+		<?php if(isset($demo) && $demo == true){ ?>
+			<button class='demo-toggle'>Demo</button>
+		<?php } ?>
 	</div>
 </footer>
 </body>

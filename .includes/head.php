@@ -41,9 +41,6 @@
 				$bodyclass .= ' m-'.substr($segments[$depth],1);
 			}
 		}
-		if(isset($demo) && $demo == true){
-			$bodyclass .= ' demo';
-		}
 		$bodyclass .= ' '.$layout.' '.$set_tings['header'].'"';
 		echo $bodyclass;
 	}

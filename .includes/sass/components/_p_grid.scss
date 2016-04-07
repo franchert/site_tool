@@ -26,10 +26,10 @@ $vert-height:400px;
 		>div{
 			@include breakpoint($grid-break){
 				@include calc('width','50% - #{$grid-margin}',50%);
-				&:nth-child(2n+1){
+				&:nth-of-type(2n+1){
 					margin-left:0;
 				}
-				&:nth-child(2n){
+				&:nth-of-type(2n){
 					margin-right:0;
 				}
 			}
@@ -38,15 +38,15 @@ $vert-height:400px;
 	&.three{
 		>div{
 			@include breakpoint($grid-break){
-				&:nth-child(1){
+				&:nth-of-type(1){
 					@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 					margin-left:0;
 				}
-				&:nth-child(2){
+				&:nth-of-type(2){
 					@include calc('width','33.3333% - #{$grid-margin}',33.3333%);
 					margin-right:#{$grid-margin * 0.5};
 				}
-				&:nth-child(3){
+				&:nth-of-type(3){
 					@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 					margin-right:0;
 				}
@@ -59,15 +59,15 @@ $vert-height:400px;
 				@include breakpoint($grid-break){
 					height:#{$vert-height + $grid-margin};
 					@include calc('width','50% - #{$grid-margin/2}',50%);
-					&:nth-child(3n-2){
+					&:nth-of-type(3n-2){
 						margin-left:0;
 					}
-					&:nth-child(3n-1){
+					&:nth-of-type(3n-1){
 						height:#{$vert-height * 0.5};
 						margin-right:0;
 						margin-bottom:#{$grid-margin};
 					}
-					&:nth-child(3n){
+					&:nth-of-type(3n){
 						height:#{$vert-height * 0.5};
 						margin-right:0;
 					}
@@ -76,17 +76,17 @@ $vert-height:400px;
 			&.right{
 				>div{
 					@include breakpoint($grid-break){
-						&:nth-child(3n-2){
+						&:nth-of-type(3n-2){
 							height:#{$vert-height * 0.5};
 							margin-left:0;
 							margin-bottom:#{$grid-margin};
 						}
-						&:nth-child(3n-1){
+						&:nth-of-type(3n-1){
 							margin-right:0;
 							float:right;
 							height:#{$vert-height + $grid-margin};
 						}
-						&:nth-child(3n){
+						&:nth-of-type(3n){
 							height:#{$vert-height * 0.5};
 							margin-left:0;
 							margin-right:#{$grid-margin * 0.5};
@@ -102,15 +102,15 @@ $vert-height:400px;
 				@include breakpoint($grid-break){
 					@include calc('width','50% - #{$grid-margin/2}',50%);
 					height:#{$vert-height * 0.5};
-					&:nth-child(3n-2){
+					&:nth-of-type(3n-2){
 						width:100%;
 						margin:0 0 #{$grid-margin * 0.5} 0;
 					}
-					&:nth-child(3n-1){
+					&:nth-of-type(3n-1){
 						margin-top:#{$grid-margin * 0.5};
 						margin-left:0;
 					}
-					&:nth-child(3n){
+					&:nth-of-type(3n){
 						margin-top:#{$grid-margin * 0.5};
 						margin-right:0;
 					}
@@ -121,26 +121,26 @@ $vert-height:400px;
 			> div{
 				@include breakpoint($grid-break){
 					@include calc('width','50% - #{$grid-margin/2}',50%);
-					&:nth-child(5n-4){
+					&:nth-of-type(5n-4){
 						margin-left:0;
 						margin-bottom:#{$grid-margin * 0.5};
 					}
-					&:nth-child(5n-3){
+					&:nth-of-type(5n-3){
 						margin-right:0;
 						margin-bottom:#{$grid-margin * 0.5};
 					}
-					&:nth-child(5n-2){
+					&:nth-of-type(5n-2){
 						@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 						margin-left:0;
 						margin-top:#{$grid-margin * 0.5};
 						height:#{$vert-height * 0.5};
 					}
-					&:nth-child(5n-1){
+					&:nth-of-type(5n-1){
 						@include calc('width','33.3333% - #{$grid-margin}',33.3333%);
 						margin-top:#{$grid-margin * 0.5};
 						height:#{$vert-height * 0.5};
 					}
-					&:nth-child(5n){
+					&:nth-of-type(5n){
 						@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 						margin-right:0;
 						margin-top:#{$grid-margin * 0.5};
@@ -153,10 +153,10 @@ $vert-height:400px;
 			> div{
 				@include breakpoint($grid-break){
 					width:33.3333%;
-					&:nth-child(3n-2){
+					&:nth-of-type(3n-2){
 						margin-left:0;
 					}
-					&:nth-child(3n){
+					&:nth-of-type(3n){
 						margin-right:0;
 					}
 				}
@@ -171,7 +171,7 @@ $vert-height:400px;
 		}
 		&.two{
 			> div{
-				&:nth-child(2n){
+				&:nth-of-type(2n){
 					@include breakpoint($grid-break){
 						@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 						margin-right:0;
@@ -182,7 +182,7 @@ $vert-height:400px;
 				> div{
 					@include breakpoint($grid-break){
 						@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
-						&:nth-child(2n-1){
+						&:nth-of-type(2n-1){
 							@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 						}
 					}
@@ -194,16 +194,16 @@ $vert-height:400px;
 				@include breakpoint($grid-break){
 					@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 					margin-left:0;
-					&:nth-child(2n){
+					&:nth-of-type(2n){
 						margin-left:#{$grid-margin * 0.5};
 					}
-					&:nth-child(4n-3){
+					&:nth-of-type(4n-3){
 						@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 					}
-					&:nth-child(4n-2){
+					&:nth-of-type(4n-2){
 						margin-right:0;
 					}
-					&:nth-child(4n){
+					&:nth-of-type(4n){
 						@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 						margin-right:0;
 					}
@@ -212,17 +212,17 @@ $vert-height:400px;
 			&.right{
 				> div{
 					@include breakpoint($grid-break){
-						&:nth-child(4n-3){
+						&:nth-of-type(4n-3){
 							@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 						}
-						&:nth-child(4n-2){
+						&:nth-of-type(4n-2){
 							@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 							margin-right:0;
 						}
-						&:nth-child(4n-1){
+						&:nth-of-type(4n-1){
 							@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 						}
-						&:nth-child(4n){
+						&:nth-of-type(4n){
 							@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
 							margin-right:0;
 						}
@@ -234,21 +234,21 @@ $vert-height:400px;
 			> div{
 				@include breakpoint($grid-break){
 					@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
-					&:nth-child(5n-4){
+					&:nth-of-type(5n-4){
 						@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 						margin-left:0;
 					}
-					&:nth-child(5n-3){
+					&:nth-of-type(5n-3){
 						margin-right:0;
 					}
-					&:nth-child(5n-2){
+					&:nth-of-type(5n-2){
 						margin-left:0;
 					}
-					&:nth-child(5n-1){
+					&:nth-of-type(5n-1){
 						margin-right:#{$grid-margin * 0.5};
 						@include calc('width','33.3333% - #{$grid-margin}',33.3333%);
 					}
-					&:nth-child(5n){
+					&:nth-of-type(5n){
 						margin-right:0;
 					}
 				}
@@ -257,10 +257,10 @@ $vert-height:400px;
 				> div{
 					@include breakpoint($grid-break){
 						@include calc('width','33.3333% - #{$grid-margin/2}',33.3333%);
-						&:nth-child(5n - 3){
+						&:nth-of-type(5n - 3){
 							@include calc('width','66.6666% - #{$grid-margin/2}',66.6666%);
 						}
-						&:nth-child(5n-1){
+						&:nth-of-type(5n-1){
 							@include calc('width','33.3333% - #{$grid-margin}',33.3333%);
 						}
 					}

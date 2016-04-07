@@ -15,6 +15,15 @@ function p_factoid(
 	}else{
 		$image = "<img src='".$image."'/>";
 	}
-	$string = "\n<div class='factoid'>\n\t<div class='factoid-container'>\n\t\t".$image."<span>".$text."</span>".$title."\n\t</div>\n</div>\n";
+	$string = "\n<div class='factoid'>";
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
+	$string .= "\n\t<div class='factoid-container'>\n\t\t".$image."<span>".$text."</span>".$title."\n\t</div>\n</div>\n";
 	return $string;
 }

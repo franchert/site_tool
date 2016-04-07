@@ -19,6 +19,14 @@ function p_main_nav($type='custom'
 	if($set_tings['header'] == 'fold-out'){
 		$string .="<div tabindex='0' class='main-nav-toggle'><i class='fa fa-bars'></i></div>";
 	}
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
 	$string.="<ul class='main-nav'>\n\t\t";
 	$count = 0;
 	//loop for each directory returned

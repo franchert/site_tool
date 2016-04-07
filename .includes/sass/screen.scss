@@ -37,56 +37,6 @@ body{
 	script{
 		display:none;
 	}
-	&.demo{
-		a{&[href="#"]{outline:dotted 2px #00BFFF!important;}}
-		h1{&:before{content:'H1';}}
-		h2{&:before{content:'H2';}}
-		h3{&:before{content:'H3';}}
-		h4{&:before{content:'H4';}}
-		h5{&:before{content:'H5';}}
-		h6{&:before{content:'H6';}}
-		h1,h2,h3,h4,h5,h6{
-			&:before{
-				color:red;
-				position:relative;
-				top:-14px;
-				font-size:10px;
-			}
-		}
-		.column{
-			//background-image: url('/.includes/images/placeholder-svg.php?wh=2000x8000&color=FCC&fill=FFDAB9&font=Arial&size=20&txt=ph_default_text');
-			//overflow:hidden;
-			//background:rgba(255,0,0,0.2);
-		}
-		.l-region{
-			border:1px dashed red;
-			border-radius:8px;
-		}
-		.l-featured-header{
-			min-height:100px;
-		}
-		.l-content-header{}
-		.l-content-center{
-			.l-nav-sidebar{
-				min-height:500px;
-			}
-			.l-content-featured{
-				min-height:300px;
-			}
-			.l-content-wrapper{
-				min-height:200px;
-				.l-content{
-					min-height:200px;
-				}
-				.l-promo-sidebar{
-					min-height:200px;
-				}
-			}
-		}
-		.l-content-footer{
-			min-height:200px;
-		}
-	}
 }
 .back-to-top{
 	display:none;

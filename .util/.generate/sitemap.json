@@ -1,101 +1,31 @@
 [
  [
   {
+   "id": 5,
    "menupos": 0,
    "title": "About Us",
    "children": [
-    [
-     {
-      "menupos": 0,
-      "title": "President Message",
-      "children": [
-       []
-      ]
-     },
-     {
-      "menupos": 1,
-      "title": "Mission and Vision",
-      "children": [
-       []
-      ]
-     },
-     {
-      "menupos": 2,
-      "title": "Quick Facts",
-      "children": [
-       []
-      ]
-     },
-     {
-      "menupos": 3,
-      "title": "Board of Directors",
-      "children": [
-       []
-      ]
-     }
-    ]
+    []
    ]
   },
   {
+   "id": 1,
    "menupos": 1,
-   "title": "Academics",
-   "children": [
-    [
-     {
-      "menupos": 0,
-      "title": "Programs",
-      "children": [
-       [
-        {
-         "menupos": 0,
-         "title": "Accounting",
-         "children": [
-          []
-         ]
-        },
-        {
-         "menupos": 1,
-         "title": "Communications",
-         "children": [
-          []
-         ]
-        }
-       ]
-      ]
-     },
-     {
-      "menupos": 1,
-      "title": "Departments",
-      "children": [
-       []
-      ]
-     }
-    ]
-   ]
-  },
-  {
-   "menupos": 2,
    "title": "Admissions",
    "children": [
-    [
-     {
-      "menupos": 0,
-      "title": "Graduate Admissions",
-      "children": [
-       []
-      ]
-     },
-     {
-      "menupos": 1,
-      "title": "Undergraduate Admissions",
-      "children": [
-       []
-      ]
-     }
-    ]
+    []
    ]
   },
   {
+   "id": 2,
+   "menupos": 2,
+   "title": "Academics",
+   "children": [
+    []
+   ]
+  },
+  {
+   "id": 3,
    "menupos": 3,
    "title": "News and Events",
    "children": [
@@ -103,6 +33,7 @@
    ]
   },
   {
+   "id": 4,
    "menupos": 4,
    "title": "Athletics",
    "children": [

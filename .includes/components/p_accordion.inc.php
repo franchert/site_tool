@@ -13,6 +13,14 @@ function p_accordion(
 	$string = '';
 
 	$string .='<div class="accordion" id="'.$id.'">';
+	$string .= infoButton(
+		array(
+			'fields' => array('tab title','tab contents'),
+			'needs' => array('hover tab','focus, active tab'),
+			'intro' => 'The p_accordion promo is used to display related topics together in a small space in order to let the user compare and/or choose the best fit for their needs.',
+			'other' => ''
+		)
+	);
 	if($arr == null){
 		$arr=array(
 			1 => array(

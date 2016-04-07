@@ -26,6 +26,14 @@ function p_grid(
 	if(isset($subtitle) && $subtitle !=''){
 		$string .= '<p class="home-h2-sub">'.$subtitle.'</p>';
 	}
+	$string .= infoButton(
+		array(
+			'fields' => array('title'),
+			'needs' => array('hover','focus, active'),
+			'intro' => 'This promo...',
+			'other' => 'Other info...'
+		)
+	);
 	if(!is_null($arr) && is_array($arr)){
 		$len = count($arr);
 	}else{

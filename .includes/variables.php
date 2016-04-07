@@ -18,8 +18,10 @@ include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 $client_name = 'Client Name';
 $site_logo = "/.includes/images/placeholder-svg.php?wh=170x115&color=111111&fill=cccccc&font=Arial&txt=Site Logo&size=20";
 $alert_on = false;
-$demo = false;
 $google_CSE_cx = '007701188165887638683:9z5n0yvnab4';
+
+/* demo shows the button to toggle demo mode and adds the html info hovers */
+$demo = true;
 
 /*	$header
  *	choose a header type in the .includes/header folder
@@ -77,4 +79,5 @@ $google_CSE_cx = '007701188165887638683:9z5n0yvnab4';
 		),
 		'updated' => '1459273439'
 	);
+
 ?>

@@ -376,13 +376,13 @@
 	}
 	&.hovertext{
 		position:relative;
-		overflow:hidden;
 		.item{
 			border:1px solid $white;
 		}
 		a{
 			background:$t-black;
 			position:absolute;
+			overflow:hidden;
 			@include breakpoint($tab){
 				background:none;
 				@include v-gradient();

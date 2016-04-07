@@ -12,8 +12,13 @@ div.tabaccordion{
 	ul{
 		position:relative;
 		float:left;
+		list-style:none;
+		padding:0;
 		> li{
 			position:static;
+			margin:0;
+			width:100%;
+			padding:0;
 			@include breakpoint($tabacc_breakpoint){
 				width:auto;
 				display:table;
@@ -105,7 +110,7 @@ div.tabaccordion{
 			> li{
 				@include breakpoint($tabacc_breakpoint){
 					float:left;
-					margin-right:2px;
+					margin:0 2px 0 0;
 				}
 			}
 		}
@@ -132,7 +137,7 @@ div.tabaccordion{
 			> li{
 				@include breakpoint($tabacc_breakpoint){
 					float:right;
-					margin-left:2px;
+					margin:0 0 0 2px;
 				}
 			}
 		}

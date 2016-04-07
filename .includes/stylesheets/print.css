@@ -12,6 +12,7 @@ img,
 
 body.sitemap .fa-close,
 body.sitemap .fa-bars,
-body.sitemap .add {
+body.sitemap .add,
+body.sitemap .save {
   display: none !important;
 }

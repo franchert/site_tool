@@ -43,6 +43,14 @@ function p_promo(
 
 	$string = "\n<div class='p-promo ".$type." ".$addl_class."'>\n\t";
 
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			),'p_promo - '.$type
+		);
 	if(strrpos($type,"overlayv2") !== false){
 		if(!is_null($link)){
 			$string .="<a href='".$link."'>\n\t\t";

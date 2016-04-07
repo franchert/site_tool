@@ -12,6 +12,14 @@ function p_tabs_mobi(
 
 	global $set_tings;
 	$string = '<div class="container"><div id="'.$id.'">';
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
 	if ($collapsable){
 		$c = ' collapsable';
 	}else{

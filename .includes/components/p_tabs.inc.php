@@ -21,6 +21,9 @@ $(function() {
 	});
 });';
 	$string = '<div class="container"><div id="'.$id.'">';
+		if(isset($set_tings['demo']) && $set_tings['demo'] == true){
+			$string .= infoButton('some content');
+		}
 	if($arr == null){
 		$arr=array(
 			1 => array(

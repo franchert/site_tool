@@ -38,8 +38,18 @@ function p_news(
 		}else{
 			$category = "<a href='#' class='cat t-".$cat."'>".$cat."</a>\n\t";
 		}
+	}else{
+		$category = '';
 	}
 	$string = "\n<div class='news_article ".$type."'>\n\t";
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
 		if(strrpos($type,'short') !== false){
 			$string .= $category;
 			$string .="<a href='".$link."'>\n\t\t";

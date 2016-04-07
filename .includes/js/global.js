@@ -18,6 +18,9 @@ $(document).ready(function(){
 			$(this).toggleClass('short');
 		}
 	});
+	$(".demo-toggle").on("click",function(){
+		$('body').toggleClass("demo");
+	});
 	$(".featured .slide img").each(function(i, img) {
 		$(img).css({
 			left: ($(img).parent().width() - $(img).width()) / 2

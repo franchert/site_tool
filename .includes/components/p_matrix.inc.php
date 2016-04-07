@@ -42,6 +42,14 @@ function p_matrix(
 		$addclass .= ' offset';
 	}
 	$string ='<div class="matrix '.$addclass.'">';
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
 	if(is_null($arr)){
 		while ($len > 0){
 			$string .='<div>'.p_promo('generic').'</div>';

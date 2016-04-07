@@ -31,6 +31,14 @@ function p_directory(
 	}
 	$string = '';
 	$string .="\n<div class='directory-item ".$type."'>\n\t";
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
 	if(is_null($image)){
 		$image = p_image("400","600");
 	}else{

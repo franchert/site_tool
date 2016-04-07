@@ -18,6 +18,14 @@ function p_spotlight(
 		$date = date("F j, Y");
 	}
 	$string = "\n<div class='spotlight'>\n\t";
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
 	if(!is_null($type)){
 		$string .= "<a href='#' class='cat t-".$type."'>".$type."</a>\n\t";
 	}

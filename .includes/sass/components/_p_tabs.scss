@@ -2,12 +2,14 @@
 	/* _p_tabs.scss */
 	margin-bottom:20px;
 	.ui-tabs-nav{
+		list-style:none;
 		display:table;
 		width:100%;
+		padding:0;
 		> li{
 			width:auto;
 			color:$white;
-			margin-right:2px;
+			margin:0 2px 0 0;
 			&:last-child{
 				border-right:none;
 			}
@@ -26,7 +28,7 @@
 				text-align:center;
 				background:$color-2;
 				h3{
-					@include font('open_sans',26,$color-1);
+					@include font('open_sans',20,$color-1);
 					line-height:20px;
 					border-bottom:0;
 					margin:0;
@@ -43,11 +45,15 @@
 .tabs-container{
 	margin-bottom:20px;
 	.tabheaders{
+		list-style:none;
+		padding:0;
 		@include breakpoint($tab){
 			display:table;
 		}
 		li{
 			border-bottom:2px solid $white;
+			margin:0 2px 0 0;
+			width:100%;
 			@include breakpoint($tab){
 				display:table-cell;
 				border:none;
@@ -55,7 +61,7 @@
 				margin-right:2px;
 			}
 			a{
-				@include font('open_sans',26,$color-1);
+				@include font('open_sans',20,$color-1);
 				line-height:18px;
 				transition:height .5s ease-in-out,padding .5s ease-in-out;
 				height:56px;

@@ -230,7 +230,7 @@ ul.section_structure{
 				}
 				> div{}
 				@for $i from 1 through $max {
-					&:nth-child(#{$i}){
+					&:nth-of-type(#{$i}){
 						>a{
 							left:$anchor-width * ($i - 1);
 						}
@@ -270,7 +270,7 @@ ul.section_structure{
 				}
 				> div{}
 				@for $i from 1 through $max {
-					&:nth-child(#{$i}){
+					&:nth-of-type(#{$i}){
 						>a{
 							left:$anchor-width * ($i - 1);
 						}

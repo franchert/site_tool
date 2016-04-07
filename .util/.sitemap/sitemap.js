@@ -1,7 +1,13 @@
 $(function  () {
+	$('ol.serialization').on('click keypress','.fa-close',function(){
+		$(this).parent().remove();
+		//refresh();
+		$('button.save').addClass('unsaved');
+	});
 	var oldContainer;
 	var group = $("ol.serialization").sortable({
 		group: 'serialize',
+		delay: 10,
 		afterMove: function (placeholder, container) {
 			if(oldContainer != container){
 				if(oldContainer)
@@ -11,7 +17,6 @@ $(function  () {
 			}
 		},
 		onDrop: function ($item, container, _super) {
-			//refresh();
 			$('button.save').addClass('unsaved');
 			_super($item, container);
 		}
@@ -23,11 +28,6 @@ $(function  () {
 		//refresh();
 		$('button.save').addClass('unsaved');
 	});
-	$('ol.serialization').on('click keypress','.fa-close',function(){
-		$(this).parent().remove();
-		//refresh();
-		$('button.save').addClass('unsaved');
-	});
 	$('button.add').on('click keypress',function(){
 		newid = 0;
 		$('ol.serialization li').each(function(){
@@ -36,7 +36,7 @@ $(function  () {
 			}
 		})
 		newid++;
-		var newitem = "<li data-id='"+newid+"' data-menupos='8' data-title='New'><span class='fa fa-bars'></span><input class='title' value='New'><span tabindex='0' class='fa fa-close'></span><ol></ol></li>";
+		var newitem = "<li data-id='"+newid+"' data-menupos='0' data-title='New'><span class='fa fa-bars'></span><input class='title' value='New'><span tabindex='0' class='fa fa-close'></span><ol></ol></li>";
 		$('#serialization > ol').prepend(newitem);
 		//refresh();
 		$('button.save').addClass('unsaved');

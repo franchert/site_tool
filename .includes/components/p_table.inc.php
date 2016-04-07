@@ -52,6 +52,14 @@ function p_table(
 	}
 
 	$string .="\n<div class='".$type."'>\n\t<table class='".$id."'>\n\t\t";
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
 	if($head != null){
 		$string .="<thead>\n\t\t\t<tr>\n\t\t\t";
 		foreach($head as $k => $v){

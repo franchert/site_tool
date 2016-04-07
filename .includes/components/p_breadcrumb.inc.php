@@ -7,7 +7,16 @@ function p_breadcrumb(){
 	global $fe_wrapper;
 	global $set_tings;
 
-	$string = "\n\t<div class='".$fe_wrapper."'>\n\t\t<div id='breadcrumb'>\n\t\t\t<ul>\n\t\t";
+	$string = "\n\t<div class='".$fe_wrapper."'>\n\t\t<div id='breadcrumb'>";
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
+	$string .="\n\t\t\t<ul>\n\t\t";
 	$i = -1;
 	$crumb = '';
 	$count = count($set_tings['segments']);

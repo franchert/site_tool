@@ -14,8 +14,16 @@ $('.alert .toggle').on('click',function(e){
 	$(this).parents('.alert').toggleClass('closed');
 });";
 	if(isset($alert) && $alert_on === true){
-		$string =
-		"<div data-updated='".$alert['updated']."' class='alert ".$alert['type'][0]."'>
+		$string ="<div data-updated='".$alert['updated']."' class='alert ".$alert['type'][0]."'>";
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
+		$string .="
 			<div class='toggle'>
 				<h3>".$alert['type'][1]."</h3>
 				<span></span>

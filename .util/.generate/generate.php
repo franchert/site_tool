@@ -1,7 +1,7 @@
 <?php
-/*
- *		Generates directory structure based on structure of a json feed.
- *		Move desired sitemap from within sitemaps directory up one level and run
+/**
+ *
+			not currently used
  */
 $default_index = file_get_contents("index.default.php");
 $string = '';
@@ -14,16 +14,16 @@ foreach(new DirectoryIterator('.') as $file){
 	}
 }
 if($string == ''){
-	echo "No json feed detected, please create a feed using the sitemap tool</br>";
+	$ret = "No json feed detected, please create a feed using the sitemap tool</br>";
 }else{
 	$haystack = json_decode($string, true);
-	echo "-- the following directory structure has been created --</br></br>";
+	$ret .= "-- the following directory structure has been created --</br></br>";
 	//print_r(count($haystack[0]));
 	$depth = 0;
 	recurse_sitemap('',$haystack,count($haystack[0]),$depth);
 }
-echo "<a href='/.util' style='position:fixed;top:120px;right:20px;background:#333;color:white;padding:13px 0px;width:50px;height:24px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Util</a>";
-
+$ret .= "<a href='/.util' style='position:fixed;top:20px;right:20px;background:#333;color:white;padding:20px;width:50px;height:50px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Back to Utility</a>";
+echo json_encode($ret);
 function recurse_sitemap($ex_segment,$arr,$count,$depth){
 	//print_r($arr[0]);
 	foreach($arr[0] as $k => $v){
@@ -35,10 +35,10 @@ function recurse_sitemap($ex_segment,$arr,$count,$depth){
 		makeDir($segment,$depth,$title);
 		$i = $depth;
 		while ($i > 0){
-			echo " -- ";
+			$ret .= " -- ";
 			$i --;
 		}
-		echo $title." <a target='_blank' href='".$segment."'' style='font-size:70%;color:#a55;'>".$segment."</a></br>";
+		$ret .= $title." <a target='_blank' href='".$segment."'' style='font-size:70%;color:#a55;'>".$segment."</a></br>";
 		if($count > 0){
 			$depth++;
 			recurse_sitemap($segment,$v['children'],count($v['children'][0]),$depth);

@@ -19,6 +19,14 @@ $(function() {
 	});
 });
 	';
+	$string .= infoButton(
+		array(
+			'fields' => array('tab title','tab contents'),
+			'needs' => array('hover tab','focus, active tab'),
+			'intro' => 'The p_accordion_ui is a jquery UI accordion option',
+			'other' => ''
+		)
+	);
 	$string .='<div id="'.$id.'">';
 	if($arr == null){
 		$arr=array(

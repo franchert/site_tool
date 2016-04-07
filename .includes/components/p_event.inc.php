@@ -18,7 +18,6 @@ function p_event(
 	$month=null,
 	$day=null,
 	$weekday=null){
-
 	global $set_tings;
 	if ($month == null){
 		$month = date('M');
@@ -30,6 +29,14 @@ function p_event(
 		$weekday = date("D");
 	}
 	$string = "\n<div class='promo-event ".$type."'>\n\t";
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
 	$string .= "<a href='".$link."'>\n\t\t";
 	$string .= "<div class='date'>\n\t\t\t";
 	$string .= "<div class='weekday'>".$weekday."</div>\n\t\t\t";

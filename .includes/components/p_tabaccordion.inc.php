@@ -33,6 +33,14 @@ function p_tabaccordion(
 		);
 	};
 	$string .= '<div class="tabaccordion '.$class.'" id="'.$id.'">';
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
 	$acc_string ='';
 	if($type == 'anchor'){
 		$string .='<ul class="ta_tabs">';

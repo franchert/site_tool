@@ -21,6 +21,14 @@ function p_calendar(
 	$n_last_previous_month = date("j", mktime(0, 0, 0, $month, 0, $year));
 	$first_calendar_day = $n_last_previous_month + $n_starting_day;
 	$string .="<table class='calendar'>";
+		$string .= infoButton(
+			array(
+				'fields' => array('title'),
+				'needs' => array('hover','focus, active'),
+				'intro' => 'This promo...',
+				'other' => 'Other info...'
+			)
+		);
 	$string .="<thead><tr><td>Sunday</td><td>Monday</td><td>Tuesday</td><td>Wednesday</td><td>Thursday</td><td>Friday</td><td>Saturday</td></tr></thead>";
 	$string .="<tbody>";
 	$string .="<tr>";

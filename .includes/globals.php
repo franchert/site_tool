@@ -298,4 +298,38 @@ function explodeTree($array, $delimiter = '_', $baseval = false,$starting = null
 	}
 	return $returnArr;
 }
+/*	
+ *	Adds info hover item on each component when demo mode is triggered.
+ */
+function infoButton($content=null,$title=null){
+	global $set_tings;
+
+	if(isset($set_tings['demo']) && $set_tings['demo'] == true){
+		if($title == null){
+			$title = debug_backtrace()[1]['function'];
+		}
+		$info = '<section class="c-info">';
+		$info .= '<span class="fa fa-info-circle"></span>';
+		$info .= '<div>';
+		$info .= '<h6>'.$title.'</h6>';
+		if(is_array($content)){
+			$info .= "<section class='half'><p>Fields:</p><ul>";
+			foreach($content['fields'] as $k => $v){
+				$info .= "<li>".$v."</li>";
+			}
+			$info .="</ul></section>";
+			$info .= "<section class='half'><p>Needs:</p><ul>";
+			foreach($content['needs'] as $k => $v){
+				$info .= "<li>".$v."</li>";
+			}
+			$info .="</ul></section>";
+			$info .= "<p>".$content['intro']."</p>";
+			$info .= "<p>".$content['other']."</p>";
+		}else{
+			$info .= $content;
+		}
+		$info .= '</div></section>';
+	}else{$info == '';}
+	return $info;
+}
 ?>
