@@ -9,26 +9,26 @@ $layout = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 $g_two = array(
-	p_promo("linkimg","image","","LinkImg"),
-	p_promo("linkimg","image","","LinkImg")
+	p_promo("panel","image","","panel"),
+	p_promo("panel","image","","panel")
 );
 $g_three = array(
-	p_promo("linkimg","image","","LinkImg"),
-	p_promo("linkimg","image","","LinkImg"),
-	p_promo("linkimg","image","","LinkImg")
+	p_promo("panel","image","","panel"),
+	p_promo("panel","image","","panel"),
+	p_promo("panel","image","","panel")
 );
 $g_four = array(
-	p_promo("linkimg","image","","LinkImg"),
-	p_promo("linkimg","image","","LinkImg"),
-	p_promo("linkimg","image","","LinkImg"),
-	p_promo("linkimg","image","","LinkImg")
+	p_promo("panel","image","","panel"),
+	p_promo("panel","image","","panel"),
+	p_promo("panel","image","","panel"),
+	p_promo("panel","image","","panel")
 );
 $g_five = array(
-	p_promo("linkimg","image","","LinkImg"),
-	p_promo("linkimg","image","","LinkImg"),
-	p_promo("linkimg","image","","LinkImg"),
-	p_promo("linkimg","image","","LinkImg"),
-	p_promo("linkimg","image","","LinkImg")
+	p_promo("panel","image","","panel"),
+	p_promo("panel","image","","panel"),
+	p_promo("panel","image","","panel"),
+	p_promo("panel","image","","panel"),
+	p_promo("panel","image","","panel")
 );
 $l_content .= p_grid('horizontal',3,'horizontal 3',$g_three);
 $l_content .= p_grid('horizontal right',3,'horizontal right 3',$g_three);

@@ -26,7 +26,13 @@ $section_title = titleFromSlug($section_slug);
 $client_slug = str_replace(' ','_',strtolower($client_name));
 
 $init = "";
-if(isset($demo) && $demo){$init = " ";}
+
+/*	no longer need to show empty regions that don't exist in demo mode 
+ *	because pages rely on excluding the region
+ */
+//if(isset($demo) && $demo){$init = "";}
+
+
 /*initialize region string variables*/
 if(isset($layout)){
 	include($docroot.'/.includes/layouts/'. $layout.'/'.$layout.'.regions.php');

@@ -10,7 +10,7 @@
 			min-width:100%;
 		}
 	}
-	&.linkimg{
+	&.panel{
 		position:relative;
 		a{
 			overflow:hidden;
@@ -374,7 +374,7 @@
 			}
 		}
 	}
-	&.hovertext{
+	&.reveal{
 		position:relative;
 		.item{
 			border:1px solid $white;
@@ -392,11 +392,11 @@
 			height:100%;
 			transition:all 0.2s;
 			&:hover{
-				background:$t-black;
+				background:none;
 				h2{
 					bottom:initial;
 					top:20%;
-					color:$white;
+					color:$c-default;
 					@include breakpoint($tab){
 						top:10%;
 					}
@@ -410,7 +410,7 @@
 						content:'';
 					}
 				}
-				@include arrowdown($white,16);
+				@include arrowdown($c-default,16);
 				position:absolute;
 				&:after{
 					font-size:28px;
@@ -419,6 +419,7 @@
 				}
 			}
 			h2{
+				color:$white;
 				bottom:initial;
 				@include floatblock();
 				position:absolute;
@@ -555,7 +556,7 @@
 			}
 		}
 	}
-	&.promo{
+	&.card{
 		h4{
 			@include font('lobster',20,$color-1);
 			margin:0;
@@ -582,7 +583,7 @@
 			}
 		}
 		&.dark{
-			padding:10px 20px;
+			padding:20px;
 			background:$color-1;
 			h4{
 				color:$white;
@@ -601,7 +602,7 @@
 			}
 		}
 		&.light{
-			padding:10px 20px;
+			padding:20px;
 			background:$gray;
 			.promo-container{
 				h4{
@@ -639,6 +640,8 @@
 		transition:all .2s;
 		a{
 			position:relative;
+			box-shadow:none;
+			transition:box-shadow 0.5s ease-in-out;
 			.item{
 				width:100%;
 			}
@@ -671,6 +674,9 @@
 						line-height:28px;
 					}
 				}
+			}
+			&:hover{
+				box-shadow:0 0 5px $t-black;
 			}
 		}
 		&.light{
@@ -781,7 +787,7 @@
 				}
 			}
 		}
-		&.promo{
+		&.card{
 			.item{
 				@include breakpoint($tab){
 					width:200px;

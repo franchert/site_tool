@@ -44,6 +44,9 @@ $(function  () {
 	$('button.save').on('click keypress',function(){
 		refresh();
 	});
+	$('button.generate').on('click keypress',function(){
+		generate();
+	});
 	$('li').mouseover(function(e){
 		e.stopPropagation();
 		$(this).addClass('currentHover');
@@ -65,4 +68,10 @@ function refresh(){
 	$('#output2').empty();
 	$("ol.serialization").sortable("refresh");
 	$('button.save').removeClass('unsaved');
+}
+function generate(){
+	$.ajax({
+		type: "POST",
+		url: 'generate.php'
+	})
 }

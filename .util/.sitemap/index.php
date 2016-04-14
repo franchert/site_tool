@@ -9,14 +9,16 @@ $sitemap = true;
 include_once($docroot."/.includes/director.php");
 /*define content here*/
 
-$arr = json_decode(file_get_contents('../.generate/sitemap.json'),True);
+$arr = json_decode(file_get_contents('sitemap.json'),True);
 $l_one_col .="<div class='wrapper'><div class='column'>";
 $l_one_col .="<h1>".$page_title."</h1>";
 $l_one_col .= "<button class='add'><span class='fa fa-plus'></span>Add a new item</button>";
 $l_one_col .= "<button class='save'><span class='fa fa-save'></span>Save this Sitemap</button>";
+$l_one_col .= "<button class='generate' title='generate file structure from this sitemap'><span class='fa fa-gears'></span>Generate</button>";
 $l_one_col .= "<div id='serialization'><ol class='serialization vertical'>";
 $l_one_col .= recurse($arr,'');
-$l_one_col .= "<div id='output2' style=''></div></div></div></div>";
+$l_one_col .= "</ol><div id='output2' style=''></div>";
+$l_one_col .= "</div></div></div>";
 $l_one_col .= "<a href='/.util' style='position:fixed;top:120px;right:20px;background:#333;color:white;padding:13px 0px;width:50px;height:50px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Util</a>";
 
 /*end define content*/

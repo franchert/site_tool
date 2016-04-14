@@ -154,6 +154,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  *			@include sibling_count_prop('li',4,7);
  *		}
  */
+/* Mixin */
 body.fold-out header {
   margin-bottom: 110px;
 }
@@ -3195,18 +3196,18 @@ body .p-promo .item {
 body .p-promo .item img {
   min-width: 100%;
 }
-body .p-promo.linkimg {
+body .p-promo.panel {
   position: relative;
 }
-body .p-promo.linkimg a {
+body .p-promo.panel a {
   overflow: hidden;
 }
-body .p-promo.linkimg a .item {
+body .p-promo.panel a .item {
   height: 200px;
   overflow: hidden;
   display: table;
 }
-body .p-promo.linkimg a .item h3 {
+body .p-promo.panel a .item h3 {
   position: relative;
   z-index: 1;
   text-align: center;
@@ -3226,7 +3227,7 @@ body .p-promo.linkimg a .item h3 {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
-body .p-promo.linkimg a .item h3 span {
+body .p-promo.panel a .item h3 span {
   color: inherit;
   font-size: 20px;
   font-size: 2rem;
@@ -3236,13 +3237,13 @@ body .p-promo.linkimg a .item h3 span {
   font-weight: 700;
   line-height: 24px;
 }
-body .p-promo.linkimg a .item h3 span.fa {
+body .p-promo.panel a .item h3 span.fa {
   color: inherit;
   font-family: 'FontAwesome';
   font-style: initial;
   font-size: 40px;
 }
-body .p-promo.linkimg a .item h3 span p {
+body .p-promo.panel a .item h3 span p {
   display: none;
   color: inherit;
   font-size: 16px;
@@ -3252,7 +3253,7 @@ body .p-promo.linkimg a .item h3 span p {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
-body .p-promo.linkimg a .item img {
+body .p-promo.panel a .item img {
   position: absolute;
   left: 0;
   min-height: 100%;
@@ -3260,46 +3261,46 @@ body .p-promo.linkimg a .item img {
   width: auto;
   max-width: initial !important;
 }
-body .p-promo.linkimg:hover a .item h3 {
+body .p-promo.panel:hover a .item h3 {
   color: white;
   background: rgba(70, 135, 195, 0.6);
 }
-body .p-promo.linkimg:hover a .item h3 span {
+body .p-promo.panel:hover a .item h3 span {
   color: inherit;
 }
-body .p-promo.linkimg:hover a .item h3 span p {
+body .p-promo.panel:hover a .item h3 span p {
   display: block;
 }
-body .p-promo.linkimg.dark a .item h3 {
+body .p-promo.panel.dark a .item h3 {
   color: white;
   background: rgba(70, 135, 195, 0.6);
 }
-body .p-promo.linkimg.dark a .item h3 span {
+body .p-promo.panel.dark a .item h3 span {
   color: inherit;
 }
-body .p-promo.linkimg.dark:hover a .item h3 {
+body .p-promo.panel.dark:hover a .item h3 {
   background: rgba(187, 187, 187, 0.6);
   color: #4687c3;
 }
-body .p-promo.linkimg.dark:hover a .item h3 span {
+body .p-promo.panel.dark:hover a .item h3 span {
   color: inherit;
 }
-body .p-promo.linkimg.light a .item h3 {
+body .p-promo.panel.light a .item h3 {
   background: rgba(187, 187, 187, 0.6);
   color: #4687c3;
   text-shadow: none;
 }
-body .p-promo.linkimg.light a .item h3 span {
+body .p-promo.panel.light a .item h3 span {
   color: inherit;
 }
-body .p-promo.linkimg.light:hover a .item h3 {
+body .p-promo.panel.light:hover a .item h3 {
   background: rgba(70, 135, 195, 0.6);
   color: white;
 }
-body .p-promo.linkimg.light:hover a .item h3 .fa {
+body .p-promo.panel.light:hover a .item h3 .fa {
   color: inherit;
 }
-body .p-promo.linkimg.light:hover a .item h3 span {
+body .p-promo.panel.light:hover a .item h3 span {
   color: inherit;
 }
 body .p-promo.overlay {
@@ -3623,13 +3624,13 @@ body .p-promo.overlayv2.spotlight .promo-container h2 {
   font-size: 30px;
   line-height: 34px;
 }
-body .p-promo.hovertext {
+body .p-promo.reveal {
   position: relative;
 }
-body .p-promo.hovertext .item {
+body .p-promo.reveal .item {
   border: 1px solid white;
 }
-body .p-promo.hovertext a {
+body .p-promo.reveal a {
   background: rgba(0, 0, 0, 0.6);
   position: absolute;
   overflow: hidden;
@@ -3641,7 +3642,7 @@ body .p-promo.hovertext a {
   transition: all 0.2s;
 }
 @media (min-width: 45em) {
-  body .p-promo.hovertext a {
+  body .p-promo.reveal a {
     background: none;
     *zoom: 1;
     filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF000000', endColorstr='#FFA60000');
@@ -3653,36 +3654,36 @@ body .p-promo.hovertext a {
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
   }
 }
-body .p-promo.hovertext a:hover {
-  background: rgba(0, 0, 0, 0.6);
+body .p-promo.reveal a:hover {
+  background: none;
   position: relative;
   padding-right: 20px;
   position: absolute;
 }
-body .p-promo.hovertext a:hover h2 {
+body .p-promo.reveal a:hover h2 {
   bottom: initial;
   top: 20%;
-  color: white;
+  color: #444444;
 }
 @media (min-width: 45em) {
-  body .p-promo.hovertext a:hover h2 {
+  body .p-promo.reveal a:hover h2 {
     top: 10%;
   }
 }
 @media (min-width: 55em) {
-  body .p-promo.hovertext a:hover h2 {
+  body .p-promo.reveal a:hover h2 {
     top: 20%;
   }
 }
-body .p-promo.hovertext a:hover p {
+body .p-promo.reveal a:hover p {
   bottom: 10%;
 }
-body .p-promo.hovertext a:hover p:after {
+body .p-promo.reveal a:hover p:after {
   content: '';
 }
-body .p-promo.hovertext a:hover:after {
+body .p-promo.reveal a:hover:after {
   position: absolute;
-  color: white;
+  color: #444444;
   content: "\f105";
   font-family: FontAwesome;
   font-size: 16px;
@@ -3699,14 +3700,15 @@ body .p-promo.hovertext a:hover:after {
   padding: 0 10px;
   transition: all .2s;
 }
-body .p-promo.hovertext a:hover:after {
+body .p-promo.reveal a:hover:after {
   font-size: 28px;
   left: 50%;
   left: -webkit-calc(50% - 14px);
   left: calc(50% - 14px);
   top: 90%;
 }
-body .p-promo.hovertext a h2 {
+body .p-promo.reveal a h2 {
+  color: white;
   bottom: initial;
   display: block;
   float: left;
@@ -3721,7 +3723,7 @@ body .p-promo.hovertext a h2 {
   top: 20%;
 }
 @media (min-width: 45em) {
-  body .p-promo.hovertext a h2 {
+  body .p-promo.reveal a h2 {
     bottom: 20%;
     font-size: 20px;
     line-height: 26px;
@@ -3729,12 +3731,12 @@ body .p-promo.hovertext a h2 {
   }
 }
 @media (min-width: 70em) {
-  body .p-promo.hovertext a h2 {
+  body .p-promo.reveal a h2 {
     font-size: 28px;
     line-height: 32px;
   }
 }
-body .p-promo.hovertext a p {
+body .p-promo.reveal a p {
   position: absolute;
   bottom: 10%;
   width: 100%;
@@ -3745,18 +3747,18 @@ body .p-promo.hovertext a p {
   transition: all 0.2s;
   text-align: center;
 }
-body .p-promo.hovertext a p:after {
+body .p-promo.reveal a p:after {
   content: '';
 }
 @media (min-width: 45em) {
-  body .p-promo.hovertext a p {
+  body .p-promo.reveal a p {
     bottom: -100%;
     font-size: 14px;
     line-height: 18px;
   }
 }
 @media (min-width: 55em) {
-  body .p-promo.hovertext a p {
+  body .p-promo.reveal a p {
     font-size: 16px;
   }
 }
@@ -3851,7 +3853,7 @@ body .p-promo.generic.hover:hover {
   border-top: 5px solid #bbbbbb;
   margin-bottom: 16px;
 }
-body .p-promo.promo h4 {
+body .p-promo.card h4 {
   color: #2a2a2a;
   font-size: 20px;
   font-size: 2rem;
@@ -3861,12 +3863,12 @@ body .p-promo.promo h4 {
   margin: 0;
   text-transform: initial;
 }
-body .p-promo.promo hr {
+body .p-promo.card hr {
   border: none;
   border-bottom: 1px solid #bbbbbb;
   position: relative;
 }
-body .p-promo.promo .promo-container p {
+body .p-promo.card .promo-container p {
   color: #444444;
   font-size: 16px;
   font-size: 1.6rem;
@@ -3875,7 +3877,7 @@ body .p-promo.promo .promo-container p {
   font-family: 'Lora', serif;
   font-weight: 400;
 }
-body .p-promo.promo .promo-container p a {
+body .p-promo.card .promo-container p a {
   color: #2a2a2a;
   font-size: 18px;
   font-size: 1.8rem;
@@ -3884,7 +3886,7 @@ body .p-promo.promo .promo-container p a {
   font-family: 'Lora', serif;
   font-weight: 400;
 }
-body .p-promo.promo .promo-container > a {
+body .p-promo.card .promo-container > a {
   color: #2a2a2a;
   font-size: 16px;
   font-size: 1.6rem;
@@ -3896,7 +3898,7 @@ body .p-promo.promo .promo-container > a {
   text-transform: uppercase;
   margin: 10px 0;
 }
-body .p-promo.promo .promo-container > a:after {
+body .p-promo.card .promo-container > a:after {
   content: "\f0da";
   font-family: FontAwesome;
   font-size: 14px;
@@ -3907,28 +3909,28 @@ body .p-promo.promo .promo-container > a:after {
   left: -10px;
   color: #2a2a2a;
 }
-body .p-promo.promo.dark {
-  padding: 10px 20px;
+body .p-promo.card.dark {
+  padding: 20px;
   background: #2a2a2a;
 }
-body .p-promo.promo.dark h4 {
+body .p-promo.card.dark h4 {
   color: white;
   font-weight: normal;
 }
-body .p-promo.promo.dark .promo-container p {
+body .p-promo.card.dark .promo-container p {
   color: white;
 }
-body .p-promo.promo.dark .promo-container > a {
+body .p-promo.card.dark .promo-container > a {
   color: #bbbbbb;
 }
-body .p-promo.promo.dark .promo-container > a:after {
+body .p-promo.card.dark .promo-container > a:after {
   color: #bbbbbb;
 }
-body .p-promo.promo.light {
-  padding: 10px 20px;
+body .p-promo.card.light {
+  padding: 20px;
   background: #999999;
 }
-body .p-promo.promo.light .promo-container h4 {
+body .p-promo.card.light .promo-container h4 {
   color: #2a2a2a;
   font-size: 24px;
   font-size: 2.4rem;
@@ -3938,20 +3940,20 @@ body .p-promo.promo.light .promo-container h4 {
   color: #2a2a2a;
   font-weight: normal;
 }
-body .p-promo.promo.light .promo-container p {
+body .p-promo.card.light .promo-container p {
   color: #444444;
 }
-body .p-promo.promo.light .promo-container > a {
+body .p-promo.card.light .promo-container > a {
   color: #2a2a2a;
 }
-body .p-promo.promo.light .promo-container > a:after {
+body .p-promo.card.light .promo-container > a:after {
   color: #2a2a2a;
 }
-body .p-promo.promo.wrap .item {
+body .p-promo.card.wrap .item {
   float: left;
   padding-right: 10px;
 }
-body .p-promo.promo.wrap .promo-container p {
+body .p-promo.card.wrap .promo-container p {
   display: inline;
   float: none;
 }
@@ -3962,6 +3964,8 @@ body .p-promo.button {
 }
 body .p-promo.button a {
   position: relative;
+  box-shadow: none;
+  transition: box-shadow 0.5s ease-in-out;
 }
 body .p-promo.button a .item {
   width: 100%;
@@ -4004,6 +4008,9 @@ body .p-promo.button a .promo-container p {
     font-size: 24px;
     line-height: 28px;
   }
+}
+body .p-promo.button a:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
 }
 body .p-promo.button.light a .promo-container {
   background: #bbbbbb;
@@ -4083,16 +4090,16 @@ body .l-content .p-promo.generic.hover .promo-container {
   }
 }
 @media (min-width: 45em) {
-  body .l-content .p-promo.promo .item {
+  body .l-content .p-promo.card .item {
     width: 200px;
     float: left;
   }
 }
-body .l-content .p-promo.promo .promo-container {
+body .l-content .p-promo.card .promo-container {
   padding: 0 20px;
 }
 @media (min-width: 45em) {
-  body .l-content .p-promo.promo .promo-container {
+  body .l-content .p-promo.card .promo-container {
     width: 100%;
     width: -webkit-calc(100% - 200px);
     width: calc(100% - 200px);

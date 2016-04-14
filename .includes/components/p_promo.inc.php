@@ -83,7 +83,7 @@ function p_promo(
 		if(!is_null($link)){
 			$string .="</a>";
 		}
-	}else if(strrpos($type,"linkimg") !== false){
+	}else if(strrpos($type,"panel") !== false){
 		if($link != null){
 			$string .= "<a href='".$link."'>";
 		}
@@ -95,7 +95,7 @@ function p_promo(
 		if($link != null){
 			$string .= "</a>";
 		}
-	}else if(strrpos($type,"hovertext") !== false){
+	}else if(strrpos($type,"reveal") !== false){
 		$string .= "<div class='item'>\n\t\t".$img."\n\t</div>\n\t";
 		$string .="<a href='".$link."'>\n\t\t";
 		$string .="<h2>".$title."</h2>\n\t\t";
@@ -127,7 +127,7 @@ function p_promo(
 				$string .= "<a class='read-more' href='".$link."'>".$link_title."</a>\n\t";
 			}
 		$string .= "</div>\n";
-	}else if(strrpos($type,"promo") !== false){
+	}else if(strrpos($type,"card") !== false){
 		if(!is_null($title)){
 			$string .="<h4>".$title."</h4>\n\t";
 		}

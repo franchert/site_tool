@@ -21,7 +21,7 @@ function fbFeed(){
 	});
 }";
 /*
-	$album = '86348506359';
+	$album = '10153271151541360';
 	$app_id = '573341462823400';
 	$app_secret = 'a0bc94a2cb83a1fc1c195856e520481a';
 	$url = 'coa1.vpmdev.com';//make sure this matches the app details
@@ -34,7 +34,7 @@ function fbFeed(){
 		$output = curl_exec($ch); 
 		curl_close($ch);
 
-	$request = "https://graph.facebook.com/".$album."/albums?fields=photos&limit=".$limit."&".$output;//get a json feed of all the photos in a specific album (86348506359)
+	$request = "https://graph.facebook.com/".$album."/photos?fields=photos&limit=".$limit."&".$output;//get a json feed of all the photos in a specific album (10153271151541360)
 		$ch = curl_init(); 
 		curl_setopt($ch, CURLOPT_URL, $request); 
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
@@ -63,7 +63,14 @@ function fbFeed(){
 		}else{
 			$title = $v['name'];
 		}
-		$string .= "<div class='item'><div class='imgcontainer'><img src='".($photo_url['images'][0]['source'])."' /></div><p>".$title."</p><a target='_blank' class='read-more' href='".$photo_url['link']."'>Read More</a></div>";//print our html
+		$string .= "
+		<div class='item'>
+			<div class='imgcontainer'>
+				<img src='".($photo_url['images'][0]['source'])."' />
+			</div>
+			<p>".$title."</p>
+			<a target='_blank' class='read-more' href='".$photo_url['link']."'>Read More</a>
+		</div>";//print our html
 	}
 	$string .= "</div>";
 	return $string;
