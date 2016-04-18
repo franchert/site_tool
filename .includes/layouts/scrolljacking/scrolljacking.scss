@@ -1,0 +1,28 @@
+body.scrolljacking{
+	.l-page{
+		#content{}
+		#nav{
+			position:fixed;
+			right:0;
+			width:10px;
+			top:50%;
+			z-index:12;
+			ul{
+				padding:0;
+				li{
+					list-style:none;
+					margin:0;
+					width:10px;
+					a{
+						width:10px;
+						height:10px;
+						background:$gray;
+						&.active{
+							background:#333;
+						}
+					}
+				}
+			}
+		}
+	}
+}

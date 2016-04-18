@@ -1,0 +1,638 @@
+$site-logo-width:200px;
+$site-logo-condensed-mobi:78px;
+$site-logo-condensed-desk:100px;
+body.generic{
+	header{
+		margin-bottom:110px;
+		.l-head{
+			background: $white;
+			z-index:2;
+			min-height:50px;
+			position: fixed;
+			box-shadow: 0 0 5px $t-black-light;
+			.mobi-toggle-wrapper{
+				width:50px;
+				position:absolute;
+				right:0;
+				height:50px;
+				cursor:pointer;
+				background: $color-3;
+				@include breakpoint($tab){
+					display:none;
+				}
+				.toggle{
+					@include floatblock(right,auto);
+					position:relative;
+					padding:13px 3px;
+					z-index:10;
+					cursor:pointer;
+					color:$white;
+					-webkit-transition: all 0.5s cubic-bezier(0.5,0.1,0.3,0.5);
+					-moz-transition: all 0.5s cubic-bezier(0.5,0.1,0.3,0.5);
+					-o-transition: all 0.5s cubic-bezier(0.5,0.1,0.3,0.5);
+					transition: all 0.5s cubic-bezier(0.5,0.1,0.3,0.5);
+					.toggle-element{
+						@include floatblock(left,24px);
+						height:4px;
+						margin:10px;
+						background:$white;
+						-webkit-transition: all 0.4s;
+						-moz-transition: all 0.4s;
+						-o-transition: all 0.4s;
+						transition: all 0.4s;
+						padding: 0;
+						box-sizing: initial;
+						&:before{
+							top: -7px;
+							content: '';
+							display: block;
+							width: 24px;
+							height: 4px;
+							background: $white;
+							position: relative;
+							z-index: -1;
+							-webkit-transition: all 0.4s;
+							-moz-transition: all 0.4s;
+							-o-transition: all 0.4s;
+							transition: all 0.4s;
+						}
+						&:after{
+							top: 3px;
+							content: '';
+							display: block;
+							width: 24px;
+							height: 4px;
+							background: $white;
+							position: relative;
+							z-index: -1;
+							-webkit-transition: all 0.4s;
+							-moz-transition: all 0.4s;
+							-o-transition: all 0.4s;
+							transition: all 0.4s;
+						}
+					}
+					&:hover{
+						-webkit-transition: top 0.4s;
+						-moz-transition: top 0.4s;
+						-o-transition: top 0.4s;
+						transition: top 0.4s;
+						.toggle-element{
+							&:before{
+								top:-8px;
+							}
+							&:after{
+								top:4px;
+							}
+						}
+					}
+				}
+			}
+			.mobi-toggle-container{
+				.utility {
+					display:none;
+					@include breakpoint($tab){
+						display:block;
+					}
+					float:right;
+					background: $color-1;
+					@include breakpoint($tab){
+						height:auto;
+						padding-right:0;
+					}
+					> .column{
+						padding:0;
+					}
+					.gateway-menu,
+					.utility-menu{
+						width:100%;
+						@include breakpoint($tab){
+							padding:10px 0;
+							width:auto;
+						}
+						ul{
+							display:block;
+							padding:0;
+							@include breakpoint($tab){
+								height:25px;
+								display:table;
+							}
+							li{
+								border-bottom:1px solid $color-3;
+								margin:0;
+								list-style-type:none;
+								padding:5px 0;
+								&:first-child {
+									a {
+										border-left:none;
+									}
+								}
+								@include breakpoint($desk){
+									background:none;
+								}
+								a{
+									color:$white;
+									display: block;
+									border-left: 1px solid white;
+									padding: 8px;
+								}
+							}
+						}
+						@include breakpoint($tab){
+							height:50px;
+							display:table;
+							width:auto;
+							ul{
+								li{
+									width:auto;
+									display:table-cell;
+									vertical-align:middle;
+									float:none;
+									border:none;
+									a {
+										padding: 0 15px 0;
+									}
+								}
+							}
+						}
+					}
+					.utility-menu{
+						float:right;
+						margin-bottom:30px;
+						@include breakpoint($tab){
+							margin-bottom:0;
+							float:right;
+						}
+						ul {
+							li {
+								a {
+									padding: 0 8px;
+									text-decoration:none;
+									@include font('lora',14,$color-3-tl);
+									line-height:14px;
+									border-color:$color-3-tl;
+									font-weight:500;
+									&:hover{
+										color:white;
+										text-decoration:underline;
+									}
+								}
+							}
+						}
+					}
+					.gateway-menu {
+						float:right;
+						margin-bottom:30px;
+						@include breakpoint($tab){
+							margin-bottom:0;
+							float:right;
+						}
+						ul {
+							li {
+								a {
+									padding: 0 8px;
+									text-decoration:none;
+									@include font('lora',14,$color-3-tl);
+									line-height:14px;
+									border-color:$color-3-tl;
+									font-weight:500;
+									&:hover{
+										color:white;
+										text-decoration:underline;
+									}
+								}
+							}
+						}
+					}
+					.search{
+						display:none;
+						width:100%;
+						@include breakpoint($tab){
+							display:block;
+							width:auto;
+							float:right;
+							position:relative;
+						}
+						@include breakpoint($desk){
+							margin-right:20px;
+						}
+						form{
+							margin:auto;
+							max-width:$maxwidth;
+							@include breakpoint($tab) {
+								display: none;
+								padding:8px 0;
+							}
+							@include breakpoint($desk) {
+								display: block;
+							}
+							span {
+								margin-top: 0;
+								color: $color-3;
+							}
+							#as_q{
+								height:29px;
+								width:150px;
+								@include font('lora',13,#555);
+								line-height:13px;
+								border:none;
+								padding-left:10px;
+								margin-left:5px;
+								border-radius: 3px 0 0 3px;
+								float:left;
+								margin-right:0;
+								&:focus{}
+								@include placeholder {
+									color:#555;
+									font-size:16px;
+									line-height:20px;
+								}
+								@include breakpoint($tab){
+									width:235px;
+								}
+								@include breakpoint($desk){
+									width:150px;
+								}
+							}
+							#site_search_button{
+								width:35px;
+								height:29px;
+								@include font('open_sans',20,$color-1);
+								font-size:20px;
+								color:$color-2;
+								background:$color-3-tl;
+								border:none;
+								cursor:pointer;
+								text-transform:uppercase;
+								border-radius: 0 3px 3px 0;
+								&:focus{
+									outline:1px solid $t-white;
+								}
+							}
+						}
+						.search-toggle{
+							display:none;
+							cursor:pointer;
+							background:transparent;
+							height:60px;
+							border:none;
+							color:$color-2;
+							font-size:18px;
+							position:relative;
+							margin-right:50px;
+							padding:0 10px;
+							@include focus_styles();
+							@include breakpoint($tab){
+								display:block;
+								width:50px;
+								top:0;
+								margin-right:0;
+								padding-left:0;
+							}
+							@include breakpoint($desk){
+								display:none;
+							}
+						}
+					}
+				}
+				.main-nav-container{
+					.column {
+						@include breakpoint($tab){
+							position:inherit;
+						}
+						@include breakpoint($desk){
+							position:relative;
+						}
+					}
+					.nav-wrapper{
+						.main-nav-toggle {
+							display:none;
+							padding: 10px 0;
+							@include focus_styles();
+							@include breakpoint($tab){
+								display:block;
+								float:right;
+								width:auto;
+							}
+							@include breakpoint($desk){
+								display:none;
+							}
+							.fa-bars {
+								cursor:pointer;
+								width:auto;
+								display: block;
+								float:right;
+								font-size:32px;
+								color:$color-3;
+							}
+						}
+						.main-nav {
+							display:none;
+							li {
+								margin:0;
+								a {
+									@include font('lora',16,$white);
+									line-height:21px;
+									font-weight:500;
+								}
+							}
+							@include breakpoint($tab){
+								background:$color-3;
+								position:absolute;
+								top: 52px;
+								max-width: 250px;
+								right: 0;
+								li {
+									display:block;
+								}
+							}
+							@include breakpoint($tab){
+								display:block;
+								background:none;
+								position:inherit;
+								top: 0;
+								height:auto;
+								max-width: none;
+								li {
+									display:table-cell;
+									a {
+										color:$color-3;
+									}
+								}
+							}
+							&.tab-open{
+								position: absolute;
+								top: -60px;
+								height: 100vh;
+								right:-250px;
+								box-shadow:0 0 5px $t-black-light;
+								@include breakpoint($tab){
+									display:block;
+								}
+							}
+						}
+					}
+				}
+			}
+			.site-logo{
+				display:block;
+				position:fixed;
+				z-index:0;
+				margin:auto;
+				width:auto;
+				@include breakpoint($tab){
+					padding:15px 0;
+					width:auto;
+					float:left;
+					position:absolute;
+					top:0;
+				}
+				img{
+					display:block;
+					top:0;
+					box-shadow:0 1px 4px rgba(0, 0, 0, 0.25);
+					width: $site-logo-width;
+					transition: width 0.3s ease-in-out;
+				}
+			}
+			&.search-open{
+				.utility{
+					.column{
+						.search{
+							.search-toggle{
+								background:$color-2;
+								span.fa-search{
+									&:before{
+										content:"\f00d";
+									}
+								}
+							}
+							form{
+								display:table-cell;
+								vertical-align:middle;
+								float:none;
+								position:relative;
+								@include calc('width','100% - 42px', '100%');
+								@include breakpoint($tab){
+									width:295px;
+									position:absolute;
+									top:0;
+									right:50px;
+									z-index:2;
+									background:$color-2;
+									padding:15px 0 15px 10px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		&.mobi-open{
+			.l-head{
+				left: 0;
+				z-index:9998;
+				overflow:auto;
+				height:100vh;
+				background-color:transparent;
+				@include breakpoint($tab){
+					height:auto;
+					overflow:visible;
+				}
+				.mobi-toggle-wrapper{
+					background:$color-3;
+					left:0;
+					.toggle{
+						.toggle-element{
+							background:none;
+							&:before{
+								top: 0px;
+								background: $white;
+								-webkit-transform: rotate(-45deg);
+								-ms-transform: rotate(-45deg);
+								transform: rotate(-45deg);
+							}
+							&:after{
+								top: -4px;
+								background: $white;
+								-webkit-transform: rotate(45deg);
+								-ms-transform: rotate(45deg);
+								transform: rotate(45deg);
+							}
+						}
+					}
+				}
+				.mobi-toggle-container{
+					display:block;
+					background:$color-3;
+					.main-nav-container{
+						background:$color-3;
+						overflow:hidden;
+
+						.column {
+							padding: 0;
+							overflow:hidden;
+							.site-logo {
+								z-index:-1;
+							}
+							.row{
+								width:75%;
+								float:right;
+							}
+						}
+						.nav-wrapper{
+							display:block;
+							width:100%;
+							right:0;
+							position:relative;
+							overflow:hidden;
+							@include breakpoint($tab){
+								width:auto;
+							}
+							.main-nav{
+								display:block;
+								background:$color-3;
+								padding:0;
+								li {
+									border-bottom: 1px solid $color-2;
+									a {
+										color:$white;
+										padding: 20px 15px;
+									}
+									&:last-child {
+										margin-bottom:10px;
+									}
+								}
+								@include breakpoint($tab){
+									height:auto;
+									background:none;
+								}
+							}
+						}
+						.utility{
+							background:$color-3;
+							display:block;
+							.drop-toggle {
+								display:none;
+							}
+							.drop-item {
+								display:block;
+							}
+							.utility-menu,.gateway-menu {
+								li {
+									a {
+										padding: 10px 15px 0;
+									}
+								}
+							}
+						}
+					}
+				}
+				.utility{
+					height:auto;
+					padding-top:0px;
+					.utility-menu {
+						ul {
+							li {
+								a {
+									border-left:0;
+									padding: 10px 20px;
+								}
+							}
+						}
+					}
+				}
+			}
+			.main-nav-container{
+				.nav-wrapper{
+					width:100%;
+					float:right;
+					display:block;
+				}
+			}
+		}
+		&.alert-active{
+			.l-head{
+				margin-top:55px;
+			}
+			+ .l-page{
+				.banner{
+					margin-top:100px;
+					@include breakpoint($tab){
+						margin-top:140px;
+					}
+				}
+				&.generic_inner{
+					.banner{
+						margin-top:50px;
+					}
+				}
+			}
+		}
+	}
+	&.mobi-open{
+		@include calc('left','100% - 50px','20%');
+		overflow:hidden;
+		.mobi-toggle-container{
+			@include calc('width','100% - 50px','80%');
+			height:100vh;
+			float:right;
+			overflow-y:scroll;
+		}
+	}
+	&.tab-open{
+		@include breakpoint($tab){
+			position:absolute;
+			left:-250px;
+		}
+		@include breakpoint($desk){
+			position:relative;
+			left:initial;
+		}
+		.alert{
+			right:0;
+		}
+	}
+	&.sticky{
+		header{
+			.l-head{
+				.mobi-toggle-container{
+					.main-nav-container{
+						.site-logo{
+							img{
+								width:$site-logo-condensed-mobi;
+								@include breakpoint($desk){
+									width:$site-logo-condensed-desk;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.drop-container {
+		&.mobile {
+			&.gateway-menu,
+			&.utility-menu {
+				.drop-toggle {
+					display: block;
+					@include breakpoint($tab) {
+						display: none;
+					}	
+				}
+				.drop-item {
+					@include breakpoint($tab) {
+						display: block;
+					}	
+				}
+			}
+		}
+	}
+	.main-nav-container{
+		display:block;
+		.nav-wrapper{
+			background:none;
+			float:right;
+		}
+	}
+}

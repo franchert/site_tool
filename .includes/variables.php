@@ -16,7 +16,7 @@ include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
  */
 
 $client_name = 'Client Name';
-$site_logo = "/.includes/images/placeholder-svg.php?wh=170x115&color=111111&fill=cccccc&font=Arial&txt=Site Logo&size=20";
+$site_logo = "/.includes/images/placeholder-svg.php?wh=200x60&color=111111&fill=cccccc&font=Arial&txt=Site Logo&size=20";
 $alert_on = false;
 $google_CSE_cx = '007701188165887638683:9z5n0yvnab4';
 
@@ -29,8 +29,9 @@ $demo = true;
  *	and scss file compiled into the screen.css file. Each of these files needs
  *	to match the directory and the variable set below.
  */
+	$header = 'generic';
 	//$header = 'sticky-h';
-	$header = 'fold-out';
+	//$header = 'fold-out';
 	//$header = 'nav-plus';
 /*end header*/
 

@@ -45,7 +45,20 @@ $(function  () {
 		refresh();
 	});
 	$('button.generate').on('click keypress',function(){
+		if(!$(this).next().is('.confirm')){
+			$(this).after("<button class='confirm'>Do it!</button>");
+			$(this).after("<button class='deny'>Don't do it!</button>");
+		}
+	});
+	$('html').on('click keypress','.confirm',function(){
 		generate();
+		alert("Structure generated!");
+		$(this).siblings('.deny').remove();
+		$(this).remove();
+	});
+	$('html').on('click keypress','.deny',function(){
+		$(this).siblings('.confirm').remove();
+		$(this).remove();
 	});
 	$('li').mouseover(function(e){
 		e.stopPropagation();

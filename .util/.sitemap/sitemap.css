@@ -66,14 +66,16 @@ button.add{
 }
 button.generate{
   width: auto;
-  float: right;
+  float: left;
   line-height: 24px;
   padding-right: 3px;
-  margin: 10px;
+  margin: 10px 0 10px 10px;
   background:#eee;
   border: none;
   font-family: 'Open Sans',sans-serif;
-  color: #aaa;
+  color: #000;
+  cursor:pointer;
+  background:#FFD251;
 }
 button.save{
   width: auto;
@@ -86,12 +88,36 @@ button.save{
   font-family: 'Open Sans',sans-serif;
   color: #aaa;
 }
+button.confirm,
+button.deny{
+  width:91px;
+  margin:10px 0;
+  height:27px;
+  float:left;
+  border:0;
+  color:white;
+  cursor:pointer;
+  position:relative;
+}
+button.deny{
+  background:rgb(199, 13, 13);
+  margin-left:-91px;
+}
+button.confirm{
+  background:#207916;
+  margin-left:0;
+}
+button.confirm:hover,
+button.deny:hover{
+  text-shadow:1px 1px 1px rgb(0, 0, 0),2px 2px 1px rgb(0, 0, 0);
+}
 button.save.unsaved{
   cursor: pointer;
   background: #8687C3;
   color: white;
 }
-.l-page .fa.fa-save{
+.l-page .fa.fa-save,
+.l-page .fa.fa-gears{
   float:right;
   color:inherit;
 }

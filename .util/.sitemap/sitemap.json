@@ -2,7 +2,7 @@
  [
   {
    "id": 5,
-   "menupos": 0,
+   "menupos": 1,
    "title": "About Us",
    "children": [
     []
@@ -10,7 +10,7 @@
   },
   {
    "id": 1,
-   "menupos": 1,
+   "menupos": 2,
    "title": "Admissions",
    "children": [
     []
@@ -18,7 +18,7 @@
   },
   {
    "id": 2,
-   "menupos": 2,
+   "menupos": 3,
    "title": "Academics",
    "children": [
     []
@@ -26,7 +26,7 @@
   },
   {
    "id": 3,
-   "menupos": 3,
+   "menupos": 4,
    "title": "News and Events",
    "children": [
     []
@@ -34,7 +34,7 @@
   },
   {
    "id": 4,
-   "menupos": 4,
+   "menupos": 5,
    "title": "Athletics",
    "children": [
     []

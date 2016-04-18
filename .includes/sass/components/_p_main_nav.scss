@@ -3,6 +3,7 @@ $primary_font_family:'open_sans';
 $primary_font_color:$color-1;
 $secondary_font_family:''open_sans_bold'';
 $secondary_font_color:$color-2;
+$auto_width_breakpoint:$tab;
 
 .main-nav-container{
 	/* _p_main_nav.scss */
@@ -34,15 +35,15 @@ $secondary_font_color:$color-2;
 					display:table;
 				}
 				li{
+					@include breakpoint($auto_width_breakpoint){
+						@include sibling_count_prop('li');
+						float:left;
+					}
 					@include breakpoint($tab){
 						display:table-cell;
 						width:auto;
 						float:none;
 						border-top:none;
-					}
-					@include breakpoint($desk){
-						@include sibling_count_prop('li');
-						float:left;
 					}
 					a{
 						@include font($primary_font_family,14,$secondary_font_color);

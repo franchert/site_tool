@@ -18,6 +18,11 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 	<script type="text/javascript" src="/.includes/libraries/js-cookie/src/js.cookie.js"></script>
+<?php if(isset($scrolljack) && $scrolljack === true){	?>
+	<script type="text/javascript" src="/.includes/libraries/lethargy/lethargy.min.js"></script>
+	<script type="text/javascript" src="/.includes/libraries/EventEmitter/EventEmitter.min.js"></script>
+	<script type="text/javascript" src="/.includes/libraries/smartscroll/smartscroll.min.js"></script>
+<?php } ?>
 <?php if(isset($layout)){ ?>
 	<script type="text/javascript" src="/.includes/layouts/<?php echo $layout ?>/<?php echo $layout ?>.js"></script>
 <?php } ?>
