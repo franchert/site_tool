@@ -66,7 +66,7 @@ function fbFeed(){
 		$string .= "
 		<div class='item'>
 			<div class='imgcontainer'>
-				<img src='".($photo_url['images'][0]['source'])."' />
+				<img alt='sample alt text' src='".($photo_url['images'][0]['source'])."' />
 			</div>
 			<p>".$title."</p>
 			<a target='_blank' class='read-more' href='".$photo_url['link']."'>Read More</a>

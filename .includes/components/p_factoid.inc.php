@@ -13,7 +13,7 @@ function p_factoid(
 	if(is_null($image)){
 		$image = p_image('400','300');
 	}else{
-		$image = "<img src='".$image."'/>";
+		$image = "<img alt='sample alt text' src='".$image."'/>";
 	}
 	$string = "\n<div class='factoid'>";
 		$string .= infoButton(

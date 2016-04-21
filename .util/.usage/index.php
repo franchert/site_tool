@@ -9,8 +9,8 @@ global $set_tings;
 include_once($_SERVER['DOCUMENT_ROOT']."/.includes/director.php");
 $str_print = '';
 $str_print .= "<a href='/.util' style='position:fixed;top:120px;right:20px;background:#333;color:white;padding:13px 0px;width:50px;height:24px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Util</a>";
-$str_print .= "</br><p>REMEMBER, some of these components may be in use within other components.</p>";
-$str_print .= "<p>Only delete them if you're absolutely sure they're not needed.</p></br>";
+$str_print .= "<br><p>REMEMBER, some of these components may be in use within other components.</p>";
+$str_print .= "<p>Only delete them if you're absolutely sure they're not needed.</p><br>";
 $fxns = get_defined_functions();
 $num_promos = 0;
 $total_promos = 0;
@@ -21,7 +21,7 @@ foreach($user_fxns as $k => $v){
 		unset($user_fxns[$k]);
 		continue;
 	};
-	//print_r($v."</br>");
+	//print_r($v."<br>");
 }
 	$base_dir  = $base_site;
 	$header_dirs = array();

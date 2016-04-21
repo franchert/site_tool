@@ -34,7 +34,7 @@ if(is_dir($set_tings['docroot']."/".$set_tings['client_slug'])){
 }else{
 	mkdir($set_tings['docroot']."/".$set_tings['client_slug']);
 	$global = "http://".$_SERVER['SERVER_NAME'];
-	print_r("The following static files have been published.</br>");
+	print_r("The following static files have been published.<br>");
 	/*loop through all of the directories to recreate the structure in the new location*/
 	foreach ($directories as $k=>$v){
 		/*get the URL to pull the DOM from*/
@@ -65,7 +65,7 @@ if(is_dir($set_tings['docroot']."/".$set_tings['client_slug'])){
 		}
 		/*create the URL for the index file in the new location*/
 		$newfile = $set_tings['docroot']."/".$set_tings['client_slug'].$v."/index.html";
-	print_r("/".$set_tings['client_slug'].$v."/index.html</br>");
+	print_r("/".$set_tings['client_slug'].$v."/index.html<br>");
 		/*create the new file*/
 		if(!file_exists($newfile)){touch($newfile);}
 		file_put_contents($newfile,$html);

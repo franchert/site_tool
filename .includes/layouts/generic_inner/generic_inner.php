@@ -15,15 +15,15 @@ if($fe_framework == 'custom'){
 }
 if($fe_framework == 'bootstrap'){
 	$fe_l_page = '';
-	$fe_l_featured_header = ' col-md-12';
-	$fe_l_promo_sidebar = ' col-md-3';
-	$fe_l_nav_sidebar = ' col-md-3';
-	$fe_l_content = ' col-md-12';
-	$fe_l_content_wrapper = ' col-md-9';
-	$fe_l_content_header = ' col-md-12';
-	$fe_l_content_featured = ' col-md-9';
-	$fe_l_content_center = ' col-md-12';
-	$fe_l_content_footer = ' col-md-12';
+	$fe_l_featured_header = ' ';
+	$fe_l_promo_sidebar = ' col-sm-3';
+	$fe_l_nav_sidebar = ' col-sm-3';
+	$fe_l_content = ' col-sm-9';
+	$fe_l_content_wrapper = ' col-sm-9 pull-right';
+	$fe_l_content_header = ' col-sm-12 container';
+	$fe_l_content_featured = ' col-sm-9';
+	$fe_l_content_center = ' col-sm-12 container';
+	$fe_l_content_footer = ' col-sm-12 container';
 }
 	include_once($docroot."/.includes/head.php");
 	$page_h1 = $page_title;
@@ -60,7 +60,7 @@ if($fe_framework == 'bootstrap'){
 		echo '<div class="'.$fe_l_content_header.$fe_region.'">'.$l_content_header.'</div>';
 	} ?>
 	<div class="<?php echo $fe_region.$fe_l_content_center; ?>">
-		<div class="<?php echo $fe_container; ?>">
+		<div class="<?php echo $fe_wrapper.$fe_container; ?>">
 			<div class="<?php echo $fe_region; ?><?php echo $fe_l_nav_sidebar; ?>">
 				<?php echo $l_nav_sidebar; ?>
 			</div>

@@ -15294,6 +15294,9 @@ table, thead, tbody, tr, th, td, .badge {
 body img {
   max-width: 100%;
 }
+body > .row {
+  margin: auto;
+}
 
 table {
   display: table;
@@ -15348,5 +15351,21 @@ th, td {
 }
 
 .carousel-indicators li {
+  float: none;
+}
+
+.wrapper {
+  max-width: 1140px;
+  margin: auto;
+  float: none;
+}
+
+img.banner {
+  width: 100%;
+}
+
+.column {
+  max-width: 1140px;
+  margin: auto;
   float: none;
 }

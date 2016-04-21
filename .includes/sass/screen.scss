@@ -26,7 +26,6 @@ html {
 	outline:none!important;
 }
 body{
-	@import "components/**/*";
 	*{
 		-moz-box-sizing:border-box;
 		box-sizing:border-box;
@@ -37,36 +36,10 @@ body{
 	script{
 		display:none;
 	}
-}
-.back-to-top{
-	display:none;
-	right:20px;
-	bottom:20px;
-	background:$color-1;
-	border: 3px solid $color-2;
-	@include arrowdown($color-2,30);
-	position:fixed;
-	height:60px;
-	width:60px;
-	border-radius:50%;
-	z-index:9999;
-	transition:box-shadow 0.3s;
-	color:$color-2;
-	text-transform:uppercase;
-	font-size:12px;
-	line-height:12px;
-	text-align:center;
-	padding:24px 0 0 0;
-	&:after{
-		-webkit-transform:rotateZ(-90deg);
-		-ms-transform:rotateZ(-90deg);
-		transform: rotateZ(-90deg);
-		padding:0 13px;
-		top:8px;
-		left:7px;
-	}
-	&:hover{
-		text-decoration:none;
+	&.home{
+		h1{
+			margin:0;
+		}
 	}
 }
 img{
@@ -85,7 +58,6 @@ img{
 		}
 	}
 }
-
 h1{
 	@include font('open_sans_bold',36,$color-1);
 	margin:0 0 20px 0;
@@ -233,49 +205,6 @@ code{
 	margin:0 5px 10px 5px;
 	@include calc('width','100% - 10px','90%');
 }
-form{
-	div{
-		position:relative;
-		input{
-			@include font('lora',18,$dk-gray);
-			font-style:italic;
-			line-height:24px;
-			padding:10px;
-			position:relative;
-			margin:10px 0;
-		}
-		&.required{
-			&:after{
-				content:'*';
-				color: #F00;
-				position: absolute;
-				left: 3px;
-				top: 14px;
-			}
-		}
-		textarea{
-			@include font('lora',18,$dk-gray);
-			line-height:24px;
-			font-style:italic;
-			padding:10px;
-			max-width:100%;
-			min-height:200px;
-			margin:10px 0;
-		}
-	}
-	.submit{
-		@include font('lobster',18,$white);
-		width:auto;
-		margin:10px 0;
-		background:$color-1;
-		border:1px solid $gray;
-		border-radius:3px;
-		padding:10px 30px;
-		text-transform:uppercase;
-		cursor:pointer;
-		-webkit-appearance: none;
-	}
-}
 .caption{
 	max-width:100%;
 	width:auto;
@@ -291,12 +220,49 @@ form{
 		width:100%;
 	}
 }
-body{
-	&.home{
-		h1{
-			margin:0;
-		}
+.back-to-top{
+	display:none;
+	right:20px;
+	bottom:20px;
+	background:$color-1;
+	border: 3px solid $color-2;
+	@include arrowdown($color-2,30);
+	position:fixed;
+	height:60px;
+	width:60px;
+	border-radius:50%;
+	z-index:9999;
+	transition:box-shadow 0.3s;
+	color:$color-2;
+	text-transform:uppercase;
+	font-size:12px;
+	line-height:12px;
+	text-align:center;
+	padding:24px 0 0 0;
+	&:after{
+		-webkit-transform:rotateZ(-90deg);
+		-ms-transform:rotateZ(-90deg);
+		transform: rotateZ(-90deg);
+		padding:0 13px;
+		top:8px;
+		left:7px;
 	}
+	&:hover{
+		text-decoration:none;
+	}
+}
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+body{
+	@import "components/**/*";
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
 	input[type='text'],

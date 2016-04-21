@@ -1,0 +1,95 @@
+form{
+	legend{
+		@include font('open_sans_bold',28,$color-1);
+		margin-bottom:20px;
+	}
+	.parsley-error{
+		background: 99% 50% url("../images/ex.png") no-repeat rgba(221, 75, 57, 0.25);
+		background-size:15px;
+	}
+	.parsley-success{
+		background: 99% 50% url("../images/check.png") no-repeat rgba(61, 148, 0, 0.25);
+		background-size:15px;
+	}
+	label{
+		@include font('lora',14,$dk-gray);
+		width:auto;
+	}
+	> div{
+		margin-bottom:10px;
+	}
+	div{
+		width:100%;
+		position:relative;
+		input{
+			@include font('lora',18,$dk-gray);
+			font-style:italic;
+			line-height:24px;
+			padding:10px;
+			position:relative;
+			margin:3px 0;
+			&[type="text"]{}
+			&[type="checkbox"]{
+				width:20px;
+			}
+			&[type="radio"]{
+				width:20px;
+			}
+		}
+		select{
+			@include font('lora',18,$dk-gray);
+			width:100%;
+			font-style:italic;
+			line-height:24px;
+			padding:10px;
+			position:relative;
+		}
+		textarea{
+			@include font('lora',18,$dk-gray);
+			line-height:24px;
+			font-style:italic;
+			padding:10px;
+			margin:3px 0;
+			max-width:100%;
+			min-height:200px;
+		}
+		&.required{
+			&:after{
+				content:'*';
+				color: #F00;
+				position: absolute;
+				right: 5px;
+				top: 0px;
+				font-size:16px;
+			}
+		}
+	}
+	.submit{
+		@include font('lobster',18,$white);
+		width:auto;
+		margin:10px 0;
+		background:$color-1;
+		border:1px solid $gray;
+		border-radius:3px;
+		padding:10px 30px;
+		text-transform:uppercase;
+		cursor:pointer;
+		-webkit-appearance: none;
+	}
+}
+.parsley-errors-list{
+	margin:0;
+	padding:0;
+	.parsley-required,
+	.parsley-type,
+	.parsley-minlength,
+	.parsley-maxlength{
+		@include font('lora',12,$white);
+		background:#dd4b39;
+		list-style:none;
+		width: 100%;
+		margin:0;
+		padding:5px;
+		border-radius:5px;
+	}
+}

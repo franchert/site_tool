@@ -188,7 +188,7 @@ function plotTree_t4(
 		$base_array = (is_array($v) ? $v["__base_val"] : $v);
 		$base_array_slug = preg_replace( '%^(.+)/%', '', $base_array );
 		$base_array_title = titlefromSlug(substr($base_array_slug,1));
-		//print_r($base_array."</br>");
+		//print_r($base_array."<br>");
 		//if we're on the section root
 		$level ++;
 		if($set_tings['section'] == $base_array_slug && $level <= 1){

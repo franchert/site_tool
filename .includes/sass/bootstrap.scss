@@ -31,6 +31,9 @@ body{
 	img{
 		max-width:100%;
 	}
+	>.row{
+		margin:auto;
+	}
 }
 table{
 	display:table;
@@ -78,4 +81,17 @@ th,td{
 	li{
 		float:none;
 	}
+}
+.wrapper{
+	max-width:1140px;
+	margin:auto;
+	float:none;
+}
+img.banner{
+	width:100%;
+}
+.column{
+	max-width:$maxwidth;
+	margin:auto;
+	float:none;
 }

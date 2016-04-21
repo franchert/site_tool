@@ -14,7 +14,7 @@ function p_main_nav($type='custom'
 	//build the list
 	$string ="\n<div class='nav-wrapper'>\n\t<div class='".$fe_container."'>\n\t\t";
 	if($set_tings['header'] == 'sticky-h' || 'fold-out'){
-		$string.="<a class='desk-sticky' href='/'><img src='".$site_logo."'/></a>\n\t\t";
+		$string.="<a class='desk-sticky' href='/'><img alt='sample alt text' src='".$site_logo."'/></a>\n\t\t";
 	}
 	if($set_tings['header'] == 'fold-out'){
 		$string .="<div tabindex='0' class='main-nav-toggle'><i class='fa fa-bars'></i></div>";

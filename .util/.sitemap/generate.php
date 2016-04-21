@@ -14,7 +14,7 @@ foreach(new DirectoryIterator('.') as $file){
 	}
 }
 if($string == ''){
-	echo "No json feed detected, please create a feed using the sitemap tool</br>";
+	echo "No json feed detected, please create a feed using the sitemap tool<br>";
 }else{
 	$haystack = json_decode($string, true);
 	//print_r(count($haystack[0]));
@@ -28,7 +28,7 @@ function recurse_sitemap($ex_segment,$arr,$count,$depth){
 		$id = $v['id'];
 		$title = $v['title'];
 		$slug = slugFromTitle($title);
-		$menupos = $v['menupos']+1;
+		$menupos = $v['menupos'];
 		$segment = $ex_segment."/".$menupos.$slug;
 		makeDir($segment,$depth,$title);
 		$i = $depth;
@@ -36,7 +36,7 @@ function recurse_sitemap($ex_segment,$arr,$count,$depth){
 			echo " -- ";
 			$i --;
 		}
-		//echo $title." <a target='_blank' href='".$segment."'' style='font-size:70%;color:#a55;'>".$segment."</a></br>";
+		//echo $title." <a target='_blank' href='".$segment."'' style='font-size:70%;color:#a55;'>".$segment."</a><br>";
 		if($count > 0){
 			$depth++;
 			recurse_sitemap($segment,$v['children'],count($v['children'][0]),$depth);

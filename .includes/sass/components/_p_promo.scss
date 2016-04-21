@@ -14,6 +14,7 @@
 		position:relative;
 		a{
 			overflow:hidden;
+			width:100%;
 			.item{
 				height:200px;
 				overflow:hidden;
@@ -138,6 +139,7 @@
 		a{
 			position:relative;
 			overflow:hidden;
+			width:100%;
 		}
 		.item{
 			position:relative;
@@ -265,6 +267,7 @@
 		a{
 			position:relative;
 			overflow:hidden;
+			width:100%;
 		}
 		.item{
 			position:relative;
@@ -769,7 +772,8 @@
 		}
 	}
 }
-.l-content{
+.l-content,
+.container{
 	.p-promo{
 		&.generic{
 			&.hover{

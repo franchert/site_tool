@@ -63,10 +63,10 @@ echo '</table></div>' ;
 function array_print($arr,$str){
 	foreach($arr as $k => $v){
 		if(is_array($v)){
-			$str .= $k.'</br>&nbsp;';
+			$str .= $k.'<br>&nbsp;';
 			array_print($v,$str);
 		}else{
-			$str .= $k.' : '.$v.'</br>';
+			$str .= $k.' : '.$v.'<br>';
 		}
 	}
 	return $str;
