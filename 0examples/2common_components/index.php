@@ -5,7 +5,7 @@ $styles = false;
 $scripts = false;
 $flexslider = true;
 $colorbox = true;
-$layout = "generic_inner";
+$template = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
@@ -35,5 +35,5 @@ $l_content .= p_directory('course');
 $l_content .= "<h2>Spotlight</h2>";
 $l_content .= p_spotlight('category');
 
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

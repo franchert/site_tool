@@ -3,7 +3,7 @@ include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 /*set these to true to add a custom stylesheet named the $page variable.css/js */
 $styles = false;
 $scripts = false;
-$layout = 'one-column';
+$template = 'one-column';
 $feed_search = true;
 $instafeed = true;
 /*promo director initializes region variables and includes all the functions to create elements*/
@@ -17,5 +17,5 @@ $l_one_col .= p_promo('generic','comp','left','Check Usage',p_promo('button','im
 $l_one_col .= p_promo('generic','comp','left','Publish',p_promo('button','image','dark','Publish Now',null,null,null,'.publish','book'),"Publish php files into html for delivery to the client. This could take several minutes, depending on the size of the files to be packaged. This will produce a temporary folder with the client name containing a static version of the site. It will automatically zip these files into a corresponding zip in the root of the project.",null,null,'');
 $l_one_col .="</div></div>";
 
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

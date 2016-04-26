@@ -4,7 +4,7 @@ include_once("../settings.php");
 $styles = false;
 $scripts = false;
 $feed_search = true;
-$layout = 'one-column';
+$template = 'one-column';
 $instafeed = false;
 /*promo director initializes region variables and includes all the functions to create elements*/
 include_once("../.includes/director.php");
@@ -29,5 +29,5 @@ $l_one_col .="<script>
 <gcse:searchresults-only></gcse:searchresults-only>";
 
 include_once($docroot."/.includes/head.php");
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

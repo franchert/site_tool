@@ -5,7 +5,7 @@ $styles = false;
 $scripts = false;
 $flexslider = false;
 $colorbox = false;
-$layout = "generic_inner";
+$template = "generic_inner";
 $mini = true;
 $depth = 2;
 include_once($docroot."/.includes/director.php");
@@ -25,5 +25,5 @@ $l_content .= p_tabs_mobi('sample-tabs-mobi');
 $l_content .= "<h2>Sample Mobile Table</h2>";
 $l_content .= p_table('sample-table');
 
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

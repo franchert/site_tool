@@ -5,7 +5,7 @@ $styles = false;
 $scripts = false;
 $flexslider = true;
 $colorbox = true;
-$layout = "generic_inner";
+$template = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
@@ -21,5 +21,5 @@ $l_promo_sidebar .= p_promo("card","image","dark","Card Dark");
 $l_promo_sidebar .= p_promo("card","image","","Card with a list",p_list(array(p_link(),p_link(),p_link())));
 $l_promo_sidebar .= p_promo("card","image","","Card with a list",p_promo('button','image','dark','With a dark button!'));
 
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

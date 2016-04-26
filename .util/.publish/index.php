@@ -51,12 +51,12 @@ if(is_dir($set_tings['docroot']."/".$set_tings['client_slug'])){
 		$html = str_replace('src="/','src="/'.$set_tings['client_slug'].'/',$html);
 		$html = str_replace("src='/","src='/".$set_tings['client_slug'].'/',$html);
 		$html = str_replace("includes/headers/".$set_tings['header'],"includes/js",$html);
-		/*replace references to each of the layouts as well*/
-		$results = scandir($set_tings['docroot'].'/.includes/layouts');
+		/*replace references to each of the templates as well*/
+		$results = scandir($set_tings['docroot'].'/.includes/templates');
 		foreach ($results as $result){
 			if ($result === '.' or $result === '..') continue;
-			if(is_dir($set_tings['docroot']."/.includes/layouts/".$result)){
-				$html = str_replace("includes/layouts/".$result,"includes/js",$html);
+			if(is_dir($set_tings['docroot']."/.includes/templates/".$result)){
+				$html = str_replace("includes/templates/".$result,"includes/js",$html);
 			}
 		}
 		/*make the directory in the new location*/
@@ -79,16 +79,16 @@ if(is_dir($set_tings['docroot']."/".$set_tings['client_slug'])){
 	recurse_copy($set_tings['docroot']."/.includes/js",$set_tings['docroot']."/".$set_tings['client_slug']."/includes/js");
 	recurse_copy($set_tings['docroot']."/.includes/libraries",$set_tings['docroot']."/".$set_tings['client_slug']."/includes/libraries");
 	recurse_copy($set_tings['docroot']."/.includes/stylesheets",$set_tings['docroot']."/".$set_tings['client_slug']."/includes/stylesheets");
-	/*add in the layout js (note the scss isn't needed as it isn't being delivered)*/
-	$results = scandir($set_tings['docroot'].'/.includes/layouts');
+	/*add in the template js (note the scss isn't needed as it isn't being delivered)*/
+	$results = scandir($set_tings['docroot'].'/.includes/templates');
 	foreach ($results as $result){
 		if ($result === '.' or $result === '..') continue;
-		if(is_dir($set_tings['docroot']."/.includes/layouts/".$result)){
-			$files = scandir($set_tings['docroot'].'/.includes/layouts/'.$result);
+		if(is_dir($set_tings['docroot']."/.includes/templates/".$result)){
+			$files = scandir($set_tings['docroot'].'/.includes/templates/'.$result);
 			foreach($files as $file){
 				$parts = pathinfo($file);
 				if ($parts['extension'] == 'js') {
-					copy($set_tings['docroot']."/.includes/layouts/".$result."/".$parts['basename'],
+					copy($set_tings['docroot']."/.includes/templates/".$result."/".$parts['basename'],
 						$set_tings['docroot']."/".$set_tings['client_slug']."/includes/js/".$parts['basename']);
 				}
 			}

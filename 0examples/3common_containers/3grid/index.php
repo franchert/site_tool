@@ -5,7 +5,7 @@ $styles = false;
 $scripts = false;
 $flexslider = false;
 $colorbox = false;
-$layout = "generic_inner";
+$template = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 $g_two = array(
@@ -42,5 +42,5 @@ $l_content .= p_grid('offset right',4,'offset right 4',$g_four);
 $l_content .= p_grid('offset',5,'offset 5',$g_five);
 $l_content .= p_grid('offset right',5,'offset right 5',$g_five);
 
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

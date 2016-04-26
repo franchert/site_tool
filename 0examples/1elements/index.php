@@ -5,7 +5,7 @@ $styles = false;
 $scripts = false;
 $flexslider = true;
 $colorbox = true;
-$layout = "generic_inner";
+$template = "generic_inner";
 $mini = true;
 $depth = 2;
 include_once($docroot."/.includes/director.php");
@@ -26,5 +26,5 @@ $l_content .= p_image();
 $l_content .= p_image("1600","900","16:9",null,"aa2","fff");
 $l_content .= p_image("400","300","overwriting the placeholder image text","This is a caption that will show up below the image","123",'cab');
 $l_content .= p_video();
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

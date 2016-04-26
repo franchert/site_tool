@@ -5,7 +5,7 @@ $styles = false;
 $scripts = false;
 $flexslider = true;
 $colorbox = true;
-$layout = "generic_inner";
+$template = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
@@ -31,5 +31,5 @@ $l_promo_sidebar .= p_promo("generic","comp","left","Generic Left",p_promo("pane
 $l_promo_sidebar .= p_promo("generic","comp","right","Generic Right",p_promo("panel","image","","TextLink",null,''));
 $l_promo_sidebar .= p_promo("generic","comp","hover","Generic Hover",p_promo("panel","image","","TextLink",null,''));
 
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

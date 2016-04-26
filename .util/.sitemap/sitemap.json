@@ -1,41 +1,47 @@
 [
  [
   {
-   "id": 5,
-   "menupos": 1,
+   "id": 4,
+   "menupos": 0,
+   "gen": "/1about_us",
    "title": "About Us",
    "children": [
     []
    ]
   },
   {
-   "id": 1,
+   "id": 3,
+   "menupos": 1,
+   "gen": "/2academics",
+   "title": "Academics",
+   "children": [
+    [
+     {
+      "id": 5,
+      "menupos": 0,
+      "gen": "/2academics/1programs",
+      "title": "Programs",
+      "children": [
+       []
+      ]
+     }
+    ]
+   ]
+  },
+  {
+   "id": 2,
    "menupos": 2,
+   "gen": "/3admissions",
    "title": "Admissions",
    "children": [
     []
    ]
   },
   {
-   "id": 2,
+   "id": 1,
    "menupos": 3,
-   "title": "Academics",
-   "children": [
-    []
-   ]
-  },
-  {
-   "id": 3,
-   "menupos": 4,
-   "title": "News and Events",
-   "children": [
-    []
-   ]
-  },
-  {
-   "id": 4,
-   "menupos": 5,
-   "title": "Athletics",
+   "gen": "/4news_&_events",
+   "title": "News & Events",
    "children": [
     []
    ]

@@ -1,7 +1,12 @@
 $(function  () {
 	$('ol.serialization').on('click keypress','.fa-close',function(){
+/*		var deleted = $(this).parent().attr('data-id');
+		$.ajax({
+			type: "POST",
+			data: {data:deleted},
+			url: 'delete.php'
+		})*/
 		$(this).parent().remove();
-		//refresh();
 		$('button.save').addClass('unsaved');
 	});
 	var oldContainer;
@@ -25,7 +30,6 @@ $(function  () {
 		var temp = 'data-' + $(this).attr('class');
 		$(this).parent().attr(temp,$(this).val());
 		$(this).attr('value',$(this).val());
-		//refresh();
 		$('button.save').addClass('unsaved');
 	});
 	$('button.add').on('click keypress',function(){
@@ -36,29 +40,16 @@ $(function  () {
 			}
 		})
 		newid++;
-		var newitem = "<li data-id='"+newid+"' data-menupos='0' data-title='New'><span class='fa fa-bars'></span><input class='title' value='New'><span tabindex='0' class='fa fa-close'></span><ol></ol></li>";
+		var newitem = "<li data-id='"+newid+"' data-gen='' data-menupos='0' data-title='New'><span class='fa fa-bars'></span><input class='title' value='New'><span tabindex='0' class='fa fa-close'></span><ol></ol></li>";
 		$('#serialization > ol').prepend(newitem);
-		//refresh();
 		$('button.save').addClass('unsaved');
 	});
 	$('button.save').on('click keypress',function(){
-		refresh();
+		save();
 	});
 	$('button.generate').on('click keypress',function(){
-		if(!$(this).next().is('.confirm')){
-			$(this).after("<button class='confirm'>Do it!</button>");
-			$(this).after("<button class='deny'>Don't do it!</button>");
-		}
-	});
-	$('html').on('click keypress','.confirm',function(){
 		generate();
 		alert("Structure generated!");
-		$(this).siblings('.deny').remove();
-		$(this).remove();
-	});
-	$('html').on('click keypress','.deny',function(){
-		$(this).siblings('.confirm').remove();
-		$(this).remove();
 	});
 	$('li').mouseover(function(e){
 		e.stopPropagation();
@@ -69,7 +60,7 @@ $(function  () {
 		$(this).removeClass('currentHover');
 	});
 });
-function refresh(){
+function save(){
 	var data = $("ol.serialization").sortable("serialize").get();
 	var jsonString = JSON.stringify(data, null, ' ');
 	$('#output2').text(jsonString);
@@ -83,8 +74,10 @@ function refresh(){
 	$('button.save').removeClass('unsaved');
 }
 function generate(){
+	save();
 	$.ajax({
 		type: "POST",
 		url: 'generate.php'
 	})
+	location.reload();
 }

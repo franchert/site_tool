@@ -5,7 +5,7 @@ $styles = false;
 $scripts = false;
 $flexslider = true;
 $colorbox = true;
-$layout = "generic_inner";
+$template = "generic_inner";
 $feed_search = true;
 /*end page-specific variables*/
 include_once($docroot."/.includes/director.php");
@@ -22,5 +22,5 @@ include_once($docroot."/.includes/director.php");
 	$l_promo_sidebar .= p_promo("panel","image");
 /*end actual on-page content*/
 
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

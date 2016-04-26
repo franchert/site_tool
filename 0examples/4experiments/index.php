@@ -5,7 +5,7 @@ $styles = false;
 $scripts = false;
 $flexslider = true;
 $colorbox = true;
-$layout = "generic_inner";
+$template = "generic_inner";
 $demo = false;
 /*end page-specific variables*/
 include_once($docroot."/.includes/director.php");
@@ -15,5 +15,5 @@ include_once($docroot."/.includes/director.php");
 $l_content .= "This page shows components that are in the works and not yet complete.";
 /*end actual on-page content*/
 
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

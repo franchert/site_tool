@@ -5,7 +5,7 @@ $styles = false;
 $scripts = false;
 $flexslider = true;
 $colorbox = true;
-$layout = "generic_inner";
+$template = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
@@ -16,5 +16,5 @@ $l_content .= p_promo("overlayv2","image",'',"OverlayV2");
 $l_promo_sidebar .= p_promo("overlay","image",'',"Overlay");
 $l_promo_sidebar .= p_promo("overlay hover","image",'',"Overlay Hover");
 $l_promo_sidebar .= p_promo("overlayv2","image",'',"OverlayV2");
-include_once($docroot."/.includes/layouts/".$layout."/".$layout.".php");
+include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>
