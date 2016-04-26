@@ -32,11 +32,11 @@ function p_news(
 		if(is_array($cat)){
 			$category = "<ul class='categories'>";
 			foreach($cat as $k => $v){
-				$category .="<li><a href='#' class='cat t-".$v."'>".$v."</a>\n\t</li>";
+				$category .="<li><a href='#' class='label la-".$v."'>".$v."</a>\n\t</li>";
 			}
 			$category .= "</ul>";
 		}else{
-			$category = "<a href='#' class='cat t-".$cat."'>".$cat."</a>\n\t";
+			$category = "<a href='#' class='label la-".$cat."'>".$cat."</a>\n\t";
 		}
 	}else{
 		$category = '';

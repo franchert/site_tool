@@ -41,7 +41,7 @@
 				$bodyclass .= ' m-'.substr($segments[$depth],1);
 			}
 		}
-		$bodyclass .= ' '.$layout.' '.$set_tings['header'].'"';
+		$bodyclass .= ' '.$template.' '.$set_tings['header'].'"';
 		echo $bodyclass;
 	}
 ?>>

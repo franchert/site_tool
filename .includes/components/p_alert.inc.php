@@ -14,7 +14,7 @@ $('.alert .toggle').on('click',function(e){
 	$(this).parents('.alert').toggleClass('closed');
 });";
 	if(isset($alert) && $alert_on === true){
-		$string ="<div data-updated='".$alert['updated']."' class='alert ".$alert['type'][0]."'>";
+		$string ="<div data-updated='".$alert['updated']."' class='sitewide-alert ".$alert['type'][0]."'>";
 		$string .= infoButton(
 			array(
 				'fields' => array('title'),

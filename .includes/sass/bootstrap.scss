@@ -95,3 +95,25 @@ img.banner{
 	margin:auto;
 	float:none;
 }
+.label{
+	background-color:$dk-gray;
+}
+
+.media-left,
+.media-right{
+	width:64px;
+	float:none;
+	a{
+		width:64px;
+	}
+}
+.media-right{
+	float:right;
+	padding:0;
+}
+.media-body{
+	float:none;
+}
+.media-right + .media-body{
+	padding-right:10px;
+}

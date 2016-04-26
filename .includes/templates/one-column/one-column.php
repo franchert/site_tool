@@ -1,6 +1,6 @@
 <?php 
 /* add the following to director.php
-	if($layout == "one-column"){
+	if($template == "one-column"){
 		$l_one_col = "";
 	}
 */

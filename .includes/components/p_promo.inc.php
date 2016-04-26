@@ -40,9 +40,11 @@ function p_promo(
 	}else{
 		$text = "<p>".$text."</p>";
 	}
-
-	$string = "\n<div class='p-promo ".$type." ".$addl_class."'>\n\t";
-
+	if($type == 'media'){
+		$string = "\n<div class='p-promo ".$type."'>\n\t";
+	}else{
+		$string = "\n<div class='p-promo ".$type." ".$addl_class."'>\n\t";
+	}
 		$string .= infoButton(
 			array(
 				'fields' => array('title'),
@@ -157,6 +159,22 @@ function p_promo(
 			}
 			$string .="<p>".$title."</p>\n\t\t";
 		$string .= "</div>\n\t</a>\n";
+	}else if(strrpos($type,"media") !== false){
+		if($addl_class == ''){
+			$addl_class = 'media-left';
+		}
+		$string .='
+		<div>
+			<div class="'.$addl_class.'">
+				<a href="#">';
+		$string .=p_image('64','64');
+		$string .='</a>
+			</div>
+			<div class="media-body">
+				<h4 class="media-heading">Media heading</h4>';
+		$string .=p_paragraph();
+		$string .='</div>
+		</div>';
 	}else{
 		$string .= "<p style='color:#222;padding:20px;border:2px solid red;border-radius:5px;background:rgba(255,0,0,0.2);'>The &lsquo;".$type."&rsquo; promo type does not exist. Please try a different name.</p>\n";
 	}

@@ -1,6 +1,6 @@
 <?php 
 /* add the following to director.php
-	if($layout == "longscroll"){
+	if($template == "longscroll"){
 		$l_longscroll_first = "";
 		$l_longscroll_second = "";
 		$l_longscroll_third = "";

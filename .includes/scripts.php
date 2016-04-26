@@ -2,7 +2,7 @@
 /*	ADDED TO HEAD.PHP
 *	Includes logic to place correct javascript on pages based on site variables
 *	REQUIRED VARIABLES PER PAGE:
-*		$layout
+*		$template
 *		$header
 *		$fe_framework
 *	OPTIONAL VARIABLES PER PAGE: (all are boolean)
@@ -24,8 +24,8 @@
 	<script type="text/javascript" src="/.includes/libraries/EventEmitter/EventEmitter.min.js"></script>
 	<script type="text/javascript" src="/.includes/libraries/smartscroll/smartscroll.min.js"></script>
 <?php } ?>
-<?php if(isset($layout)){ ?>
-	<script type="text/javascript" src="/.includes/layouts/<?php echo $layout ?>/<?php echo $layout ?>.js"></script>
+<?php if(isset($template)){ ?>
+	<script type="text/javascript" src="/.includes/templates/<?php echo $template ?>/<?php echo $template ?>.js"></script>
 <?php } ?>
 <?php if(isset($header)){ ?>
 	<script type="text/javascript" src="/.includes/headers/<?php echo $header ?>/<?php echo $header ?>.js"></script>

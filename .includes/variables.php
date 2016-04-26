@@ -7,10 +7,10 @@ include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
  *	@param string	$client_name	Plain text name of client
  *	@param string	$site_logo		URL of site logo
  *	@param string	$alert_on		boolean to turn on and off the alert. Only used within this file
- *	@param string	$demo			demonstration of layout region shapes.
+ *	@param string	$demo			demonstration of template region shapes.
  *	@param string	$google_CSE_cx	Google custom search engine key.
  *	@param string	$header			Type of header to use on the site. See headers directory for more information
- *	@param string	$fe_framework	Type of framework used to put toegether the grid. Some layouts and headers may behave differently with different frameworks chosen.
+ *	@param string	$fe_framework	Type of framework used to put toegether the grid. Some templates and headers may behave differently with different frameworks chosen.
  *	@param string	$cms			CMS the final product will be built for. When in doubt, go with "custom"
  *
  */
@@ -40,7 +40,7 @@ $demo = true;
  *	compiling
  *	impacts:
  *	 - the container/wrapper classes set in director.php
- *	 - the region classes set in each layout php
+ *	 - the region classes set in each template php
  *	 - js file added from .includes/js/
  *	 - scss file added from .includes/sass/ (compiled to the stylesheets)
  */

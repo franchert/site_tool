@@ -81,7 +81,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
  */
 /* 
  *	Set all font properties. Do a global find/replace within the 
- *	sass/layouts/header folders on the $family options below to update.
+ *	sass/templates/header folders on the $family options below to update.
  *	
  *	usage:
  *		h3{
@@ -4497,7 +4497,7 @@ tbody.collapse.in {
 .btn-group-justified {
   display: table;
   width: 100%;
-  table-layout: fixed;
+  table-template: fixed;
   border-collapse: separate;
 }
 .btn-group-justified > .btn,
@@ -7801,7 +7801,7 @@ a.badge:hover, a.badge:focus {
 .btn-group-justified {
   display: table;
   width: 100%;
-  table-layout: fixed;
+  table-template: fixed;
   border-collapse: separate;
 }
 .btn-group-justified > .btn,
@@ -15368,4 +15368,31 @@ img.banner {
   max-width: 1140px;
   margin: auto;
   float: none;
+}
+
+.label {
+  background-color: #333333;
+}
+
+.media-left,
+.media-right {
+  width: 64px;
+  float: none;
+}
+.media-left a,
+.media-right a {
+  width: 64px;
+}
+
+.media-right {
+  float: right;
+  padding: 0;
+}
+
+.media-body {
+  float: none;
+}
+
+.media-right + .media-body {
+  padding-right: 10px;
 }

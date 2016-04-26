@@ -3,7 +3,7 @@ $weather_alert_color:$blue;
 $alert_toggle_color:$color-2;
 $alert_text_color:$white;
 
-.alert{
+.sitewide-alert{
 	/* _p_alert.scss */
 	@include floatblock();
 	overflow:visible;

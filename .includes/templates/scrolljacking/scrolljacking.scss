@@ -24,5 +24,12 @@ body.scrolljacking{
 				}
 			}
 		}
+		.section-wrapper{
+			.section{
+				h2:first-child{
+					margin-top:110px;
+				}
+			}
+		}
 	}
 }

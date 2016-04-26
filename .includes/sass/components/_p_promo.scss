@@ -723,7 +723,8 @@
 		}
 	}
 }
-.l-promo-sidebar{
+.l-promo-sidebar,
+.promo-sidebar{
 	.p-promo{
 		&.overlay{
 			.promo-container{
@@ -770,10 +771,14 @@
 				}
 			}
 		}
+		&.card{
+			.promo-container{
+				width:100%;
+			}
+		}
 	}
 }
-.l-content,
-.container{
+.l-content{
 	.p-promo{
 		&.generic{
 			&.hover{

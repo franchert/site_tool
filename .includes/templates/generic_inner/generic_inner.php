@@ -16,9 +16,9 @@ if($fe_framework == 'custom'){
 if($fe_framework == 'bootstrap'){
 	$fe_l_page = '';
 	$fe_l_featured_header = ' ';
-	$fe_l_promo_sidebar = ' col-sm-3';
+	$fe_l_promo_sidebar = ' col-sm-3 promo-sidebar';
 	$fe_l_nav_sidebar = ' col-sm-3';
-	$fe_l_content = ' col-sm-9';
+	$fe_l_content = ' l-content col-sm-9';
 	$fe_l_content_wrapper = ' col-sm-9 pull-right';
 	$fe_l_content_header = ' col-sm-12 container';
 	$fe_l_content_featured = ' col-sm-9';

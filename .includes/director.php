@@ -34,8 +34,8 @@ $init = "";
 
 
 /*initialize region string variables*/
-if(isset($layout)){
-	include($docroot.'/.includes/layouts/'. $layout.'/'.$layout.'.regions.php');
+if(isset($template)){
+	include($docroot.'/.includes/templates/'. $template.'/'.$template.'.regions.php');
 }
 
 if(isset($fe_framework)){
@@ -63,7 +63,7 @@ $set_tings = compact(array(
 	'starting',
 	'cms',
 	'fe_framework',
-	'layout',
+	'template',
 	'alert',
 	'header',
 	'script_var',

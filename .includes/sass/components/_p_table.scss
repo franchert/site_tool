@@ -10,7 +10,7 @@
 		@include breakpoint($tab){
 			display:table;
 			float:none;
-			table-layout:fixed;
+			table-template:fixed;
 		}
 		thead{
 			display:none;

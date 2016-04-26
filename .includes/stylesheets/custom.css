@@ -25,7 +25,7 @@
  */
 /* 
  *	Set all font properties. Do a global find/replace within the 
- *	sass/layouts/header folders on the $family options below to update.
+ *	sass/templates/header folders on the $family options below to update.
  *	
  *	usage:
  *		h3{
@@ -176,7 +176,7 @@ blockquote:after {
 }
 
 body .l-page {
-  overflow-x: hidden;
+  overflow: hidden;
   min-height: 100vh;
 }
 body footer {
@@ -236,4 +236,15 @@ body footer .column .footer .p-promo ul li p {
 }
 body footer .column .footer .p-promo .city {
   margin-left: 25px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

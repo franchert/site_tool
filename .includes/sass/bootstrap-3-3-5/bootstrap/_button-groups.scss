@@ -201,7 +201,7 @@
 .btn-group-justified {
   display: table;
   width: 100%;
-  table-layout: fixed;
+  table-template: fixed;
   border-collapse: separate;
   > .btn,
   > .btn-group {

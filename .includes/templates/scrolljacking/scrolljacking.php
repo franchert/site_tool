@@ -28,8 +28,10 @@
 				continue;
 			}else{
 			?>
-		<div id="<?php echo "sect$i"; ?>" data-hash="<?php echo "sect$i"; ?>" class="section">
+		<div id="<?php echo "sect$i"; ?>" data-hash="<?php echo ${"s${i}_name"}; ?>" class="section">
+			<div class="wrapper"><div class="column">
 			<?php echo ${"sect$i"}; ?>
+			</div></div>
 		</div>
 			<?php }
 		} 
