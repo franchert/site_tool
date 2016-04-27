@@ -26,8 +26,42 @@ body.scrolljacking{
 		}
 		.section-wrapper{
 			.section{
-				h2:first-child{
-					margin-top:110px;
+				.wrapper{
+					height:100%;
+					background:white;
+					position:relative;
+					overflow:hidden;
+					.column,
+					.b-column{
+						> h2:first-child{
+							margin-top:130px;
+						}
+					}
+				}
+				> .column,
+				> .b-column{
+					height:100%;
+					background:white;
+					> div{
+						> h2:first-child{
+							margin-top:110px;
+						}
+					}
+				}
+			}
+			&.folding{
+				.section{
+					&.prev{
+						position:fixed;
+						top:0;
+						& + .section{
+							margin-top:100vh;
+						}
+					}
+					&.active{
+						z-index:2;
+						& + .section{}
+					}
 				}
 			}
 		}

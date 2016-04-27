@@ -79,5 +79,5 @@ function generate(){
 		type: "POST",
 		url: 'generate.php'
 	})
-	location.reload();
+	//location.reload();
 }

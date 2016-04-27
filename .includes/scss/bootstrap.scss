@@ -1,0 +1,145 @@
+// Import external libraries.
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "../bower_components/compass-mixins/lib/compass";
+@import "../bower_components/reset-css/_reset.scss";
+@import "variables/**/*";
+@import "base/**/*";
+@import "bootstrap-3-3-5/**/*";
+
+$screen-sm-min:$tab;
+$screen-md-min:$tab-large;
+$screen-lg-min:$desk;
+
+/* styles overwriting basic bootstrap (these are being overwritten by custom) */
+.btn,.label,a,.nav-tabs > li,.nav-pills > li,.nav > li,.container > .navbar-header,.navbar-default .navbar-collapse{
+	width:auto;
+}
+p{
+	float:left;
+}
+#breadcrumb{
+	padding:10px 20px;
+}
+div[class*="col-"] {
+	padding-left: 0;
+	padding-right: 0;
+}
+a.list-group-item{
+	clear:both;
+	width:100%;
+}
+table,thead,tbody,tr,th,td,.badge{
+	float:none;
+	width:auto;
+}
+body{
+	img{
+		max-width:100%;
+	}
+	>.row{
+		margin:auto;
+	}
+}
+table{
+	display:table;
+}
+thead{
+	display:table-header-group;
+}
+tbody{
+	display:table-row-group;
+}
+tr{
+	display:table-row;
+}
+th,td{
+	display:table-cell;
+}
+.dropdown-menu{
+	position:absolute;
+	margin-bottom:20px;
+	width:auto;
+	> li{
+		display:list-item;
+		> a{
+			width:100%;
+		}
+	}
+	.divider{
+		float:none;
+	}
+}
+.caret{
+	float:none;
+}
+.container{
+	float:none;
+}
+.navbar{
+	min-height:initial;
+}
+.navbar-brand{
+	height:40px;
+	padding:10px;
+}
+.carousel-indicators{
+	li{
+		float:none;
+	}
+}
+.wrapper{
+	max-width:1140px;
+	margin:auto;
+	float:none;
+}
+.b-column{
+	padding:0 20px;
+	@include breakpoint($tab){
+		max-width:$maxwidth;
+		margin:auto;
+		float:none;
+	}
+	@include breakpoint($desk){
+		position:relative;
+	}
+}
+.banner{
+	img{
+		width:100%;
+	}
+}
+.column{
+	max-width:$maxwidth;
+	margin:auto;
+	float:none;
+}
+.label{
+	background-color:$dk-gray;
+}
+
+.media-left,
+.media-right{
+	width:64px;
+	float:none;
+	a{
+		width:64px;
+	}
+}
+.media-right{
+	float:right;
+	padding:0;
+}
+.media-body{
+	float:none;
+}
+@include breakpoint($tab){
+	body .nav-sidebar{
+		padding-right:20px;
+	}
+	body .promo-sidebar{
+		padding-left:20px;
+	}
+}
+.media-right + .media-body{
+	padding-right:10px;
+}

@@ -21,7 +21,7 @@
 		</ul>
 	</div>
 	<?php } ?>
-	<div class="section-wrapper" id="content">
+	<div class="section-wrapper<?php if (isset($folding) && $folding){echo ' folding';}?>" id="content">
 		<?php 
 		for($i = 0; $i <10; $i++){
 			if(${"sect$i"} == ''){
@@ -29,7 +29,7 @@
 			}else{
 			?>
 		<div id="<?php echo "sect$i"; ?>" data-hash="<?php echo ${"s${i}_name"}; ?>" class="section">
-			<div class="wrapper"><div class="column">
+			<div class="wrapper"><div class="<?php echo $fe_container; ?>">
 			<?php echo ${"sect$i"}; ?>
 			</div></div>
 		</div>
@@ -37,7 +37,7 @@
 		} 
 		?>
 	</div>
-<!-- l-page div closed in foot.php -->
 <?php
+//l-page div closed in foot.php
 include_once($docroot."/.includes/foot.php");
 ?>

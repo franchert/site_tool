@@ -23,6 +23,7 @@ if($string == ''){
 	//print_r(count($haystack[0]));
 	$depth = 0;
 	$temp = recurse_sitemap('',$haystack,count($haystack[0]),$depth);
+	print_r($temp);
 	$newarr = json_encode($temp,true);
 	file_put_contents('sitemap.json',$newarr);
 	//print_r($temp);
@@ -37,7 +38,6 @@ function recurse_sitemap($ex_segment,$arr,$count,$depth){
 		$slug = slugFromTitle($title);
 		$menupos = $v['menupos']+1;
 		$segment = $ex_segment."/".$menupos.$slug;
-
 		// if the old location doesn't exist, we're free to try to make a new location
 		if($v['gen'] == ''){
 			makeDir($segment,$depth,$title);

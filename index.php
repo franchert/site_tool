@@ -4,7 +4,8 @@ include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 $styles = false;
 $scripts = true;
 $template = 'scrolljacking';
-$nav = true;
+	$nav = true;
+	$folding = true;
 /*promo director initializes region variables and includes all the functions to create elements*/
 include_once($docroot."/.includes/director.php");
 	$s0_name = "custom_section_0_name";

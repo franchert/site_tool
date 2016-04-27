@@ -38,8 +38,6 @@
 			</div>
 			<div class='main-nav-container wrapper'>
 				<div class="column">
-
-
 					<?php 
 						echo(p_main_nav($cms)); 
 					?>

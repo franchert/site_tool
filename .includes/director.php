@@ -45,7 +45,12 @@ if(isset($fe_framework)){
 		$fe_region = ' l-region';
 	}
 	if($fe_framework == 'bootstrap'){
-		$fe_container = '';
+		$fe_container = ' b-column';
+		$fe_wrapper = ' column';
+		$fe_region = ' ';
+	}
+	if($fe_framework == 'foundation'){
+		$fe_container = ' column';
 		$fe_wrapper = ' column';
 		$fe_region = ' ';
 	}

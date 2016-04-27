@@ -1,0 +1,260 @@
+// Import external libraries.
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+@import "../bower_components/compass-mixins/lib/compass";
+@import "../bower_components/reset-css/_reset.scss";
+@import "variables/**/*";
+@import "base/**/*";
+@import "../headers/**/*";
+@import "../templates/**/*";
+
+html {
+	font-size: 50%;
+	@include breakpoint($tab-large){
+		font-size: 55%;
+	}
+	@include breakpoint($desk){
+		font-size: 62.5%;
+	}
+}
+#main-content{
+	outline:none!important;
+}
+body{
+	*{
+		-moz-box-sizing:border-box;
+		box-sizing:border-box;
+		display:block;
+		float:left;
+		width:100%;
+	}
+	script{
+		display:none;
+	}
+	&.home{
+		h1{
+			margin:0;
+		}
+	}
+}
+img{
+	position:relative;
+	width:auto;
+	height:auto;
+	&.mobile-image{
+		@include breakpoint($tab){
+			display:none!important;
+		}
+	}
+	&.desk-image{
+		display:none!important;
+		@include breakpoint($tab){
+			display:block!important;
+		}
+	}
+}
+h1{
+	@include font('open_sans_bold',36,$color-1);
+	margin:0 0 20px 0;
+	@include breakpoint($tab){
+		font-size:48px;
+		line-height:54px;
+	}
+}
+h2{
+	@include font('open_sans_bold',28,$color-1);
+	margin:0 0 20px 0;
+}
+h3{
+	@include font('open_sans_bold',24,$color-1);
+	line-height:24px;
+	//border-bottom:1px solid $color-2;
+	margin:0 0 20px 0;
+}
+h4{
+	@include font('lobster',20,$color-1);
+	margin:0 0 10px 0;
+}
+h5{
+	@include font('open_sans_reg',18,$color-1);
+	font-weight:bold;
+	margin:0 0 10px 0;
+}
+h6{
+	@include font('open_sans_reg',18,$black);
+	margin:0 0 10px 0;
+}
+p{
+	float:none;
+	@include font('lora',18,$dk-gray);
+	margin:10px 0;
+	a{
+		display:inline-block;
+		float:none;
+		width:auto;
+		text-decoration:underline;
+	}
+}
+ul,
+ol{
+	float:none;
+	li{
+		@include font('lora',18,$dk-gray);
+		display:list-item;
+		*{
+			float:none;
+		}
+	}
+}
+a{
+	@include font('open_sans_reg',16,$color-1);
+	text-decoration:none;
+	&:hover{
+		text-decoration:underline;
+	}
+	&[href$=".pdf"]{
+		&:after{
+			content:$fa-file-pdf-o;
+			font-family:FontAwesome;
+			color:#FF0000;
+			font-size:12px;
+			padding-left:5px;
+			text-shadow: 1px 1px 0px $t-black-light;
+		}
+	}
+	&[href$=".docx"],
+	&[href$=".doc"]{
+		&:after{
+			content:$fa-file-word-o;
+			font-family:FontAwesome;
+			color:#0005FF;
+			font-weight:bold;
+			font-size:12px;
+			padding-left:5px;
+			text-shadow: 1px 1px 0px $t-black-light;
+		}
+	}
+	@include focus_styles();
+	&.skip{
+		position:absolute!important;
+		clip:rect(1px,1px,1px,1px);
+		overflow:hidden;
+		height:1px;
+		top:0;
+		left:0;
+		right:0;
+		margin:auto;
+		text-align:center;
+		background:$color-2;
+		color:$color-1;
+		&:focus,&:active{
+			position:static!important;
+			clip:auto;
+			overflow:visible;
+			height:auto;
+			z-index:3;
+		}
+	}
+}
+section{
+	margin:20px 0;
+	max-height:initial;
+	position:relative;
+	@include breakpoint($tab){
+		margin-top:0px;
+	}
+	> h2{
+		border-bottom:1px solid $color-2;
+		margin-bottom:20px;
+	}
+	&.short{
+		max-height:300px;
+		overflow:hidden;
+		.view-more{
+			@include font('lobster',16,$color-1);
+			@include arrow('after',$color-1,12,"\f067");
+			position:absolute;
+			background:$white;
+			&:after{
+				right:0;
+			}
+		}
+	}
+	.view-more{
+		@include font('lobster',16,$color-1);
+		@include arrow('after',$color-1,12,"\f068");
+		display:block;
+		bottom:-4px;
+		width:100%;
+		text-align:right;
+		padding-right:12px;
+		&:after{
+			right:0;
+		}
+	}
+}
+code{
+	@include font('mono',16,#8f9c6c);
+	background:#1d1f21;
+	padding:5px;
+	margin:0 5px 10px 5px;
+	@include calc('width','100% - 10px','90%');
+}
+.caption{
+	max-width:100%;
+	width:auto;
+	p{
+		@include floatblock();
+		color:$color-1;
+		font-style:italic;
+		margin:0 0 15px 0;
+		border-bottom:1px solid $color-2;
+		padding:10px 0;
+	}
+	img{
+		width:100%;
+	}
+}
+.back-to-top{
+	display:none;
+	right:20px;
+	bottom:20px;
+	background:$color-1;
+	border: 3px solid $color-2;
+	@include arrowdown($color-2,30);
+	position:fixed;
+	height:60px;
+	width:60px;
+	border-radius:50%;
+	z-index:9999;
+	transition:box-shadow 0.3s;
+	color:$color-2;
+	text-transform:uppercase;
+	font-size:12px;
+	line-height:12px;
+	text-align:center;
+	padding:24px 0 0 0;
+	&:after{
+		-webkit-transform:rotateZ(-90deg);
+		-ms-transform:rotateZ(-90deg);
+		transform: rotateZ(-90deg);
+		padding:0 13px;
+		top:8px;
+		left:7px;
+	}
+	&:hover{
+		text-decoration:none;
+	}
+}
+body{
+	@import "components/**/*";
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+	input[type='text'],
+	input[type='number'],
+	textarea {
+		font-size: 16px!important;
+	}
+	strong{
+		font-weight:bold;
+	}
+}

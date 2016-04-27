@@ -21,15 +21,15 @@ $l_promo_sidebar .= p_promo("generic","image","hover","Generic Hover");
 
 
 
-$l_content .= p_promo("generic","comp","","Generic",p_promo("panel","image","","TextLink",null,''));
-$l_content .= p_promo("generic","comp","left","Generic Left",p_promo("panel","image","","TextLink",null,''));
-$l_content .= p_promo("generic","comp","right","Generic Right",p_promo("panel","image","","TextLink",null,''));
-$l_content .= p_promo("generic","comp","hover","Generic Hover",p_promo("panel","image","","TextLink",null,''));
+$l_content .= p_promo("generic","comp","","Generic",p_promo("panel","image","","Panel",null,''));
+$l_content .= p_promo("generic","comp","left","Generic Left",p_promo("panel","image","","Panel",null,''));
+$l_content .= p_promo("generic","comp","right","Generic Right",p_promo("panel","image","","Panel",null,''));
+$l_content .= p_promo("generic","comp","hover","Generic Hover",p_promo("panel","image","","Panel",null,''));
 
-$l_promo_sidebar .= p_promo("generic","comp","","Generic",p_promo("panel","image","","TextLink",null,''));
-$l_promo_sidebar .= p_promo("generic","comp","left","Generic Left",p_promo("panel","image","","TextLink",null,''));
-$l_promo_sidebar .= p_promo("generic","comp","right","Generic Right",p_promo("panel","image","","TextLink",null,''));
-$l_promo_sidebar .= p_promo("generic","comp","hover","Generic Hover",p_promo("panel","image","","TextLink",null,''));
+$l_promo_sidebar .= p_promo("generic","comp","","Generic",p_promo("panel","image","","Panel",null,''));
+$l_promo_sidebar .= p_promo("generic","comp","left","Generic Left",p_promo("panel","image","","Panel",null,''));
+$l_promo_sidebar .= p_promo("generic","comp","right","Generic Right",p_promo("panel","image","","Panel",null,''));
+$l_promo_sidebar .= p_promo("generic","comp","hover","Generic Hover",p_promo("panel","image","","Panel",null,''));
 
 include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

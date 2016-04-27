@@ -35,7 +35,7 @@
 	        <?php echo $l_longscroll_fourth; ?>
 	    </section>
 	</div>
-<!-- l-page div closed in foot.php -->
 <?php
+/*l-page div closed in foot.php*/
 include_once($docroot."/.includes/foot.php");
 ?>

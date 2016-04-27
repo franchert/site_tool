@@ -16,14 +16,26 @@ if($fe_framework == 'custom'){
 if($fe_framework == 'bootstrap'){
 	$fe_l_page = '';
 	$fe_l_featured_header = ' ';
-	$fe_l_promo_sidebar = ' col-sm-3 promo-sidebar';
-	$fe_l_nav_sidebar = ' col-sm-3';
-	$fe_l_content = ' l-content col-sm-9';
-	$fe_l_content_wrapper = ' col-sm-9 pull-right';
+	$fe_l_promo_sidebar = ' col-md-3 promo-sidebar';
+	$fe_l_nav_sidebar = ' col-lg-3 nav-sidebar';
+	$fe_l_content = ' col-md-9 l-content';
+	$fe_l_content_wrapper = ' col-lg-9 pull-right';
 	$fe_l_content_header = ' col-sm-12 container';
-	$fe_l_content_featured = ' col-sm-9';
+	$fe_l_content_featured = ' col-lg-9';
 	$fe_l_content_center = ' col-sm-12 container';
 	$fe_l_content_footer = ' col-sm-12 container';
+}
+if($fe_framework == 'foundation'){
+	$fe_l_page = '';
+	$fe_l_featured_header = ' ';
+	$fe_l_promo_sidebar = ' medium-3 columns promo-sidebar';
+	$fe_l_nav_sidebar = ' large-3 columns nav-sidebar';
+	$fe_l_content = ' small-9 l-content columns';
+	$fe_l_content_wrapper = ' large-9 columns';
+	$fe_l_content_header = ' small-12 columns';
+	$fe_l_content_featured = ' large-9 columns';
+	$fe_l_content_center = ' small-12 columns';
+	$fe_l_content_footer = ' small-12 columns';
 }
 	include_once($docroot."/.includes/head.php");
 	$page_h1 = $page_title;

@@ -171,8 +171,10 @@
 				scrollTop: pixel
 			}, speed, function() {
 				isScrolling = false;
+				windowTop = getWindowTop();
 				if (options.eventEmitter) {
-					options.eventEmitter.emitEvent("scrollEnd");
+					sectionIndexAtWindowMiddle = getSectionIndexAt(windowTop + $(window).height() / 2);
+					options.eventEmitter.emitEvent('scrollEnd', [sectionIndexAtWindowMiddle]);
 				}
 			});
 		};

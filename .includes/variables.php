@@ -46,9 +46,9 @@ $demo = true;
  */
 
 	$fe_framework = 'custom';
-	//$fe_framework = 'bootstrap'; /*not tested fully*/
+	//$fe_framework = 'bootstrap'; /*not fully tested*/
 	//$fe_framework = 'skeleton'; /*not yet implemented*/
-	//$fe_framework = 'foundation' /*not yet implemented*/
+	//$fe_framework = 'foundation'; /*not yet implemented*/
 /*end $fe_framework*/
 
 /*	$cms

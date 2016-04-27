@@ -1,6 +1,7 @@
 $(document).ready(function(){
 	var numslides = $('#nav li').length;
 	var ee = new EventEmitter();
+	var dir = '';
 	var scrollStartListener = function (slideNumber) {
 		if(slideNumber!=0 && slideNumber!=(numslides+1)){
 			$('#nav li a').each(function(){
@@ -8,10 +9,24 @@ $(document).ready(function(){
 			});
 			var slidto = '#nav li:nth-child('+slideNumber+') a';
 			$(slidto).addClass('active');
+			
+			var activeslide = slideNumber - 1;
+			$('#sect'+activeslide).addClass('active');
+			var prevslide = slideNumber - 2;
+			$('#sect'+prevslide).addClass('prev');
 		}
+
+	}
+	var scrollEndListener = function (slideNumber) {
+		$('.section').each(function(){
+			$(this).removeClass('prev');
+			$(this).removeClass('active');
+			$(this).removeClass('next');
+		});
 	}
 
 	ee.addListener('scrollStart', scrollStartListener);
+	ee.addListener('scrollEnd', scrollEndListener);
 	$.smartscroll({
 		mode: "vp", // "vp", "set"
 		autoHash: false,

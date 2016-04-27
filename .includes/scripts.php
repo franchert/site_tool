@@ -22,7 +22,7 @@
 <?php if(isset($scrolljack) && $scrolljack === true){	?>
 	<script type="text/javascript" src="/.includes/libraries/lethargy/lethargy.min.js"></script>
 	<script type="text/javascript" src="/.includes/libraries/EventEmitter/EventEmitter.min.js"></script>
-	<script type="text/javascript" src="/.includes/libraries/smartscroll/smartscroll.min.js"></script>
+	<script type="text/javascript" src="/.includes/libraries/smartscroll/smartscroll.js"></script>
 <?php } ?>
 <?php if(isset($template)){ ?>
 	<script type="text/javascript" src="/.includes/templates/<?php echo $template ?>/<?php echo $template ?>.js"></script>
