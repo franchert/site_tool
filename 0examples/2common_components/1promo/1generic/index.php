@@ -9,27 +9,27 @@ $template = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
-$l_content .= p_promo("generic","image","","Generic");
-$l_content .= p_promo("generic","image","left","Generic Left");
-$l_content .= p_promo("generic","image","right","Generic Right");
-$l_content .= p_promo("generic","image","right hover","Generic Hover");
+$l_content .= p_promo(['type'=>"generic",'promo_image'=>"image",'title'=>"Generic"]);
+$l_content .= p_promo(['type'=>"generic",'promo_image'=>"image",'extra_class'=>"left",'title'=>"Generic Left"]);
+$l_content .= p_promo(['type'=>"generic",'promo_image'=>"image",'extra_class'=>"right",'title'=>"Generic Right"]);
+$l_content .= p_promo(['type'=>"generic",'promo_image'=>"image",'extra_class'=>"right hover",'title'=>"Generic Hover"]);
 
-$l_promo_sidebar .= p_promo("generic","image","","Generic");
-$l_promo_sidebar .= p_promo("generic","image","left","Generic Left");
-$l_promo_sidebar .= p_promo("generic","image","right","Generic Right");
-$l_promo_sidebar .= p_promo("generic","image","hover","Generic Hover");
+$l_promo_sidebar .= p_promo(['type'=>"generic",'promo_image'=>"image",'title'=>"Generic"]);
+$l_promo_sidebar .= p_promo(['type'=>"generic",'promo_image'=>"image",'extra_class'=>"left",'title'=>"Generic Left"]);
+$l_promo_sidebar .= p_promo(['type'=>"generic",'promo_image'=>"image",'extra_class'=>"right",'title'=>"Generic Right"]);
+$l_promo_sidebar .= p_promo(['type'=>"generic",'promo_image'=>"image",'extra_class'=>"hover",'title'=>"Generic Hover"]);
 
 
 
-$l_content .= p_promo("generic","comp","","Generic",p_promo("panel","image","","Panel",null,''));
-$l_content .= p_promo("generic","comp","left","Generic Left",p_promo("panel","image","","Panel",null,''));
-$l_content .= p_promo("generic","comp","right","Generic Right",p_promo("panel","image","","Panel",null,''));
-$l_content .= p_promo("generic","comp","hover","Generic Hover",p_promo("panel","image","","Panel",null,''));
+$l_content .= p_promo(['type'=>"generic",'promo_image'=>"item",'title'=>"Generic","item"=>p_promo(['type'=>"panel",'promo_image'=>"image",'title'=>"Panel"])]);
+$l_content .= p_promo(['type'=>"generic",'promo_image'=>"item",'extra_class'=>"left",'title'=>"Generic Left","item"=>p_promo(['type'=>"panel",'promo_image'=>"image",'title'=>"Panel"])]);
+$l_content .= p_promo(['type'=>"generic",'promo_image'=>"item",'extra_class'=>"right",'title'=>"Generic Right","item"=>p_promo(['type'=>"panel",'promo_image'=>"image",'title'=>"Panel"])]);
+$l_content .= p_promo(['type'=>"generic",'promo_image'=>"item",'extra_class'=>"hover",'title'=>"Generic Hover","item"=>p_promo(['type'=>"panel",'promo_image'=>"image",'title'=>"Panel"])]);
 
-$l_promo_sidebar .= p_promo("generic","comp","","Generic",p_promo("panel","image","","Panel",null,''));
-$l_promo_sidebar .= p_promo("generic","comp","left","Generic Left",p_promo("panel","image","","Panel",null,''));
-$l_promo_sidebar .= p_promo("generic","comp","right","Generic Right",p_promo("panel","image","","Panel",null,''));
-$l_promo_sidebar .= p_promo("generic","comp","hover","Generic Hover",p_promo("panel","image","","Panel",null,''));
+$l_promo_sidebar .= p_promo(['type'=>"generic",'promo_image'=>"item",'title'=>"Generic","item"=>p_promo(['type'=>"panel",'promo_image'=>"image",'title'=>"Panel"])]);
+$l_promo_sidebar .= p_promo(['type'=>"generic",'promo_image'=>"item",'extra_class'=>"left",'title'=>"Generic Left","item"=>p_promo(['type'=>"panel",'promo_image'=>"image",'title'=>"Panel"])]);
+$l_promo_sidebar .= p_promo(['type'=>"generic",'promo_image'=>"item",'extra_class'=>"right",'title'=>"Generic Right","item"=>p_promo(['type'=>"panel",'promo_image'=>"image",'title'=>"Panel"])]);
+$l_promo_sidebar .= p_promo(['type'=>"generic",'promo_image'=>"item",'extra_class'=>"hover",'title'=>"Generic Hover","item"=>p_promo(['type'=>"panel",'promo_image'=>"image",'title'=>"Panel"])]);
 
 include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

@@ -16,7 +16,9 @@ $l_one_col .= "<button class='add'><span class='fa fa-plus'></span>Add a new ite
 $l_one_col .= "<button class='save'><span class='fa fa-save'></span>Save this Sitemap</button>";
 $l_one_col .= "<button class='generate' title='generate file structure from this sitemap'><span class='fa fa-gears'></span>Generate</button>";
 $l_one_col .= "<div id='serialization'><ol class='serialization vertical'>";
+if(!is_null($arr)){
 $l_one_col .= recurse($arr,'');
+}
 $l_one_col .= "</ol><div id='output2' style=''></div>";
 $l_one_col .= "</div></div></div>";
 $l_one_col .= "<a href='/.util' style='position:fixed;top:120px;right:20px;background:#333;color:white;padding:13px 0px;width:50px;height:50px;border-radius:50%;text-decoration:none;text-align:center;line-height:25px;'>Util</a>";
@@ -24,13 +26,13 @@ $l_one_col .= "<a href='/.util' style='position:fixed;top:120px;right:20px;backg
 /*end define content*/
 include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 function recurse($arr,$str){
-    foreach($arr[0] as $k => $v){
-        $str .= "<li data-id='".$arr[0][$k]['id']."' data-menupos='".$k."' data-gen='".$arr[0][$k]['gen']."' data-title='".$arr[0][$k]['title']."'><span class='fa fa-bars'></span><input class='title' value='".$arr[0][$k]['title']."'></input><span tabindex='0' class='fa fa-close'></span><ol>";
-        if(count($arr[0][$k]['children'][0]) > 0){
-            $str .= recurse($arr[0][$k]['children'],'');
-        }
-        $str .="</ol></li>";
-    }
-    return $str;
+	foreach($arr[0] as $k => $v){
+		$str .= "<li data-id='".$arr[0][$k]['id']."' data-menupos='".$k."' data-gen='".$arr[0][$k]['gen']."' data-title='".$arr[0][$k]['title']."'><span class='fa fa-bars'></span><input class='title' value='".$arr[0][$k]['title']."'></input><span tabindex='0' class='fa fa-close'></span><ol>";
+		if(count($arr[0][$k]['children'][0]) > 0){
+			$str .= recurse($arr[0][$k]['children'],'');
+		}
+		$str .="</ol></li>";
+	}
+	return $str;
 }
 ?>

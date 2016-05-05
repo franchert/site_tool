@@ -52,7 +52,7 @@ function p_matrix(
 		);
 	if(is_null($arr)){
 		while ($len > 0){
-			$string .='<div>'.p_promo('generic').'</div>';
+			$string .='<div>'.p_promo(array('type'=>'generic')).'</div>';
 			$len --;
 		}
 	}else if (is_array($arr)){

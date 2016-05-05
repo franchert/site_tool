@@ -1,11 +1,5 @@
 {
-  "name": "Vanilla Gulp",
-  "homepage": "https://github.com/morgenfriedel/gulp-starterkit",
-  "description": "This is a starting point to set up gulp for basic SASS compilation and watch tasks.",
   "main": "index.html",
-  "authors": [
-    "Morgen Friedel"
-  ],
   "license": "GPL",
   "private": true,
   "ignore": [

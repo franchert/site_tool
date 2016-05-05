@@ -16,11 +16,33 @@ include_once($docroot."/.includes/director.php");
 //$sect1 .="<div class='wrapper'><div class='column'>";
 $sect0 .="<h2>Welcome to <span style='font-family:&#39;Comic Sans MS&#39;, cursive;color:blue;text-shadow:2px 2px 0px rgba(255,0,0,1),4px 4px 0px rgba(0,255,0,1);width:auto;float:none;display:inline-block;'>Build-O-Tron</span></h2>";
 $sect0 .="<p>Build-O-Tron has been developed to use as a framework for developing front-end websites specific to VisionPoint Marketing design components. It uses specific components based on typical higher education use cases to put together a prototype front-end for provided designs.</p>";
-$sect0 .="<div style='width:300px;padding-right:20px;'>".p_promo("button","image","light","Examples Section",null,null,null,"/0examples",'cube')."</div>";
+$sect0 .="<div style='width:300px;padding-right:20px;'>";
+$sect0 .=p_promo(
+	[
+		"type"=>"button",
+		"promo_image"=>"image",
+		"extra_class"=>"light",
+		"title"=>"Examples Section",
+		"link"=>"/0examples",
+		"link_title"=>"cube"
+	]
+);
+$sect0 .="</div>";
 $sect0 .="<p>The link to the left is an example of a default implementation of a button promo, and takes you to the examples section, showing off other examples of components included in this system.</p>";
 $sect0 .="<p>Examples of the code used to create these components can be found in the index.php files in each directory.</p>";
 $sect0 .="<h3>Getting Started</h3>";
-$sect0 .="<div style='float:right;width:300px;padding-left:20px;'>".p_promo("button","image","light","the Utility Section",null,null,null,"/.util","dashboard")."</div>";
+$sect0 .="<div style='float:right;width:300px;padding-left:20px;'>";
+$sect0 .=p_promo(
+	[
+		"type"=>"button",
+		"promo_image"=>"image",
+		"extra_class"=>"light",
+		"title"=>"the Utility Section",
+		"link"=>"/.util",
+		"link_title"=>"dashboard"
+	]
+);
+$sect0 .="</div>";
 $sect0 .="<p>The first step is to creat a sitemap. The utility section to the right contains a link to a drag-and-drop sitemap builder. Once the sitemap is created and saved through this, a directory structure can be created through the generate button on the sitemap page. This builds the necessary files to display each page within the site.</p>";
 $sect0 .="<p>Each page consists of a folder with an index.php file located inside. Each index.php file pulls in sitewide variables, sets page specific variables and builds a string to display within regions on a template defined by these variables. Each file has three major sections:</p><ol style='list-style:decimal;margin-left:30px;'><li>Set Variables</li><li>Initialize and build strings</li><li>Print out strings within defined template</li></ol>";
 $sect0 .="<p>Initializing and printing the strings are done through includes files, but the variables containing these strings need to be built manually to show the content for each specific page</p>";

@@ -18,14 +18,14 @@ gulp.task('sass', function() {
 // This globbing function tells gulp to use all files 
 // ending with .scss or .sass within the scss folder. 
 
- 	gulp.src('./scss/**/*.{scss,sass}')
- 		// Initializes sourcemaps
- 		.pipe(sourcemaps.init())
-	 	// Converts Sass into CSS with Gulp Sass
-	 	.pipe(sassGlob())
-	 	.pipe(sass())
-	 	// Logs compilation errors to console
-	 	.on('error', sass.logError)
+	gulp.src('./scss/**/*.{scss,sass}')
+		// Initializes sourcemaps
+		.pipe(sourcemaps.init())
+		// Converts Sass into CSS with Gulp Sass
+		.pipe(sassGlob())
+		.pipe(sass())
+		// Logs compilation errors to console
+		.on('error', sass.logError)
 		// Runs autoprefixer on CSS where necessary
 		.pipe(autoprefixer())
 		// Writes sourcemaps into the CSS file

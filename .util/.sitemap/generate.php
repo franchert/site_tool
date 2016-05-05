@@ -3,8 +3,8 @@
  *		Generates directory structure based on structure of a json feed.
  *		Move desired sitemap from within sitemaps directory up one level and run
  */
-	$data = $_POST['data'];
-	file_put_contents('sitemap.json',$data);
+//	$data = $_POST['data'];
+//	file_put_contents('sitemap.json',$data);
 include_once($_SERVER['DOCUMENT_ROOT']."/.util/redirect_install.php");
 $default_index = file_get_contents("../index.default.php");
 $string = '';
@@ -23,7 +23,7 @@ if($string == ''){
 	//print_r(count($haystack[0]));
 	$depth = 0;
 	$temp = recurse_sitemap('',$haystack,count($haystack[0]),$depth);
-	print_r($temp);
+	//print_r($temp);
 	$newarr = json_encode($temp,true);
 	file_put_contents('sitemap.json',$newarr);
 	//print_r($temp);
@@ -31,7 +31,6 @@ if($string == ''){
 
 function recurse_sitemap($ex_segment,$arr,$count,$depth){
 	//print_r($arr[0]);
-	$newarr = array();
 	foreach($arr[0] as $k => $v){
 		$id = $v['id'];
 		$title = $v['title'];
@@ -47,6 +46,7 @@ function recurse_sitemap($ex_segment,$arr,$count,$depth){
 			if(is_dir($_SERVER['DOCUMENT_ROOT'].$v['gen'])){
 				recurse_copy($_SERVER['DOCUMENT_ROOT'].$v['gen'],$_SERVER['DOCUMENT_ROOT'].$segment);
 				recursiveRemoveDirectory($_SERVER['DOCUMENT_ROOT']."/".$v['gen']);
+				file_put_contents($_SERVER['DOCUMENT_ROOT'].$segment,$title);
 			}else{
 				//the old location has been set but nothing is there anymore, so let's just make a new page!
 				makeDir($segment,$depth,$title);
@@ -54,16 +54,16 @@ function recurse_sitemap($ex_segment,$arr,$count,$depth){
 		//if we've deleted the folder but not deleted the reference
 		}else if(!is_dir($_SERVER['DOCUMENT_ROOT'].$v['gen'])){
 			makeDir($segment,$depth,$title);
+		}else{
+			makeDir($segment,$depth,$title);
 		}
 		//NOTE: if you delete something from the sitemap, it needs to be manually deleted from the file structure.
 
 		$arr[0][$k]['gen'] = $segment;
 		$i = $depth;
 		while ($i > 0){
-			//echo " -- ";
 			$i --;
 		}
-		//echo $title." <a target='_blank' href='".$segment."'' style='font-size:70%;color:#a55;'>".$segment."</a><br>";
 		if($count > 0){
 			$depth++;
 			$arr[0][$k]['children'] = recurse_sitemap($segment,$v['children'],count($v['children'][0]),$depth);

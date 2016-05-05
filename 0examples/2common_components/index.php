@@ -15,10 +15,11 @@ $l_content .= p_event('tall');
 $l_content .= p_event('round');
 $l_content .= p_event('basic');
 
-$news_cats = array(
+$news_cats = [
 	'category 1',
 	'category 2',
-	'category 3');
+	'category 3'
+];
 $l_content .= "<h2>News</h2>";
 $l_content .= p_news('',null,null,"#",'category');
 $l_content .= p_news('normal',null,'news item without read more','#',$news_cats,null,null,false);

@@ -1,7 +1,9 @@
 body.dragging, body.dragging * {
   cursor: move !important;
 }
-
+#output2{
+  display:none;
+}
 .dragged {
   position: absolute;
   opacity: 0.5;

@@ -15,13 +15,13 @@ function p_grid(
 	$title = null,
 	$arr=null,
 	$morelink='',
-	$addl_class='',
+	$extra_class='',
 	$subtitle=null){
 
 	global $set_tings;
 	$string = '';
 	if(isset($title) && $title !=''){
-		$string .= '<div class="h2-wrap"><h2 class="'.$addl_class.'">'.$title.'</h2></div>';
+		$string .= '<div class="h2-wrap"><h2 class="'.$extra_class.'">'.$title.'</h2></div>';
 	}
 	if(isset($subtitle) && $subtitle !=''){
 		$string .= '<p class="home-h2-sub">'.$subtitle.'</p>';

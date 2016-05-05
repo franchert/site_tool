@@ -49,12 +49,12 @@ $(window).load(function() {
 	if($arr == null){
 		$string .='
 		<div class="'.$id.' owlCarousel carousel">'
-			.p_slide(p_promo("reveal","image",'',"Reveal",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("reveal","image",'',"Reveal",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("reveal","image",'',"Reveal",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("reveal","image",'',"Reveal",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("reveal","image",'',"Reveal",null,null,$img,"#",null,null,true))
-			.p_slide(p_promo("reveal","image",'',"Reveal",null,null,$img,"#",null,null,true))
+			.p_slide(p_promo(array('type'=>"reveal",'promo_image'=>"image","title"=>"Reveal","tag"=>$img)))
+			.p_slide(p_promo(array('type'=>"reveal",'promo_image'=>"image","title"=>"Reveal","tag"=>$img)))
+			.p_slide(p_promo(array('type'=>"reveal",'promo_image'=>"image","title"=>"Reveal","tag"=>$img)))
+			.p_slide(p_promo(array('type'=>"reveal",'promo_image'=>"image","title"=>"Reveal","tag"=>$img)))
+			.p_slide(p_promo(array('type'=>"reveal",'promo_image'=>"image","title"=>"Reveal","tag"=>$img)))
+			.p_slide(p_promo(array('type'=>"reveal",'promo_image'=>"image","title"=>"Reveal","tag"=>$img)))
 		.'</div>
 		';
 	}else{
@@ -64,7 +64,7 @@ $(window).load(function() {
 			if ($v){
 				$slide = $v;
 			}else{
-				$slide = p_promo("reveal","image",'',"Reveal");
+				$slide = p_promo(array('type'=>"reveal",'promo_image'=>"image",'title'=>"Reveal"));
 			}
 			$string .= p_slide($slide);
 		}

@@ -69,7 +69,7 @@ function save(){
 		data: {data:$('#output2').text()},
 		url: 'create.php'
 	})
-	$('#output2').empty();
+	//$('#output2').empty();
 	$("ol.serialization").sortable("refresh");
 	$('button.save').removeClass('unsaved');
 }

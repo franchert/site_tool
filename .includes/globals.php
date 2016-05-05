@@ -329,7 +329,7 @@ function infoButton($content=null,$title=null){
 			$info .= $content;
 		}
 		$info .= '</div></section>';
-	}else{$info == '';}
+	}else{$info = '';}
 	return $info;
 }
 ?>
