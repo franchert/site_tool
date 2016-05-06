@@ -9,7 +9,7 @@ $template = "generic_inner";
 $mini = true;
 $depth = 2;
 include_once($docroot."/.includes/director.php");
-$p_matrix_item = p_promo(["type"=>'panel','promo_image'=>"image");
+$p_matrix_item = p_promo(["type"=>'panel','image_type'=>"image");
 $l_content .= p_matrix(2,$p_matrix_item);
 $l_content .= p_matrix(3,$p_matrix_item);
 $l_content .= p_matrix(4,$p_matrix_item);

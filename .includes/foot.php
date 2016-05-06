@@ -13,6 +13,7 @@
 				array(
 					p_promo(array(
 						"type"=>'card',
+						"image_type"=>'',
 						"extra_class"=>'contact',
 						"title"=>'Contact Us',
 						"text"=> '',
@@ -27,8 +28,9 @@
 					)
 					),
 					p_promo(array(
-						"type"=>'card social',
-						"extra_class"=>'',
+						"type"=>'card',
+						"image_type"=>'',
+						"extra_class"=>'social',
 						"text"=> '',
 						"title"=>'Follow Us',
 						"item"=>p_list(
@@ -45,6 +47,7 @@
 					),
 					p_promo(array(
 						"type"=>'card',
+						"image_type"=>'',
 						"extra_class"=>'links-resources',
 						"title"=>'Links &amp; Resources',
 						"text"=> '',

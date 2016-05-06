@@ -4,6 +4,7 @@
 @import "../bower_components/compass-mixins/lib/compass";
 @import "variables/**/*";
 @import "base/**/*";
+@import "../components/**/*";
 @import "../headers/**/*";
 @import "../templates/**/*";
 
@@ -244,9 +245,6 @@ code{
 	&:hover{
 		text-decoration:none;
 	}
-}
-body{
-	@import "components/**/*";
 }
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
 	input[type='text'],

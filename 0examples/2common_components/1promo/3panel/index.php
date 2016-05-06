@@ -9,12 +9,12 @@ $template = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 
-$l_content .= p_promo(['type'=>"panel",'promo_image'=>"image",'title'=>"panel"]);
-$l_content .= p_promo(['type'=>"panel",'promo_image'=>"image",'extra_class'=>"dark",'title'=>"panel <span>Dark</span>"]);
-$l_content .= p_promo(['type'=>"panel",'promo_image'=>"image",'extra_class'=>"light",'title'=>"panel <span>Light</span>"]);
+$l_content .= p_promo(['type'=>"panel",'image_type'=>"image",'title'=>"panel"]);
+$l_content .= p_promo(['type'=>"panel",'image_type'=>"image",'extra_class'=>"dark",'title'=>"panel <span>Dark</span>"]);
+$l_content .= p_promo(['type'=>"panel",'image_type'=>"image",'extra_class'=>"light",'title'=>"panel <span>Light</span>"]);
 
-$l_promo_sidebar .= p_promo(['type'=>"panel",'promo_image'=>"image",'title'=>"panel"]);
-$l_promo_sidebar .= p_promo(['type'=>"panel",'promo_image'=>"image",'extra_class'=>"dark",'title'=>"panel <span>Dark</span>"]);
-$l_promo_sidebar .= p_promo(['type'=>"panel",'promo_image'=>"image",'extra_class'=>"light",'title'=>"panel <span>Light</span>"]);
+$l_promo_sidebar .= p_promo(['type'=>"panel",'image_type'=>"image",'title'=>"panel"]);
+$l_promo_sidebar .= p_promo(['type'=>"panel",'image_type'=>"image",'extra_class'=>"dark",'title'=>"panel <span>Dark</span>"]);
+$l_promo_sidebar .= p_promo(['type'=>"panel",'image_type'=>"image",'extra_class'=>"light",'title'=>"panel <span>Light</span>"]);
 include_once($docroot."/.includes/templates/".$template."/".$template.".php");
 ?>

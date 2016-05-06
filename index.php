@@ -20,7 +20,7 @@ $sect0 .="<div style='width:300px;padding-right:20px;'>";
 $sect0 .=p_promo(
 	[
 		"type"=>"button",
-		"promo_image"=>"image",
+		"image_type"=>"image",
 		"extra_class"=>"light",
 		"title"=>"Examples Section",
 		"link"=>"/0examples",
@@ -35,7 +35,7 @@ $sect0 .="<div style='float:right;width:300px;padding-left:20px;'>";
 $sect0 .=p_promo(
 	[
 		"type"=>"button",
-		"promo_image"=>"image",
+		"image_type"=>"image",
 		"extra_class"=>"light",
 		"title"=>"the Utility Section",
 		"link"=>"/.util",

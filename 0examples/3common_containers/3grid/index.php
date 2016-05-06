@@ -9,26 +9,26 @@ $template = "generic_inner";
 
 include_once($docroot."/.includes/director.php");
 $g_two = array(
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel']),
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel'])
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel']),
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel'])
 );
 $g_three = array(
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel']),
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel']),
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel'])
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel']),
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel']),
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel'])
 );
 $g_four = array(
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel']),
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel']),
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel']),
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel'])
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel']),
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel']),
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel']),
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel'])
 );
 $g_five = array(
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel']),
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel']),
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel']),
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel']),
-	p_promo(['type'=>'panel','promo_image'=>'image','extra_class'=>'panel'])
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel']),
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel']),
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel']),
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel']),
+	p_promo(['type'=>'panel','image_type'=>'image','extra_class'=>'panel'])
 );
 $l_content .= p_grid('horizontal',3,'horizontal 3',$g_three);
 $l_content .= p_grid('horizontal right',3,'horizontal right 3',$g_three);

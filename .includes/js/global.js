@@ -12,56 +12,40 @@ $(document).ready(function(){
 /*	$(document).on('mousedown',function(e){
 		$(e.target).css('outline',0);
 	});*/
-	$('section.collapsable').each(function(e){
-		if ($(this).height() > 500){
-			$(this).append("<a class='view-more' href='#'>View More</a>");
-			$(this).toggleClass('short');
-		}
-	});
-	$(".demo-toggle").on("click",function(){
-		$('body').toggleClass("demo");
-	});
 	$(".featured .slide img").each(function(i, img) {
 		$(img).css({
 			left: ($(img).parent().width() - $(img).width()) / 2
 		});
 	});
-	$('.responsive-table-wrapper').each(function(){
-		var headers = Array();
-		$(this).find('thead tr td').each(function(){
-			headers.push(($(this)[0].textContent===undefined) ? $(this)[0].innerText : $(this)[0].textContent);
-		});
-		$(this).find('tbody tr').each(function(){
-			var temp = 0;
-			var attr = '';
-			$(this).children('td').each(function(){
-				$(this).attr('data-label',headers[temp]);
-				attr = $(this).attr('colspan');
-				if(typeof attr !== typeof undefined && attr !== false) {
-					temp += parseInt($(this).attr('colspan'));
-				}else{
-					temp++;
-				}
-			});
-			temp = 0;
-		});
+
+
+	/* show/hide collapsable section */
+	$('.collapsable').each(function(e){
+		if ($(this).height() > 500){
+			$(this).append("<a class='view-more' href='#'>View More</a>");
+			$(this).toggleClass('short');
+		}
 	});
 	$('.view-more').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
 			e.preventDefault();
-			$(this).parents('section').toggleClass('short');
-			if($(this).parents('section').hasClass('short')){
+			$(this).parents('.collapsable').toggleClass('short');
+			if($(this).parents('.collapsable').hasClass('short')){
 				$(this).html('View More');
 			}else{
 				$(this).html('View Less');
 			}
 		};
 	});
+
+	/* p_accordion open/close */
 	$('.accordion h3').on('keypress click',function(e){
 		$(this).toggleClass('active');
 		var selector = $(this).next();
 		$(this).next().toggleClass('open');
 	});
+
+	/* p_dropdown toggle */
 	$('.drop-toggle').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
 			e.preventDefault();
@@ -71,6 +55,8 @@ $(document).ready(function(){
 			$(this).blur();
 		};
 	});
+
+	/* p_subnav toggle on mobile */
 	$('.subnav h2').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
 			$(this).parents('.subnav').toggleClass('open');
@@ -80,7 +66,10 @@ $(document).ready(function(){
 			$(this).blur();
 		}
 	});
-	/*toggles for subnav either added server-side or through js below*/
+	/* subnav toggling on the front-end.
+	 * first section provides toggling behavior, 
+	 * uncomment second section to add HTML to act upon
+	*/
 	$('.subnav .sn-toggle').on('keypress click',function(e){
 		if (e.keyCode === 13 || e.type === 'click') {
 			e.preventDefault();
@@ -90,14 +79,16 @@ $(document).ready(function(){
 			$(this).blur();
 		}
 	});
-	/* use this to add subnav toggling on the front-end*/
-	/*$('.subnav ul li').each(function(){
+	/*
+	$('.subnav ul li').each(function(){
 		if($(this).children('ul').length > 0){
 			$(this).addClass('haschild');
 			$(this).prepend('<button class="sn-toggle"><span class="fa fa-angle-right"></span></button>');
 		}
 	});
 	*/
+
+
 	$('.subsection button').on('keypress click',function(e){
 		if (e.which === 13 || e.type === 'click') {
 			$(this).parents('.subsection').toggleClass('open');
@@ -147,7 +138,6 @@ $(document).ready(function(){
 		}
 	});
 	ta_load();
-	section_structure();
 });
 
 $( window ).resize(function() {
@@ -251,125 +241,6 @@ function deskImage(){
 			//var txt3 = txt1.slice(0,txt2) + "-desk" + txt1.slice(txt2);
 			var txt3 = txt1.replace('-mobi.','.');
 			$(this).after("<img class='desk-image' alt='"+alt+"' src='"+txt3+"' />");
-		}
-	});
-}
-
-function section_structure(){
-	mobile_break = 719;
-	$('ul.section_structure').each(function(){
-		var max_width = 100*(1/$(this).find("> li").length) + "%";
-		$(this).find(' > li').each(function(){
-			$(this).css('max-width',max_width);
-		});
-	});
-	sec_struc_update(mobile_break);
-	$('.section_structure.lg-tabs a').on('keypress click', function(e) {
-		if (!isMobile(mobile_break)) {
-			e.preventDefault();
-			$(this).parent().siblings().removeClass('large-active');
-			$(this).parent().addClass('large-active');
-			var tot_h = $(this).parents('li').outerHeight() + $(this).next().outerHeight();
-			$(this).parents('ul.section_structure').css('height',tot_h);
-		}
-	});
-	$('.section_structure.sm-tabs a').on('keypress click', function(e) {
-		if (isMobile(mobile_break)) {
-			e.preventDefault();
-			$(this).parent().siblings().removeClass('small-active');
-			$(this).parent().addClass('small-active');
-			var tot_h = $(this).parents('li').outerHeight() + $(this).next().outerHeight();
-			$(this).parents('ul.section_structure').css('height',tot_h);
-		}
-	});
-	$('.section_structure.lg-accs a').on('keypress click', function(e) {
-		if (!isMobile(mobile_break)) {
-			e.preventDefault();
-			$(this).parent().siblings().removeClass('large-active');
-			$(this).parent().addClass('large-active');
-			$(this).parents('ul.section_structure').css('height','auto');
-		}
-	});
-	$('.section_structure.sm-accs a').on('keypress click', function(e) {
-		if (isMobile(mobile_break)) {
-			e.preventDefault();
-			$(this).parent().siblings().removeClass('small-active');
-			$(this).parent().toggleClass('small-active');
-			$(this).parents('ul.section_structure').css('height','auto');
-		}
-	});
-	$('.section_structure.lg-anchor a').on('keypress click', function() {
-		if (!isMobile(mobile_break)) {
-			$(this).parents('ul.section_structure').css('height','auto');
-		}
-	});
-	$('.section_structure.sm-anchor a').on('keypress click', function() {
-		if (isMobile(mobile_break)) {
-			$(this).parents('ul.section_structure').css('height','auto');
-		}
-	});
-}
-function sec_struc_update(width){
-	if(width == undefined){
-		width = 719;
-	}
-	$('ul.section_structure').each(function(){
-		if(isMobile(width)){
-			if ($(this).hasClass('sm-tabs')){
-				equalHeight(jQuery('li',this));
-				var ul_h = $(this).children('li').outerHeight();
-				var open_h = $(this).find('.large-active > div').outerHeight() + ul_h + 20;
-				$(this).css('height',open_h);
-				a_height = $(this).find('li:first-child > a').height();
-				$(this).find('> li:first-child > div').css('top',a_height)
-					.css('position','relative')
-					.css('margin-bottom',a_height);
-			}else if ($(this).hasClass('sm-accs')){
-				jQuery('li',this).height('auto');
-				$(this).css('height','auto');
-				$(this).css('top','initial');
-			}else if ($(this).hasClass('sm-anchor')){
-				equalHeight(jQuery('li a',this));
-				a_height = $(this).find('li:first-child > a').height();
-				$(this).find('> li:first-child > div').css('top',a_height)
-					.css('position','relative')
-					.css('margin-bottom',a_height);
-				$(this).css('height','auto');
-				$(this).css('top','initial');
-			}
-			if ($(this).hasClass('lg-anchor')){
-				$(this).find('> li:first-child > div').css('top','initial')
-					.css('position','static')
-					.css('margin-bottom','initial');
-			}
-		}else{
-			if ($(this).hasClass('lg-tabs')){
-				equalHeight(jQuery('li',this));
-				$(this).find('> li > div').each(function(){
-					$(this).css('top',$(this).parent().height());
-				});
-				var ul_h = $(this).children('li').outerHeight();
-				var open_h = $(this).find('.large-active > div').outerHeight() + ul_h + 20;
-				$(this).css('height',open_h);
-			}else if ($(this).hasClass('lg-accs')){
-				jQuery('li',this).height('auto');
-				$(this).find('> li > div').css('height','auto');
-				$(this).css('height','auto');
-				$(this).css('top','initial');
-			}else if ($(this).hasClass('lg-anchor')){
-				equalHeight(jQuery('li a',this));
-				a_height = $(this).find('li:first-child > a').height();
-				$(this).find('> li:first-child > div').css('top',a_height)
-					.css('position','relative')
-					.css('margin-bottom',a_height);
-				$(this).css('height','auto');
-				$(this).css('top','initial');
-			}
-			if ($(this).hasClass('sm-anchor')){
-				$(this).find('> li:first-child > div').css('top','initial')
-					.css('position','static')
-					.css('margin-bottom','initial');
-			}
 		}
 	});
 }

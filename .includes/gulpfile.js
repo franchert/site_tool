@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
+var concat = require('gulp-concat');
+var gfi = require("gulp-file-insert");
 
 // The following are included in Node.js's standard
 // library (npm isn't required to get them); but our
@@ -34,14 +36,28 @@ gulp.task('sass', function() {
 
 });
 
+gulp.task('javascript', function() {
+	gulp.src('./components/**/*.js')
+		.pipe(sourcemaps.init())
+		.pipe(concat('components.js'))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('./js/'));
+	gulp.src(['./js/temp/document.js','./js/components.js','./js/temp/temp.js'])
+		.pipe(concat('components.js'))
+		.pipe(gulp.dest('./js/'));
+});
+
 gulp.task('watch', function() {
 
-  // Watches the scss folder for all .scss and .sass files
-  // If any file changes, run the sass task
+	// Watches the folders for all specified file extensions
+	// If any file changes, run the task listed at the end
 
-  gulp.watch('./scss/**/*.{scss,sass}', ['sass'])
-
+	gulp.watch('./scss/**/*.{scss,sass}', ['sass'])
+	gulp.watch('./components/**/*.{scss,sass}', ['sass'])
+	gulp.watch('./headers/**/*.{scss,sass}', ['sass'])
+	gulp.watch('./templates/**/*.{scss,sass}', ['sass'])
+	gulp.watch('./components/**/*.js', ['javascript'])
 });
 
 // Creating a default task
-gulp.task('default', ['sass', 'watch']);
+gulp.task('default', ['sass', 'watch','javascript']);

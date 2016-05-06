@@ -26,3 +26,7 @@
 <?php if(isset($sitemap)){ ?>
 	<link rel="stylesheet" type="text/css" href="/.util/.sitemap/sitemap.css"/>
 <?php } ?>
+
+<?php if(isset($demo) && $demo === true){ ?>
+	<link rel="stylesheet" type="text/css" href="/.includes/stylesheets/demo.css"/>
+<?php } ?>

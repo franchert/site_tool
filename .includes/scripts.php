@@ -19,6 +19,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 	<script type="text/javascript" src="/.includes/libraries/js-cookie/src/js.cookie.js"></script>
 	<script type="text/javascript" src="/.includes/libraries/parsley/parsley.min.js"></script>
+	<script type="text/javascript" src="/.includes/libraries/js/jquery.hoverIntent.js"></script>
 <?php if(isset($scrolljack) && $scrolljack === true){	?>
 	<script type="text/javascript" src="/.includes/libraries/lethargy/lethargy.min.js"></script>
 	<script type="text/javascript" src="/.includes/libraries/EventEmitter/EventEmitter.min.js"></script>
@@ -33,7 +34,6 @@
 <?php if(isset($fe_framework)){?>
 	<script type="text/javascript" src="/.includes/js/<?php echo $fe_framework ?>.js"></script>
 <?php } ?>
-	<script type="text/javascript" src="/.includes/libraries/js/jquery.hoverIntent.js"></script>
 <?php if(isset($waypoints) && $waypoints === true){	?>
 	<script type="text/javascript" src="/.includes/libraries/js/jquery.waypoints.min.js"></script>
 <?php } ?>
@@ -50,6 +50,7 @@
 	<script type="text/javascript" src="/.includes/libraries/js/jquery.colorbox-min.js"></script>
 <?php } ?>
 	<script type="text/javascript" src="/.includes/js/global.js"></script>
+	<script type="text/javascript" src="/.includes/js/components.js"></script>
 <?php if(isset($scripts) && $scripts === true){	?>
 	<script type="text/javascript" src="/.includes/js/<?php echo $page_slug ?>.js"></script>
 <?php } ?>
@@ -57,4 +58,7 @@
 <?php if(isset($sitemap)){ ?>
 	<script type="text/javascript" src="/.util/.sitemap/jquery-sortable/source/js/jquery-sortable.js"></script>
 	<script type="text/javascript" src="/.util/.sitemap/sitemap.js"></script>
+<?php } ?>
+<?php if(isset($demo) && $demo === true){ ?>
+	<script type="text/javascript" src="/.util/demo.js"></script>
 <?php } ?>

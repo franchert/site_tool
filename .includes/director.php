@@ -90,7 +90,7 @@ $set_tings = compact(array(
 ));
 //print_r($set_tings);
 //include everything from the components directories
-foreach (glob($docroot."/.includes/components/*.inc.php") as $filename){
+foreach (glob($docroot."/.includes/components/**/*.inc.php") as $filename){
 	include_once($filename);
 }
 ?>
