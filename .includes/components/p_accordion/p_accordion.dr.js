@@ -2,5 +2,4 @@
 		$(this).toggleClass('active');
 		var selector = $(this).next();
 		$(this).next().toggleClass('open');
-		
 	});

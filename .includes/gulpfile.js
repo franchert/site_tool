@@ -4,6 +4,8 @@ var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
 var concat = require('gulp-concat');
 var gfi = require("gulp-file-insert");
+var docready = require('./js/gulp-helpers/wrapper-docready');
+var resize = require('./js/gulp-helpers/wrapper-resize');
 
 // The following are included in Node.js's standard
 // library (npm isn't required to get them); but our
@@ -37,12 +39,24 @@ gulp.task('sass', function() {
 });
 
 gulp.task('javascript', function() {
-	gulp.src('./components/**/*.js')
+	/* combine the document readys */
+	gulp.src('./components/**/*.dr.js')
 		.pipe(sourcemaps.init())
-		.pipe(concat('components.js'))
+		.pipe(concat('dr.js'))
+		.pipe(docready())
 		.pipe(sourcemaps.write())
-		.pipe(gulp.dest('./js/'));
-	gulp.src(['./js/temp/document.js','./js/components.js','./js/temp/temp.js'])
+		.pipe(gulp.dest('./js/gulp-helpers/'));
+	/* combine the external functions */
+	gulp.src('./components/**/*.function.js')
+		.pipe(sourcemaps.init())
+		.pipe(concat('functions.js'))
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('./js/gulp-helpers/'));
+	/* combine the document ready with the external functions*/
+	gulp.src([
+			'./js/gulp-helpers/dr.js',
+			'./js/gulp-helpers/functions.js'
+		])
 		.pipe(concat('components.js'))
 		.pipe(gulp.dest('./js/'));
 });
@@ -56,8 +70,10 @@ gulp.task('watch', function() {
 	gulp.watch('./components/**/*.{scss,sass}', ['sass'])
 	gulp.watch('./headers/**/*.{scss,sass}', ['sass'])
 	gulp.watch('./templates/**/*.{scss,sass}', ['sass'])
-	gulp.watch('./components/**/*.js', ['javascript'])
+	gulp.watch('./components/**/*.dr.js', ['javascript'])
 });
 
 // Creating a default task
 gulp.task('default', ['sass', 'watch','javascript']);
+
+
