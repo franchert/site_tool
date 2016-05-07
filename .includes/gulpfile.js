@@ -42,22 +42,28 @@ gulp.task('javascript', function() {
 	/* combine the document readys */
 	gulp.src('./components/**/*.dr.js')
 		.pipe(sourcemaps.init())
-		.pipe(concat('dr.js'))
+		.pipe(concat('1_dr.h.js'))
 		.pipe(docready())
+		.pipe(sourcemaps.write())
+		.pipe(gulp.dest('./js/gulp-helpers/'));
+	/* combine the external functions */
+	gulp.src('./components/**/*.resize.js')
+		.pipe(sourcemaps.init())
+		.pipe(concat('2_resize.h.js'))
+		.pipe(resize())
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./js/gulp-helpers/'));
 	/* combine the external functions */
 	gulp.src('./components/**/*.function.js')
 		.pipe(sourcemaps.init())
-		.pipe(concat('functions.js'))
+		.pipe(concat('3_functions.h.js'))
 		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./js/gulp-helpers/'));
 	/* combine the document ready with the external functions*/
-	gulp.src([
-			'./js/gulp-helpers/dr.js',
-			'./js/gulp-helpers/functions.js'
-		])
+	gulp.src('./js/gulp-helpers/*.h.js')
+		.pipe(sourcemaps.init())
 		.pipe(concat('components.js'))
+		.pipe(sourcemaps.write())
 		.pipe(gulp.dest('./js/'));
 });
 

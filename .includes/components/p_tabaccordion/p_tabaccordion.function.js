@@ -1,6 +1,3 @@
-$( window ).resize(function() {
-	ta_update();
-});
 function ta_load(){
 	$('.tabaccordion ul.ta_tabs > li > a').on('keypress click', function(e) {
 		container_to_toggle = $(this).parents('.ta_tabs').siblings('.ta_container');

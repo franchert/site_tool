@@ -11,7 +11,7 @@ module.exports = function(){
     }
     if (file.isBuffer()) {
         var contents = file.contents.toString();
-        file.contents = Buffer.concat([new Buffer('$( window ).resize(function() {'), file.contents, new Buffer('});')]);
+        file.contents = Buffer.concat([new Buffer('\n$( window ).resize(function() {\n'), file.contents, new Buffer('\n});')]);
     }
     cb(null, file);
   }, function(){
